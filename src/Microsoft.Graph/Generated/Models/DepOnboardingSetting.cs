@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
     /// </summary>
-    public class DepOnboardingSetting : Entity, IParsable
+    public class DepOnboardingSetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The Apple ID used to obtain the current token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,64 +36,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Default iOS Enrollment Profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DepIOSEnrollmentProfile? DefaultIosEnrollmentProfile
+        public Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile? DefaultIosEnrollmentProfile
         {
-            get { return BackingStore?.Get<DepIOSEnrollmentProfile?>("defaultIosEnrollmentProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile?>("defaultIosEnrollmentProfile"); }
             set { BackingStore?.Set("defaultIosEnrollmentProfile", value); }
         }
 #nullable restore
 #else
-        public DepIOSEnrollmentProfile DefaultIosEnrollmentProfile
+        public Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile DefaultIosEnrollmentProfile
         {
-            get { return BackingStore?.Get<DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile"); }
             set { BackingStore?.Set("defaultIosEnrollmentProfile", value); }
         }
 #endif
         /// <summary>Default MacOs Enrollment Profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DepMacOSEnrollmentProfile? DefaultMacOsEnrollmentProfile
+        public Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile? DefaultMacOsEnrollmentProfile
         {
-            get { return BackingStore?.Get<DepMacOSEnrollmentProfile?>("defaultMacOsEnrollmentProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile?>("defaultMacOsEnrollmentProfile"); }
             set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
         }
 #nullable restore
 #else
-        public DepMacOSEnrollmentProfile DefaultMacOsEnrollmentProfile
+        public Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile DefaultMacOsEnrollmentProfile
         {
-            get { return BackingStore?.Get<DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile"); }
             set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
         }
 #endif
         /// <summary>The enrollment profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EnrollmentProfile>? EnrollmentProfiles
+        public List<Microsoft.Graph.Beta.Models.EnrollmentProfile>? EnrollmentProfiles
         {
-            get { return BackingStore?.Get<List<EnrollmentProfile>?>("enrollmentProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EnrollmentProfile>?>("enrollmentProfiles"); }
             set { BackingStore?.Set("enrollmentProfiles", value); }
         }
 #nullable restore
 #else
-        public List<EnrollmentProfile> EnrollmentProfiles
+        public List<Microsoft.Graph.Beta.Models.EnrollmentProfile> EnrollmentProfiles
         {
-            get { return BackingStore?.Get<List<EnrollmentProfile>>("enrollmentProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EnrollmentProfile>>("enrollmentProfiles"); }
             set { BackingStore?.Set("enrollmentProfiles", value); }
         }
 #endif
         /// <summary>The imported Apple device identities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedAppleDeviceIdentity>? ImportedAppleDeviceIdentities
+        public List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>? ImportedAppleDeviceIdentities
         {
-            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>?>("importedAppleDeviceIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>?>("importedAppleDeviceIdentities"); }
             set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities
+        public List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities
         {
-            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>("importedAppleDeviceIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>>("importedAppleDeviceIdentities"); }
             set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
         }
 #endif
@@ -172,20 +172,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The tokenType property</summary>
-        public DepTokenType? TokenType
+        public Microsoft.Graph.Beta.Models.DepTokenType? TokenType
         {
-            get { return BackingStore?.Get<DepTokenType?>("tokenType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DepTokenType?>("tokenType"); }
             set { BackingStore?.Set("tokenType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DepOnboardingSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DepOnboardingSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DepOnboardingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DepOnboardingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DepOnboardingSetting();
+            return new Microsoft.Graph.Beta.Models.DepOnboardingSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,10 +197,10 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "appleIdentifier", n => { AppleIdentifier = n.GetStringValue(); } },
                 { "dataSharingConsentGranted", n => { DataSharingConsentGranted = n.GetBoolValue(); } },
-                { "defaultIosEnrollmentProfile", n => { DefaultIosEnrollmentProfile = n.GetObjectValue<DepIOSEnrollmentProfile>(DepIOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
-                { "defaultMacOsEnrollmentProfile", n => { DefaultMacOsEnrollmentProfile = n.GetObjectValue<DepMacOSEnrollmentProfile>(DepMacOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
-                { "enrollmentProfiles", n => { EnrollmentProfiles = n.GetCollectionOfObjectValues<EnrollmentProfile>(EnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "importedAppleDeviceIdentities", n => { ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentity>(ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultIosEnrollmentProfile", n => { DefaultIosEnrollmentProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile>(Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
+                { "defaultMacOsEnrollmentProfile", n => { DefaultMacOsEnrollmentProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile>(Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
+                { "enrollmentProfiles", n => { EnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EnrollmentProfile>(Microsoft.Graph.Beta.Models.EnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importedAppleDeviceIdentities", n => { ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSuccessfulSyncDateTime", n => { LastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSyncErrorCode", n => { LastSyncErrorCode = n.GetIntValue(); } },
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "syncedDeviceCount", n => { SyncedDeviceCount = n.GetIntValue(); } },
                 { "tokenExpirationDateTime", n => { TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "tokenName", n => { TokenName = n.GetStringValue(); } },
-                { "tokenType", n => { TokenType = n.GetEnumValue<DepTokenType>(); } },
+                { "tokenType", n => { TokenType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DepTokenType>(); } },
             };
         }
         /// <summary>
@@ -223,10 +223,10 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("appleIdentifier", AppleIdentifier);
             writer.WriteBoolValue("dataSharingConsentGranted", DataSharingConsentGranted);
-            writer.WriteObjectValue<DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile", DefaultIosEnrollmentProfile);
-            writer.WriteObjectValue<DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile", DefaultMacOsEnrollmentProfile);
-            writer.WriteCollectionOfObjectValues<EnrollmentProfile>("enrollmentProfiles", EnrollmentProfiles);
-            writer.WriteCollectionOfObjectValues<ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", ImportedAppleDeviceIdentities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile", DefaultIosEnrollmentProfile);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile", DefaultMacOsEnrollmentProfile);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EnrollmentProfile>("enrollmentProfiles", EnrollmentProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", ImportedAppleDeviceIdentities);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("lastSuccessfulSyncDateTime", LastSuccessfulSyncDateTime);
             writer.WriteIntValue("lastSyncErrorCode", LastSyncErrorCode);
@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("syncedDeviceCount", SyncedDeviceCount);
             writer.WriteDateTimeOffsetValue("tokenExpirationDateTime", TokenExpirationDateTime);
             writer.WriteStringValue("tokenName", TokenName);
-            writer.WriteEnumValue<DepTokenType>("tokenType", TokenType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DepTokenType>("tokenType", TokenType);
         }
     }
 }

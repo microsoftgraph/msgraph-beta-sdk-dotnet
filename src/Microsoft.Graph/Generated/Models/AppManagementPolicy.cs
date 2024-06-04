@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AppManagementPolicy : PolicyBase, IParsable
+    public class AppManagementPolicy : Microsoft.Graph.Beta.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of application and service principals to which a policy is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? AppliesTo
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? AppliesTo
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> AppliesTo
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> AppliesTo
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #endif
@@ -35,21 +35,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Restrictions that apply to an application or service principal object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppManagementConfiguration? Restrictions
+        public Microsoft.Graph.Beta.Models.AppManagementConfiguration? Restrictions
         {
-            get { return BackingStore?.Get<AppManagementConfiguration?>("restrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppManagementConfiguration?>("restrictions"); }
             set { BackingStore?.Set("restrictions", value); }
         }
 #nullable restore
 #else
-        public AppManagementConfiguration Restrictions
+        public Microsoft.Graph.Beta.Models.AppManagementConfiguration Restrictions
         {
-            get { return BackingStore?.Get<AppManagementConfiguration>("restrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppManagementConfiguration>("restrictions"); }
             set { BackingStore?.Set("restrictions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppManagementPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppManagementPolicy"/> and sets the default values.
         /// </summary>
         public AppManagementPolicy() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppManagementPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppManagementPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AppManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppManagementPolicy();
+            return new Microsoft.Graph.Beta.Models.AppManagementPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "restrictions", n => { Restrictions = n.GetObjectValue<AppManagementConfiguration>(AppManagementConfiguration.CreateFromDiscriminatorValue); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppManagementConfiguration>(Microsoft.Graph.Beta.Models.AppManagementConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("appliesTo", AppliesTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("appliesTo", AppliesTo);
             writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteObjectValue<AppManagementConfiguration>("restrictions", Restrictions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppManagementConfiguration>("restrictions", Restrictions);
         }
     }
 }

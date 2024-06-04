@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
     public class GroupPolicyMigrationReportItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the groupPolicySettingMappings property of the microsoft.graph.groupPolicyMigrationReport entity.</summary>
-        public GroupPolicySettingMappingsRequestBuilder GroupPolicySettingMappings
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicySettingMappings.GroupPolicySettingMappingsRequestBuilder GroupPolicySettingMappings
         {
-            get => new GroupPolicySettingMappingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicySettingMappings.GroupPolicySettingMappingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.</summary>
-        public UnsupportedGroupPolicyExtensionsRequestBuilder UnsupportedGroupPolicyExtensions
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UnsupportedGroupPolicyExtensions.UnsupportedGroupPolicyExtensionsRequestBuilder UnsupportedGroupPolicyExtensions
         {
-            get => new UnsupportedGroupPolicyExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UnsupportedGroupPolicyExtensions.UnsupportedGroupPolicyExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateScopeTags method.</summary>
-        public UpdateScopeTagsRequestBuilder UpdateScopeTags
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UpdateScopeTags.UpdateScopeTagsRequestBuilder UpdateScopeTags
         {
-            get => new UpdateScopeTagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UpdateScopeTags.UpdateScopeTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyMigrationReportItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyMigrationReportItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,57 +68,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A list of Group Policy migration reports.
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyMigrationReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyMigrationReport?> GetAsync(Action<RequestConfiguration<GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder.GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupPolicyMigrationReport> GetAsync(Action<RequestConfiguration<GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder.GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, GroupPolicyMigrationReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>(requestInfo, Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property groupPolicyMigrationReports in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyMigrationReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyMigrationReport?> PatchAsync(GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport?> PatchAsync(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupPolicyMigrationReport> PatchAsync(GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport> PatchAsync(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, GroupPolicyMigrationReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>(requestInfo, Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property groupPolicyMigrationReports for deviceManagement
@@ -146,11 +146,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder.GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder.GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -166,11 +166,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -183,11 +183,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyMigrationReportItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupPolicyMigrationReportItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupPolicyMigrationReportItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupPolicyMigrationReportItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>
+        public class GroupPolicyMigrationReportItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicyMigrationReportItemRequestBuilder.GroupPolicyMigrationReportItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

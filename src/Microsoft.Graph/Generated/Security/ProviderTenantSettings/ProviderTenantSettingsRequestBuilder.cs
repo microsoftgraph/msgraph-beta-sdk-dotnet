@@ -20,25 +20,25 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Security.ProviderTenantSettings.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.ProviderTenantSettings.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of providerTenantSetting</param>
-        /// <returns>A <see cref="ProviderTenantSettingItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item.ProviderTenantSettingItemRequestBuilder"/></returns>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public ProviderTenantSettingItemRequestBuilder this[string position]
+        public Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item.ProviderTenantSettingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("providerTenantSetting%2Did", position);
-                return new ProviderTenantSettingItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item.ProviderTenantSettingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProviderTenantSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProviderTenantSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,52 +56,52 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
         /// <summary>
         /// Get providerTenantSettings from security
         /// </summary>
-        /// <returns>A <see cref="ProviderTenantSettingCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProviderTenantSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProviderTenantSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProviderTenantSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder.ProviderTenantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProviderTenantSettingCollectionResponse> GetAsync(Action<RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProviderTenantSettingCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder.ProviderTenantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProviderTenantSettingCollectionResponse>(requestInfo, ProviderTenantSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProviderTenantSettingCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ProviderTenantSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to providerTenantSettings for security
         /// </summary>
-        /// <returns>A <see cref="ProviderTenantSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProviderTenantSetting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProviderTenantSetting?> PostAsync(ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProviderTenantSetting?> PostAsync(Microsoft.Graph.Beta.Models.ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProviderTenantSetting> PostAsync(ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProviderTenantSetting> PostAsync(Microsoft.Graph.Beta.Models.ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProviderTenantSetting>(requestInfo, Microsoft.Graph.Beta.Models.ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get providerTenantSettings from security
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder.ProviderTenantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder.ProviderTenantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProviderTenantSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProviderTenantSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public ProviderTenantSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProviderTenantSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get providerTenantSettings from security
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ProviderTenantSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters>
+        public class ProviderTenantSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.ProviderTenantSettings.ProviderTenantSettingsRequestBuilder.ProviderTenantSettingsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

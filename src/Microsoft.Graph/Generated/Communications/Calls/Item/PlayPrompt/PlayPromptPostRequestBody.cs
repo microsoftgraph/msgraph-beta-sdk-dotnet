@@ -45,21 +45,21 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt
         /// <summary>The prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Prompt>? Prompts
+        public List<Microsoft.Graph.Beta.Models.Prompt>? Prompts
         {
-            get { return BackingStore?.Get<List<Prompt>?>("prompts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Prompt>?>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
 #nullable restore
 #else
-        public List<Prompt> Prompts
+        public List<Microsoft.Graph.Beta.Models.Prompt> Prompts
         {
-            get { return BackingStore?.Get<List<Prompt>>("prompts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Prompt>>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlayPromptPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt.PlayPromptPostRequestBody"/> and sets the default values.
         /// </summary>
         public PlayPromptPostRequestBody()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlayPromptPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt.PlayPromptPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlayPromptPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt.PlayPromptPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlayPromptPostRequestBody();
+            return new Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt.PlayPromptPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt
             {
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
                 { "loop", n => { Loop = n.GetBoolValue(); } },
-                { "prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "prompts", n => { Prompts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Prompt>(Microsoft.Graph.Beta.Models.Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientContext", ClientContext);
             writer.WriteBoolValue("loop", Loop);
-            writer.WriteCollectionOfObjectValues<Prompt>("prompts", Prompts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Prompt>("prompts", Prompts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

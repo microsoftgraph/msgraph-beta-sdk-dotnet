@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
 {
     [Obsolete("This class is obsolete. Use SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SummarizeDeviceResourcePerformanceWithSummarizeByResponse : SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse, IParsable
+    public class SummarizeDeviceResourcePerformanceWithSummarizeByResponse : Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy.SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy.SummarizeDeviceResourcePerformanceWithSummarizeByResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SummarizeDeviceResourcePerformanceWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy.SummarizeDeviceResourcePerformanceWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SummarizeDeviceResourcePerformanceWithSummarizeByResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy.SummarizeDeviceResourcePerformanceWithSummarizeByResponse();
         }
     }
 }

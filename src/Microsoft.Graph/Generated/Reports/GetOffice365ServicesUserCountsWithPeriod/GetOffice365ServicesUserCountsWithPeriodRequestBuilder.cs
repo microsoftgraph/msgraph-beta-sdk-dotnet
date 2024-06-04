@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
     public class GetOffice365ServicesUserCountsWithPeriodRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetOffice365ServicesUserCountsWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetOffice365ServicesUserCountsWithPeriodRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,49 +36,49 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
         /// <summary>
         /// Invoke function getOffice365ServicesUserCounts
         /// </summary>
-        /// <returns>A <see cref="GetOffice365ServicesUserCountsWithPeriodGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365ServicesUserCountsWithPeriodGetResponse?> GetAsGetOffice365ServicesUserCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse?> GetAsGetOffice365ServicesUserCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetOffice365ServicesUserCountsWithPeriodGetResponse> GetAsGetOffice365ServicesUserCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse> GetAsGetOffice365ServicesUserCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetOffice365ServicesUserCountsWithPeriodGetResponse>(requestInfo, GetOffice365ServicesUserCountsWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse>(requestInfo, Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365ServicesUserCounts
         /// </summary>
-        /// <returns>A <see cref="GetOffice365ServicesUserCountsWithPeriodResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetOffice365ServicesUserCountsWithPeriodGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365ServicesUserCountsWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetOffice365ServicesUserCountsWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetOffice365ServicesUserCountsWithPeriodResponse>(requestInfo, GetOffice365ServicesUserCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodResponse>(requestInfo, Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365ServicesUserCounts
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetOffice365ServicesUserCountsWithPeriodRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetOffice365ServicesUserCountsWithPeriodRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetOffice365ServicesUserCountsWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getOffice365ServicesUserCounts
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>
+        public class GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodRequestBuilder.GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters>
         {
         }
     }

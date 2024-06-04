@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RecommendationBase : Entity, IParsable
+    public class RecommendationBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions to take to complete a recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActionStep>? ActionSteps
+        public List<Microsoft.Graph.Beta.Models.ActionStep>? ActionSteps
         {
-            get { return BackingStore?.Get<List<ActionStep>?>("actionSteps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionStep>?>("actionSteps"); }
             set { BackingStore?.Set("actionSteps", value); }
         }
 #nullable restore
 #else
-        public List<ActionStep> ActionSteps
+        public List<Microsoft.Graph.Beta.Models.ActionStep> ActionSteps
         {
-            get { return BackingStore?.Get<List<ActionStep>>("actionSteps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionStep>>("actionSteps"); }
             set { BackingStore?.Set("actionSteps", value); }
         }
 #endif
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The category property</summary>
-        public RecommendationCategory? Category
+        public Microsoft.Graph.Beta.Models.RecommendationCategory? Category
         {
-            get { return BackingStore?.Get<RecommendationCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecommendationCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The date and time when the recommendation was detected as applicable to your directory.</summary>
@@ -79,32 +79,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The directory feature that the recommendation is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RecommendationFeatureAreas?>? FeatureAreas
+        public List<Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?>? FeatureAreas
         {
-            get { return BackingStore?.Get<List<RecommendationFeatureAreas?>?>("featureAreas"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?>?>("featureAreas"); }
             set { BackingStore?.Set("featureAreas", value); }
         }
 #nullable restore
 #else
-        public List<RecommendationFeatureAreas?> FeatureAreas
+        public List<Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?> FeatureAreas
         {
-            get { return BackingStore?.Get<List<RecommendationFeatureAreas?>>("featureAreas"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RecommendationFeatureAreas?>>("featureAreas"); }
             set { BackingStore?.Set("featureAreas", value); }
         }
 #endif
         /// <summary>The list of directory objects associated with the recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImpactedResource>? ImpactedResources
+        public List<Microsoft.Graph.Beta.Models.ImpactedResource>? ImpactedResources
         {
-            get { return BackingStore?.Get<List<ImpactedResource>?>("impactedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImpactedResource>?>("impactedResources"); }
             set { BackingStore?.Set("impactedResources", value); }
         }
 #nullable restore
 #else
-        public List<ImpactedResource> ImpactedResources
+        public List<Microsoft.Graph.Beta.Models.ImpactedResource> ImpactedResources
         {
-            get { return BackingStore?.Get<List<ImpactedResource>>("impactedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImpactedResource>>("impactedResources"); }
             set { BackingStore?.Set("impactedResources", value); }
         }
 #endif
@@ -187,9 +187,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("postponeUntilDateTime", value); }
         }
         /// <summary>The priority property</summary>
-        public RecommendationPriority? Priority
+        public Microsoft.Graph.Beta.Models.RecommendationPriority? Priority
         {
-            get { return BackingStore?.Get<RecommendationPriority?>("priority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecommendationPriority?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue, longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests, aadGraphDeprecationApplication, aadGraphDeprecationServicePrincipal, mfaServerDeprecation. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: longLivedCredentials, aadConnectDeprecated, adalToMsalMigration, ownerlessApps, inactiveGuests.</summary>
@@ -237,24 +237,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requiredLicenses", value); }
         }
         /// <summary>The status property</summary>
-        public RecommendationStatus? Status
+        public Microsoft.Graph.Beta.Models.RecommendationStatus? Status
         {
-            get { return BackingStore?.Get<RecommendationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecommendationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecommendationBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecommendationBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RecommendationBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RecommendationBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.recommendation" => new Recommendation(),
-                _ => new RecommendationBase(),
+                "#microsoft.graph.recommendation" => new Microsoft.Graph.Beta.Models.Recommendation(),
+                _ => new Microsoft.Graph.Beta.Models.RecommendationBase(),
             };
         }
         /// <summary>
@@ -265,28 +265,28 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actionSteps", n => { ActionSteps = n.GetCollectionOfObjectValues<ActionStep>(ActionStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actionSteps", n => { ActionSteps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionStep>(Microsoft.Graph.Beta.Models.ActionStep.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "benefits", n => { Benefits = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<RecommendationCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecommendationCategory>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "currentScore", n => { CurrentScore = n.GetDoubleValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "featureAreas", n => { FeatureAreas = n.GetCollectionOfEnumValues<RecommendationFeatureAreas>()?.ToList(); } },
+                { "featureAreas", n => { FeatureAreas = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.RecommendationFeatureAreas>()?.ToList(); } },
                 { "impactStartDateTime", n => { ImpactStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "impactType", n => { ImpactType = n.GetStringValue(); } },
-                { "impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<ImpactedResource>(ImpactedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImpactedResource>(Microsoft.Graph.Beta.Models.ImpactedResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "insights", n => { Insights = n.GetStringValue(); } },
                 { "lastCheckedDateTime", n => { LastCheckedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "maxScore", n => { MaxScore = n.GetDoubleValue(); } },
                 { "postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<RecommendationPriority>(); } },
-                { "recommendationType", n => { RecommendationType = n.GetEnumValue<RecommendationType>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecommendationPriority>(); } },
+                { "recommendationType", n => { RecommendationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecommendationType>(); } },
                 { "releaseType", n => { ReleaseType = n.GetStringValue(); } },
                 { "remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
-                { "requiredLicenses", n => { RequiredLicenses = n.GetEnumValue<RequiredLicenses>(); } },
-                { "status", n => { Status = n.GetEnumValue<RecommendationStatus>(); } },
+                { "requiredLicenses", n => { RequiredLicenses = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequiredLicenses>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecommendationStatus>(); } },
             };
         }
         /// <summary>
@@ -297,14 +297,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ActionStep>("actionSteps", ActionSteps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionStep>("actionSteps", ActionSteps);
             writer.WriteStringValue("benefits", Benefits);
-            writer.WriteEnumValue<RecommendationCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecommendationCategory>("category", Category);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDoubleValue("currentScore", CurrentScore);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfEnumValues<RecommendationFeatureAreas>("featureAreas", FeatureAreas);
-            writer.WriteCollectionOfObjectValues<ImpactedResource>("impactedResources", ImpactedResources);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.RecommendationFeatureAreas>("featureAreas", FeatureAreas);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImpactedResource>("impactedResources", ImpactedResources);
             writer.WriteDateTimeOffsetValue("impactStartDateTime", ImpactStartDateTime);
             writer.WriteStringValue("impactType", ImpactType);
             writer.WriteStringValue("insights", Insights);
@@ -313,12 +313,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDoubleValue("maxScore", MaxScore);
             writer.WriteDateTimeOffsetValue("postponeUntilDateTime", PostponeUntilDateTime);
-            writer.WriteEnumValue<RecommendationPriority>("priority", Priority);
-            writer.WriteEnumValue<RecommendationType>("recommendationType", RecommendationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecommendationPriority>("priority", Priority);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecommendationType>("recommendationType", RecommendationType);
             writer.WriteStringValue("releaseType", ReleaseType);
             writer.WriteStringValue("remediationImpact", RemediationImpact);
-            writer.WriteEnumValue<RequiredLicenses>("requiredLicenses", RequiredLicenses);
-            writer.WriteEnumValue<RecommendationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequiredLicenses>("requiredLicenses", RequiredLicenses);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecommendationStatus>("status", Status);
         }
     }
 }

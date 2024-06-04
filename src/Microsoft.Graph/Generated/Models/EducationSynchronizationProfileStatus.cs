@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationSynchronizationProfileStatus : Entity, IParsable
+    public class EducationSynchronizationProfileStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of errors during synchronization.</summary>
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastSynchronizationDateTime", value); }
         }
         /// <summary>The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.</summary>
-        public EducationSynchronizationStatus? Status
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationStatus? Status
         {
-            get { return BackingStore?.Get<EducationSynchronizationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Status message for the synchronization stage of the current profile.</summary>
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationSynchronizationProfileStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationSynchronizationProfileStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationSynchronizationProfileStatus();
+            return new Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "errorCount", n => { ErrorCount = n.GetLongValue(); } },
                 { "lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSynchronizationDateTime", n => { LastSynchronizationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<EducationSynchronizationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.EducationSynchronizationStatus>(); } },
                 { "statusMessage", n => { StatusMessage = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteLongValue("errorCount", ErrorCount);
             writer.WriteDateTimeOffsetValue("lastActivityDateTime", LastActivityDateTime);
             writer.WriteDateTimeOffsetValue("lastSynchronizationDateTime", LastSynchronizationDateTime);
-            writer.WriteEnumValue<EducationSynchronizationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EducationSynchronizationStatus>("status", Status);
             writer.WriteStringValue("statusMessage", StatusMessage);
         }
     }

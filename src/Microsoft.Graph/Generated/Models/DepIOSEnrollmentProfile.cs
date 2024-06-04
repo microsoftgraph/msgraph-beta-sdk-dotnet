@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The DepIOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to iOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
     /// </summary>
-    public class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable
+    public class DepIOSEnrollmentProfile : Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile, IParsable
     {
         /// <summary>Indicates if Apperance screen is disabled</summary>
         public bool? AppearanceScreenDisabled
@@ -106,16 +106,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Management certificates for Apple Configurator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementCertificateWithThumbprint>? ManagementCertificates
+        public List<Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint>? ManagementCertificates
         {
-            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>?>("managementCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint>?>("managementCertificates"); }
             set { BackingStore?.Set("managementCertificates", value); }
         }
 #nullable restore
 #else
-        public List<ManagementCertificateWithThumbprint> ManagementCertificates
+        public List<Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint> ManagementCertificates
         {
-            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint>>("managementCertificates"); }
             set { BackingStore?.Set("managementCertificates", value); }
         }
 #endif
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DepIOSEnrollmentProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile"/> and sets the default values.
         /// </summary>
         public DepIOSEnrollmentProfile() : base()
         {
@@ -225,12 +225,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DepIOSEnrollmentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DepIOSEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DepIOSEnrollmentProfile();
+            return new Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -251,8 +251,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "forceTemporarySession", n => { ForceTemporarySession = n.GetBoolValue(); } },
                 { "homeButtonScreenDisabled", n => { HomeButtonScreenDisabled = n.GetBoolValue(); } },
                 { "iMessageAndFaceTimeScreenDisabled", n => { IMessageAndFaceTimeScreenDisabled = n.GetBoolValue(); } },
-                { "iTunesPairingMode", n => { ITunesPairingMode = n.GetEnumValue<ITunesPairingMode>(); } },
-                { "managementCertificates", n => { ManagementCertificates = n.GetCollectionOfObjectValues<ManagementCertificateWithThumbprint>(ManagementCertificateWithThumbprint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iTunesPairingMode", n => { ITunesPairingMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.ITunesPairingMode>(); } },
+                { "managementCertificates", n => { ManagementCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint>(Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "onBoardingScreenDisabled", n => { OnBoardingScreenDisabled = n.GetBoolValue(); } },
                 { "passCodeDisabled", n => { PassCodeDisabled = n.GetBoolValue(); } },
                 { "passcodeLockGracePeriodInSeconds", n => { PasscodeLockGracePeriodInSeconds = n.GetIntValue(); } },
@@ -290,8 +290,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("forceTemporarySession", ForceTemporarySession);
             writer.WriteBoolValue("homeButtonScreenDisabled", HomeButtonScreenDisabled);
             writer.WriteBoolValue("iMessageAndFaceTimeScreenDisabled", IMessageAndFaceTimeScreenDisabled);
-            writer.WriteEnumValue<ITunesPairingMode>("iTunesPairingMode", ITunesPairingMode);
-            writer.WriteCollectionOfObjectValues<ManagementCertificateWithThumbprint>("managementCertificates", ManagementCertificates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ITunesPairingMode>("iTunesPairingMode", ITunesPairingMode);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint>("managementCertificates", ManagementCertificates);
             writer.WriteBoolValue("onBoardingScreenDisabled", OnBoardingScreenDisabled);
             writer.WriteBoolValue("passCodeDisabled", PassCodeDisabled);
             writer.WriteIntValue("passcodeLockGracePeriodInSeconds", PasscodeLockGracePeriodInSeconds);

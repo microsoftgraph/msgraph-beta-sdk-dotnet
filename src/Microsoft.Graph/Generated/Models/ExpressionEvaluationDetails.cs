@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the details of the evaluation of the expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExpressionEvaluationDetails>? ExpressionEvaluationDetailsProp
+        public List<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>? ExpressionEvaluationDetailsProp
         {
-            get { return BackingStore?.Get<List<ExpressionEvaluationDetails>?>("expressionEvaluationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>?>("expressionEvaluationDetails"); }
             set { BackingStore?.Set("expressionEvaluationDetails", value); }
         }
 #nullable restore
 #else
-        public List<ExpressionEvaluationDetails> ExpressionEvaluationDetailsProp
+        public List<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails> ExpressionEvaluationDetailsProp
         {
-            get { return BackingStore?.Get<List<ExpressionEvaluationDetails>>("expressionEvaluationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>>("expressionEvaluationDetails"); }
             set { BackingStore?.Set("expressionEvaluationDetails", value); }
         }
 #endif
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExpressionEvaluationDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails"/> and sets the default values.
         /// </summary>
         public ExpressionEvaluationDetails()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExpressionEvaluationDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExpressionEvaluationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExpressionEvaluationDetails();
+            return new Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "expression", n => { Expression = n.GetStringValue(); } },
-                { "expressionEvaluationDetails", n => { ExpressionEvaluationDetailsProp = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "expressionEvaluationDetails", n => { ExpressionEvaluationDetailsProp = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>(Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "expressionResult", n => { ExpressionResult = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "propertyToEvaluate", n => { PropertyToEvaluate = n.GetObjectValue<Microsoft.Graph.Beta.Models.PropertyToEvaluate>(Microsoft.Graph.Beta.Models.PropertyToEvaluate.CreateFromDiscriminatorValue); } },
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("expression", Expression);
-            writer.WriteCollectionOfObjectValues<ExpressionEvaluationDetails>("expressionEvaluationDetails", ExpressionEvaluationDetailsProp);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>("expressionEvaluationDetails", ExpressionEvaluationDetailsProp);
             writer.WriteBoolValue("expressionResult", ExpressionResult);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PropertyToEvaluate>("propertyToEvaluate", PropertyToEvaluate);

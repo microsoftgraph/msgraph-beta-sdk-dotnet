@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Channel : Entity, IParsable
+    public class Channel : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DriveItem? FilesFolder
+        public Microsoft.Graph.Beta.Models.DriveItem? FilesFolder
         {
-            get { return BackingStore?.Get<DriveItem?>("filesFolder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("filesFolder"); }
             set { BackingStore?.Set("filesFolder", value); }
         }
 #nullable restore
 #else
-        public DriveItem FilesFolder
+        public Microsoft.Graph.Beta.Models.DriveItem FilesFolder
         {
-            get { return BackingStore?.Get<DriveItem>("filesFolder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("filesFolder"); }
             set { BackingStore?.Set("filesFolder", value); }
         }
 #endif
@@ -95,102 +95,102 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationMember>? Members
+        public List<Microsoft.Graph.Beta.Models.ConversationMember>? Members
         {
-            get { return BackingStore?.Get<List<ConversationMember>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConversationMember>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<ConversationMember> Members
+        public List<Microsoft.Graph.Beta.Models.ConversationMember> Members
         {
-            get { return BackingStore?.Get<List<ConversationMember>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConversationMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
         /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
-        public ChannelMembershipType? MembershipType
+        public Microsoft.Graph.Beta.Models.ChannelMembershipType? MembershipType
         {
-            get { return BackingStore?.Get<ChannelMembershipType?>("membershipType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelMembershipType?>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
         }
         /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Messages
+        public List<Microsoft.Graph.Beta.Models.ChatMessage>? Messages
         {
-            get { return BackingStore?.Get<List<ChatMessage>?>("messages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChatMessage>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Messages
+        public List<Microsoft.Graph.Beta.Models.ChatMessage> Messages
         {
-            get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChatMessage>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #endif
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChannelModerationSettings? ModerationSettings
+        public Microsoft.Graph.Beta.Models.ChannelModerationSettings? ModerationSettings
         {
-            get { return BackingStore?.Get<ChannelModerationSettings?>("moderationSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelModerationSettings?>("moderationSettings"); }
             set { BackingStore?.Set("moderationSettings", value); }
         }
 #nullable restore
 #else
-        public ChannelModerationSettings ModerationSettings
+        public Microsoft.Graph.Beta.Models.ChannelModerationSettings ModerationSettings
         {
-            get { return BackingStore?.Get<ChannelModerationSettings>("moderationSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelModerationSettings>("moderationSettings"); }
             set { BackingStore?.Set("moderationSettings", value); }
         }
 #endif
         /// <summary>A collection of teams with which a channel is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedWithChannelTeamInfo>? SharedWithTeams
+        public List<Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>? SharedWithTeams
         {
-            get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>?>("sharedWithTeams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>?>("sharedWithTeams"); }
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
 #nullable restore
 #else
-        public List<SharedWithChannelTeamInfo> SharedWithTeams
+        public List<Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo> SharedWithTeams
         {
-            get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>("sharedWithTeams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>>("sharedWithTeams"); }
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
 #endif
         /// <summary>Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChannelSummary? Summary
+        public Microsoft.Graph.Beta.Models.ChannelSummary? Summary
         {
-            get { return BackingStore?.Get<ChannelSummary?>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelSummary?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public ChannelSummary Summary
+        public Microsoft.Graph.Beta.Models.ChannelSummary Summary
         {
-            get { return BackingStore?.Get<ChannelSummary>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelSummary>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #endif
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamsTab>? Tabs
+        public List<Microsoft.Graph.Beta.Models.TeamsTab>? Tabs
         {
-            get { return BackingStore?.Get<List<TeamsTab>?>("tabs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamsTab>?>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
 #nullable restore
 #else
-        public List<TeamsTab> Tabs
+        public List<Microsoft.Graph.Beta.Models.TeamsTab> Tabs
         {
-            get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamsTab>>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
 #endif
@@ -229,12 +229,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Channel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Channel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Channel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Channel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Channel();
+            return new Microsoft.Graph.Beta.Models.Channel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -248,16 +248,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "filesFolder", n => { FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
+                { "filesFolder", n => { FilesFolder = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "membershipType", n => { MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "moderationSettings", n => { ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(ChannelModerationSettings.CreateFromDiscriminatorValue); } },
-                { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "summary", n => { Summary = n.GetObjectValue<ChannelSummary>(ChannelSummary.CreateFromDiscriminatorValue); } },
-                { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConversationMember>(Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "membershipType", n => { MembershipType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ChannelMembershipType>(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChatMessage>(Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "moderationSettings", n => { ModerationSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChannelModerationSettings>(Microsoft.Graph.Beta.Models.ChannelModerationSettings.CreateFromDiscriminatorValue); } },
+                { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>(Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "summary", n => { Summary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChannelSummary>(Microsoft.Graph.Beta.Models.ChannelSummary.CreateFromDiscriminatorValue); } },
+                { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamsTab>(Microsoft.Graph.Beta.Models.TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -274,16 +274,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<DriveItem>("filesFolder", FilesFolder);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
-            writer.WriteCollectionOfObjectValues<ConversationMember>("members", Members);
-            writer.WriteEnumValue<ChannelMembershipType>("membershipType", MembershipType);
-            writer.WriteCollectionOfObjectValues<ChatMessage>("messages", Messages);
-            writer.WriteObjectValue<ChannelModerationSettings>("moderationSettings", ModerationSettings);
-            writer.WriteCollectionOfObjectValues<SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
-            writer.WriteObjectValue<ChannelSummary>("summary", Summary);
-            writer.WriteCollectionOfObjectValues<TeamsTab>("tabs", Tabs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConversationMember>("members", Members);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ChannelMembershipType>("membershipType", MembershipType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChatMessage>("messages", Messages);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChannelModerationSettings>("moderationSettings", ModerationSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChannelSummary>("summary", Summary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamsTab>("tabs", Tabs);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("webUrl", WebUrl);
         }

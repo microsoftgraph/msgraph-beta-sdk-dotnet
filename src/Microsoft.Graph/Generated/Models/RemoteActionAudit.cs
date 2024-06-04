@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Report of remote actions initiated on the devices belonging to a certain tenant.
     /// </summary>
-    public class RemoteActionAudit : Entity, IParsable
+    public class RemoteActionAudit : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Remote actions Intune supports.</summary>
-        public RemoteAction? Action
+        public Microsoft.Graph.Beta.Models.RemoteAction? Action
         {
-            get { return BackingStore?.Get<RemoteAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The actionState property</summary>
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteActionAudit"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RemoteActionAudit"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RemoteActionAudit CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RemoteActionAudit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteActionAudit();
+            return new Microsoft.Graph.Beta.Models.RemoteActionAudit();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,8 +143,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<RemoteAction>(); } },
-                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.RemoteAction>(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ActionState>(); } },
                 { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
                 { "deviceIMEI", n => { DeviceIMEI = n.GetStringValue(); } },
                 { "deviceOwnerUserPrincipalName", n => { DeviceOwnerUserPrincipalName = n.GetStringValue(); } },
@@ -162,8 +162,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<RemoteAction>("action", Action);
-            writer.WriteEnumValue<ActionState>("actionState", ActionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RemoteAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ActionState>("actionState", ActionState);
             writer.WriteStringValue("deviceDisplayName", DeviceDisplayName);
             writer.WriteStringValue("deviceIMEI", DeviceIMEI);
             writer.WriteStringValue("deviceOwnerUserPrincipalName", DeviceOwnerUserPrincipalName);

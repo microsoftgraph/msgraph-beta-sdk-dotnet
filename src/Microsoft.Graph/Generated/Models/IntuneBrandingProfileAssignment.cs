@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity contains the properties used to assign a branding profile to a group.
     /// </summary>
-    public class IntuneBrandingProfileAssignment : Entity, IParsable
+    public class IntuneBrandingProfileAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Assignment target that the branding profile is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IntuneBrandingProfileAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IntuneBrandingProfileAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IntuneBrandingProfileAssignment();
+            return new Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

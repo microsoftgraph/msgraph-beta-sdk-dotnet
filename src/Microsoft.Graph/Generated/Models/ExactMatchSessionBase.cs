@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExactMatchSessionBase : ExactMatchJobBase, IParsable
+    public class ExactMatchSessionBase : Microsoft.Graph.Beta.Models.ExactMatchJobBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dataStoreId property</summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uploadCompletionDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExactMatchSessionBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExactMatchSessionBase"/> and sets the default values.
         /// </summary>
         public ExactMatchSessionBase() : base()
         {
@@ -88,16 +88,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExactMatchSessionBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchSessionBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExactMatchSessionBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExactMatchSessionBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.exactMatchSession" => new ExactMatchSession(),
-                _ => new ExactMatchSessionBase(),
+                "#microsoft.graph.exactMatchSession" => new Microsoft.Graph.Beta.Models.ExactMatchSession(),
+                _ => new Microsoft.Graph.Beta.Models.ExactMatchSessionBase(),
             };
         }
         /// <summary>

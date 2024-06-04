@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Event representing an Apple Vpp Token Troubleshooting Event.
     /// </summary>
-    public class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable
+    public class AppleVppTokenTroubleshootingEvent : Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent, IParsable
     {
         /// <summary>Apple Volume Purchase Program Token Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppleVppTokenTroubleshootingEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppleVppTokenTroubleshootingEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppleVppTokenTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AppleVppTokenTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppleVppTokenTroubleshootingEvent();
+            return new Microsoft.Graph.Beta.Models.AppleVppTokenTroubleshootingEvent();
         }
         /// <summary>
         /// The deserialization information for the current model

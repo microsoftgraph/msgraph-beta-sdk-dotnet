@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Windows 10 Device Mode type.</summary>
-        public Windows10DeviceModeType? DeviceMode
+        public Microsoft.Graph.Beta.Models.Windows10DeviceModeType? DeviceMode
         {
-            get { return BackingStore?.Get<Windows10DeviceModeType?>("deviceMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10DeviceModeType?>("deviceMode"); }
             set { BackingStore?.Set("deviceMode", value); }
         }
         /// <summary>Name for object.</summary>
@@ -58,13 +58,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported Applicability rule types for Device Configuration</summary>
-        public DeviceManagementApplicabilityRuleType? RuleType
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleType? RuleType
         {
-            get { return BackingStore?.Get<DeviceManagementApplicabilityRuleType?>("ruleType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleType?>("ruleType"); }
             set { BackingStore?.Set("ruleType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementApplicabilityRuleDeviceMode"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode"/> and sets the default values.
         /// </summary>
         public DeviceManagementApplicabilityRuleDeviceMode()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementApplicabilityRuleDeviceMode"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementApplicabilityRuleDeviceMode CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementApplicabilityRuleDeviceMode();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceMode", n => { DeviceMode = n.GetEnumValue<Windows10DeviceModeType>(); } },
+                { "deviceMode", n => { DeviceMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.Windows10DeviceModeType>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
+                { "ruleType", n => { RuleType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleType>(); } },
             };
         }
         /// <summary>
@@ -102,10 +102,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<Windows10DeviceModeType>("deviceMode", DeviceMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Windows10DeviceModeType>("deviceMode", DeviceMode);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeviceManagementApplicabilityRuleType>("ruleType", RuleType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleType>("ruleType", RuleType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

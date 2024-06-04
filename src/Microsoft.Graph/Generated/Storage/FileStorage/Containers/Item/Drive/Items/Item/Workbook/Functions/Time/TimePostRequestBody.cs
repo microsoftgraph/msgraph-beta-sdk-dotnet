@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The hour property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Hour
+        public Microsoft.Graph.Beta.Models.Json? Hour
         {
-            get { return BackingStore?.Get<Json?>("hour"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("hour"); }
             set { BackingStore?.Set("hour", value); }
         }
 #nullable restore
 #else
-        public Json Hour
+        public Microsoft.Graph.Beta.Models.Json Hour
         {
-            get { return BackingStore?.Get<Json>("hour"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("hour"); }
             set { BackingStore?.Set("hour", value); }
         }
 #endif
         /// <summary>The minute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Minute
+        public Microsoft.Graph.Beta.Models.Json? Minute
         {
-            get { return BackingStore?.Get<Json?>("minute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("minute"); }
             set { BackingStore?.Set("minute", value); }
         }
 #nullable restore
 #else
-        public Json Minute
+        public Microsoft.Graph.Beta.Models.Json Minute
         {
-            get { return BackingStore?.Get<Json>("minute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("minute"); }
             set { BackingStore?.Set("minute", value); }
         }
 #endif
         /// <summary>The second property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Second
+        public Microsoft.Graph.Beta.Models.Json? Second
         {
-            get { return BackingStore?.Get<Json?>("second"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("second"); }
             set { BackingStore?.Set("second", value); }
         }
 #nullable restore
 #else
-        public Json Second
+        public Microsoft.Graph.Beta.Models.Json Second
         {
-            get { return BackingStore?.Get<Json>("second"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("second"); }
             set { BackingStore?.Set("second", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Time.TimePostRequestBody"/> and sets the default values.
         /// </summary>
         public TimePostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Time.TimePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Time.TimePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimePostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Time.TimePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hour", n => { Hour = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "minute", n => { Minute = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "second", n => { Second = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "hour", n => { Hour = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "minute", n => { Minute = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "second", n => { Second = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("hour", Hour);
-            writer.WriteObjectValue<Json>("minute", Minute);
-            writer.WriteObjectValue<Json>("second", Second);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("hour", Hour);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("minute", Minute);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("second", Second);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

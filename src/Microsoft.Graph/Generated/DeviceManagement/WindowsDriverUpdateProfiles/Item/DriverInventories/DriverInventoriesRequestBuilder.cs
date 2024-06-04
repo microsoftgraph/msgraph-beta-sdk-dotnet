@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
     public class DriverInventoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.</summary>
         /// <param name="position">The unique identifier of windowsDriverUpdateInventory</param>
-        /// <returns>A <see cref="WindowsDriverUpdateInventoryItemRequestBuilder"/></returns>
-        public WindowsDriverUpdateInventoryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item.WindowsDriverUpdateInventoryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item.WindowsDriverUpdateInventoryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("windowsDriverUpdateInventory%2Did", position);
-                return new WindowsDriverUpdateInventoryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item.WindowsDriverUpdateInventoryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DriverInventoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DriverInventoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// <summary>
         /// Driver inventories for this profile.
         /// </summary>
-        /// <returns>A <see cref="WindowsDriverUpdateInventoryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsDriverUpdateInventoryCollectionResponse?> GetAsync(Action<RequestConfiguration<DriverInventoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventoryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder.DriverInventoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsDriverUpdateInventoryCollectionResponse> GetAsync(Action<RequestConfiguration<DriverInventoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventoryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder.DriverInventoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsDriverUpdateInventoryCollectionResponse>(requestInfo, WindowsDriverUpdateInventoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventoryCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to driverInventories for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="WindowsDriverUpdateInventory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsDriverUpdateInventory?> PostAsync(WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory?> PostAsync(Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsDriverUpdateInventory> PostAsync(WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory> PostAsync(Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsDriverUpdateInventory>(requestInfo, WindowsDriverUpdateInventory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory>(requestInfo, Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Driver inventories for this profile.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriverInventoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder.DriverInventoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriverInventoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder.DriverInventoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DriverInventoriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DriverInventoriesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DriverInventoriesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Driver inventories for this profile.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DriverInventoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<DriverInventoriesRequestBuilderGetQueryParameters>
+        public class DriverInventoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.DriverInventoriesRequestBuilder.DriverInventoriesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

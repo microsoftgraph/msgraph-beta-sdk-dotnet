@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class InformationProtectionLabel : Entity, IParsable
+    public class InformationProtectionLabel : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The parent label associated with a child label. Null if label has no parent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParentLabelDetails? Parent
+        public Microsoft.Graph.Beta.Models.ParentLabelDetails? Parent
         {
-            get { return BackingStore?.Get<ParentLabelDetails?>("parent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParentLabelDetails?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public ParentLabelDetails Parent
+        public Microsoft.Graph.Beta.Models.ParentLabelDetails Parent
         {
-            get { return BackingStore?.Get<ParentLabelDetails>("parent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParentLabelDetails>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #endif
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InformationProtectionLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InformationProtectionLabel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InformationProtectionLabel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.InformationProtectionLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InformationProtectionLabel();
+            return new Microsoft.Graph.Beta.Models.InformationProtectionLabel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent", n => { Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
+                { "parent", n => { Parent = n.GetObjectValue<Microsoft.Graph.Beta.Models.ParentLabelDetails>(Microsoft.Graph.Beta.Models.ParentLabelDetails.CreateFromDiscriminatorValue); } },
                 { "sensitivity", n => { Sensitivity = n.GetIntValue(); } },
                 { "tooltip", n => { Tooltip = n.GetStringValue(); } },
             };
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<ParentLabelDetails>("parent", Parent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ParentLabelDetails>("parent", Parent);
             writer.WriteIntValue("sensitivity", Sensitivity);
             writer.WriteStringValue("tooltip", Tooltip);
         }

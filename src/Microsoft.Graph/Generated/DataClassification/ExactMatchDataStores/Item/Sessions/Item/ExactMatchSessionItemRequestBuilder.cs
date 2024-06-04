@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
     public class ExactMatchSessionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel
+        public Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the commit method.</summary>
-        public CommitRequestBuilder Commit
+        public Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Commit.CommitRequestBuilder Commit
         {
-            get => new CommitRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Commit.CommitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the renew method.</summary>
-        public RenewRequestBuilder Renew
+        public Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Renew.RenewRequestBuilder Renew
         {
-            get => new RenewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Renew.RenewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the uploadAgent property of the microsoft.graph.exactMatchSession entity.</summary>
-        public UploadAgentRequestBuilder UploadAgent
+        public Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.UploadAgent.UploadAgentRequestBuilder UploadAgent
         {
-            get => new UploadAgentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.UploadAgent.UploadAgentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExactMatchSessionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExactMatchSessionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,57 +74,57 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sessions from dataClassification
         /// </summary>
-        /// <returns>A <see cref="ExactMatchSession"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExactMatchSession?> GetAsync(Action<RequestConfiguration<ExactMatchSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExactMatchSession?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder.ExactMatchSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExactMatchSession> GetAsync(Action<RequestConfiguration<ExactMatchSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExactMatchSession> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder.ExactMatchSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExactMatchSession>(requestInfo, ExactMatchSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExactMatchSession>(requestInfo, Microsoft.Graph.Beta.Models.ExactMatchSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sessions in dataClassification
         /// </summary>
-        /// <returns>A <see cref="ExactMatchSession"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchSession"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExactMatchSession?> PatchAsync(ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExactMatchSession?> PatchAsync(Microsoft.Graph.Beta.Models.ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExactMatchSession> PatchAsync(ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExactMatchSession> PatchAsync(Microsoft.Graph.Beta.Models.ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExactMatchSession>(requestInfo, ExactMatchSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExactMatchSession>(requestInfo, Microsoft.Graph.Beta.Models.ExactMatchSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sessions for dataClassification
@@ -152,11 +152,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExactMatchSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder.ExactMatchSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExactMatchSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder.ExactMatchSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ExactMatchSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -189,11 +189,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ExactMatchSessionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExactMatchSessionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ExactMatchSessionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExactMatchSessionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ExactMatchSessionItemRequestBuilderGetQueryParameters>
+        public class ExactMatchSessionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.ExactMatchSessionItemRequestBuilder.ExactMatchSessionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

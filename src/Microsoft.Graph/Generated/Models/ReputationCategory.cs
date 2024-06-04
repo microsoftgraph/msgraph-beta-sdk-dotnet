@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ReputationCategory"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ReputationCategory"/> and sets the default values.
         /// </summary>
         public ReputationCategory()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReputationCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ReputationCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReputationCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ReputationCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReputationCategory();
+            return new Microsoft.Graph.Beta.Models.ReputationCategory();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -64,13 +64,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("onboardedDateTime", value); }
         }
         /// <summary>The onboardingStatus property</summary>
-        public WorkloadOnboardingStatus? OnboardingStatus
+        public Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadOnboardingStatus? OnboardingStatus
         {
-            get { return BackingStore?.Get<WorkloadOnboardingStatus?>("onboardingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkloadStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus"/> and sets the default values.
         /// </summary>
         public WorkloadStatus()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkloadStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkloadStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkloadStatus();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<WorkloadOnboardingStatus>(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadOnboardingStatus>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("offboardedDateTime", OffboardedDateTime);
             writer.WriteDateTimeOffsetValue("onboardedDateTime", OnboardedDateTime);
-            writer.WriteEnumValue<WorkloadOnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadOnboardingStatus>("onboardingStatus", OnboardingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

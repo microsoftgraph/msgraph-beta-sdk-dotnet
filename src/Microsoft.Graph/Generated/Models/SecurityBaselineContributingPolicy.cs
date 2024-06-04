@@ -69,13 +69,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Authoring source of a policy</summary>
-        public SecurityBaselinePolicySourceType? SourceType
+        public Microsoft.Graph.Beta.Models.SecurityBaselinePolicySourceType? SourceType
         {
-            get { return BackingStore?.Get<SecurityBaselinePolicySourceType?>("sourceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityBaselinePolicySourceType?>("sourceType"); }
             set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SecurityBaselineContributingPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy"/> and sets the default values.
         /// </summary>
         public SecurityBaselineContributingPolicy()
         {
@@ -85,12 +85,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityBaselineContributingPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SecurityBaselineContributingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityBaselineContributingPolicy();
+            return new Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
-                { "sourceType", n => { SourceType = n.GetEnumValue<SecurityBaselinePolicySourceType>(); } },
+                { "sourceType", n => { SourceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SecurityBaselinePolicySourceType>(); } },
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourceId", SourceId);
-            writer.WriteEnumValue<SecurityBaselinePolicySourceType>("sourceType", SourceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SecurityBaselinePolicySourceType>("sourceType", SourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

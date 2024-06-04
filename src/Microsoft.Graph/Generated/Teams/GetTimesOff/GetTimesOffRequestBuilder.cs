@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
     public class GetTimesOffRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetTimesOffRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetTimesOffRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
         /// Get all time off objects across all teams to which a user is a direct member.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetTimesOffGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetTimesOffGetResponse?> GetAsGetTimesOffGetResponseAsync(Action<RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffGetResponse?> GetAsGetTimesOffGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetTimesOffGetResponse> GetAsGetTimesOffGetResponseAsync(Action<RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffGetResponse> GetAsGetTimesOffGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetTimesOffGetResponse>(requestInfo, GetTimesOffGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffGetResponse>(requestInfo, Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all time off objects across all teams to which a user is a direct member.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetTimesOffResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetTimesOffGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetTimesOffResponse?> GetAsync(Action<RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetTimesOffResponse> GetAsync(Action<RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetTimesOffResponse>(requestInfo, GetTimesOffResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse>(requestInfo, Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all time off objects across all teams to which a user is a direct member.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetTimesOffRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetTimesOffRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetTimesOffRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get all time off objects across all teams to which a user is a direct member.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetTimesOffRequestBuilderGetRequestConfiguration : RequestConfiguration<GetTimesOffRequestBuilderGetQueryParameters>
+        public class GetTimesOffRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffRequestBuilder.GetTimesOffRequestBuilderGetQueryParameters>
         {
         }
     }

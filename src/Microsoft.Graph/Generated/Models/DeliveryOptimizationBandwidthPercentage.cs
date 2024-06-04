@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Bandwidth limits specified as a percentage.
     /// </summary>
-    public class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth, IParsable
+    public class DeliveryOptimizationBandwidthPercentage : Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth, IParsable
     {
         /// <summary>Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100</summary>
         public int? MaximumBackgroundBandwidthPercentage
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("maximumForegroundBandwidthPercentage", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeliveryOptimizationBandwidthPercentage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthPercentage"/> and sets the default values.
         /// </summary>
         public DeliveryOptimizationBandwidthPercentage() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeliveryOptimizationBandwidthPercentage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthPercentage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeliveryOptimizationBandwidthPercentage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthPercentage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeliveryOptimizationBandwidthPercentage();
+            return new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthPercentage();
         }
         /// <summary>
         /// The deserialization information for the current model

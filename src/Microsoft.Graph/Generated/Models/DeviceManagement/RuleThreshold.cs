@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.</summary>
-        public AggregationType? Aggregation
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType? Aggregation
         {
-            get { return BackingStore?.Get<AggregationType?>("aggregation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType?>("aggregation"); }
             set { BackingStore?.Set("aggregation", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         }
 #endif
         /// <summary>Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.</summary>
-        public OperatorType? Operator
+        public Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType? Operator
         {
-            get { return BackingStore?.Get<OperatorType?>("operator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The target threshold value.</summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("target", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RuleThreshold"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold"/> and sets the default values.
         /// </summary>
         public RuleThreshold()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RuleThreshold"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RuleThreshold CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RuleThreshold();
+            return new Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregation", n => { Aggregation = n.GetEnumValue<AggregationType>(); } },
+                { "aggregation", n => { Aggregation = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<OperatorType>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType>(); } },
                 { "target", n => { Target = n.GetIntValue(); } },
             };
         }
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AggregationType>("aggregation", Aggregation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType>("aggregation", Aggregation);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OperatorType>("operator", Operator);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType>("operator", Operator);
             writer.WriteIntValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }

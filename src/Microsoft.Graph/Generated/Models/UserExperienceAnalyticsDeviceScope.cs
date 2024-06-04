@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceScope : Entity, IParsable
+    public class UserExperienceAnalyticsDeviceScope : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the creation date and time for the custom device scope.</summary>
         public DateTimeOffset? CreatedDateTime
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.</summary>
-        public DeviceScopeOperator? Operator
+        public Microsoft.Graph.Beta.Models.DeviceScopeOperator? Operator
         {
-            get { return BackingStore?.Get<DeviceScopeOperator?>("operator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceScopeOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The unique identifier of the person (admin) who created the device scope configuration.</summary>
@@ -74,15 +74,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.</summary>
-        public DeviceScopeParameter? Parameter
+        public Microsoft.Graph.Beta.Models.DeviceScopeParameter? Parameter
         {
-            get { return BackingStore?.Get<DeviceScopeParameter?>("parameter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceScopeParameter?>("parameter"); }
             set { BackingStore?.Set("parameter", value); }
         }
         /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.</summary>
-        public DeviceScopeStatus? Status
+        public Microsoft.Graph.Beta.Models.DeviceScopeStatus? Status
         {
-            get { return BackingStore?.Get<DeviceScopeStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceScopeStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The device scope configuration query clause value.</summary>
@@ -120,12 +120,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDeviceScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDeviceScope();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,10 +140,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<DeviceScopeOperator>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeOperator>(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "parameter", n => { Parameter = n.GetEnumValue<DeviceScopeParameter>(); } },
-                { "status", n => { Status = n.GetEnumValue<DeviceScopeStatus>(); } },
+                { "parameter", n => { Parameter = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeParameter>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeStatus>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
                 { "valueObjectId", n => { ValueObjectId = n.GetStringValue(); } },
             };
@@ -161,10 +161,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<DeviceScopeOperator>("operator", Operator);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeOperator>("operator", Operator);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteEnumValue<DeviceScopeParameter>("parameter", Parameter);
-            writer.WriteEnumValue<DeviceScopeStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeParameter>("parameter", Parameter);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeStatus>("status", Status);
             writer.WriteStringValue("value", Value);
             writer.WriteStringValue("valueObjectId", ValueObjectId);
         }

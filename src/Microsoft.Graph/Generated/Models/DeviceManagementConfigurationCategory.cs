@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Management Configuration Policy
     /// </summary>
-    public class DeviceManagementConfigurationCategory : Entity, IParsable
+    public class DeviceManagementConfigurationCategory : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Description of the category header in policy summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DeviceManagementConfigurationPlatforms? Platforms
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms? Platforms
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Root id of the category.</summary>
@@ -146,26 +146,26 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported setting types</summary>
-        public DeviceManagementConfigurationSettingUsage? SettingUsage
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage? SettingUsage
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
             set { BackingStore?.Set("settingUsage", value); }
         }
         /// <summary>Describes which technology this setting can be deployed with</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies? Technologies
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationCategory();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,10 +182,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "helpText", n => { HelpText = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentCategoryId", n => { ParentCategoryId = n.GetStringValue(); } },
-                { "platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                { "platforms", n => { Platforms = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>(); } },
                 { "rootCategoryId", n => { RootCategoryId = n.GetStringValue(); } },
-                { "settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
-                { "technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                { "settingUsage", n => { SettingUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage>(); } },
+                { "technologies", n => { Technologies = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>(); } },
             };
         }
         /// <summary>
@@ -203,10 +203,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("helpText", HelpText);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parentCategoryId", ParentCategoryId);
-            writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>("platforms", Platforms);
             writer.WriteStringValue("rootCategoryId", RootCategoryId);
-            writer.WriteEnumValue<DeviceManagementConfigurationSettingUsage>("settingUsage", SettingUsage);
-            writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage>("settingUsage", SettingUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>("technologies", Technologies);
         }
     }
 }

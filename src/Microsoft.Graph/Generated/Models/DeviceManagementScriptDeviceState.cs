@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for device run state of the device management script.
     /// </summary>
-    public class DeviceManagementScriptDeviceState : Entity, IParsable
+    public class DeviceManagementScriptDeviceState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Error code corresponding to erroneous execution of the device management script.</summary>
         public int? ErrorCode
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementScriptDeviceState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementScriptDeviceState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementScriptDeviceState();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managedDevice", n => { ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
                 { "resultMessage", n => { ResultMessage = n.GetStringValue(); } },
-                { "runState", n => { RunState = n.GetEnumValue<RunState>(); } },
+                { "runState", n => { RunState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunState>(); } },
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice", ManagedDevice);
             writer.WriteStringValue("resultMessage", ResultMessage);
-            writer.WriteEnumValue<RunState>("runState", RunState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunState>("runState", RunState);
         }
     }
 }

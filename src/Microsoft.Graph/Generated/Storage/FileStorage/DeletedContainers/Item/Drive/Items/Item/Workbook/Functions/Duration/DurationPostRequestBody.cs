@@ -23,101 +23,101 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis
+        public Microsoft.Graph.Beta.Models.Json? Basis
         {
-            get { return BackingStore?.Get<Json?>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis
+        public Microsoft.Graph.Beta.Models.Json Basis
         {
-            get { return BackingStore?.Get<Json>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #endif
         /// <summary>The coupon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Coupon
+        public Microsoft.Graph.Beta.Models.Json? Coupon
         {
-            get { return BackingStore?.Get<Json?>("coupon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("coupon"); }
             set { BackingStore?.Set("coupon", value); }
         }
 #nullable restore
 #else
-        public Json Coupon
+        public Microsoft.Graph.Beta.Models.Json Coupon
         {
-            get { return BackingStore?.Get<Json>("coupon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("coupon"); }
             set { BackingStore?.Set("coupon", value); }
         }
 #endif
         /// <summary>The frequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Frequency
+        public Microsoft.Graph.Beta.Models.Json? Frequency
         {
-            get { return BackingStore?.Get<Json?>("frequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #nullable restore
 #else
-        public Json Frequency
+        public Microsoft.Graph.Beta.Models.Json Frequency
         {
-            get { return BackingStore?.Get<Json>("frequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #endif
         /// <summary>The maturity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Maturity
+        public Microsoft.Graph.Beta.Models.Json? Maturity
         {
-            get { return BackingStore?.Get<Json?>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #nullable restore
 #else
-        public Json Maturity
+        public Microsoft.Graph.Beta.Models.Json Maturity
         {
-            get { return BackingStore?.Get<Json>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #endif
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement
+        public Microsoft.Graph.Beta.Models.Json? Settlement
         {
-            get { return BackingStore?.Get<Json?>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement
+        public Microsoft.Graph.Beta.Models.Json Settlement
         {
-            get { return BackingStore?.Get<Json>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #endif
         /// <summary>The yld property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Yld
+        public Microsoft.Graph.Beta.Models.Json? Yld
         {
-            get { return BackingStore?.Get<Json?>("yld"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("yld"); }
             set { BackingStore?.Set("yld", value); }
         }
 #nullable restore
 #else
-        public Json Yld
+        public Microsoft.Graph.Beta.Models.Json Yld
         {
-            get { return BackingStore?.Get<Json>("yld"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("yld"); }
             set { BackingStore?.Set("yld", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DurationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Duration.DurationPostRequestBody"/> and sets the default values.
         /// </summary>
         public DurationPostRequestBody()
         {
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DurationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Duration.DurationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Duration.DurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DurationPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Duration.DurationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "coupon", n => { Coupon = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "frequency", n => { Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "yld", n => { Yld = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "coupon", n => { Coupon = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "frequency", n => { Frequency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "maturity", n => { Maturity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "yld", n => { Yld = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -157,12 +157,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("basis", Basis);
-            writer.WriteObjectValue<Json>("coupon", Coupon);
-            writer.WriteObjectValue<Json>("frequency", Frequency);
-            writer.WriteObjectValue<Json>("maturity", Maturity);
-            writer.WriteObjectValue<Json>("settlement", Settlement);
-            writer.WriteObjectValue<Json>("yld", Yld);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("basis", Basis);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("coupon", Coupon);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("frequency", Frequency);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("maturity", Maturity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("settlement", Settlement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("yld", Yld);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

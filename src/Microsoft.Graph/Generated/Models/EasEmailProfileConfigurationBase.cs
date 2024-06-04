@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Apple device features configuration profile.
     /// </summary>
-    public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable
+    public class EasEmailProfileConfigurationBase : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
-        public DomainNameSource? UserDomainNameSource
+        public Microsoft.Graph.Beta.Models.DomainNameSource? UserDomainNameSource
         {
-            get { return BackingStore?.Get<DomainNameSource?>("userDomainNameSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DomainNameSource?>("userDomainNameSource"); }
             set { BackingStore?.Set("userDomainNameSource", value); }
         }
         /// <summary>Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.</summary>
@@ -40,13 +40,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("usernameAADSource", value); }
         }
         /// <summary>Possible values for username source or email source.</summary>
-        public UserEmailSource? UsernameSource
+        public Microsoft.Graph.Beta.Models.UserEmailSource? UsernameSource
         {
-            get { return BackingStore?.Get<UserEmailSource?>("usernameSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserEmailSource?>("usernameSource"); }
             set { BackingStore?.Set("usernameSource", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EasEmailProfileConfigurationBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase"/> and sets the default values.
         /// </summary>
         public EasEmailProfileConfigurationBase() : base()
         {
@@ -55,18 +55,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EasEmailProfileConfigurationBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EasEmailProfileConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosEasEmailProfileConfiguration" => new IosEasEmailProfileConfiguration(),
-                "#microsoft.graph.windows10EasEmailProfileConfiguration" => new Windows10EasEmailProfileConfiguration(),
-                "#microsoft.graph.windowsPhoneEASEmailProfileConfiguration" => new WindowsPhoneEASEmailProfileConfiguration(),
-                _ => new EasEmailProfileConfigurationBase(),
+                "#microsoft.graph.iosEasEmailProfileConfiguration" => new Microsoft.Graph.Beta.Models.IosEasEmailProfileConfiguration(),
+                "#microsoft.graph.windows10EasEmailProfileConfiguration" => new Microsoft.Graph.Beta.Models.Windows10EasEmailProfileConfiguration(),
+                "#microsoft.graph.windowsPhoneEASEmailProfileConfiguration" => new Microsoft.Graph.Beta.Models.WindowsPhoneEASEmailProfileConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase(),
             };
         }
         /// <summary>
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "customDomainName", n => { CustomDomainName = n.GetStringValue(); } },
-                { "userDomainNameSource", n => { UserDomainNameSource = n.GetEnumValue<DomainNameSource>(); } },
-                { "usernameAADSource", n => { UsernameAADSource = n.GetEnumValue<UsernameSource>(); } },
-                { "usernameSource", n => { UsernameSource = n.GetEnumValue<UserEmailSource>(); } },
+                { "userDomainNameSource", n => { UserDomainNameSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.DomainNameSource>(); } },
+                { "usernameAADSource", n => { UsernameAADSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.UsernameSource>(); } },
+                { "usernameSource", n => { UsernameSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>(); } },
             };
         }
         /// <summary>
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("customDomainName", CustomDomainName);
-            writer.WriteEnumValue<DomainNameSource>("userDomainNameSource", UserDomainNameSource);
-            writer.WriteEnumValue<UsernameSource>("usernameAADSource", UsernameAADSource);
-            writer.WriteEnumValue<UserEmailSource>("usernameSource", UsernameSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DomainNameSource>("userDomainNameSource", UserDomainNameSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UsernameSource>("usernameAADSource", UsernameAADSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>("usernameSource", UsernameSource);
         }
     }
 }

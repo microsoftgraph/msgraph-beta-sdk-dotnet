@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
     public class GetStorageAccountsWithSubscriptionIdRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetStorageAccountsWithSubscriptionIdRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
             if (!string.IsNullOrWhiteSpace(subscriptionId)) PathParameters.Add("subscriptionId", subscriptionId);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetStorageAccountsWithSubscriptionIdRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,50 +37,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
         /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetStorageAccountsWithSubscriptionIdGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetStorageAccountsWithSubscriptionIdGetResponse?> GetAsGetStorageAccountsWithSubscriptionIdGetResponseAsync(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdGetResponse?> GetAsGetStorageAccountsWithSubscriptionIdGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetStorageAccountsWithSubscriptionIdGetResponse> GetAsGetStorageAccountsWithSubscriptionIdGetResponseAsync(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdGetResponse> GetAsGetStorageAccountsWithSubscriptionIdGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdGetResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdGetResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetStorageAccountsWithSubscriptionIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetStorageAccountsWithSubscriptionIdGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetStorageAccountsWithSubscriptionIdResponse?> GetAsync(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetStorageAccountsWithSubscriptionIdResponse> GetAsync(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetStorageAccountsWithSubscriptionIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetStorageAccountsWithSubscriptionIdRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetStorageAccountsWithSubscriptionIdRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration : RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>
+        public class GetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder.GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>
         {
         }
     }

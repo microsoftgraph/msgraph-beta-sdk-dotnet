@@ -7,114 +7,114 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ConditionalAccessRoot : Entity, IParsable
+    public class ConditionalAccessRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Returns a collection of the specified authentication context class references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationContextClassReference>? AuthenticationContextClassReferences
+        public List<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>? AuthenticationContextClassReferences
         {
-            get { return BackingStore?.Get<List<AuthenticationContextClassReference>?>("authenticationContextClassReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>?>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationContextClassReference> AuthenticationContextClassReferences
+        public List<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference> AuthenticationContextClassReferences
         {
-            get { return BackingStore?.Get<List<AuthenticationContextClassReference>>("authenticationContextClassReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #endif
         /// <summary>Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationStrengthRoot? AuthenticationStrength
+        public Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot? AuthenticationStrength
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRoot?>("authenticationStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot?>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #nullable restore
 #else
-        public AuthenticationStrengthRoot AuthenticationStrength
+        public Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot AuthenticationStrength
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRoot>("authenticationStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #endif
         /// <summary>DEPRECATED. See the authenticationStrength relationship instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationStrengthRoot? AuthenticationStrengths
+        public Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot? AuthenticationStrengths
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRoot?>("authenticationStrengths"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot?>("authenticationStrengths"); }
             set { BackingStore?.Set("authenticationStrengths", value); }
         }
 #nullable restore
 #else
-        public AuthenticationStrengthRoot AuthenticationStrengths
+        public Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot AuthenticationStrengths
         {
-            get { return BackingStore?.Get<AuthenticationStrengthRoot>("authenticationStrengths"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrengths"); }
             set { BackingStore?.Set("authenticationStrengths", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NamedLocation>? NamedLocations
+        public List<Microsoft.Graph.Beta.Models.NamedLocation>? NamedLocations
         {
-            get { return BackingStore?.Get<List<NamedLocation>?>("namedLocations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NamedLocation>?>("namedLocations"); }
             set { BackingStore?.Set("namedLocations", value); }
         }
 #nullable restore
 #else
-        public List<NamedLocation> NamedLocations
+        public List<Microsoft.Graph.Beta.Models.NamedLocation> NamedLocations
         {
-            get { return BackingStore?.Get<List<NamedLocation>>("namedLocations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NamedLocation>>("namedLocations"); }
             set { BackingStore?.Set("namedLocations", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessPolicy>? Policies
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? Policies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>?>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessPolicy> Policies
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy> Policies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessTemplate>? Templates
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>? Templates
         {
-            get { return BackingStore?.Get<List<ConditionalAccessTemplate>?>("templates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>?>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessTemplate> Templates
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessTemplate> Templates
         {
-            get { return BackingStore?.Get<List<ConditionalAccessTemplate>>("templates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ConditionalAccessRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessRoot();
+            return new Microsoft.Graph.Beta.Models.ConditionalAccessRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<AuthenticationStrengthRoot>(AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
-                { "authenticationStrengths", n => { AuthenticationStrengths = n.GetObjectValue<AuthenticationStrengthRoot>(AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
-                { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<NamedLocation>(NamedLocation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "templates", n => { Templates = n.GetCollectionOfObjectValues<ConditionalAccessTemplate>(ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>(Microsoft.Graph.Beta.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>(Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
+                { "authenticationStrengths", n => { AuthenticationStrengths = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>(Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
+                { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NamedLocation>(Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templates", n => { Templates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>(Microsoft.Graph.Beta.Models.ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
-            writer.WriteObjectValue<AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
-            writer.WriteObjectValue<AuthenticationStrengthRoot>("authenticationStrengths", AuthenticationStrengths);
-            writer.WriteCollectionOfObjectValues<NamedLocation>("namedLocations", NamedLocations);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("policies", Policies);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessTemplate>("templates", Templates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrengthRoot>("authenticationStrengths", AuthenticationStrengths);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NamedLocation>("namedLocations", NamedLocations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessTemplate>("templates", Templates);
         }
     }
 }

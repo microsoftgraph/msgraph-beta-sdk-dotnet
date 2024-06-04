@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
     public class SalesCreditMemoLineItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.salesCreditMemoLine entity.</summary>
-        public AccountRequestBuilder Account
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.Account.AccountRequestBuilder Account
         {
-            get => new AccountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the item property of the microsoft.graph.salesCreditMemoLine entity.</summary>
-        public ItemRequestBuilder Item
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.Item.ItemRequestBuilder Item
         {
-            get => new ItemRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.Item.ItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesCreditMemoLineItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesCreditMemoLineItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,50 +47,50 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
         /// <summary>
         /// Get salesCreditMemoLines from financials
         /// </summary>
-        /// <returns>A <see cref="SalesCreditMemoLine"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SalesCreditMemoLine"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesCreditMemoLine?> GetAsync(Action<RequestConfiguration<SalesCreditMemoLineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesCreditMemoLine?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder.SalesCreditMemoLineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SalesCreditMemoLine> GetAsync(Action<RequestConfiguration<SalesCreditMemoLineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesCreditMemoLine> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder.SalesCreditMemoLineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>(requestInfo, Microsoft.Graph.Beta.Models.SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property salesCreditMemoLines in financials
         /// </summary>
-        /// <returns>A <see cref="SalesCreditMemoLine"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SalesCreditMemoLine"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesCreditMemoLine?> PatchAsync(SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesCreditMemoLine?> PatchAsync(Microsoft.Graph.Beta.Models.SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SalesCreditMemoLine> PatchAsync(SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesCreditMemoLine> PatchAsync(Microsoft.Graph.Beta.Models.SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>(requestInfo, Microsoft.Graph.Beta.Models.SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesCreditMemoLines from financials
@@ -99,11 +99,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesCreditMemoLineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder.SalesCreditMemoLineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesCreditMemoLineItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder.SalesCreditMemoLineItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -119,11 +119,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.SalesCreditMemoLine body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -136,11 +136,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SalesCreditMemoLineItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesCreditMemoLineItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new SalesCreditMemoLineItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesCreditMemoLines from financials
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesCreditMemoLineItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesCreditMemoLineItemRequestBuilderGetQueryParameters>
+        public class SalesCreditMemoLineItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder.SalesCreditMemoLineItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

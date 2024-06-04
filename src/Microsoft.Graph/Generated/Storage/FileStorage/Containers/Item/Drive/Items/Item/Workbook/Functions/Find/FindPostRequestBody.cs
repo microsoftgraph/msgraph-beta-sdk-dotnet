@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The findText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FindText
+        public Microsoft.Graph.Beta.Models.Json? FindText
         {
-            get { return BackingStore?.Get<Json?>("findText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("findText"); }
             set { BackingStore?.Set("findText", value); }
         }
 #nullable restore
 #else
-        public Json FindText
+        public Microsoft.Graph.Beta.Models.Json FindText
         {
-            get { return BackingStore?.Get<Json>("findText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("findText"); }
             set { BackingStore?.Set("findText", value); }
         }
 #endif
         /// <summary>The startNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartNum
+        public Microsoft.Graph.Beta.Models.Json? StartNum
         {
-            get { return BackingStore?.Get<Json?>("startNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
 #nullable restore
 #else
-        public Json StartNum
+        public Microsoft.Graph.Beta.Models.Json StartNum
         {
-            get { return BackingStore?.Get<Json>("startNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
 #endif
         /// <summary>The withinText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? WithinText
+        public Microsoft.Graph.Beta.Models.Json? WithinText
         {
-            get { return BackingStore?.Get<Json?>("withinText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("withinText"); }
             set { BackingStore?.Set("withinText", value); }
         }
 #nullable restore
 #else
-        public Json WithinText
+        public Microsoft.Graph.Beta.Models.Json WithinText
         {
-            get { return BackingStore?.Get<Json>("withinText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("withinText"); }
             set { BackingStore?.Set("withinText", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FindPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Find.FindPostRequestBody"/> and sets the default values.
         /// </summary>
         public FindPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Find.FindPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FindPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Find.FindPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Find.FindPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "findText", n => { FindText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "withinText", n => { WithinText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "findText", n => { FindText = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "startNum", n => { StartNum = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "withinText", n => { WithinText = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("findText", FindText);
-            writer.WriteObjectValue<Json>("startNum", StartNum);
-            writer.WriteObjectValue<Json>("withinText", WithinText);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("findText", FindText);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("startNum", StartNum);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("withinText", WithinText);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

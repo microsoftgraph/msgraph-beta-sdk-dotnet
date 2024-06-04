@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSup
 {
     [Obsolete("This class is obsolete. Use GetPlatformSupportedPropertiesWithPlatformGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPlatformSupportedPropertiesWithPlatformResponse : GetPlatformSupportedPropertiesWithPlatformGetResponse, IParsable
+    public class GetPlatformSupportedPropertiesWithPlatformResponse : Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPlatformSupportedPropertiesWithPlatformResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetPlatformSupportedPropertiesWithPlatformResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPlatformSupportedPropertiesWithPlatformResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformResponse();
         }
     }
 }

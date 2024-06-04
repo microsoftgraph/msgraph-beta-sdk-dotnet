@@ -12,9 +12,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     #pragma warning restore CS1591
     {
         /// <summary>Indicates what action to take based on filtering policies. The possible values are: block, allow.</summary>
-        public FilteringPolicyAction? Action
+        public Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction? Action
         {
-            get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -152,16 +152,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>The destinationWebCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WebCategory? DestinationWebCategory
+        public Microsoft.Graph.Beta.Models.Networkaccess.WebCategory? DestinationWebCategory
         {
-            get { return BackingStore?.Get<WebCategory?>("destinationWebCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory?>("destinationWebCategory"); }
             set { BackingStore?.Set("destinationWebCategory", value); }
         }
 #nullable restore
 #else
-        public WebCategory DestinationWebCategory
+        public Microsoft.Graph.Beta.Models.Networkaccess.WebCategory DestinationWebCategory
         {
-            get { return BackingStore?.Get<WebCategory>("destinationWebCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("destinationWebCategory"); }
             set { BackingStore?.Set("destinationWebCategory", value); }
         }
 #endif
@@ -284,9 +284,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
-        public NetworkingProtocol? NetworkProtocol
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? NetworkProtocol
         {
-            get { return BackingStore?.Get<NetworkingProtocol?>("networkProtocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("networkProtocol"); }
             set { BackingStore?.Set("networkProtocol", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -506,9 +506,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
-        public NetworkingProtocol? TransportProtocol
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? TransportProtocol
         {
-            get { return BackingStore?.Get<NetworkingProtocol?>("transportProtocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
         /// <summary>Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.</summary>
@@ -560,7 +560,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="NetworkAccessTraffic"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic"/> and sets the default values.
         /// </summary>
         public NetworkAccessTraffic()
         {
@@ -570,12 +570,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NetworkAccessTraffic"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NetworkAccessTraffic CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NetworkAccessTraffic();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -585,7 +585,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>(); } },
                 { "agentVersion", n => { AgentVersion = n.GetStringValue(); } },
                 { "applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
                 { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
@@ -595,8 +595,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "destinationIp", n => { DestinationIp = n.GetStringValue(); } },
                 { "destinationPort", n => { DestinationPort = n.GetIntValue(); } },
                 { "destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
-                { "destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<WebCategory>(WebCategory.CreateFromDiscriminatorValue); } },
-                { "deviceCategory", n => { DeviceCategory = n.GetEnumValue<DeviceCategory>(); } },
+                { "destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>(Microsoft.Graph.Beta.Models.Networkaccess.WebCategory.CreateFromDiscriminatorValue); } },
+                { "deviceCategory", n => { DeviceCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory>(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
                 { "deviceOperatingSystemVersion", n => { DeviceOperatingSystemVersion = n.GetStringValue(); } },
@@ -604,7 +604,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "filteringProfileName", n => { FilteringProfileName = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Headers>(Microsoft.Graph.Beta.Models.Networkaccess.Headers.CreateFromDiscriminatorValue); } },
                 { "initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
-                { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "policyName", n => { PolicyName = n.GetStringValue(); } },
@@ -619,9 +619,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "sourcePort", n => { SourcePort = n.GetIntValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "threatType", n => { ThreatType = n.GetStringValue(); } },
-                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>(); } },
                 { "transactionId", n => { TransactionId = n.GetStringValue(); } },
-                { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "vendorNames", n => { VendorNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -634,7 +634,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<FilteringPolicyAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>("action", Action);
             writer.WriteStringValue("agentVersion", AgentVersion);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot", ApplicationSnapshot);
             writer.WriteStringValue("connectionId", ConnectionId);
@@ -644,8 +644,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("destinationIp", DestinationIp);
             writer.WriteIntValue("destinationPort", DestinationPort);
             writer.WriteStringValue("destinationUrl", DestinationUrl);
-            writer.WriteObjectValue<WebCategory>("destinationWebCategory", DestinationWebCategory);
-            writer.WriteEnumValue<DeviceCategory>("deviceCategory", DeviceCategory);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("destinationWebCategory", DestinationWebCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceOperatingSystem", DeviceOperatingSystem);
             writer.WriteStringValue("deviceOperatingSystemVersion", DeviceOperatingSystemVersion);
@@ -653,7 +653,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("filteringProfileName", FilteringProfileName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Headers>("headers", Headers);
             writer.WriteStringValue("initiatingProcessName", InitiatingProcessName);
-            writer.WriteEnumValue<NetworkingProtocol>("networkProtocol", NetworkProtocol);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("networkProtocol", NetworkProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("policyName", PolicyName);
@@ -668,9 +668,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteIntValue("sourcePort", SourcePort);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("threatType", ThreatType);
-            writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>("trafficType", TrafficType);
             writer.WriteStringValue("transactionId", TransactionId);
-            writer.WriteEnumValue<NetworkingProtocol>("transportProtocol", TransportProtocol);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("transportProtocol", TransportProtocol);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteCollectionOfPrimitiveValues<string>("vendorNames", VendorNames);

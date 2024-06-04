@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing information about the payloads on which filter has been applied.
     /// </summary>
-    public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable
+    public class AssignmentFilterEvaluationStatusDetails : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>PayloadId on which filter has been applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentFilterEvaluationStatusDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AssignmentFilterEvaluationStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentFilterEvaluationStatusDetails();
+            return new Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

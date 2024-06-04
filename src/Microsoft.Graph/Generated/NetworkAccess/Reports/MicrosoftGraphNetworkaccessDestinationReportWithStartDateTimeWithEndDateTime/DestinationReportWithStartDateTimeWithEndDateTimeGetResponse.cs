@@ -9,34 +9,34 @@ using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime
 {
     #pragma warning disable CS1591
-    public class DestinationReportWithStartDateTimeWithEndDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class DestinationReportWithStartDateTimeWithEndDateTimeGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Destination>? Value
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.Destination>? Value
         {
-            get { return BackingStore?.Get<List<Destination>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.Destination>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Destination> Value
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.Destination> Value
         {
-            get { return BackingStore?.Get<List<Destination>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.Destination>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DestinationReportWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime.DestinationReportWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DestinationReportWithStartDateTimeWithEndDateTimeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime.DestinationReportWithStartDateTimeWithEndDateTimeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DestinationReportWithStartDateTimeWithEndDateTimeGetResponse();
+            return new Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime.DestinationReportWithStartDateTimeWithEndDateTimeGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Destination>(Destination.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.Destination>(Microsoft.Graph.Beta.Models.Networkaccess.Destination.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Destination>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.Destination>("value", Value);
         }
     }
 }

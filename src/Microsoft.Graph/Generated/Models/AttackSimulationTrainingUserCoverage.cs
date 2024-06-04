@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of assigned trainings and their statuses for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserTrainingStatusInfo>? UserTrainings
+        public List<Microsoft.Graph.Beta.Models.UserTrainingStatusInfo>? UserTrainings
         {
-            get { return BackingStore?.Get<List<UserTrainingStatusInfo>?>("userTrainings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserTrainingStatusInfo>?>("userTrainings"); }
             set { BackingStore?.Set("userTrainings", value); }
         }
 #nullable restore
 #else
-        public List<UserTrainingStatusInfo> UserTrainings
+        public List<Microsoft.Graph.Beta.Models.UserTrainingStatusInfo> UserTrainings
         {
-            get { return BackingStore?.Get<List<UserTrainingStatusInfo>>("userTrainings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserTrainingStatusInfo>>("userTrainings"); }
             set { BackingStore?.Set("userTrainings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AttackSimulationTrainingUserCoverage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AttackSimulationTrainingUserCoverage"/> and sets the default values.
         /// </summary>
         public AttackSimulationTrainingUserCoverage()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttackSimulationTrainingUserCoverage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AttackSimulationTrainingUserCoverage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttackSimulationTrainingUserCoverage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AttackSimulationTrainingUserCoverage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttackSimulationTrainingUserCoverage();
+            return new Microsoft.Graph.Beta.Models.AttackSimulationTrainingUserCoverage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttackSimulationUser>(Microsoft.Graph.Beta.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "userTrainings", n => { UserTrainings = n.GetCollectionOfObjectValues<UserTrainingStatusInfo>(UserTrainingStatusInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userTrainings", n => { UserTrainings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserTrainingStatusInfo>(Microsoft.Graph.Beta.Models.UserTrainingStatusInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttackSimulationUser>("attackSimulationUser", AttackSimulationUser);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<UserTrainingStatusInfo>("userTrainings", UserTrainings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserTrainingStatusInfo>("userTrainings", UserTrainings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

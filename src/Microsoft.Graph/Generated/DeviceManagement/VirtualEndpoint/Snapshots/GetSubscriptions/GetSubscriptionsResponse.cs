@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSub
 {
     [Obsolete("This class is obsolete. Use GetSubscriptionsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSubscriptionsResponse : GetSubscriptionsGetResponse, IParsable
+    public class GetSubscriptionsResponse : Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSubscriptionsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSubscriptionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSubscriptionsResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsResponse();
         }
     }
 }

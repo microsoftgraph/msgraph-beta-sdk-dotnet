@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ServiceLevelAgreementRoot : Entity, IParsable
+    public class ServiceLevelAgreementRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.</summary>
@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceLevelAgreementRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceLevelAgreementRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServiceLevelAgreementRoot();
+            return new Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.</summary>
-        public TeamworkConnectionStatus? ConnectionStatus
+        public Microsoft.Graph.Beta.Models.TeamworkConnectionStatus? ConnectionStatus
         {
-            get { return BackingStore?.Get<TeamworkConnectionStatus?>("connectionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnectionStatus?>("connectionStatus"); }
             set { BackingStore?.Set("connectionStatus", value); }
         }
         /// <summary>Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.</summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkConnection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkConnection"/> and sets the default values.
         /// </summary>
         public TeamworkConnection()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkConnection();
+            return new Microsoft.Graph.Beta.Models.TeamworkConnection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connectionStatus", n => { ConnectionStatus = n.GetEnumValue<TeamworkConnectionStatus>(); } },
+                { "connectionStatus", n => { ConnectionStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkConnectionStatus>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<TeamworkConnectionStatus>("connectionStatus", ConnectionStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkConnectionStatus>("connectionStatus", ConnectionStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

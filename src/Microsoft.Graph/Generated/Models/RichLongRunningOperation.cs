@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RichLongRunningOperation : LongRunningOperation, IParsable
+    public class RichLongRunningOperation : Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Error due to which the operation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error
+        public Microsoft.Graph.Beta.Models.PublicError? Error
         {
-            get { return BackingStore?.Get<PublicError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error
+        public Microsoft.Graph.Beta.Models.PublicError Error
         {
-            get { return BackingStore?.Get<PublicError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RichLongRunningOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RichLongRunningOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RichLongRunningOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RichLongRunningOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RichLongRunningOperation();
+            return new Microsoft.Graph.Beta.Models.RichLongRunningOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "percentageComplete", n => { PercentageComplete = n.GetIntValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PublicError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteIntValue("percentageComplete", PercentageComplete);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("type", Type);

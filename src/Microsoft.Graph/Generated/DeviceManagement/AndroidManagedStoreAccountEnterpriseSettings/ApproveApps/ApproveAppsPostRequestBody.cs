@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApproveAppsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps.ApproveAppsPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApproveAppsPostRequestBody()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApproveAppsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps.ApproveAppsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApproveAppsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps.ApproveAppsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApproveAppsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps.ApproveAppsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

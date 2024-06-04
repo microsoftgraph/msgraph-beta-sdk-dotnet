@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
     public class OperationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.</summary>
         /// <param name="position">The unique identifier of teamworkDeviceOperation</param>
-        /// <returns>A <see cref="TeamworkDeviceOperationItemRequestBuilder"/></returns>
-        public TeamworkDeviceOperationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item.TeamworkDeviceOperationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item.TeamworkDeviceOperationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("teamworkDeviceOperation%2Did", position);
-                return new TeamworkDeviceOperationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item.TeamworkDeviceOperationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
         /// Get a list of the operations that are running on a Microsoft Teams-enabled device.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdeviceoperation-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="TeamworkDeviceOperationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDeviceOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamworkDeviceOperationCollectionResponse?> GetAsync(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamworkDeviceOperationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamworkDeviceOperationCollectionResponse> GetAsync(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamworkDeviceOperationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamworkDeviceOperationCollectionResponse>(requestInfo, TeamworkDeviceOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamworkDeviceOperationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.TeamworkDeviceOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operations for teamwork
         /// </summary>
-        /// <returns>A <see cref="TeamworkDeviceOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDeviceOperation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamworkDeviceOperation?> PostAsync(TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation?> PostAsync(Microsoft.Graph.Beta.Models.TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamworkDeviceOperation> PostAsync(TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation> PostAsync(Microsoft.Graph.Beta.Models.TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamworkDeviceOperation>(requestInfo, TeamworkDeviceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation>(requestInfo, Microsoft.Graph.Beta.Models.TeamworkDeviceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the operations that are running on a Microsoft Teams-enabled device.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.TeamworkDeviceOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OperationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OperationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new OperationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the operations that are running on a Microsoft Teams-enabled device.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<OperationsRequestBuilderGetQueryParameters>
+        public class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

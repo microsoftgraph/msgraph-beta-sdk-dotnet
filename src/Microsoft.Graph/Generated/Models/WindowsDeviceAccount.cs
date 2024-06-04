@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsDeviceAccount"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsDeviceAccount"/> and sets the default values.
         /// </summary>
         public WindowsDeviceAccount()
         {
@@ -62,17 +62,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsDeviceAccount"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDeviceAccount"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsDeviceAccount CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsDeviceAccount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsDeviceADAccount" => new WindowsDeviceADAccount(),
-                "#microsoft.graph.windowsDeviceAzureADAccount" => new WindowsDeviceAzureADAccount(),
-                _ => new WindowsDeviceAccount(),
+                "#microsoft.graph.windowsDeviceADAccount" => new Microsoft.Graph.Beta.Models.WindowsDeviceADAccount(),
+                "#microsoft.graph.windowsDeviceAzureADAccount" => new Microsoft.Graph.Beta.Models.WindowsDeviceAzureADAccount(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsDeviceAccount(),
             };
         }
         /// <summary>

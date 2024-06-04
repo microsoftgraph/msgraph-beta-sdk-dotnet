@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign an Win32 catalog mobile app to a group.
     /// </summary>
-    public class Win32CatalogAppAssignmentSettings : Win32LobAppAssignmentSettings, IParsable
+    public class Win32CatalogAppAssignmentSettings : Microsoft.Graph.Beta.Models.Win32LobAppAssignmentSettings, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="Win32CatalogAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public Win32CatalogAppAssignmentSettings() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32CatalogAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32CatalogAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32CatalogAppAssignmentSettings();
+            return new Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

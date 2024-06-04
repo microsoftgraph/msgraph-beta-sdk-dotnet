@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of failed health check items. If the status property is available, this property will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcHealthCheckItem>? FailedHealthCheckItems
+        public List<Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem>? FailedHealthCheckItems
         {
-            get { return BackingStore?.Get<List<CloudPcHealthCheckItem>?>("failedHealthCheckItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem>?>("failedHealthCheckItems"); }
             set { BackingStore?.Set("failedHealthCheckItems", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcHealthCheckItem> FailedHealthCheckItems
+        public List<Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem> FailedHealthCheckItems
         {
-            get { return BackingStore?.Get<List<CloudPcHealthCheckItem>>("failedHealthCheckItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem>>("failedHealthCheckItems"); }
             set { BackingStore?.Set("failedHealthCheckItems", value); }
         }
 #endif
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public CloudPcConnectivityStatus? Status
+        public Microsoft.Graph.Beta.Models.CloudPcConnectivityStatus? Status
         {
-            get { return BackingStore?.Get<CloudPcConnectivityStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("updatedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcConnectivityResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcConnectivityResult"/> and sets the default values.
         /// </summary>
         public CloudPcConnectivityResult()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcConnectivityResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcConnectivityResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcConnectivityResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcConnectivityResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcConnectivityResult();
+            return new Microsoft.Graph.Beta.Models.CloudPcConnectivityResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "failedHealthCheckItems", n => { FailedHealthCheckItems = n.GetCollectionOfObjectValues<CloudPcHealthCheckItem>(CloudPcHealthCheckItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "failedHealthCheckItems", n => { FailedHealthCheckItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem>(Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CloudPcConnectivityStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityStatus>(); } },
                 { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<CloudPcHealthCheckItem>("failedHealthCheckItems", FailedHealthCheckItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem>("failedHealthCheckItems", FailedHealthCheckItems);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<CloudPcConnectivityStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

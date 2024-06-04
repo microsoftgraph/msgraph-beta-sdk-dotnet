@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
     public class EvaluateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="EvaluateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EvaluateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,53 +34,53 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         /// <summary>
         /// Invoke action evaluate
         /// </summary>
-        /// <returns>A <see cref="EvaluatePostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EvaluatePostResponse?> PostAsEvaluatePostResponseAsync(EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse?> PostAsEvaluatePostResponseAsync(Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EvaluatePostResponse> PostAsEvaluatePostResponseAsync(EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse> PostAsEvaluatePostResponseAsync(Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EvaluatePostResponse>(requestInfo, EvaluatePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse>(requestInfo, Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action evaluate
         /// </summary>
-        /// <returns>A <see cref="EvaluateResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsEvaluatePostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EvaluateResponse?> PostAsync(EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse?> PostAsync(Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EvaluateResponse> PostAsync(EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse> PostAsync(Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EvaluateResponse>(requestInfo, EvaluateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse>(requestInfo, Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action evaluate
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EvaluateRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EvaluateRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder WithUrl(string rawUrl)
         {
-            return new EvaluateRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
     public class PermissionsManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the permissionsRequestChanges property of the microsoft.graph.permissionsManagement entity.</summary>
-        public PermissionsRequestChangesRequestBuilder PermissionsRequestChanges
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsRequestChanges.PermissionsRequestChangesRequestBuilder PermissionsRequestChanges
         {
-            get => new PermissionsRequestChangesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsRequestChanges.PermissionsRequestChangesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scheduledPermissionsApprovals property of the microsoft.graph.permissionsManagement entity.</summary>
-        public ScheduledPermissionsApprovalsRequestBuilder ScheduledPermissionsApprovals
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.ScheduledPermissionsApprovals.ScheduledPermissionsApprovalsRequestBuilder ScheduledPermissionsApprovals
         {
-            get => new ScheduledPermissionsApprovalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.ScheduledPermissionsApprovals.ScheduledPermissionsApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scheduledPermissionsRequests property of the microsoft.graph.permissionsManagement entity.</summary>
-        public ScheduledPermissionsRequestsRequestBuilder ScheduledPermissionsRequests
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.ScheduledPermissionsRequests.ScheduledPermissionsRequestsRequestBuilder ScheduledPermissionsRequests
         {
-            get => new ScheduledPermissionsRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.ScheduledPermissionsRequests.ScheduledPermissionsRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,20 +78,20 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.PermissionsManagement?> GetAsync(Action<RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsManagement?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder.PermissionsManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.PermissionsManagement> GetAsync(Action<RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsManagement> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder.PermissionsManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PermissionsManagement>(requestInfo, Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.PermissionsManagement?> PatchAsync(Microsoft.Graph.Beta.Models.PermissionsManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PermissionsManagement>(requestInfo, Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -146,11 +146,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder.PermissionsManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder.PermissionsManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -183,11 +183,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PermissionsManagementRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PermissionsManagementRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder WithUrl(string rawUrl)
         {
-            return new PermissionsManagementRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PermissionsManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters>
+        public class PermissionsManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.PermissionsManagementRequestBuilder.PermissionsManagementRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for device management script PolicySetItem.
     /// </summary>
-    public class DeviceManagementScriptPolicySetItem : PolicySetItem, IParsable
+    public class DeviceManagementScriptPolicySetItem : Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementScriptPolicySetItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptPolicySetItem"/> and sets the default values.
         /// </summary>
         public DeviceManagementScriptPolicySetItem() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementScriptPolicySetItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptPolicySetItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementScriptPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementScriptPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementScriptPolicySetItem();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementScriptPolicySetItem();
         }
         /// <summary>
         /// The deserialization information for the current model

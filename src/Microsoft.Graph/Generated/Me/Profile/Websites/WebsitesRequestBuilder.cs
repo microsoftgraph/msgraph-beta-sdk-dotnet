@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
     public class WebsitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Me.Profile.Websites.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Websites.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the websites property of the microsoft.graph.profile entity.</summary>
         /// <param name="position">The unique identifier of personWebsite</param>
-        /// <returns>A <see cref="PersonWebsiteItemRequestBuilder"/></returns>
-        public PersonWebsiteItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Profile.Websites.Item.PersonWebsiteItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Me.Profile.Websites.Item.PersonWebsiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("personWebsite%2Did", position);
-                return new PersonWebsiteItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Me.Profile.Websites.Item.PersonWebsiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WebsitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WebsitesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
         /// Retrieve a list of personWebsite objects from a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-websites?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PersonWebsiteCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonWebsiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PersonWebsiteCollectionResponse?> GetAsync(Action<RequestConfiguration<WebsitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PersonWebsiteCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder.WebsitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PersonWebsiteCollectionResponse> GetAsync(Action<RequestConfiguration<WebsitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PersonWebsiteCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder.WebsitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PersonWebsiteCollectionResponse>(requestInfo, PersonWebsiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PersonWebsiteCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.PersonWebsiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new personWebsite object in a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-websites?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PersonWebsite"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonWebsite"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PersonWebsite?> PostAsync(PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PersonWebsite?> PostAsync(Microsoft.Graph.Beta.Models.PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PersonWebsite> PostAsync(PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PersonWebsite> PostAsync(Microsoft.Graph.Beta.Models.PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, PersonWebsite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PersonWebsite>(requestInfo, Microsoft.Graph.Beta.Models.PersonWebsite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of personWebsite objects from a user&apos;s profile.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WebsitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder.WebsitesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WebsitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder.WebsitesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.PersonWebsite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WebsitesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WebsitesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder WithUrl(string rawUrl)
         {
-            return new WebsitesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of personWebsite objects from a user&apos;s profile.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WebsitesRequestBuilderGetRequestConfiguration : RequestConfiguration<WebsitesRequestBuilderGetQueryParameters>
+        public class WebsitesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder.WebsitesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

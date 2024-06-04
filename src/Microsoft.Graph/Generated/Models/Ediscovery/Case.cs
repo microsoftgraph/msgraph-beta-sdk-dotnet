@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Returns a list of case custodian objects for this case.  Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Custodian>? Custodians
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>? Custodians
         {
-            get { return BackingStore?.Get<List<Custodian>?>("custodians"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>?>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
 #nullable restore
 #else
-        public List<Custodian> Custodians
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Custodian> Custodians
         {
-            get { return BackingStore?.Get<List<Custodian>>("custodians"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
 #endif
@@ -127,130 +127,130 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Returns a list of case legalHold objects for this case.  Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LegalHold>? LegalHolds
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.LegalHold>? LegalHolds
         {
-            get { return BackingStore?.Get<List<LegalHold>?>("legalHolds"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.LegalHold>?>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
 #nullable restore
 #else
-        public List<LegalHold> LegalHolds
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.LegalHold> LegalHolds
         {
-            get { return BackingStore?.Get<List<LegalHold>>("legalHolds"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.LegalHold>>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
 #endif
         /// <summary>Returns a list of case noncustodialDataSource objects for this case.  Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NoncustodialDataSource>? NoncustodialDataSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>? NoncustodialDataSources
         {
-            get { return BackingStore?.Get<List<NoncustodialDataSource>?>("noncustodialDataSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>?>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
 #nullable restore
 #else
-        public List<NoncustodialDataSource> NoncustodialDataSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource> NoncustodialDataSources
         {
-            get { return BackingStore?.Get<List<NoncustodialDataSource>>("noncustodialDataSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
 #endif
         /// <summary>Returns a list of case operation objects for this case. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CaseOperation>? Operations
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation>? Operations
         {
-            get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<CaseOperation> Operations
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation> Operations
         {
-            get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>Returns a list of reviewSet objects in the case. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReviewSet>? ReviewSets
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>? ReviewSets
         {
-            get { return BackingStore?.Get<List<ReviewSet>?>("reviewSets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>?>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
 #nullable restore
 #else
-        public List<ReviewSet> ReviewSets
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet> ReviewSets
         {
-            get { return BackingStore?.Get<List<ReviewSet>>("reviewSets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CaseSettings? Settings
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings? Settings
         {
-            get { return BackingStore?.Get<CaseSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public CaseSettings Settings
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings Settings
         {
-            get { return BackingStore?.Get<CaseSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Returns a list of sourceCollection objects associated with this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SourceCollection>? SourceCollections
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>? SourceCollections
         {
-            get { return BackingStore?.Get<List<SourceCollection>?>("sourceCollections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>?>("sourceCollections"); }
             set { BackingStore?.Set("sourceCollections", value); }
         }
 #nullable restore
 #else
-        public List<SourceCollection> SourceCollections
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection> SourceCollections
         {
-            get { return BackingStore?.Get<List<SourceCollection>>("sourceCollections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>>("sourceCollections"); }
             set { BackingStore?.Set("sourceCollections", value); }
         }
 #endif
         /// <summary>The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.</summary>
-        public CaseStatus? Status
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseStatus? Status
         {
-            get { return BackingStore?.Get<CaseStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Returns a list of tag objects associated to this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tag>? Tags
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>? Tags
         {
-            get { return BackingStore?.Get<List<Tag>?>("tags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<Tag> Tags
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag> Tags
         {
-            get { return BackingStore?.Get<List<Tag>>("tags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Case"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.Case"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Case CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.Case CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Case();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.Case();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -263,20 +263,20 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
                 { "closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>(Microsoft.Graph.Beta.Models.Ediscovery.Custodian.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "legalHolds", n => { LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>(ReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<CaseSettings>(CaseSettings.CreateFromDiscriminatorValue); } },
-                { "sourceCollections", n => { SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<CaseStatus>(); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "legalHolds", n => { LegalHolds = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.LegalHold>(Microsoft.Graph.Beta.Models.Ediscovery.LegalHold.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>(Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation>(Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings>(Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings.CreateFromDiscriminatorValue); } },
+                { "sourceCollections", n => { SourceCollections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseStatus>(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>(Microsoft.Graph.Beta.Models.Ediscovery.Tag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -290,20 +290,20 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("closedBy", ClosedBy);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<Custodian>("custodians", Custodians);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>("custodians", Custodians);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<LegalHold>("legalHolds", LegalHolds);
-            writer.WriteCollectionOfObjectValues<NoncustodialDataSource>("noncustodialDataSources", NoncustodialDataSources);
-            writer.WriteCollectionOfObjectValues<CaseOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<ReviewSet>("reviewSets", ReviewSets);
-            writer.WriteObjectValue<CaseSettings>("settings", Settings);
-            writer.WriteCollectionOfObjectValues<SourceCollection>("sourceCollections", SourceCollections);
-            writer.WriteEnumValue<CaseStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<Tag>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.LegalHold>("legalHolds", LegalHolds);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>("noncustodialDataSources", NoncustodialDataSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSets", ReviewSets);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollections", SourceCollections);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>("tags", Tags);
         }
     }
 }

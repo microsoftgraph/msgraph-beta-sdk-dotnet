@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DirectorySettingTemplate : DirectoryObject, IParsable
+    public class DirectorySettingTemplate : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description of the template. Read-only.</summary>
@@ -45,21 +45,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingTemplateValue>? Values
+        public List<Microsoft.Graph.Beta.Models.SettingTemplateValue>? Values
         {
-            get { return BackingStore?.Get<List<SettingTemplateValue>?>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingTemplateValue>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<SettingTemplateValue> Values
+        public List<Microsoft.Graph.Beta.Models.SettingTemplateValue> Values
         {
-            get { return BackingStore?.Get<List<SettingTemplateValue>>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingTemplateValue>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DirectorySettingTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DirectorySettingTemplate"/> and sets the default values.
         /// </summary>
         public DirectorySettingTemplate() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectorySettingTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectorySettingTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectorySettingTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DirectorySettingTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectorySettingTemplate();
+            return new Microsoft.Graph.Beta.Models.DirectorySettingTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "values", n => { Values = n.GetCollectionOfObjectValues<SettingTemplateValue>(SettingTemplateValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingTemplateValue>(Microsoft.Graph.Beta.Models.SettingTemplateValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<SettingTemplateValue>("values", Values);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingTemplateValue>("values", Values);
         }
     }
 }

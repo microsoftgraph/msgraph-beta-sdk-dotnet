@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CustomExtensionCalloutResult : AuthenticationEventHandlerResult, IParsable
+    public class CustomExtensionCalloutResult : Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>When the API transaction was initiated, the date and time information uses ISO 8601 format and is always in UTC time. Example: midnight on Jan 1, 2014, is reported as 2014-01-01T00:00:00Z.</summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("numberOfAttempts", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionCalloutResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomExtensionCalloutResult"/> and sets the default values.
         /// </summary>
         public CustomExtensionCalloutResult() : base()
         {
@@ -60,12 +60,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionCalloutResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomExtensionCalloutResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomExtensionCalloutResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CustomExtensionCalloutResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionCalloutResult();
+            return new Microsoft.Graph.Beta.Models.CustomExtensionCalloutResult();
         }
         /// <summary>
         /// The deserialization information for the current model

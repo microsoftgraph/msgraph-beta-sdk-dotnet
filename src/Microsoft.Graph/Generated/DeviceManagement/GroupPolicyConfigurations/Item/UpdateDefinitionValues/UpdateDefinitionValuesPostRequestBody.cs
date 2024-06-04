@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>The added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyDefinitionValue>? Added
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>? Added
         {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("added"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>?>("added"); }
             set { BackingStore?.Set("added", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyDefinitionValue> Added
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue> Added
         {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("added"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>>("added"); }
             set { BackingStore?.Set("added", value); }
         }
 #endif
@@ -55,21 +55,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>The updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyDefinitionValue>? Updated
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>? Updated
         {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("updated"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>?>("updated"); }
             set { BackingStore?.Set("updated", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyDefinitionValue> Updated
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue> Updated
         {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("updated"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>>("updated"); }
             set { BackingStore?.Set("updated", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdateDefinitionValuesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues.UpdateDefinitionValuesPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateDefinitionValuesPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateDefinitionValuesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues.UpdateDefinitionValuesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateDefinitionValuesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues.UpdateDefinitionValuesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateDefinitionValuesPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues.UpdateDefinitionValuesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "added", n => { Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "added", n => { Added = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>(Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deletedIds", n => { DeletedIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "updated", n => { Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "updated", n => { Updated = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>(Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<GroupPolicyDefinitionValue>("added", Added);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>("added", Added);
             writer.WriteCollectionOfPrimitiveValues<string>("deletedIds", DeletedIds);
-            writer.WriteCollectionOfObjectValues<GroupPolicyDefinitionValue>("updated", Updated);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

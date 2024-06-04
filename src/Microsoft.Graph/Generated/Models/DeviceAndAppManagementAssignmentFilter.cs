@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for Assignment Filter.
     /// </summary>
-    public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable
+    public class DeviceAndAppManagementAssignmentFilter : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Supported filter management types whether its devices or apps.</summary>
         public Microsoft.Graph.Beta.Models.AssignmentFilterManagementType? AssignmentFilterManagementType
@@ -64,23 +64,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates associated assignments for a specific filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PayloadByFilter>? Payloads
+        public List<Microsoft.Graph.Beta.Models.PayloadByFilter>? Payloads
         {
-            get { return BackingStore?.Get<List<PayloadByFilter>?>("payloads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PayloadByFilter>?>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
 #nullable restore
 #else
-        public List<PayloadByFilter> Payloads
+        public List<Microsoft.Graph.Beta.Models.PayloadByFilter> Payloads
         {
-            get { return BackingStore?.Get<List<PayloadByFilter>>("payloads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PayloadByFilter>>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? Platform
+        public Microsoft.Graph.Beta.Models.DevicePlatformType? Platform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Indicates role scope tags assigned for the assignment filter.</summary>
@@ -118,16 +118,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAndAppManagementAssignmentFilter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceAndAppManagementAssignmentFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.payloadCompatibleAssignmentFilter" => new PayloadCompatibleAssignmentFilter(),
-                _ => new DeviceAndAppManagementAssignmentFilter(),
+                "#microsoft.graph.payloadCompatibleAssignmentFilter" => new Microsoft.Graph.Beta.Models.PayloadCompatibleAssignmentFilter(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter(),
             };
         }
         /// <summary>
@@ -138,13 +138,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignmentFilterManagementType", n => { AssignmentFilterManagementType = n.GetEnumValue<AssignmentFilterManagementType>(); } },
+                { "assignmentFilterManagementType", n => { AssignmentFilterManagementType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterManagementType>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<PayloadByFilter>(PayloadByFilter.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PayloadByFilter>(Microsoft.Graph.Beta.Models.PayloadByFilter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
                 { "roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "rule", n => { Rule = n.GetStringValue(); } },
             };
@@ -157,13 +157,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AssignmentFilterManagementType>("assignmentFilterManagementType", AssignmentFilterManagementType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterManagementType>("assignmentFilterManagementType", AssignmentFilterManagementType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<PayloadByFilter>("payloads", Payloads);
-            writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PayloadByFilter>("payloads", Payloads);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>("platform", Platform);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTags", RoleScopeTags);
             writer.WriteStringValue("rule", Rule);
         }

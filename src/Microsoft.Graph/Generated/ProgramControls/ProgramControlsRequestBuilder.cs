@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.ProgramControls
     public class ProgramControlsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.ProgramControls.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ProgramControls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of programControl entities.</summary>
         /// <param name="position">The unique identifier of programControl</param>
-        /// <returns>A <see cref="ProgramControlItemRequestBuilder"/></returns>
-        public ProgramControlItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ProgramControls.Item.ProgramControlItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.ProgramControls.Item.ProgramControlItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("programControl%2Did", position);
-                return new ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.ProgramControls.Item.ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProgramControlsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.ProgramControls
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProgramControlsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.ProgramControls
         /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ProgramControlCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProgramControlCollectionResponse?> GetAsync(Action<RequestConfiguration<ProgramControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder.ProgramControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProgramControlCollectionResponse> GetAsync(Action<RequestConfiguration<ProgramControlsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder.ProgramControlsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProgramControlCollectionResponse>(requestInfo, ProgramControlCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ProgramControl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProgramControl"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProgramControl?> PostAsync(ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProgramControl?> PostAsync(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProgramControl> PostAsync(ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProgramControl> PostAsync(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProgramControl>(requestInfo, Microsoft.Graph.Beta.Models.ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.ProgramControls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProgramControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder.ProgramControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProgramControlsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder.ProgramControlsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.ProgramControls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.ProgramControls
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProgramControlsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProgramControlsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProgramControlsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.ProgramControls
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ProgramControlsRequestBuilderGetRequestConfiguration : RequestConfiguration<ProgramControlsRequestBuilderGetQueryParameters>
+        public class ProgramControlsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder.ProgramControlsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnAttributeCollectionSubmitListener : AuthenticationEventListener, IParsable
+    public class OnAttributeCollectionSubmitListener : Microsoft.Graph.Beta.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Configuration for what to invoke if the event resolves to this listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionSubmitHandler? Handler
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler? Handler
         {
-            get { return BackingStore?.Get<OnAttributeCollectionSubmitHandler?>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionSubmitHandler Handler
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler Handler
         {
-            get { return BackingStore?.Get<OnAttributeCollectionSubmitHandler>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnAttributeCollectionSubmitListener"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitListener"/> and sets the default values.
         /// </summary>
         public OnAttributeCollectionSubmitListener() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnAttributeCollectionSubmitListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnAttributeCollectionSubmitListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnAttributeCollectionSubmitListener();
+            return new Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitListener();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "handler", n => { Handler = n.GetObjectValue<OnAttributeCollectionSubmitHandler>(OnAttributeCollectionSubmitHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler>(Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnAttributeCollectionSubmitHandler>("handler", Handler);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler>("handler", Handler);
         }
     }
 }

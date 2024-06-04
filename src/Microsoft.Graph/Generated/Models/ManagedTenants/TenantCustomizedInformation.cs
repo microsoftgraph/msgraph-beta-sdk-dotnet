@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantContactInformation>? Contacts
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation>? Contacts
         {
-            get { return BackingStore?.Get<List<TenantContactInformation>?>("contacts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation>?>("contacts"); }
             set { BackingStore?.Set("contacts", value); }
         }
 #nullable restore
 #else
-        public List<TenantContactInformation> Contacts
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation> Contacts
         {
-            get { return BackingStore?.Get<List<TenantContactInformation>>("contacts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation>>("contacts"); }
             set { BackingStore?.Set("contacts", value); }
         }
 #endif
@@ -163,12 +163,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantCustomizedInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TenantCustomizedInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantCustomizedInformation();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             {
                 { "businessRelationship", n => { BusinessRelationship = n.GetStringValue(); } },
                 { "complianceRequirements", n => { ComplianceRequirements = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<TenantContactInformation>(TenantContactInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation>(Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "managedServicesPlans", n => { ManagedServicesPlans = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "note", n => { Note = n.GetStringValue(); } },
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             base.Serialize(writer);
             writer.WriteStringValue("businessRelationship", BusinessRelationship);
             writer.WriteCollectionOfPrimitiveValues<string>("complianceRequirements", ComplianceRequirements);
-            writer.WriteCollectionOfObjectValues<TenantContactInformation>("contacts", Contacts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation>("contacts", Contacts);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("managedServicesPlans", ManagedServicesPlans);
             writer.WriteStringValue("note", Note);

@@ -23,149 +23,149 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPri
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis
+        public Microsoft.Graph.Beta.Models.Json? Basis
         {
-            get { return BackingStore?.Get<Json?>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis
+        public Microsoft.Graph.Beta.Models.Json Basis
         {
-            get { return BackingStore?.Get<Json>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #endif
         /// <summary>The firstCoupon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FirstCoupon
+        public Microsoft.Graph.Beta.Models.Json? FirstCoupon
         {
-            get { return BackingStore?.Get<Json?>("firstCoupon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("firstCoupon"); }
             set { BackingStore?.Set("firstCoupon", value); }
         }
 #nullable restore
 #else
-        public Json FirstCoupon
+        public Microsoft.Graph.Beta.Models.Json FirstCoupon
         {
-            get { return BackingStore?.Get<Json>("firstCoupon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("firstCoupon"); }
             set { BackingStore?.Set("firstCoupon", value); }
         }
 #endif
         /// <summary>The frequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Frequency
+        public Microsoft.Graph.Beta.Models.Json? Frequency
         {
-            get { return BackingStore?.Get<Json?>("frequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #nullable restore
 #else
-        public Json Frequency
+        public Microsoft.Graph.Beta.Models.Json Frequency
         {
-            get { return BackingStore?.Get<Json>("frequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #endif
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Issue
+        public Microsoft.Graph.Beta.Models.Json? Issue
         {
-            get { return BackingStore?.Get<Json?>("issue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #nullable restore
 #else
-        public Json Issue
+        public Microsoft.Graph.Beta.Models.Json Issue
         {
-            get { return BackingStore?.Get<Json>("issue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #endif
         /// <summary>The maturity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Maturity
+        public Microsoft.Graph.Beta.Models.Json? Maturity
         {
-            get { return BackingStore?.Get<Json?>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #nullable restore
 #else
-        public Json Maturity
+        public Microsoft.Graph.Beta.Models.Json Maturity
         {
-            get { return BackingStore?.Get<Json>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #endif
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate
+        public Microsoft.Graph.Beta.Models.Json? Rate
         {
-            get { return BackingStore?.Get<Json?>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate
+        public Microsoft.Graph.Beta.Models.Json Rate
         {
-            get { return BackingStore?.Get<Json>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #endif
         /// <summary>The redemption property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Redemption
+        public Microsoft.Graph.Beta.Models.Json? Redemption
         {
-            get { return BackingStore?.Get<Json?>("redemption"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("redemption"); }
             set { BackingStore?.Set("redemption", value); }
         }
 #nullable restore
 #else
-        public Json Redemption
+        public Microsoft.Graph.Beta.Models.Json Redemption
         {
-            get { return BackingStore?.Get<Json>("redemption"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("redemption"); }
             set { BackingStore?.Set("redemption", value); }
         }
 #endif
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement
+        public Microsoft.Graph.Beta.Models.Json? Settlement
         {
-            get { return BackingStore?.Get<Json?>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement
+        public Microsoft.Graph.Beta.Models.Json Settlement
         {
-            get { return BackingStore?.Get<Json>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #endif
         /// <summary>The yld property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Yld
+        public Microsoft.Graph.Beta.Models.Json? Yld
         {
-            get { return BackingStore?.Get<Json?>("yld"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("yld"); }
             set { BackingStore?.Set("yld", value); }
         }
 #nullable restore
 #else
-        public Json Yld
+        public Microsoft.Graph.Beta.Models.Json Yld
         {
-            get { return BackingStore?.Get<Json>("yld"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("yld"); }
             set { BackingStore?.Set("yld", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OddFPricePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPrice.OddFPricePostRequestBody"/> and sets the default values.
         /// </summary>
         public OddFPricePostRequestBody()
         {
@@ -175,12 +175,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPri
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OddFPricePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPrice.OddFPricePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OddFPricePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPrice.OddFPricePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OddFPricePostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPrice.OddFPricePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -190,15 +190,15 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPri
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "firstCoupon", n => { FirstCoupon = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "frequency", n => { Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "redemption", n => { Redemption = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "yld", n => { Yld = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "firstCoupon", n => { FirstCoupon = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "frequency", n => { Frequency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "maturity", n => { Maturity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "redemption", n => { Redemption = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "yld", n => { Yld = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -208,15 +208,15 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.OddFPri
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("basis", Basis);
-            writer.WriteObjectValue<Json>("firstCoupon", FirstCoupon);
-            writer.WriteObjectValue<Json>("frequency", Frequency);
-            writer.WriteObjectValue<Json>("issue", Issue);
-            writer.WriteObjectValue<Json>("maturity", Maturity);
-            writer.WriteObjectValue<Json>("rate", Rate);
-            writer.WriteObjectValue<Json>("redemption", Redemption);
-            writer.WriteObjectValue<Json>("settlement", Settlement);
-            writer.WriteObjectValue<Json>("yld", Yld);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("basis", Basis);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("firstCoupon", FirstCoupon);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("frequency", Frequency);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("issue", Issue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("maturity", Maturity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rate", Rate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("redemption", Redemption);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("settlement", Settlement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("yld", Yld);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

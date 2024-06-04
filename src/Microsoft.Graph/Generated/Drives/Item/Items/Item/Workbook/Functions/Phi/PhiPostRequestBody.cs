@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X
+        public Microsoft.Graph.Beta.Models.Json? X
         {
-            get { return BackingStore?.Get<Json?>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X
+        public Microsoft.Graph.Beta.Models.Json X
         {
-            get { return BackingStore?.Get<Json>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PhiPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi.PhiPostRequestBody"/> and sets the default values.
         /// </summary>
         public PhiPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PhiPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi.PhiPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PhiPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi.PhiPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PhiPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi.PhiPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Phi
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("x", X);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("x", X);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

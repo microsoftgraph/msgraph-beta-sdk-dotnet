@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS SCEP certificate profile.
     /// </summary>
-    public class IosScepCertificateProfile : IosCertificateProfileBase, IParsable
+    public class IosScepCertificateProfile : Microsoft.Graph.Beta.Models.IosCertificateProfileBase, IParsable
     {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
@@ -20,32 +20,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
+        public List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
         {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #nullable restore
 #else
-        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames
+        public List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName> CustomSubjectAlternativeNames
         {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #endif
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>? ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage> ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #endif
@@ -56,40 +56,40 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage
+        public Microsoft.Graph.Beta.Models.KeyUsages? KeyUsage
         {
-            get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState> ManagedDeviceCertificateStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #endif
         /// <summary>Trusted Root Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosTrustedRootCertificate? RootCertificate
+        public Microsoft.Graph.Beta.Models.IosTrustedRootCertificate? RootCertificate
         {
-            get { return BackingStore?.Get<IosTrustedRootCertificate?>("rootCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosTrustedRootCertificate?>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #nullable restore
 #else
-        public IosTrustedRootCertificate RootCertificate
+        public Microsoft.Graph.Beta.Models.IosTrustedRootCertificate RootCertificate
         {
-            get { return BackingStore?.Get<IosTrustedRootCertificate>("rootCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosTrustedRootCertificate>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #endif
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosScepCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosScepCertificateProfile"/> and sets the default values.
         /// </summary>
         public IosScepCertificateProfile() : base()
         {
@@ -151,12 +151,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosScepCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosScepCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosScepCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosScepCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosScepCertificateProfile();
+            return new Microsoft.Graph.Beta.Models.IosScepCertificateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,13 +166,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
-                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
-                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<IosTrustedRootCertificate>(IosTrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "certificateStore", n => { CertificateStore = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateStore>(); } },
+                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>(Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>(Microsoft.Graph.Beta.Models.ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeySize>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>(Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosTrustedRootCertificate>(Microsoft.Graph.Beta.Models.IosTrustedRootCertificate.CreateFromDiscriminatorValue); } },
                 { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
                 { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
@@ -186,13 +186,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CertificateStore>("certificateStore", CertificateStore);
-            writer.WriteCollectionOfObjectValues<CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
-            writer.WriteCollectionOfObjectValues<ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
-            writer.WriteEnumValue<KeySize>("keySize", KeySize);
-            writer.WriteEnumValue<KeyUsages>("keyUsage", KeyUsage);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
-            writer.WriteObjectValue<IosTrustedRootCertificate>("rootCertificate", RootCertificate);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateStore>("certificateStore", CertificateStore);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeySize>("keySize", KeySize);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>("keyUsage", KeyUsage);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosTrustedRootCertificate>("rootCertificate", RootCertificate);
             writer.WriteCollectionOfPrimitiveValues<string>("scepServerUrls", ScepServerUrls);
             writer.WriteStringValue("subjectAlternativeNameFormatString", SubjectAlternativeNameFormatString);
             writer.WriteStringValue("subjectNameFormatString", SubjectNameFormatString);

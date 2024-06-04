@@ -9,27 +9,27 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Driver Update Profile
     /// </summary>
-    public class WindowsDriverUpdateProfile : Entity, IParsable
+    public class WindowsDriverUpdateProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>An enum type to represent approval type of a driver update profile.</summary>
-        public DriverUpdateProfileApprovalType? ApprovalType
+        public Microsoft.Graph.Beta.Models.DriverUpdateProfileApprovalType? ApprovalType
         {
-            get { return BackingStore?.Get<DriverUpdateProfileApprovalType?>("approvalType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriverUpdateProfileApprovalType?>("approvalType"); }
             set { BackingStore?.Set("approvalType", value); }
         }
         /// <summary>The list of group assignments of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDriverUpdateProfileAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDriverUpdateProfileAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -86,32 +86,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Driver inventories for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDriverUpdateInventory>? DriverInventories
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory>? DriverInventories
         {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>?>("driverInventories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory>?>("driverInventories"); }
             set { BackingStore?.Set("driverInventories", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDriverUpdateInventory> DriverInventories
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory> DriverInventories
         {
-            get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>>("driverInventories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory>>("driverInventories"); }
             set { BackingStore?.Set("driverInventories", value); }
         }
 #endif
         /// <summary>Driver inventory sync status for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDriverUpdateProfileInventorySyncStatus? InventorySyncStatus
+        public Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus? InventorySyncStatus
         {
-            get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus?>("inventorySyncStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus?>("inventorySyncStatus"); }
             set { BackingStore?.Set("inventorySyncStatus", value); }
         }
 #nullable restore
 #else
-        public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus
+        public Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus
         {
-            get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus"); }
             set { BackingStore?.Set("inventorySyncStatus", value); }
         }
 #endif
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsDriverUpdateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsDriverUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsDriverUpdateProfile();
+            return new Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,15 +161,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "approvalType", n => { ApprovalType = n.GetEnumValue<DriverUpdateProfileApprovalType>(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDriverUpdateProfileAssignment>(WindowsDriverUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "approvalType", n => { ApprovalType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DriverUpdateProfileApprovalType>(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment>(Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deploymentDeferralInDays", n => { DeploymentDeferralInDays = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "deviceReporting", n => { DeviceReporting = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "driverInventories", n => { DriverInventories = n.GetCollectionOfObjectValues<WindowsDriverUpdateInventory>(WindowsDriverUpdateInventory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "inventorySyncStatus", n => { InventorySyncStatus = n.GetObjectValue<WindowsDriverUpdateProfileInventorySyncStatus>(WindowsDriverUpdateProfileInventorySyncStatus.CreateFromDiscriminatorValue); } },
+                { "driverInventories", n => { DriverInventories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory>(Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inventorySyncStatus", n => { InventorySyncStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus>(Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "newUpdates", n => { NewUpdates = n.GetIntValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -183,15 +183,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DriverUpdateProfileApprovalType>("approvalType", ApprovalType);
-            writer.WriteCollectionOfObjectValues<WindowsDriverUpdateProfileAssignment>("assignments", Assignments);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DriverUpdateProfileApprovalType>("approvalType", ApprovalType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("deploymentDeferralInDays", DeploymentDeferralInDays);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("deviceReporting", DeviceReporting);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<WindowsDriverUpdateInventory>("driverInventories", DriverInventories);
-            writer.WriteObjectValue<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus", InventorySyncStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDriverUpdateInventory>("driverInventories", DriverInventories);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus", InventorySyncStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("newUpdates", NewUpdates);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

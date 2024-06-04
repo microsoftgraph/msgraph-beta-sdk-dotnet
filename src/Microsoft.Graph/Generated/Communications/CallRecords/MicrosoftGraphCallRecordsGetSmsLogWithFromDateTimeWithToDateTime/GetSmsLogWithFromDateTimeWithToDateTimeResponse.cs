@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
 {
     [Obsolete("This class is obsolete. Use GetSmsLogWithFromDateTimeWithToDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSmsLogWithFromDateTimeWithToDateTimeResponse : GetSmsLogWithFromDateTimeWithToDateTimeGetResponse, IParsable
+    public class GetSmsLogWithFromDateTimeWithToDateTimeResponse : Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSmsLogWithFromDateTimeWithToDateTimeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSmsLogWithFromDateTimeWithToDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSmsLogWithFromDateTimeWithToDateTimeResponse();
+            return new Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeResponse();
         }
     }
 }

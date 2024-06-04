@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SynchronizationJob : Entity, IParsable
+    public class SynchronizationJob : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bulk upload operation for the job.</summary>
@@ -29,64 +29,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Schedule used to run the job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.SynchronizationSchedule? Schedule
         {
-            get { return BackingStore?.Get<SynchronizationSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public SynchronizationSchedule Schedule
+        public Microsoft.Graph.Beta.Models.SynchronizationSchedule Schedule
         {
-            get { return BackingStore?.Get<SynchronizationSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>The synchronization schema configured for the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationSchema? Schema
+        public Microsoft.Graph.Beta.Models.SynchronizationSchema? Schema
         {
-            get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationSchema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public SynchronizationSchema Schema
+        public Microsoft.Graph.Beta.Models.SynchronizationSchema Schema
         {
-            get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #endif
         /// <summary>Status of the job, which includes when the job was last run, current job state, and errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationStatus? Status
+        public Microsoft.Graph.Beta.Models.SynchronizationStatus? Status
         {
-            get { return BackingStore?.Get<SynchronizationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public SynchronizationStatus Status
+        public Microsoft.Graph.Beta.Models.SynchronizationStatus Status
         {
-            get { return BackingStore?.Get<SynchronizationStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>Settings associated with the job. Some settings are inherited from the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? SynchronizationJobSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? SynchronizationJobSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("synchronizationJobSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("synchronizationJobSettings"); }
             set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> SynchronizationJobSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> SynchronizationJobSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("synchronizationJobSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("synchronizationJobSettings"); }
             set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
 #endif
@@ -109,12 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SynchronizationJob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SynchronizationJob CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SynchronizationJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationJob();
+            return new Microsoft.Graph.Beta.Models.SynchronizationJob();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,10 +125,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bulkUpload", n => { BulkUpload = n.GetObjectValue<Microsoft.Graph.Beta.Models.BulkUpload>(Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<SynchronizationSchedule>(SynchronizationSchedule.CreateFromDiscriminatorValue); } },
-                { "schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<SynchronizationStatus>(SynchronizationStatus.CreateFromDiscriminatorValue); } },
-                { "synchronizationJobSettings", n => { SynchronizationJobSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.SynchronizationSchedule>(Microsoft.Graph.Beta.Models.SynchronizationSchedule.CreateFromDiscriminatorValue); } },
+                { "schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Beta.Models.SynchronizationSchema>(Microsoft.Graph.Beta.Models.SynchronizationSchema.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Beta.Models.SynchronizationStatus>(Microsoft.Graph.Beta.Models.SynchronizationStatus.CreateFromDiscriminatorValue); } },
+                { "synchronizationJobSettings", n => { SynchronizationJobSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
@@ -141,10 +141,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BulkUpload>("bulkUpload", BulkUpload);
-            writer.WriteObjectValue<SynchronizationSchedule>("schedule", Schedule);
-            writer.WriteObjectValue<SynchronizationSchema>("schema", Schema);
-            writer.WriteObjectValue<SynchronizationStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("synchronizationJobSettings", SynchronizationJobSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SynchronizationSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SynchronizationSchema>("schema", Schema);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SynchronizationStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("synchronizationJobSettings", SynchronizationJobSettings);
             writer.WriteStringValue("templateId", TemplateId);
         }
     }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Association"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.Association"/> and sets the default values.
         /// </summary>
         public Association()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Association"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.Association"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Association CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.Association CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.associatedBranch" => new AssociatedBranch(),
-                _ => new Association(),
+                "#microsoft.graph.networkaccess.associatedBranch" => new Microsoft.Graph.Beta.Models.Networkaccess.AssociatedBranch(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.Association(),
             };
         }
         /// <summary>

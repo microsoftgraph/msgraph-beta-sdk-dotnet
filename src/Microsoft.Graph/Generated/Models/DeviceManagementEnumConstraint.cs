@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint that enforces the setting value is from a permitted set of strings
     /// </summary>
-    public class DeviceManagementEnumConstraint : DeviceManagementConstraint, IParsable
+    public class DeviceManagementEnumConstraint : Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>List of valid values for this string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementEnumValue>? Values
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementEnumValue>? Values
         {
-            get { return BackingStore?.Get<List<DeviceManagementEnumValue>?>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementEnumValue>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementEnumValue> Values
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementEnumValue> Values
         {
-            get { return BackingStore?.Get<List<DeviceManagementEnumValue>>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementEnumValue>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementEnumConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementEnumConstraint"/> and sets the default values.
         /// </summary>
         public DeviceManagementEnumConstraint() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementEnumConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementEnumConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementEnumConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementEnumConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementEnumConstraint();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementEnumConstraint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "values", n => { Values = n.GetCollectionOfObjectValues<DeviceManagementEnumValue>(DeviceManagementEnumValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementEnumValue>(Microsoft.Graph.Beta.Models.DeviceManagementEnumValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementEnumValue>("values", Values);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementEnumValue>("values", Values);
         }
     }
 }

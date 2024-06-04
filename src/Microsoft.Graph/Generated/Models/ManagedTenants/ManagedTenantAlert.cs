@@ -29,48 +29,48 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The alertDataReferenceStrings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertDataReferenceString>? AlertDataReferenceStrings
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString>? AlertDataReferenceStrings
         {
-            get { return BackingStore?.Get<List<AlertDataReferenceString>?>("alertDataReferenceStrings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString>?>("alertDataReferenceStrings"); }
             set { BackingStore?.Set("alertDataReferenceStrings", value); }
         }
 #nullable restore
 #else
-        public List<AlertDataReferenceString> AlertDataReferenceStrings
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString> AlertDataReferenceStrings
         {
-            get { return BackingStore?.Get<List<AlertDataReferenceString>>("alertDataReferenceStrings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString>>("alertDataReferenceStrings"); }
             set { BackingStore?.Set("alertDataReferenceStrings", value); }
         }
 #endif
         /// <summary>The alertLogs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantAlertLog>? AlertLogs
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog>? AlertLogs
         {
-            get { return BackingStore?.Get<List<ManagedTenantAlertLog>?>("alertLogs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog>?>("alertLogs"); }
             set { BackingStore?.Set("alertLogs", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantAlertLog> AlertLogs
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog> AlertLogs
         {
-            get { return BackingStore?.Get<List<ManagedTenantAlertLog>>("alertLogs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog>>("alertLogs"); }
             set { BackingStore?.Set("alertLogs", value); }
         }
 #endif
         /// <summary>The alertRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedTenantAlertRule? AlertRule
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule? AlertRule
         {
-            get { return BackingStore?.Get<ManagedTenantAlertRule?>("alertRule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule?>("alertRule"); }
             set { BackingStore?.Set("alertRule", value); }
         }
 #nullable restore
 #else
-        public ManagedTenantAlertRule AlertRule
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule AlertRule
         {
-            get { return BackingStore?.Get<ManagedTenantAlertRule>("alertRule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>("alertRule"); }
             set { BackingStore?.Set("alertRule", value); }
         }
 #endif
@@ -93,16 +93,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The apiNotifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantApiNotification>? ApiNotifications
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification>? ApiNotifications
         {
-            get { return BackingStore?.Get<List<ManagedTenantApiNotification>?>("apiNotifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification>?>("apiNotifications"); }
             set { BackingStore?.Set("apiNotifications", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantApiNotification> ApiNotifications
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification> ApiNotifications
         {
-            get { return BackingStore?.Get<List<ManagedTenantApiNotification>>("apiNotifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification>>("apiNotifications"); }
             set { BackingStore?.Set("apiNotifications", value); }
         }
 #endif
@@ -169,16 +169,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The emailNotifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantEmailNotification>? EmailNotifications
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification>? EmailNotifications
         {
-            get { return BackingStore?.Get<List<ManagedTenantEmailNotification>?>("emailNotifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification>?>("emailNotifications"); }
             set { BackingStore?.Set("emailNotifications", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantEmailNotification> EmailNotifications
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification> EmailNotifications
         {
-            get { return BackingStore?.Get<List<ManagedTenantEmailNotification>>("emailNotifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification>>("emailNotifications"); }
             set { BackingStore?.Set("emailNotifications", value); }
         }
 #endif
@@ -221,15 +221,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>The severity property</summary>
-        public AlertSeverity? Severity
+        public Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity? Severity
         {
-            get { return BackingStore?.Get<AlertSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The status property</summary>
-        public AlertStatus? Status
+        public Microsoft.Graph.Beta.Models.ManagedTenants.AlertStatus? Status
         {
-            get { return BackingStore?.Get<AlertStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The tenantId property</summary>
@@ -267,12 +267,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedTenantAlert"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedTenantAlert CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedTenantAlert();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -283,22 +283,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "alertData", n => { AlertData = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertData>(Microsoft.Graph.Beta.Models.ManagedTenants.AlertData.CreateFromDiscriminatorValue); } },
-                { "alertDataReferenceStrings", n => { AlertDataReferenceStrings = n.GetCollectionOfObjectValues<AlertDataReferenceString>(AlertDataReferenceString.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "alertLogs", n => { AlertLogs = n.GetCollectionOfObjectValues<ManagedTenantAlertLog>(ManagedTenantAlertLog.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "alertRule", n => { AlertRule = n.GetObjectValue<ManagedTenantAlertRule>(ManagedTenantAlertRule.CreateFromDiscriminatorValue); } },
+                { "alertDataReferenceStrings", n => { AlertDataReferenceStrings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString>(Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertLogs", n => { AlertLogs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertRule", n => { AlertRule = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule.CreateFromDiscriminatorValue); } },
                 { "alertRuleDisplayName", n => { AlertRuleDisplayName = n.GetStringValue(); } },
-                { "apiNotifications", n => { ApiNotifications = n.GetCollectionOfObjectValues<ManagedTenantApiNotification>(ManagedTenantApiNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "apiNotifications", n => { ApiNotifications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
                 { "correlationCount", n => { CorrelationCount = n.GetIntValue(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "emailNotifications", n => { EmailNotifications = n.GetCollectionOfObjectValues<ManagedTenantEmailNotification>(ManagedTenantEmailNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailNotifications", n => { EmailNotifications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
-                { "status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertStatus>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -312,22 +312,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertData>("alertData", AlertData);
-            writer.WriteCollectionOfObjectValues<AlertDataReferenceString>("alertDataReferenceStrings", AlertDataReferenceStrings);
-            writer.WriteCollectionOfObjectValues<ManagedTenantAlertLog>("alertLogs", AlertLogs);
-            writer.WriteObjectValue<ManagedTenantAlertRule>("alertRule", AlertRule);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.AlertDataReferenceString>("alertDataReferenceStrings", AlertDataReferenceStrings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog>("alertLogs", AlertLogs);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>("alertRule", AlertRule);
             writer.WriteStringValue("alertRuleDisplayName", AlertRuleDisplayName);
-            writer.WriteCollectionOfObjectValues<ManagedTenantApiNotification>("apiNotifications", ApiNotifications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification>("apiNotifications", ApiNotifications);
             writer.WriteStringValue("assignedToUserId", AssignedToUserId);
             writer.WriteIntValue("correlationCount", CorrelationCount);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<ManagedTenantEmailNotification>("emailNotifications", EmailNotifications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantEmailNotification>("emailNotifications", EmailNotifications);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<AlertSeverity>("severity", Severity);
-            writer.WriteEnumValue<AlertStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertStatus>("status", Status);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("title", Title);
         }

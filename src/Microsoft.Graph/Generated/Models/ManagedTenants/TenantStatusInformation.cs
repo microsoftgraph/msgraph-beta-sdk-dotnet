@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("onboardedDateTime", value); }
         }
         /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
-        public TenantOnboardingStatus? OnboardingStatus
+        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingStatus? OnboardingStatus
         {
-            get { return BackingStore?.Get<TenantOnboardingStatus?>("onboardingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
@@ -106,21 +106,21 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkloadStatus>? WorkloadStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus>? WorkloadStatuses
         {
-            get { return BackingStore?.Get<List<WorkloadStatus>?>("workloadStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus>?>("workloadStatuses"); }
             set { BackingStore?.Set("workloadStatuses", value); }
         }
 #nullable restore
 #else
-        public List<WorkloadStatus> WorkloadStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus> WorkloadStatuses
         {
-            get { return BackingStore?.Get<List<WorkloadStatus>>("workloadStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus>>("workloadStatuses"); }
             set { BackingStore?.Set("workloadStatuses", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TenantStatusInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation"/> and sets the default values.
         /// </summary>
         public TenantStatusInformation()
         {
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantStatusInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TenantStatusInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantStatusInformation();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,16 +145,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delegatedPrivilegeStatus", n => { DelegatedPrivilegeStatus = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
+                { "delegatedPrivilegeStatus", n => { DelegatedPrivilegeStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus>(); } },
                 { "lastDelegatedPrivilegeRefreshDateTime", n => { LastDelegatedPrivilegeRefreshDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "offboardedByUserId", n => { OffboardedByUserId = n.GetStringValue(); } },
                 { "offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onboardedByUserId", n => { OnboardedByUserId = n.GetStringValue(); } },
                 { "onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<TenantOnboardingStatus>(); } },
-                { "tenantOnboardingEligibilityReason", n => { TenantOnboardingEligibilityReason = n.GetEnumValue<TenantOnboardingEligibilityReason>(); } },
-                { "workloadStatuses", n => { WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>(WorkloadStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingStatus>(); } },
+                { "tenantOnboardingEligibilityReason", n => { TenantOnboardingEligibilityReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason>(); } },
+                { "workloadStatuses", n => { WorkloadStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus>(Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -164,16 +164,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", DelegatedPrivilegeStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", DelegatedPrivilegeStatus);
             writer.WriteDateTimeOffsetValue("lastDelegatedPrivilegeRefreshDateTime", LastDelegatedPrivilegeRefreshDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("offboardedByUserId", OffboardedByUserId);
             writer.WriteDateTimeOffsetValue("offboardedDateTime", OffboardedDateTime);
             writer.WriteStringValue("onboardedByUserId", OnboardedByUserId);
             writer.WriteDateTimeOffsetValue("onboardedDateTime", OnboardedDateTime);
-            writer.WriteEnumValue<TenantOnboardingStatus>("onboardingStatus", OnboardingStatus);
-            writer.WriteEnumValue<TenantOnboardingEligibilityReason>("tenantOnboardingEligibilityReason", TenantOnboardingEligibilityReason);
-            writer.WriteCollectionOfObjectValues<WorkloadStatus>("workloadStatuses", WorkloadStatuses);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason>("tenantOnboardingEligibilityReason", TenantOnboardingEligibilityReason);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadStatus>("workloadStatuses", WorkloadStatuses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

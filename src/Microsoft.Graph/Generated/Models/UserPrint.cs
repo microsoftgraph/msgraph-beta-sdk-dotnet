@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The recentPrinterShares property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrinterShare>? RecentPrinterShares
+        public List<Microsoft.Graph.Beta.Models.PrinterShare>? RecentPrinterShares
         {
-            get { return BackingStore?.Get<List<PrinterShare>?>("recentPrinterShares"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrinterShare>?>("recentPrinterShares"); }
             set { BackingStore?.Set("recentPrinterShares", value); }
         }
 #nullable restore
 #else
-        public List<PrinterShare> RecentPrinterShares
+        public List<Microsoft.Graph.Beta.Models.PrinterShare> RecentPrinterShares
         {
-            get { return BackingStore?.Get<List<PrinterShare>>("recentPrinterShares"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrinterShare>>("recentPrinterShares"); }
             set { BackingStore?.Set("recentPrinterShares", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserPrint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserPrint"/> and sets the default values.
         /// </summary>
         public UserPrint()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserPrint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserPrint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserPrint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UserPrint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserPrint();
+            return new Microsoft.Graph.Beta.Models.UserPrint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recentPrinterShares", n => { RecentPrinterShares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recentPrinterShares", n => { RecentPrinterShares = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrinterShare>(Microsoft.Graph.Beta.Models.PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<PrinterShare>("recentPrinterShares", RecentPrinterShares);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrinterShare>("recentPrinterShares", RecentPrinterShares);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

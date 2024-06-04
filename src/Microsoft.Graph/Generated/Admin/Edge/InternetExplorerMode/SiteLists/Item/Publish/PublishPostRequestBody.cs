@@ -39,37 +39,37 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         /// <summary>The sharedCookies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSharedCookie>? SharedCookies
+        public List<Microsoft.Graph.Beta.Models.BrowserSharedCookie>? SharedCookies
         {
-            get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BrowserSharedCookie>?>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSharedCookie> SharedCookies
+        public List<Microsoft.Graph.Beta.Models.BrowserSharedCookie> SharedCookies
         {
-            get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BrowserSharedCookie>>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
 #endif
         /// <summary>The sites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BrowserSite>? Sites
+        public List<Microsoft.Graph.Beta.Models.BrowserSite>? Sites
         {
-            get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BrowserSite>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #nullable restore
 #else
-        public List<BrowserSite> Sites
+        public List<Microsoft.Graph.Beta.Models.BrowserSite> Sites
         {
-            get { return BackingStore?.Get<List<BrowserSite>>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BrowserSite>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PublishPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish.PublishPostRequestBody"/> and sets the default values.
         /// </summary>
         public PublishPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PublishPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish.PublishPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PublishPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish.PublishPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PublishPostRequestBody();
+            return new Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish.PublishPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "revision", n => { Revision = n.GetStringValue(); } },
-                { "sharedCookies", n => { SharedCookies = n.GetCollectionOfObjectValues<BrowserSharedCookie>(BrowserSharedCookie.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sites", n => { Sites = n.GetCollectionOfObjectValues<BrowserSite>(BrowserSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharedCookies", n => { SharedCookies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BrowserSharedCookie>(Microsoft.Graph.Beta.Models.BrowserSharedCookie.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sites", n => { Sites = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BrowserSite>(Microsoft.Graph.Beta.Models.BrowserSite.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -107,8 +107,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("revision", Revision);
-            writer.WriteCollectionOfObjectValues<BrowserSharedCookie>("sharedCookies", SharedCookies);
-            writer.WriteCollectionOfObjectValues<BrowserSite>("sites", Sites);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BrowserSharedCookie>("sharedCookies", SharedCookies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BrowserSite>("sites", Sites);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

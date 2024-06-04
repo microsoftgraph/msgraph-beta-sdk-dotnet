@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The configuration for the bot source. Required if sourceType is set to bot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppDashboardCardBotConfiguration? BotConfiguration
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration? BotConfiguration
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardBotConfiguration?>("botConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration?>("botConfiguration"); }
             set { BackingStore?.Set("botConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamsAppDashboardCardBotConfiguration BotConfiguration
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration BotConfiguration
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardBotConfiguration>("botConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration>("botConfiguration"); }
             set { BackingStore?.Set("botConfiguration", value); }
         }
 #endif
@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Represents the type of source that powers the content of the dashboard card. The possible values are: bot, unknownFutureValue.</summary>
-        public TeamsAppDashboardCardSourceType? SourceType
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSourceType? SourceType
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardSourceType?>("sourceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSourceType?>("sourceType"); }
             set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamsAppDashboardCardContentSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource"/> and sets the default values.
         /// </summary>
         public TeamsAppDashboardCardContentSource()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsAppDashboardCardContentSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamsAppDashboardCardContentSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsAppDashboardCardContentSource();
+            return new Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "botConfiguration", n => { BotConfiguration = n.GetObjectValue<TeamsAppDashboardCardBotConfiguration>(TeamsAppDashboardCardBotConfiguration.CreateFromDiscriminatorValue); } },
+                { "botConfiguration", n => { BotConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration>(Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sourceType", n => { SourceType = n.GetEnumValue<TeamsAppDashboardCardSourceType>(); } },
+                { "sourceType", n => { SourceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSourceType>(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamsAppDashboardCardBotConfiguration>("botConfiguration", BotConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardBotConfiguration>("botConfiguration", BotConfiguration);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TeamsAppDashboardCardSourceType>("sourceType", SourceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSourceType>("sourceType", SourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

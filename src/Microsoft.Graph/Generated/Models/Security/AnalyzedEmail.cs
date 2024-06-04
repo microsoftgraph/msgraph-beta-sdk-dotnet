@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>A collection of the attachments in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnalyzedEmailAttachment>? Attachments
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>? Attachments
         {
-            get { return BackingStore?.Get<List<AnalyzedEmailAttachment>?>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<AnalyzedEmailAttachment> Attachments
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment> Attachments
         {
-            get { return BackingStore?.Get<List<AnalyzedEmailAttachment>>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The authentication details associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AnalyzedEmailAuthenticationDetail? AuthenticationDetails
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail? AuthenticationDetails
         {
-            get { return BackingStore?.Get<AnalyzedEmailAuthenticationDetail?>("authenticationDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail?>("authenticationDetails"); }
             set { BackingStore?.Set("authenticationDetails", value); }
         }
 #nullable restore
 #else
-        public AnalyzedEmailAuthenticationDetail AuthenticationDetails
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail AuthenticationDetails
         {
-            get { return BackingStore?.Get<AnalyzedEmailAuthenticationDetail>("authenticationDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail>("authenticationDetails"); }
             set { BackingStore?.Set("authenticationDetails", value); }
         }
 #endif
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The direction of the emails. The possible values are: unknown, inbound, outbound, intraOrg, unknownFutureValue.</summary>
-        public AntispamDirectionality? Directionality
+        public Microsoft.Graph.Beta.Models.Security.AntispamDirectionality? Directionality
         {
-            get { return BackingStore?.Get<AntispamDirectionality?>("directionality"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AntispamDirectionality?>("directionality"); }
             set { BackingStore?.Set("directionality", value); }
         }
         /// <summary>The distribution list details to which the email was sent.</summary>
@@ -153,16 +153,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The name of the Exchange transport rules (ETRs) associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnalyzedEmailExchangeTransportRuleInfo>? ExchangeTransportRules
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>? ExchangeTransportRules
         {
-            get { return BackingStore?.Get<List<AnalyzedEmailExchangeTransportRuleInfo>?>("exchangeTransportRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>?>("exchangeTransportRules"); }
             set { BackingStore?.Set("exchangeTransportRules", value); }
         }
 #nullable restore
 #else
-        public List<AnalyzedEmailExchangeTransportRuleInfo> ExchangeTransportRules
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo> ExchangeTransportRules
         {
-            get { return BackingStore?.Get<List<AnalyzedEmailExchangeTransportRuleInfo>>("exchangeTransportRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>>("exchangeTransportRules"); }
             set { BackingStore?.Set("exchangeTransportRules", value); }
         }
 #endif
@@ -201,16 +201,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The latest delivery details of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AnalyzedEmailDeliveryDetail? LatestDelivery
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail? LatestDelivery
         {
-            get { return BackingStore?.Get<AnalyzedEmailDeliveryDetail?>("latestDelivery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail?>("latestDelivery"); }
             set { BackingStore?.Set("latestDelivery", value); }
         }
 #nullable restore
 #else
-        public AnalyzedEmailDeliveryDetail LatestDelivery
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail LatestDelivery
         {
-            get { return BackingStore?.Get<AnalyzedEmailDeliveryDetail>("latestDelivery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>("latestDelivery"); }
             set { BackingStore?.Set("latestDelivery", value); }
         }
 #endif
@@ -239,16 +239,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The original delivery details of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AnalyzedEmailDeliveryDetail? OriginalDelivery
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail? OriginalDelivery
         {
-            get { return BackingStore?.Get<AnalyzedEmailDeliveryDetail?>("originalDelivery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail?>("originalDelivery"); }
             set { BackingStore?.Set("originalDelivery", value); }
         }
 #nullable restore
 #else
-        public AnalyzedEmailDeliveryDetail OriginalDelivery
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail OriginalDelivery
         {
-            get { return BackingStore?.Get<AnalyzedEmailDeliveryDetail>("originalDelivery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>("originalDelivery"); }
             set { BackingStore?.Set("originalDelivery", value); }
         }
 #endif
@@ -351,16 +351,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Sender details of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AnalyzedEmailSenderDetail? SenderDetail
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail? SenderDetail
         {
-            get { return BackingStore?.Get<AnalyzedEmailSenderDetail?>("senderDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail?>("senderDetail"); }
             set { BackingStore?.Set("senderDetail", value); }
         }
 #nullable restore
 #else
-        public AnalyzedEmailSenderDetail SenderDetail
+        public Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail SenderDetail
         {
-            get { return BackingStore?.Get<AnalyzedEmailSenderDetail>("senderDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail>("senderDetail"); }
             set { BackingStore?.Set("senderDetail", value); }
         }
 #endif
@@ -405,32 +405,32 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ThreatType?>? ThreatTypes
+        public List<Microsoft.Graph.Beta.Models.Security.ThreatType?>? ThreatTypes
         {
-            get { return BackingStore?.Get<List<ThreatType?>?>("threatTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ThreatType?>?>("threatTypes"); }
             set { BackingStore?.Set("threatTypes", value); }
         }
 #nullable restore
 #else
-        public List<ThreatType?> ThreatTypes
+        public List<Microsoft.Graph.Beta.Models.Security.ThreatType?> ThreatTypes
         {
-            get { return BackingStore?.Get<List<ThreatType?>>("threatTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ThreatType?>>("threatTypes"); }
             set { BackingStore?.Set("threatTypes", value); }
         }
 #endif
         /// <summary>A collection of the URLs in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnalyzedEmailUrl>? Urls
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>? Urls
         {
-            get { return BackingStore?.Get<List<AnalyzedEmailUrl>?>("urls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>?>("urls"); }
             set { BackingStore?.Set("urls", value); }
         }
 #nullable restore
 #else
-        public List<AnalyzedEmailUrl> Urls
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl> Urls
         {
-            get { return BackingStore?.Get<List<AnalyzedEmailUrl>>("urls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>>("urls"); }
             set { BackingStore?.Set("urls", value); }
         }
 #endif
@@ -443,12 +443,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AnalyzedEmail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AnalyzedEmail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.AnalyzedEmail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AnalyzedEmail();
+            return new Microsoft.Graph.Beta.Models.Security.AnalyzedEmail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -459,34 +459,34 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "alertIds", n => { AlertIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<AnalyzedEmailAttachment>(AnalyzedEmailAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "attachmentsCount", n => { AttachmentsCount = n.GetIntValue(); } },
-                { "authenticationDetails", n => { AuthenticationDetails = n.GetObjectValue<AnalyzedEmailAuthenticationDetail>(AnalyzedEmailAuthenticationDetail.CreateFromDiscriminatorValue); } },
+                { "authenticationDetails", n => { AuthenticationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail.CreateFromDiscriminatorValue); } },
                 { "bulkComplaintLevel", n => { BulkComplaintLevel = n.GetStringValue(); } },
                 { "contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "detectionMethods", n => { DetectionMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "directionality", n => { Directionality = n.GetEnumValue<AntispamDirectionality>(); } },
+                { "directionality", n => { Directionality = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AntispamDirectionality>(); } },
                 { "distributionList", n => { DistributionList = n.GetStringValue(); } },
                 { "emailClusterId", n => { EmailClusterId = n.GetStringValue(); } },
-                { "exchangeTransportRules", n => { ExchangeTransportRules = n.GetCollectionOfObjectValues<AnalyzedEmailExchangeTransportRuleInfo>(AnalyzedEmailExchangeTransportRuleInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exchangeTransportRules", n => { ExchangeTransportRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "latestDelivery", n => { LatestDelivery = n.GetObjectValue<AnalyzedEmailDeliveryDetail>(AnalyzedEmailDeliveryDetail.CreateFromDiscriminatorValue); } },
+                { "latestDelivery", n => { LatestDelivery = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail.CreateFromDiscriminatorValue); } },
                 { "loggedDateTime", n => { LoggedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
-                { "originalDelivery", n => { OriginalDelivery = n.GetObjectValue<AnalyzedEmailDeliveryDetail>(AnalyzedEmailDeliveryDetail.CreateFromDiscriminatorValue); } },
+                { "originalDelivery", n => { OriginalDelivery = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail.CreateFromDiscriminatorValue); } },
                 { "overrideSources", n => { OverrideSources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "phishConfidenceLevel", n => { PhishConfidenceLevel = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetStringValue(); } },
                 { "policyAction", n => { PolicyAction = n.GetStringValue(); } },
                 { "recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
                 { "returnPath", n => { ReturnPath = n.GetStringValue(); } },
-                { "senderDetail", n => { SenderDetail = n.GetObjectValue<AnalyzedEmailSenderDetail>(AnalyzedEmailSenderDetail.CreateFromDiscriminatorValue); } },
+                { "senderDetail", n => { SenderDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail.CreateFromDiscriminatorValue); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetIntValue(); } },
                 { "spamConfidenceLevel", n => { SpamConfidenceLevel = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "threatTypes", n => { ThreatTypes = n.GetCollectionOfEnumValues<ThreatType>()?.ToList(); } },
-                { "urls", n => { Urls = n.GetCollectionOfObjectValues<AnalyzedEmailUrl>(AnalyzedEmailUrl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "threatTypes", n => { ThreatTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.Security.ThreatType>()?.ToList(); } },
+                { "urls", n => { Urls = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "urlsCount", n => { UrlsCount = n.GetIntValue(); } },
             };
         }
@@ -499,34 +499,34 @@ namespace Microsoft.Graph.Beta.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("alertIds", AlertIds);
-            writer.WriteCollectionOfObjectValues<AnalyzedEmailAttachment>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAttachment>("attachments", Attachments);
             writer.WriteIntValue("attachmentsCount", AttachmentsCount);
-            writer.WriteObjectValue<AnalyzedEmailAuthenticationDetail>("authenticationDetails", AuthenticationDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailAuthenticationDetail>("authenticationDetails", AuthenticationDetails);
             writer.WriteStringValue("bulkComplaintLevel", BulkComplaintLevel);
             writer.WriteCollectionOfPrimitiveValues<string>("contexts", Contexts);
             writer.WriteCollectionOfPrimitiveValues<string>("detectionMethods", DetectionMethods);
-            writer.WriteEnumValue<AntispamDirectionality>("directionality", Directionality);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AntispamDirectionality>("directionality", Directionality);
             writer.WriteStringValue("distributionList", DistributionList);
             writer.WriteStringValue("emailClusterId", EmailClusterId);
-            writer.WriteCollectionOfObjectValues<AnalyzedEmailExchangeTransportRuleInfo>("exchangeTransportRules", ExchangeTransportRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailExchangeTransportRuleInfo>("exchangeTransportRules", ExchangeTransportRules);
             writer.WriteStringValue("internetMessageId", InternetMessageId);
             writer.WriteStringValue("language", Language);
-            writer.WriteObjectValue<AnalyzedEmailDeliveryDetail>("latestDelivery", LatestDelivery);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>("latestDelivery", LatestDelivery);
             writer.WriteDateTimeOffsetValue("loggedDateTime", LoggedDateTime);
             writer.WriteStringValue("networkMessageId", NetworkMessageId);
-            writer.WriteObjectValue<AnalyzedEmailDeliveryDetail>("originalDelivery", OriginalDelivery);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail>("originalDelivery", OriginalDelivery);
             writer.WriteCollectionOfPrimitiveValues<string>("overrideSources", OverrideSources);
             writer.WriteStringValue("phishConfidenceLevel", PhishConfidenceLevel);
             writer.WriteStringValue("policy", Policy);
             writer.WriteStringValue("policyAction", PolicyAction);
             writer.WriteStringValue("recipientEmailAddress", RecipientEmailAddress);
             writer.WriteStringValue("returnPath", ReturnPath);
-            writer.WriteObjectValue<AnalyzedEmailSenderDetail>("senderDetail", SenderDetail);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailSenderDetail>("senderDetail", SenderDetail);
             writer.WriteIntValue("sizeInBytes", SizeInBytes);
             writer.WriteStringValue("spamConfidenceLevel", SpamConfidenceLevel);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteCollectionOfEnumValues<ThreatType>("threatTypes", ThreatTypes);
-            writer.WriteCollectionOfObjectValues<AnalyzedEmailUrl>("urls", Urls);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.Security.ThreatType>("threatTypes", ThreatTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl>("urls", Urls);
             writer.WriteIntValue("urlsCount", UrlsCount);
         }
     }

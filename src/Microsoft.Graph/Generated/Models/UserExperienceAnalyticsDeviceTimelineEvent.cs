@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics device event entity contains NRT device event details.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceTimelineEvent : Entity, IParsable
+    public class UserExperienceAnalyticsDeviceTimelineEvent : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The id of the device where the event occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical</summary>
-        public DeviceEventLevel? EventLevel
+        public Microsoft.Graph.Beta.Models.DeviceEventLevel? EventLevel
         {
-            get { return BackingStore?.Get<DeviceEventLevel?>("eventLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceEventLevel?>("eventLevel"); }
             set { BackingStore?.Set("eventLevel", value); }
         }
         /// <summary>The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.</summary>
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceTimelineEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDeviceTimelineEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDeviceTimelineEvent();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "eventDetails", n => { EventDetails = n.GetStringValue(); } },
-                { "eventLevel", n => { EventLevel = n.GetEnumValue<DeviceEventLevel>(); } },
+                { "eventLevel", n => { EventLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceEventLevel>(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
                 { "eventSource", n => { EventSource = n.GetStringValue(); } },
             };
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("eventDetails", EventDetails);
-            writer.WriteEnumValue<DeviceEventLevel>("eventLevel", EventLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceEventLevel>("eventLevel", EventLevel);
             writer.WriteStringValue("eventName", EventName);
             writer.WriteStringValue("eventSource", EventSource);
         }

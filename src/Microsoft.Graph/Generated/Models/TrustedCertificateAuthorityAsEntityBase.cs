@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TrustedCertificateAuthorityAsEntityBase : DirectoryObject, IParsable
+    public class TrustedCertificateAuthorityAsEntityBase : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of trusted certificate authorities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificateAuthorityAsEntity>? TrustedCertificateAuthorities
+        public List<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>? TrustedCertificateAuthorities
         {
-            get { return BackingStore?.Get<List<CertificateAuthorityAsEntity>?>("trustedCertificateAuthorities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>?>("trustedCertificateAuthorities"); }
             set { BackingStore?.Set("trustedCertificateAuthorities", value); }
         }
 #nullable restore
 #else
-        public List<CertificateAuthorityAsEntity> TrustedCertificateAuthorities
+        public List<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity> TrustedCertificateAuthorities
         {
-            get { return BackingStore?.Get<List<CertificateAuthorityAsEntity>>("trustedCertificateAuthorities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>>("trustedCertificateAuthorities"); }
             set { BackingStore?.Set("trustedCertificateAuthorities", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TrustedCertificateAuthorityAsEntityBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityAsEntityBase"/> and sets the default values.
         /// </summary>
         public TrustedCertificateAuthorityAsEntityBase() : base()
         {
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrustedCertificateAuthorityAsEntityBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityAsEntityBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TrustedCertificateAuthorityAsEntityBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityAsEntityBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.certificateBasedApplicationConfiguration" => new CertificateBasedApplicationConfiguration(),
-                _ => new TrustedCertificateAuthorityAsEntityBase(),
+                "#microsoft.graph.certificateBasedApplicationConfiguration" => new Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.TrustedCertificateAuthorityAsEntityBase(),
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "trustedCertificateAuthorities", n => { TrustedCertificateAuthorities = n.GetCollectionOfObjectValues<CertificateAuthorityAsEntity>(CertificateAuthorityAsEntity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trustedCertificateAuthorities", n => { TrustedCertificateAuthorities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>(Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CertificateAuthorityAsEntity>("trustedCertificateAuthorities", TrustedCertificateAuthorities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>("trustedCertificateAuthorities", TrustedCertificateAuthorities);
         }
     }
 }

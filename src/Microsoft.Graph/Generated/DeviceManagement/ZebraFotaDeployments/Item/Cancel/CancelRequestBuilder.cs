@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel
     public class CancelRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CancelRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CancelRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel
         /// <summary>
         /// Invoke action cancel
         /// </summary>
-        /// <returns>A <see cref="CancelPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CancelPostResponse?> PostAsCancelPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelPostResponse?> PostAsCancelPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CancelPostResponse> PostAsCancelPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelPostResponse> PostAsCancelPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CancelPostResponse>(requestInfo, CancelPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelPostResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action cancel
         /// </summary>
-        /// <returns>A <see cref="CancelResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsCancelPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CancelResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CancelResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CancelResponse>(requestInfo, CancelResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action cancel
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CancelRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CancelRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelRequestBuilder WithUrl(string rawUrl)
         {
-            return new CancelRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel.CancelRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

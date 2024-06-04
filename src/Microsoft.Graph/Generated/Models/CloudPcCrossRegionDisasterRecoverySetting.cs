@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The disasterRecoveryNetworkSetting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcDisasterRecoveryNetworkSetting? DisasterRecoveryNetworkSetting
+        public Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting? DisasterRecoveryNetworkSetting
         {
-            get { return BackingStore?.Get<CloudPcDisasterRecoveryNetworkSetting?>("disasterRecoveryNetworkSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting?>("disasterRecoveryNetworkSetting"); }
             set { BackingStore?.Set("disasterRecoveryNetworkSetting", value); }
         }
 #nullable restore
 #else
-        public CloudPcDisasterRecoveryNetworkSetting DisasterRecoveryNetworkSetting
+        public Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting DisasterRecoveryNetworkSetting
         {
-            get { return BackingStore?.Get<CloudPcDisasterRecoveryNetworkSetting>("disasterRecoveryNetworkSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>("disasterRecoveryNetworkSetting"); }
             set { BackingStore?.Set("disasterRecoveryNetworkSetting", value); }
         }
 #endif
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcCrossRegionDisasterRecoverySetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting"/> and sets the default values.
         /// </summary>
         public CloudPcCrossRegionDisasterRecoverySetting()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcCrossRegionDisasterRecoverySetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcCrossRegionDisasterRecoverySetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcCrossRegionDisasterRecoverySetting();
+            return new Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossRegionDisasterRecoveryEnabled", n => { CrossRegionDisasterRecoveryEnabled = n.GetBoolValue(); } },
-                { "disasterRecoveryNetworkSetting", n => { DisasterRecoveryNetworkSetting = n.GetObjectValue<CloudPcDisasterRecoveryNetworkSetting>(CloudPcDisasterRecoveryNetworkSetting.CreateFromDiscriminatorValue); } },
+                { "disasterRecoveryNetworkSetting", n => { DisasterRecoveryNetworkSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>(Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting.CreateFromDiscriminatorValue); } },
                 { "maintainCrossRegionRestorePointEnabled", n => { MaintainCrossRegionRestorePointEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossRegionDisasterRecoveryEnabled", CrossRegionDisasterRecoveryEnabled);
-            writer.WriteObjectValue<CloudPcDisasterRecoveryNetworkSetting>("disasterRecoveryNetworkSetting", DisasterRecoveryNetworkSetting);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>("disasterRecoveryNetworkSetting", DisasterRecoveryNetworkSetting);
             writer.WriteBoolValue("maintainCrossRegionRestorePointEnabled", MaintainCrossRegionRestorePointEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

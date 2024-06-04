@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
     public class AppPerformancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         /// <param name="position">The unique identifier of appPerformance</param>
-        /// <returns>A <see cref="AppPerformanceItemRequestBuilder"/></returns>
-        public AppPerformanceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.Item.AppPerformanceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.Item.AppPerformanceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("appPerformance%2Did", position);
-                return new AppPerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.Item.AppPerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppPerformancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppPerformancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// <summary>
         /// Get appPerformances from tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="AppPerformanceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppPerformanceCollectionResponse?> GetAsync(Action<RequestConfiguration<AppPerformancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformanceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder.AppPerformancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AppPerformanceCollectionResponse> GetAsync(Action<RequestConfiguration<AppPerformancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformanceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder.AppPerformancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AppPerformanceCollectionResponse>(requestInfo, AppPerformanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformanceCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to appPerformances for tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="AppPerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppPerformance?> PostAsync(AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance?> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AppPerformance> PostAsync(AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AppPerformance>(requestInfo, AppPerformance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get appPerformances from tenantRelationships
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppPerformancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder.AppPerformancesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppPerformancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder.AppPerformancesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.AppPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AppPerformancesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AppPerformancesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder WithUrl(string rawUrl)
         {
-            return new AppPerformancesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get appPerformances from tenantRelationships
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AppPerformancesRequestBuilderGetRequestConfiguration : RequestConfiguration<AppPerformancesRequestBuilderGetQueryParameters>
+        public class AppPerformancesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder.AppPerformancesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

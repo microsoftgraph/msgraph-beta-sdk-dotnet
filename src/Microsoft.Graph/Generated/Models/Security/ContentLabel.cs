@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ContentLabel"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.ContentLabel"/> and sets the default values.
         /// </summary>
         public ContentLabel()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.ContentLabel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentLabel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.ContentLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentLabel();
+            return new Microsoft.Graph.Beta.Models.Security.ContentLabel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
+                { "assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AssignmentMethod>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AssignmentMethod>("assignmentMethod", AssignmentMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AssignmentMethod>("assignmentMethod", AssignmentMethod);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sensitivityLabelId", SensitivityLabelId);

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a particular service offered by a booking business.
     /// </summary>
-    public class BookingService : BookingNamedEntity, IParsable
+    public class BookingService : Microsoft.Graph.Beta.Models.BookingNamedEntity, IParsable
     {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains the set of custom questions associated with a particular service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingQuestionAssignment>? CustomQuestions
+        public List<Microsoft.Graph.Beta.Models.BookingQuestionAssignment>? CustomQuestions
         {
-            get { return BackingStore?.Get<List<BookingQuestionAssignment>?>("customQuestions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingQuestionAssignment>?>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
 #nullable restore
 #else
-        public List<BookingQuestionAssignment> CustomQuestions
+        public List<Microsoft.Graph.Beta.Models.BookingQuestionAssignment> CustomQuestions
         {
-            get { return BackingStore?.Get<List<BookingQuestionAssignment>>("customQuestions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingQuestionAssignment>>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
 #endif
@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The default physical location for the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? DefaultLocation
+        public Microsoft.Graph.Beta.Models.Location? DefaultLocation
         {
-            get { return BackingStore?.Get<Location?>("defaultLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("defaultLocation"); }
             set { BackingStore?.Set("defaultLocation", value); }
         }
 #nullable restore
 #else
-        public Location DefaultLocation
+        public Microsoft.Graph.Beta.Models.Location DefaultLocation
         {
-            get { return BackingStore?.Get<Location>("defaultLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("defaultLocation"); }
             set { BackingStore?.Set("defaultLocation", value); }
         }
 #endif
@@ -78,24 +78,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defaultPrice", value); }
         }
         /// <summary>Represents the type of pricing of a booking service.</summary>
-        public BookingPriceType? DefaultPriceType
+        public Microsoft.Graph.Beta.Models.BookingPriceType? DefaultPriceType
         {
-            get { return BackingStore?.Get<BookingPriceType?>("defaultPriceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingPriceType?>("defaultPriceType"); }
             set { BackingStore?.Set("defaultPriceType", value); }
         }
         /// <summary>The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingReminder>? DefaultReminders
+        public List<Microsoft.Graph.Beta.Models.BookingReminder>? DefaultReminders
         {
-            get { return BackingStore?.Get<List<BookingReminder>?>("defaultReminders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingReminder>?>("defaultReminders"); }
             set { BackingStore?.Set("defaultReminders", value); }
         }
 #nullable restore
 #else
-        public List<BookingReminder> DefaultReminders
+        public List<Microsoft.Graph.Beta.Models.BookingReminder> DefaultReminders
         {
-            get { return BackingStore?.Get<List<BookingReminder>>("defaultReminders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingReminder>>("defaultReminders"); }
             set { BackingStore?.Set("defaultReminders", value); }
         }
 #endif
@@ -198,16 +198,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The set of policies that determine how appointments for this type of service should be created and managed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BookingSchedulingPolicy? SchedulingPolicy
+        public Microsoft.Graph.Beta.Models.BookingSchedulingPolicy? SchedulingPolicy
         {
-            get { return BackingStore?.Get<BookingSchedulingPolicy?>("schedulingPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingSchedulingPolicy?>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
 #nullable restore
 #else
-        public BookingSchedulingPolicy SchedulingPolicy
+        public Microsoft.Graph.Beta.Models.BookingSchedulingPolicy SchedulingPolicy
         {
-            get { return BackingStore?.Get<BookingSchedulingPolicy>("schedulingPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingSchedulingPolicy>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
 #endif
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BookingService"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BookingService"/> and sets the default values.
         /// </summary>
         public BookingService() : base()
         {
@@ -259,12 +259,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingService"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BookingService"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingService CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BookingService CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingService();
+            return new Microsoft.Graph.Beta.Models.BookingService();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -276,12 +276,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingQuestionAssignment>(BookingQuestionAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingQuestionAssignment>(Microsoft.Graph.Beta.Models.BookingQuestionAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "defaultDuration", n => { DefaultDuration = n.GetTimeSpanValue(); } },
-                { "defaultLocation", n => { DefaultLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                { "defaultLocation", n => { DefaultLocation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue); } },
                 { "defaultPrice", n => { DefaultPrice = n.GetDoubleValue(); } },
-                { "defaultPriceType", n => { DefaultPriceType = n.GetEnumValue<BookingPriceType>(); } },
-                { "defaultReminders", n => { DefaultReminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultPriceType", n => { DefaultPriceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.BookingPriceType>(); } },
+                { "defaultReminders", n => { DefaultReminders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingReminder>(Microsoft.Graph.Beta.Models.BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "isAnonymousJoinEnabled", n => { IsAnonymousJoinEnabled = n.GetBoolValue(); } },
                 { "isCustomerAllowedToManageBooking", n => { IsCustomerAllowedToManageBooking = n.GetBoolValue(); } },
@@ -293,7 +293,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "postBuffer", n => { PostBuffer = n.GetTimeSpanValue(); } },
                 { "preBuffer", n => { PreBuffer = n.GetTimeSpanValue(); } },
-                { "schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
+                { "schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.BookingSchedulingPolicy>(Microsoft.Graph.Beta.Models.BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
                 { "smsNotificationsEnabled", n => { SmsNotificationsEnabled = n.GetBoolValue(); } },
                 { "staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
@@ -309,12 +309,12 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<BookingQuestionAssignment>("customQuestions", CustomQuestions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingQuestionAssignment>("customQuestions", CustomQuestions);
             writer.WriteTimeSpanValue("defaultDuration", DefaultDuration);
-            writer.WriteObjectValue<Location>("defaultLocation", DefaultLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Location>("defaultLocation", DefaultLocation);
             writer.WriteDoubleValue("defaultPrice", DefaultPrice);
-            writer.WriteEnumValue<BookingPriceType>("defaultPriceType", DefaultPriceType);
-            writer.WriteCollectionOfObjectValues<BookingReminder>("defaultReminders", DefaultReminders);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BookingPriceType>("defaultPriceType", DefaultPriceType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingReminder>("defaultReminders", DefaultReminders);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isAnonymousJoinEnabled", IsAnonymousJoinEnabled);
             writer.WriteBoolValue("isCustomerAllowedToManageBooking", IsCustomerAllowedToManageBooking);
@@ -326,7 +326,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("notes", Notes);
             writer.WriteTimeSpanValue("postBuffer", PostBuffer);
             writer.WriteTimeSpanValue("preBuffer", PreBuffer);
-            writer.WriteObjectValue<BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);
             writer.WriteBoolValue("smsNotificationsEnabled", SmsNotificationsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("staffMemberIds", StaffMemberIds);
         }

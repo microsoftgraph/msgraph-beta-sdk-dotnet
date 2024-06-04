@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Phone 8.1+ Trusted Root Certificate configuration profile
     /// </summary>
-    public class WindowsPhone81TrustedRootCertificate : DeviceConfiguration, IParsable
+    public class WindowsPhone81TrustedRootCertificate : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhone81TrustedRootCertificate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate"/> and sets the default values.
         /// </summary>
         public WindowsPhone81TrustedRootCertificate() : base()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhone81TrustedRootCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81TrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81TrustedRootCertificate();
+            return new Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model

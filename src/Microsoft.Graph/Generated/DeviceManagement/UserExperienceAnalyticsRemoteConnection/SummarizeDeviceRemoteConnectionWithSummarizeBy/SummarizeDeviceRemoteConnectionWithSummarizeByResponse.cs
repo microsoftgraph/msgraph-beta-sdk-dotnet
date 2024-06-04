@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
 {
     [Obsolete("This class is obsolete. Use SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable
+    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SummarizeDeviceRemoteConnectionWithSummarizeByResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SummarizeDeviceRemoteConnectionWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SummarizeDeviceRemoteConnectionWithSummarizeByResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy.SummarizeDeviceRemoteConnectionWithSummarizeByResponse();
         }
     }
 }

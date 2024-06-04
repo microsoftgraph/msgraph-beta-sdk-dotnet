@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class FileThreatSubmission : ThreatSubmission, IParsable
+    public class FileThreatSubmission : Microsoft.Graph.Beta.Models.Security.ThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>It specifies the file name to be submitted.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileThreatSubmission"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.FileThreatSubmission"/> and sets the default values.
         /// </summary>
         public FileThreatSubmission() : base()
         {
@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileThreatSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.FileThreatSubmission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.FileThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.fileContentThreatSubmission" => new FileContentThreatSubmission(),
-                "#microsoft.graph.security.fileUrlThreatSubmission" => new FileUrlThreatSubmission(),
-                _ => new FileThreatSubmission(),
+                "#microsoft.graph.security.fileContentThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.FileContentThreatSubmission(),
+                "#microsoft.graph.security.fileUrlThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.FileUrlThreatSubmission(),
+                _ => new Microsoft.Graph.Beta.Models.Security.FileThreatSubmission(),
             };
         }
         /// <summary>

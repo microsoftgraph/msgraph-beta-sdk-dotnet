@@ -13,44 +13,44 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HealthIssue>? HealthIssues
+        public List<Microsoft.Graph.Beta.Models.Security.HealthIssue>? HealthIssues
         {
-            get { return BackingStore?.Get<List<HealthIssue>?>("healthIssues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.HealthIssue>?>("healthIssues"); }
             set { BackingStore?.Set("healthIssues", value); }
         }
 #nullable restore
 #else
-        public List<HealthIssue> HealthIssues
+        public List<Microsoft.Graph.Beta.Models.Security.HealthIssue> HealthIssues
         {
-            get { return BackingStore?.Get<List<HealthIssue>>("healthIssues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.HealthIssue>>("healthIssues"); }
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
         /// <summary>The sensors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Sensor>? Sensors
+        public List<Microsoft.Graph.Beta.Models.Security.Sensor>? Sensors
         {
-            get { return BackingStore?.Get<List<Sensor>?>("sensors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.Sensor>?>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
 #nullable restore
 #else
-        public List<Sensor> Sensors
+        public List<Microsoft.Graph.Beta.Models.Security.Sensor> Sensors
         {
-            get { return BackingStore?.Get<List<Sensor>>("sensors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.Sensor>>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.IdentityContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.IdentityContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityContainer();
+            return new Microsoft.Graph.Beta.Models.Security.IdentityContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<HealthIssue>(HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<Sensor>(Sensor.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.HealthIssue>(Microsoft.Graph.Beta.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.Sensor>(Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<HealthIssue>("healthIssues", HealthIssues);
-            writer.WriteCollectionOfObjectValues<Sensor>("sensors", Sensors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.Sensor>("sensors", Sensors);
         }
     }
 }

@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <summary>The security alerts or a vulnerability of a CSP partner&apos;s customer that the partner must be made aware of for further action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PartnerSecurityAlert>? SecurityAlerts
+        public List<Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert>? SecurityAlerts
         {
-            get { return BackingStore?.Get<List<PartnerSecurityAlert>?>("securityAlerts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert>?>("securityAlerts"); }
             set { BackingStore?.Set("securityAlerts", value); }
         }
 #nullable restore
 #else
-        public List<PartnerSecurityAlert> SecurityAlerts
+        public List<Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert> SecurityAlerts
         {
-            get { return BackingStore?.Get<List<PartnerSecurityAlert>>("securityAlerts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert>>("securityAlerts"); }
             set { BackingStore?.Set("securityAlerts", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PartnerSecurity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PartnerSecurity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PartnerSecurity();
+            return new Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "securityAlerts", n => { SecurityAlerts = n.GetCollectionOfObjectValues<PartnerSecurityAlert>(PartnerSecurityAlert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "securityAlerts", n => { SecurityAlerts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert>(Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", SecurityAlerts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert>("securityAlerts", SecurityAlerts);
         }
     }
 }

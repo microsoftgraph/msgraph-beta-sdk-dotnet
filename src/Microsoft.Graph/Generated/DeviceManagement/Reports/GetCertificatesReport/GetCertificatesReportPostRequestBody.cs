@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCertificatesReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetCertificatesReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCertificatesReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetCertificatesReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCertificatesReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

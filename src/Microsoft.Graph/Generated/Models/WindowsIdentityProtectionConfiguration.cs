@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by Windows Hello for Business.
     /// </summary>
-    public class WindowsIdentityProtectionConfiguration : DeviceConfiguration, IParsable
+    public class WindowsIdentityProtectionConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.</summary>
         public bool? EnhancedAntiSpoofingForFacialFeaturesEnabled
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pinExpirationInDays", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? PinLowercaseCharactersUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? PinLowercaseCharactersUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("pinLowercaseCharactersUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("pinLowercaseCharactersUsage"); }
             set { BackingStore?.Set("pinLowercaseCharactersUsage", value); }
         }
         /// <summary>Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127</summary>
@@ -54,15 +54,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pinRecoveryEnabled", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? PinSpecialCharactersUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? PinSpecialCharactersUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("pinSpecialCharactersUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("pinSpecialCharactersUsage"); }
             set { BackingStore?.Set("pinSpecialCharactersUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? PinUppercaseCharactersUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? PinUppercaseCharactersUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("pinUppercaseCharactersUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("pinUppercaseCharactersUsage"); }
             set { BackingStore?.Set("pinUppercaseCharactersUsage", value); }
         }
         /// <summary>Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.</summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windowsHelloForBusinessBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsIdentityProtectionConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsIdentityProtectionConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsIdentityProtectionConfiguration() : base()
         {
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsIdentityProtectionConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsIdentityProtectionConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsIdentityProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsIdentityProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsIdentityProtectionConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsIdentityProtectionConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,13 +122,13 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "enhancedAntiSpoofingForFacialFeaturesEnabled", n => { EnhancedAntiSpoofingForFacialFeaturesEnabled = n.GetBoolValue(); } },
                 { "pinExpirationInDays", n => { PinExpirationInDays = n.GetIntValue(); } },
-                { "pinLowercaseCharactersUsage", n => { PinLowercaseCharactersUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "pinLowercaseCharactersUsage", n => { PinLowercaseCharactersUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
                 { "pinMaximumLength", n => { PinMaximumLength = n.GetIntValue(); } },
                 { "pinMinimumLength", n => { PinMinimumLength = n.GetIntValue(); } },
                 { "pinPreviousBlockCount", n => { PinPreviousBlockCount = n.GetIntValue(); } },
                 { "pinRecoveryEnabled", n => { PinRecoveryEnabled = n.GetBoolValue(); } },
-                { "pinSpecialCharactersUsage", n => { PinSpecialCharactersUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                { "pinUppercaseCharactersUsage", n => { PinUppercaseCharactersUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "pinSpecialCharactersUsage", n => { PinSpecialCharactersUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
+                { "pinUppercaseCharactersUsage", n => { PinUppercaseCharactersUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
                 { "securityDeviceRequired", n => { SecurityDeviceRequired = n.GetBoolValue(); } },
                 { "unlockWithBiometricsEnabled", n => { UnlockWithBiometricsEnabled = n.GetBoolValue(); } },
                 { "useCertificatesForOnPremisesAuthEnabled", n => { UseCertificatesForOnPremisesAuthEnabled = n.GetBoolValue(); } },
@@ -146,13 +146,13 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("enhancedAntiSpoofingForFacialFeaturesEnabled", EnhancedAntiSpoofingForFacialFeaturesEnabled);
             writer.WriteIntValue("pinExpirationInDays", PinExpirationInDays);
-            writer.WriteEnumValue<ConfigurationUsage>("pinLowercaseCharactersUsage", PinLowercaseCharactersUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("pinLowercaseCharactersUsage", PinLowercaseCharactersUsage);
             writer.WriteIntValue("pinMaximumLength", PinMaximumLength);
             writer.WriteIntValue("pinMinimumLength", PinMinimumLength);
             writer.WriteIntValue("pinPreviousBlockCount", PinPreviousBlockCount);
             writer.WriteBoolValue("pinRecoveryEnabled", PinRecoveryEnabled);
-            writer.WriteEnumValue<ConfigurationUsage>("pinSpecialCharactersUsage", PinSpecialCharactersUsage);
-            writer.WriteEnumValue<ConfigurationUsage>("pinUppercaseCharactersUsage", PinUppercaseCharactersUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("pinSpecialCharactersUsage", PinSpecialCharactersUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("pinUppercaseCharactersUsage", PinUppercaseCharactersUsage);
             writer.WriteBoolValue("securityDeviceRequired", SecurityDeviceRequired);
             writer.WriteBoolValue("unlockWithBiometricsEnabled", UnlockWithBiometricsEnabled);
             writer.WriteBoolValue("useCertificatesForOnPremisesAuthEnabled", UseCertificatesForOnPremisesAuthEnabled);

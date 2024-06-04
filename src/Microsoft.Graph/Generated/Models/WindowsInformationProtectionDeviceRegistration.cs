@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
     /// </summary>
-    public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable
+    public class WindowsInformationProtectionDeviceRegistration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Device Mac address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionDeviceRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionDeviceRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtectionDeviceRegistration();
+            return new Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration();
         }
         /// <summary>
         /// The deserialization information for the current model

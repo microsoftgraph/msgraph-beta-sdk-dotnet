@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows X VPN configuration profile
     /// </summary>
-    public class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase, IParsable
+    public class Windows10XVpnConfiguration : Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>ID to the Authentication Certificate</summary>
         public Guid? AuthenticationCertificateId
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows10XVpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10XVpnConfiguration"/> and sets the default values.
         /// </summary>
         public Windows10XVpnConfiguration() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10XVpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10XVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10XVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10XVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10XVpnConfiguration();
+            return new Microsoft.Graph.Beta.Models.Windows10XVpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

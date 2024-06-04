@@ -34,16 +34,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The aggregate count of active people matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataRunRoleCountMetric>? MatchedPeopleByRole
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>? MatchedPeopleByRole
         {
-            get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>?>("matchedPeopleByRole"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>?>("matchedPeopleByRole"); }
             set { BackingStore?.Set("matchedPeopleByRole", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataRunRoleCountMetric> MatchedPeopleByRole
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric> MatchedPeopleByRole
         {
-            get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>>("matchedPeopleByRole"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>>("matchedPeopleByRole"); }
             set { BackingStore?.Set("matchedPeopleByRole", value); }
         }
 #endif
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The aggregate count of active people not matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataRunRoleCountMetric>? UnmatchedPeopleByRole
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>? UnmatchedPeopleByRole
         {
-            get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>?>("unmatchedPeopleByRole"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>?>("unmatchedPeopleByRole"); }
             set { BackingStore?.Set("unmatchedPeopleByRole", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataRunRoleCountMetric> UnmatchedPeopleByRole
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric> UnmatchedPeopleByRole
         {
-            get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>>("unmatchedPeopleByRole"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>>("unmatchedPeopleByRole"); }
             set { BackingStore?.Set("unmatchedPeopleByRole", value); }
         }
 #endif
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("warnings", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AggregatedInboundStatistics"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics"/> and sets the default values.
         /// </summary>
         public AggregatedInboundStatistics()
         {
@@ -114,12 +114,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AggregatedInboundStatistics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AggregatedInboundStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AggregatedInboundStatistics();
+            return new Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             {
                 { "errors", n => { Errors = n.GetIntValue(); } },
                 { "groups", n => { Groups = n.GetIntValue(); } },
-                { "matchedPeopleByRole", n => { MatchedPeopleByRole = n.GetCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchedPeopleByRole", n => { MatchedPeopleByRole = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "memberships", n => { Memberships = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "organizations", n => { Organizations = n.GetIntValue(); } },
                 { "people", n => { People = n.GetIntValue(); } },
-                { "unmatchedPeopleByRole", n => { UnmatchedPeopleByRole = n.GetCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unmatchedPeopleByRole", n => { UnmatchedPeopleByRole = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "warnings", n => { Warnings = n.GetIntValue(); } },
             };
         }

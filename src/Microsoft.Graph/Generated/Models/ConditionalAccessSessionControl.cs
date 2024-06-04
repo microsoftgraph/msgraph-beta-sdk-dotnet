@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessSessionControl"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessSessionControl"/> and sets the default values.
         /// </summary>
         public ConditionalAccessSessionControl()
         {
@@ -52,20 +52,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessSessionControl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessSessionControl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessSessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConditionalAccessSessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new ApplicationEnforcedRestrictionsSessionControl(),
-                "#microsoft.graph.cloudAppSecuritySessionControl" => new CloudAppSecuritySessionControl(),
-                "#microsoft.graph.persistentBrowserSessionControl" => new PersistentBrowserSessionControl(),
-                "#microsoft.graph.secureSignInSessionControl" => new SecureSignInSessionControl(),
-                "#microsoft.graph.signInFrequencySessionControl" => new SignInFrequencySessionControl(),
-                _ => new ConditionalAccessSessionControl(),
+                "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl(),
+                "#microsoft.graph.cloudAppSecuritySessionControl" => new Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl(),
+                "#microsoft.graph.persistentBrowserSessionControl" => new Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl(),
+                "#microsoft.graph.secureSignInSessionControl" => new Microsoft.Graph.Beta.Models.SecureSignInSessionControl(),
+                "#microsoft.graph.signInFrequencySessionControl" => new Microsoft.Graph.Beta.Models.SignInFrequencySessionControl(),
+                _ => new Microsoft.Graph.Beta.Models.ConditionalAccessSessionControl(),
             };
         }
         /// <summary>

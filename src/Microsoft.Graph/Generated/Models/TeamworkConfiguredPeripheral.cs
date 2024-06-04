@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The peripheral property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Peripheral
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral? Peripheral
         {
-            get { return BackingStore?.Get<TeamworkPeripheral?>("peripheral"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral?>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Peripheral
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral Peripheral
         {
-            get { return BackingStore?.Get<TeamworkPeripheral>("peripheral"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkConfiguredPeripheral"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral"/> and sets the default values.
         /// </summary>
         public TeamworkConfiguredPeripheral()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkConfiguredPeripheral"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkConfiguredPeripheral CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkConfiguredPeripheral();
+            return new Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "peripheral", n => { Peripheral = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "peripheral", n => { Peripheral = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isOptional", IsOptional);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TeamworkPeripheral>("peripheral", Peripheral);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("peripheral", Peripheral);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

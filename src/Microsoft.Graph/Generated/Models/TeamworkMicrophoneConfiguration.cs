@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The defaultMicrophone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? DefaultMicrophone
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral? DefaultMicrophone
         {
-            get { return BackingStore?.Get<TeamworkPeripheral?>("defaultMicrophone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral?>("defaultMicrophone"); }
             set { BackingStore?.Set("defaultMicrophone", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral DefaultMicrophone
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral DefaultMicrophone
         {
-            get { return BackingStore?.Get<TeamworkPeripheral>("defaultMicrophone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("defaultMicrophone"); }
             set { BackingStore?.Set("defaultMicrophone", value); }
         }
 #endif
@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The microphones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkPeripheral>? Microphones
+        public List<Microsoft.Graph.Beta.Models.TeamworkPeripheral>? Microphones
         {
-            get { return BackingStore?.Get<List<TeamworkPeripheral>?>("microphones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkPeripheral>?>("microphones"); }
             set { BackingStore?.Set("microphones", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkPeripheral> Microphones
+        public List<Microsoft.Graph.Beta.Models.TeamworkPeripheral> Microphones
         {
-            get { return BackingStore?.Get<List<TeamworkPeripheral>>("microphones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkPeripheral>>("microphones"); }
             set { BackingStore?.Set("microphones", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkMicrophoneConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkMicrophoneConfiguration()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkMicrophoneConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkMicrophoneConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkMicrophoneConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "defaultMicrophone", n => { DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "defaultMicrophone", n => { DefaultMicrophone = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 { "isMicrophoneOptional", n => { IsMicrophoneOptional = n.GetBoolValue(); } },
-                { "microphones", n => { Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microphones", n => { Microphones = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkPeripheral>("defaultMicrophone", DefaultMicrophone);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("defaultMicrophone", DefaultMicrophone);
             writer.WriteBoolValue("isMicrophoneOptional", IsMicrophoneOptional);
-            writer.WriteCollectionOfObjectValues<TeamworkPeripheral>("microphones", Microphones);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("microphones", Microphones);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

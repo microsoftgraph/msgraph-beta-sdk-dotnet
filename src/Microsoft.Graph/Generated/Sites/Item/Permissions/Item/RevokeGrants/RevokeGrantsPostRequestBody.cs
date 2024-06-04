@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants
         /// <summary>The grantees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveRecipient>? Grantees
+        public List<Microsoft.Graph.Beta.Models.DriveRecipient>? Grantees
         {
-            get { return BackingStore?.Get<List<DriveRecipient>?>("grantees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveRecipient>?>("grantees"); }
             set { BackingStore?.Set("grantees", value); }
         }
 #nullable restore
 #else
-        public List<DriveRecipient> Grantees
+        public List<Microsoft.Graph.Beta.Models.DriveRecipient> Grantees
         {
-            get { return BackingStore?.Get<List<DriveRecipient>>("grantees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveRecipient>>("grantees"); }
             set { BackingStore?.Set("grantees", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RevokeGrantsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody"/> and sets the default values.
         /// </summary>
         public RevokeGrantsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RevokeGrantsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RevokeGrantsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RevokeGrantsPostRequestBody();
+            return new Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "grantees", n => { Grantees = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "grantees", n => { Grantees = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveRecipient>(Microsoft.Graph.Beta.Models.DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DriveRecipient>("grantees", Grantees);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveRecipient>("grantees", Grantees);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

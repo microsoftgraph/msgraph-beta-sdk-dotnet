@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
     public class AnalyzedEmailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remediate method.</summary>
-        public MicrosoftGraphSecurityRemediateRequestBuilder MicrosoftGraphSecurityRemediate
+        public Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate.MicrosoftGraphSecurityRemediateRequestBuilder MicrosoftGraphSecurityRemediate
         {
-            get => new MicrosoftGraphSecurityRemediateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate.MicrosoftGraphSecurityRemediateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.</summary>
         /// <param name="position">The unique identifier of analyzedEmail</param>
-        /// <returns>A <see cref="AnalyzedEmailItemRequestBuilder"/></returns>
-        public AnalyzedEmailItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Item.AnalyzedEmailItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Item.AnalyzedEmailItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("analyzedEmail%2Did", position);
-                return new AnalyzedEmailItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Item.AnalyzedEmailItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AnalyzedEmailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AnalyzedEmailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +60,50 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
         /// <summary>
         /// Read the properties and relationships of an analyzedEmail object.
         /// </summary>
-        /// <returns>A <see cref="AnalyzedEmailCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AnalyzedEmailCollectionResponse?> GetAsync(Action<RequestConfiguration<AnalyzedEmailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder.AnalyzedEmailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AnalyzedEmailCollectionResponse> GetAsync(Action<RequestConfiguration<AnalyzedEmailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder.AnalyzedEmailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AnalyzedEmailCollectionResponse>(requestInfo, AnalyzedEmailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AnalyzedEmailCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.Security.AnalyzedEmailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to analyzedEmails for security
         /// </summary>
-        /// <returns>A <see cref="AnalyzedEmail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmail"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AnalyzedEmail?> PostAsync(AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail?> PostAsync(Microsoft.Graph.Beta.Models.Security.AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AnalyzedEmail> PostAsync(AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail> PostAsync(Microsoft.Graph.Beta.Models.Security.AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AnalyzedEmail>(requestInfo, AnalyzedEmail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail>(requestInfo, Microsoft.Graph.Beta.Models.Security.AnalyzedEmail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an analyzedEmail object.
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AnalyzedEmailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder.AnalyzedEmailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AnalyzedEmailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder.AnalyzedEmailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.AnalyzedEmail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AnalyzedEmailsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AnalyzedEmailsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AnalyzedEmailsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of an analyzedEmail object.
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AnalyzedEmailsRequestBuilderGetRequestConfiguration : RequestConfiguration<AnalyzedEmailsRequestBuilderGetQueryParameters>
+        public class AnalyzedEmailsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.AnalyzedEmailsRequestBuilder.AnalyzedEmailsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

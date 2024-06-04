@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics resource performance entity.
     /// </summary>
-    public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable
+    public class UserExperienceAnalyticsResourcePerformance : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>
         public int? AverageSpikeTimeScore
@@ -108,15 +108,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("diskType", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Indicates if machine is physical or virtual. Possible values are: physical or virtual</summary>
-        public UserExperienceAnalyticsMachineType? MachineType
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMachineType? MachineType
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsMachineType?>("machineType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMachineType?>("machineType"); }
             set { BackingStore?.Set("machineType", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
@@ -184,12 +184,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsResourcePerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsResourcePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsResourcePerformance();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -209,9 +209,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "deviceResourcePerformanceScore", n => { DeviceResourcePerformanceScore = n.GetIntValue(); } },
-                { "diskType", n => { DiskType = n.GetEnumValue<DiskType>(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                { "machineType", n => { MachineType = n.GetEnumValue<UserExperienceAnalyticsMachineType>(); } },
+                { "diskType", n => { DiskType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DiskType>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState>(); } },
+                { "machineType", n => { MachineType = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMachineType>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "ramSpikeTimePercentage", n => { RamSpikeTimePercentage = n.GetDoubleValue(); } },
@@ -239,9 +239,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteIntValue("deviceResourcePerformanceScore", DeviceResourcePerformanceScore);
-            writer.WriteEnumValue<DiskType>("diskType", DiskType);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
-            writer.WriteEnumValue<UserExperienceAnalyticsMachineType>("machineType", MachineType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DiskType>("diskType", DiskType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMachineType>("machineType", MachineType);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
             writer.WriteDoubleValue("ramSpikeTimePercentage", RamSpikeTimePercentage);

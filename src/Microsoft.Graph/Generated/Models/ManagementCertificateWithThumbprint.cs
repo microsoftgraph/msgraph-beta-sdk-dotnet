@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagementCertificateWithThumbprint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint"/> and sets the default values.
         /// </summary>
         public ManagementCertificateWithThumbprint()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementCertificateWithThumbprint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagementCertificateWithThumbprint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementCertificateWithThumbprint();
+            return new Microsoft.Graph.Beta.Models.ManagementCertificateWithThumbprint();
         }
         /// <summary>
         /// The deserialization information for the current model

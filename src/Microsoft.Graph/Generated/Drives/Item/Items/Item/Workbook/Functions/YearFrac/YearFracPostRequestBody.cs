@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFra
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis
+        public Microsoft.Graph.Beta.Models.Json? Basis
         {
-            get { return BackingStore?.Get<Json?>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis
+        public Microsoft.Graph.Beta.Models.Json Basis
         {
-            get { return BackingStore?.Get<Json>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #endif
         /// <summary>The endDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? EndDate
+        public Microsoft.Graph.Beta.Models.Json? EndDate
         {
-            get { return BackingStore?.Get<Json?>("endDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
 #nullable restore
 #else
-        public Json EndDate
+        public Microsoft.Graph.Beta.Models.Json EndDate
         {
-            get { return BackingStore?.Get<Json>("endDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
 #endif
         /// <summary>The startDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartDate
+        public Microsoft.Graph.Beta.Models.Json? StartDate
         {
-            get { return BackingStore?.Get<Json?>("startDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #nullable restore
 #else
-        public Json StartDate
+        public Microsoft.Graph.Beta.Models.Json StartDate
         {
-            get { return BackingStore?.Get<Json>("startDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="YearFracPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFrac.YearFracPostRequestBody"/> and sets the default values.
         /// </summary>
         public YearFracPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFra
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="YearFracPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFrac.YearFracPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static YearFracPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFrac.YearFracPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new YearFracPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFrac.YearFracPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFra
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "endDate", n => { EndDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "startDate", n => { StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "endDate", n => { EndDate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "startDate", n => { StartDate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.YearFra
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("basis", Basis);
-            writer.WriteObjectValue<Json>("endDate", EndDate);
-            writer.WriteObjectValue<Json>("startDate", StartDate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("basis", Basis);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("endDate", EndDate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

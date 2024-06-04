@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody? Body
         {
-            get { return BackingStore?.Get<ItemBody?>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody Body
         {
-            get { return BackingStore?.Get<ItemBody>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="KnownIssueHistoryItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem"/> and sets the default values.
         /// </summary>
         public KnownIssueHistoryItem()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KnownIssueHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static KnownIssueHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KnownIssueHistoryItem();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody>(Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ItemBody>("body", Body);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ItemBody>("body", Body);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

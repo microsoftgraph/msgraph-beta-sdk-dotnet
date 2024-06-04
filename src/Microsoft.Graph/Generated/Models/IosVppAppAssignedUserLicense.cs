@@ -9,17 +9,17 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Volume Purchase Program user license assignment. This class does not support Create, Delete, or Update.
     /// </summary>
-    public class IosVppAppAssignedUserLicense : IosVppAppAssignedLicense, IParsable
+    public class IosVppAppAssignedUserLicense : Microsoft.Graph.Beta.Models.IosVppAppAssignedLicense, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosVppAppAssignedUserLicense"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosVppAppAssignedUserLicense"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosVppAppAssignedUserLicense CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosVppAppAssignedUserLicense CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosVppAppAssignedUserLicense();
+            return new Microsoft.Graph.Beta.Models.IosVppAppAssignedUserLicense();
         }
         /// <summary>
         /// The deserialization information for the current model

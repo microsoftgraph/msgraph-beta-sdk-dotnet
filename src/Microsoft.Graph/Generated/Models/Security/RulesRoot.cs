@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The detectionRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DetectionRule>? DetectionRules
+        public List<Microsoft.Graph.Beta.Models.Security.DetectionRule>? DetectionRules
         {
-            get { return BackingStore?.Get<List<DetectionRule>?>("detectionRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.DetectionRule>?>("detectionRules"); }
             set { BackingStore?.Set("detectionRules", value); }
         }
 #nullable restore
 #else
-        public List<DetectionRule> DetectionRules
+        public List<Microsoft.Graph.Beta.Models.Security.DetectionRule> DetectionRules
         {
-            get { return BackingStore?.Get<List<DetectionRule>>("detectionRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.DetectionRule>>("detectionRules"); }
             set { BackingStore?.Set("detectionRules", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RulesRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.RulesRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RulesRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.RulesRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RulesRoot();
+            return new Microsoft.Graph.Beta.Models.Security.RulesRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "detectionRules", n => { DetectionRules = n.GetCollectionOfObjectValues<DetectionRule>(DetectionRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detectionRules", n => { DetectionRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.DetectionRule>(Microsoft.Graph.Beta.Models.Security.DetectionRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DetectionRule>("detectionRules", DetectionRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.DetectionRule>("detectionRules", DetectionRules);
         }
     }
 }

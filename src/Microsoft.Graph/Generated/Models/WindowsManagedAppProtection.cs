@@ -9,61 +9,61 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on a Windows device
     /// </summary>
-    public class WindowsManagedAppProtection : ManagedAppPolicy, IParsable
+    public class WindowsManagedAppProtection : Microsoft.Graph.Beta.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>Data can be transferred from/to these classes of apps</summary>
-        public WindowsManagedAppDataTransferLevel? AllowedInboundDataTransferSources
+        public Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel? AllowedInboundDataTransferSources
         {
-            get { return BackingStore?.Get<WindowsManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
             set { BackingStore?.Set("allowedInboundDataTransferSources", value); }
         }
         /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
-        public WindowsManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel
+        public Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel
         {
-            get { return BackingStore?.Get<WindowsManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
             set { BackingStore?.Set("allowedOutboundClipboardSharingLevel", value); }
         }
         /// <summary>Data can be transferred from/to these classes of apps</summary>
-        public WindowsManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations
+        public Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations
         {
-            get { return BackingStore?.Get<WindowsManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
             set { BackingStore?.Set("allowedOutboundDataTransferDestinations", value); }
         }
         /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfUnableToAuthenticateUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfUnableToAuthenticateUser"); }
             set { BackingStore?.Set("appActionIfUnableToAuthenticateUser", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp>? Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp> Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #endif
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary? DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>The maxium threat level allowed for an app to be compliant.</summary>
-        public ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel
+        public Microsoft.Graph.Beta.Models.ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel
         {
-            get { return BackingStore?.Get<ManagedAppDeviceThreatLevel?>("maximumAllowedDeviceThreatLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppDeviceThreatLevel?>("maximumAllowedDeviceThreatLevel"); }
             set { BackingStore?.Set("maximumAllowedDeviceThreatLevel", value); }
         }
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
@@ -278,9 +278,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? MobileThreatDefenseRemediationAction
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("mobileThreatDefenseRemediationAction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("mobileThreatDefenseRemediationAction"); }
             set { BackingStore?.Set("mobileThreatDefenseRemediationAction", value); }
         }
         /// <summary>The period after which access is checked when the device is not connected to the internet. For example, PT5M indicates that the interval is 5 minutes in duration. A timespan value of PT0S indicates that access will be blocked immediately when the device is not connected to the internet.</summary>
@@ -302,7 +302,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("printBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsManagedAppProtection"/> and sets the default values.
         /// </summary>
         public WindowsManagedAppProtection() : base()
         {
@@ -311,12 +311,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsManagedAppProtection();
+            return new Microsoft.Graph.Beta.Models.WindowsManagedAppProtection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -326,16 +326,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<WindowsManagedAppDataTransferLevel>(); } },
-                { "allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<WindowsManagedAppClipboardSharingLevel>(); } },
-                { "allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<WindowsManagedAppDataTransferLevel>(); } },
-                { "appActionIfUnableToAuthenticateUser", n => { AppActionIfUnableToAuthenticateUser = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>(); } },
+                { "allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel>(); } },
+                { "allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>(); } },
+                { "appActionIfUnableToAuthenticateUser", n => { AppActionIfUnableToAuthenticateUser = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>(Microsoft.Graph.Beta.Models.ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>(Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>(Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
-                { "maximumAllowedDeviceThreatLevel", n => { MaximumAllowedDeviceThreatLevel = n.GetEnumValue<ManagedAppDeviceThreatLevel>(); } },
+                { "maximumAllowedDeviceThreatLevel", n => { MaximumAllowedDeviceThreatLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppDeviceThreatLevel>(); } },
                 { "maximumRequiredOsVersion", n => { MaximumRequiredOsVersion = n.GetStringValue(); } },
                 { "maximumWarningOsVersion", n => { MaximumWarningOsVersion = n.GetStringValue(); } },
                 { "maximumWipeOsVersion", n => { MaximumWipeOsVersion = n.GetStringValue(); } },
@@ -347,7 +347,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "minimumWipeAppVersion", n => { MinimumWipeAppVersion = n.GetStringValue(); } },
                 { "minimumWipeOsVersion", n => { MinimumWipeOsVersion = n.GetStringValue(); } },
                 { "minimumWipeSdkVersion", n => { MinimumWipeSdkVersion = n.GetStringValue(); } },
-                { "mobileThreatDefenseRemediationAction", n => { MobileThreatDefenseRemediationAction = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                { "mobileThreatDefenseRemediationAction", n => { MobileThreatDefenseRemediationAction = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
                 { "periodOfflineBeforeAccessCheck", n => { PeriodOfflineBeforeAccessCheck = n.GetTimeSpanValue(); } },
                 { "periodOfflineBeforeWipeIsEnforced", n => { PeriodOfflineBeforeWipeIsEnforced = n.GetTimeSpanValue(); } },
                 { "printBlocked", n => { PrintBlocked = n.GetBoolValue(); } },
@@ -361,16 +361,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
-            writer.WriteEnumValue<WindowsManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);
-            writer.WriteEnumValue<WindowsManagedAppDataTransferLevel>("allowedOutboundDataTransferDestinations", AllowedOutboundDataTransferDestinations);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfUnableToAuthenticateUser", AppActionIfUnableToAuthenticateUser);
-            writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsManagedAppDataTransferLevel>("allowedOutboundDataTransferDestinations", AllowedOutboundDataTransferDestinations);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfUnableToAuthenticateUser", AppActionIfUnableToAuthenticateUser);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>("apps", Apps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
-            writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("isAssigned", IsAssigned);
-            writer.WriteEnumValue<ManagedAppDeviceThreatLevel>("maximumAllowedDeviceThreatLevel", MaximumAllowedDeviceThreatLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppDeviceThreatLevel>("maximumAllowedDeviceThreatLevel", MaximumAllowedDeviceThreatLevel);
             writer.WriteStringValue("maximumRequiredOsVersion", MaximumRequiredOsVersion);
             writer.WriteStringValue("maximumWarningOsVersion", MaximumWarningOsVersion);
             writer.WriteStringValue("maximumWipeOsVersion", MaximumWipeOsVersion);
@@ -382,7 +382,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("minimumWipeAppVersion", MinimumWipeAppVersion);
             writer.WriteStringValue("minimumWipeOsVersion", MinimumWipeOsVersion);
             writer.WriteStringValue("minimumWipeSdkVersion", MinimumWipeSdkVersion);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("mobileThreatDefenseRemediationAction", MobileThreatDefenseRemediationAction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("mobileThreatDefenseRemediationAction", MobileThreatDefenseRemediationAction);
             writer.WriteTimeSpanValue("periodOfflineBeforeAccessCheck", PeriodOfflineBeforeAccessCheck);
             writer.WriteTimeSpanValue("periodOfflineBeforeWipeIsEnforced", PeriodOfflineBeforeWipeIsEnforced);
             writer.WriteBoolValue("printBlocked", PrintBlocked);

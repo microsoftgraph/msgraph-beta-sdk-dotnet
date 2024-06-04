@@ -7,24 +7,24 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlayPromptOperation : CommsOperation, IParsable
+    public class PlayPromptOperation : Microsoft.Graph.Beta.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
-        public PlayPromptCompletionReason? CompletionReason
+        public Microsoft.Graph.Beta.Models.PlayPromptCompletionReason? CompletionReason
         {
-            get { return BackingStore?.Get<PlayPromptCompletionReason?>("completionReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlayPromptCompletionReason?>("completionReason"); }
             set { BackingStore?.Set("completionReason", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlayPromptOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlayPromptOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlayPromptOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlayPromptOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlayPromptOperation();
+            return new Microsoft.Graph.Beta.Models.PlayPromptOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "completionReason", n => { CompletionReason = n.GetEnumValue<PlayPromptCompletionReason>(); } },
+                { "completionReason", n => { CompletionReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlayPromptCompletionReason>(); } },
             };
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PlayPromptCompletionReason>("completionReason", CompletionReason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlayPromptCompletionReason>("completionReason", CompletionReason);
         }
     }
 }

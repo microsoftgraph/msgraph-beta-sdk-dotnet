@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The companies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Company>? Companies
+        public List<Microsoft.Graph.Beta.Models.Company>? Companies
         {
-            get { return BackingStore?.Get<List<Company>?>("companies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Company>?>("companies"); }
             set { BackingStore?.Set("companies", value); }
         }
 #nullable restore
 #else
-        public List<Company> Companies
+        public List<Microsoft.Graph.Beta.Models.Company> Companies
         {
-            get { return BackingStore?.Get<List<Company>>("companies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Company>>("companies"); }
             set { BackingStore?.Set("companies", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Financials"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Financials"/> and sets the default values.
         /// </summary>
         public Financials()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Financials"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Financials"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Financials CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Financials CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Financials();
+            return new Microsoft.Graph.Beta.Models.Financials();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "companies", n => { Companies = n.GetCollectionOfObjectValues<Company>(Company.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "companies", n => { Companies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Company>(Microsoft.Graph.Beta.Models.Company.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Company>("companies", Companies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Company>("companies", Companies);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline compliance state of a setting for a device
     /// </summary>
-    public class SecurityBaselineSettingState : Entity, IParsable
+    public class SecurityBaselineSettingState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The policies that contribute to this setting instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityBaselineContributingPolicy>? ContributingPolicies
+        public List<Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy>? ContributingPolicies
         {
-            get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>?>("contributingPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy>?>("contributingPolicies"); }
             set { BackingStore?.Set("contributingPolicies", value); }
         }
 #nullable restore
 #else
-        public List<SecurityBaselineContributingPolicy> ContributingPolicies
+        public List<Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy> ContributingPolicies
         {
-            get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>>("contributingPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy>>("contributingPolicies"); }
             set { BackingStore?.Set("contributingPolicies", value); }
         }
 #endif
@@ -110,34 +110,34 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policies that contribute to this setting instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingSource>? SourcePolicies
+        public List<Microsoft.Graph.Beta.Models.SettingSource>? SourcePolicies
         {
-            get { return BackingStore?.Get<List<SettingSource>?>("sourcePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingSource>?>("sourcePolicies"); }
             set { BackingStore?.Set("sourcePolicies", value); }
         }
 #nullable restore
 #else
-        public List<SettingSource> SourcePolicies
+        public List<Microsoft.Graph.Beta.Models.SettingSource> SourcePolicies
         {
-            get { return BackingStore?.Get<List<SettingSource>>("sourcePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingSource>>("sourcePolicies"); }
             set { BackingStore?.Set("sourcePolicies", value); }
         }
 #endif
         /// <summary>Security Baseline Compliance State</summary>
-        public SecurityBaselineComplianceState? State
+        public Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState? State
         {
-            get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityBaselineSettingState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineSettingState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityBaselineSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SecurityBaselineSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityBaselineSettingState();
+            return new Microsoft.Graph.Beta.Models.SecurityBaselineSettingState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,14 +147,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "contributingPolicies", n => { ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>(SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contributingPolicies", n => { ContributingPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy>(Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "settingCategoryId", n => { SettingCategoryId = n.GetStringValue(); } },
                 { "settingCategoryName", n => { SettingCategoryName = n.GetStringValue(); } },
                 { "settingId", n => { SettingId = n.GetStringValue(); } },
                 { "settingName", n => { SettingName = n.GetStringValue(); } },
-                { "sourcePolicies", n => { SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
+                { "sourcePolicies", n => { SourcePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingSource>(Microsoft.Graph.Beta.Models.SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState>(); } },
             };
         }
         /// <summary>
@@ -165,14 +165,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SecurityBaselineContributingPolicy>("contributingPolicies", ContributingPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityBaselineContributingPolicy>("contributingPolicies", ContributingPolicies);
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("settingCategoryId", SettingCategoryId);
             writer.WriteStringValue("settingCategoryName", SettingCategoryName);
             writer.WriteStringValue("settingId", SettingId);
             writer.WriteStringValue("settingName", SettingName);
-            writer.WriteCollectionOfObjectValues<SettingSource>("sourcePolicies", SourcePolicies);
-            writer.WriteEnumValue<SecurityBaselineComplianceState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingSource>("sourcePolicies", SourcePolicies);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState>("state", State);
         }
     }
 }

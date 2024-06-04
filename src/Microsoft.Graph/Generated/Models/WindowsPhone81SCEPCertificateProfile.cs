@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Phone 8.1+ SCEP certificate profile
     /// </summary>
-    public class WindowsPhone81SCEPCertificateProfile : WindowsPhone81CertificateProfileBase, IParsable
+    public class WindowsPhone81SCEPCertificateProfile : Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase, IParsable
     {
         /// <summary>Hash Algorithm Options.</summary>
-        public HashAlgorithms? HashAlgorithm
+        public Microsoft.Graph.Beta.Models.HashAlgorithms? HashAlgorithm
         {
-            get { return BackingStore?.Get<HashAlgorithms?>("hashAlgorithm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HashAlgorithms?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
         /// <summary>Key Size Options.</summary>
@@ -24,40 +24,40 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage
+        public Microsoft.Graph.Beta.Models.KeyUsages? KeyUsage
         {
-            get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState> ManagedDeviceCertificateStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #endif
         /// <summary>Trusted Root Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsPhone81TrustedRootCertificate? RootCertificate
+        public Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate? RootCertificate
         {
-            get { return BackingStore?.Get<WindowsPhone81TrustedRootCertificate?>("rootCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate?>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #nullable restore
 #else
-        public WindowsPhone81TrustedRootCertificate RootCertificate
+        public Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate RootCertificate
         {
-            get { return BackingStore?.Get<WindowsPhone81TrustedRootCertificate>("rootCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #endif
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhone81SCEPCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81SCEPCertificateProfile"/> and sets the default values.
         /// </summary>
         public WindowsPhone81SCEPCertificateProfile() : base()
         {
@@ -119,12 +119,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhone81SCEPCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81SCEPCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81SCEPCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPhone81SCEPCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81SCEPCertificateProfile();
+            return new Microsoft.Graph.Beta.Models.WindowsPhone81SCEPCertificateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,11 +134,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
-                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
-                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<WindowsPhone81TrustedRootCertificate>(WindowsPhone81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<Microsoft.Graph.Beta.Models.HashAlgorithms>(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeySize>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>(Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate>(Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
                 { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
                 { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
@@ -152,11 +152,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<HashAlgorithms>("hashAlgorithm", HashAlgorithm);
-            writer.WriteEnumValue<KeySize>("keySize", KeySize);
-            writer.WriteEnumValue<KeyUsages>("keyUsage", KeyUsage);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
-            writer.WriteObjectValue<WindowsPhone81TrustedRootCertificate>("rootCertificate", RootCertificate);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.HashAlgorithms>("hashAlgorithm", HashAlgorithm);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeySize>("keySize", KeySize);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>("keyUsage", KeyUsage);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsPhone81TrustedRootCertificate>("rootCertificate", RootCertificate);
             writer.WriteCollectionOfPrimitiveValues<string>("scepServerUrls", ScepServerUrls);
             writer.WriteStringValue("subjectAlternativeNameFormatString", SubjectAlternativeNameFormatString);
             writer.WriteStringValue("subjectNameFormatString", SubjectNameFormatString);

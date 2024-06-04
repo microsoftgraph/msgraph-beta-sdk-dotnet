@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Alpha
+        public Microsoft.Graph.Beta.Models.Json? Alpha
         {
-            get { return BackingStore?.Get<Json?>("alpha"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #nullable restore
 #else
-        public Json Alpha
+        public Microsoft.Graph.Beta.Models.Json Alpha
         {
-            get { return BackingStore?.Get<Json>("alpha"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #endif
@@ -39,37 +39,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The size property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Size
+        public Microsoft.Graph.Beta.Models.Json? Size
         {
-            get { return BackingStore?.Get<Json?>("size"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
 #nullable restore
 #else
-        public Json Size
+        public Microsoft.Graph.Beta.Models.Json Size
         {
-            get { return BackingStore?.Get<Json>("size"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("size"); }
             set { BackingStore?.Set("size", value); }
         }
 #endif
         /// <summary>The standardDev property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StandardDev
+        public Microsoft.Graph.Beta.Models.Json? StandardDev
         {
-            get { return BackingStore?.Get<Json?>("standardDev"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("standardDev"); }
             set { BackingStore?.Set("standardDev", value); }
         }
 #nullable restore
 #else
-        public Json StandardDev
+        public Microsoft.Graph.Beta.Models.Json StandardDev
         {
-            get { return BackingStore?.Get<Json>("standardDev"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("standardDev"); }
             set { BackingStore?.Set("standardDev", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Confidence_TPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Confidence_T.Confidence_TPostRequestBody"/> and sets the default values.
         /// </summary>
         public Confidence_TPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Confidence_TPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Confidence_T.Confidence_TPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Confidence_TPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Confidence_T.Confidence_TPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Confidence_TPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Confidence_T.Confidence_TPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "size", n => { Size = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "standardDev", n => { StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "alpha", n => { Alpha = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "size", n => { Size = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "standardDev", n => { StandardDev = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("alpha", Alpha);
-            writer.WriteObjectValue<Json>("size", Size);
-            writer.WriteObjectValue<Json>("standardDev", StandardDev);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("alpha", Alpha);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("size", Size);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("standardDev", StandardDev);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

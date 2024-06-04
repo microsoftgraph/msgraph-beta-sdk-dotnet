@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DirectorySettingTemplateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class DirectorySettingTemplateCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectorySettingTemplate>? Value
+        public List<Microsoft.Graph.Beta.Models.DirectorySettingTemplate>? Value
         {
-            get { return BackingStore?.Get<List<DirectorySettingTemplate>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectorySettingTemplate>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DirectorySettingTemplate> Value
+        public List<Microsoft.Graph.Beta.Models.DirectorySettingTemplate> Value
         {
-            get { return BackingStore?.Get<List<DirectorySettingTemplate>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectorySettingTemplate>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectorySettingTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectorySettingTemplateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectorySettingTemplateCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DirectorySettingTemplate>(DirectorySettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectorySettingTemplate>(Microsoft.Graph.Beta.Models.DirectorySettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DirectorySettingTemplate>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectorySettingTemplate>("value", Value);
         }
     }
 }

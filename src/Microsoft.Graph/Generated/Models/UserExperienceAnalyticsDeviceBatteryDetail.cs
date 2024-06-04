@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceBatteryDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceBatteryDetail"/> and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsDeviceBatteryDetail()
         {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceBatteryDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceBatteryDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceAnalyticsDeviceBatteryDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceBatteryDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDeviceBatteryDetail();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceBatteryDetail();
         }
         /// <summary>
         /// The deserialization information for the current model

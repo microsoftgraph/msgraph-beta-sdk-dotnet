@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
     /// </summary>
-    public class VppToken : Entity, IParsable
+    public class VppToken : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Possible sync statuses associated with an Apple Volume Purchase Program token.</summary>
-        public VppTokenSyncStatus? LastSyncStatus
+        public Microsoft.Graph.Beta.Models.VppTokenSyncStatus? LastSyncStatus
         {
-            get { return BackingStore?.Get<VppTokenSyncStatus?>("lastSyncStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenSyncStatus?>("lastSyncStatus"); }
             set { BackingStore?.Set("lastSyncStatus", value); }
         }
         /// <summary>Token location returned from Apple VPP.</summary>
@@ -150,9 +150,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible states associated with an Apple Volume Purchase Program token.</summary>
-        public VppTokenState? State
+        public Microsoft.Graph.Beta.Models.VppTokenState? State
         {
-            get { return BackingStore?.Get<VppTokenState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
@@ -174,16 +174,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VppTokenActionResult>? TokenActionResults
+        public List<Microsoft.Graph.Beta.Models.VppTokenActionResult>? TokenActionResults
         {
-            get { return BackingStore?.Get<List<VppTokenActionResult>?>("tokenActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VppTokenActionResult>?>("tokenActionResults"); }
             set { BackingStore?.Set("tokenActionResults", value); }
         }
 #nullable restore
 #else
-        public List<VppTokenActionResult> TokenActionResults
+        public List<Microsoft.Graph.Beta.Models.VppTokenActionResult> TokenActionResults
         {
-            get { return BackingStore?.Get<List<VppTokenActionResult>>("tokenActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VppTokenActionResult>>("tokenActionResults"); }
             set { BackingStore?.Set("tokenActionResults", value); }
         }
 #endif
@@ -196,12 +196,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VppToken"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VppToken"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VppToken CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VppToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VppToken();
+            return new Microsoft.Graph.Beta.Models.VppToken();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -220,14 +220,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastSyncStatus", n => { LastSyncStatus = n.GetEnumValue<VppTokenSyncStatus>(); } },
+                { "lastSyncStatus", n => { LastSyncStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.VppTokenSyncStatus>(); } },
                 { "locationName", n => { LocationName = n.GetStringValue(); } },
                 { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<VppTokenState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.VppTokenState>(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
-                { "tokenActionResults", n => { TokenActionResults = n.GetCollectionOfObjectValues<VppTokenActionResult>(VppTokenActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
+                { "tokenActionResults", n => { TokenActionResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VppTokenActionResult>(Microsoft.Graph.Beta.Models.VppTokenActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<Microsoft.Graph.Beta.Models.VppTokenAccountType>(); } },
             };
         }
         /// <summary>
@@ -247,14 +247,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteEnumValue<VppTokenSyncStatus>("lastSyncStatus", LastSyncStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VppTokenSyncStatus>("lastSyncStatus", LastSyncStatus);
             writer.WriteStringValue("locationName", LocationName);
             writer.WriteStringValue("organizationName", OrganizationName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteEnumValue<VppTokenState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VppTokenState>("state", State);
             writer.WriteStringValue("token", Token);
-            writer.WriteCollectionOfObjectValues<VppTokenActionResult>("tokenActionResults", TokenActionResults);
-            writer.WriteEnumValue<VppTokenAccountType>("vppTokenAccountType", VppTokenAccountType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VppTokenActionResult>("tokenActionResults", TokenActionResults);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VppTokenAccountType>("vppTokenAccountType", VppTokenAccountType);
         }
     }
 }

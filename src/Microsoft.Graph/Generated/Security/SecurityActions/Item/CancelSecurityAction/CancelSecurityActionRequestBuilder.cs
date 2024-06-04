@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityActio
     public class CancelSecurityActionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CancelSecurityActionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction.CancelSecurityActionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityActio
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CancelSecurityActionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction.CancelSecurityActionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityActio
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityActio
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityActio
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CancelSecurityActionRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction.CancelSecurityActionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public CancelSecurityActionRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction.CancelSecurityActionRequestBuilder WithUrl(string rawUrl)
         {
-            return new CancelSecurityActionRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction.CancelSecurityActionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

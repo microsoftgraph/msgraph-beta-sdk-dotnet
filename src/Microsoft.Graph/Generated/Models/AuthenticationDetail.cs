@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("succeeded", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationDetail"/> and sets the default values.
         /// </summary>
         public AuthenticationDetail()
         {
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationDetail();
+            return new Microsoft.Graph.Beta.Models.AuthenticationDetail();
         }
         /// <summary>
         /// The deserialization information for the current model

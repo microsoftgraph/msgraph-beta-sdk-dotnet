@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OutlookTaskGroup : Entity, IParsable
+    public class OutlookTaskGroup : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The version of the task group.</summary>
@@ -57,28 +57,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of task folders in the task group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTaskFolder>? TaskFolders
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>? TaskFolders
         {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>?>("taskFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>?>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTaskFolder> TaskFolders
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskFolder> TaskFolders
         {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookTaskGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutlookTaskGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookTaskGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OutlookTaskGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutlookTaskGroup();
+            return new Microsoft.Graph.Beta.Models.OutlookTaskGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "groupKey", n => { GroupKey = n.GetGuidValue(); } },
                 { "isDefaultGroup", n => { IsDefaultGroup = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskFolder>(Microsoft.Graph.Beta.Models.OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteGuidValue("groupKey", GroupKey);
             writer.WriteBoolValue("isDefaultGroup", IsDefaultGroup);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<OutlookTaskFolder>("taskFolders", TaskFolders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskFolder>("taskFolders", TaskFolders);
         }
     }
 }

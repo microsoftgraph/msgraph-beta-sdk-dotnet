@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
         /// <summary>The windowsPrivacyAccessControls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsPrivacyDataAccessControlItem>? WindowsPrivacyAccessControls
+        public List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>? WindowsPrivacyAccessControls
         {
-            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>?>("windowsPrivacyAccessControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>?>("windowsPrivacyAccessControls"); }
             set { BackingStore?.Set("windowsPrivacyAccessControls", value); }
         }
 #nullable restore
 #else
-        public List<WindowsPrivacyDataAccessControlItem> WindowsPrivacyAccessControls
+        public List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem> WindowsPrivacyAccessControls
         {
-            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("windowsPrivacyAccessControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>>("windowsPrivacyAccessControls"); }
             set { BackingStore?.Set("windowsPrivacyAccessControls", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPrivacyAccessControlsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls.WindowsPrivacyAccessControlsPostRequestBody"/> and sets the default values.
         /// </summary>
         public WindowsPrivacyAccessControlsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPrivacyAccessControlsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls.WindowsPrivacyAccessControlsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsPrivacyAccessControlsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls.WindowsPrivacyAccessControlsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPrivacyAccessControlsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls.WindowsPrivacyAccessControlsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "windowsPrivacyAccessControls", n => { WindowsPrivacyAccessControls = n.GetCollectionOfObjectValues<WindowsPrivacyDataAccessControlItem>(WindowsPrivacyDataAccessControlItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsPrivacyAccessControls", n => { WindowsPrivacyAccessControls = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>(Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<WindowsPrivacyDataAccessControlItem>("windowsPrivacyAccessControls", WindowsPrivacyAccessControls);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>("windowsPrivacyAccessControls", WindowsPrivacyAccessControls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

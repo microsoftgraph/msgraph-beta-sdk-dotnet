@@ -13,32 +13,32 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The alert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedTenantAlert? Alert
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert? Alert
         {
-            get { return BackingStore?.Get<ManagedTenantAlert?>("alert"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert?>("alert"); }
             set { BackingStore?.Set("alert", value); }
         }
 #nullable restore
 #else
-        public ManagedTenantAlert Alert
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert Alert
         {
-            get { return BackingStore?.Get<ManagedTenantAlert>("alert"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert>("alert"); }
             set { BackingStore?.Set("alert", value); }
         }
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AlertLogContent? Content
+        public Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent? Content
         {
-            get { return BackingStore?.Get<AlertLogContent?>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public AlertLogContent Content
+        public Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent Content
         {
-            get { return BackingStore?.Get<AlertLogContent>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedTenantAlertLog"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedTenantAlertLog CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedTenantAlertLog();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertLog();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alert", n => { Alert = n.GetObjectValue<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue); } },
-                { "content", n => { Content = n.GetObjectValue<AlertLogContent>(AlertLogContent.CreateFromDiscriminatorValue); } },
+                { "alert", n => { Alert = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent>(Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent.CreateFromDiscriminatorValue); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
@@ -120,8 +120,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ManagedTenantAlert>("alert", Alert);
-            writer.WriteObjectValue<AlertLogContent>("content", Content);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert>("alert", Alert);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertLogContent>("content", Content);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);

@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Reference
+        public Microsoft.Graph.Beta.Models.Json? Reference
         {
-            get { return BackingStore?.Get<Json?>("reference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("reference"); }
             set { BackingStore?.Set("reference", value); }
         }
 #nullable restore
 #else
-        public Json Reference
+        public Microsoft.Graph.Beta.Models.Json Reference
         {
-            get { return BackingStore?.Get<Json>("reference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("reference"); }
             set { BackingStore?.Set("reference", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AreasPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas.AreasPostRequestBody"/> and sets the default values.
         /// </summary>
         public AreasPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AreasPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas.AreasPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AreasPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas.AreasPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AreasPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas.AreasPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reference", n => { Reference = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "reference", n => { Reference = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Areas
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("reference", Reference);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("reference", Reference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

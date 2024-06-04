@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows VPN configuration profile.
     /// </summary>
-    public class WindowsVpnConfiguration : DeviceConfiguration, IParsable
+    public class WindowsVpnConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,21 +46,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnServer>? Servers
+        public List<Microsoft.Graph.Beta.Models.VpnServer>? Servers
         {
-            get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #nullable restore
 #else
-        public List<VpnServer> Servers
+        public List<Microsoft.Graph.Beta.Models.VpnServer> Servers
         {
-            get { return BackingStore?.Get<List<VpnServer>>("servers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnServer>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsVpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsVpnConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsVpnConfiguration() : base()
         {
@@ -69,18 +69,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsVpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windows10VpnConfiguration" => new Windows10VpnConfiguration(),
-                "#microsoft.graph.windows81VpnConfiguration" => new Windows81VpnConfiguration(),
-                "#microsoft.graph.windowsPhone81VpnConfiguration" => new WindowsPhone81VpnConfiguration(),
-                _ => new WindowsVpnConfiguration(),
+                "#microsoft.graph.windows10VpnConfiguration" => new Microsoft.Graph.Beta.Models.Windows10VpnConfiguration(),
+                "#microsoft.graph.windows81VpnConfiguration" => new Microsoft.Graph.Beta.Models.Windows81VpnConfiguration(),
+                "#microsoft.graph.windowsPhone81VpnConfiguration" => new Microsoft.Graph.Beta.Models.WindowsPhone81VpnConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsVpnConfiguration(),
             };
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 { "customXml", n => { CustomXml = n.GetByteArrayValue(); } },
-                { "servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servers", n => { Servers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnServer>(Microsoft.Graph.Beta.Models.VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("connectionName", ConnectionName);
             writer.WriteByteArrayValue("customXml", CustomXml);
-            writer.WriteCollectionOfObjectValues<VpnServer>("servers", Servers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnServer>("servers", Servers);
         }
     }
 }

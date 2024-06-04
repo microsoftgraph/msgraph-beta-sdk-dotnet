@@ -106,13 +106,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The relationship property</summary>
-        public ContactRelationship? Relationship
+        public Microsoft.Graph.Beta.Models.ContactRelationship? Relationship
         {
-            get { return BackingStore?.Get<ContactRelationship?>("relationship"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContactRelationship?>("relationship"); }
             set { BackingStore?.Set("relationship", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RelatedContact"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RelatedContact"/> and sets the default values.
         /// </summary>
         public RelatedContact()
         {
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RelatedContact"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RelatedContact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RelatedContact CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RelatedContact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RelatedContact();
+            return new Microsoft.Graph.Beta.Models.RelatedContact();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "relationship", n => { Relationship = n.GetEnumValue<ContactRelationship>(); } },
+                { "relationship", n => { Relationship = n.GetEnumValue<Microsoft.Graph.Beta.Models.ContactRelationship>(); } },
             };
         }
         /// <summary>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("mobilePhone", MobilePhone);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ContactRelationship>("relationship", Relationship);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ContactRelationship>("relationship", Relationship);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -118,21 +118,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The targetObjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TargetObjects
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? TargetObjects
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("targetObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TargetObjects
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> TargetObjects
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("targetObjects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleManagementPolicyRuleTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyRuleTarget"/> and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicyRuleTarget()
         {
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementPolicyRuleTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyRuleTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UnifiedRoleManagementPolicyRuleTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyRuleTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementPolicyRuleTarget();
+            return new Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyRuleTarget();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "level", n => { Level = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "operations", n => { Operations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "targetObjects", n => { TargetObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targetObjects", n => { TargetObjects = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("level", Level);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("targetObjects", TargetObjects);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("targetObjects", TargetObjects);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

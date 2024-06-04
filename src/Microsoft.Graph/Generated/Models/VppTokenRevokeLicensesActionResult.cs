@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The status of the revoke licenses action performed on the Apple Volume Purchase Program token.
     /// </summary>
-    public class VppTokenRevokeLicensesActionResult : VppTokenActionResult, IParsable
+    public class VppTokenRevokeLicensesActionResult : Microsoft.Graph.Beta.Models.VppTokenActionResult, IParsable
     {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
-        public VppTokenActionFailureReason? ActionFailureReason
+        public Microsoft.Graph.Beta.Models.VppTokenActionFailureReason? ActionFailureReason
         {
-            get { return BackingStore?.Get<VppTokenActionFailureReason?>("actionFailureReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenActionFailureReason?>("actionFailureReason"); }
             set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>A count of the number of licenses that failed to revoke.</summary>
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VppTokenRevokeLicensesActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VppTokenRevokeLicensesActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VppTokenRevokeLicensesActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VppTokenRevokeLicensesActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VppTokenRevokeLicensesActionResult();
+            return new Microsoft.Graph.Beta.Models.VppTokenRevokeLicensesActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<VppTokenActionFailureReason>(); } },
+                { "actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.VppTokenActionFailureReason>(); } },
                 { "failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
                 { "totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
             };
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<VppTokenActionFailureReason>("actionFailureReason", ActionFailureReason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VppTokenActionFailureReason>("actionFailureReason", ActionFailureReason);
             writer.WriteIntValue("failedLicensesCount", FailedLicensesCount);
             writer.WriteIntValue("totalLicensesCount", TotalLicensesCount);
         }

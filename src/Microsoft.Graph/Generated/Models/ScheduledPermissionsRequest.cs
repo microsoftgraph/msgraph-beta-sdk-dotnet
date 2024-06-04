@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ScheduledPermissionsRequest : Entity, IParsable
+    public class ScheduledPermissionsRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public UnifiedRoleScheduleRequestActions? Action
+        public Microsoft.Graph.Beta.Models.UnifiedRoleScheduleRequestActions? Action
         {
-            get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleScheduleRequestActions?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Defines when the identity created the request.</summary>
@@ -57,32 +57,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The requestedPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinition? RequestedPermissions
+        public Microsoft.Graph.Beta.Models.PermissionsDefinition? RequestedPermissions
         {
-            get { return BackingStore?.Get<PermissionsDefinition?>("requestedPermissions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinition?>("requestedPermissions"); }
             set { BackingStore?.Set("requestedPermissions", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinition RequestedPermissions
+        public Microsoft.Graph.Beta.Models.PermissionsDefinition RequestedPermissions
         {
-            get { return BackingStore?.Get<PermissionsDefinition>("requestedPermissions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinition>("requestedPermissions"); }
             set { BackingStore?.Set("requestedPermissions", value); }
         }
 #endif
         /// <summary>When to assign the requested permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? ScheduleInfo
+        public Microsoft.Graph.Beta.Models.RequestSchedule? ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule ScheduleInfo
+        public Microsoft.Graph.Beta.Models.RequestSchedule ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScheduledPermissionsRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ScheduledPermissionsRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ScheduledPermissionsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ScheduledPermissionsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScheduledPermissionsRequest();
+            return new Microsoft.Graph.Beta.Models.ScheduledPermissionsRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,13 +126,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<UnifiedRoleScheduleRequestActions>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.UnifiedRoleScheduleRequestActions>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "requestedPermissions", n => { RequestedPermissions = n.GetObjectValue<PermissionsDefinition>(PermissionsDefinition.CreateFromDiscriminatorValue); } },
-                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                { "statusDetail", n => { StatusDetail = n.GetEnumValue<StatusDetail>(); } },
+                { "requestedPermissions", n => { RequestedPermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinition>(Microsoft.Graph.Beta.Models.PermissionsDefinition.CreateFromDiscriminatorValue); } },
+                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>(Microsoft.Graph.Beta.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "statusDetail", n => { StatusDetail = n.GetEnumValue<Microsoft.Graph.Beta.Models.StatusDetail>(); } },
                 { "ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -144,13 +144,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<UnifiedRoleScheduleRequestActions>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UnifiedRoleScheduleRequestActions>("action", Action);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("justification", Justification);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<PermissionsDefinition>("requestedPermissions", RequestedPermissions);
-            writer.WriteObjectValue<RequestSchedule>("scheduleInfo", ScheduleInfo);
-            writer.WriteEnumValue<StatusDetail>("statusDetail", StatusDetail);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinition>("requestedPermissions", RequestedPermissions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>("scheduleInfo", ScheduleInfo);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StatusDetail>("statusDetail", StatusDetail);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>("ticketInfo", TicketInfo);
         }
     }

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConnectPostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectPostResponse"/> and sets the default values.
         /// </summary>
         public ConnectPostResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConnectPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConnectPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConnectPostResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

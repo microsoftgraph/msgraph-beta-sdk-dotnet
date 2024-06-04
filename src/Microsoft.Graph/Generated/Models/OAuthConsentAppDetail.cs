@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.</summary>
-        public OAuthAppScope? AppScope
+        public Microsoft.Graph.Beta.Models.OAuthAppScope? AppScope
         {
-            get { return BackingStore?.Get<OAuthAppScope?>("appScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OAuthAppScope?>("appScope"); }
             set { BackingStore?.Set("appScope", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OAuthConsentAppDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OAuthConsentAppDetail"/> and sets the default values.
         /// </summary>
         public OAuthConsentAppDetail()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OAuthConsentAppDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OAuthConsentAppDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OAuthConsentAppDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OAuthConsentAppDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OAuthConsentAppDetail();
+            return new Microsoft.Graph.Beta.Models.OAuthConsentAppDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appScope", n => { AppScope = n.GetEnumValue<OAuthAppScope>(); } },
+                { "appScope", n => { AppScope = n.GetEnumValue<Microsoft.Graph.Beta.Models.OAuthAppScope>(); } },
                 { "displayLogo", n => { DisplayLogo = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<OAuthAppScope>("appScope", AppScope);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OAuthAppScope>("appScope", AppScope);
             writer.WriteStringValue("displayLogo", DisplayLogo);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Mac device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class MacOSVpnConfiguration : AppleVpnConfiguration, IParsable
+    public class MacOSVpnConfiguration : Microsoft.Graph.Beta.Models.AppleVpnConfiguration, IParsable
     {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSCertificateProfileBase? IdentityCertificate
+        public Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase? IdentityCertificate
         {
-            get { return BackingStore?.Get<MacOSCertificateProfileBase?>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public MacOSCertificateProfileBase IdentityCertificate
+        public Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase IdentityCertificate
         {
-            get { return BackingStore?.Get<MacOSCertificateProfileBase>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MacOSVpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSVpnConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSVpnConfiguration() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSVpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSVpnConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSVpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<MacOSCertificateProfileBase>(MacOSCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase>(Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MacOSCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase>("identityCertificate", IdentityCertificate);
         }
     }
 }

@@ -36,102 +36,102 @@ namespace Microsoft.Graph.Beta.Me.Profile
     public class ProfileRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.profile entity.</summary>
-        public AccountRequestBuilder Account
+        public Microsoft.Graph.Beta.Me.Profile.Account.AccountRequestBuilder Account
         {
-            get => new AccountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the addresses property of the microsoft.graph.profile entity.</summary>
-        public AddressesRequestBuilder Addresses
+        public Microsoft.Graph.Beta.Me.Profile.Addresses.AddressesRequestBuilder Addresses
         {
-            get => new AddressesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Addresses.AddressesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the anniversaries property of the microsoft.graph.profile entity.</summary>
-        public AnniversariesRequestBuilder Anniversaries
+        public Microsoft.Graph.Beta.Me.Profile.Anniversaries.AnniversariesRequestBuilder Anniversaries
         {
-            get => new AnniversariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Anniversaries.AnniversariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the awards property of the microsoft.graph.profile entity.</summary>
-        public AwardsRequestBuilder Awards
+        public Microsoft.Graph.Beta.Me.Profile.Awards.AwardsRequestBuilder Awards
         {
-            get => new AwardsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Awards.AwardsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certifications property of the microsoft.graph.profile entity.</summary>
-        public CertificationsRequestBuilder Certifications
+        public Microsoft.Graph.Beta.Me.Profile.Certifications.CertificationsRequestBuilder Certifications
         {
-            get => new CertificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Certifications.CertificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.</summary>
-        public EducationalActivitiesRequestBuilder EducationalActivities
+        public Microsoft.Graph.Beta.Me.Profile.EducationalActivities.EducationalActivitiesRequestBuilder EducationalActivities
         {
-            get => new EducationalActivitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.EducationalActivities.EducationalActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emails property of the microsoft.graph.profile entity.</summary>
-        public EmailsRequestBuilder Emails
+        public Microsoft.Graph.Beta.Me.Profile.Emails.EmailsRequestBuilder Emails
         {
-            get => new EmailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Emails.EmailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the interests property of the microsoft.graph.profile entity.</summary>
-        public InterestsRequestBuilder Interests
+        public Microsoft.Graph.Beta.Me.Profile.Interests.InterestsRequestBuilder Interests
         {
-            get => new InterestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Interests.InterestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.profile entity.</summary>
-        public LanguagesRequestBuilder Languages
+        public Microsoft.Graph.Beta.Me.Profile.Languages.LanguagesRequestBuilder Languages
         {
-            get => new LanguagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Languages.LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the names property of the microsoft.graph.profile entity.</summary>
-        public NamesRequestBuilder Names
+        public Microsoft.Graph.Beta.Me.Profile.Names.NamesRequestBuilder Names
         {
-            get => new NamesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Names.NamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.profile entity.</summary>
-        public NotesRequestBuilder Notes
+        public Microsoft.Graph.Beta.Me.Profile.Notes.NotesRequestBuilder Notes
         {
-            get => new NotesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the patents property of the microsoft.graph.profile entity.</summary>
-        public PatentsRequestBuilder Patents
+        public Microsoft.Graph.Beta.Me.Profile.Patents.PatentsRequestBuilder Patents
         {
-            get => new PatentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Patents.PatentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the phones property of the microsoft.graph.profile entity.</summary>
-        public PhonesRequestBuilder Phones
+        public Microsoft.Graph.Beta.Me.Profile.Phones.PhonesRequestBuilder Phones
         {
-            get => new PhonesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Phones.PhonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the positions property of the microsoft.graph.profile entity.</summary>
-        public PositionsRequestBuilder Positions
+        public Microsoft.Graph.Beta.Me.Profile.Positions.PositionsRequestBuilder Positions
         {
-            get => new PositionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Positions.PositionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the projects property of the microsoft.graph.profile entity.</summary>
-        public ProjectsRequestBuilder Projects
+        public Microsoft.Graph.Beta.Me.Profile.Projects.ProjectsRequestBuilder Projects
         {
-            get => new ProjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the publications property of the microsoft.graph.profile entity.</summary>
-        public PublicationsRequestBuilder Publications
+        public Microsoft.Graph.Beta.Me.Profile.Publications.PublicationsRequestBuilder Publications
         {
-            get => new PublicationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Publications.PublicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the skills property of the microsoft.graph.profile entity.</summary>
-        public SkillsRequestBuilder Skills
+        public Microsoft.Graph.Beta.Me.Profile.Skills.SkillsRequestBuilder Skills
         {
-            get => new SkillsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Skills.SkillsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.</summary>
-        public WebAccountsRequestBuilder WebAccounts
+        public Microsoft.Graph.Beta.Me.Profile.WebAccounts.WebAccountsRequestBuilder WebAccounts
         {
-            get => new WebAccountsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.WebAccounts.WebAccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the websites property of the microsoft.graph.profile entity.</summary>
-        public WebsitesRequestBuilder Websites
+        public Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder Websites
         {
-            get => new WebsitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProfileRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProfileRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -176,20 +176,20 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Profile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Profile?> GetAsync(Action<RequestConfiguration<ProfileRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Profile?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Profile> GetAsync(Action<RequestConfiguration<ProfileRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Profile> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Profile>(requestInfo, Microsoft.Graph.Beta.Models.Profile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Profile?> PatchAsync(Microsoft.Graph.Beta.Models.Profile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Profile>(requestInfo, Microsoft.Graph.Beta.Models.Profile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -244,11 +244,11 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfileRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfileRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -281,11 +281,11 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProfileRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProfileRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProfileRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -324,7 +324,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ProfileRequestBuilderGetRequestConfiguration : RequestConfiguration<ProfileRequestBuilderGetQueryParameters>
+        public class ProfileRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

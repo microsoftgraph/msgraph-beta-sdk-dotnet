@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains PowerShell script properties to detect a Win32 App
     /// </summary>
-    public class Win32LobAppPowerShellScriptRequirement : Win32LobAppRequirement, IParsable
+    public class Win32LobAppPowerShellScriptRequirement : Microsoft.Graph.Beta.Models.Win32LobAppRequirement, IParsable
     {
         /// <summary>Contains all supported Powershell Script output detection type.</summary>
-        public Win32LobAppPowerShellScriptDetectionType? DetectionType
+        public Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptDetectionType? DetectionType
         {
-            get { return BackingStore?.Get<Win32LobAppPowerShellScriptDetectionType?>("detectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptDetectionType?>("detectionType"); }
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The unique display name for this rule</summary>
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>Indicates the type of execution context the app runs in.</summary>
-        public RunAsAccountType? RunAsAccount
+        public Microsoft.Graph.Beta.Models.RunAsAccountType? RunAsAccount
         {
-            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppPowerShellScriptRequirement"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptRequirement"/> and sets the default values.
         /// </summary>
         public Win32LobAppPowerShellScriptRequirement() : base()
         {
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppPowerShellScriptRequirement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptRequirement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppPowerShellScriptRequirement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptRequirement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppPowerShellScriptRequirement();
+            return new Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptRequirement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,11 +92,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppPowerShellScriptDetectionType>(); } },
+                { "detectionType", n => { DetectionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptDetectionType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
                 { "runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
-                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunAsAccountType>(); } },
                 { "scriptContent", n => { ScriptContent = n.GetStringValue(); } },
             };
         }
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Win32LobAppPowerShellScriptDetectionType>("detectionType", DetectionType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptDetectionType>("detectionType", DetectionType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);
             writer.WriteBoolValue("runAs32Bit", RunAs32Bit);
-            writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteStringValue("scriptContent", ScriptContent);
         }
     }

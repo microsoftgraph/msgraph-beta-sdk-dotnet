@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementActionDeploymentStatus>? Statuses
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus>? Statuses
         {
-            get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>?>("statuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus>?>("statuses"); }
             set { BackingStore?.Set("statuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagementActionDeploymentStatus> Statuses
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus> Statuses
         {
-            get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>("statuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus>>("statuses"); }
             set { BackingStore?.Set("statuses", value); }
         }
 #endif
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementActionTenantDeploymentStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionTenantDeploymentStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagementActionTenantDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionTenantDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementActionTenantDeploymentStatus();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionTenantDeploymentStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "statuses", n => { Statuses = n.GetCollectionOfObjectValues<ManagementActionDeploymentStatus>(ManagementActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "statuses", n => { Statuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", Statuses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus>("statuses", Statuses);
             writer.WriteStringValue("tenantGroupId", TenantGroupId);
             writer.WriteStringValue("tenantId", TenantId);
         }

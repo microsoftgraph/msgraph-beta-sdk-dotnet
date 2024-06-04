@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServicingPeriod"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ServicingPeriod"/> and sets the default values.
         /// </summary>
         public ServicingPeriod()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServicingPeriod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ServicingPeriod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ServicingPeriod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.ServicingPeriod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServicingPeriod();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.ServicingPeriod();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The days property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Days
+        public Microsoft.Graph.Beta.Models.Json? Days
         {
-            get { return BackingStore?.Get<Json?>("days"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("days"); }
             set { BackingStore?.Set("days", value); }
         }
 #nullable restore
 #else
-        public Json Days
+        public Microsoft.Graph.Beta.Models.Json Days
         {
-            get { return BackingStore?.Get<Json>("days"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("days"); }
             set { BackingStore?.Set("days", value); }
         }
 #endif
         /// <summary>The holidays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Holidays
+        public Microsoft.Graph.Beta.Models.Json? Holidays
         {
-            get { return BackingStore?.Get<Json?>("holidays"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("holidays"); }
             set { BackingStore?.Set("holidays", value); }
         }
 #nullable restore
 #else
-        public Json Holidays
+        public Microsoft.Graph.Beta.Models.Json Holidays
         {
-            get { return BackingStore?.Get<Json>("holidays"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("holidays"); }
             set { BackingStore?.Set("holidays", value); }
         }
 #endif
         /// <summary>The startDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartDate
+        public Microsoft.Graph.Beta.Models.Json? StartDate
         {
-            get { return BackingStore?.Get<Json?>("startDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #nullable restore
 #else
-        public Json StartDate
+        public Microsoft.Graph.Beta.Models.Json StartDate
         {
-            get { return BackingStore?.Get<Json>("startDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkDayPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.WorkDay.WorkDayPostRequestBody"/> and sets the default values.
         /// </summary>
         public WorkDayPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkDayPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.WorkDay.WorkDayPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkDayPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.WorkDay.WorkDayPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkDayPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.WorkDay.WorkDayPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "days", n => { Days = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "holidays", n => { Holidays = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "startDate", n => { StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "days", n => { Days = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "holidays", n => { Holidays = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "startDate", n => { StartDate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("days", Days);
-            writer.WriteObjectValue<Json>("holidays", Holidays);
-            writer.WriteObjectValue<Json>("startDate", StartDate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("days", Days);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("holidays", Holidays);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

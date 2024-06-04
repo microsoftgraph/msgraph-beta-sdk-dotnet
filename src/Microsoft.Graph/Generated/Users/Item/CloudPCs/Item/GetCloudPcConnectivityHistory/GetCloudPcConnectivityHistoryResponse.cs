@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHi
 {
     [Obsolete("This class is obsolete. Use GetCloudPcConnectivityHistoryGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCloudPcConnectivityHistoryResponse : GetCloudPcConnectivityHistoryGetResponse, IParsable
+    public class GetCloudPcConnectivityHistoryResponse : Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCloudPcConnectivityHistoryResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetCloudPcConnectivityHistoryResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCloudPcConnectivityHistoryResponse();
+            return new Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryResponse();
         }
     }
 }

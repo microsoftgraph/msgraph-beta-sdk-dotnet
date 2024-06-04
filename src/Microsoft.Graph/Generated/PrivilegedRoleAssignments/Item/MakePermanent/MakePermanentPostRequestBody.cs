@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MakePermanentPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent.MakePermanentPostRequestBody"/> and sets the default values.
         /// </summary>
         public MakePermanentPostRequestBody()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MakePermanentPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent.MakePermanentPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MakePermanentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent.MakePermanentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MakePermanentPostRequestBody();
+            return new Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent.MakePermanentPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SensorDeploymentPackage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage"/> and sets the default values.
         /// </summary>
         public SensorDeploymentPackage()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SensorDeploymentPackage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SensorDeploymentPackage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SensorDeploymentPackage();
+            return new Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage();
         }
         /// <summary>
         /// The deserialization information for the current model

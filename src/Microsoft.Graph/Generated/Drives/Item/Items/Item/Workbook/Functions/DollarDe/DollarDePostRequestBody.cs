@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarD
         /// <summary>The fraction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Fraction
+        public Microsoft.Graph.Beta.Models.Json? Fraction
         {
-            get { return BackingStore?.Get<Json?>("fraction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("fraction"); }
             set { BackingStore?.Set("fraction", value); }
         }
 #nullable restore
 #else
-        public Json Fraction
+        public Microsoft.Graph.Beta.Models.Json Fraction
         {
-            get { return BackingStore?.Get<Json>("fraction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("fraction"); }
             set { BackingStore?.Set("fraction", value); }
         }
 #endif
         /// <summary>The fractionalDollar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FractionalDollar
+        public Microsoft.Graph.Beta.Models.Json? FractionalDollar
         {
-            get { return BackingStore?.Get<Json?>("fractionalDollar"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("fractionalDollar"); }
             set { BackingStore?.Set("fractionalDollar", value); }
         }
 #nullable restore
 #else
-        public Json FractionalDollar
+        public Microsoft.Graph.Beta.Models.Json FractionalDollar
         {
-            get { return BackingStore?.Get<Json>("fractionalDollar"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("fractionalDollar"); }
             set { BackingStore?.Set("fractionalDollar", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DollarDePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarDe.DollarDePostRequestBody"/> and sets the default values.
         /// </summary>
         public DollarDePostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarD
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DollarDePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarDe.DollarDePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DollarDePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarDe.DollarDePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DollarDePostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarDe.DollarDePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarD
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fraction", n => { Fraction = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "fractionalDollar", n => { FractionalDollar = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fraction", n => { Fraction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "fractionalDollar", n => { FractionalDollar = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.DollarD
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("fraction", Fraction);
-            writer.WriteObjectValue<Json>("fractionalDollar", FractionalDollar);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("fraction", Fraction);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("fractionalDollar", FractionalDollar);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

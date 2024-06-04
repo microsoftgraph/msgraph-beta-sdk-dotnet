@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GcpIdentity : AuthorizationSystemIdentity, IParsable
+    public class GcpIdentity : Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="GcpIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GcpIdentity"/> and sets the default values.
         /// </summary>
         public GcpIdentity() : base()
         {
@@ -20,19 +20,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GcpIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GcpIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GcpIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GcpIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.gcpCloudFunction" => new GcpCloudFunction(),
-                "#microsoft.graph.gcpGroup" => new GcpGroup(),
-                "#microsoft.graph.gcpServiceAccount" => new GcpServiceAccount(),
-                "#microsoft.graph.gcpUser" => new GcpUser(),
-                _ => new GcpIdentity(),
+                "#microsoft.graph.gcpCloudFunction" => new Microsoft.Graph.Beta.Models.GcpCloudFunction(),
+                "#microsoft.graph.gcpGroup" => new Microsoft.Graph.Beta.Models.GcpGroup(),
+                "#microsoft.graph.gcpServiceAccount" => new Microsoft.Graph.Beta.Models.GcpServiceAccount(),
+                "#microsoft.graph.gcpUser" => new Microsoft.Graph.Beta.Models.GcpUser(),
+                _ => new Microsoft.Graph.Beta.Models.GcpIdentity(),
             };
         }
         /// <summary>

@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS software update account summary report for a device and user
     /// </summary>
-    public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable
+    public class MacOSSoftwareUpdateAccountSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Summary of the updates by category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSoftwareUpdateCategorySummary>? CategorySummaries
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary>? CategorySummaries
         {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>?>("categorySummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary>?>("categorySummaries"); }
             set { BackingStore?.Set("categorySummaries", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary> CategorySummaries
         {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>>("categorySummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary>>("categorySummaries"); }
             set { BackingStore?.Set("categorySummaries", value); }
         }
 #endif
@@ -150,12 +150,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSSoftwareUpdateAccountSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSSoftwareUpdateAccountSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSSoftwareUpdateAccountSummary();
+            return new Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "categorySummaries", n => { CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>(MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categorySummaries", n => { CategorySummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary>(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>("categorySummaries", CategorySummaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary>("categorySummaries", CategorySummaries);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("displayName", DisplayName);

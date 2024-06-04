@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshi
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number
+        public Microsoft.Graph.Beta.Models.Json? Number
         {
-            get { return BackingStore?.Get<Json?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number
+        public Microsoft.Graph.Beta.Models.Json Number
         {
-            get { return BackingStore?.Get<Json>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>The shiftAmount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ShiftAmount
+        public Microsoft.Graph.Beta.Models.Json? ShiftAmount
         {
-            get { return BackingStore?.Get<Json?>("shiftAmount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("shiftAmount"); }
             set { BackingStore?.Set("shiftAmount", value); }
         }
 #nullable restore
 #else
-        public Json ShiftAmount
+        public Microsoft.Graph.Beta.Models.Json ShiftAmount
         {
-            get { return BackingStore?.Get<Json>("shiftAmount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("shiftAmount"); }
             set { BackingStore?.Set("shiftAmount", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BitlshiftPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshift.BitlshiftPostRequestBody"/> and sets the default values.
         /// </summary>
         public BitlshiftPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshi
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitlshiftPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshift.BitlshiftPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BitlshiftPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshift.BitlshiftPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitlshiftPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshift.BitlshiftPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "shiftAmount", n => { ShiftAmount = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "shiftAmount", n => { ShiftAmount = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Bitlshi
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("number", Number);
-            writer.WriteObjectValue<Json>("shiftAmount", ShiftAmount);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("shiftAmount", ShiftAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

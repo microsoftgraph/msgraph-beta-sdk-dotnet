@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The deviceImportStatus property</summary>
-        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus
+        public Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus
         {
-            get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityImportStatus?>("deviceImportStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityImportStatus?>("deviceImportStatus"); }
             set { BackingStore?.Set("deviceImportStatus", value); }
         }
         /// <summary>Device Registration ID for successfully added device reported by Device Directory Service(DDS).</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ImportedWindowsAutopilotDeviceIdentityState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityState"/> and sets the default values.
         /// </summary>
         public ImportedWindowsAutopilotDeviceIdentityState()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportedWindowsAutopilotDeviceIdentityState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImportedWindowsAutopilotDeviceIdentityState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportedWindowsAutopilotDeviceIdentityState();
+            return new Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "deviceErrorCode", n => { DeviceErrorCode = n.GetIntValue(); } },
                 { "deviceErrorName", n => { DeviceErrorName = n.GetStringValue(); } },
-                { "deviceImportStatus", n => { DeviceImportStatus = n.GetEnumValue<ImportedWindowsAutopilotDeviceIdentityImportStatus>(); } },
+                { "deviceImportStatus", n => { DeviceImportStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityImportStatus>(); } },
                 { "deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("deviceErrorCode", DeviceErrorCode);
             writer.WriteStringValue("deviceErrorName", DeviceErrorName);
-            writer.WriteEnumValue<ImportedWindowsAutopilotDeviceIdentityImportStatus>("deviceImportStatus", DeviceImportStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentityImportStatus>("deviceImportStatus", DeviceImportStatus);
             writer.WriteStringValue("deviceRegistrationId", DeviceRegistrationId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

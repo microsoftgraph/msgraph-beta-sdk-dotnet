@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
 {
     [Obsolete("This class is obsolete. Use RetrieveOperationsRequiringApprovalGetResponse instead.")]
     #pragma warning disable CS1591
-    public class RetrieveOperationsRequiringApprovalResponse : RetrieveOperationsRequiringApprovalGetResponse, IParsable
+    public class RetrieveOperationsRequiringApprovalResponse : Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.RetrieveOperationsRequiringApproval.RetrieveOperationsRequiringApprovalGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetrieveOperationsRequiringApprovalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.RetrieveOperationsRequiringApproval.RetrieveOperationsRequiringApprovalResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RetrieveOperationsRequiringApprovalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.RetrieveOperationsRequiringApproval.RetrieveOperationsRequiringApprovalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetrieveOperationsRequiringApprovalResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.RetrieveOperationsRequiringApproval.RetrieveOperationsRequiringApprovalResponse();
         }
     }
 }

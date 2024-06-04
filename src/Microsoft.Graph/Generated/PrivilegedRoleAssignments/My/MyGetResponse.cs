@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My
 {
     #pragma warning disable CS1591
-    public class MyGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class MyGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedRoleAssignment>? Value
+        public List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>? Value
         {
-            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedRoleAssignment> Value
+        public List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment> Value
         {
-            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MyGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MyGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MyGetResponse();
+            return new Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<PrivilegedRoleAssignment>(PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>(Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PrivilegedRoleAssignment>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>("value", Value);
         }
     }
 }

@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The evidences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitiveContentEvidence>? Evidences
+        public List<Microsoft.Graph.Beta.Models.SensitiveContentEvidence>? Evidences
         {
-            get { return BackingStore?.Get<List<SensitiveContentEvidence>?>("evidences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveContentEvidence>?>("evidences"); }
             set { BackingStore?.Set("evidences", value); }
         }
 #nullable restore
 #else
-        public List<SensitiveContentEvidence> Evidences
+        public List<Microsoft.Graph.Beta.Models.SensitiveContentEvidence> Evidences
         {
-            get { return BackingStore?.Get<List<SensitiveContentEvidence>>("evidences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveContentEvidence>>("evidences"); }
             set { BackingStore?.Set("evidences", value); }
         }
 #endif
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offset", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SensitiveContentLocation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SensitiveContentLocation"/> and sets the default values.
         /// </summary>
         public SensitiveContentLocation()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SensitiveContentLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SensitiveContentLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SensitiveContentLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SensitiveContentLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SensitiveContentLocation();
+            return new Microsoft.Graph.Beta.Models.SensitiveContentLocation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "confidence", n => { Confidence = n.GetIntValue(); } },
-                { "evidences", n => { Evidences = n.GetCollectionOfObjectValues<SensitiveContentEvidence>(SensitiveContentEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "evidences", n => { Evidences = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveContentEvidence>(Microsoft.Graph.Beta.Models.SensitiveContentEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "idMatch", n => { IdMatch = n.GetStringValue(); } },
                 { "length", n => { Length = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("confidence", Confidence);
-            writer.WriteCollectionOfObjectValues<SensitiveContentEvidence>("evidences", Evidences);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveContentEvidence>("evidences", Evidences);
             writer.WriteStringValue("idMatch", IdMatch);
             writer.WriteIntValue("length", Length);
             writer.WriteStringValue("@odata.type", OdataType);

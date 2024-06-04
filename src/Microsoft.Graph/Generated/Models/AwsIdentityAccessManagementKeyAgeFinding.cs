@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsIdentityAccessManagementKeyAgeFinding : Finding, IParsable
+    public class AwsIdentityAccessManagementKeyAgeFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAccessKey? AccessKey
+        public Microsoft.Graph.Beta.Models.AwsAccessKey? AccessKey
         {
-            get { return BackingStore?.Get<AwsAccessKey?>("accessKey"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAccessKey?>("accessKey"); }
             set { BackingStore?.Set("accessKey", value); }
         }
 #nullable restore
 #else
-        public AwsAccessKey AccessKey
+        public Microsoft.Graph.Beta.Models.AwsAccessKey AccessKey
         {
-            get { return BackingStore?.Get<AwsAccessKey>("accessKey"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAccessKey>("accessKey"); }
             set { BackingStore?.Set("accessKey", value); }
         }
 #endif
@@ -75,20 +75,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public IamStatus? Status
+        public Microsoft.Graph.Beta.Models.IamStatus? Status
         {
-            get { return BackingStore?.Get<IamStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IamStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsIdentityAccessManagementKeyAgeFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsIdentityAccessManagementKeyAgeFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsIdentityAccessManagementKeyAgeFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsIdentityAccessManagementKeyAgeFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsIdentityAccessManagementKeyAgeFinding();
+            return new Microsoft.Graph.Beta.Models.AwsIdentityAccessManagementKeyAgeFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessKey", n => { AccessKey = n.GetObjectValue<AwsAccessKey>(AwsAccessKey.CreateFromDiscriminatorValue); } },
+                { "accessKey", n => { AccessKey = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAccessKey>(Microsoft.Graph.Beta.Models.AwsAccessKey.CreateFromDiscriminatorValue); } },
                 { "actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>(Microsoft.Graph.Beta.Models.ActionSummary.CreateFromDiscriminatorValue); } },
                 { "awsAccessKeyDetails", n => { AwsAccessKeyDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAccessKeyDetails>(Microsoft.Graph.Beta.Models.AwsAccessKeyDetails.CreateFromDiscriminatorValue); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<IamStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.IamStatus>(); } },
             };
         }
         /// <summary>
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AwsAccessKey>("accessKey", AccessKey);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsAccessKey>("accessKey", AccessKey);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>("actionSummary", ActionSummary);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsAccessKeyDetails>("awsAccessKeyDetails", AwsAccessKeyDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
-            writer.WriteEnumValue<IamStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IamStatus>("status", Status);
         }
     }
 }

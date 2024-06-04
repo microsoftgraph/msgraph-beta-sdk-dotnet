@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows X SCEP Certificate configuration profile
     /// </summary>
-    public class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile, IParsable
+    public class Windows10XSCEPCertificateProfile : Microsoft.Graph.Beta.Models.Windows10XCertificateProfile, IParsable
     {
         /// <summary>CertificateStore types</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
@@ -32,32 +32,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Extended Key Usage (EKU) settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>? ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage> ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #endif
         /// <summary>SCEP Hash Algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HashAlgorithms?>? HashAlgorithm
+        public List<Microsoft.Graph.Beta.Models.HashAlgorithms?>? HashAlgorithm
         {
-            get { return BackingStore?.Get<List<HashAlgorithms?>?>("hashAlgorithm"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HashAlgorithms?>?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
 #nullable restore
 #else
-        public List<HashAlgorithms?> HashAlgorithm
+        public List<Microsoft.Graph.Beta.Models.HashAlgorithms?> HashAlgorithm
         {
-            get { return BackingStore?.Get<List<HashAlgorithms?>>("hashAlgorithm"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HashAlgorithms?>>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
 #endif
@@ -68,15 +68,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Storage Provider (KSP) Import Options.</summary>
-        public KeyStorageProviderOption? KeyStorageProvider
+        public Microsoft.Graph.Beta.Models.KeyStorageProviderOption? KeyStorageProvider
         {
-            get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyStorageProviderOption?>("keyStorageProvider"); }
             set { BackingStore?.Set("keyStorageProvider", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage
+        public Microsoft.Graph.Beta.Models.KeyUsages? KeyUsage
         {
-            get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate renewal threshold percentage</summary>
@@ -110,16 +110,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Custom AAD Attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Windows10XCustomSubjectAlternativeName>? SubjectAlternativeNameFormats
+        public List<Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName>? SubjectAlternativeNameFormats
         {
-            get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>?>("subjectAlternativeNameFormats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName>?>("subjectAlternativeNameFormats"); }
             set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
 #nullable restore
 #else
-        public List<Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats
+        public List<Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats
         {
-            get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>>("subjectAlternativeNameFormats"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName>>("subjectAlternativeNameFormats"); }
             set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
 #endif
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows10XSCEPCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10XSCEPCertificateProfile"/> and sets the default values.
         /// </summary>
         public Windows10XSCEPCertificateProfile() : base()
         {
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10XSCEPCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10XSCEPCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10XSCEPCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10XSCEPCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10XSCEPCertificateProfile();
+            return new Microsoft.Graph.Beta.Models.Windows10XSCEPCertificateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,18 +164,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
-                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateStore", n => { CertificateStore = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateStore>(); } },
+                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>(); } },
                 { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "hashAlgorithm", n => { HashAlgorithm = n.GetCollectionOfEnumValues<HashAlgorithms>()?.ToList(); } },
-                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                { "keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
-                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>(Microsoft.Graph.Beta.Models.ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hashAlgorithm", n => { HashAlgorithm = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.HashAlgorithms>()?.ToList(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeySize>(); } },
+                { "keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeyStorageProviderOption>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>(); } },
                 { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
                 { "rootCertificateId", n => { RootCertificateId = n.GetGuidValue(); } },
                 { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "subjectAlternativeNameFormats", n => { SubjectAlternativeNameFormats = n.GetCollectionOfObjectValues<Windows10XCustomSubjectAlternativeName>(Windows10XCustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subjectAlternativeNameFormats", n => { SubjectAlternativeNameFormats = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName>(Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
         }
@@ -187,18 +187,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CertificateStore>("certificateStore", CertificateStore);
-            writer.WriteEnumValue<CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateStore>("certificateStore", CertificateStore);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
             writer.WriteIntValue("certificateValidityPeriodValue", CertificateValidityPeriodValue);
-            writer.WriteCollectionOfObjectValues<ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
-            writer.WriteCollectionOfEnumValues<HashAlgorithms>("hashAlgorithm", HashAlgorithm);
-            writer.WriteEnumValue<KeySize>("keySize", KeySize);
-            writer.WriteEnumValue<KeyStorageProviderOption>("keyStorageProvider", KeyStorageProvider);
-            writer.WriteEnumValue<KeyUsages>("keyUsage", KeyUsage);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.HashAlgorithms>("hashAlgorithm", HashAlgorithm);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeySize>("keySize", KeySize);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeyStorageProviderOption>("keyStorageProvider", KeyStorageProvider);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>("keyUsage", KeyUsage);
             writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
             writer.WriteGuidValue("rootCertificateId", RootCertificateId);
             writer.WriteCollectionOfPrimitiveValues<string>("scepServerUrls", ScepServerUrls);
-            writer.WriteCollectionOfObjectValues<Windows10XCustomSubjectAlternativeName>("subjectAlternativeNameFormats", SubjectAlternativeNameFormats);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName>("subjectAlternativeNameFormats", SubjectAlternativeNameFormats);
             writer.WriteStringValue("subjectNameFormatString", SubjectNameFormatString);
         }
     }

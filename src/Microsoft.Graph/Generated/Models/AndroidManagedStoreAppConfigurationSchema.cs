@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Schema describing an Android application&apos;s custom configurations.
     /// </summary>
-    public class AndroidManagedStoreAppConfigurationSchema : Entity, IParsable
+    public class AndroidManagedStoreAppConfigurationSchema : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,44 +30,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidManagedStoreAppConfigurationSchemaItem>? NestedSchemaItems
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>? NestedSchemaItems
         {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>?>("nestedSchemaItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>?>("nestedSchemaItems"); }
             set { BackingStore?.Set("nestedSchemaItems", value); }
         }
 #nullable restore
 #else
-        public List<AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems
         {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>("nestedSchemaItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>>("nestedSchemaItems"); }
             set { BackingStore?.Set("nestedSchemaItems", value); }
         }
 #endif
         /// <summary>Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidManagedStoreAppConfigurationSchemaItem>? SchemaItems
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>? SchemaItems
         {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>?>("schemaItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>?>("schemaItems"); }
             set { BackingStore?.Set("schemaItems", value); }
         }
 #nullable restore
 #else
-        public List<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems
         {
-            get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>("schemaItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>>("schemaItems"); }
             set { BackingStore?.Set("schemaItems", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidManagedStoreAppConfigurationSchema"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidManagedStoreAppConfigurationSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidManagedStoreAppConfigurationSchema();
+            return new Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "exampleJson", n => { ExampleJson = n.GetByteArrayValue(); } },
-                { "nestedSchemaItems", n => { NestedSchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "nestedSchemaItems", n => { NestedSchemaItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>(Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>(Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteByteArrayValue("exampleJson", ExampleJson);
-            writer.WriteCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>("nestedSchemaItems", NestedSchemaItems);
-            writer.WriteCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>("schemaItems", SchemaItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>("nestedSchemaItems", NestedSchemaItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchemaItem>("schemaItems", SchemaItems);
         }
     }
 }

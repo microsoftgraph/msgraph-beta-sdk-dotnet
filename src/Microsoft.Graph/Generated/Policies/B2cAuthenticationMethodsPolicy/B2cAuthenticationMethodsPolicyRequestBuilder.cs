@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
     public class B2cAuthenticationMethodsPolicyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="B2cAuthenticationMethodsPolicyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="B2cAuthenticationMethodsPolicyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -61,20 +61,20 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> GetAsync(Action<RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder.B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> GetAsync(Action<RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder.B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(requestInfo, Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(requestInfo, Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder.B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder.B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="B2cAuthenticationMethodsPolicyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public B2cAuthenticationMethodsPolicyRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder WithUrl(string rawUrl)
         {
-            return new B2cAuthenticationMethodsPolicyRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>
+        public class B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder.B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

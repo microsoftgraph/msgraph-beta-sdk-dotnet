@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTypes
 {
     #pragma warning disable CS1591
-    public class GetCompatibleHubContentTypesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetCompatibleHubContentTypesGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentType>? Value
+        public List<Microsoft.Graph.Beta.Models.ContentType>? Value
         {
-            get { return BackingStore?.Get<List<ContentType>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ContentType>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ContentType> Value
+        public List<Microsoft.Graph.Beta.Models.ContentType> Value
         {
-            get { return BackingStore?.Get<List<ContentType>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ContentType>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCompatibleHubContentTypesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetCompatibleHubContentTypesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCompatibleHubContentTypesGetResponse();
+            return new Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTy
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ContentType>(Microsoft.Graph.Beta.Models.ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTy
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ContentType>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ContentType>("value", Value);
         }
     }
 }

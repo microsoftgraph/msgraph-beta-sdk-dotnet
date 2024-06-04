@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
         /// <summary>The justInTimeAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationJustInTimeAssignmentPolicy? JustInTimeAssignments
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy? JustInTimeAssignments
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationJustInTimeAssignmentPolicy?>("justInTimeAssignments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy?>("justInTimeAssignments"); }
             set { BackingStore?.Set("justInTimeAssignments", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationJustInTimeAssignmentPolicy JustInTimeAssignments
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy JustInTimeAssignments
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationJustInTimeAssignmentPolicy>("justInTimeAssignments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy>("justInTimeAssignments"); }
             set { BackingStore?.Set("justInTimeAssignments", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignJustInTimeConfigurationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignJustInTimeConfigurationPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignJustInTimeConfigurationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignJustInTimeConfigurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignJustInTimeConfigurationPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "justInTimeAssignments", n => { JustInTimeAssignments = n.GetObjectValue<DeviceManagementConfigurationJustInTimeAssignmentPolicy>(DeviceManagementConfigurationJustInTimeAssignmentPolicy.CreateFromDiscriminatorValue); } },
+                { "justInTimeAssignments", n => { JustInTimeAssignments = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DeviceManagementConfigurationJustInTimeAssignmentPolicy>("justInTimeAssignments", JustInTimeAssignments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationJustInTimeAssignmentPolicy>("justInTimeAssignments", JustInTimeAssignments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

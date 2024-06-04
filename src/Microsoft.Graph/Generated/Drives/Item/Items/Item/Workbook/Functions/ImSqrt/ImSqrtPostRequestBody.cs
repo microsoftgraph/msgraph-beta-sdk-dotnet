@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt
         /// <summary>The inumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Inumber
+        public Microsoft.Graph.Beta.Models.Json? Inumber
         {
-            get { return BackingStore?.Get<Json?>("inumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("inumber"); }
             set { BackingStore?.Set("inumber", value); }
         }
 #nullable restore
 #else
-        public Json Inumber
+        public Microsoft.Graph.Beta.Models.Json Inumber
         {
-            get { return BackingStore?.Get<Json>("inumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("inumber"); }
             set { BackingStore?.Set("inumber", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ImSqrtPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt.ImSqrtPostRequestBody"/> and sets the default values.
         /// </summary>
         public ImSqrtPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImSqrtPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt.ImSqrtPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImSqrtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt.ImSqrtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImSqrtPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt.ImSqrtPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inumber", n => { Inumber = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "inumber", n => { Inumber = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ImSqrt
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("inumber", Inumber);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("inumber", Inumber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

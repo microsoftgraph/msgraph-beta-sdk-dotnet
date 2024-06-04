@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class ForwardingPolicy : Policy, IParsable
+    public class ForwardingPolicy : Microsoft.Graph.Beta.Models.Networkaccess.Policy, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The trafficForwardingType property</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("trafficForwardingType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ForwardingPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy"/> and sets the default values.
         /// </summary>
         public ForwardingPolicy() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForwardingPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ForwardingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ForwardingPolicy();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<TrafficForwardingType>(); } },
+                { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
         }
     }
 }

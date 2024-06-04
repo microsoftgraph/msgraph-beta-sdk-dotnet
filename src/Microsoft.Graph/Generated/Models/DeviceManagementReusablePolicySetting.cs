@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Graph model for a reusable setting
     /// </summary>
-    public class DeviceManagementReusablePolicySetting : Entity, IParsable
+    public class DeviceManagementReusablePolicySetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime
@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>configuration policies referencing the current reusable setting. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationPolicy>? ReferencingConfigurationPolicies
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>? ReferencingConfigurationPolicies
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>?>("referencingConfigurationPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>?>("referencingConfigurationPolicies"); }
             set { BackingStore?.Set("referencingConfigurationPolicies", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>("referencingConfigurationPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>>("referencingConfigurationPolicies"); }
             set { BackingStore?.Set("referencingConfigurationPolicies", value); }
         }
 #endif
@@ -96,16 +96,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>reusable setting configuration instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingInstance? SettingInstance
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance? SettingInstance
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingInstance SettingInstance
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance SettingInstance
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
 #endif
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementReusablePolicySetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementReusablePolicySetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementReusablePolicySetting();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "referencingConfigurationPolicies", n => { ReferencingConfigurationPolicies = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicy>(DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "referencingConfigurationPolicies", n => { ReferencingConfigurationPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "referencingConfigurationPolicyCount", n => { ReferencingConfigurationPolicyCount = n.GetIntValue(); } },
                 { "settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
-                { "settingInstance", n => { SettingInstance = n.GetObjectValue<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
+                { "settingInstance", n => { SettingInstance = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationPolicy>("referencingConfigurationPolicies", ReferencingConfigurationPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>("referencingConfigurationPolicies", ReferencingConfigurationPolicies);
             writer.WriteStringValue("settingDefinitionId", SettingDefinitionId);
-            writer.WriteObjectValue<DeviceManagementConfigurationSettingInstance>("settingInstance", SettingInstance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>("settingInstance", SettingInstance);
         }
     }
 }

@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryReviewSet : DataSet, IParsable
+    public class EdiscoveryReviewSet : Microsoft.Graph.Beta.Models.Security.DataSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents files within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryFile>? Files
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>? Files
         {
-            get { return BackingStore?.Get<List<EdiscoveryFile>?>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryFile> Files
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile> Files
         {
-            get { return BackingStore?.Get<List<EdiscoveryFile>>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #endif
         /// <summary>Represents queries within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewSetQuery>? Queries
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>? Queries
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>?>("queries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewSetQuery> Queries
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery> Queries
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("queries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryReviewSet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet"/> and sets the default values.
         /// </summary>
         public EdiscoveryReviewSet() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryReviewSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryReviewSet();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "files", n => { Files = n.GetCollectionOfObjectValues<EdiscoveryFile>(EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "queries", n => { Queries = n.GetCollectionOfObjectValues<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>(Microsoft.Graph.Beta.Models.Security.EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>(Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EdiscoveryFile>("files", Files);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewSetQuery>("queries", Queries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>("files", Files);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>("queries", Queries);
         }
     }
 }

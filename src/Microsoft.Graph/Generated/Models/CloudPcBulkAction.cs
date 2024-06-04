@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcBulkAction : Entity, IParsable
+    public class CloudPcBulkAction : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Run summary of this bulk action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcBulkActionSummary? ActionSummary
+        public Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary? ActionSummary
         {
-            get { return BackingStore?.Get<CloudPcBulkActionSummary?>("actionSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary?>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
 #nullable restore
 #else
-        public CloudPcBulkActionSummary ActionSummary
+        public Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary ActionSummary
         {
-            get { return BackingStore?.Get<CloudPcBulkActionSummary>("actionSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
 #endif
@@ -73,25 +73,25 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcBulkAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcBulkAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcBulkAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback" => new CloudPcBulkDisasterRecoveryFailback(),
-                "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover" => new CloudPcBulkDisasterRecoveryFailover(),
-                "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType" => new CloudPcBulkModifyDiskEncryptionType(),
-                "#microsoft.graph.cloudPcBulkPowerOff" => new CloudPcBulkPowerOff(),
-                "#microsoft.graph.cloudPcBulkPowerOn" => new CloudPcBulkPowerOn(),
-                "#microsoft.graph.cloudPcBulkReprovision" => new CloudPcBulkReprovision(),
-                "#microsoft.graph.cloudPcBulkResize" => new CloudPcBulkResize(),
-                "#microsoft.graph.cloudPcBulkRestart" => new CloudPcBulkRestart(),
-                "#microsoft.graph.cloudPcBulkRestore" => new CloudPcBulkRestore(),
-                "#microsoft.graph.cloudPcBulkTroubleshoot" => new CloudPcBulkTroubleshoot(),
-                _ => new CloudPcBulkAction(),
+                "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback" => new Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailback(),
+                "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover" => new Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailover(),
+                "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType" => new Microsoft.Graph.Beta.Models.CloudPcBulkModifyDiskEncryptionType(),
+                "#microsoft.graph.cloudPcBulkPowerOff" => new Microsoft.Graph.Beta.Models.CloudPcBulkPowerOff(),
+                "#microsoft.graph.cloudPcBulkPowerOn" => new Microsoft.Graph.Beta.Models.CloudPcBulkPowerOn(),
+                "#microsoft.graph.cloudPcBulkReprovision" => new Microsoft.Graph.Beta.Models.CloudPcBulkReprovision(),
+                "#microsoft.graph.cloudPcBulkResize" => new Microsoft.Graph.Beta.Models.CloudPcBulkResize(),
+                "#microsoft.graph.cloudPcBulkRestart" => new Microsoft.Graph.Beta.Models.CloudPcBulkRestart(),
+                "#microsoft.graph.cloudPcBulkRestore" => new Microsoft.Graph.Beta.Models.CloudPcBulkRestore(),
+                "#microsoft.graph.cloudPcBulkTroubleshoot" => new Microsoft.Graph.Beta.Models.CloudPcBulkTroubleshoot(),
+                _ => new Microsoft.Graph.Beta.Models.CloudPcBulkAction(),
             };
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actionSummary", n => { ActionSummary = n.GetObjectValue<CloudPcBulkActionSummary>(CloudPcBulkActionSummary.CreateFromDiscriminatorValue); } },
+                { "actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary>(Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary.CreateFromDiscriminatorValue); } },
                 { "cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CloudPcBulkActionSummary>("actionSummary", ActionSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary>("actionSummary", ActionSummary);
             writer.WriteCollectionOfPrimitiveValues<string>("cloudPcIds", CloudPcIds);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);

@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
     public class AndroidForWorkSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the completeSignup method.</summary>
-        public CompleteSignupRequestBuilder CompleteSignup
+        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.CompleteSignup.CompleteSignupRequestBuilder CompleteSignup
         {
-            get => new CompleteSignupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.CompleteSignup.CompleteSignupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the requestSignupUrl method.</summary>
-        public RequestSignupUrlRequestBuilder RequestSignupUrl
+        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.RequestSignupUrl.RequestSignupUrlRequestBuilder RequestSignupUrl
         {
-            get => new RequestSignupUrlRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.RequestSignupUrl.RequestSignupUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncApps method.</summary>
-        public SyncAppsRequestBuilder SyncApps
+        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.SyncApps.SyncAppsRequestBuilder SyncApps
         {
-            get => new SyncAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.SyncApps.SyncAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unbind method.</summary>
-        public UnbindRequestBuilder Unbind
+        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.Unbind.UnbindRequestBuilder Unbind
         {
-            get => new UnbindRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.Unbind.UnbindRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,20 +84,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AndroidForWorkSettings?> GetAsync(Action<RequestConfiguration<AndroidForWorkSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AndroidForWorkSettings?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder.AndroidForWorkSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AndroidForWorkSettings> GetAsync(Action<RequestConfiguration<AndroidForWorkSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AndroidForWorkSettings> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder.AndroidForWorkSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>(requestInfo, Microsoft.Graph.Beta.Models.AndroidForWorkSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.AndroidForWorkSettings?> PatchAsync(Microsoft.Graph.Beta.Models.AndroidForWorkSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>(requestInfo, Microsoft.Graph.Beta.Models.AndroidForWorkSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -152,11 +152,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AndroidForWorkSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder.AndroidForWorkSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AndroidForWorkSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder.AndroidForWorkSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -189,11 +189,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AndroidForWorkSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AndroidForWorkSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AndroidForWorkSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<AndroidForWorkSettingsRequestBuilderGetQueryParameters>
+        public class AndroidForWorkSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder.AndroidForWorkSettingsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

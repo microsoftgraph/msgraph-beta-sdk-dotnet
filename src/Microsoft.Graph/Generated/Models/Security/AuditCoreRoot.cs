@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditLogQuery>? Queries
+        public List<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>? Queries
         {
-            get { return BackingStore?.Get<List<AuditLogQuery>?>("queries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<AuditLogQuery> Queries
+        public List<Microsoft.Graph.Beta.Models.Security.AuditLogQuery> Queries
         {
-            get { return BackingStore?.Get<List<AuditLogQuery>>("queries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditCoreRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AuditCoreRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuditCoreRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.AuditCoreRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditCoreRoot();
+            return new Microsoft.Graph.Beta.Models.Security.AuditCoreRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "queries", n => { Queries = n.GetCollectionOfObjectValues<AuditLogQuery>(AuditLogQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>(Microsoft.Graph.Beta.Models.Security.AuditLogQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuditLogQuery>("queries", Queries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>("queries", Queries);
         }
     }
 }

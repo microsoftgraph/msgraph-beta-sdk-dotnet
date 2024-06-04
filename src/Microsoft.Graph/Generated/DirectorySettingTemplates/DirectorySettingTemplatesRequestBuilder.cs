@@ -23,44 +23,44 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
     public class DirectorySettingTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectorySettingTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectorySettingTemplates.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds.GetByIdsRequestBuilder GetByIds
         {
-            get => new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
         {
-            get => new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectorySettingTemplates.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectorySettingTemplates.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
         /// <param name="position">The unique identifier of directorySettingTemplate</param>
-        /// <returns>A <see cref="DirectorySettingTemplateItemRequestBuilder"/></returns>
-        public DirectorySettingTemplateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectorySettingTemplates.Item.DirectorySettingTemplateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.Item.DirectorySettingTemplateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directorySettingTemplate%2Did", position);
-                return new DirectorySettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DirectorySettingTemplates.Item.DirectorySettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectorySettingTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectorySettingTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,50 +79,50 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
         /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="DirectorySettingTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectorySettingTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<DirectorySettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder.DirectorySettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectorySettingTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<DirectorySettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder.DirectorySettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectorySettingTemplateCollectionResponse>(requestInfo, DirectorySettingTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DirectorySettingTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to directorySettingTemplates
         /// </summary>
-        /// <returns>A <see cref="DirectorySettingTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectorySettingTemplate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectorySettingTemplate?> PostAsync(DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DirectorySettingTemplate?> PostAsync(Microsoft.Graph.Beta.Models.DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectorySettingTemplate> PostAsync(DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DirectorySettingTemplate> PostAsync(Microsoft.Graph.Beta.Models.DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectorySettingTemplate>(requestInfo, DirectorySettingTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DirectorySettingTemplate>(requestInfo, Microsoft.Graph.Beta.Models.DirectorySettingTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectorySettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder.DirectorySettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectorySettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder.DirectorySettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +151,11 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DirectorySettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DirectorySettingTemplatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectorySettingTemplatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DirectorySettingTemplatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectorySettingTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectorySettingTemplatesRequestBuilderGetQueryParameters>
+        public class DirectorySettingTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder.DirectorySettingTemplatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

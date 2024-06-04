@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An abstract base class containing properties for all mobile line of business apps.
     /// </summary>
-    public class MobileLobApp : MobileApp, IParsable
+    public class MobileLobApp : Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The internal committed content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of content versions for this app. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppContent>? ContentVersions
+        public List<Microsoft.Graph.Beta.Models.MobileAppContent>? ContentVersions
         {
-            get { return BackingStore?.Get<List<MobileAppContent>?>("contentVersions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppContent>?>("contentVersions"); }
             set { BackingStore?.Set("contentVersions", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppContent> ContentVersions
+        public List<Microsoft.Graph.Beta.Models.MobileAppContent> ContentVersions
         {
-            get { return BackingStore?.Get<List<MobileAppContent>>("contentVersions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppContent>>("contentVersions"); }
             set { BackingStore?.Set("contentVersions", value); }
         }
 #endif
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MobileLobApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MobileLobApp"/> and sets the default values.
         /// </summary>
         public MobileLobApp() : base()
         {
@@ -75,28 +75,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileLobApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileLobApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
-                "#microsoft.graph.iosLobApp" => new IosLobApp(),
-                "#microsoft.graph.macOSDmgApp" => new MacOSDmgApp(),
-                "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
-                "#microsoft.graph.macOSPkgApp" => new MacOSPkgApp(),
-                "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
-                "#microsoft.graph.win32LobApp" => new Win32LobApp(),
-                "#microsoft.graph.windowsAppX" => new WindowsAppX(),
-                "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
-                "#microsoft.graph.windowsPhone81AppX" => new WindowsPhone81AppX(),
-                "#microsoft.graph.windowsPhone81AppXBundle" => new WindowsPhone81AppXBundle(),
-                "#microsoft.graph.windowsPhoneXAP" => new WindowsPhoneXAP(),
-                "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
-                _ => new MobileLobApp(),
+                "#microsoft.graph.androidLobApp" => new Microsoft.Graph.Beta.Models.AndroidLobApp(),
+                "#microsoft.graph.iosLobApp" => new Microsoft.Graph.Beta.Models.IosLobApp(),
+                "#microsoft.graph.macOSDmgApp" => new Microsoft.Graph.Beta.Models.MacOSDmgApp(),
+                "#microsoft.graph.macOSLobApp" => new Microsoft.Graph.Beta.Models.MacOSLobApp(),
+                "#microsoft.graph.macOSPkgApp" => new Microsoft.Graph.Beta.Models.MacOSPkgApp(),
+                "#microsoft.graph.win32CatalogApp" => new Microsoft.Graph.Beta.Models.Win32CatalogApp(),
+                "#microsoft.graph.win32LobApp" => new Microsoft.Graph.Beta.Models.Win32LobApp(),
+                "#microsoft.graph.windowsAppX" => new Microsoft.Graph.Beta.Models.WindowsAppX(),
+                "#microsoft.graph.windowsMobileMSI" => new Microsoft.Graph.Beta.Models.WindowsMobileMSI(),
+                "#microsoft.graph.windowsPhone81AppX" => new Microsoft.Graph.Beta.Models.WindowsPhone81AppX(),
+                "#microsoft.graph.windowsPhone81AppXBundle" => new Microsoft.Graph.Beta.Models.WindowsPhone81AppXBundle(),
+                "#microsoft.graph.windowsPhoneXAP" => new Microsoft.Graph.Beta.Models.WindowsPhoneXAP(),
+                "#microsoft.graph.windowsUniversalAppX" => new Microsoft.Graph.Beta.Models.WindowsUniversalAppX(),
+                _ => new Microsoft.Graph.Beta.Models.MobileLobApp(),
             };
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "committedContentVersion", n => { CommittedContentVersion = n.GetStringValue(); } },
-                { "contentVersions", n => { ContentVersions = n.GetCollectionOfObjectValues<MobileAppContent>(MobileAppContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentVersions", n => { ContentVersions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppContent>(Microsoft.Graph.Beta.Models.MobileAppContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
             };
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("committedContentVersion", CommittedContentVersion);
-            writer.WriteCollectionOfObjectValues<MobileAppContent>("contentVersions", ContentVersions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppContent>("contentVersions", ContentVersions);
             writer.WriteStringValue("fileName", FileName);
         }
     }

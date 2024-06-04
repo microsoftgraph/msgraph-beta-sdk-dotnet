@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList
 {
     #pragma warning disable CS1591
-    public class ImportAppleDeviceIdentityListPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class ImportAppleDeviceIdentityListPostResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedAppleDeviceIdentityResult>? Value
+        public List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult>? Value
         {
-            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentityResult>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ImportedAppleDeviceIdentityResult> Value
+        public List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult> Value
         {
-            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentityResult>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportAppleDeviceIdentityListPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList.ImportAppleDeviceIdentityListPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImportAppleDeviceIdentityListPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList.ImportAppleDeviceIdentityListPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportAppleDeviceIdentityListPostResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList.ImportAppleDeviceIdentityListPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>(ImportedAppleDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult>(Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult>("value", Value);
         }
     }
 }

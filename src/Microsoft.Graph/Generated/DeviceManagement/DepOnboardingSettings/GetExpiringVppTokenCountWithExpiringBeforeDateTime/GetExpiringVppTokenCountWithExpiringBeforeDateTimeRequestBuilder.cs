@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpirin
     public class GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="expiringBeforeDateTime">Usage: expiringBeforeDateTime=&apos;{expiringBeforeDateTime}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpirin
             if (!string.IsNullOrWhiteSpace(expiringBeforeDateTime)) PathParameters.Add("expiringBeforeDateTime", expiringBeforeDateTime);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,49 +36,49 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpirin
         /// <summary>
         /// Invoke function getExpiringVppTokenCount
         /// </summary>
-        /// <returns>A <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse?> GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse?> GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse>(requestInfo, GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getExpiringVppTokenCount
         /// </summary>
-        /// <returns>A <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse>(requestInfo, GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getExpiringVppTokenCount
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpirin
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

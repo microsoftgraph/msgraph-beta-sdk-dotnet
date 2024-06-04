@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson
         /// <summary>The cumulative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cumulative
+        public Microsoft.Graph.Beta.Models.Json? Cumulative
         {
-            get { return BackingStore?.Get<Json?>("cumulative"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
 #nullable restore
 #else
-        public Json Cumulative
+        public Microsoft.Graph.Beta.Models.Json Cumulative
         {
-            get { return BackingStore?.Get<Json>("cumulative"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
 #endif
         /// <summary>The mean property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Mean
+        public Microsoft.Graph.Beta.Models.Json? Mean
         {
-            get { return BackingStore?.Get<Json?>("mean"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("mean"); }
             set { BackingStore?.Set("mean", value); }
         }
 #nullable restore
 #else
-        public Json Mean
+        public Microsoft.Graph.Beta.Models.Json Mean
         {
-            get { return BackingStore?.Get<Json>("mean"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("mean"); }
             set { BackingStore?.Set("mean", value); }
         }
 #endif
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X
+        public Microsoft.Graph.Beta.Models.Json? X
         {
-            get { return BackingStore?.Get<Json?>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X
+        public Microsoft.Graph.Beta.Models.Json X
         {
-            get { return BackingStore?.Get<Json>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Poisson_DistPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist.Poisson_DistPostRequestBody"/> and sets the default values.
         /// </summary>
         public Poisson_DistPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Poisson_DistPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist.Poisson_DistPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Poisson_DistPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist.Poisson_DistPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Poisson_DistPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist.Poisson_DistPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "mean", n => { Mean = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cumulative", n => { Cumulative = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "mean", n => { Mean = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Poisson
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("cumulative", Cumulative);
-            writer.WriteObjectValue<Json>("mean", Mean);
-            writer.WriteObjectValue<Json>("x", X);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("cumulative", Cumulative);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("mean", Mean);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("x", X);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

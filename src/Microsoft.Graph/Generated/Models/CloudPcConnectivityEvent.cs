@@ -42,15 +42,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The eventResult property</summary>
-        public CloudPcConnectivityEventResult? EventResult
+        public Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult? EventResult
         {
-            get { return BackingStore?.Get<CloudPcConnectivityEventResult?>("eventResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult?>("eventResult"); }
             set { BackingStore?.Set("eventResult", value); }
         }
         /// <summary>The eventType property</summary>
-        public CloudPcConnectivityEventType? EventType
+        public Microsoft.Graph.Beta.Models.CloudPcConnectivityEventType? EventType
         {
-            get { return BackingStore?.Get<CloudPcConnectivityEventType?>("eventType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>Additional message for this event.</summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcConnectivityEvent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcConnectivityEvent"/> and sets the default values.
         /// </summary>
         public CloudPcConnectivityEvent()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcConnectivityEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcConnectivityEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcConnectivityEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcConnectivityEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcConnectivityEvent();
+            return new Microsoft.Graph.Beta.Models.CloudPcConnectivityEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,8 +113,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "eventResult", n => { EventResult = n.GetEnumValue<CloudPcConnectivityEventResult>(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<CloudPcConnectivityEventType>(); } },
+                { "eventResult", n => { EventResult = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult>(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventType>(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -128,8 +128,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("eventName", EventName);
-            writer.WriteEnumValue<CloudPcConnectivityEventResult>("eventResult", EventResult);
-            writer.WriteEnumValue<CloudPcConnectivityEventType>("eventType", EventType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult>("eventResult", EventResult);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventType>("eventType", EventType);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

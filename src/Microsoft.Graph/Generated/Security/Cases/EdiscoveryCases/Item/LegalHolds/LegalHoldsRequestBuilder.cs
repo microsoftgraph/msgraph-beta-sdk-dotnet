@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
     public class LegalHoldsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         /// <param name="position">The unique identifier of ediscoveryHoldPolicy</param>
-        /// <returns>A <see cref="EdiscoveryHoldPolicyItemRequestBuilder"/></returns>
-        public EdiscoveryHoldPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.EdiscoveryHoldPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.EdiscoveryHoldPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("ediscoveryHoldPolicy%2Did", position);
-                return new EdiscoveryHoldPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.Item.EdiscoveryHoldPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LegalHoldsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LegalHoldsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
         /// Get a list of the ediscoveryHoldPolicy objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-legalholds?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryHoldPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryHoldPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder.LegalHoldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryHoldPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder.LegalHoldsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryHoldPolicyCollectionResponse>(requestInfo, EdiscoveryHoldPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new ediscoveryHoldPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-legalholds?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryHoldPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryHoldPolicy?> PostAsync(EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy?> PostAsync(Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryHoldPolicy> PostAsync(EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy> PostAsync(Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryHoldPolicy>(requestInfo, EdiscoveryHoldPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy>(requestInfo, Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the ediscoveryHoldPolicy objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder.LegalHoldsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder.LegalHoldsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LegalHoldsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LegalHoldsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder WithUrl(string rawUrl)
         {
-            return new LegalHoldsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the ediscoveryHoldPolicy objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LegalHoldsRequestBuilderGetRequestConfiguration : RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters>
+        public class LegalHoldsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.LegalHoldsRequestBuilder.LegalHoldsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

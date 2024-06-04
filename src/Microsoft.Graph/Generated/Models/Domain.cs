@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Domain : Entity, IParsable
+    public class Domain : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant&apos;s on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Directory.AccessAsUser.All delegated permission.</summary>
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? DomainNameReferences
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? DomainNameReferences
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("domainNameReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("domainNameReferences"); }
             set { BackingStore?.Set("domainNameReferences", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> DomainNameReferences
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> DomainNameReferences
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("domainNameReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("domainNameReferences"); }
             set { BackingStore?.Set("domainNameReferences", value); }
         }
 #endif
         /// <summary>Domain settings configured by customer when federated with Microsoft Entra ID. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InternalDomainFederation>? FederationConfiguration
+        public List<Microsoft.Graph.Beta.Models.InternalDomainFederation>? FederationConfiguration
         {
-            get { return BackingStore?.Get<List<InternalDomainFederation>?>("federationConfiguration"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InternalDomainFederation>?>("federationConfiguration"); }
             set { BackingStore?.Set("federationConfiguration", value); }
         }
 #nullable restore
 #else
-        public List<InternalDomainFederation> FederationConfiguration
+        public List<Microsoft.Graph.Beta.Models.InternalDomainFederation> FederationConfiguration
         {
-            get { return BackingStore?.Get<List<InternalDomainFederation>>("federationConfiguration"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InternalDomainFederation>>("federationConfiguration"); }
             set { BackingStore?.Set("federationConfiguration", value); }
         }
 #endif
@@ -119,48 +119,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DomainDnsRecord>? ServiceConfigurationRecords
+        public List<Microsoft.Graph.Beta.Models.DomainDnsRecord>? ServiceConfigurationRecords
         {
-            get { return BackingStore?.Get<List<DomainDnsRecord>?>("serviceConfigurationRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DomainDnsRecord>?>("serviceConfigurationRecords"); }
             set { BackingStore?.Set("serviceConfigurationRecords", value); }
         }
 #nullable restore
 #else
-        public List<DomainDnsRecord> ServiceConfigurationRecords
+        public List<Microsoft.Graph.Beta.Models.DomainDnsRecord> ServiceConfigurationRecords
         {
-            get { return BackingStore?.Get<List<DomainDnsRecord>>("serviceConfigurationRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DomainDnsRecord>>("serviceConfigurationRecords"); }
             set { BackingStore?.Set("serviceConfigurationRecords", value); }
         }
 #endif
         /// <summary>The sharedEmailDomainInvitations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedEmailDomainInvitation>? SharedEmailDomainInvitations
+        public List<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>? SharedEmailDomainInvitations
         {
-            get { return BackingStore?.Get<List<SharedEmailDomainInvitation>?>("sharedEmailDomainInvitations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>?>("sharedEmailDomainInvitations"); }
             set { BackingStore?.Set("sharedEmailDomainInvitations", value); }
         }
 #nullable restore
 #else
-        public List<SharedEmailDomainInvitation> SharedEmailDomainInvitations
+        public List<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation> SharedEmailDomainInvitations
         {
-            get { return BackingStore?.Get<List<SharedEmailDomainInvitation>>("sharedEmailDomainInvitations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>>("sharedEmailDomainInvitations"); }
             set { BackingStore?.Set("sharedEmailDomainInvitations", value); }
         }
 #endif
         /// <summary>Status of asynchronous operations scheduled for the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DomainState? State
+        public Microsoft.Graph.Beta.Models.DomainState? State
         {
-            get { return BackingStore?.Get<DomainState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DomainState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public DomainState State
+        public Microsoft.Graph.Beta.Models.DomainState State
         {
-            get { return BackingStore?.Get<DomainState>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DomainState>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #endif
@@ -183,28 +183,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DomainDnsRecord>? VerificationDnsRecords
+        public List<Microsoft.Graph.Beta.Models.DomainDnsRecord>? VerificationDnsRecords
         {
-            get { return BackingStore?.Get<List<DomainDnsRecord>?>("verificationDnsRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DomainDnsRecord>?>("verificationDnsRecords"); }
             set { BackingStore?.Set("verificationDnsRecords", value); }
         }
 #nullable restore
 #else
-        public List<DomainDnsRecord> VerificationDnsRecords
+        public List<Microsoft.Graph.Beta.Models.DomainDnsRecord> VerificationDnsRecords
         {
-            get { return BackingStore?.Get<List<DomainDnsRecord>>("verificationDnsRecords"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DomainDnsRecord>>("verificationDnsRecords"); }
             set { BackingStore?.Set("verificationDnsRecords", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Domain"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Domain"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Domain CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Domain CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Domain();
+            return new Microsoft.Graph.Beta.Models.Domain();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -216,8 +216,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "authenticationType", n => { AuthenticationType = n.GetStringValue(); } },
                 { "availabilityStatus", n => { AvailabilityStatus = n.GetStringValue(); } },
-                { "domainNameReferences", n => { DomainNameReferences = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "federationConfiguration", n => { FederationConfiguration = n.GetCollectionOfObjectValues<InternalDomainFederation>(InternalDomainFederation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domainNameReferences", n => { DomainNameReferences = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "federationConfiguration", n => { FederationConfiguration = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InternalDomainFederation>(Microsoft.Graph.Beta.Models.InternalDomainFederation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isAdminManaged", n => { IsAdminManaged = n.GetBoolValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "isInitial", n => { IsInitial = n.GetBoolValue(); } },
@@ -225,11 +225,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "isVerified", n => { IsVerified = n.GetBoolValue(); } },
                 { "passwordNotificationWindowInDays", n => { PasswordNotificationWindowInDays = n.GetIntValue(); } },
                 { "passwordValidityPeriodInDays", n => { PasswordValidityPeriodInDays = n.GetIntValue(); } },
-                { "serviceConfigurationRecords", n => { ServiceConfigurationRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sharedEmailDomainInvitations", n => { SharedEmailDomainInvitations = n.GetCollectionOfObjectValues<SharedEmailDomainInvitation>(SharedEmailDomainInvitation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetObjectValue<DomainState>(DomainState.CreateFromDiscriminatorValue); } },
+                { "serviceConfigurationRecords", n => { ServiceConfigurationRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DomainDnsRecord>(Microsoft.Graph.Beta.Models.DomainDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharedEmailDomainInvitations", n => { SharedEmailDomainInvitations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>(Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetObjectValue<Microsoft.Graph.Beta.Models.DomainState>(Microsoft.Graph.Beta.Models.DomainState.CreateFromDiscriminatorValue); } },
                 { "supportedServices", n => { SupportedServices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "verificationDnsRecords", n => { VerificationDnsRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "verificationDnsRecords", n => { VerificationDnsRecords = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DomainDnsRecord>(Microsoft.Graph.Beta.Models.DomainDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -242,8 +242,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("authenticationType", AuthenticationType);
             writer.WriteStringValue("availabilityStatus", AvailabilityStatus);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("domainNameReferences", DomainNameReferences);
-            writer.WriteCollectionOfObjectValues<InternalDomainFederation>("federationConfiguration", FederationConfiguration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("domainNameReferences", DomainNameReferences);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InternalDomainFederation>("federationConfiguration", FederationConfiguration);
             writer.WriteBoolValue("isAdminManaged", IsAdminManaged);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isInitial", IsInitial);
@@ -251,11 +251,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isVerified", IsVerified);
             writer.WriteIntValue("passwordNotificationWindowInDays", PasswordNotificationWindowInDays);
             writer.WriteIntValue("passwordValidityPeriodInDays", PasswordValidityPeriodInDays);
-            writer.WriteCollectionOfObjectValues<DomainDnsRecord>("serviceConfigurationRecords", ServiceConfigurationRecords);
-            writer.WriteCollectionOfObjectValues<SharedEmailDomainInvitation>("sharedEmailDomainInvitations", SharedEmailDomainInvitations);
-            writer.WriteObjectValue<DomainState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DomainDnsRecord>("serviceConfigurationRecords", ServiceConfigurationRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>("sharedEmailDomainInvitations", SharedEmailDomainInvitations);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DomainState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedServices", SupportedServices);
-            writer.WriteCollectionOfObjectValues<DomainDnsRecord>("verificationDnsRecords", VerificationDnsRecords);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DomainDnsRecord>("verificationDnsRecords", VerificationDnsRecords);
         }
     }
 }

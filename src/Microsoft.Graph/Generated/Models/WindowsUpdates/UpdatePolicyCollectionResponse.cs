@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatePolicy>? Value
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>? Value
         {
-            get { return BackingStore?.Get<List<UpdatePolicy>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UpdatePolicy> Value
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy> Value
         {
-            get { return BackingStore?.Get<List<UpdatePolicy>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatePolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicyCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UpdatePolicyCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicyCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatePolicyCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicyCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UpdatePolicy>(UpdatePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UpdatePolicy>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>("value", Value);
         }
     }
 }

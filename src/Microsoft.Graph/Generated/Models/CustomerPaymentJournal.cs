@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The customerPayments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomerPayment>? CustomerPayments
+        public List<Microsoft.Graph.Beta.Models.CustomerPayment>? CustomerPayments
         {
-            get { return BackingStore?.Get<List<CustomerPayment>?>("customerPayments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomerPayment>?>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
 #nullable restore
 #else
-        public List<CustomerPayment> CustomerPayments
+        public List<Microsoft.Graph.Beta.Models.CustomerPayment> CustomerPayments
         {
-            get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomerPayment>>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
 #endif
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomerPaymentJournal"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomerPaymentJournal"/> and sets the default values.
         /// </summary>
         public CustomerPaymentJournal()
         {
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomerPaymentJournal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomerPaymentJournal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomerPaymentJournal CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomerPaymentJournal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomerPaymentJournal();
+            return new Microsoft.Graph.Beta.Models.CustomerPaymentJournal();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "balancingAccountId", n => { BalancingAccountId = n.GetGuidValue(); } },
                 { "balancingAccountNumber", n => { BalancingAccountNumber = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomerPayment>(Microsoft.Graph.Beta.Models.CustomerPayment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteGuidValue("balancingAccountId", BalancingAccountId);
             writer.WriteStringValue("balancingAccountNumber", BalancingAccountNumber);
             writer.WriteStringValue("code", Code);
-            writer.WriteCollectionOfObjectValues<CustomerPayment>("customerPayments", CustomerPayments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomerPayment>("customerPayments", CustomerPayments);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

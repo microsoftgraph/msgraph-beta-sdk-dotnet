@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// <summary>The endCell property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? EndCell
+        public Microsoft.Graph.Beta.Models.Json? EndCell
         {
-            get { return BackingStore?.Get<Json?>("endCell"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("endCell"); }
             set { BackingStore?.Set("endCell", value); }
         }
 #nullable restore
 #else
-        public Json EndCell
+        public Microsoft.Graph.Beta.Models.Json EndCell
         {
-            get { return BackingStore?.Get<Json>("endCell"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("endCell"); }
             set { BackingStore?.Set("endCell", value); }
         }
 #endif
         /// <summary>The startCell property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartCell
+        public Microsoft.Graph.Beta.Models.Json? StartCell
         {
-            get { return BackingStore?.Get<Json?>("startCell"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("startCell"); }
             set { BackingStore?.Set("startCell", value); }
         }
 #nullable restore
 #else
-        public Json StartCell
+        public Microsoft.Graph.Beta.Models.Json StartCell
         {
-            get { return BackingStore?.Get<Json>("startCell"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("startCell"); }
             set { BackingStore?.Set("startCell", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SetPositionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionPostRequestBody"/> and sets the default values.
         /// </summary>
         public SetPositionPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetPositionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetPositionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetPositionPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endCell", n => { EndCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "startCell", n => { StartCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "endCell", n => { EndCell = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "startCell", n => { StartCell = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("endCell", EndCell);
-            writer.WriteObjectValue<Json>("startCell", StartCell);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("endCell", EndCell);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("startCell", StartCell);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

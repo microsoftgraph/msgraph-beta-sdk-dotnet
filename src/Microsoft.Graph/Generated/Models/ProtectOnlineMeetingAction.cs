@@ -7,19 +7,19 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ProtectOnlineMeetingAction : LabelActionBase, IParsable
+    public class ProtectOnlineMeetingAction : Microsoft.Graph.Beta.Models.LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allowedForwarders property</summary>
-        public OnlineMeetingForwarders? AllowedForwarders
+        public Microsoft.Graph.Beta.Models.OnlineMeetingForwarders? AllowedForwarders
         {
-            get { return BackingStore?.Get<OnlineMeetingForwarders?>("allowedForwarders"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingForwarders?>("allowedForwarders"); }
             set { BackingStore?.Set("allowedForwarders", value); }
         }
         /// <summary>The allowedPresenters property</summary>
-        public OnlineMeetingPresenters? AllowedPresenters
+        public Microsoft.Graph.Beta.Models.OnlineMeetingPresenters? AllowedPresenters
         {
-            get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
         /// <summary>The isCopyToClipboardEnabled property</summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProtectOnlineMeetingAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ProtectOnlineMeetingAction"/> and sets the default values.
         /// </summary>
         public ProtectOnlineMeetingAction() : base()
         {
@@ -60,12 +60,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProtectOnlineMeetingAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProtectOnlineMeetingAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProtectOnlineMeetingAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ProtectOnlineMeetingAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProtectOnlineMeetingAction();
+            return new Microsoft.Graph.Beta.Models.ProtectOnlineMeetingAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedForwarders", n => { AllowedForwarders = n.GetEnumValue<OnlineMeetingForwarders>(); } },
-                { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
+                { "allowedForwarders", n => { AllowedForwarders = n.GetEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingForwarders>(); } },
+                { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>(); } },
                 { "isCopyToClipboardEnabled", n => { IsCopyToClipboardEnabled = n.GetBoolValue(); } },
                 { "isLobbyEnabled", n => { IsLobbyEnabled = n.GetBoolValue(); } },
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>(Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<OnlineMeetingForwarders>("allowedForwarders", AllowedForwarders);
-            writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingForwarders>("allowedForwarders", AllowedForwarders);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
             writer.WriteBoolValue("isCopyToClipboardEnabled", IsCopyToClipboardEnabled);
             writer.WriteBoolValue("isLobbyEnabled", IsLobbyEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);

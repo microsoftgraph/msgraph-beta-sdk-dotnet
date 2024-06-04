@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
     public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// <summary>
         /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
         /// </summary>
-        /// <returns>A <see cref="GetPortalNotificationsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPortalNotificationsGetResponse?> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsGetResponse?> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetPortalNotificationsGetResponse> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsGetResponse> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetPortalNotificationsGetResponse>(requestInfo, GetPortalNotificationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsGetResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
         /// </summary>
-        /// <returns>A <see cref="GetPortalNotificationsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetPortalNotificationsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPortalNotificationsResponse?> GetAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetPortalNotificationsResponse> GetAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetPortalNotificationsResponse>(requestInfo, GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>
+        public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The identityType property</summary>
-        public PermissionsDefinitionIdentityType? IdentityType
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentityType? IdentityType
         {
-            get { return BackingStore?.Get<PermissionsDefinitionIdentityType?>("identityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentityType?>("identityType"); }
             set { BackingStore?.Set("identityType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -60,21 +60,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinitionIdentitySource? Source
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource? Source
         {
-            get { return BackingStore?.Get<PermissionsDefinitionIdentitySource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinitionIdentitySource Source
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource Source
         {
-            get { return BackingStore?.Get<PermissionsDefinitionIdentitySource>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsDefinitionAuthorizationSystemIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity"/> and sets the default values.
         /// </summary>
         public PermissionsDefinitionAuthorizationSystemIdentity()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsDefinitionAuthorizationSystemIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PermissionsDefinitionAuthorizationSystemIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionsDefinitionAuthorizationSystemIdentity();
+            return new Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "identityType", n => { IdentityType = n.GetEnumValue<PermissionsDefinitionIdentityType>(); } },
+                { "identityType", n => { IdentityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentityType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<PermissionsDefinitionIdentitySource>(PermissionsDefinitionIdentitySource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource>(Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteEnumValue<PermissionsDefinitionIdentityType>("identityType", IdentityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentityType>("identityType", IdentityType);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PermissionsDefinitionIdentitySource>("source", Source);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

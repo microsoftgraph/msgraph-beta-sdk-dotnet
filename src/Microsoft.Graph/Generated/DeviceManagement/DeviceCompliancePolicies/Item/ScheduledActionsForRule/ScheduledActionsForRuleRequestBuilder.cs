@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
     public class ScheduledActionsForRuleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         /// <param name="position">The unique identifier of deviceComplianceScheduledActionForRule</param>
-        /// <returns>A <see cref="DeviceComplianceScheduledActionForRuleItemRequestBuilder"/></returns>
-        public DeviceComplianceScheduledActionForRuleItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.Item.DeviceComplianceScheduledActionForRuleItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.Item.DeviceComplianceScheduledActionForRuleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceComplianceScheduledActionForRule%2Did", position);
-                return new DeviceComplianceScheduledActionForRuleItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.Item.DeviceComplianceScheduledActionForRuleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ScheduledActionsForRuleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ScheduledActionsForRuleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// <summary>
         /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceScheduledActionForRuleCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRuleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceComplianceScheduledActionForRuleCollectionResponse?> GetAsync(Action<RequestConfiguration<ScheduledActionsForRuleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRuleCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder.ScheduledActionsForRuleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceComplianceScheduledActionForRuleCollectionResponse> GetAsync(Action<RequestConfiguration<ScheduledActionsForRuleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRuleCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder.ScheduledActionsForRuleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceComplianceScheduledActionForRuleCollectionResponse>(requestInfo, DeviceComplianceScheduledActionForRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRuleCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to scheduledActionsForRule for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceScheduledActionForRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceComplianceScheduledActionForRule?> PostAsync(DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule?> PostAsync(Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceComplianceScheduledActionForRule> PostAsync(DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule> PostAsync(Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceComplianceScheduledActionForRule>(requestInfo, DeviceComplianceScheduledActionForRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>(requestInfo, Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScheduledActionsForRuleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder.ScheduledActionsForRuleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScheduledActionsForRuleRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder.ScheduledActionsForRuleRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ScheduledActionsForRuleRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ScheduledActionsForRuleRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder WithUrl(string rawUrl)
         {
-            return new ScheduledActionsForRuleRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ScheduledActionsForRuleRequestBuilderGetRequestConfiguration : RequestConfiguration<ScheduledActionsForRuleRequestBuilderGetQueryParameters>
+        public class ScheduledActionsForRuleRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule.ScheduledActionsForRuleRequestBuilder.ScheduledActionsForRuleRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserVirtualEventsRoot : Entity, IParsable
+    public class UserVirtualEventsRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The webinars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventWebinar>? Webinars
+        public List<Microsoft.Graph.Beta.Models.VirtualEventWebinar>? Webinars
         {
-            get { return BackingStore?.Get<List<VirtualEventWebinar>?>("webinars"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventWebinar>?>("webinars"); }
             set { BackingStore?.Set("webinars", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventWebinar> Webinars
+        public List<Microsoft.Graph.Beta.Models.VirtualEventWebinar> Webinars
         {
-            get { return BackingStore?.Get<List<VirtualEventWebinar>>("webinars"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventWebinar>>("webinars"); }
             set { BackingStore?.Set("webinars", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserVirtualEventsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserVirtualEventsRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserVirtualEventsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserVirtualEventsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserVirtualEventsRoot();
+            return new Microsoft.Graph.Beta.Models.UserVirtualEventsRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "webinars", n => { Webinars = n.GetCollectionOfObjectValues<VirtualEventWebinar>(VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webinars", n => { Webinars = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventWebinar>(Microsoft.Graph.Beta.Models.VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<VirtualEventWebinar>("webinars", Webinars);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventWebinar>("webinars", Webinars);
         }
     }
 }

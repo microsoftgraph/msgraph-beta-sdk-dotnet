@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting : CloudPcDisasterRecoveryNetworkSetting, IParsable
+    public class CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting : Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The regionGroup property</summary>
-        public CloudPcRegionGroup? RegionGroup
+        public Microsoft.Graph.Beta.Models.CloudPcRegionGroup? RegionGroup
         {
-            get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
         /// <summary>The regionName property</summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting"/> and sets the default values.
         /// </summary>
         public CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting();
+            return new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
+                { "regionGroup", n => { RegionGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
                 { "regionName", n => { RegionName = n.GetStringValue(); } },
             };
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CloudPcRegionGroup>("regionGroup", RegionGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);
             writer.WriteStringValue("regionName", RegionName);
         }
     }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments.Export
 {
     [Obsolete("This class is obsolete. Use ExportGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ExportResponse : ExportGetResponse, IParsable
+    public class ExportResponse : Microsoft.Graph.Beta.GovernanceRoleAssignments.Export.ExportGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExportResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceRoleAssignments.Export.ExportResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExportResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.GovernanceRoleAssignments.Export.ExportResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExportResponse();
+            return new Microsoft.Graph.Beta.GovernanceRoleAssignments.Export.ExportResponse();
         }
     }
 }

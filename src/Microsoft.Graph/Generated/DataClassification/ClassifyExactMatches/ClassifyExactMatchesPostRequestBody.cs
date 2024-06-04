@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches
         /// <summary>The contentClassifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentClassification>? ContentClassifications
+        public List<Microsoft.Graph.Beta.Models.ContentClassification>? ContentClassifications
         {
-            get { return BackingStore?.Get<List<ContentClassification>?>("contentClassifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ContentClassification>?>("contentClassifications"); }
             set { BackingStore?.Set("contentClassifications", value); }
         }
 #nullable restore
 #else
-        public List<ContentClassification> ContentClassifications
+        public List<Microsoft.Graph.Beta.Models.ContentClassification> ContentClassifications
         {
-            get { return BackingStore?.Get<List<ContentClassification>>("contentClassifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ContentClassification>>("contentClassifications"); }
             set { BackingStore?.Set("contentClassifications", value); }
         }
 #endif
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClassifyExactMatchesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches.ClassifyExactMatchesPostRequestBody"/> and sets the default values.
         /// </summary>
         public ClassifyExactMatchesPostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClassifyExactMatchesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches.ClassifyExactMatchesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClassifyExactMatchesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches.ClassifyExactMatchesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClassifyExactMatchesPostRequestBody();
+            return new Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches.ClassifyExactMatchesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contentClassifications", n => { ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>(ContentClassification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentClassifications", n => { ContentClassifications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ContentClassification>(Microsoft.Graph.Beta.Models.ContentClassification.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "timeoutInMs", n => { TimeoutInMs = n.GetStringValue(); } },
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ContentClassification>("contentClassifications", ContentClassifications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ContentClassification>("contentClassifications", ContentClassifications);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveTypeIds", SensitiveTypeIds);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("timeoutInMs", TimeoutInMs);

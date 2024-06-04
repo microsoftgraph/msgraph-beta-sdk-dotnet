@@ -31,19 +31,19 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProvisioningFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProvisioningFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.administrativeUnitProvisioningFlow" => new AdministrativeUnitProvisioningFlow(),
-                "#microsoft.graph.industryData.classGroupProvisioningFlow" => new ClassGroupProvisioningFlow(),
-                "#microsoft.graph.industryData.securityGroupProvisioningFlow" => new SecurityGroupProvisioningFlow(),
-                "#microsoft.graph.industryData.userProvisioningFlow" => new UserProvisioningFlow(),
-                _ => new ProvisioningFlow(),
+                "#microsoft.graph.industryData.administrativeUnitProvisioningFlow" => new Microsoft.Graph.Beta.Models.IndustryData.AdministrativeUnitProvisioningFlow(),
+                "#microsoft.graph.industryData.classGroupProvisioningFlow" => new Microsoft.Graph.Beta.Models.IndustryData.ClassGroupProvisioningFlow(),
+                "#microsoft.graph.industryData.securityGroupProvisioningFlow" => new Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupProvisioningFlow(),
+                "#microsoft.graph.industryData.userProvisioningFlow" => new Microsoft.Graph.Beta.Models.IndustryData.UserProvisioningFlow(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow(),
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "readinessStatus", n => { ReadinessStatus = n.GetEnumValue<ReadinessStatus>(); } },
+                { "readinessStatus", n => { ReadinessStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.IndustryData.ReadinessStatus>(); } },
             };
         }
         /// <summary>

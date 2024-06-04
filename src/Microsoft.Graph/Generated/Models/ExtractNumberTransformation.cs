@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExtractNumberTransformation : CustomClaimTransformation, IParsable
+    public class ExtractNumberTransformation : Microsoft.Graph.Beta.Models.CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type property</summary>
-        public TransformationExtractType? Type
+        public Microsoft.Graph.Beta.Models.TransformationExtractType? Type
         {
-            get { return BackingStore?.Get<TransformationExtractType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TransformationExtractType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExtractNumberTransformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExtractNumberTransformation"/> and sets the default values.
         /// </summary>
         public ExtractNumberTransformation() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExtractNumberTransformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExtractNumberTransformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExtractNumberTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExtractNumberTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExtractNumberTransformation();
+            return new Microsoft.Graph.Beta.Models.ExtractNumberTransformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "type", n => { Type = n.GetEnumValue<TransformationExtractType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.TransformationExtractType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TransformationExtractType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TransformationExtractType>("type", Type);
         }
     }
 }

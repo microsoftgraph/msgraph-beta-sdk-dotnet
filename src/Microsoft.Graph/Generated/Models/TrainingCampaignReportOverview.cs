@@ -38,53 +38,53 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Aggregate data of training completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingEventsContent? TrainingModuleCompletion
+        public Microsoft.Graph.Beta.Models.TrainingEventsContent? TrainingModuleCompletion
         {
-            get { return BackingStore?.Get<TrainingEventsContent?>("trainingModuleCompletion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingEventsContent?>("trainingModuleCompletion"); }
             set { BackingStore?.Set("trainingModuleCompletion", value); }
         }
 #nullable restore
 #else
-        public TrainingEventsContent TrainingModuleCompletion
+        public Microsoft.Graph.Beta.Models.TrainingEventsContent TrainingModuleCompletion
         {
-            get { return BackingStore?.Get<TrainingEventsContent>("trainingModuleCompletion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingEventsContent>("trainingModuleCompletion"); }
             set { BackingStore?.Set("trainingModuleCompletion", value); }
         }
 #endif
         /// <summary>Aggregate data of training mail delivery over the course of the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingNotificationDelivery? TrainingNotificationDeliveryStatus
+        public Microsoft.Graph.Beta.Models.TrainingNotificationDelivery? TrainingNotificationDeliveryStatus
         {
-            get { return BackingStore?.Get<TrainingNotificationDelivery?>("trainingNotificationDeliveryStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingNotificationDelivery?>("trainingNotificationDeliveryStatus"); }
             set { BackingStore?.Set("trainingNotificationDeliveryStatus", value); }
         }
 #nullable restore
 #else
-        public TrainingNotificationDelivery TrainingNotificationDeliveryStatus
+        public Microsoft.Graph.Beta.Models.TrainingNotificationDelivery TrainingNotificationDeliveryStatus
         {
-            get { return BackingStore?.Get<TrainingNotificationDelivery>("trainingNotificationDeliveryStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingNotificationDelivery>("trainingNotificationDeliveryStatus"); }
             set { BackingStore?.Set("trainingNotificationDeliveryStatus", value); }
         }
 #endif
         /// <summary>Aggregate data of users training progress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingCompletionSummary? UserCompletionStatus
+        public Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary? UserCompletionStatus
         {
-            get { return BackingStore?.Get<UserTrainingCompletionSummary?>("userCompletionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary?>("userCompletionStatus"); }
             set { BackingStore?.Set("userCompletionStatus", value); }
         }
 #nullable restore
 #else
-        public UserTrainingCompletionSummary UserCompletionStatus
+        public Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary UserCompletionStatus
         {
-            get { return BackingStore?.Get<UserTrainingCompletionSummary>("userCompletionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary>("userCompletionStatus"); }
             set { BackingStore?.Set("userCompletionStatus", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TrainingCampaignReportOverview"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview"/> and sets the default values.
         /// </summary>
         public TrainingCampaignReportOverview()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrainingCampaignReportOverview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrainingCampaignReportOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrainingCampaignReportOverview();
+            return new Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "trainingModuleCompletion", n => { TrainingModuleCompletion = n.GetObjectValue<TrainingEventsContent>(TrainingEventsContent.CreateFromDiscriminatorValue); } },
-                { "trainingNotificationDeliveryStatus", n => { TrainingNotificationDeliveryStatus = n.GetObjectValue<TrainingNotificationDelivery>(TrainingNotificationDelivery.CreateFromDiscriminatorValue); } },
-                { "userCompletionStatus", n => { UserCompletionStatus = n.GetObjectValue<UserTrainingCompletionSummary>(UserTrainingCompletionSummary.CreateFromDiscriminatorValue); } },
+                { "trainingModuleCompletion", n => { TrainingModuleCompletion = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingEventsContent>(Microsoft.Graph.Beta.Models.TrainingEventsContent.CreateFromDiscriminatorValue); } },
+                { "trainingNotificationDeliveryStatus", n => { TrainingNotificationDeliveryStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingNotificationDelivery>(Microsoft.Graph.Beta.Models.TrainingNotificationDelivery.CreateFromDiscriminatorValue); } },
+                { "userCompletionStatus", n => { UserCompletionStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary>(Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -123,9 +123,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TrainingEventsContent>("trainingModuleCompletion", TrainingModuleCompletion);
-            writer.WriteObjectValue<TrainingNotificationDelivery>("trainingNotificationDeliveryStatus", TrainingNotificationDeliveryStatus);
-            writer.WriteObjectValue<UserTrainingCompletionSummary>("userCompletionStatus", UserCompletionStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TrainingEventsContent>("trainingModuleCompletion", TrainingModuleCompletion);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TrainingNotificationDelivery>("trainingNotificationDeliveryStatus", TrainingNotificationDeliveryStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserTrainingCompletionSummary>("userCompletionStatus", UserCompletionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,44 +7,44 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventTownhall : VirtualEvent, IParsable
+    public class VirtualEventTownhall : Microsoft.Graph.Beta.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.</summary>
-        public MeetingAudience? Audience
+        public Microsoft.Graph.Beta.Models.MeetingAudience? Audience
         {
-            get { return BackingStore?.Get<MeetingAudience?>("audience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommunicationsUserIdentity>? CoOrganizers
+        public List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>? CoOrganizers
         {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>?>("coOrganizers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>?>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #nullable restore
 #else
-        public List<CommunicationsUserIdentity> CoOrganizers
+        public List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity> CoOrganizers
         {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>>("coOrganizers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
         /// <summary>The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Identity>? InvitedAttendees
+        public List<Microsoft.Graph.Beta.Models.Identity>? InvitedAttendees
         {
-            get { return BackingStore?.Get<List<Identity>?>("invitedAttendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Identity>?>("invitedAttendees"); }
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #nullable restore
 #else
-        public List<Identity> InvitedAttendees
+        public List<Microsoft.Graph.Beta.Models.Identity> InvitedAttendees
         {
-            get { return BackingStore?.Get<List<Identity>>("invitedAttendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Identity>>("invitedAttendees"); }
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #endif
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("isInviteOnly", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEventTownhall"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VirtualEventTownhall"/> and sets the default values.
         /// </summary>
         public VirtualEventTownhall() : base()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventTownhall"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventTownhall"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventTownhall CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventTownhall CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventTownhall();
+            return new Microsoft.Graph.Beta.Models.VirtualEventTownhall();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
-                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<Identity>(Identity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "audience", n => { Audience = n.GetEnumValue<Microsoft.Graph.Beta.Models.MeetingAudience>(); } },
+                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>(Microsoft.Graph.Beta.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
             };
         }
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MeetingAudience>("audience", Audience);
-            writer.WriteCollectionOfObjectValues<CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
-            writer.WriteCollectionOfObjectValues<Identity>("invitedAttendees", InvitedAttendees);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MeetingAudience>("audience", Audience);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);
         }
     }

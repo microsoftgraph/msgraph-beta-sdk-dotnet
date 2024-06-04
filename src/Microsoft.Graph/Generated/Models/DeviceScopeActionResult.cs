@@ -85,13 +85,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the status of the attempted device scope action</summary>
-        public DeviceScopeActionStatus? Status
+        public Microsoft.Graph.Beta.Models.DeviceScopeActionStatus? Status
         {
-            get { return BackingStore?.Get<DeviceScopeActionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceScopeActionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceScopeActionResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceScopeActionResult"/> and sets the default values.
         /// </summary>
         public DeviceScopeActionResult()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceScopeActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceScopeActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceScopeActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceScopeActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceScopeActionResult();
+            return new Microsoft.Graph.Beta.Models.DeviceScopeActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
                 { "failedMessage", n => { FailedMessage = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<DeviceScopeActionStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeActionStatus>(); } },
             };
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceScopeId", DeviceScopeId);
             writer.WriteStringValue("failedMessage", FailedMessage);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeviceScopeActionStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceScopeActionStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
     /// </summary>
-    public class ImportedDeviceIdentity : Entity, IParsable
+    public class ImportedDeviceIdentity : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Created Date Time of the device</summary>
         public DateTimeOffset? CreatedDateTime
@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportedDeviceIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ImportedDeviceIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImportedDeviceIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ImportedDeviceIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.importedDeviceIdentityResult" => new ImportedDeviceIdentityResult(),
-                _ => new ImportedDeviceIdentity(),
+                "#microsoft.graph.importedDeviceIdentityResult" => new Microsoft.Graph.Beta.Models.ImportedDeviceIdentityResult(),
+                _ => new Microsoft.Graph.Beta.Models.ImportedDeviceIdentity(),
             };
         }
         /// <summary>
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
+                { "enrollmentState", n => { EnrollmentState = n.GetEnumValue<Microsoft.Graph.Beta.Models.EnrollmentState>(); } },
                 { "importedDeviceIdentifier", n => { ImportedDeviceIdentifier = n.GetStringValue(); } },
-                { "importedDeviceIdentityType", n => { ImportedDeviceIdentityType = n.GetEnumValue<ImportedDeviceIdentityType>(); } },
+                { "importedDeviceIdentityType", n => { ImportedDeviceIdentityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType>(); } },
                 { "lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "platform", n => { Platform = n.GetEnumValue<Platform>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.Platform>(); } },
             };
         }
         /// <summary>
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<EnrollmentState>("enrollmentState", EnrollmentState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EnrollmentState>("enrollmentState", EnrollmentState);
             writer.WriteStringValue("importedDeviceIdentifier", ImportedDeviceIdentifier);
-            writer.WriteEnumValue<ImportedDeviceIdentityType>("importedDeviceIdentityType", ImportedDeviceIdentityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType>("importedDeviceIdentityType", ImportedDeviceIdentityType);
             writer.WriteDateTimeOffsetValue("lastContactedDateTime", LastContactedDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<Platform>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Platform>("platform", Platform);
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for managed device mobile app configuration PolicySetItem.
     /// </summary>
-    public class ManagedDeviceMobileAppConfigurationPolicySetItem : PolicySetItem, IParsable
+    public class ManagedDeviceMobileAppConfigurationPolicySetItem : Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="ManagedDeviceMobileAppConfigurationPolicySetItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationPolicySetItem"/> and sets the default values.
         /// </summary>
         public ManagedDeviceMobileAppConfigurationPolicySetItem() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationPolicySetItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationPolicySetItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceMobileAppConfigurationPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceMobileAppConfigurationPolicySetItem();
+            return new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationPolicySetItem();
         }
         /// <summary>
         /// The deserialization information for the current model

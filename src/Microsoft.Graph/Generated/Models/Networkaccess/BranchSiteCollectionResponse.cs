@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BranchSite>? Value
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>? Value
         {
-            get { return BackingStore?.Get<List<BranchSite>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<BranchSite> Value
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite> Value
         {
-            get { return BackingStore?.Get<List<BranchSite>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BranchSiteCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.BranchSiteCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BranchSiteCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.BranchSiteCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BranchSiteCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.BranchSiteCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<BranchSite>(BranchSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>(Microsoft.Graph.Beta.Models.Networkaccess.BranchSite.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<BranchSite>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>("value", Value);
         }
     }
 }

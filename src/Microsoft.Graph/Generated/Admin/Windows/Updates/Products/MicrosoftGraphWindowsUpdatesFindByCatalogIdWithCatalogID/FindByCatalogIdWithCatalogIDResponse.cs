@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
 {
     [Obsolete("This class is obsolete. Use FindByCatalogIdWithCatalogIDGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindByCatalogIdWithCatalogIDResponse : FindByCatalogIdWithCatalogIDGetResponse, IParsable
+    public class FindByCatalogIdWithCatalogIDResponse : Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindByCatalogIdWithCatalogIDResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FindByCatalogIdWithCatalogIDResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindByCatalogIdWithCatalogIDResponse();
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse();
         }
     }
 }

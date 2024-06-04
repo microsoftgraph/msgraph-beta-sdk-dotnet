@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerCon
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TriggerConfigurationManagerActionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionPostRequestBody"/> and sets the default values.
         /// </summary>
         public TriggerConfigurationManagerActionPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerCon
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TriggerConfigurationManagerActionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TriggerConfigurationManagerActionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TriggerConfigurationManagerActionPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

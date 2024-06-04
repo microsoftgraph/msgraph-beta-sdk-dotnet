@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSettingValueDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingValueDefinition()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSettingValueDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationSettingValueDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition" => new DeviceManagementConfigurationIntegerSettingValueDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition" => new DeviceManagementConfigurationStringSettingValueDefinition(),
-                _ => new DeviceManagementConfigurationSettingValueDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefinition(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition(),
             };
         }
         /// <summary>

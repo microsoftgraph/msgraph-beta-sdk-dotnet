@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
     public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
             if (!string.IsNullOrWhiteSpace(servicePlanId)) PathParameters.Add("servicePlanId", servicePlanId);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,50 +39,50 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
         /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse?> GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseAsync(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse?> GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseAsync(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse>(requestInfo, Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse?> GetAsync(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse> GetAsync(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse>(requestInfo, Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
@@ -91,11 +91,11 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration : RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>
+        public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>
         {
         }
     }

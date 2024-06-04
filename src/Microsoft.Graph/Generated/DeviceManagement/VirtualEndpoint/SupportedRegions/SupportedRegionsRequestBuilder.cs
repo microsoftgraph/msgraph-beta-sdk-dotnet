@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
     public class SupportedRegionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the supportedRegions property of the microsoft.graph.virtualEndpoint entity.</summary>
         /// <param name="position">The unique identifier of cloudPcSupportedRegion</param>
-        /// <returns>A <see cref="CloudPcSupportedRegionItemRequestBuilder"/></returns>
-        public CloudPcSupportedRegionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.Item.CloudPcSupportedRegionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.Item.CloudPcSupportedRegionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudPcSupportedRegion%2Did", position);
-                return new CloudPcSupportedRegionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.Item.CloudPcSupportedRegionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SupportedRegionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SupportedRegionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         /// List the supported regions that are available for creating Cloud PC connections.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcSupportedRegionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcSupportedRegionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcSupportedRegionCollectionResponse?> GetAsync(Action<RequestConfiguration<SupportedRegionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcSupportedRegionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder.SupportedRegionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcSupportedRegionCollectionResponse> GetAsync(Action<RequestConfiguration<SupportedRegionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcSupportedRegionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder.SupportedRegionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcSupportedRegionCollectionResponse>(requestInfo, CloudPcSupportedRegionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcSupportedRegionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcSupportedRegionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to supportedRegions for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="CloudPcSupportedRegion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcSupportedRegion"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcSupportedRegion?> PostAsync(CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcSupportedRegion?> PostAsync(Microsoft.Graph.Beta.Models.CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcSupportedRegion> PostAsync(CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcSupportedRegion> PostAsync(Microsoft.Graph.Beta.Models.CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcSupportedRegion>(requestInfo, CloudPcSupportedRegion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcSupportedRegion>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcSupportedRegion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the supported regions that are available for creating Cloud PC connections.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedRegionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder.SupportedRegionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedRegionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder.SupportedRegionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPcSupportedRegion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SupportedRegionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SupportedRegionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SupportedRegionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List the supported regions that are available for creating Cloud PC connections.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SupportedRegionsRequestBuilderGetRequestConfiguration : RequestConfiguration<SupportedRegionsRequestBuilderGetQueryParameters>
+        public class SupportedRegionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions.SupportedRegionsRequestBuilder.SupportedRegionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

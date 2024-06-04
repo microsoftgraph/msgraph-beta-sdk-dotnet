@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the run summary of a device management script.
     /// </summary>
-    public class DeviceManagementScriptRunSummary : Entity, IParsable
+    public class DeviceManagementScriptRunSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Error device count.</summary>
         public int? ErrorDeviceCount
@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementScriptRunSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementScriptRunSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementScriptRunSummary();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

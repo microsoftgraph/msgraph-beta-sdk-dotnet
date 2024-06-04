@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
     public class HardwareConfigurationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hardwareConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of hardwareConfiguration</param>
-        /// <returns>A <see cref="HardwareConfigurationItemRequestBuilder"/></returns>
-        public HardwareConfigurationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.HardwareConfigurationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.HardwareConfigurationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("hardwareConfiguration%2Did", position);
-                return new HardwareConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.HardwareConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="HardwareConfigurationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="HardwareConfigurationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
         /// <summary>
         /// The hardware configurations for this account.
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HardwareConfigurationCollectionResponse?> GetAsync(Action<RequestConfiguration<HardwareConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfigurationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder.HardwareConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<HardwareConfigurationCollectionResponse> GetAsync(Action<RequestConfiguration<HardwareConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfigurationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder.HardwareConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<HardwareConfigurationCollectionResponse>(requestInfo, HardwareConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.HardwareConfigurationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.HardwareConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to hardwareConfigurations for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="HardwareConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfiguration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HardwareConfiguration?> PostAsync(HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfiguration?> PostAsync(Microsoft.Graph.Beta.Models.HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<HardwareConfiguration> PostAsync(HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfiguration> PostAsync(Microsoft.Graph.Beta.Models.HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<HardwareConfiguration>(requestInfo, HardwareConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.HardwareConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.HardwareConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The hardware configurations for this account.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HardwareConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder.HardwareConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HardwareConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder.HardwareConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.HardwareConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HardwareConfigurationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new HardwareConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The hardware configurations for this account.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HardwareConfigurationsRequestBuilderGetRequestConfiguration : RequestConfiguration<HardwareConfigurationsRequestBuilderGetQueryParameters>
+        public class HardwareConfigurationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder.HardwareConfigurationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

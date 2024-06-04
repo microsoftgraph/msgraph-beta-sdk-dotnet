@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class DetectionRule : ProtectionRule, IParsable
+    public class DetectionRule : Microsoft.Graph.Beta.Models.Security.ProtectionRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Complex type representing the actions taken when a detection is made by this rule.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Complex type holding details about the last run of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RunDetails? LastRunDetails
+        public Microsoft.Graph.Beta.Models.Security.RunDetails? LastRunDetails
         {
-            get { return BackingStore?.Get<RunDetails?>("lastRunDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RunDetails?>("lastRunDetails"); }
             set { BackingStore?.Set("lastRunDetails", value); }
         }
 #nullable restore
 #else
-        public RunDetails LastRunDetails
+        public Microsoft.Graph.Beta.Models.Security.RunDetails LastRunDetails
         {
-            get { return BackingStore?.Get<RunDetails>("lastRunDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RunDetails>("lastRunDetails"); }
             set { BackingStore?.Set("lastRunDetails", value); }
         }
 #endif
@@ -77,21 +77,21 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Complex type holding data about the triggering schedule of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RuleSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.Security.RuleSchedule? Schedule
         {
-            get { return BackingStore?.Get<RuleSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RuleSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public RuleSchedule Schedule
+        public Microsoft.Graph.Beta.Models.Security.RuleSchedule Schedule
         {
-            get { return BackingStore?.Get<RuleSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RuleSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DetectionRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.DetectionRule"/> and sets the default values.
         /// </summary>
         public DetectionRule() : base()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DetectionRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.DetectionRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DetectionRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.DetectionRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DetectionRule();
+            return new Microsoft.Graph.Beta.Models.Security.DetectionRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,9 +117,9 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "detectionAction", n => { DetectionAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>(Microsoft.Graph.Beta.Models.Security.DetectionAction.CreateFromDiscriminatorValue); } },
                 { "detectorId", n => { DetectorId = n.GetStringValue(); } },
-                { "lastRunDetails", n => { LastRunDetails = n.GetObjectValue<RunDetails>(RunDetails.CreateFromDiscriminatorValue); } },
+                { "lastRunDetails", n => { LastRunDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.RunDetails>(Microsoft.Graph.Beta.Models.Security.RunDetails.CreateFromDiscriminatorValue); } },
                 { "queryCondition", n => { QueryCondition = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.QueryCondition>(Microsoft.Graph.Beta.Models.Security.QueryCondition.CreateFromDiscriminatorValue); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<RuleSchedule>(RuleSchedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.RuleSchedule>(Microsoft.Graph.Beta.Models.Security.RuleSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -132,9 +132,9 @@ namespace Microsoft.Graph.Beta.Models.Security
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>("detectionAction", DetectionAction);
             writer.WriteStringValue("detectorId", DetectorId);
-            writer.WriteObjectValue<RunDetails>("lastRunDetails", LastRunDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.RunDetails>("lastRunDetails", LastRunDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.QueryCondition>("queryCondition", QueryCondition);
-            writer.WriteObjectValue<RuleSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.RuleSchedule>("schedule", Schedule);
         }
     }
 }

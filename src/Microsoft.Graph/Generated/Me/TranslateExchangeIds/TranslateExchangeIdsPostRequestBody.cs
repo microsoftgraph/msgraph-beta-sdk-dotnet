@@ -37,19 +37,19 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
         }
 #endif
         /// <summary>The SourceIdType property</summary>
-        public ExchangeIdFormat? SourceIdType
+        public Microsoft.Graph.Beta.Models.ExchangeIdFormat? SourceIdType
         {
-            get { return BackingStore?.Get<ExchangeIdFormat?>("SourceIdType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExchangeIdFormat?>("SourceIdType"); }
             set { BackingStore?.Set("SourceIdType", value); }
         }
         /// <summary>The TargetIdType property</summary>
-        public ExchangeIdFormat? TargetIdType
+        public Microsoft.Graph.Beta.Models.ExchangeIdFormat? TargetIdType
         {
-            get { return BackingStore?.Get<ExchangeIdFormat?>("TargetIdType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExchangeIdFormat?>("TargetIdType"); }
             set { BackingStore?.Set("TargetIdType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TranslateExchangeIdsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody"/> and sets the default values.
         /// </summary>
         public TranslateExchangeIdsPostRequestBody()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TranslateExchangeIdsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TranslateExchangeIdsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TranslateExchangeIdsPostRequestBody();
+            return new Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "InputIds", n => { InputIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "SourceIdType", n => { SourceIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
-                { "TargetIdType", n => { TargetIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
+                { "SourceIdType", n => { SourceIdType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExchangeIdFormat>(); } },
+                { "TargetIdType", n => { TargetIdType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExchangeIdFormat>(); } },
             };
         }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("InputIds", InputIds);
-            writer.WriteEnumValue<ExchangeIdFormat>("SourceIdType", SourceIdType);
-            writer.WriteEnumValue<ExchangeIdFormat>("TargetIdType", TargetIdType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExchangeIdFormat>("SourceIdType", SourceIdType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExchangeIdFormat>("TargetIdType", TargetIdType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

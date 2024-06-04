@@ -7,29 +7,29 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkDevice : Entity, IParsable
+    public class TeamworkDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity properties that change based on the device usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceActivity? Activity
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceActivity? Activity
         {
-            get { return BackingStore?.Get<TeamworkDeviceActivity?>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceActivity Activity
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceActivity Activity
         {
-            get { return BackingStore?.Get<TeamworkDeviceActivity>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
         /// <summary>The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.</summary>
-        public TeamworkDeviceActivityState? ActivityState
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceActivityState? ActivityState
         {
-            get { return BackingStore?.Get<TeamworkDeviceActivityState?>("activityState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceActivityState?>("activityState"); }
             set { BackingStore?.Set("activityState", value); }
         }
         /// <summary>The company asset tag assigned by the admin on the device.</summary>
@@ -51,32 +51,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The configuration properties of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceConfiguration? Configuration
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration? Configuration
         {
-            get { return BackingStore?.Get<TeamworkDeviceConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceConfiguration Configuration
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration Configuration
         {
-            get { return BackingStore?.Get<TeamworkDeviceConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
         /// <summary>Identity of the user who enrolled the device to the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -89,76 +89,76 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The signed-in user on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkUserIdentity? CurrentUser
+        public Microsoft.Graph.Beta.Models.TeamworkUserIdentity? CurrentUser
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity?>("currentUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkUserIdentity?>("currentUser"); }
             set { BackingStore?.Set("currentUser", value); }
         }
 #nullable restore
 #else
-        public TeamworkUserIdentity CurrentUser
+        public Microsoft.Graph.Beta.Models.TeamworkUserIdentity CurrentUser
         {
-            get { return BackingStore?.Get<TeamworkUserIdentity>("currentUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkUserIdentity>("currentUser"); }
             set { BackingStore?.Set("currentUser", value); }
         }
 #endif
         /// <summary>The deviceType property</summary>
-        public TeamworkDeviceType? DeviceType
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceType? DeviceType
         {
-            get { return BackingStore?.Get<TeamworkDeviceType?>("deviceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>The hardwareDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHardwareDetail? HardwareDetail
+        public Microsoft.Graph.Beta.Models.TeamworkHardwareDetail? HardwareDetail
         {
-            get { return BackingStore?.Get<TeamworkHardwareDetail?>("hardwareDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkHardwareDetail?>("hardwareDetail"); }
             set { BackingStore?.Set("hardwareDetail", value); }
         }
 #nullable restore
 #else
-        public TeamworkHardwareDetail HardwareDetail
+        public Microsoft.Graph.Beta.Models.TeamworkHardwareDetail HardwareDetail
         {
-            get { return BackingStore?.Get<TeamworkHardwareDetail>("hardwareDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkHardwareDetail>("hardwareDetail"); }
             set { BackingStore?.Set("hardwareDetail", value); }
         }
 #endif
         /// <summary>The health properties of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceHealth? Health
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceHealth? Health
         {
-            get { return BackingStore?.Get<TeamworkDeviceHealth?>("health"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceHealth?>("health"); }
             set { BackingStore?.Set("health", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceHealth Health
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceHealth Health
         {
-            get { return BackingStore?.Get<TeamworkDeviceHealth>("health"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceHealth>("health"); }
             set { BackingStore?.Set("health", value); }
         }
 #endif
         /// <summary>The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.</summary>
-        public TeamworkDeviceHealthStatus? HealthStatus
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceHealthStatus? HealthStatus
         {
-            get { return BackingStore?.Get<TeamworkDeviceHealthStatus?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Identity of the user who last modified the device details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -187,28 +187,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The async operations on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkDeviceOperation>? Operations
+        public List<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation>? Operations
         {
-            get { return BackingStore?.Get<List<TeamworkDeviceOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkDeviceOperation> Operations
+        public List<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation> Operations
         {
-            get { return BackingStore?.Get<List<TeamworkDeviceOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamworkDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkDevice();
+            return new Microsoft.Graph.Beta.Models.TeamworkDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -218,21 +218,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activity", n => { Activity = n.GetObjectValue<TeamworkDeviceActivity>(TeamworkDeviceActivity.CreateFromDiscriminatorValue); } },
-                { "activityState", n => { ActivityState = n.GetEnumValue<TeamworkDeviceActivityState>(); } },
+                { "activity", n => { Activity = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceActivity>(Microsoft.Graph.Beta.Models.TeamworkDeviceActivity.CreateFromDiscriminatorValue); } },
+                { "activityState", n => { ActivityState = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceActivityState>(); } },
                 { "companyAssetTag", n => { CompanyAssetTag = n.GetStringValue(); } },
-                { "configuration", n => { Configuration = n.GetObjectValue<TeamworkDeviceConfiguration>(TeamworkDeviceConfiguration.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration>(Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "currentUser", n => { CurrentUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<TeamworkDeviceType>(); } },
-                { "hardwareDetail", n => { HardwareDetail = n.GetObjectValue<TeamworkHardwareDetail>(TeamworkHardwareDetail.CreateFromDiscriminatorValue); } },
-                { "health", n => { Health = n.GetObjectValue<TeamworkDeviceHealth>(TeamworkDeviceHealth.CreateFromDiscriminatorValue); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<TeamworkDeviceHealthStatus>(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "currentUser", n => { CurrentUser = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkUserIdentity>(Microsoft.Graph.Beta.Models.TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceType>(); } },
+                { "hardwareDetail", n => { HardwareDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkHardwareDetail>(Microsoft.Graph.Beta.Models.TeamworkHardwareDetail.CreateFromDiscriminatorValue); } },
+                { "health", n => { Health = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceHealth>(Microsoft.Graph.Beta.Models.TeamworkDeviceHealth.CreateFromDiscriminatorValue); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceHealthStatus>(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<TeamworkDeviceOperation>(TeamworkDeviceOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation>(Microsoft.Graph.Beta.Models.TeamworkDeviceOperation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -243,21 +243,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamworkDeviceActivity>("activity", Activity);
-            writer.WriteEnumValue<TeamworkDeviceActivityState>("activityState", ActivityState);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceActivity>("activity", Activity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceActivityState>("activityState", ActivityState);
             writer.WriteStringValue("companyAssetTag", CompanyAssetTag);
-            writer.WriteObjectValue<TeamworkDeviceConfiguration>("configuration", Configuration);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<TeamworkUserIdentity>("currentUser", CurrentUser);
-            writer.WriteEnumValue<TeamworkDeviceType>("deviceType", DeviceType);
-            writer.WriteObjectValue<TeamworkHardwareDetail>("hardwareDetail", HardwareDetail);
-            writer.WriteObjectValue<TeamworkDeviceHealth>("health", Health);
-            writer.WriteEnumValue<TeamworkDeviceHealthStatus>("healthStatus", HealthStatus);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkUserIdentity>("currentUser", CurrentUser);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceType>("deviceType", DeviceType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkHardwareDetail>("hardwareDetail", HardwareDetail);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceHealth>("health", Health);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteCollectionOfObjectValues<TeamworkDeviceOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkDeviceOperation>("operations", Operations);
         }
     }
 }

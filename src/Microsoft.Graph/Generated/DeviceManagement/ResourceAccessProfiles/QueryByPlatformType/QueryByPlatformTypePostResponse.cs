@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType
 {
     #pragma warning disable CS1591
-    public class QueryByPlatformTypePostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class QueryByPlatformTypePostResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementResourceAccessProfileBase>? Value
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>? Value
         {
-            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileBase>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementResourceAccessProfileBase> Value
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase> Value
         {
-            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileBase>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QueryByPlatformTypePostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new QueryByPlatformTypePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QueryByPlatformTypePostResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>(DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>(Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>("value", Value);
         }
     }
 }

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExactMatchDataStoreBase : Entity, IParsable
+    public class ExactMatchDataStoreBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The columns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExactDataMatchStoreColumn>? Columns
+        public List<Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn>? Columns
         {
-            get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>?>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<ExactDataMatchStoreColumn> Columns
+        public List<Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn> Columns
         {
-            get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>>("columns"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExactMatchDataStoreBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchDataStoreBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExactMatchDataStoreBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExactMatchDataStoreBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.exactMatchDataStore" => new ExactMatchDataStore(),
-                _ => new ExactMatchDataStoreBase(),
+                "#microsoft.graph.exactMatchDataStore" => new Microsoft.Graph.Beta.Models.ExactMatchDataStore(),
+                _ => new Microsoft.Graph.Beta.Models.ExactMatchDataStoreBase(),
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "columns", n => { Columns = n.GetCollectionOfObjectValues<ExactDataMatchStoreColumn>(ExactDataMatchStoreColumn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn>(Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "dataLastUpdatedDateTime", n => { DataLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ExactDataMatchStoreColumn>("columns", Columns);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactDataMatchStoreColumn>("columns", Columns);
             writer.WriteDateTimeOffsetValue("dataLastUpdatedDateTime", DataLastUpdatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

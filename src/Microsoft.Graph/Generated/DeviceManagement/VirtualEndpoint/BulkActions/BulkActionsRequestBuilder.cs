@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
     public class BulkActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bulkActions property of the microsoft.graph.virtualEndpoint entity.</summary>
         /// <param name="position">The unique identifier of cloudPcBulkAction</param>
-        /// <returns>A <see cref="CloudPcBulkActionItemRequestBuilder"/></returns>
-        public CloudPcBulkActionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Item.CloudPcBulkActionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Item.CloudPcBulkActionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudPcBulkAction%2Did", position);
-                return new CloudPcBulkActionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Item.CloudPcBulkActionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BulkActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BulkActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
         /// Get a list of the cloudPcBulkAction objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcBulkActionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkActionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcBulkActionCollectionResponse?> GetAsync(Action<RequestConfiguration<BulkActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcBulkActionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder.BulkActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcBulkActionCollectionResponse> GetAsync(Action<RequestConfiguration<BulkActionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcBulkActionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder.BulkActionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcBulkActionCollectionResponse>(requestInfo, CloudPcBulkActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcBulkActionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcBulkActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new cloudPcBulkAction object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcBulkAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkAction"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcBulkAction?> PostAsync(CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcBulkAction?> PostAsync(Microsoft.Graph.Beta.Models.CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcBulkAction> PostAsync(CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudPcBulkAction> PostAsync(Microsoft.Graph.Beta.Models.CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcBulkAction>(requestInfo, CloudPcBulkAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcBulkAction>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcBulkAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the cloudPcBulkAction objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BulkActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder.BulkActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BulkActionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder.BulkActionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPcBulkAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BulkActionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BulkActionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new BulkActionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the cloudPcBulkAction objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BulkActionsRequestBuilderGetRequestConfiguration : RequestConfiguration<BulkActionsRequestBuilderGetQueryParameters>
+        public class BulkActionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.BulkActionsRequestBuilder.BulkActionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

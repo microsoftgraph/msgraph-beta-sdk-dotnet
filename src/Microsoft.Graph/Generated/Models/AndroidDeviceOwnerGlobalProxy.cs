@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerGlobalProxy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerGlobalProxy()
         {
@@ -47,17 +47,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerGlobalProxy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidDeviceOwnerGlobalProxy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig" => new AndroidDeviceOwnerGlobalProxyAutoConfig(),
-                "#microsoft.graph.androidDeviceOwnerGlobalProxyDirect" => new AndroidDeviceOwnerGlobalProxyDirect(),
-                _ => new AndroidDeviceOwnerGlobalProxy(),
+                "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig" => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxyAutoConfig(),
+                "#microsoft.graph.androidDeviceOwnerGlobalProxyDirect" => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxyDirect(),
+                _ => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy(),
             };
         }
         /// <summary>

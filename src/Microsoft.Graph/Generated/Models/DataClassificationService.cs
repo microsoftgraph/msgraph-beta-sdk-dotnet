@@ -7,162 +7,162 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DataClassificationService : Entity, IParsable
+    public class DataClassificationService : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classifyFileJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JobResponseBase>? ClassifyFileJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase>? ClassifyFileJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>?>("classifyFileJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>?>("classifyFileJobs"); }
             set { BackingStore?.Set("classifyFileJobs", value); }
         }
 #nullable restore
 #else
-        public List<JobResponseBase> ClassifyFileJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase> ClassifyFileJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>>("classifyFileJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>>("classifyFileJobs"); }
             set { BackingStore?.Set("classifyFileJobs", value); }
         }
 #endif
         /// <summary>The classifyTextJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JobResponseBase>? ClassifyTextJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase>? ClassifyTextJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>?>("classifyTextJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>?>("classifyTextJobs"); }
             set { BackingStore?.Set("classifyTextJobs", value); }
         }
 #nullable restore
 #else
-        public List<JobResponseBase> ClassifyTextJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase> ClassifyTextJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>>("classifyTextJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>>("classifyTextJobs"); }
             set { BackingStore?.Set("classifyTextJobs", value); }
         }
 #endif
         /// <summary>The evaluateDlpPoliciesJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JobResponseBase>? EvaluateDlpPoliciesJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase>? EvaluateDlpPoliciesJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>?>("evaluateDlpPoliciesJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>?>("evaluateDlpPoliciesJobs"); }
             set { BackingStore?.Set("evaluateDlpPoliciesJobs", value); }
         }
 #nullable restore
 #else
-        public List<JobResponseBase> EvaluateDlpPoliciesJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase> EvaluateDlpPoliciesJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>>("evaluateDlpPoliciesJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>>("evaluateDlpPoliciesJobs"); }
             set { BackingStore?.Set("evaluateDlpPoliciesJobs", value); }
         }
 #endif
         /// <summary>The evaluateLabelJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JobResponseBase>? EvaluateLabelJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase>? EvaluateLabelJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>?>("evaluateLabelJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>?>("evaluateLabelJobs"); }
             set { BackingStore?.Set("evaluateLabelJobs", value); }
         }
 #nullable restore
 #else
-        public List<JobResponseBase> EvaluateLabelJobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase> EvaluateLabelJobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>>("evaluateLabelJobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>>("evaluateLabelJobs"); }
             set { BackingStore?.Set("evaluateLabelJobs", value); }
         }
 #endif
         /// <summary>The exactMatchDataStores property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExactMatchDataStore>? ExactMatchDataStores
+        public List<Microsoft.Graph.Beta.Models.ExactMatchDataStore>? ExactMatchDataStores
         {
-            get { return BackingStore?.Get<List<ExactMatchDataStore>?>("exactMatchDataStores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactMatchDataStore>?>("exactMatchDataStores"); }
             set { BackingStore?.Set("exactMatchDataStores", value); }
         }
 #nullable restore
 #else
-        public List<ExactMatchDataStore> ExactMatchDataStores
+        public List<Microsoft.Graph.Beta.Models.ExactMatchDataStore> ExactMatchDataStores
         {
-            get { return BackingStore?.Get<List<ExactMatchDataStore>>("exactMatchDataStores"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactMatchDataStore>>("exactMatchDataStores"); }
             set { BackingStore?.Set("exactMatchDataStores", value); }
         }
 #endif
         /// <summary>The exactMatchUploadAgents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExactMatchUploadAgent>? ExactMatchUploadAgents
+        public List<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>? ExactMatchUploadAgents
         {
-            get { return BackingStore?.Get<List<ExactMatchUploadAgent>?>("exactMatchUploadAgents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>?>("exactMatchUploadAgents"); }
             set { BackingStore?.Set("exactMatchUploadAgents", value); }
         }
 #nullable restore
 #else
-        public List<ExactMatchUploadAgent> ExactMatchUploadAgents
+        public List<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent> ExactMatchUploadAgents
         {
-            get { return BackingStore?.Get<List<ExactMatchUploadAgent>>("exactMatchUploadAgents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>>("exactMatchUploadAgents"); }
             set { BackingStore?.Set("exactMatchUploadAgents", value); }
         }
 #endif
         /// <summary>The jobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JobResponseBase>? Jobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase>? Jobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>?>("jobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>?>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
 #nullable restore
 #else
-        public List<JobResponseBase> Jobs
+        public List<Microsoft.Graph.Beta.Models.JobResponseBase> Jobs
         {
-            get { return BackingStore?.Get<List<JobResponseBase>>("jobs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JobResponseBase>>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
 #endif
         /// <summary>The sensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitiveType>? SensitiveTypes
+        public List<Microsoft.Graph.Beta.Models.SensitiveType>? SensitiveTypes
         {
-            get { return BackingStore?.Get<List<SensitiveType>?>("sensitiveTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveType>?>("sensitiveTypes"); }
             set { BackingStore?.Set("sensitiveTypes", value); }
         }
 #nullable restore
 #else
-        public List<SensitiveType> SensitiveTypes
+        public List<Microsoft.Graph.Beta.Models.SensitiveType> SensitiveTypes
         {
-            get { return BackingStore?.Get<List<SensitiveType>>("sensitiveTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveType>>("sensitiveTypes"); }
             set { BackingStore?.Set("sensitiveTypes", value); }
         }
 #endif
         /// <summary>The sensitivityLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitivityLabel>? SensitivityLabels
+        public List<Microsoft.Graph.Beta.Models.SensitivityLabel>? SensitivityLabels
         {
-            get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
 #nullable restore
 #else
-        public List<SensitivityLabel> SensitivityLabels
+        public List<Microsoft.Graph.Beta.Models.SensitivityLabel> SensitivityLabels
         {
-            get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataClassificationService"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DataClassificationService"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DataClassificationService CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DataClassificationService CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DataClassificationService();
+            return new Microsoft.Graph.Beta.Models.DataClassificationService();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -172,15 +172,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classifyFileJobs", n => { ClassifyFileJobs = n.GetCollectionOfObjectValues<JobResponseBase>(JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "classifyTextJobs", n => { ClassifyTextJobs = n.GetCollectionOfObjectValues<JobResponseBase>(JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "evaluateDlpPoliciesJobs", n => { EvaluateDlpPoliciesJobs = n.GetCollectionOfObjectValues<JobResponseBase>(JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "evaluateLabelJobs", n => { EvaluateLabelJobs = n.GetCollectionOfObjectValues<JobResponseBase>(JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "exactMatchDataStores", n => { ExactMatchDataStores = n.GetCollectionOfObjectValues<ExactMatchDataStore>(ExactMatchDataStore.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "exactMatchUploadAgents", n => { ExactMatchUploadAgents = n.GetCollectionOfObjectValues<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<JobResponseBase>(JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sensitiveTypes", n => { SensitiveTypes = n.GetCollectionOfObjectValues<SensitiveType>(SensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classifyFileJobs", n => { ClassifyFileJobs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>(Microsoft.Graph.Beta.Models.JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classifyTextJobs", n => { ClassifyTextJobs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>(Microsoft.Graph.Beta.Models.JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "evaluateDlpPoliciesJobs", n => { EvaluateDlpPoliciesJobs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>(Microsoft.Graph.Beta.Models.JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "evaluateLabelJobs", n => { EvaluateLabelJobs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>(Microsoft.Graph.Beta.Models.JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exactMatchDataStores", n => { ExactMatchDataStores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactMatchDataStore>(Microsoft.Graph.Beta.Models.ExactMatchDataStore.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exactMatchUploadAgents", n => { ExactMatchUploadAgents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>(Microsoft.Graph.Beta.Models.ExactMatchUploadAgent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>(Microsoft.Graph.Beta.Models.JobResponseBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensitiveTypes", n => { SensitiveTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveType>(Microsoft.Graph.Beta.Models.SensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitivityLabel>(Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -191,15 +191,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<JobResponseBase>("classifyFileJobs", ClassifyFileJobs);
-            writer.WriteCollectionOfObjectValues<JobResponseBase>("classifyTextJobs", ClassifyTextJobs);
-            writer.WriteCollectionOfObjectValues<JobResponseBase>("evaluateDlpPoliciesJobs", EvaluateDlpPoliciesJobs);
-            writer.WriteCollectionOfObjectValues<JobResponseBase>("evaluateLabelJobs", EvaluateLabelJobs);
-            writer.WriteCollectionOfObjectValues<ExactMatchDataStore>("exactMatchDataStores", ExactMatchDataStores);
-            writer.WriteCollectionOfObjectValues<ExactMatchUploadAgent>("exactMatchUploadAgents", ExactMatchUploadAgents);
-            writer.WriteCollectionOfObjectValues<JobResponseBase>("jobs", Jobs);
-            writer.WriteCollectionOfObjectValues<SensitiveType>("sensitiveTypes", SensitiveTypes);
-            writer.WriteCollectionOfObjectValues<SensitivityLabel>("sensitivityLabels", SensitivityLabels);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>("classifyFileJobs", ClassifyFileJobs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>("classifyTextJobs", ClassifyTextJobs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>("evaluateDlpPoliciesJobs", EvaluateDlpPoliciesJobs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>("evaluateLabelJobs", EvaluateLabelJobs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactMatchDataStore>("exactMatchDataStores", ExactMatchDataStores);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>("exactMatchUploadAgents", ExactMatchUploadAgents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JobResponseBase>("jobs", Jobs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveType>("sensitiveTypes", SensitiveTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitivityLabel>("sensitivityLabels", SensitivityLabels);
         }
     }
 }

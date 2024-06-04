@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AddFooter : MarkContent, IParsable
+    public class AddFooter : Microsoft.Graph.Beta.Models.MarkContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The alignment property</summary>
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("margin", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AddFooter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AddFooter"/> and sets the default values.
         /// </summary>
         public AddFooter() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddFooter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AddFooter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddFooter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AddFooter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddFooter();
+            return new Microsoft.Graph.Beta.Models.AddFooter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alignment", n => { Alignment = n.GetEnumValue<Alignment>(); } },
+                { "alignment", n => { Alignment = n.GetEnumValue<Microsoft.Graph.Beta.Models.Alignment>(); } },
                 { "margin", n => { Margin = n.GetIntValue(); } },
             };
         }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Alignment>("alignment", Alignment);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Alignment>("alignment", Alignment);
             writer.WriteIntValue("margin", Margin);
         }
     }

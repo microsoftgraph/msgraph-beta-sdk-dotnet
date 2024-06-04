@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ComplianceChange"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ComplianceChange"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ComplianceChange CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.ComplianceChange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.contentApproval" => new ContentApproval(),
-                _ => new ComplianceChange(),
+                "#microsoft.graph.windowsUpdates.contentApproval" => new Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApproval(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.ComplianceChange(),
             };
         }
         /// <summary>

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosWebContentFilterBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosWebContentFilterBase"/> and sets the default values.
         /// </summary>
         public IosWebContentFilterBase()
         {
@@ -47,17 +47,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosWebContentFilterBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosWebContentFilterBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosWebContentFilterBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IosWebContentFilterBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosWebContentFilterAutoFilter" => new IosWebContentFilterAutoFilter(),
-                "#microsoft.graph.iosWebContentFilterSpecificWebsitesAccess" => new IosWebContentFilterSpecificWebsitesAccess(),
-                _ => new IosWebContentFilterBase(),
+                "#microsoft.graph.iosWebContentFilterAutoFilter" => new Microsoft.Graph.Beta.Models.IosWebContentFilterAutoFilter(),
+                "#microsoft.graph.iosWebContentFilterSpecificWebsitesAccess" => new Microsoft.Graph.Beta.Models.IosWebContentFilterSpecificWebsitesAccess(),
+                _ => new Microsoft.Graph.Beta.Models.IosWebContentFilterBase(),
             };
         }
         /// <summary>

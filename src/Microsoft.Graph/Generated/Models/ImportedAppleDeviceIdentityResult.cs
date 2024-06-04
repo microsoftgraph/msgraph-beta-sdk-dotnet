@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The importedAppleDeviceIdentityResult resource represents the result of attempting to import Apple devices identities.
     /// </summary>
-    public class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity, IParsable
+    public class ImportedAppleDeviceIdentityResult : Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity, IParsable
     {
         /// <summary>Status of imported device identity</summary>
         public bool? Status
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportedAppleDeviceIdentityResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImportedAppleDeviceIdentityResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportedAppleDeviceIdentityResult();
+            return new Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityResult();
         }
         /// <summary>
         /// The deserialization information for the current model

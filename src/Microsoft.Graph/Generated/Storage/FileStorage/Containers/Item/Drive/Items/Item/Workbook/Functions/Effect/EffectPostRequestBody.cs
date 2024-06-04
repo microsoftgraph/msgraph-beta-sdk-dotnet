@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The nominalRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NominalRate
+        public Microsoft.Graph.Beta.Models.Json? NominalRate
         {
-            get { return BackingStore?.Get<Json?>("nominalRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("nominalRate"); }
             set { BackingStore?.Set("nominalRate", value); }
         }
 #nullable restore
 #else
-        public Json NominalRate
+        public Microsoft.Graph.Beta.Models.Json NominalRate
         {
-            get { return BackingStore?.Get<Json>("nominalRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("nominalRate"); }
             set { BackingStore?.Set("nominalRate", value); }
         }
 #endif
         /// <summary>The npery property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Npery
+        public Microsoft.Graph.Beta.Models.Json? Npery
         {
-            get { return BackingStore?.Get<Json?>("npery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("npery"); }
             set { BackingStore?.Set("npery", value); }
         }
 #nullable restore
 #else
-        public Json Npery
+        public Microsoft.Graph.Beta.Models.Json Npery
         {
-            get { return BackingStore?.Get<Json>("npery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("npery"); }
             set { BackingStore?.Set("npery", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EffectPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Effect.EffectPostRequestBody"/> and sets the default values.
         /// </summary>
         public EffectPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EffectPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Effect.EffectPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EffectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Effect.EffectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EffectPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Effect.EffectPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nominalRate", n => { NominalRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "npery", n => { Npery = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "nominalRate", n => { NominalRate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "npery", n => { Npery = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("nominalRate", NominalRate);
-            writer.WriteObjectValue<Json>("npery", Npery);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("nominalRate", NominalRate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("npery", Npery);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

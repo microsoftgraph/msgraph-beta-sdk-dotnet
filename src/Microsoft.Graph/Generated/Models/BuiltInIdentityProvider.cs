@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class BuiltInIdentityProvider : IdentityProviderBase, IParsable
+    public class BuiltInIdentityProvider : Microsoft.Graph.Beta.Models.IdentityProviderBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.</summary>
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public IdentityProviderState? State
+        public Microsoft.Graph.Beta.Models.IdentityProviderState? State
         {
-            get { return BackingStore?.Get<IdentityProviderState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityProviderState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BuiltInIdentityProvider"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BuiltInIdentityProvider"/> and sets the default values.
         /// </summary>
         public BuiltInIdentityProvider() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BuiltInIdentityProvider"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BuiltInIdentityProvider"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BuiltInIdentityProvider CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BuiltInIdentityProvider CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BuiltInIdentityProvider();
+            return new Microsoft.Graph.Beta.Models.BuiltInIdentityProvider();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "identityProviderType", n => { IdentityProviderType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<IdentityProviderState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.IdentityProviderState>(); } },
             };
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("identityProviderType", IdentityProviderType);
-            writer.WriteEnumValue<IdentityProviderState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IdentityProviderState>("state", State);
         }
     }
 }

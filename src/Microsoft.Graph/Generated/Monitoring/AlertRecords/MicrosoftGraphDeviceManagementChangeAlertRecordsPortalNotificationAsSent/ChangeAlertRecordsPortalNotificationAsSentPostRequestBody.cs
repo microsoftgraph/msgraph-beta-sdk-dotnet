@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManag
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>
-        /// Instantiates a new <see cref="ChangeAlertRecordsPortalNotificationAsSentPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent.ChangeAlertRecordsPortalNotificationAsSentPostRequestBody"/> and sets the default values.
         /// </summary>
         public ChangeAlertRecordsPortalNotificationAsSentPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManag
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChangeAlertRecordsPortalNotificationAsSentPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent.ChangeAlertRecordsPortalNotificationAsSentPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChangeAlertRecordsPortalNotificationAsSentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent.ChangeAlertRecordsPortalNotificationAsSentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChangeAlertRecordsPortalNotificationAsSentPostRequestBody();
+            return new Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent.ChangeAlertRecordsPortalNotificationAsSentPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

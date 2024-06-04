@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookIcon? Icon
+        public Microsoft.Graph.Beta.Models.WorkbookIcon? Icon
         {
-            get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #nullable restore
 #else
-        public WorkbookIcon Icon
+        public Microsoft.Graph.Beta.Models.WorkbookIcon Icon
         {
-            get { return BackingStore?.Get<WorkbookIcon>("icon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplyIconFilterPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyIconFilterPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyIconFilterPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyIconFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyIconFilterPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookIcon>(Microsoft.Graph.Beta.Models.WorkbookIcon.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<WorkbookIcon>("icon", Icon);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookIcon>("icon", Icon);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

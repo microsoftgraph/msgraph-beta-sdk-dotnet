@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
     public class ManagedTenantAlertRuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.</summary>
-        public AlertsRequestBuilder Alerts
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.Alerts.AlertsRequestBuilder Alerts
         {
-            get => new AlertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ruleDefinition property of the microsoft.graph.managedTenants.managedTenantAlertRule entity.</summary>
-        public RuleDefinitionRequestBuilder RuleDefinition
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.RuleDefinition.RuleDefinitionRequestBuilder RuleDefinition
         {
-            get => new RuleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.RuleDefinition.RuleDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedTenantAlertRuleItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedTenantAlertRuleItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,57 +62,57 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get managedTenantAlertRules from tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="ManagedTenantAlertRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedTenantAlertRule?> GetAsync(Action<RequestConfiguration<ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder.ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedTenantAlertRule> GetAsync(Action<RequestConfiguration<ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder.ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedTenantAlertRule>(requestInfo, ManagedTenantAlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property managedTenantAlertRules in tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="ManagedTenantAlertRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedTenantAlertRule?> PatchAsync(ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule?> PatchAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedTenantAlertRule> PatchAsync(ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule> PatchAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedTenantAlertRule>(requestInfo, ManagedTenantAlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property managedTenantAlertRules for tenantRelationships
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder.ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder.ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -177,11 +177,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagedTenantAlertRuleItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedTenantAlertRuleItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagedTenantAlertRuleItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedTenantAlertRuleItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>
+        public class ManagedTenantAlertRuleItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.Item.ManagedTenantAlertRuleItemRequestBuilder.ManagedTenantAlertRuleItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

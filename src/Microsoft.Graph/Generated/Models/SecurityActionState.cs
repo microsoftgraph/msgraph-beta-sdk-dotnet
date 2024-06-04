@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.</summary>
-        public OperationStatus? Status
+        public Microsoft.Graph.Beta.Models.OperationStatus? Status
         {
-            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SecurityActionState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SecurityActionState"/> and sets the default values.
         /// </summary>
         public SecurityActionState()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityActionState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityActionState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SecurityActionState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SecurityActionState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityActionState();
+            return new Microsoft.Graph.Beta.Models.SecurityActionState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>(); } },
                 { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);
             writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);

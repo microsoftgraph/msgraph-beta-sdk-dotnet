@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows 10 Enrollment Status Page Configuration
     /// </summary>
-    public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable
+    public class Windows10EnrollmentCompletionPageConfiguration : Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.</summary>
         public bool? AllowDeviceResetOnInstallFailure
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("trackInstallProgressForAutopilotOnly", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10EnrollmentCompletionPageConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfiguration"/> and sets the default values.
         /// </summary>
         public Windows10EnrollmentCompletionPageConfiguration() : base()
         {
@@ -113,12 +113,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10EnrollmentCompletionPageConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10EnrollmentCompletionPageConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10EnrollmentCompletionPageConfiguration();
+            return new Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

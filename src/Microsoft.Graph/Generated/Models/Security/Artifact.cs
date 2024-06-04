@@ -13,25 +13,25 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Artifact"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.Artifact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Artifact CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.Artifact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.host" => new Host(),
-                "#microsoft.graph.security.hostComponent" => new HostComponent(),
-                "#microsoft.graph.security.hostCookie" => new HostCookie(),
-                "#microsoft.graph.security.hostname" => new Hostname(),
-                "#microsoft.graph.security.hostSslCertificate" => new HostSslCertificate(),
-                "#microsoft.graph.security.hostTracker" => new HostTracker(),
-                "#microsoft.graph.security.ipAddress" => new IpAddress(),
-                "#microsoft.graph.security.passiveDnsRecord" => new PassiveDnsRecord(),
-                "#microsoft.graph.security.sslCertificate" => new SslCertificate(),
-                "#microsoft.graph.security.unclassifiedArtifact" => new UnclassifiedArtifact(),
-                _ => new Artifact(),
+                "#microsoft.graph.security.host" => new Microsoft.Graph.Beta.Models.Security.Host(),
+                "#microsoft.graph.security.hostComponent" => new Microsoft.Graph.Beta.Models.Security.HostComponent(),
+                "#microsoft.graph.security.hostCookie" => new Microsoft.Graph.Beta.Models.Security.HostCookie(),
+                "#microsoft.graph.security.hostname" => new Microsoft.Graph.Beta.Models.Security.Hostname(),
+                "#microsoft.graph.security.hostSslCertificate" => new Microsoft.Graph.Beta.Models.Security.HostSslCertificate(),
+                "#microsoft.graph.security.hostTracker" => new Microsoft.Graph.Beta.Models.Security.HostTracker(),
+                "#microsoft.graph.security.ipAddress" => new Microsoft.Graph.Beta.Models.Security.IpAddress(),
+                "#microsoft.graph.security.passiveDnsRecord" => new Microsoft.Graph.Beta.Models.Security.PassiveDnsRecord(),
+                "#microsoft.graph.security.sslCertificate" => new Microsoft.Graph.Beta.Models.Security.SslCertificate(),
+                "#microsoft.graph.security.unclassifiedArtifact" => new Microsoft.Graph.Beta.Models.Security.UnclassifiedArtifact(),
+                _ => new Microsoft.Graph.Beta.Models.Security.Artifact(),
             };
         }
         /// <summary>

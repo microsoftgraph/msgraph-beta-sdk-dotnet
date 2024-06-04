@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerRosterCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class PlannerRosterCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerRoster>? Value
+        public List<Microsoft.Graph.Beta.Models.PlannerRoster>? Value
         {
-            get { return BackingStore?.Get<List<PlannerRoster>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerRoster>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PlannerRoster> Value
+        public List<Microsoft.Graph.Beta.Models.PlannerRoster> Value
         {
-            get { return BackingStore?.Get<List<PlannerRoster>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerRoster>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerRosterCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerRosterCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerRosterCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerRosterCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerRosterCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.PlannerRosterCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<PlannerRoster>(PlannerRoster.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerRoster>(Microsoft.Graph.Beta.Models.PlannerRoster.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PlannerRoster>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerRoster>("value", Value);
         }
     }
 }

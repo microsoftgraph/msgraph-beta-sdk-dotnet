@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Remote assistance settings for the account
     /// </summary>
-    public class RemoteAssistanceSettings : Entity, IParsable
+    public class RemoteAssistanceSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.</summary>
         public bool? AllowSessionsToUnenrolledDevices
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteAssistanceSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RemoteAssistanceSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RemoteAssistanceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RemoteAssistanceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteAssistanceSettings();
+            return new Microsoft.Graph.Beta.Models.RemoteAssistanceSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowSessionsToUnenrolledDevices", n => { AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
                 { "blockChat", n => { BlockChat = n.GetBoolValue(); } },
-                { "remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<RemoteAssistanceState>(); } },
+                { "remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RemoteAssistanceState>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allowSessionsToUnenrolledDevices", AllowSessionsToUnenrolledDevices);
             writer.WriteBoolValue("blockChat", BlockChat);
-            writer.WriteEnumValue<RemoteAssistanceState>("remoteAssistanceState", RemoteAssistanceState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RemoteAssistanceState>("remoteAssistanceState", RemoteAssistanceState);
         }
     }
 }

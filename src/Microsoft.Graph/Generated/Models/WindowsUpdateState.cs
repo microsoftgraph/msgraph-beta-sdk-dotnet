@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WindowsUpdateState : Entity, IParsable
+    public class WindowsUpdateState : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Device display name.</summary>
@@ -87,9 +87,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Windows update for business configuration device states</summary>
-        public WindowsUpdateStatus? Status
+        public Microsoft.Graph.Beta.Models.WindowsUpdateStatus? Status
         {
-            get { return BackingStore?.Get<WindowsUpdateStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The id of the user.</summary>
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsUpdateState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdateState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsUpdateState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdateState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsUpdateState();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdateState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastScanDateTime", n => { LastScanDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "qualityUpdateVersion", n => { QualityUpdateVersion = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<WindowsUpdateStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdateStatus>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastScanDateTime", LastScanDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("qualityUpdateVersion", QualityUpdateVersion);
-            writer.WriteEnumValue<WindowsUpdateStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdateStatus>("status", Status);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }

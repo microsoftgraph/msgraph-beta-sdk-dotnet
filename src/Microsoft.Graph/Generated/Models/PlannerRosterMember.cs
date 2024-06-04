@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerRosterMember : Entity, IParsable
+    public class PlannerRosterMember : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.</summary>
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerRosterMember"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerRosterMember"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerRosterMember CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerRosterMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerRosterMember();
+            return new Microsoft.Graph.Beta.Models.PlannerRosterMember();
         }
         /// <summary>
         /// The deserialization information for the current model

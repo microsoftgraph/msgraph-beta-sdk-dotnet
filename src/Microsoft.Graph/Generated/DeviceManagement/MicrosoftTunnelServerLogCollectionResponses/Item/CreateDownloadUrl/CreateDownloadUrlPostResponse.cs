@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateDownloadUrlPostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse"/> and sets the default values.
         /// </summary>
         public CreateDownloadUrlPostResponse()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateDownloadUrlPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateDownloadUrlPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateDownloadUrlPostResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

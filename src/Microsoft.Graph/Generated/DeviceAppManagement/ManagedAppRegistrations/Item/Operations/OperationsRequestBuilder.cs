@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
     public class OperationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.</summary>
         /// <param name="position">The unique identifier of managedAppOperation</param>
-        /// <returns>A <see cref="ManagedAppOperationItemRequestBuilder"/></returns>
-        public ManagedAppOperationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Item.ManagedAppOperationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Item.ManagedAppOperationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managedAppOperation%2Did", position);
-                return new ManagedAppOperationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Item.ManagedAppOperationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
         /// <summary>
         /// Zero or more long running operations triggered on the app registration.
         /// </summary>
-        /// <returns>A <see cref="ManagedAppOperationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAppOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppOperationCollectionResponse?> GetAsync(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAppOperationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppOperationCollectionResponse> GetAsync(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAppOperationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppOperationCollectionResponse>(requestInfo, ManagedAppOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedAppOperationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedAppOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operations for deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="ManagedAppOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAppOperation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppOperation?> PostAsync(ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAppOperation?> PostAsync(Microsoft.Graph.Beta.Models.ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAppOperation> PostAsync(ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAppOperation> PostAsync(Microsoft.Graph.Beta.Models.ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAppOperation>(requestInfo, ManagedAppOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedAppOperation>(requestInfo, Microsoft.Graph.Beta.Models.ManagedAppOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Zero or more long running operations triggered on the app registration.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedAppOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OperationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OperationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new OperationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Zero or more long running operations triggered on the app registration.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<OperationsRequestBuilderGetQueryParameters>
+        public class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GraphAPIErrorDetails? Error
+        public Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails? Error
         {
-            get { return BackingStore?.Get<GraphAPIErrorDetails?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public GraphAPIErrorDetails Error
+        public Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails Error
         {
-            get { return BackingStore?.Get<GraphAPIErrorDetails>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -71,24 +71,24 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public ManagementTemplateDeploymentStatus? Status
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDeploymentStatus? Status
         {
-            get { return BackingStore?.Get<ManagementTemplateDeploymentStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDeploymentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The templateStepVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagementTemplateStepVersion? TemplateStepVersion
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion? TemplateStepVersion
         {
-            get { return BackingStore?.Get<ManagementTemplateStepVersion?>("templateStepVersion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion?>("templateStepVersion"); }
             set { BackingStore?.Set("templateStepVersion", value); }
         }
 #nullable restore
 #else
-        public ManagementTemplateStepVersion TemplateStepVersion
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion TemplateStepVersion
         {
-            get { return BackingStore?.Get<ManagementTemplateStepVersion>("templateStepVersion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>("templateStepVersion"); }
             set { BackingStore?.Set("templateStepVersion", value); }
         }
 #endif
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateStepDeployment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepDeployment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagementTemplateStepDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementTemplateStepDeployment();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepDeployment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             {
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<GraphAPIErrorDetails>(GraphAPIErrorDetails.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails>(Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails.CreateFromDiscriminatorValue); } },
                 { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ManagementTemplateDeploymentStatus>(); } },
-                { "templateStepVersion", n => { TemplateStepVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDeploymentStatus>(); } },
+                { "templateStepVersion", n => { TemplateStepVersion = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -146,11 +146,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             base.Serialize(writer);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<GraphAPIErrorDetails>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.GraphAPIErrorDetails>("error", Error);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteEnumValue<ManagementTemplateDeploymentStatus>("status", Status);
-            writer.WriteObjectValue<ManagementTemplateStepVersion>("templateStepVersion", TemplateStepVersion);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDeploymentStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>("templateStepVersion", TemplateStepVersion);
             writer.WriteStringValue("tenantId", TenantId);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
     public class IntuneBrandingProfilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of intuneBrandingProfile</param>
-        /// <returns>A <see cref="IntuneBrandingProfileItemRequestBuilder"/></returns>
-        public IntuneBrandingProfileItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.IntuneBrandingProfileItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.IntuneBrandingProfileItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("intuneBrandingProfile%2Did", position);
-                return new IntuneBrandingProfileItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.IntuneBrandingProfileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IntuneBrandingProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IntuneBrandingProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
         /// <summary>
         /// Intune branding profiles targeted to AAD groups
         /// </summary>
-        /// <returns>A <see cref="IntuneBrandingProfileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IntuneBrandingProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IntuneBrandingProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<IntuneBrandingProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IntuneBrandingProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder.IntuneBrandingProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IntuneBrandingProfileCollectionResponse> GetAsync(Action<RequestConfiguration<IntuneBrandingProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IntuneBrandingProfileCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder.IntuneBrandingProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IntuneBrandingProfileCollectionResponse>(requestInfo, IntuneBrandingProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IntuneBrandingProfileCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IntuneBrandingProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to intuneBrandingProfiles for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="IntuneBrandingProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IntuneBrandingProfile"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IntuneBrandingProfile?> PostAsync(IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IntuneBrandingProfile?> PostAsync(Microsoft.Graph.Beta.Models.IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IntuneBrandingProfile> PostAsync(IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IntuneBrandingProfile> PostAsync(Microsoft.Graph.Beta.Models.IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IntuneBrandingProfile>(requestInfo, IntuneBrandingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>(requestInfo, Microsoft.Graph.Beta.Models.IntuneBrandingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Intune branding profiles targeted to AAD groups
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IntuneBrandingProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder.IntuneBrandingProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IntuneBrandingProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder.IntuneBrandingProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IntuneBrandingProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="IntuneBrandingProfilesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IntuneBrandingProfilesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new IntuneBrandingProfilesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Intune branding profiles targeted to AAD groups
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IntuneBrandingProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<IntuneBrandingProfilesRequestBuilderGetQueryParameters>
+        public class IntuneBrandingProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder.IntuneBrandingProfilesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

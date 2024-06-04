@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Text
+        public Microsoft.Graph.Beta.Models.Json? Text
         {
-            get { return BackingStore?.Get<Json?>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public Json Text
+        public Microsoft.Graph.Beta.Models.Json Text
         {
-            get { return BackingStore?.Get<Json>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ValuePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Value.ValuePostRequestBody"/> and sets the default values.
         /// </summary>
         public ValuePostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ValuePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Value.ValuePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ValuePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Value.ValuePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ValuePostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Value.ValuePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("text", Text);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

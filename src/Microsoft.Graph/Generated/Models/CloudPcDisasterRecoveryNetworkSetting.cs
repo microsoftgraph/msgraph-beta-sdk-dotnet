@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcDisasterRecoveryNetworkSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting"/> and sets the default values.
         /// </summary>
         public CloudPcDisasterRecoveryNetworkSetting()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcDisasterRecoveryNetworkSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcDisasterRecoveryNetworkSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.cloudPcDisasterRecoveryAzureConnectionSetting" => new CloudPcDisasterRecoveryAzureConnectionSetting(),
-                "#microsoft.graph.cloudPcDisasterRecoveryMicrosoftHostedNetworkSetting" => new CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting(),
-                _ => new CloudPcDisasterRecoveryNetworkSetting(),
+                "#microsoft.graph.cloudPcDisasterRecoveryAzureConnectionSetting" => new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryAzureConnectionSetting(),
+                "#microsoft.graph.cloudPcDisasterRecoveryMicrosoftHostedNetworkSetting" => new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting(),
+                _ => new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting(),
             };
         }
         /// <summary>

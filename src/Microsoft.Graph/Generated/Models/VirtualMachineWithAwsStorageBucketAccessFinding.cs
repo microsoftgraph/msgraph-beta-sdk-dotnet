@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualMachineWithAwsStorageBucketAccessFinding : Finding, IParsable
+    public class VirtualMachineWithAwsStorageBucketAccessFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The total number of storage buckets that the EC2 instance can access using the role.</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The ec2Instance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? Ec2Instance
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource? Ec2Instance
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource?>("ec2Instance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource?>("ec2Instance"); }
             set { BackingStore?.Set("ec2Instance", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource Ec2Instance
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource Ec2Instance
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource>("ec2Instance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("ec2Instance"); }
             set { BackingStore?.Set("ec2Instance", value); }
         }
 #endif
@@ -57,28 +57,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsRole? Role
+        public Microsoft.Graph.Beta.Models.AwsRole? Role
         {
-            get { return BackingStore?.Get<AwsRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public AwsRole Role
+        public Microsoft.Graph.Beta.Models.AwsRole Role
         {
-            get { return BackingStore?.Get<AwsRole>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsRole>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualMachineWithAwsStorageBucketAccessFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualMachineWithAwsStorageBucketAccessFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualMachineWithAwsStorageBucketAccessFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualMachineWithAwsStorageBucketAccessFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualMachineWithAwsStorageBucketAccessFinding();
+            return new Microsoft.Graph.Beta.Models.VirtualMachineWithAwsStorageBucketAccessFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accessibleCount", n => { AccessibleCount = n.GetIntValue(); } },
                 { "bucketCount", n => { BucketCount = n.GetIntValue(); } },
-                { "ec2Instance", n => { Ec2Instance = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "ec2Instance", n => { Ec2Instance = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetObjectValue<AwsRole>(AwsRole.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsRole>(Microsoft.Graph.Beta.Models.AwsRole.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteIntValue("accessibleCount", AccessibleCount);
             writer.WriteIntValue("bucketCount", BucketCount);
-            writer.WriteObjectValue<AuthorizationSystemResource>("ec2Instance", Ec2Instance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("ec2Instance", Ec2Instance);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
-            writer.WriteObjectValue<AwsRole>("role", Role);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsRole>("role", Role);
         }
     }
 }

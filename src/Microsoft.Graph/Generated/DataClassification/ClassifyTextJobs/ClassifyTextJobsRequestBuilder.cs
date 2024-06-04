@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
     public class ClassifyTextJobsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         /// <param name="position">The unique identifier of jobResponseBase</param>
-        /// <returns>A <see cref="JobResponseBaseItemRequestBuilder"/></returns>
-        public JobResponseBaseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Item.JobResponseBaseItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Item.JobResponseBaseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("jobResponseBase%2Did", position);
-                return new JobResponseBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.Item.JobResponseBaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ClassifyTextJobsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ClassifyTextJobsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
         /// <summary>
         /// Get classifyTextJobs from dataClassification
         /// </summary>
-        /// <returns>A <see cref="JobResponseBaseCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.JobResponseBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<JobResponseBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<ClassifyTextJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.JobResponseBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder.ClassifyTextJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<JobResponseBaseCollectionResponse> GetAsync(Action<RequestConfiguration<ClassifyTextJobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.JobResponseBaseCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder.ClassifyTextJobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<JobResponseBaseCollectionResponse>(requestInfo, JobResponseBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.JobResponseBaseCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.JobResponseBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to classifyTextJobs for dataClassification
         /// </summary>
-        /// <returns>A <see cref="JobResponseBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.JobResponseBase"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<JobResponseBase?> PostAsync(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.JobResponseBase?> PostAsync(Microsoft.Graph.Beta.Models.JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<JobResponseBase> PostAsync(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.JobResponseBase> PostAsync(Microsoft.Graph.Beta.Models.JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<JobResponseBase>(requestInfo, JobResponseBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.JobResponseBase>(requestInfo, Microsoft.Graph.Beta.Models.JobResponseBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get classifyTextJobs from dataClassification
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ClassifyTextJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder.ClassifyTextJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ClassifyTextJobsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder.ClassifyTextJobsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ClassifyTextJobsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ClassifyTextJobsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ClassifyTextJobsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get classifyTextJobs from dataClassification
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ClassifyTextJobsRequestBuilderGetRequestConfiguration : RequestConfiguration<ClassifyTextJobsRequestBuilderGetQueryParameters>
+        public class ClassifyTextJobsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs.ClassifyTextJobsRequestBuilder.ClassifyTextJobsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

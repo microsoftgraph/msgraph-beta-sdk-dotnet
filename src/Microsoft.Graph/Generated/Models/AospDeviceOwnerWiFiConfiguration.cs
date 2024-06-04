@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the AOSP device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AospDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable
+    public class AospDeviceOwnerWiFiConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Wi-Fi Proxy Settings.</summary>
-        public WiFiProxySetting? ProxySetting
+        public Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySetting
         {
-            get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySetting"); }
             set { BackingStore?.Set("proxySetting", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
@@ -138,13 +138,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Wi-Fi Security Types for AOSP Device Owner.</summary>
-        public AospDeviceOwnerWiFiSecurityType? WiFiSecurityType
+        public Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiSecurityType? WiFiSecurityType
         {
-            get { return BackingStore?.Get<AospDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AospDeviceOwnerWiFiConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiConfiguration"/> and sets the default values.
         /// </summary>
         public AospDeviceOwnerWiFiConfiguration() : base()
         {
@@ -153,16 +153,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AospDeviceOwnerWiFiConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AospDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration" => new AospDeviceOwnerEnterpriseWiFiConfiguration(),
-                _ => new AospDeviceOwnerWiFiConfiguration(),
+                "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration" => new Microsoft.Graph.Beta.Models.AospDeviceOwnerEnterpriseWiFiConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiConfiguration(),
             };
         }
         /// <summary>
@@ -182,9 +182,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
                 { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                { "proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "proxySetting", n => { ProxySetting = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
-                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AospDeviceOwnerWiFiSecurityType>(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiSecurityType>(); } },
             };
         }
         /// <summary>
@@ -204,9 +204,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("proxyExclusionList", ProxyExclusionList);
             writer.WriteStringValue("proxyManualAddress", ProxyManualAddress);
             writer.WriteIntValue("proxyManualPort", ProxyManualPort);
-            writer.WriteEnumValue<WiFiProxySetting>("proxySetting", ProxySetting);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySetting", ProxySetting);
             writer.WriteStringValue("ssid", Ssid);
-            writer.WriteEnumValue<AospDeviceOwnerWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AospDeviceOwnerWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }
     }
 }

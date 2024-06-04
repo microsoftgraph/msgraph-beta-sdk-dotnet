@@ -38,27 +38,27 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The account used to sync the calendar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkOnPremisesCalendarSyncConfiguration? OnPremisesCalendarSyncConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration? OnPremisesCalendarSyncConfiguration
         {
-            get { return BackingStore?.Get<TeamworkOnPremisesCalendarSyncConfiguration?>("onPremisesCalendarSyncConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration?>("onPremisesCalendarSyncConfiguration"); }
             set { BackingStore?.Set("onPremisesCalendarSyncConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkOnPremisesCalendarSyncConfiguration OnPremisesCalendarSyncConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration OnPremisesCalendarSyncConfiguration
         {
-            get { return BackingStore?.Get<TeamworkOnPremisesCalendarSyncConfiguration>("onPremisesCalendarSyncConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration>("onPremisesCalendarSyncConfiguration"); }
             set { BackingStore?.Set("onPremisesCalendarSyncConfiguration", value); }
         }
 #endif
         /// <summary>The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.</summary>
-        public TeamworkSupportedClient? SupportedClient
+        public Microsoft.Graph.Beta.Models.TeamworkSupportedClient? SupportedClient
         {
-            get { return BackingStore?.Get<TeamworkSupportedClient?>("supportedClient"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSupportedClient?>("supportedClient"); }
             set { BackingStore?.Set("supportedClient", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkAccountConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkAccountConfiguration()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkAccountConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkAccountConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkAccountConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "onPremisesCalendarSyncConfiguration", n => { OnPremisesCalendarSyncConfiguration = n.GetObjectValue<TeamworkOnPremisesCalendarSyncConfiguration>(TeamworkOnPremisesCalendarSyncConfiguration.CreateFromDiscriminatorValue); } },
-                { "supportedClient", n => { SupportedClient = n.GetEnumValue<TeamworkSupportedClient>(); } },
+                { "onPremisesCalendarSyncConfiguration", n => { OnPremisesCalendarSyncConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration>(Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration.CreateFromDiscriminatorValue); } },
+                { "supportedClient", n => { SupportedClient = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkSupportedClient>(); } },
             };
         }
         /// <summary>
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TeamworkOnPremisesCalendarSyncConfiguration>("onPremisesCalendarSyncConfiguration", OnPremisesCalendarSyncConfiguration);
-            writer.WriteEnumValue<TeamworkSupportedClient>("supportedClient", SupportedClient);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkOnPremisesCalendarSyncConfiguration>("onPremisesCalendarSyncConfiguration", OnPremisesCalendarSyncConfiguration);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkSupportedClient>("supportedClient", SupportedClient);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

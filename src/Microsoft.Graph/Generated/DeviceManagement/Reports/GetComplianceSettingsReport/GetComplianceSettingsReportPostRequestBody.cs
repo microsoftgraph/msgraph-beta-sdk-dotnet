@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsRep
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetComplianceSettingsReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetComplianceSettingsReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsRep
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetComplianceSettingsReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetComplianceSettingsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetComplianceSettingsReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

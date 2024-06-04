@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Identity
+        public Microsoft.Graph.Beta.Models.IdentitySet? Identity
         {
-            get { return BackingStore?.Get<IdentitySet?>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Identity
+        public Microsoft.Graph.Beta.Models.IdentitySet Identity
         {
-            get { return BackingStore?.Get<IdentitySet>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The nonAnonymizedIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? NonAnonymizedIdentity
+        public Microsoft.Graph.Beta.Models.IdentitySet? NonAnonymizedIdentity
         {
-            get { return BackingStore?.Get<IdentitySet?>("nonAnonymizedIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("nonAnonymizedIdentity"); }
             set { BackingStore?.Set("nonAnonymizedIdentity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet NonAnonymizedIdentity
+        public Microsoft.Graph.Beta.Models.IdentitySet NonAnonymizedIdentity
         {
-            get { return BackingStore?.Get<IdentitySet>("nonAnonymizedIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("nonAnonymizedIdentity"); }
             set { BackingStore?.Set("nonAnonymizedIdentity", value); }
         }
 #endif
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ParticipantInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ParticipantInfo"/> and sets the default values.
         /// </summary>
         public ParticipantInfo()
         {
@@ -164,12 +164,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParticipantInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ParticipantInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParticipantInfo();
+            return new Microsoft.Graph.Beta.Models.ParticipantInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,10 +180,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
-                { "endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
-                { "identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "endpointType", n => { EndpointType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EndpointType>(); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "languageId", n => { LanguageId = n.GetStringValue(); } },
-                { "nonAnonymizedIdentity", n => { NonAnonymizedIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "nonAnonymizedIdentity", n => { NonAnonymizedIdentity = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "participantId", n => { ParticipantId = n.GetStringValue(); } },
                 { "platformId", n => { PlatformId = n.GetStringValue(); } },
@@ -198,10 +198,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("countryCode", CountryCode);
-            writer.WriteEnumValue<EndpointType>("endpointType", EndpointType);
-            writer.WriteObjectValue<IdentitySet>("identity", Identity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EndpointType>("endpointType", EndpointType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("identity", Identity);
             writer.WriteStringValue("languageId", LanguageId);
-            writer.WriteObjectValue<IdentitySet>("nonAnonymizedIdentity", NonAnonymizedIdentity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("nonAnonymizedIdentity", NonAnonymizedIdentity);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("participantId", ParticipantId);
             writer.WriteStringValue("platformId", PlatformId);

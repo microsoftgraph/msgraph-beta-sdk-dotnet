@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS wired network configuration profile.
     /// </summary>
-    public class MacOSWiredNetworkConfiguration : DeviceConfiguration, IParsable
+    public class MacOSWiredNetworkConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
-        public WiFiAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<WiFiAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.</summary>
@@ -48,23 +48,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSCertificateProfileBase? IdentityCertificateForClientAuthentication
+        public Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase? IdentityCertificateForClientAuthentication
         {
-            get { return BackingStore?.Get<MacOSCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #nullable restore
 #else
-        public MacOSCertificateProfileBase IdentityCertificateForClientAuthentication
+        public Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase IdentityCertificateForClientAuthentication
         {
-            get { return BackingStore?.Get<MacOSCertificateProfileBase>("identityCertificateForClientAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #endif
         /// <summary>Apple network interface type.</summary>
-        public WiredNetworkInterface? NetworkInterface
+        public Microsoft.Graph.Beta.Models.WiredNetworkInterface? NetworkInterface
         {
-            get { return BackingStore?.Get<WiredNetworkInterface?>("networkInterface"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiredNetworkInterface?>("networkInterface"); }
             set { BackingStore?.Set("networkInterface", value); }
         }
         /// <summary>Network Name</summary>
@@ -84,24 +84,24 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
-        public NonEapAuthenticationMethodForEapTtlsType? NonEapAuthenticationMethodForEapTtls
+        public Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType? NonEapAuthenticationMethodForEapTtls
         {
-            get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>("nonEapAuthenticationMethodForEapTtls"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType?>("nonEapAuthenticationMethodForEapTtls"); }
             set { BackingStore?.Set("nonEapAuthenticationMethodForEapTtls", value); }
         }
         /// <summary>Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSTrustedRootCertificate? RootCertificateForServerValidation
+        public Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate? RootCertificateForServerValidation
         {
-            get { return BackingStore?.Get<MacOSTrustedRootCertificate?>("rootCertificateForServerValidation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate?>("rootCertificateForServerValidation"); }
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
 #nullable restore
 #else
-        public MacOSTrustedRootCertificate RootCertificateForServerValidation
+        public Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate RootCertificateForServerValidation
         {
-            get { return BackingStore?.Get<MacOSTrustedRootCertificate>("rootCertificateForServerValidation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate>("rootCertificateForServerValidation"); }
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
 #endif
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MacOSWiredNetworkConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSWiredNetworkConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSWiredNetworkConfiguration() : base()
         {
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSWiredNetworkConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSWiredNetworkConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSWiredNetworkConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSWiredNetworkConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,15 +146,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<WiFiAuthenticationMethod>(); } },
-                { "eapFastConfiguration", n => { EapFastConfiguration = n.GetEnumValue<EapFastConfiguration>(); } },
-                { "eapType", n => { EapType = n.GetEnumValue<EapType>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod>(); } },
+                { "eapFastConfiguration", n => { EapFastConfiguration = n.GetEnumValue<Microsoft.Graph.Beta.Models.EapFastConfiguration>(); } },
+                { "eapType", n => { EapType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EapType>(); } },
                 { "enableOuterIdentityPrivacy", n => { EnableOuterIdentityPrivacy = n.GetStringValue(); } },
-                { "identityCertificateForClientAuthentication", n => { IdentityCertificateForClientAuthentication = n.GetObjectValue<MacOSCertificateProfileBase>(MacOSCertificateProfileBase.CreateFromDiscriminatorValue); } },
-                { "networkInterface", n => { NetworkInterface = n.GetEnumValue<WiredNetworkInterface>(); } },
+                { "identityCertificateForClientAuthentication", n => { IdentityCertificateForClientAuthentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase>(Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "networkInterface", n => { NetworkInterface = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkInterface>(); } },
                 { "networkName", n => { NetworkName = n.GetStringValue(); } },
-                { "nonEapAuthenticationMethodForEapTtls", n => { NonEapAuthenticationMethodForEapTtls = n.GetEnumValue<NonEapAuthenticationMethodForEapTtlsType>(); } },
-                { "rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<MacOSTrustedRootCertificate>(MacOSTrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "nonEapAuthenticationMethodForEapTtls", n => { NonEapAuthenticationMethodForEapTtls = n.GetEnumValue<Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType>(); } },
+                { "rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate>(Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate.CreateFromDiscriminatorValue); } },
                 { "trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -166,15 +166,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WiFiAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
-            writer.WriteEnumValue<EapFastConfiguration>("eapFastConfiguration", EapFastConfiguration);
-            writer.WriteEnumValue<EapType>("eapType", EapType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EapFastConfiguration>("eapFastConfiguration", EapFastConfiguration);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EapType>("eapType", EapType);
             writer.WriteStringValue("enableOuterIdentityPrivacy", EnableOuterIdentityPrivacy);
-            writer.WriteObjectValue<MacOSCertificateProfileBase>("identityCertificateForClientAuthentication", IdentityCertificateForClientAuthentication);
-            writer.WriteEnumValue<WiredNetworkInterface>("networkInterface", NetworkInterface);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase>("identityCertificateForClientAuthentication", IdentityCertificateForClientAuthentication);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkInterface>("networkInterface", NetworkInterface);
             writer.WriteStringValue("networkName", NetworkName);
-            writer.WriteEnumValue<NonEapAuthenticationMethodForEapTtlsType>("nonEapAuthenticationMethodForEapTtls", NonEapAuthenticationMethodForEapTtls);
-            writer.WriteObjectValue<MacOSTrustedRootCertificate>("rootCertificateForServerValidation", RootCertificateForServerValidation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType>("nonEapAuthenticationMethodForEapTtls", NonEapAuthenticationMethodForEapTtls);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MacOSTrustedRootCertificate>("rootCertificateForServerValidation", RootCertificateForServerValidation);
             writer.WriteCollectionOfPrimitiveValues<string>("trustedServerCertificateNames", TrustedServerCertificateNames);
         }
     }

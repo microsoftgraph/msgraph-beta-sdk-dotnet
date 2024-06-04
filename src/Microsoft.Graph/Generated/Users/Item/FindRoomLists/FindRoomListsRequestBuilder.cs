@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists
     public class FindRoomListsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FindRoomListsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FindRoomListsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists
         /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="FindRoomListsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindRoomListsGetResponse?> GetAsFindRoomListsGetResponseAsync(Action<RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsGetResponse?> GetAsFindRoomListsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindRoomListsGetResponse> GetAsFindRoomListsGetResponseAsync(Action<RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsGetResponse> GetAsFindRoomListsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindRoomListsGetResponse>(requestInfo, FindRoomListsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsGetResponse>(requestInfo, Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="FindRoomListsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsFindRoomListsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindRoomListsResponse?> GetAsync(Action<RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindRoomListsResponse> GetAsync(Action<RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindRoomListsResponse>(requestInfo, FindRoomListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsResponse>(requestInfo, Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FindRoomListsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FindRoomListsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder WithUrl(string rawUrl)
         {
-            return new FindRoomListsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FindRoomListsRequestBuilderGetRequestConfiguration : RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters>
+        public class FindRoomListsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRoomLists.FindRoomListsRequestBuilder.FindRoomListsRequestBuilderGetQueryParameters>
         {
         }
     }

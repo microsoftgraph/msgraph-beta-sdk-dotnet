@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AttendanceRecord : Entity, IParsable
+    public class AttendanceRecord : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendanceInterval>? AttendanceIntervals
+        public List<Microsoft.Graph.Beta.Models.AttendanceInterval>? AttendanceIntervals
         {
-            get { return BackingStore?.Get<List<AttendanceInterval>?>("attendanceIntervals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendanceInterval>?>("attendanceIntervals"); }
             set { BackingStore?.Set("attendanceIntervals", value); }
         }
 #nullable restore
 #else
-        public List<AttendanceInterval> AttendanceIntervals
+        public List<Microsoft.Graph.Beta.Models.AttendanceInterval> AttendanceIntervals
         {
-            get { return BackingStore?.Get<List<AttendanceInterval>>("attendanceIntervals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendanceInterval>>("attendanceIntervals"); }
             set { BackingStore?.Set("attendanceIntervals", value); }
         }
 #endif
@@ -99,12 +99,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttendanceRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AttendanceRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AttendanceRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AttendanceRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttendanceRecord();
+            return new Microsoft.Graph.Beta.Models.AttendanceRecord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<AttendanceInterval>(AttendanceInterval.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendanceInterval>(Microsoft.Graph.Beta.Models.AttendanceInterval.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "registrantId", n => { RegistrantId = n.GetStringValue(); } },
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
             writer.WriteStringValue("registrantId", RegistrantId);

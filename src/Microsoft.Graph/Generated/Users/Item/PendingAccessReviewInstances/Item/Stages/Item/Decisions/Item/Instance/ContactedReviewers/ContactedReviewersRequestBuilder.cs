@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
     public class ContactedReviewersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.</summary>
         /// <param name="position">The unique identifier of accessReviewReviewer</param>
-        /// <returns>A <see cref="AccessReviewReviewerItemRequestBuilder"/></returns>
-        public AccessReviewReviewerItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Item.AccessReviewReviewerItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Item.AccessReviewReviewerItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("accessReviewReviewer%2Did", position);
-                return new AccessReviewReviewerItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Item.AccessReviewReviewerItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContactedReviewersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContactedReviewersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         /// <summary>
         /// Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
         /// </summary>
-        /// <returns>A <see cref="AccessReviewReviewerCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewReviewerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewReviewerCollectionResponse?> GetAsync(Action<RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewReviewerCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder.ContactedReviewersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessReviewReviewerCollectionResponse> GetAsync(Action<RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewReviewerCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder.ContactedReviewersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessReviewReviewerCollectionResponse>(requestInfo, AccessReviewReviewerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewReviewerCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewReviewerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to contactedReviewers for users
         /// </summary>
-        /// <returns>A <see cref="AccessReviewReviewer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewReviewer"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewReviewer?> PostAsync(AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewReviewer?> PostAsync(Microsoft.Graph.Beta.Models.AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessReviewReviewer> PostAsync(AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewReviewer> PostAsync(Microsoft.Graph.Beta.Models.AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessReviewReviewer>(requestInfo, AccessReviewReviewer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewReviewer>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewReviewer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder.ContactedReviewersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder.ContactedReviewersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AccessReviewReviewer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ContactedReviewersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ContactedReviewersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder WithUrl(string rawUrl)
         {
-            return new ContactedReviewersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContactedReviewersRequestBuilderGetRequestConfiguration : RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters>
+        public class ContactedReviewersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.ContactedReviewersRequestBuilder.ContactedReviewersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

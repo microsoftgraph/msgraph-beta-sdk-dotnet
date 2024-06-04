@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The authorizationSystemInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinitionAuthorizationSystem? AuthorizationSystemInfo
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem? AuthorizationSystemInfo
         {
-            get { return BackingStore?.Get<PermissionsDefinitionAuthorizationSystem?>("authorizationSystemInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem?>("authorizationSystemInfo"); }
             set { BackingStore?.Set("authorizationSystemInfo", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinitionAuthorizationSystem AuthorizationSystemInfo
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem AuthorizationSystemInfo
         {
-            get { return BackingStore?.Get<PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo"); }
             set { BackingStore?.Set("authorizationSystemInfo", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identityInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinitionAuthorizationSystemIdentity? IdentityInfo
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity? IdentityInfo
         {
-            get { return BackingStore?.Get<PermissionsDefinitionAuthorizationSystemIdentity?>("identityInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity?>("identityInfo"); }
             set { BackingStore?.Set("identityInfo", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinitionAuthorizationSystemIdentity IdentityInfo
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity IdentityInfo
         {
-            get { return BackingStore?.Get<PermissionsDefinitionAuthorizationSystemIdentity>("identityInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity>("identityInfo"); }
             set { BackingStore?.Set("identityInfo", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinition"/> and sets the default values.
         /// </summary>
         public PermissionsDefinition()
         {
@@ -78,18 +78,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PermissionsDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PermissionsDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsPermissionsDefinition" => new AwsPermissionsDefinition(),
-                "#microsoft.graph.singleResourceAzurePermissionsDefinition" => new SingleResourceAzurePermissionsDefinition(),
-                "#microsoft.graph.singleResourceGcpPermissionsDefinition" => new SingleResourceGcpPermissionsDefinition(),
-                _ => new PermissionsDefinition(),
+                "#microsoft.graph.awsPermissionsDefinition" => new Microsoft.Graph.Beta.Models.AwsPermissionsDefinition(),
+                "#microsoft.graph.singleResourceAzurePermissionsDefinition" => new Microsoft.Graph.Beta.Models.SingleResourceAzurePermissionsDefinition(),
+                "#microsoft.graph.singleResourceGcpPermissionsDefinition" => new Microsoft.Graph.Beta.Models.SingleResourceGcpPermissionsDefinition(),
+                _ => new Microsoft.Graph.Beta.Models.PermissionsDefinition(),
             };
         }
         /// <summary>
@@ -100,8 +100,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authorizationSystemInfo", n => { AuthorizationSystemInfo = n.GetObjectValue<PermissionsDefinitionAuthorizationSystem>(PermissionsDefinitionAuthorizationSystem.CreateFromDiscriminatorValue); } },
-                { "identityInfo", n => { IdentityInfo = n.GetObjectValue<PermissionsDefinitionAuthorizationSystemIdentity>(PermissionsDefinitionAuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
+                { "authorizationSystemInfo", n => { AuthorizationSystemInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem>(Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem.CreateFromDiscriminatorValue); } },
+                { "identityInfo", n => { IdentityInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity>(Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -112,8 +112,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo", AuthorizationSystemInfo);
-            writer.WriteObjectValue<PermissionsDefinitionAuthorizationSystemIdentity>("identityInfo", IdentityInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo", AuthorizationSystemInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystemIdentity>("identityInfo", IdentityInfo);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthorizationSystem : Entity, IParsable
+    public class AuthorizationSystem : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.</summary>
@@ -77,18 +77,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsAuthorizationSystem" => new AwsAuthorizationSystem(),
-                "#microsoft.graph.azureAuthorizationSystem" => new AzureAuthorizationSystem(),
-                "#microsoft.graph.gcpAuthorizationSystem" => new GcpAuthorizationSystem(),
-                _ => new AuthorizationSystem(),
+                "#microsoft.graph.awsAuthorizationSystem" => new Microsoft.Graph.Beta.Models.AwsAuthorizationSystem(),
+                "#microsoft.graph.azureAuthorizationSystem" => new Microsoft.Graph.Beta.Models.AzureAuthorizationSystem(),
+                "#microsoft.graph.gcpAuthorizationSystem" => new Microsoft.Graph.Beta.Models.GcpAuthorizationSystem(),
+                _ => new Microsoft.Graph.Beta.Models.AuthorizationSystem(),
             };
         }
         /// <summary>

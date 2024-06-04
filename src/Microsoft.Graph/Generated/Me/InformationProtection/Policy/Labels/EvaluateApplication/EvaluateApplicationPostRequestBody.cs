@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateAp
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EvaluateApplicationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateApplication.EvaluateApplicationPostRequestBody"/> and sets the default values.
         /// </summary>
         public EvaluateApplicationPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateAp
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluateApplicationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateApplication.EvaluateApplicationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EvaluateApplicationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateApplication.EvaluateApplicationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluateApplicationPostRequestBody();
+            return new Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateApplication.EvaluateApplicationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

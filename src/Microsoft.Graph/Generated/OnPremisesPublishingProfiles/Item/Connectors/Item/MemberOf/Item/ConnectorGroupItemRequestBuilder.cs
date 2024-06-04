@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
     public class ConnectorGroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConnectorGroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.ConnectorGroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConnectorGroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.ConnectorGroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

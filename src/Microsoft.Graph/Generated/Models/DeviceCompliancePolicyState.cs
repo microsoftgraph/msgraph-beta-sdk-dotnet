@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Compliance Policy State for a given device.
     /// </summary>
-    public class DeviceCompliancePolicyState : Entity, IParsable
+    public class DeviceCompliancePolicyState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The name of the policy for this policyBase</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType
+        public Microsoft.Graph.Beta.Models.PolicyPlatformType? PlatformType
         {
-            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>Count of how many setting a policy holds</summary>
@@ -42,23 +42,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The settingStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicySettingState>? SettingStates
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>? SettingStates
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>?>("settingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>?>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicySettingState> SettingStates
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState> SettingStates
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>("settingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ComplianceStatus? State
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? State
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User unique identifier, must be Guid</summary>
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceCompliancePolicyState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceCompliancePolicyState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceCompliancePolicyState();
+            return new Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,10 +118,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PolicyPlatformType>(); } },
                 { "settingCount", n => { SettingCount = n.GetIntValue(); } },
-                { "settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -136,10 +136,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<PolicyPlatformType>("platformType", PlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PolicyPlatformType>("platformType", PlatformType);
             writer.WriteIntValue("settingCount", SettingCount);
-            writer.WriteCollectionOfObjectValues<DeviceCompliancePolicySettingState>("settingStates", SettingStates);
-            writer.WriteEnumValue<ComplianceStatus>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>("settingStates", SettingStates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("state", State);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteIntValue("version", Version);

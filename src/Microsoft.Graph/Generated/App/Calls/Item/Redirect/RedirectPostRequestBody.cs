@@ -49,24 +49,24 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect
             set { BackingStore?.Set("maskCaller", value); }
         }
         /// <summary>The targetDisposition property</summary>
-        public CallDisposition? TargetDisposition
+        public Microsoft.Graph.Beta.Models.CallDisposition? TargetDisposition
         {
-            get { return BackingStore?.Get<CallDisposition?>("targetDisposition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallDisposition?>("targetDisposition"); }
             set { BackingStore?.Set("targetDisposition", value); }
         }
         /// <summary>The targets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Targets
+        public List<Microsoft.Graph.Beta.Models.InvitationParticipantInfo>? Targets
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("targets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InvitationParticipantInfo>?>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Targets
+        public List<Microsoft.Graph.Beta.Models.InvitationParticipantInfo> Targets
         {
-            get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InvitationParticipantInfo>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #endif
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect
             set { BackingStore?.Set("timeout", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RedirectPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.App.Calls.Item.Redirect.RedirectPostRequestBody"/> and sets the default values.
         /// </summary>
         public RedirectPostRequestBody()
         {
@@ -87,12 +87,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RedirectPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.App.Calls.Item.Redirect.RedirectPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RedirectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.App.Calls.Item.Redirect.RedirectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RedirectPostRequestBody();
+            return new Microsoft.Graph.Beta.App.Calls.Item.Redirect.RedirectPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect
                 { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 { "maskCallee", n => { MaskCallee = n.GetBoolValue(); } },
                 { "maskCaller", n => { MaskCaller = n.GetBoolValue(); } },
-                { "targetDisposition", n => { TargetDisposition = n.GetEnumValue<CallDisposition>(); } },
-                { "targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targetDisposition", n => { TargetDisposition = n.GetEnumValue<Microsoft.Graph.Beta.Models.CallDisposition>(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InvitationParticipantInfo>(Microsoft.Graph.Beta.Models.InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
             };
         }
@@ -120,8 +120,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect
             writer.WriteStringValue("callbackUri", CallbackUri);
             writer.WriteBoolValue("maskCallee", MaskCallee);
             writer.WriteBoolValue("maskCaller", MaskCaller);
-            writer.WriteEnumValue<CallDisposition>("targetDisposition", TargetDisposition);
-            writer.WriteCollectionOfObjectValues<InvitationParticipantInfo>("targets", Targets);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CallDisposition>("targetDisposition", TargetDisposition);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InvitationParticipantInfo>("targets", Targets);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
         }

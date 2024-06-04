@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess
 {
     #pragma warning disable CS1591
-    public class AdditionalAccessGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AdditionalAccessGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdditionalAccessGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess.AdditionalAccessGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdditionalAccessGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess.AdditionalAccessGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdditionalAccessGetResponse();
+            return new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess.AdditionalAccessGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

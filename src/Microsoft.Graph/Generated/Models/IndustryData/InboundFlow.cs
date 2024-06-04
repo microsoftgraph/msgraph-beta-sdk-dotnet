@@ -7,29 +7,29 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
     #pragma warning disable CS1591
-    public class InboundFlow : IndustryDataActivity, IParsable
+    public class InboundFlow : Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dataConnector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IndustryDataConnector? DataConnector
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector? DataConnector
         {
-            get { return BackingStore?.Get<IndustryDataConnector?>("dataConnector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector?>("dataConnector"); }
             set { BackingStore?.Set("dataConnector", value); }
         }
 #nullable restore
 #else
-        public IndustryDataConnector DataConnector
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector DataConnector
         {
-            get { return BackingStore?.Get<IndustryDataConnector>("dataConnector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector>("dataConnector"); }
             set { BackingStore?.Set("dataConnector", value); }
         }
 #endif
         /// <summary>The dataDomain property</summary>
-        public InboundDomain? DataDomain
+        public Microsoft.Graph.Beta.Models.IndustryData.InboundDomain? DataDomain
         {
-            get { return BackingStore?.Get<InboundDomain?>("dataDomain"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.InboundDomain?>("dataDomain"); }
             set { BackingStore?.Set("dataDomain", value); }
         }
         /// <summary>The start of the time window when the flow is allowed to run. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -47,21 +47,21 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The year property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public YearTimePeriodDefinition? Year
+        public Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition? Year
         {
-            get { return BackingStore?.Get<YearTimePeriodDefinition?>("year"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition?>("year"); }
             set { BackingStore?.Set("year", value); }
         }
 #nullable restore
 #else
-        public YearTimePeriodDefinition Year
+        public Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition Year
         {
-            get { return BackingStore?.Get<YearTimePeriodDefinition>("year"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition>("year"); }
             set { BackingStore?.Set("year", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InboundFlow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/> and sets the default values.
         /// </summary>
         public InboundFlow() : base()
         {
@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InboundFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InboundFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.InboundFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.inboundFileFlow" => new InboundFileFlow(),
-                _ => new InboundFlow(),
+                "#microsoft.graph.industryData.inboundFileFlow" => new Microsoft.Graph.Beta.Models.IndustryData.InboundFileFlow(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.InboundFlow(),
             };
         }
         /// <summary>
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dataConnector", n => { DataConnector = n.GetObjectValue<IndustryDataConnector>(IndustryDataConnector.CreateFromDiscriminatorValue); } },
-                { "dataDomain", n => { DataDomain = n.GetEnumValue<InboundDomain>(); } },
+                { "dataConnector", n => { DataConnector = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector.CreateFromDiscriminatorValue); } },
+                { "dataDomain", n => { DataDomain = n.GetEnumValue<Microsoft.Graph.Beta.Models.IndustryData.InboundDomain>(); } },
                 { "effectiveDateTime", n => { EffectiveDateTime = n.GetDateTimeOffsetValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "year", n => { Year = n.GetObjectValue<YearTimePeriodDefinition>(YearTimePeriodDefinition.CreateFromDiscriminatorValue); } },
+                { "year", n => { Year = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition>(Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IndustryDataConnector>("dataConnector", DataConnector);
-            writer.WriteEnumValue<InboundDomain>("dataDomain", DataDomain);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector>("dataConnector", DataConnector);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IndustryData.InboundDomain>("dataDomain", DataDomain);
             writer.WriteDateTimeOffsetValue("effectiveDateTime", EffectiveDateTime);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteObjectValue<YearTimePeriodDefinition>("year", Year);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition>("year", Year);
         }
     }
 }

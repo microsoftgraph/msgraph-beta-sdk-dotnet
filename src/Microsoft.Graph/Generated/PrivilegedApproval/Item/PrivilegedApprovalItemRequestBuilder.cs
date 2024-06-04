@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
     public class PrivilegedApprovalItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.</summary>
-        public RequestRequestBuilder Request
+        public Microsoft.Graph.Beta.PrivilegedApproval.Item.Request.RequestRequestBuilder Request
         {
-            get => new RequestRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedApproval.Item.Request.RequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleInfo property of the microsoft.graph.privilegedApproval entity.</summary>
-        public RoleInfoRequestBuilder RoleInfo
+        public Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.RoleInfoRequestBuilder RoleInfo
         {
-            get => new RoleInfoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.RoleInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedApprovalItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedApprovalItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,20 +72,20 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedApproval"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.PrivilegedApproval?> GetAsync(Action<RequestConfiguration<PrivilegedApprovalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedApproval?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder.PrivilegedApprovalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.PrivilegedApproval> GetAsync(Action<RequestConfiguration<PrivilegedApprovalItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedApproval> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder.PrivilegedApprovalItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedApproval>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedApproval.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.PrivilegedApproval?> PatchAsync(Microsoft.Graph.Beta.Models.PrivilegedApproval body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedApproval>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedApproval.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedApprovalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder.PrivilegedApprovalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedApprovalItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder.PrivilegedApprovalItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -177,11 +177,11 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrivilegedApprovalItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrivilegedApprovalItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrivilegedApprovalItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegedApprovalItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegedApprovalItemRequestBuilderGetQueryParameters>
+        public class PrivilegedApprovalItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.PrivilegedApproval.Item.PrivilegedApprovalItemRequestBuilder.PrivilegedApprovalItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

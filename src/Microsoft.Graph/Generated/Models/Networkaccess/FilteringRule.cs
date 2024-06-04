@@ -7,33 +7,33 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class FilteringRule : PolicyRule, IParsable
+    public class FilteringRule : Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible destinations and types of destinations accessed by the user in accordance with the network filtering policy, such as IP addresses and FQDNs/URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RuleDestination>? Destinations
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>? Destinations
         {
-            get { return BackingStore?.Get<List<RuleDestination>?>("destinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>?>("destinations"); }
             set { BackingStore?.Set("destinations", value); }
         }
 #nullable restore
 #else
-        public List<RuleDestination> Destinations
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination> Destinations
         {
-            get { return BackingStore?.Get<List<RuleDestination>>("destinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>>("destinations"); }
             set { BackingStore?.Set("destinations", value); }
         }
 #endif
         /// <summary>The ruleType property</summary>
-        public NetworkDestinationType? RuleType
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType? RuleType
         {
-            get { return BackingStore?.Get<NetworkDestinationType?>("ruleType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType?>("ruleType"); }
             set { BackingStore?.Set("ruleType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilteringRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule"/> and sets the default values.
         /// </summary>
         public FilteringRule() : base()
         {
@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilteringRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilteringRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.fqdnFilteringRule" => new FqdnFilteringRule(),
-                "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new WebCategoryFilteringRule(),
-                _ => new FilteringRule(),
+                "#microsoft.graph.networkaccess.fqdnFilteringRule" => new Microsoft.Graph.Beta.Models.Networkaccess.FqdnFilteringRule(),
+                "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new Microsoft.Graph.Beta.Models.Networkaccess.WebCategoryFilteringRule(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule(),
             };
         }
         /// <summary>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<RuleDestination>(RuleDestination.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "ruleType", n => { RuleType = n.GetEnumValue<NetworkDestinationType>(); } },
+                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>(Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ruleType", n => { RuleType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>(); } },
             };
         }
         /// <summary>
@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<RuleDestination>("destinations", Destinations);
-            writer.WriteEnumValue<NetworkDestinationType>("ruleType", RuleType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>("destinations", Destinations);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>("ruleType", RuleType);
         }
     }
 }

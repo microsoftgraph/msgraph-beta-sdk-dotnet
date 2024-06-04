@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match
         /// <summary>The lookupArray property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupArray
+        public Microsoft.Graph.Beta.Models.Json? LookupArray
         {
-            get { return BackingStore?.Get<Json?>("lookupArray"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lookupArray"); }
             set { BackingStore?.Set("lookupArray", value); }
         }
 #nullable restore
 #else
-        public Json LookupArray
+        public Microsoft.Graph.Beta.Models.Json LookupArray
         {
-            get { return BackingStore?.Get<Json>("lookupArray"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lookupArray"); }
             set { BackingStore?.Set("lookupArray", value); }
         }
 #endif
         /// <summary>The lookupValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupValue
+        public Microsoft.Graph.Beta.Models.Json? LookupValue
         {
-            get { return BackingStore?.Get<Json?>("lookupValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #nullable restore
 #else
-        public Json LookupValue
+        public Microsoft.Graph.Beta.Models.Json LookupValue
         {
-            get { return BackingStore?.Get<Json>("lookupValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #endif
         /// <summary>The matchType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? MatchType
+        public Microsoft.Graph.Beta.Models.Json? MatchType
         {
-            get { return BackingStore?.Get<Json?>("matchType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("matchType"); }
             set { BackingStore?.Set("matchType", value); }
         }
 #nullable restore
 #else
-        public Json MatchType
+        public Microsoft.Graph.Beta.Models.Json MatchType
         {
-            get { return BackingStore?.Get<Json>("matchType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("matchType"); }
             set { BackingStore?.Set("matchType", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MatchPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match.MatchPostRequestBody"/> and sets the default values.
         /// </summary>
         public MatchPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MatchPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match.MatchPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MatchPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match.MatchPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MatchPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match.MatchPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lookupArray", n => { LookupArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "matchType", n => { MatchType = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lookupArray", n => { LookupArray = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "lookupValue", n => { LookupValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "matchType", n => { MatchType = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Match
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("lookupArray", LookupArray);
-            writer.WriteObjectValue<Json>("lookupValue", LookupValue);
-            writer.WriteObjectValue<Json>("matchType", MatchType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lookupArray", LookupArray);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lookupValue", LookupValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("matchType", MatchType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

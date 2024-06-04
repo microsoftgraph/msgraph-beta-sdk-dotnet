@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserSubject : ConditionalAccessWhatIfSubject, IParsable
+    public class UserSubject : Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The externalTenantId property</summary>
@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The externalUserType property</summary>
-        public ConditionalAccessGuestOrExternalUserTypes? ExternalUserType
+        public Microsoft.Graph.Beta.Models.ConditionalAccessGuestOrExternalUserTypes? ExternalUserType
         {
-            get { return BackingStore?.Get<ConditionalAccessGuestOrExternalUserTypes?>("externalUserType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessGuestOrExternalUserTypes?>("externalUserType"); }
             set { BackingStore?.Set("externalUserType", value); }
         }
         /// <summary>The userId property</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserSubject"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserSubject"/> and sets the default values.
         /// </summary>
         public UserSubject() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSubject"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserSubject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserSubject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserSubject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSubject();
+            return new Microsoft.Graph.Beta.Models.UserSubject();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "externalTenantId", n => { ExternalTenantId = n.GetStringValue(); } },
-                { "externalUserType", n => { ExternalUserType = n.GetEnumValue<ConditionalAccessGuestOrExternalUserTypes>(); } },
+                { "externalUserType", n => { ExternalUserType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessGuestOrExternalUserTypes>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("externalTenantId", ExternalTenantId);
-            writer.WriteEnumValue<ConditionalAccessGuestOrExternalUserTypes>("externalUserType", ExternalUserType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessGuestOrExternalUserTypes>("externalUserType", ExternalUserType);
             writer.WriteStringValue("userId", UserId);
         }
     }

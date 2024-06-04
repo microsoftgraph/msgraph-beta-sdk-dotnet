@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
     public class DeviceAppManagementTaskItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the updateStatus method.</summary>
-        public UpdateStatusRequestBuilder UpdateStatus
+        public Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus.UpdateStatusRequestBuilder UpdateStatus
         {
-            get => new UpdateStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus.UpdateStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceAppManagementTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceAppManagementTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,57 +56,57 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Device app management tasks.
         /// </summary>
-        /// <returns>A <see cref="DeviceAppManagementTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAppManagementTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceAppManagementTask?> GetAsync(Action<RequestConfiguration<DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagementTask?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder.DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceAppManagementTask> GetAsync(Action<RequestConfiguration<DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagementTask> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder.DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceAppManagementTask>(requestInfo, DeviceAppManagementTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagementTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceAppManagementTasks in deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceAppManagementTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAppManagementTask"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceAppManagementTask?> PatchAsync(DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagementTask?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceAppManagementTask> PatchAsync(DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagementTask> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceAppManagementTask>(requestInfo, DeviceAppManagementTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagementTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceAppManagementTasks for deviceAppManagement
@@ -134,11 +134,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder.DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder.DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -154,11 +154,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagementTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,11 +171,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceAppManagementTaskItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceAppManagementTaskItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceAppManagementTaskItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceAppManagementTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>
+        public class DeviceAppManagementTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.DeviceAppManagementTaskItemRequestBuilder.DeviceAppManagementTaskItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

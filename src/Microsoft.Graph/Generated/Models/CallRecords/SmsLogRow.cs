@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class SmsLogRow : CallLogRow, IParsable
+    public class SmsLogRow : Microsoft.Graph.Beta.Models.CallRecords.CallLogRow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Amount of money or cost of the SMS that is charged.</summary>
@@ -191,12 +191,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SmsLogRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SmsLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SmsLogRow();
+            return new Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow();
         }
         /// <summary>
         /// The deserialization information for the current model

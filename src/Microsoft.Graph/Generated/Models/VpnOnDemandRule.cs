@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Models
     public class VpnOnDemandRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>VPN On-Demand Rule Connection Action.</summary>
-        public VpnOnDemandRuleConnectionAction? Action
+        public Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionAction? Action
         {
-            get { return BackingStore?.Get<VpnOnDemandRuleConnectionAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
-        public VpnOnDemandRuleConnectionDomainAction? DomainAction
+        public Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionDomainAction? DomainAction
         {
-            get { return BackingStore?.Get<VpnOnDemandRuleConnectionDomainAction?>("domainAction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionDomainAction?>("domainAction"); }
             set { BackingStore?.Set("domainAction", value); }
         }
         /// <summary>Domains (Only applicable when Action is evaluate connection).</summary>
@@ -81,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
-        public VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch
+        public Microsoft.Graph.Beta.Models.VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch
         {
-            get { return BackingStore?.Get<VpnOnDemandRuleInterfaceTypeMatch?>("interfaceTypeMatch"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnOnDemandRuleInterfaceTypeMatch?>("interfaceTypeMatch"); }
             set { BackingStore?.Set("interfaceTypeMatch", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VpnOnDemandRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VpnOnDemandRule"/> and sets the default values.
         /// </summary>
         public VpnOnDemandRule()
         {
@@ -161,12 +161,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VpnOnDemandRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VpnOnDemandRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VpnOnDemandRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.VpnOnDemandRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VpnOnDemandRule();
+            return new Microsoft.Graph.Beta.Models.VpnOnDemandRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<VpnOnDemandRuleConnectionAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionAction>(); } },
                 { "dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "dnsServerAddressMatch", n => { DnsServerAddressMatch = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "domainAction", n => { DomainAction = n.GetEnumValue<VpnOnDemandRuleConnectionDomainAction>(); } },
+                { "domainAction", n => { DomainAction = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionDomainAction>(); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "interfaceTypeMatch", n => { InterfaceTypeMatch = n.GetEnumValue<VpnOnDemandRuleInterfaceTypeMatch>(); } },
+                { "interfaceTypeMatch", n => { InterfaceTypeMatch = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnOnDemandRuleInterfaceTypeMatch>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "probeRequiredUrl", n => { ProbeRequiredUrl = n.GetStringValue(); } },
                 { "probeUrl", n => { ProbeUrl = n.GetStringValue(); } },
@@ -195,12 +195,12 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<VpnOnDemandRuleConnectionAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionAction>("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("dnsSearchDomains", DnsSearchDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("dnsServerAddressMatch", DnsServerAddressMatch);
-            writer.WriteEnumValue<VpnOnDemandRuleConnectionDomainAction>("domainAction", DomainAction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnOnDemandRuleConnectionDomainAction>("domainAction", DomainAction);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
-            writer.WriteEnumValue<VpnOnDemandRuleInterfaceTypeMatch>("interfaceTypeMatch", InterfaceTypeMatch);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnOnDemandRuleInterfaceTypeMatch>("interfaceTypeMatch", InterfaceTypeMatch);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("probeRequiredUrl", ProbeRequiredUrl);
             writer.WriteStringValue("probeUrl", ProbeUrl);

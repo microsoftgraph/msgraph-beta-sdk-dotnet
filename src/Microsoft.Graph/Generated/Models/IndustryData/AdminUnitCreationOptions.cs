@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AdminUnitCreationOptions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.AdminUnitCreationOptions"/> and sets the default values.
         /// </summary>
         public AdminUnitCreationOptions()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdminUnitCreationOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.AdminUnitCreationOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AdminUnitCreationOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.AdminUnitCreationOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdminUnitCreationOptions();
+            return new Microsoft.Graph.Beta.Models.IndustryData.AdminUnitCreationOptions();
         }
         /// <summary>
         /// The deserialization information for the current model

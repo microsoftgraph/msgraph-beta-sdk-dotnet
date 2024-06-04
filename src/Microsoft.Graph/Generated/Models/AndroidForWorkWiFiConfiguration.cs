@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android for Work device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AndroidForWorkWiFiConfiguration : DeviceConfiguration, IParsable
+    public class AndroidForWorkWiFiConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically
@@ -56,13 +56,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Wi-Fi Security Types for Android.</summary>
-        public AndroidWiFiSecurityType? WiFiSecurityType
+        public Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType? WiFiSecurityType
         {
-            get { return BackingStore?.Get<AndroidWiFiSecurityType?>("wiFiSecurityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType?>("wiFiSecurityType"); }
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkWiFiConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkWiFiConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidForWorkWiFiConfiguration() : base()
         {
@@ -71,16 +71,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkWiFiConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration" => new AndroidForWorkEnterpriseWiFiConfiguration(),
-                _ => new AndroidForWorkWiFiConfiguration(),
+                "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration" => new Microsoft.Graph.Beta.Models.AndroidForWorkEnterpriseWiFiConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.AndroidForWorkWiFiConfiguration(),
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
                 { "networkName", n => { NetworkName = n.GetStringValue(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
-                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AndroidWiFiSecurityType>(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType>(); } },
             };
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("connectWhenNetworkNameIsHidden", ConnectWhenNetworkNameIsHidden);
             writer.WriteStringValue("networkName", NetworkName);
             writer.WriteStringValue("ssid", Ssid);
-            writer.WriteEnumValue<AndroidWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }
     }
 }

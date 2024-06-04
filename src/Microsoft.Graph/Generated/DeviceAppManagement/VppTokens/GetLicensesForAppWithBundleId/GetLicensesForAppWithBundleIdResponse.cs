@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
 {
     [Obsolete("This class is obsolete. Use GetLicensesForAppWithBundleIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetLicensesForAppWithBundleIdResponse : GetLicensesForAppWithBundleIdGetResponse, IParsable
+    public class GetLicensesForAppWithBundleIdResponse : Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetLicensesForAppWithBundleIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetLicensesForAppWithBundleIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetLicensesForAppWithBundleIdResponse();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdResponse();
         }
     }
 }

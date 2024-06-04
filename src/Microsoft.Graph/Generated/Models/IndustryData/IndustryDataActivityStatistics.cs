@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>The status property</summary>
-        public IndustryDataActivityStatus? Status
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus? Status
         {
-            get { return BackingStore?.Get<IndustryDataActivityStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IndustryDataActivityStatistics"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics"/> and sets the default values.
         /// </summary>
         public IndustryDataActivityStatistics()
         {
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataActivityStatistics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IndustryDataActivityStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.inboundActivityResults" => new InboundActivityResults(),
-                _ => new IndustryDataActivityStatistics(),
+                "#microsoft.graph.industryData.inboundActivityResults" => new Microsoft.Graph.Beta.Models.IndustryData.InboundActivityResults(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics(),
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
                 { "activityId", n => { ActivityId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<IndustryDataActivityStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus>(); } },
             };
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<IndustryDataActivityStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

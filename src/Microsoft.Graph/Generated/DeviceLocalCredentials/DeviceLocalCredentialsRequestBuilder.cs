@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
     public class DeviceLocalCredentialsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceLocalCredentials.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceLocalCredentials.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
         /// <param name="position">The unique identifier of deviceLocalCredentialInfo</param>
-        /// <returns>A <see cref="DeviceLocalCredentialInfoItemRequestBuilder"/></returns>
-        public DeviceLocalCredentialInfoItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceLocalCredentials.Item.DeviceLocalCredentialInfoItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceLocalCredentials.Item.DeviceLocalCredentialInfoItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceLocalCredentialInfo%2Did", position);
-                return new DeviceLocalCredentialInfoItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceLocalCredentials.Item.DeviceLocalCredentialInfoItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceLocalCredentialsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceLocalCredentialsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
         /// <summary>
         /// Get entities from deviceLocalCredentials
         /// </summary>
-        /// <returns>A <see cref="DeviceLocalCredentialInfoCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceLocalCredentialInfoCollectionResponse?> GetAsync(Action<RequestConfiguration<DeviceLocalCredentialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfoCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder.DeviceLocalCredentialsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceLocalCredentialInfoCollectionResponse> GetAsync(Action<RequestConfiguration<DeviceLocalCredentialsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfoCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder.DeviceLocalCredentialsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceLocalCredentialInfoCollectionResponse>(requestInfo, DeviceLocalCredentialInfoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfoCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to deviceLocalCredentials
         /// </summary>
-        /// <returns>A <see cref="DeviceLocalCredentialInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceLocalCredentialInfo?> PostAsync(DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo?> PostAsync(Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceLocalCredentialInfo> PostAsync(DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo> PostAsync(Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceLocalCredentialInfo>(requestInfo, DeviceLocalCredentialInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo>(requestInfo, Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from deviceLocalCredentials
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceLocalCredentialsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder.DeviceLocalCredentialsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceLocalCredentialsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder.DeviceLocalCredentialsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceLocalCredentialsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceLocalCredentialsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceLocalCredentialsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from deviceLocalCredentials
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceLocalCredentialsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceLocalCredentialsRequestBuilderGetQueryParameters>
+        public class DeviceLocalCredentialsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder.DeviceLocalCredentialsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

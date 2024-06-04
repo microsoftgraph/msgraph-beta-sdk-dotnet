@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
 {
     [Obsolete("This class is obsolete. Use GetShiftsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetShiftsResponse : GetShiftsGetResponse, IParsable
+    public class GetShiftsResponse : Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetShiftsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetShiftsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetShiftsResponse();
+            return new Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse();
         }
     }
 }

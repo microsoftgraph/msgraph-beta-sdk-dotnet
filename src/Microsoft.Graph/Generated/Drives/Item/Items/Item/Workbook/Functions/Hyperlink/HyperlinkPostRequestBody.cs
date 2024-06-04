@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperli
         /// <summary>The friendlyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FriendlyName
+        public Microsoft.Graph.Beta.Models.Json? FriendlyName
         {
-            get { return BackingStore?.Get<Json?>("friendlyName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("friendlyName"); }
             set { BackingStore?.Set("friendlyName", value); }
         }
 #nullable restore
 #else
-        public Json FriendlyName
+        public Microsoft.Graph.Beta.Models.Json FriendlyName
         {
-            get { return BackingStore?.Get<Json>("friendlyName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("friendlyName"); }
             set { BackingStore?.Set("friendlyName", value); }
         }
 #endif
         /// <summary>The linkLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LinkLocation
+        public Microsoft.Graph.Beta.Models.Json? LinkLocation
         {
-            get { return BackingStore?.Get<Json?>("linkLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("linkLocation"); }
             set { BackingStore?.Set("linkLocation", value); }
         }
 #nullable restore
 #else
-        public Json LinkLocation
+        public Microsoft.Graph.Beta.Models.Json LinkLocation
         {
-            get { return BackingStore?.Get<Json>("linkLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("linkLocation"); }
             set { BackingStore?.Set("linkLocation", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HyperlinkPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperlink.HyperlinkPostRequestBody"/> and sets the default values.
         /// </summary>
         public HyperlinkPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperli
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HyperlinkPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperlink.HyperlinkPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static HyperlinkPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperlink.HyperlinkPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HyperlinkPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperlink.HyperlinkPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperli
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "friendlyName", n => { FriendlyName = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "linkLocation", n => { LinkLocation = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "friendlyName", n => { FriendlyName = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "linkLocation", n => { LinkLocation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hyperli
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("friendlyName", FriendlyName);
-            writer.WriteObjectValue<Json>("linkLocation", LinkLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("friendlyName", FriendlyName);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("linkLocation", LinkLocation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

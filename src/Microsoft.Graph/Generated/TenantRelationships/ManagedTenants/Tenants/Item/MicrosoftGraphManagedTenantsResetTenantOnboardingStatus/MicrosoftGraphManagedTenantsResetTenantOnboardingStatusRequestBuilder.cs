@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.M
     public class MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus.MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.M
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus.MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.M
         /// Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multitenant management platform using the offboardTenant action. By invoking this action the platform attempts to onboard the managed tenant for management.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Tenant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.Tenant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Tenant?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.Tenant?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Tenant> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.Tenant> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Tenant>(requestInfo, Tenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.Tenant>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.Tenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multitenant management platform using the offboardTenant action. By invoking this action the platform attempts to onboard the managed tenant for management.
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.M
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus.MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus.MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder WithUrl(string rawUrl)
         {
-            return new MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus.MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

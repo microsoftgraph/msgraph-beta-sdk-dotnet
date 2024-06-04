@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>The state property</summary>
-        public Status? State
+        public Microsoft.Graph.Beta.Models.Networkaccess.Status? State
         {
-            get { return BackingStore?.Get<Status?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Status?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Version.</summary>
@@ -51,17 +51,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyLink"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicyLink CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.filteringPolicyLink" => new FilteringPolicyLink(),
-                "#microsoft.graph.networkaccess.forwardingPolicyLink" => new ForwardingPolicyLink(),
-                _ => new PolicyLink(),
+                "#microsoft.graph.networkaccess.filteringPolicyLink" => new Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyLink(),
+                "#microsoft.graph.networkaccess.forwardingPolicyLink" => new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyLink(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink(),
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Policy>(Microsoft.Graph.Beta.Models.Networkaccess.Policy.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<Status>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Policy>("policy", Policy);
-            writer.WriteEnumValue<Status>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>("state", State);
             writer.WriteStringValue("version", Version);
         }
     }

@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CrossTenantAccess"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccess"/> and sets the default values.
         /// </summary>
         public CrossTenantAccess()
         {
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CrossTenantAccess"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccess"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CrossTenantAccess CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CrossTenantAccess();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccess();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 { "resourceTenantName", n => { ResourceTenantName = n.GetStringValue(); } },
                 { "resourceTenantPrimaryDomain", n => { ResourceTenantPrimaryDomain = n.GetStringValue(); } },
-                { "usageStatus", n => { UsageStatus = n.GetEnumValue<UsageStatus>(); } },
+                { "usageStatus", n => { UsageStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.UsageStatus>(); } },
                 { "userCount", n => { UserCount = n.GetLongValue(); } },
             };
         }
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteStringValue("resourceTenantName", ResourceTenantName);
             writer.WriteStringValue("resourceTenantPrimaryDomain", ResourceTenantPrimaryDomain);
-            writer.WriteEnumValue<UsageStatus>("usageStatus", UsageStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.UsageStatus>("usageStatus", UsageStatus);
             writer.WriteLongValue("userCount", UserCount);
             writer.WriteAdditionalData(AdditionalData);
         }

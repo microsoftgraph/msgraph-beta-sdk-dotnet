@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
     public class AuditLogQueryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the records property of the microsoft.graph.security.auditLogQuery entity.</summary>
-        public RecordsRequestBuilder Records
+        public Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.Records.RecordsRequestBuilder Records
         {
-            get => new RecordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.Records.RecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuditLogQueryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuditLogQueryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,50 +64,50 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// Read the properties and relationships of an auditLogQuery object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-auditlogquery-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="AuditLogQuery"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AuditLogQuery"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuditLogQuery?> GetAsync(Action<RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AuditLogQuery?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder.AuditLogQueryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuditLogQuery> GetAsync(Action<RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AuditLogQuery> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder.AuditLogQueryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuditLogQuery>(requestInfo, AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property queries in security
         /// </summary>
-        /// <returns>A <see cref="AuditLogQuery"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AuditLogQuery"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuditLogQuery?> PatchAsync(AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AuditLogQuery?> PatchAsync(Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuditLogQuery> PatchAsync(AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.AuditLogQuery> PatchAsync(Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuditLogQuery>(requestInfo, AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuditLogQuery>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property queries for security
@@ -135,11 +135,11 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder.AuditLogQueryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder.AuditLogQueryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Security.AuditLogQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuditLogQueryItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuditLogQueryItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuditLogQueryItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuditLogQueryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters>
+        public class AuditLogQueryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.AuditLogQueryItemRequestBuilder.AuditLogQueryItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

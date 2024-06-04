@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ApplicationEnforcedRestrictionsSessionControl? ApplicationEnforcedRestrictions
+        public Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl? ApplicationEnforcedRestrictions
         {
-            get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl?>("applicationEnforcedRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl?>("applicationEnforcedRestrictions"); }
             set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
 #nullable restore
 #else
-        public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions
+        public Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions
         {
-            get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions"); }
             set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
 #endif
@@ -38,32 +38,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Session control to apply cloud app security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudAppSecuritySessionControl? CloudAppSecurity
+        public Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl? CloudAppSecurity
         {
-            get { return BackingStore?.Get<CloudAppSecuritySessionControl?>("cloudAppSecurity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl?>("cloudAppSecurity"); }
             set { BackingStore?.Set("cloudAppSecurity", value); }
         }
 #nullable restore
 #else
-        public CloudAppSecuritySessionControl CloudAppSecurity
+        public Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl CloudAppSecurity
         {
-            get { return BackingStore?.Get<CloudAppSecuritySessionControl>("cloudAppSecurity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl>("cloudAppSecurity"); }
             set { BackingStore?.Set("cloudAppSecurity", value); }
         }
 #endif
         /// <summary>Session control for continuous access evaluation settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContinuousAccessEvaluationSessionControl? ContinuousAccessEvaluation
+        public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl? ContinuousAccessEvaluation
         {
-            get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl?>("continuousAccessEvaluation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl?>("continuousAccessEvaluation"); }
             set { BackingStore?.Set("continuousAccessEvaluation", value); }
         }
 #nullable restore
 #else
-        public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation
+        public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation
         {
-            get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation"); }
             set { BackingStore?.Set("continuousAccessEvaluation", value); }
         }
 #endif
@@ -92,53 +92,53 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PersistentBrowserSessionControl? PersistentBrowser
+        public Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl? PersistentBrowser
         {
-            get { return BackingStore?.Get<PersistentBrowserSessionControl?>("persistentBrowser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl?>("persistentBrowser"); }
             set { BackingStore?.Set("persistentBrowser", value); }
         }
 #nullable restore
 #else
-        public PersistentBrowserSessionControl PersistentBrowser
+        public Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl PersistentBrowser
         {
-            get { return BackingStore?.Get<PersistentBrowserSessionControl>("persistentBrowser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl>("persistentBrowser"); }
             set { BackingStore?.Set("persistentBrowser", value); }
         }
 #endif
         /// <summary>Session control to require sign in sessions to be bound to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecureSignInSessionControl? SecureSignInSession
+        public Microsoft.Graph.Beta.Models.SecureSignInSessionControl? SecureSignInSession
         {
-            get { return BackingStore?.Get<SecureSignInSessionControl?>("secureSignInSession"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecureSignInSessionControl?>("secureSignInSession"); }
             set { BackingStore?.Set("secureSignInSession", value); }
         }
 #nullable restore
 #else
-        public SecureSignInSessionControl SecureSignInSession
+        public Microsoft.Graph.Beta.Models.SecureSignInSessionControl SecureSignInSession
         {
-            get { return BackingStore?.Get<SecureSignInSessionControl>("secureSignInSession"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecureSignInSessionControl>("secureSignInSession"); }
             set { BackingStore?.Set("secureSignInSession", value); }
         }
 #endif
         /// <summary>Session control to enforce signin frequency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInFrequencySessionControl? SignInFrequency
+        public Microsoft.Graph.Beta.Models.SignInFrequencySessionControl? SignInFrequency
         {
-            get { return BackingStore?.Get<SignInFrequencySessionControl?>("signInFrequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInFrequencySessionControl?>("signInFrequency"); }
             set { BackingStore?.Set("signInFrequency", value); }
         }
 #nullable restore
 #else
-        public SignInFrequencySessionControl SignInFrequency
+        public Microsoft.Graph.Beta.Models.SignInFrequencySessionControl SignInFrequency
         {
-            get { return BackingStore?.Get<SignInFrequencySessionControl>("signInFrequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInFrequencySessionControl>("signInFrequency"); }
             set { BackingStore?.Set("signInFrequency", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessSessionControls"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessSessionControls"/> and sets the default values.
         /// </summary>
         public ConditionalAccessSessionControls()
         {
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessSessionControls"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessSessionControls"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessSessionControls CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConditionalAccessSessionControls CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessSessionControls();
+            return new Microsoft.Graph.Beta.Models.ConditionalAccessSessionControls();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,14 +163,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applicationEnforcedRestrictions", n => { ApplicationEnforcedRestrictions = n.GetObjectValue<ApplicationEnforcedRestrictionsSessionControl>(ApplicationEnforcedRestrictionsSessionControl.CreateFromDiscriminatorValue); } },
-                { "cloudAppSecurity", n => { CloudAppSecurity = n.GetObjectValue<CloudAppSecuritySessionControl>(CloudAppSecuritySessionControl.CreateFromDiscriminatorValue); } },
-                { "continuousAccessEvaluation", n => { ContinuousAccessEvaluation = n.GetObjectValue<ContinuousAccessEvaluationSessionControl>(ContinuousAccessEvaluationSessionControl.CreateFromDiscriminatorValue); } },
+                { "applicationEnforcedRestrictions", n => { ApplicationEnforcedRestrictions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl>(Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl.CreateFromDiscriminatorValue); } },
+                { "cloudAppSecurity", n => { CloudAppSecurity = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl>(Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl.CreateFromDiscriminatorValue); } },
+                { "continuousAccessEvaluation", n => { ContinuousAccessEvaluation = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl>(Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl.CreateFromDiscriminatorValue); } },
                 { "disableResilienceDefaults", n => { DisableResilienceDefaults = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<PersistentBrowserSessionControl>(PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
-                { "secureSignInSession", n => { SecureSignInSession = n.GetObjectValue<SecureSignInSessionControl>(SecureSignInSessionControl.CreateFromDiscriminatorValue); } },
-                { "signInFrequency", n => { SignInFrequency = n.GetObjectValue<SignInFrequencySessionControl>(SignInFrequencySessionControl.CreateFromDiscriminatorValue); } },
+                { "persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl>(Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
+                { "secureSignInSession", n => { SecureSignInSession = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecureSignInSessionControl>(Microsoft.Graph.Beta.Models.SecureSignInSessionControl.CreateFromDiscriminatorValue); } },
+                { "signInFrequency", n => { SignInFrequency = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInFrequencySessionControl>(Microsoft.Graph.Beta.Models.SignInFrequencySessionControl.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -180,14 +180,14 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions", ApplicationEnforcedRestrictions);
-            writer.WriteObjectValue<CloudAppSecuritySessionControl>("cloudAppSecurity", CloudAppSecurity);
-            writer.WriteObjectValue<ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation", ContinuousAccessEvaluation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions", ApplicationEnforcedRestrictions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudAppSecuritySessionControl>("cloudAppSecurity", CloudAppSecurity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation", ContinuousAccessEvaluation);
             writer.WriteBoolValue("disableResilienceDefaults", DisableResilienceDefaults);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PersistentBrowserSessionControl>("persistentBrowser", PersistentBrowser);
-            writer.WriteObjectValue<SecureSignInSessionControl>("secureSignInSession", SecureSignInSession);
-            writer.WriteObjectValue<SignInFrequencySessionControl>("signInFrequency", SignInFrequency);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PersistentBrowserSessionControl>("persistentBrowser", PersistentBrowser);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecureSignInSessionControl>("secureSignInSession", SecureSignInSession);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInFrequencySessionControl>("signInFrequency", SignInFrequency);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

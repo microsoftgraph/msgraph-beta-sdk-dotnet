@@ -9,59 +9,59 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity which represents the Exchange OnPremises policy configured for a tenant.
     /// </summary>
-    public class DeviceManagementExchangeOnPremisesPolicy : Entity, IParsable
+    public class DeviceManagementExchangeOnPremisesPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementExchangeAccessRule>? AccessRules
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule>? AccessRules
         {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeAccessRule>?>("accessRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule>?>("accessRules"); }
             set { BackingStore?.Set("accessRules", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementExchangeAccessRule> AccessRules
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule> AccessRules
         {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeAccessRule>>("accessRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule>>("accessRules"); }
             set { BackingStore?.Set("accessRules", value); }
         }
 #endif
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesConditionalAccessSettings? ConditionalAccessSettings
+        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings? ConditionalAccessSettings
         {
-            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings?>("conditionalAccessSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings?>("conditionalAccessSettings"); }
             set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
 #nullable restore
 #else
-        public OnPremisesConditionalAccessSettings ConditionalAccessSettings
+        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings ConditionalAccessSettings
         {
-            get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
             set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
 #endif
         /// <summary>Access Level in Exchange.</summary>
-        public DeviceManagementExchangeAccessLevel? DefaultAccessLevel
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel? DefaultAccessLevel
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessLevel?>("defaultAccessLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel?>("defaultAccessLevel"); }
             set { BackingStore?.Set("defaultAccessLevel", value); }
         }
         /// <summary>The list of device classes known to Exchange</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementExchangeDeviceClass>? KnownDeviceClasses
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>? KnownDeviceClasses
         {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeDeviceClass>?>("knownDeviceClasses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>?>("knownDeviceClasses"); }
             set { BackingStore?.Set("knownDeviceClasses", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementExchangeDeviceClass> KnownDeviceClasses
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass> KnownDeviceClasses
         {
-            get { return BackingStore?.Get<List<DeviceManagementExchangeDeviceClass>>("knownDeviceClasses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>>("knownDeviceClasses"); }
             set { BackingStore?.Set("knownDeviceClasses", value); }
         }
 #endif
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementExchangeOnPremisesPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementExchangeOnPremisesPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementExchangeOnPremisesPolicy();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessRules", n => { AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>(DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "conditionalAccessSettings", n => { ConditionalAccessSettings = n.GetObjectValue<OnPremisesConditionalAccessSettings>(OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
-                { "defaultAccessLevel", n => { DefaultAccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
-                { "knownDeviceClasses", n => { KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessRules", n => { AccessRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccessSettings", n => { ConditionalAccessSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>(Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
+                { "defaultAccessLevel", n => { DefaultAccessLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel>(); } },
+                { "knownDeviceClasses", n => { KnownDeviceClasses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "notificationContent", n => { NotificationContent = n.GetByteArrayValue(); } },
             };
         }
@@ -114,10 +114,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementExchangeAccessRule>("accessRules", AccessRules);
-            writer.WriteObjectValue<OnPremisesConditionalAccessSettings>("conditionalAccessSettings", ConditionalAccessSettings);
-            writer.WriteEnumValue<DeviceManagementExchangeAccessLevel>("defaultAccessLevel", DefaultAccessLevel);
-            writer.WriteCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>("knownDeviceClasses", KnownDeviceClasses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule>("accessRules", AccessRules);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>("conditionalAccessSettings", ConditionalAccessSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel>("defaultAccessLevel", DefaultAccessLevel);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>("knownDeviceClasses", KnownDeviceClasses);
             writer.WriteByteArrayValue("notificationContent", NotificationContent);
         }
     }

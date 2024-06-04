@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IpApplicationSegment : ApplicationSegment, IParsable
+    public class IpApplicationSegment : Microsoft.Graph.Beta.Models.ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application property</summary>
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The destinationType property</summary>
-        public PrivateNetworkDestinationType? DestinationType
+        public Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType? DestinationType
         {
-            get { return BackingStore?.Get<PrivateNetworkDestinationType?>("destinationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType?>("destinationType"); }
             set { BackingStore?.Set("destinationType", value); }
         }
         /// <summary>The port property</summary>
@@ -71,13 +71,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The protocol property</summary>
-        public PrivateNetworkProtocol? Protocol
+        public Microsoft.Graph.Beta.Models.PrivateNetworkProtocol? Protocol
         {
-            get { return BackingStore?.Get<PrivateNetworkProtocol?>("protocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivateNetworkProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IpApplicationSegment"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IpApplicationSegment"/> and sets the default values.
         /// </summary>
         public IpApplicationSegment() : base()
         {
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IpApplicationSegment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IpApplicationSegment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IpApplicationSegment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IpApplicationSegment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IpApplicationSegment();
+            return new Microsoft.Graph.Beta.Models.IpApplicationSegment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,10 +103,10 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue); } },
                 { "destinationHost", n => { DestinationHost = n.GetStringValue(); } },
-                { "destinationType", n => { DestinationType = n.GetEnumValue<PrivateNetworkDestinationType>(); } },
+                { "destinationType", n => { DestinationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType>(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "protocol", n => { Protocol = n.GetEnumValue<PrivateNetworkProtocol>(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrivateNetworkProtocol>(); } },
             };
         }
         /// <summary>
@@ -119,10 +119,10 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Application>("application", Application);
             writer.WriteStringValue("destinationHost", DestinationHost);
-            writer.WriteEnumValue<PrivateNetworkDestinationType>("destinationType", DestinationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrivateNetworkDestinationType>("destinationType", DestinationType);
             writer.WriteIntValue("port", Port);
             writer.WriteCollectionOfPrimitiveValues<string>("ports", Ports);
-            writer.WriteEnumValue<PrivateNetworkProtocol>("protocol", Protocol);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrivateNetworkProtocol>("protocol", Protocol);
         }
     }
 }

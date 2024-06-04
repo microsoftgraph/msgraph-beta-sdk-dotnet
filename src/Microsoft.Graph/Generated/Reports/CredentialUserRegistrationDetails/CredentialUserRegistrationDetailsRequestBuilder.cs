@@ -20,25 +20,25 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.</summary>
         /// <param name="position">The unique identifier of credentialUserRegistrationDetails</param>
-        /// <returns>A <see cref="CredentialUserRegistrationDetailsItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Item.CredentialUserRegistrationDetailsItemRequestBuilder"/></returns>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails")]
-        public CredentialUserRegistrationDetailsItemRequestBuilder this[string position]
+        public Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Item.CredentialUserRegistrationDetailsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("credentialUserRegistrationDetails%2Did", position);
-                return new CredentialUserRegistrationDetailsItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Item.CredentialUserRegistrationDetailsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CredentialUserRegistrationDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CredentialUserRegistrationDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,26 +57,26 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
         /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="CredentialUserRegistrationDetailsCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetailsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CredentialUserRegistrationDetailsCollectionResponse?> GetAsync(Action<RequestConfiguration<CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetailsCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder.CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CredentialUserRegistrationDetailsCollectionResponse> GetAsync(Action<RequestConfiguration<CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetailsCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder.CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CredentialUserRegistrationDetailsCollectionResponse>(requestInfo, CredentialUserRegistrationDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetailsCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to credentialUserRegistrationDetails for reports
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder.CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder.CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -150,12 +150,12 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CredentialUserRegistrationDetailsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails")]
-        public CredentialUserRegistrationDetailsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CredentialUserRegistrationDetailsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>
+        public class CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder.CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

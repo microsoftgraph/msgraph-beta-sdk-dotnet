@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Show the home button; clicking the home button loads the New tab page.
     /// </summary>
-    public class EdgeHomeButtonOpensNewTab : EdgeHomeButtonConfiguration, IParsable
+    public class EdgeHomeButtonOpensNewTab : Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="EdgeHomeButtonOpensNewTab"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EdgeHomeButtonOpensNewTab"/> and sets the default values.
         /// </summary>
         public EdgeHomeButtonOpensNewTab() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdgeHomeButtonOpensNewTab"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EdgeHomeButtonOpensNewTab"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdgeHomeButtonOpensNewTab CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EdgeHomeButtonOpensNewTab CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdgeHomeButtonOpensNewTab();
+            return new Microsoft.Graph.Beta.Models.EdgeHomeButtonOpensNewTab();
         }
         /// <summary>
         /// The deserialization information for the current model

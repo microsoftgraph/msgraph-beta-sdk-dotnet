@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcProvisioningPolicyAssignment : Entity, IParsable
+    public class CloudPcProvisioningPolicyAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? AssignedUsers
+        public List<Microsoft.Graph.Beta.Models.User>? AssignedUsers
         {
-            get { return BackingStore?.Get<List<User>?>("assignedUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("assignedUsers"); }
             set { BackingStore?.Set("assignedUsers", value); }
         }
 #nullable restore
 #else
-        public List<User> AssignedUsers
+        public List<Microsoft.Graph.Beta.Models.User> AssignedUsers
         {
-            get { return BackingStore?.Get<List<User>>("assignedUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("assignedUsers"); }
             set { BackingStore?.Set("assignedUsers", value); }
         }
 #endif
         /// <summary>The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcManagementAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<CloudPcManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public CloudPcManagementAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<CloudPcManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcProvisioningPolicyAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcProvisioningPolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcProvisioningPolicyAssignment();
+            return new Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedUsers", n => { AssignedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "target", n => { Target = n.GetObjectValue<CloudPcManagementAssignmentTarget>(CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "assignedUsers", n => { AssignedUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<User>("assignedUsers", AssignedUsers);
-            writer.WriteObjectValue<CloudPcManagementAssignmentTarget>("target", Target);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("assignedUsers", AssignedUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcManagementAssignmentTarget>("target", Target);
         }
     }
 }

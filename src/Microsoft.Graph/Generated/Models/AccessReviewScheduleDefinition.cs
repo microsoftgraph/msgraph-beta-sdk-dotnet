@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewScheduleDefinition : Entity, IParsable
+    public class AccessReviewScheduleDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the list of additional users or group members to be notified of the access review progress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewNotificationRecipientItem>? AdditionalNotificationRecipients
+        public List<Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem>? AdditionalNotificationRecipients
         {
-            get { return BackingStore?.Get<List<AccessReviewNotificationRecipientItem>?>("additionalNotificationRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem>?>("additionalNotificationRecipients"); }
             set { BackingStore?.Set("additionalNotificationRecipients", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewNotificationRecipientItem> AdditionalNotificationRecipients
+        public List<Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem> AdditionalNotificationRecipients
         {
-            get { return BackingStore?.Get<List<AccessReviewNotificationRecipientItem>>("additionalNotificationRecipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem>>("additionalNotificationRecipients"); }
             set { BackingStore?.Set("additionalNotificationRecipients", value); }
         }
 #endif
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn&apos;t exist, or manager is specified as reviewer but a user&apos;s manager doesn&apos;t exist.  Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? BackupReviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>? BackupReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("backupReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>?>("backupReviewers"); }
             set { BackingStore?.Set("backupReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> BackupReviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope> BackupReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("backupReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>>("backupReviewers"); }
             set { BackingStore?.Set("backupReviewers", value); }
         }
 #endif
         /// <summary>User who created this review. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -115,48 +115,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn&apos;t exist, or manager is specified as reviewer but a user&apos;s manager doesn&apos;t exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? FallbackReviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>? FallbackReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> FallbackReviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope> FallbackReviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #endif
         /// <summary>This property is required when scoping a review to guest users&apos; access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group becomes a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewScope? InstanceEnumerationScope
+        public Microsoft.Graph.Beta.Models.AccessReviewScope? InstanceEnumerationScope
         {
-            get { return BackingStore?.Get<AccessReviewScope?>("instanceEnumerationScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewScope?>("instanceEnumerationScope"); }
             set { BackingStore?.Set("instanceEnumerationScope", value); }
         }
 #nullable restore
 #else
-        public AccessReviewScope InstanceEnumerationScope
+        public Microsoft.Graph.Beta.Models.AccessReviewScope InstanceEnumerationScope
         {
-            get { return BackingStore?.Get<AccessReviewScope>("instanceEnumerationScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewScope>("instanceEnumerationScope"); }
             set { BackingStore?.Set("instanceEnumerationScope", value); }
         }
 #endif
         /// <summary>Set of access reviews instances for this access review series. Access reviews that don&apos;t recur will only have one instance; otherwise, there&apos;s an instance for each recurrence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewInstance>? Instances
+        public List<Microsoft.Graph.Beta.Models.AccessReviewInstance>? Instances
         {
-            get { return BackingStore?.Get<List<AccessReviewInstance>?>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewInstance>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewInstance> Instances
+        public List<Microsoft.Graph.Beta.Models.AccessReviewInstance> Instances
         {
-            get { return BackingStore?.Get<List<AccessReviewInstance>>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewInstance>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
@@ -169,64 +169,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will be ignored if reviewers are assigned through the stageSettings property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? Reviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>? Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> Reviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope> Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
         /// <summary>Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewScope? Scope
+        public Microsoft.Graph.Beta.Models.AccessReviewScope? Scope
         {
-            get { return BackingStore?.Get<AccessReviewScope?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public AccessReviewScope Scope
+        public Microsoft.Graph.Beta.Models.AccessReviewScope Scope
         {
-            get { return BackingStore?.Get<AccessReviewScope>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewScope>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #endif
         /// <summary>The settings for an access review series, see type definition below. Supports $select. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewScheduleSettings? Settings
+        public Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings? Settings
         {
-            get { return BackingStore?.Get<AccessReviewScheduleSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public AccessReviewScheduleSettings Settings
+        public Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings Settings
         {
-            get { return BackingStore?.Get<AccessReviewScheduleSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages are created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewStageSettings>? StageSettings
+        public List<Microsoft.Graph.Beta.Models.AccessReviewStageSettings>? StageSettings
         {
-            get { return BackingStore?.Get<List<AccessReviewStageSettings>?>("stageSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewStageSettings>?>("stageSettings"); }
             set { BackingStore?.Set("stageSettings", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewStageSettings> StageSettings
+        public List<Microsoft.Graph.Beta.Models.AccessReviewStageSettings> StageSettings
         {
-            get { return BackingStore?.Get<List<AccessReviewStageSettings>>("stageSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewStageSettings>>("stageSettings"); }
             set { BackingStore?.Set("stageSettings", value); }
         }
 #endif
@@ -249,12 +249,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewScheduleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewScheduleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewScheduleDefinition();
+            return new Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -264,21 +264,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "additionalNotificationRecipients", n => { AdditionalNotificationRecipients = n.GetCollectionOfObjectValues<AccessReviewNotificationRecipientItem>(AccessReviewNotificationRecipientItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "backupReviewers", n => { BackupReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "additionalNotificationRecipients", n => { AdditionalNotificationRecipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem>(Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "backupReviewers", n => { BackupReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>(Microsoft.Graph.Beta.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
                 { "descriptionForReviewers", n => { DescriptionForReviewers = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "instanceEnumerationScope", n => { InstanceEnumerationScope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
-                { "instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>(Microsoft.Graph.Beta.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "instanceEnumerationScope", n => { InstanceEnumerationScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewScope>(Microsoft.Graph.Beta.Models.AccessReviewScope.CreateFromDiscriminatorValue); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewInstance>(Microsoft.Graph.Beta.Models.AccessReviewInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "scope", n => { Scope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<AccessReviewScheduleSettings>(AccessReviewScheduleSettings.CreateFromDiscriminatorValue); } },
-                { "stageSettings", n => { StageSettings = n.GetCollectionOfObjectValues<AccessReviewStageSettings>(AccessReviewStageSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>(Microsoft.Graph.Beta.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scope", n => { Scope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewScope>(Microsoft.Graph.Beta.Models.AccessReviewScope.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings>(Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings.CreateFromDiscriminatorValue); } },
+                { "stageSettings", n => { StageSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewStageSettings>(Microsoft.Graph.Beta.Models.AccessReviewStageSettings.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -290,21 +290,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewNotificationRecipientItem>("additionalNotificationRecipients", AdditionalNotificationRecipients);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("backupReviewers", BackupReviewers);
-            writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewNotificationRecipientItem>("additionalNotificationRecipients", AdditionalNotificationRecipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>("backupReviewers", BackupReviewers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("descriptionForAdmins", DescriptionForAdmins);
             writer.WriteStringValue("descriptionForReviewers", DescriptionForReviewers);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
-            writer.WriteObjectValue<AccessReviewScope>("instanceEnumerationScope", InstanceEnumerationScope);
-            writer.WriteCollectionOfObjectValues<AccessReviewInstance>("instances", Instances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewScope>("instanceEnumerationScope", InstanceEnumerationScope);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewInstance>("instances", Instances);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewerScope>("reviewers", Reviewers);
-            writer.WriteObjectValue<AccessReviewScope>("scope", Scope);
-            writer.WriteObjectValue<AccessReviewScheduleSettings>("settings", Settings);
-            writer.WriteCollectionOfObjectValues<AccessReviewStageSettings>("stageSettings", StageSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewerScope>("reviewers", Reviewers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewScope>("scope", Scope);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewScheduleSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewStageSettings>("stageSettings", StageSettings);
             writer.WriteStringValue("status", Status);
         }
     }

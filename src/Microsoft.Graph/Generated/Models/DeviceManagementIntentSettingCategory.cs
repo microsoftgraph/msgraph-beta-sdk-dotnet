@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing an intent setting category
     /// </summary>
-    public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable
+    public class DeviceManagementIntentSettingCategory : Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory, IParsable
     {
         /// <summary>The settings this category contains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>? Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance> Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntentSettingCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementIntentSettingCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementIntentSettingCategory();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>("settings", Settings);
         }
     }
 }

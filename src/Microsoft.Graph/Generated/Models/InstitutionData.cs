@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Address or location of the institute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Location
+        public Microsoft.Graph.Beta.Models.PhysicalAddress? Location
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddress?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Location
+        public Microsoft.Graph.Beta.Models.PhysicalAddress Location
         {
-            get { return BackingStore?.Get<PhysicalAddress>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddress>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InstitutionData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.InstitutionData"/> and sets the default values.
         /// </summary>
         public InstitutionData()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InstitutionData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InstitutionData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InstitutionData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.InstitutionData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InstitutionData();
+            return new Microsoft.Graph.Beta.Models.InstitutionData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.PhysicalAddress>(Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<PhysicalAddress>("location", Location);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PhysicalAddress>("location", Location);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);

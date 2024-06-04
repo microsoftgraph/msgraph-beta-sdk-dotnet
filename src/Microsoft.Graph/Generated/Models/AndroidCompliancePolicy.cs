@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This class contains compliance settings for Android.
     /// </summary>
-    public class AndroidCompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class AndroidCompliancePolicy : Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("advancedThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Condition statement id.</summary>
@@ -40,9 +40,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Minimum Android security patch level.</summary>
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Android required password type.</summary>
-        public AndroidRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign-in failures allowed before factory reset. Valid values 1 to 16</summary>
@@ -136,24 +136,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
             set { BackingStore?.Set("requiredPasswordComplexity", value); }
         }
         /// <summary>Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? RestrictedApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? RestrictedApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("restrictedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> RestrictedApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem> RestrictedApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("restrictedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
 #endif
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidCompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidCompliancePolicy"/> and sets the default values.
         /// </summary>
         public AndroidCompliancePolicy() : base()
         {
@@ -233,12 +233,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidCompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidCompliancePolicy();
+            return new Microsoft.Graph.Beta.Models.AndroidCompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -248,10 +248,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
                 { "conditionStatementId", n => { ConditionStatementId = n.GetStringValue(); } },
                 { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
                 { "minAndroidSecurityPatchLevel", n => { MinAndroidSecurityPatchLevel = n.GetStringValue(); } },
                 { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
@@ -260,10 +260,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
-                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
-                { "restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>(); } },
+                { "restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "securityBlockDeviceAdministratorManagedDevices", n => { SecurityBlockDeviceAdministratorManagedDevices = n.GetBoolValue(); } },
                 { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
                 { "securityDisableUsbDebugging", n => { SecurityDisableUsbDebugging = n.GetBoolValue(); } },
@@ -285,10 +285,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("advancedThreatProtectionRequiredSecurityLevel", AdvancedThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("advancedThreatProtectionRequiredSecurityLevel", AdvancedThreatProtectionRequiredSecurityLevel);
             writer.WriteStringValue("conditionStatementId", ConditionStatementId);
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteStringValue("minAndroidSecurityPatchLevel", MinAndroidSecurityPatchLevel);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
             writer.WriteStringValue("osMinimumVersion", OsMinimumVersion);
@@ -297,10 +297,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeLock", PasswordMinutesOfInactivityBeforeLock);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
-            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
-            writer.WriteCollectionOfObjectValues<AppListItem>("restrictedApps", RestrictedApps);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("restrictedApps", RestrictedApps);
             writer.WriteBoolValue("securityBlockDeviceAdministratorManagedDevices", SecurityBlockDeviceAdministratorManagedDevices);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
             writer.WriteBoolValue("securityDisableUsbDebugging", SecurityDisableUsbDebugging);

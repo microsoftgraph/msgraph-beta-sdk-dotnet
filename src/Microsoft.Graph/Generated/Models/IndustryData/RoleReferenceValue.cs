@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
     #pragma warning disable CS1591
-    public class RoleReferenceValue : ReferenceValue, IParsable
+    public class RoleReferenceValue : Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="RoleReferenceValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue"/> and sets the default values.
         /// </summary>
         public RoleReferenceValue() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleReferenceValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RoleReferenceValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RoleReferenceValue();
+            return new Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue();
         }
         /// <summary>
         /// The deserialization information for the current model

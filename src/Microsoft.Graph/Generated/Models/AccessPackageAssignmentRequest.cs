@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentRequest : Entity, IParsable
+    public class AccessPackageAssignmentRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAnswer>? Answers
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAnswer>? Answers
         {
-            get { return BackingStore?.Get<List<AccessPackageAnswer>?>("answers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAnswer>?>("answers"); }
             set { BackingStore?.Set("answers", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAnswer> Answers
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAnswer> Answers
         {
-            get { return BackingStore?.Get<List<AccessPackageAnswer>>("answers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAnswer>>("answers"); }
             set { BackingStore?.Set("answers", value); }
         }
 #endif
@@ -73,32 +73,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about all the custom extension calls that were made during the access package assignment request workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances
+        public List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances
         {
-            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
             set { BackingStore?.Set("customExtensionCalloutInstances", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances
+        public List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance> CustomExtensionCalloutInstances
         {
-            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
             set { BackingStore?.Set("customExtensionCalloutInstances", value); }
         }
 #endif
         /// <summary>A collection of custom workflow extension instances being run on an assignment request. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionHandlerInstance>? CustomExtensionHandlerInstances
+        public List<Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>? CustomExtensionHandlerInstances
         {
-            get { return BackingStore?.Get<List<CustomExtensionHandlerInstance>?>("customExtensionHandlerInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>?>("customExtensionHandlerInstances"); }
             set { BackingStore?.Set("customExtensionHandlerInstances", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances
+        public List<Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance> CustomExtensionHandlerInstances
         {
-            get { return BackingStore?.Get<List<CustomExtensionHandlerInstance>>("customExtensionHandlerInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>>("customExtensionHandlerInstances"); }
             set { BackingStore?.Set("customExtensionHandlerInstances", value); }
         }
 #endif
@@ -133,16 +133,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageSubject? Requestor
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject? Requestor
         {
-            get { return BackingStore?.Get<AccessPackageSubject?>("requestor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject?>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #nullable restore
 #else
-        public AccessPackageSubject Requestor
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject Requestor
         {
-            get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #endif
@@ -197,44 +197,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The range of dates that access is to be assigned to the requestor. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.RequestSchedule? Schedule
         {
-            get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule Schedule
+        public Microsoft.Graph.Beta.Models.RequestSchedule Schedule
         {
-            get { return BackingStore?.Get<RequestSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VerifiedCredentialData>? VerifiedCredentialsData
+        public List<Microsoft.Graph.Beta.Models.VerifiedCredentialData>? VerifiedCredentialsData
         {
-            get { return BackingStore?.Get<List<VerifiedCredentialData>?>("verifiedCredentialsData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VerifiedCredentialData>?>("verifiedCredentialsData"); }
             set { BackingStore?.Set("verifiedCredentialsData", value); }
         }
 #nullable restore
 #else
-        public List<VerifiedCredentialData> VerifiedCredentialsData
+        public List<Microsoft.Graph.Beta.Models.VerifiedCredentialData> VerifiedCredentialsData
         {
-            get { return BackingStore?.Get<List<VerifiedCredentialData>>("verifiedCredentialsData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VerifiedCredentialData>>("verifiedCredentialsData"); }
             set { BackingStore?.Set("verifiedCredentialsData", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentRequest();
+            return new Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -246,20 +246,20 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
                 { "accessPackageAssignment", n => { AccessPackageAssignment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignment>(Microsoft.Graph.Beta.Models.AccessPackageAssignment.CreateFromDiscriminatorValue); } },
-                { "answers", n => { Answers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "answers", n => { Answers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAnswer>(Microsoft.Graph.Beta.Models.AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "completedDate", n => { CompletedDate = n.GetDateTimeOffsetValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "customExtensionHandlerInstances", n => { CustomExtensionHandlerInstances = n.GetCollectionOfObjectValues<CustomExtensionHandlerInstance>(CustomExtensionHandlerInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>(Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customExtensionHandlerInstances", n => { CustomExtensionHandlerInstances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>(Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "requestState", n => { RequestState = n.GetStringValue(); } },
                 { "requestStatus", n => { RequestStatus = n.GetStringValue(); } },
                 { "requestType", n => { RequestType = n.GetStringValue(); } },
-                { "requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                { "verifiedCredentialsData", n => { VerifiedCredentialsData = n.GetCollectionOfObjectValues<VerifiedCredentialData>(VerifiedCredentialData.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requestor", n => { Requestor = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>(Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>(Microsoft.Graph.Beta.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "verifiedCredentialsData", n => { VerifiedCredentialsData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VerifiedCredentialData>(Microsoft.Graph.Beta.Models.VerifiedCredentialData.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -272,20 +272,20 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage", AccessPackage);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignment>("accessPackageAssignment", AccessPackageAssignment);
-            writer.WriteCollectionOfObjectValues<AccessPackageAnswer>("answers", Answers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAnswer>("answers", Answers);
             writer.WriteDateTimeOffsetValue("completedDate", CompletedDate);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
-            writer.WriteCollectionOfObjectValues<CustomExtensionHandlerInstance>("customExtensionHandlerInstances", CustomExtensionHandlerInstances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>("customExtensionHandlerInstances", CustomExtensionHandlerInstances);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<AccessPackageSubject>("requestor", Requestor);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>("requestor", Requestor);
             writer.WriteStringValue("requestState", RequestState);
             writer.WriteStringValue("requestStatus", RequestStatus);
             writer.WriteStringValue("requestType", RequestType);
-            writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);
-            writer.WriteCollectionOfObjectValues<VerifiedCredentialData>("verifiedCredentialsData", VerifiedCredentialsData);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>("schedule", Schedule);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VerifiedCredentialData>("verifiedCredentialsData", VerifiedCredentialsData);
         }
     }
 }

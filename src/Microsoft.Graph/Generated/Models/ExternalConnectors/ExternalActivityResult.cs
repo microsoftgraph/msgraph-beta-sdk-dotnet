@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors
 {
     #pragma warning disable CS1591
-    public class ExternalActivityResult : ExternalActivity, IParsable
+    public class ExternalActivityResult : Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalActivity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Error information that explains the failure to process an external activity.</summary>
@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalActivityResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalActivityResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalActivityResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalActivityResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalActivityResult();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalActivityResult();
         }
         /// <summary>
         /// The deserialization information for the current model

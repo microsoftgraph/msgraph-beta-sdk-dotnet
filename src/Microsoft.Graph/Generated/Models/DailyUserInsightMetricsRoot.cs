@@ -7,146 +7,146 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DailyUserInsightMetricsRoot : Entity, IParsable
+    public class DailyUserInsightMetricsRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Insights for active users on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActiveUsersMetric>? ActiveUsers
+        public List<Microsoft.Graph.Beta.Models.ActiveUsersMetric>? ActiveUsers
         {
-            get { return BackingStore?.Get<List<ActiveUsersMetric>?>("activeUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActiveUsersMetric>?>("activeUsers"); }
             set { BackingStore?.Set("activeUsers", value); }
         }
 #nullable restore
 #else
-        public List<ActiveUsersMetric> ActiveUsers
+        public List<Microsoft.Graph.Beta.Models.ActiveUsersMetric> ActiveUsers
         {
-            get { return BackingStore?.Get<List<ActiveUsersMetric>>("activeUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActiveUsersMetric>>("activeUsers"); }
             set { BackingStore?.Set("activeUsers", value); }
         }
 #endif
         /// <summary>Insights for authentications on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationsMetric>? Authentications
+        public List<Microsoft.Graph.Beta.Models.AuthenticationsMetric>? Authentications
         {
-            get { return BackingStore?.Get<List<AuthenticationsMetric>?>("authentications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationsMetric>?>("authentications"); }
             set { BackingStore?.Set("authentications", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationsMetric> Authentications
+        public List<Microsoft.Graph.Beta.Models.AuthenticationsMetric> Authentications
         {
-            get { return BackingStore?.Get<List<AuthenticationsMetric>>("authentications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationsMetric>>("authentications"); }
             set { BackingStore?.Set("authentications", value); }
         }
 #endif
         /// <summary>The inactiveUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DailyInactiveUsersMetric>? InactiveUsers
+        public List<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>? InactiveUsers
         {
-            get { return BackingStore?.Get<List<DailyInactiveUsersMetric>?>("inactiveUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>?>("inactiveUsers"); }
             set { BackingStore?.Set("inactiveUsers", value); }
         }
 #nullable restore
 #else
-        public List<DailyInactiveUsersMetric> InactiveUsers
+        public List<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric> InactiveUsers
         {
-            get { return BackingStore?.Get<List<DailyInactiveUsersMetric>>("inactiveUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>>("inactiveUsers"); }
             set { BackingStore?.Set("inactiveUsers", value); }
         }
 #endif
         /// <summary>The inactiveUsersByApplication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DailyInactiveUsersByApplicationMetric>? InactiveUsersByApplication
+        public List<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>? InactiveUsersByApplication
         {
-            get { return BackingStore?.Get<List<DailyInactiveUsersByApplicationMetric>?>("inactiveUsersByApplication"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>?>("inactiveUsersByApplication"); }
             set { BackingStore?.Set("inactiveUsersByApplication", value); }
         }
 #nullable restore
 #else
-        public List<DailyInactiveUsersByApplicationMetric> InactiveUsersByApplication
+        public List<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric> InactiveUsersByApplication
         {
-            get { return BackingStore?.Get<List<DailyInactiveUsersByApplicationMetric>>("inactiveUsersByApplication"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>>("inactiveUsersByApplication"); }
             set { BackingStore?.Set("inactiveUsersByApplication", value); }
         }
 #endif
         /// <summary>Insights for MFA usage on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MfaCompletionMetric>? MfaCompletions
+        public List<Microsoft.Graph.Beta.Models.MfaCompletionMetric>? MfaCompletions
         {
-            get { return BackingStore?.Get<List<MfaCompletionMetric>?>("mfaCompletions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MfaCompletionMetric>?>("mfaCompletions"); }
             set { BackingStore?.Set("mfaCompletions", value); }
         }
 #nullable restore
 #else
-        public List<MfaCompletionMetric> MfaCompletions
+        public List<Microsoft.Graph.Beta.Models.MfaCompletionMetric> MfaCompletions
         {
-            get { return BackingStore?.Get<List<MfaCompletionMetric>>("mfaCompletions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MfaCompletionMetric>>("mfaCompletions"); }
             set { BackingStore?.Set("mfaCompletions", value); }
         }
 #endif
         /// <summary>Total sign-ups on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSignUpMetric>? SignUps
+        public List<Microsoft.Graph.Beta.Models.UserSignUpMetric>? SignUps
         {
-            get { return BackingStore?.Get<List<UserSignUpMetric>?>("signUps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSignUpMetric>?>("signUps"); }
             set { BackingStore?.Set("signUps", value); }
         }
 #nullable restore
 #else
-        public List<UserSignUpMetric> SignUps
+        public List<Microsoft.Graph.Beta.Models.UserSignUpMetric> SignUps
         {
-            get { return BackingStore?.Get<List<UserSignUpMetric>>("signUps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSignUpMetric>>("signUps"); }
             set { BackingStore?.Set("signUps", value); }
         }
 #endif
         /// <summary>Summary of all usage insights on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InsightSummary>? Summary
+        public List<Microsoft.Graph.Beta.Models.InsightSummary>? Summary
         {
-            get { return BackingStore?.Get<List<InsightSummary>?>("summary"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InsightSummary>?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public List<InsightSummary> Summary
+        public List<Microsoft.Graph.Beta.Models.InsightSummary> Summary
         {
-            get { return BackingStore?.Get<List<InsightSummary>>("summary"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InsightSummary>>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #endif
         /// <summary>Insights for total users on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserCountMetric>? UserCount
+        public List<Microsoft.Graph.Beta.Models.UserCountMetric>? UserCount
         {
-            get { return BackingStore?.Get<List<UserCountMetric>?>("userCount"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCountMetric>?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
 #nullable restore
 #else
-        public List<UserCountMetric> UserCount
+        public List<Microsoft.Graph.Beta.Models.UserCountMetric> UserCount
         {
-            get { return BackingStore?.Get<List<UserCountMetric>>("userCount"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCountMetric>>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DailyUserInsightMetricsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DailyUserInsightMetricsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DailyUserInsightMetricsRoot();
+            return new Microsoft.Graph.Beta.Models.DailyUserInsightMetricsRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,14 +156,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activeUsers", n => { ActiveUsers = n.GetCollectionOfObjectValues<ActiveUsersMetric>(ActiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authentications", n => { Authentications = n.GetCollectionOfObjectValues<AuthenticationsMetric>(AuthenticationsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<DailyInactiveUsersMetric>(DailyInactiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<DailyInactiveUsersByApplicationMetric>(DailyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mfaCompletions", n => { MfaCompletions = n.GetCollectionOfObjectValues<MfaCompletionMetric>(MfaCompletionMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<UserSignUpMetric>(UserSignUpMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "summary", n => { Summary = n.GetCollectionOfObjectValues<InsightSummary>(InsightSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userCount", n => { UserCount = n.GetCollectionOfObjectValues<UserCountMetric>(UserCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activeUsers", n => { ActiveUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActiveUsersMetric>(Microsoft.Graph.Beta.Models.ActiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authentications", n => { Authentications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationsMetric>(Microsoft.Graph.Beta.Models.AuthenticationsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>(Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>(Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mfaCompletions", n => { MfaCompletions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MfaCompletionMetric>(Microsoft.Graph.Beta.Models.MfaCompletionMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSignUpMetric>(Microsoft.Graph.Beta.Models.UserSignUpMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "summary", n => { Summary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InsightSummary>(Microsoft.Graph.Beta.Models.InsightSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userCount", n => { UserCount = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCountMetric>(Microsoft.Graph.Beta.Models.UserCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -174,14 +174,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ActiveUsersMetric>("activeUsers", ActiveUsers);
-            writer.WriteCollectionOfObjectValues<AuthenticationsMetric>("authentications", Authentications);
-            writer.WriteCollectionOfObjectValues<DailyInactiveUsersMetric>("inactiveUsers", InactiveUsers);
-            writer.WriteCollectionOfObjectValues<DailyInactiveUsersByApplicationMetric>("inactiveUsersByApplication", InactiveUsersByApplication);
-            writer.WriteCollectionOfObjectValues<MfaCompletionMetric>("mfaCompletions", MfaCompletions);
-            writer.WriteCollectionOfObjectValues<UserSignUpMetric>("signUps", SignUps);
-            writer.WriteCollectionOfObjectValues<InsightSummary>("summary", Summary);
-            writer.WriteCollectionOfObjectValues<UserCountMetric>("userCount", UserCount);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActiveUsersMetric>("activeUsers", ActiveUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationsMetric>("authentications", Authentications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetric>("inactiveUsers", InactiveUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>("inactiveUsersByApplication", InactiveUsersByApplication);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MfaCompletionMetric>("mfaCompletions", MfaCompletions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSignUpMetric>("signUps", SignUps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InsightSummary>("summary", Summary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCountMetric>("userCount", UserCount);
         }
     }
 }

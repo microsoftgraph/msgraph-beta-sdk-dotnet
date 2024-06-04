@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Lists the content that you can approve for deployment. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CatalogEntry>? Entries
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>? Entries
         {
-            get { return BackingStore?.Get<List<CatalogEntry>?>("entries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>?>("entries"); }
             set { BackingStore?.Set("entries", value); }
         }
 #nullable restore
 #else
-        public List<CatalogEntry> Entries
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry> Entries
         {
-            get { return BackingStore?.Get<List<CatalogEntry>>("entries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>>("entries"); }
             set { BackingStore?.Set("entries", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Catalog"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Catalog CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Catalog();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "entries", n => { Entries = n.GetCollectionOfObjectValues<CatalogEntry>(CatalogEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "entries", n => { Entries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CatalogEntry>("entries", Entries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("entries", Entries);
         }
     }
 }

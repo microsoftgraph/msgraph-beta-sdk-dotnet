@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
     public class ExternalSponsorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityGovernance entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="DirectoryObjectItemRequestBuilder"/></returns>
-        public DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExternalSponsorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExternalSponsorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +61,25 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<ExternalSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder.ExternalSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<ExternalSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder.ExternalSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder.ExternalSponsorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder.ExternalSponsorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ExternalSponsorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExternalSponsorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ExternalSponsorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExternalSponsorsRequestBuilderGetRequestConfiguration : RequestConfiguration<ExternalSponsorsRequestBuilderGetQueryParameters>
+        public class ExternalSponsorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.ExternalSponsorsRequestBuilder.ExternalSponsorsRequestBuilderGetQueryParameters>
         {
         }
     }

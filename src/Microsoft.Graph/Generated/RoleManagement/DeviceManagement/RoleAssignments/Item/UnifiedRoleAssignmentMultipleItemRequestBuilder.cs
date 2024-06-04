@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
     public class UnifiedRoleAssignmentMultipleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the appScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.</summary>
-        public AppScopesRequestBuilder AppScopes
+        public Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.AppScopes.AppScopesRequestBuilder AppScopes
         {
-            get => new AppScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.AppScopes.AppScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.</summary>
-        public DirectoryScopesRequestBuilder DirectoryScopes
+        public Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes.DirectoryScopesRequestBuilder DirectoryScopes
         {
-            get => new DirectoryScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes.DirectoryScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.</summary>
-        public PrincipalsRequestBuilder Principals
+        public Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals.PrincipalsRequestBuilder Principals
         {
-            get => new PrincipalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals.PrincipalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.</summary>
-        public RoleDefinitionRequestBuilder RoleDefinition
+        public Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.RoleDefinition.RoleDefinitionRequestBuilder RoleDefinition
         {
-            get => new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.RoleDefinition.RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleAssignmentMultipleItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleAssignmentMultipleItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -83,51 +83,51 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         /// Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentMultiple"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentMultiple?> GetAsync(Action<RequestConfiguration<UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder.UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentMultiple> GetAsync(Action<RequestConfiguration<UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder.UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentMultiple>(requestInfo, UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) In contrast, unifiedRoleAssignment does not support update.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentMultiple"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentMultiple?> PatchAsync(UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple?> PatchAsync(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentMultiple> PatchAsync(UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple> PatchAsync(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentMultiple>(requestInfo, UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder.UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder.UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -175,11 +175,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -192,11 +192,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentMultipleItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UnifiedRoleAssignmentMultipleItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new UnifiedRoleAssignmentMultipleItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnifiedRoleAssignmentMultipleItemRequestBuilderGetRequestConfiguration : RequestConfiguration<UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>
+        public class UnifiedRoleAssignmentMultipleItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.UnifiedRoleAssignmentMultipleItemRequestBuilder.UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

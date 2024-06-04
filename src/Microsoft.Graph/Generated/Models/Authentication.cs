@@ -7,150 +7,150 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Authentication : Entity, IParsable
+    public class Authentication : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the email addresses registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EmailAuthenticationMethod>? EmailMethods
+        public List<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>? EmailMethods
         {
-            get { return BackingStore?.Get<List<EmailAuthenticationMethod>?>("emailMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>?>("emailMethods"); }
             set { BackingStore?.Set("emailMethods", value); }
         }
 #nullable restore
 #else
-        public List<EmailAuthenticationMethod> EmailMethods
+        public List<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod> EmailMethods
         {
-            get { return BackingStore?.Get<List<EmailAuthenticationMethod>>("emailMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>>("emailMethods"); }
             set { BackingStore?.Set("emailMethods", value); }
         }
 #endif
         /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Fido2AuthenticationMethod>? Fido2Methods
+        public List<Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>? Fido2Methods
         {
-            get { return BackingStore?.Get<List<Fido2AuthenticationMethod>?>("fido2Methods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>?>("fido2Methods"); }
             set { BackingStore?.Set("fido2Methods", value); }
         }
 #nullable restore
 #else
-        public List<Fido2AuthenticationMethod> Fido2Methods
+        public List<Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod> Fido2Methods
         {
-            get { return BackingStore?.Get<List<Fido2AuthenticationMethod>>("fido2Methods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>>("fido2Methods"); }
             set { BackingStore?.Set("fido2Methods", value); }
         }
 #endif
         /// <summary>Represents all authentication methods registered to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethod>? Methods
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethod>? Methods
         {
-            get { return BackingStore?.Get<List<AuthenticationMethod>?>("methods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethod>?>("methods"); }
             set { BackingStore?.Set("methods", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethod> Methods
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethod> Methods
         {
-            get { return BackingStore?.Get<List<AuthenticationMethod>>("methods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethod>>("methods"); }
             set { BackingStore?.Set("methods", value); }
         }
 #endif
         /// <summary>The details of the Microsoft Authenticator app registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MicrosoftAuthenticatorAuthenticationMethod>? MicrosoftAuthenticatorMethods
+        public List<Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>? MicrosoftAuthenticatorMethods
         {
-            get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethod>?>("microsoftAuthenticatorMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>?>("microsoftAuthenticatorMethods"); }
             set { BackingStore?.Set("microsoftAuthenticatorMethods", value); }
         }
 #nullable restore
 #else
-        public List<MicrosoftAuthenticatorAuthenticationMethod> MicrosoftAuthenticatorMethods
+        public List<Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod> MicrosoftAuthenticatorMethods
         {
-            get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethod>>("microsoftAuthenticatorMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>>("microsoftAuthenticatorMethods"); }
             set { BackingStore?.Set("microsoftAuthenticatorMethods", value); }
         }
 #endif
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LongRunningOperation>? Operations
+        public List<Microsoft.Graph.Beta.Models.LongRunningOperation>? Operations
         {
-            get { return BackingStore?.Get<List<LongRunningOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LongRunningOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<LongRunningOperation> Operations
+        public List<Microsoft.Graph.Beta.Models.LongRunningOperation> Operations
         {
-            get { return BackingStore?.Get<List<LongRunningOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>? PasswordlessMicrosoftAuthenticatorMethods
+        public List<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>? PasswordlessMicrosoftAuthenticatorMethods
         {
-            get { return BackingStore?.Get<List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>?>("passwordlessMicrosoftAuthenticatorMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>?>("passwordlessMicrosoftAuthenticatorMethods"); }
             set { BackingStore?.Set("passwordlessMicrosoftAuthenticatorMethods", value); }
         }
 #nullable restore
 #else
-        public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> PasswordlessMicrosoftAuthenticatorMethods
+        public List<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod> PasswordlessMicrosoftAuthenticatorMethods
         {
-            get { return BackingStore?.Get<List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>>("passwordlessMicrosoftAuthenticatorMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>>("passwordlessMicrosoftAuthenticatorMethods"); }
             set { BackingStore?.Set("passwordlessMicrosoftAuthenticatorMethods", value); }
         }
 #endif
         /// <summary>Represents the details of the password authentication method registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PasswordAuthenticationMethod>? PasswordMethods
+        public List<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>? PasswordMethods
         {
-            get { return BackingStore?.Get<List<PasswordAuthenticationMethod>?>("passwordMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>?>("passwordMethods"); }
             set { BackingStore?.Set("passwordMethods", value); }
         }
 #nullable restore
 #else
-        public List<PasswordAuthenticationMethod> PasswordMethods
+        public List<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod> PasswordMethods
         {
-            get { return BackingStore?.Get<List<PasswordAuthenticationMethod>>("passwordMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>>("passwordMethods"); }
             set { BackingStore?.Set("passwordMethods", value); }
         }
 #endif
         /// <summary>Represents the phone registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PhoneAuthenticationMethod>? PhoneMethods
+        public List<Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>? PhoneMethods
         {
-            get { return BackingStore?.Get<List<PhoneAuthenticationMethod>?>("phoneMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>?>("phoneMethods"); }
             set { BackingStore?.Set("phoneMethods", value); }
         }
 #nullable restore
 #else
-        public List<PhoneAuthenticationMethod> PhoneMethods
+        public List<Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod> PhoneMethods
         {
-            get { return BackingStore?.Get<List<PhoneAuthenticationMethod>>("phoneMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>>("phoneMethods"); }
             set { BackingStore?.Set("phoneMethods", value); }
         }
 #endif
         /// <summary>The platformCredentialMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlatformCredentialAuthenticationMethod>? PlatformCredentialMethods
+        public List<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>? PlatformCredentialMethods
         {
-            get { return BackingStore?.Get<List<PlatformCredentialAuthenticationMethod>?>("platformCredentialMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>?>("platformCredentialMethods"); }
             set { BackingStore?.Set("platformCredentialMethods", value); }
         }
 #nullable restore
 #else
-        public List<PlatformCredentialAuthenticationMethod> PlatformCredentialMethods
+        public List<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod> PlatformCredentialMethods
         {
-            get { return BackingStore?.Get<List<PlatformCredentialAuthenticationMethod>>("platformCredentialMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>>("platformCredentialMethods"); }
             set { BackingStore?.Set("platformCredentialMethods", value); }
         }
 #endif
@@ -173,60 +173,60 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SoftwareOathAuthenticationMethod>? SoftwareOathMethods
+        public List<Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>? SoftwareOathMethods
         {
-            get { return BackingStore?.Get<List<SoftwareOathAuthenticationMethod>?>("softwareOathMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>?>("softwareOathMethods"); }
             set { BackingStore?.Set("softwareOathMethods", value); }
         }
 #nullable restore
 #else
-        public List<SoftwareOathAuthenticationMethod> SoftwareOathMethods
+        public List<Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod> SoftwareOathMethods
         {
-            get { return BackingStore?.Get<List<SoftwareOathAuthenticationMethod>>("softwareOathMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>>("softwareOathMethods"); }
             set { BackingStore?.Set("softwareOathMethods", value); }
         }
 #endif
         /// <summary>Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TemporaryAccessPassAuthenticationMethod>? TemporaryAccessPassMethods
+        public List<Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>? TemporaryAccessPassMethods
         {
-            get { return BackingStore?.Get<List<TemporaryAccessPassAuthenticationMethod>?>("temporaryAccessPassMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>?>("temporaryAccessPassMethods"); }
             set { BackingStore?.Set("temporaryAccessPassMethods", value); }
         }
 #nullable restore
 #else
-        public List<TemporaryAccessPassAuthenticationMethod> TemporaryAccessPassMethods
+        public List<Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod> TemporaryAccessPassMethods
         {
-            get { return BackingStore?.Get<List<TemporaryAccessPassAuthenticationMethod>>("temporaryAccessPassMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>>("temporaryAccessPassMethods"); }
             set { BackingStore?.Set("temporaryAccessPassMethods", value); }
         }
 #endif
         /// <summary>Represents the Windows Hello for Business authentication method registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsHelloForBusinessAuthenticationMethod>? WindowsHelloForBusinessMethods
+        public List<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod>? WindowsHelloForBusinessMethods
         {
-            get { return BackingStore?.Get<List<WindowsHelloForBusinessAuthenticationMethod>?>("windowsHelloForBusinessMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod>?>("windowsHelloForBusinessMethods"); }
             set { BackingStore?.Set("windowsHelloForBusinessMethods", value); }
         }
 #nullable restore
 #else
-        public List<WindowsHelloForBusinessAuthenticationMethod> WindowsHelloForBusinessMethods
+        public List<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod> WindowsHelloForBusinessMethods
         {
-            get { return BackingStore?.Get<List<WindowsHelloForBusinessAuthenticationMethod>>("windowsHelloForBusinessMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod>>("windowsHelloForBusinessMethods"); }
             set { BackingStore?.Set("windowsHelloForBusinessMethods", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Authentication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Authentication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Authentication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Authentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Authentication();
+            return new Microsoft.Graph.Beta.Models.Authentication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -236,19 +236,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "emailMethods", n => { EmailMethods = n.GetCollectionOfObjectValues<EmailAuthenticationMethod>(EmailAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "fido2Methods", n => { Fido2Methods = n.GetCollectionOfObjectValues<Fido2AuthenticationMethod>(Fido2AuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "methods", n => { Methods = n.GetCollectionOfObjectValues<AuthenticationMethod>(AuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "microsoftAuthenticatorMethods", n => { MicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<MicrosoftAuthenticatorAuthenticationMethod>(MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<LongRunningOperation>(LongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "passwordMethods", n => { PasswordMethods = n.GetCollectionOfObjectValues<PasswordAuthenticationMethod>(PasswordAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "passwordlessMicrosoftAuthenticatorMethods", n => { PasswordlessMicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<PhoneAuthenticationMethod>(PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<PlatformCredentialAuthenticationMethod>(PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailMethods", n => { EmailMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>(Microsoft.Graph.Beta.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fido2Methods", n => { Fido2Methods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>(Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "methods", n => { Methods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationMethod>(Microsoft.Graph.Beta.Models.AuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microsoftAuthenticatorMethods", n => { MicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>(Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LongRunningOperation>(Microsoft.Graph.Beta.Models.LongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passwordMethods", n => { PasswordMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>(Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passwordlessMicrosoftAuthenticatorMethods", n => { PasswordlessMicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>(Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>(Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "signInPreferences", n => { SignInPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInPreferences>(Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue); } },
-                { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<SoftwareOathAuthenticationMethod>(SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "temporaryAccessPassMethods", n => { TemporaryAccessPassMethods = n.GetCollectionOfObjectValues<TemporaryAccessPassAuthenticationMethod>(TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "windowsHelloForBusinessMethods", n => { WindowsHelloForBusinessMethods = n.GetCollectionOfObjectValues<WindowsHelloForBusinessAuthenticationMethod>(WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>(Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "temporaryAccessPassMethods", n => { TemporaryAccessPassMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>(Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsHelloForBusinessMethods", n => { WindowsHelloForBusinessMethods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod>(Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -259,19 +259,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EmailAuthenticationMethod>("emailMethods", EmailMethods);
-            writer.WriteCollectionOfObjectValues<Fido2AuthenticationMethod>("fido2Methods", Fido2Methods);
-            writer.WriteCollectionOfObjectValues<AuthenticationMethod>("methods", Methods);
-            writer.WriteCollectionOfObjectValues<MicrosoftAuthenticatorAuthenticationMethod>("microsoftAuthenticatorMethods", MicrosoftAuthenticatorMethods);
-            writer.WriteCollectionOfObjectValues<LongRunningOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>("passwordlessMicrosoftAuthenticatorMethods", PasswordlessMicrosoftAuthenticatorMethods);
-            writer.WriteCollectionOfObjectValues<PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
-            writer.WriteCollectionOfObjectValues<PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
-            writer.WriteCollectionOfObjectValues<PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>("emailMethods", EmailMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>("fido2Methods", Fido2Methods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationMethod>("methods", Methods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>("microsoftAuthenticatorMethods", MicrosoftAuthenticatorMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LongRunningOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>("passwordlessMicrosoftAuthenticatorMethods", PasswordlessMicrosoftAuthenticatorMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInPreferences>("signInPreferences", SignInPreferences);
-            writer.WriteCollectionOfObjectValues<SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);
-            writer.WriteCollectionOfObjectValues<TemporaryAccessPassAuthenticationMethod>("temporaryAccessPassMethods", TemporaryAccessPassMethods);
-            writer.WriteCollectionOfObjectValues<WindowsHelloForBusinessAuthenticationMethod>("windowsHelloForBusinessMethods", WindowsHelloForBusinessMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod>("temporaryAccessPassMethods", TemporaryAccessPassMethods);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod>("windowsHelloForBusinessMethods", WindowsHelloForBusinessMethods);
         }
     }
 }

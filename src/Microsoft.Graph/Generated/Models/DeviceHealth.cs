@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceHealth"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceHealth"/> and sets the default values.
         /// </summary>
         public DeviceHealth()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealth"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealth"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceHealth CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceHealth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealth();
+            return new Microsoft.Graph.Beta.Models.DeviceHealth();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans
     public class RosterPlansRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Me.Planner.RosterPlans.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.RosterPlans.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.</summary>
         /// <param name="position">The unique identifier of plannerPlan</param>
-        /// <returns>A <see cref="PlannerPlanItemRequestBuilder"/></returns>
-        public PlannerPlanItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Planner.RosterPlans.Item.PlannerPlanItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Me.Planner.RosterPlans.Item.PlannerPlanItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("plannerPlan%2Did", position);
-                return new PlannerPlanItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Me.Planner.RosterPlans.Item.PlannerPlanItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RosterPlansRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RosterPlansRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans
         /// <summary>
         /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
         /// </summary>
-        /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerPlanCollectionResponse?> GetAsync(Action<RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlanCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder.RosterPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerPlanCollectionResponse> GetAsync(Action<RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlanCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder.RosterPlansRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerPlanCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder.RosterPlansRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder.RosterPlansRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RosterPlansRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RosterPlansRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder WithUrl(string rawUrl)
         {
-            return new RosterPlansRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RosterPlansRequestBuilderGetRequestConfiguration : RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters>
+        public class RosterPlansRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.RosterPlans.RosterPlansRequestBuilder.RosterPlansRequestBuilderGetQueryParameters>
         {
         }
     }

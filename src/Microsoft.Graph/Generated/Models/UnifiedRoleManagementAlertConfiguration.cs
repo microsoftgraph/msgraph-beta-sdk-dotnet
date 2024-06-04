@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementAlertConfiguration : Entity, IParsable
+    public class UnifiedRoleManagementAlertConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementAlertDefinition? AlertDefinition
+        public Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition? AlertDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition?>("alertDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition?>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementAlertDefinition AlertDefinition
+        public Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition AlertDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition>("alertDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #endif
@@ -83,22 +83,22 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementAlertConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementAlertConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.invalidLicenseAlertConfiguration" => new InvalidLicenseAlertConfiguration(),
-                "#microsoft.graph.noMfaOnRoleActivationAlertConfiguration" => new NoMfaOnRoleActivationAlertConfiguration(),
-                "#microsoft.graph.redundantAssignmentAlertConfiguration" => new RedundantAssignmentAlertConfiguration(),
-                "#microsoft.graph.rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration" => new RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration(),
-                "#microsoft.graph.sequentialActivationRenewalsAlertConfiguration" => new SequentialActivationRenewalsAlertConfiguration(),
-                "#microsoft.graph.staleSignInAlertConfiguration" => new StaleSignInAlertConfiguration(),
-                "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertConfiguration" => new TooManyGlobalAdminsAssignedToTenantAlertConfiguration(),
-                _ => new UnifiedRoleManagementAlertConfiguration(),
+                "#microsoft.graph.invalidLicenseAlertConfiguration" => new Microsoft.Graph.Beta.Models.InvalidLicenseAlertConfiguration(),
+                "#microsoft.graph.noMfaOnRoleActivationAlertConfiguration" => new Microsoft.Graph.Beta.Models.NoMfaOnRoleActivationAlertConfiguration(),
+                "#microsoft.graph.redundantAssignmentAlertConfiguration" => new Microsoft.Graph.Beta.Models.RedundantAssignmentAlertConfiguration(),
+                "#microsoft.graph.rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration" => new Microsoft.Graph.Beta.Models.RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration(),
+                "#microsoft.graph.sequentialActivationRenewalsAlertConfiguration" => new Microsoft.Graph.Beta.Models.SequentialActivationRenewalsAlertConfiguration(),
+                "#microsoft.graph.staleSignInAlertConfiguration" => new Microsoft.Graph.Beta.Models.StaleSignInAlertConfiguration(),
+                "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertConfiguration" => new Microsoft.Graph.Beta.Models.TooManyGlobalAdminsAssignedToTenantAlertConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration(),
             };
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
+                { "alertDefinition", n => { AlertDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition>(Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
                 { "alertDefinitionId", n => { AlertDefinitionId = n.GetStringValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "scopeId", n => { ScopeId = n.GetStringValue(); } },
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UnifiedRoleManagementAlertDefinition>("alertDefinition", AlertDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition>("alertDefinition", AlertDefinition);
             writer.WriteStringValue("alertDefinitionId", AlertDefinitionId);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteStringValue("scopeId", ScopeId);

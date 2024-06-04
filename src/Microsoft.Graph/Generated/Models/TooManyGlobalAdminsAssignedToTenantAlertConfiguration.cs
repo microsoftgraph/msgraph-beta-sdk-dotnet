@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TooManyGlobalAdminsAssignedToTenantAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable
+    public class TooManyGlobalAdminsAssignedToTenantAlertConfiguration : Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.</summary>
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("percentageOfGlobalAdminsOutOfRolesThreshold", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TooManyGlobalAdminsAssignedToTenantAlertConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TooManyGlobalAdminsAssignedToTenantAlertConfiguration"/> and sets the default values.
         /// </summary>
         public TooManyGlobalAdminsAssignedToTenantAlertConfiguration() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TooManyGlobalAdminsAssignedToTenantAlertConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TooManyGlobalAdminsAssignedToTenantAlertConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TooManyGlobalAdminsAssignedToTenantAlertConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TooManyGlobalAdminsAssignedToTenantAlertConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TooManyGlobalAdminsAssignedToTenantAlertConfiguration();
+            return new Microsoft.Graph.Beta.Models.TooManyGlobalAdminsAssignedToTenantAlertConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetPolicySetsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySetsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetPolicySetsPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPolicySetsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySetsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetPolicySetsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySetsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPolicySetsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySetsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

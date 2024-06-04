@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcBulkRestore : CloudPcBulkAction, IParsable
+    public class CloudPcBulkRestore : Microsoft.Graph.Beta.Models.CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -17,13 +17,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restorePointDateTime", value); }
         }
         /// <summary>The timeRange property</summary>
-        public RestoreTimeRange? TimeRange
+        public Microsoft.Graph.Beta.Models.RestoreTimeRange? TimeRange
         {
-            get { return BackingStore?.Get<RestoreTimeRange?>("timeRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestoreTimeRange?>("timeRange"); }
             set { BackingStore?.Set("timeRange", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcBulkRestore"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkRestore"/> and sets the default values.
         /// </summary>
         public CloudPcBulkRestore() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcBulkRestore"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkRestore"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcBulkRestore CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcBulkRestore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcBulkRestore();
+            return new Microsoft.Graph.Beta.Models.CloudPcBulkRestore();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
-                { "timeRange", n => { TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
+                { "timeRange", n => { TimeRange = n.GetEnumValue<Microsoft.Graph.Beta.Models.RestoreTimeRange>(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("restorePointDateTime", RestorePointDateTime);
-            writer.WriteEnumValue<RestoreTimeRange>("timeRange", TimeRange);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RestoreTimeRange>("timeRange", TimeRange);
         }
     }
 }

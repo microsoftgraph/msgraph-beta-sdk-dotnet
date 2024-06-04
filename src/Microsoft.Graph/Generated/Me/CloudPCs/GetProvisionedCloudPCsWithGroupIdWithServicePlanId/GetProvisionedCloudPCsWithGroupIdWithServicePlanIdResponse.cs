@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWith
 {
     [Obsolete("This class is obsolete. Use GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse : GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse, IParsable
+    public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse : Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse();
+            return new Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId.GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse();
         }
     }
 }

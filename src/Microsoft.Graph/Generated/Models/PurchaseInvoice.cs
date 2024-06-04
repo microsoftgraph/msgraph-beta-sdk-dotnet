@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The buyFromAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? BuyFromAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType? BuyFromAddress
         {
-            get { return BackingStore?.Get<PostalAddressType?>("buyFromAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType?>("buyFromAddress"); }
             set { BackingStore?.Set("buyFromAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType BuyFromAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType BuyFromAddress
         {
-            get { return BackingStore?.Get<PostalAddressType>("buyFromAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType>("buyFromAddress"); }
             set { BackingStore?.Set("buyFromAddress", value); }
         }
 #endif
@@ -145,16 +145,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The payToAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? PayToAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType? PayToAddress
         {
-            get { return BackingStore?.Get<PostalAddressType?>("payToAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType?>("payToAddress"); }
             set { BackingStore?.Set("payToAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType PayToAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType PayToAddress
         {
-            get { return BackingStore?.Get<PostalAddressType>("payToAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType>("payToAddress"); }
             set { BackingStore?.Set("payToAddress", value); }
         }
 #endif
@@ -221,32 +221,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The purchaseInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PurchaseInvoiceLine>? PurchaseInvoiceLines
+        public List<Microsoft.Graph.Beta.Models.PurchaseInvoiceLine>? PurchaseInvoiceLines
         {
-            get { return BackingStore?.Get<List<PurchaseInvoiceLine>?>("purchaseInvoiceLines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PurchaseInvoiceLine>?>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
 #nullable restore
 #else
-        public List<PurchaseInvoiceLine> PurchaseInvoiceLines
+        public List<Microsoft.Graph.Beta.Models.PurchaseInvoiceLine> PurchaseInvoiceLines
         {
-            get { return BackingStore?.Get<List<PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
 #endif
         /// <summary>The shipToAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? ShipToAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType? ShipToAddress
         {
-            get { return BackingStore?.Get<PostalAddressType?>("shipToAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType?>("shipToAddress"); }
             set { BackingStore?.Set("shipToAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType ShipToAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType ShipToAddress
         {
-            get { return BackingStore?.Get<PostalAddressType>("shipToAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType>("shipToAddress"); }
             set { BackingStore?.Set("shipToAddress", value); }
         }
 #endif
@@ -387,7 +387,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PurchaseInvoice"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PurchaseInvoice"/> and sets the default values.
         /// </summary>
         public PurchaseInvoice()
         {
@@ -397,12 +397,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PurchaseInvoice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PurchaseInvoice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PurchaseInvoice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PurchaseInvoice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PurchaseInvoice();
+            return new Microsoft.Graph.Beta.Models.PurchaseInvoice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -412,7 +412,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buyFromAddress", n => { BuyFromAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "buyFromAddress", n => { BuyFromAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>(Microsoft.Graph.Beta.Models.PostalAddressType.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
                 { "currencyId", n => { CurrencyId = n.GetGuidValue(); } },
@@ -424,14 +424,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "payToAddress", n => { PayToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "payToAddress", n => { PayToAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>(Microsoft.Graph.Beta.Models.PostalAddressType.CreateFromDiscriminatorValue); } },
                 { "payToContact", n => { PayToContact = n.GetStringValue(); } },
                 { "payToName", n => { PayToName = n.GetStringValue(); } },
                 { "payToVendorId", n => { PayToVendorId = n.GetGuidValue(); } },
                 { "payToVendorNumber", n => { PayToVendorNumber = n.GetStringValue(); } },
                 { "pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
-                { "purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "shipToAddress", n => { ShipToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PurchaseInvoiceLine>(Microsoft.Graph.Beta.Models.PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shipToAddress", n => { ShipToAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>(Microsoft.Graph.Beta.Models.PostalAddressType.CreateFromDiscriminatorValue); } },
                 { "shipToContact", n => { ShipToContact = n.GetStringValue(); } },
                 { "shipToName", n => { ShipToName = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -452,7 +452,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PostalAddressType>("buyFromAddress", BuyFromAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>("buyFromAddress", BuyFromAddress);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteGuidValue("currencyId", CurrencyId);
@@ -464,14 +464,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PostalAddressType>("payToAddress", PayToAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>("payToAddress", PayToAddress);
             writer.WriteStringValue("payToContact", PayToContact);
             writer.WriteStringValue("payToName", PayToName);
             writer.WriteGuidValue("payToVendorId", PayToVendorId);
             writer.WriteStringValue("payToVendorNumber", PayToVendorNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);
-            writer.WriteCollectionOfObjectValues<PurchaseInvoiceLine>("purchaseInvoiceLines", PurchaseInvoiceLines);
-            writer.WriteObjectValue<PostalAddressType>("shipToAddress", ShipToAddress);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PurchaseInvoiceLine>("purchaseInvoiceLines", PurchaseInvoiceLines);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>("shipToAddress", ShipToAddress);
             writer.WriteStringValue("shipToContact", ShipToContact);
             writer.WriteStringValue("shipToName", ShipToName);
             writer.WriteStringValue("status", Status);

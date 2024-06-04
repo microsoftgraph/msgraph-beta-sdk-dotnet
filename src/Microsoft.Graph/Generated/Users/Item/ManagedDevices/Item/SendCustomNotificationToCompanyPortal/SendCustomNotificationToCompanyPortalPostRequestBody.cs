@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SendCustomNotificationToCompanyPortalPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendCustomNotificationToCompanyPortalPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendCustomNotificationToCompanyPortalPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendCustomNotificationToCompanyPortalPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendCustomNotificationToCompanyPortalPostRequestBody();
+            return new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

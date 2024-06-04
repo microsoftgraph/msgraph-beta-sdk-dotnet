@@ -9,30 +9,30 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Graph properties for Device Firmware Configuration Interface 
     /// </summary>
-    public class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration, IParsable
+    public class Windows10DeviceFirmwareConfigurationInterface : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Possible values of a property</summary>
-        public Enablement? Bluetooth
+        public Microsoft.Graph.Beta.Models.Enablement? Bluetooth
         {
-            get { return BackingStore?.Get<Enablement?>("bluetooth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("bluetooth"); }
             set { BackingStore?.Set("bluetooth", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? BootFromBuiltInNetworkAdapters
+        public Microsoft.Graph.Beta.Models.Enablement? BootFromBuiltInNetworkAdapters
         {
-            get { return BackingStore?.Get<Enablement?>("bootFromBuiltInNetworkAdapters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("bootFromBuiltInNetworkAdapters"); }
             set { BackingStore?.Set("bootFromBuiltInNetworkAdapters", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? BootFromExternalMedia
+        public Microsoft.Graph.Beta.Models.Enablement? BootFromExternalMedia
         {
-            get { return BackingStore?.Get<Enablement?>("bootFromExternalMedia"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("bootFromExternalMedia"); }
             set { BackingStore?.Set("bootFromExternalMedia", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? Cameras
+        public Microsoft.Graph.Beta.Models.Enablement? Cameras
         {
-            get { return BackingStore?.Get<Enablement?>("cameras"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("cameras"); }
             set { BackingStore?.Set("cameras", value); }
         }
         /// <summary>Defines the permission level granted to users to enable them change Uefi settings</summary>
@@ -42,103 +42,103 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("changeUefiSettingsPermission", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? FrontCamera
+        public Microsoft.Graph.Beta.Models.Enablement? FrontCamera
         {
-            get { return BackingStore?.Get<Enablement?>("frontCamera"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("frontCamera"); }
             set { BackingStore?.Set("frontCamera", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? InfraredCamera
+        public Microsoft.Graph.Beta.Models.Enablement? InfraredCamera
         {
-            get { return BackingStore?.Get<Enablement?>("infraredCamera"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("infraredCamera"); }
             set { BackingStore?.Set("infraredCamera", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? Microphone
+        public Microsoft.Graph.Beta.Models.Enablement? Microphone
         {
-            get { return BackingStore?.Get<Enablement?>("microphone"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("microphone"); }
             set { BackingStore?.Set("microphone", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? MicrophonesAndSpeakers
+        public Microsoft.Graph.Beta.Models.Enablement? MicrophonesAndSpeakers
         {
-            get { return BackingStore?.Get<Enablement?>("microphonesAndSpeakers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("microphonesAndSpeakers"); }
             set { BackingStore?.Set("microphonesAndSpeakers", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? NearFieldCommunication
+        public Microsoft.Graph.Beta.Models.Enablement? NearFieldCommunication
         {
-            get { return BackingStore?.Get<Enablement?>("nearFieldCommunication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("nearFieldCommunication"); }
             set { BackingStore?.Set("nearFieldCommunication", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? Radios
+        public Microsoft.Graph.Beta.Models.Enablement? Radios
         {
-            get { return BackingStore?.Get<Enablement?>("radios"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("radios"); }
             set { BackingStore?.Set("radios", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? RearCamera
+        public Microsoft.Graph.Beta.Models.Enablement? RearCamera
         {
-            get { return BackingStore?.Get<Enablement?>("rearCamera"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("rearCamera"); }
             set { BackingStore?.Set("rearCamera", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SdCard
+        public Microsoft.Graph.Beta.Models.Enablement? SdCard
         {
-            get { return BackingStore?.Get<Enablement?>("sdCard"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("sdCard"); }
             set { BackingStore?.Set("sdCard", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SimultaneousMultiThreading
+        public Microsoft.Graph.Beta.Models.Enablement? SimultaneousMultiThreading
         {
-            get { return BackingStore?.Get<Enablement?>("simultaneousMultiThreading"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("simultaneousMultiThreading"); }
             set { BackingStore?.Set("simultaneousMultiThreading", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? UsbTypeAPort
+        public Microsoft.Graph.Beta.Models.Enablement? UsbTypeAPort
         {
-            get { return BackingStore?.Get<Enablement?>("usbTypeAPort"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("usbTypeAPort"); }
             set { BackingStore?.Set("usbTypeAPort", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? VirtualizationOfCpuAndIO
+        public Microsoft.Graph.Beta.Models.Enablement? VirtualizationOfCpuAndIO
         {
-            get { return BackingStore?.Get<Enablement?>("virtualizationOfCpuAndIO"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("virtualizationOfCpuAndIO"); }
             set { BackingStore?.Set("virtualizationOfCpuAndIO", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? WakeOnLAN
+        public Microsoft.Graph.Beta.Models.Enablement? WakeOnLAN
         {
-            get { return BackingStore?.Get<Enablement?>("wakeOnLAN"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("wakeOnLAN"); }
             set { BackingStore?.Set("wakeOnLAN", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? WakeOnPower
+        public Microsoft.Graph.Beta.Models.Enablement? WakeOnPower
         {
-            get { return BackingStore?.Get<Enablement?>("wakeOnPower"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("wakeOnPower"); }
             set { BackingStore?.Set("wakeOnPower", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? WiFi
+        public Microsoft.Graph.Beta.Models.Enablement? WiFi
         {
-            get { return BackingStore?.Get<Enablement?>("wiFi"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("wiFi"); }
             set { BackingStore?.Set("wiFi", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? WindowsPlatformBinaryTable
+        public Microsoft.Graph.Beta.Models.Enablement? WindowsPlatformBinaryTable
         {
-            get { return BackingStore?.Get<Enablement?>("windowsPlatformBinaryTable"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("windowsPlatformBinaryTable"); }
             set { BackingStore?.Set("windowsPlatformBinaryTable", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? WirelessWideAreaNetwork
+        public Microsoft.Graph.Beta.Models.Enablement? WirelessWideAreaNetwork
         {
-            get { return BackingStore?.Get<Enablement?>("wirelessWideAreaNetwork"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("wirelessWideAreaNetwork"); }
             set { BackingStore?.Set("wirelessWideAreaNetwork", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10DeviceFirmwareConfigurationInterface"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10DeviceFirmwareConfigurationInterface"/> and sets the default values.
         /// </summary>
         public Windows10DeviceFirmwareConfigurationInterface() : base()
         {
@@ -147,12 +147,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10DeviceFirmwareConfigurationInterface"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10DeviceFirmwareConfigurationInterface"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10DeviceFirmwareConfigurationInterface CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10DeviceFirmwareConfigurationInterface CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10DeviceFirmwareConfigurationInterface();
+            return new Microsoft.Graph.Beta.Models.Windows10DeviceFirmwareConfigurationInterface();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,27 +162,27 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "bluetooth", n => { Bluetooth = n.GetEnumValue<Enablement>(); } },
-                { "bootFromBuiltInNetworkAdapters", n => { BootFromBuiltInNetworkAdapters = n.GetEnumValue<Enablement>(); } },
-                { "bootFromExternalMedia", n => { BootFromExternalMedia = n.GetEnumValue<Enablement>(); } },
-                { "cameras", n => { Cameras = n.GetEnumValue<Enablement>(); } },
-                { "changeUefiSettingsPermission", n => { ChangeUefiSettingsPermission = n.GetEnumValue<ChangeUefiSettingsPermission>(); } },
-                { "frontCamera", n => { FrontCamera = n.GetEnumValue<Enablement>(); } },
-                { "infraredCamera", n => { InfraredCamera = n.GetEnumValue<Enablement>(); } },
-                { "microphone", n => { Microphone = n.GetEnumValue<Enablement>(); } },
-                { "microphonesAndSpeakers", n => { MicrophonesAndSpeakers = n.GetEnumValue<Enablement>(); } },
-                { "nearFieldCommunication", n => { NearFieldCommunication = n.GetEnumValue<Enablement>(); } },
-                { "radios", n => { Radios = n.GetEnumValue<Enablement>(); } },
-                { "rearCamera", n => { RearCamera = n.GetEnumValue<Enablement>(); } },
-                { "sdCard", n => { SdCard = n.GetEnumValue<Enablement>(); } },
-                { "simultaneousMultiThreading", n => { SimultaneousMultiThreading = n.GetEnumValue<Enablement>(); } },
-                { "usbTypeAPort", n => { UsbTypeAPort = n.GetEnumValue<Enablement>(); } },
-                { "virtualizationOfCpuAndIO", n => { VirtualizationOfCpuAndIO = n.GetEnumValue<Enablement>(); } },
-                { "wakeOnLAN", n => { WakeOnLAN = n.GetEnumValue<Enablement>(); } },
-                { "wakeOnPower", n => { WakeOnPower = n.GetEnumValue<Enablement>(); } },
-                { "wiFi", n => { WiFi = n.GetEnumValue<Enablement>(); } },
-                { "windowsPlatformBinaryTable", n => { WindowsPlatformBinaryTable = n.GetEnumValue<Enablement>(); } },
-                { "wirelessWideAreaNetwork", n => { WirelessWideAreaNetwork = n.GetEnumValue<Enablement>(); } },
+                { "bluetooth", n => { Bluetooth = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "bootFromBuiltInNetworkAdapters", n => { BootFromBuiltInNetworkAdapters = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "bootFromExternalMedia", n => { BootFromExternalMedia = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "cameras", n => { Cameras = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "changeUefiSettingsPermission", n => { ChangeUefiSettingsPermission = n.GetEnumValue<Microsoft.Graph.Beta.Models.ChangeUefiSettingsPermission>(); } },
+                { "frontCamera", n => { FrontCamera = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "infraredCamera", n => { InfraredCamera = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "microphone", n => { Microphone = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "microphonesAndSpeakers", n => { MicrophonesAndSpeakers = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "nearFieldCommunication", n => { NearFieldCommunication = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "radios", n => { Radios = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "rearCamera", n => { RearCamera = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "sdCard", n => { SdCard = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "simultaneousMultiThreading", n => { SimultaneousMultiThreading = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "usbTypeAPort", n => { UsbTypeAPort = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "virtualizationOfCpuAndIO", n => { VirtualizationOfCpuAndIO = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "wakeOnLAN", n => { WakeOnLAN = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "wakeOnPower", n => { WakeOnPower = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "wiFi", n => { WiFi = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "windowsPlatformBinaryTable", n => { WindowsPlatformBinaryTable = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "wirelessWideAreaNetwork", n => { WirelessWideAreaNetwork = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
             };
         }
         /// <summary>
@@ -193,27 +193,27 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Enablement>("bluetooth", Bluetooth);
-            writer.WriteEnumValue<Enablement>("bootFromBuiltInNetworkAdapters", BootFromBuiltInNetworkAdapters);
-            writer.WriteEnumValue<Enablement>("bootFromExternalMedia", BootFromExternalMedia);
-            writer.WriteEnumValue<Enablement>("cameras", Cameras);
-            writer.WriteEnumValue<ChangeUefiSettingsPermission>("changeUefiSettingsPermission", ChangeUefiSettingsPermission);
-            writer.WriteEnumValue<Enablement>("frontCamera", FrontCamera);
-            writer.WriteEnumValue<Enablement>("infraredCamera", InfraredCamera);
-            writer.WriteEnumValue<Enablement>("microphone", Microphone);
-            writer.WriteEnumValue<Enablement>("microphonesAndSpeakers", MicrophonesAndSpeakers);
-            writer.WriteEnumValue<Enablement>("nearFieldCommunication", NearFieldCommunication);
-            writer.WriteEnumValue<Enablement>("radios", Radios);
-            writer.WriteEnumValue<Enablement>("rearCamera", RearCamera);
-            writer.WriteEnumValue<Enablement>("sdCard", SdCard);
-            writer.WriteEnumValue<Enablement>("simultaneousMultiThreading", SimultaneousMultiThreading);
-            writer.WriteEnumValue<Enablement>("usbTypeAPort", UsbTypeAPort);
-            writer.WriteEnumValue<Enablement>("virtualizationOfCpuAndIO", VirtualizationOfCpuAndIO);
-            writer.WriteEnumValue<Enablement>("wakeOnLAN", WakeOnLAN);
-            writer.WriteEnumValue<Enablement>("wakeOnPower", WakeOnPower);
-            writer.WriteEnumValue<Enablement>("wiFi", WiFi);
-            writer.WriteEnumValue<Enablement>("windowsPlatformBinaryTable", WindowsPlatformBinaryTable);
-            writer.WriteEnumValue<Enablement>("wirelessWideAreaNetwork", WirelessWideAreaNetwork);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("bluetooth", Bluetooth);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("bootFromBuiltInNetworkAdapters", BootFromBuiltInNetworkAdapters);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("bootFromExternalMedia", BootFromExternalMedia);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("cameras", Cameras);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ChangeUefiSettingsPermission>("changeUefiSettingsPermission", ChangeUefiSettingsPermission);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("frontCamera", FrontCamera);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("infraredCamera", InfraredCamera);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("microphone", Microphone);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("microphonesAndSpeakers", MicrophonesAndSpeakers);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("nearFieldCommunication", NearFieldCommunication);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("radios", Radios);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("rearCamera", RearCamera);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("sdCard", SdCard);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("simultaneousMultiThreading", SimultaneousMultiThreading);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("usbTypeAPort", UsbTypeAPort);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("virtualizationOfCpuAndIO", VirtualizationOfCpuAndIO);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("wakeOnLAN", WakeOnLAN);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("wakeOnPower", WakeOnPower);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("wiFi", WiFi);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("windowsPlatformBinaryTable", WindowsPlatformBinaryTable);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("wirelessWideAreaNetwork", WirelessWideAreaNetwork);
         }
     }
 }

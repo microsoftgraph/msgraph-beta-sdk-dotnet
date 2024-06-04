@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
     public class UnifiedRbacResourceActionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authenticationContext property of the microsoft.graph.unifiedRbacResourceAction entity.</summary>
-        public AuthenticationContextRequestBuilder AuthenticationContext
+        public Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder AuthenticationContext
         {
-            get => new AuthenticationContextRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceScope property of the microsoft.graph.unifiedRbacResourceAction entity.</summary>
-        public ResourceScopeRequestBuilder ResourceScope
+        public Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.ResourceScope.ResourceScopeRequestBuilder ResourceScope
         {
-            get => new ResourceScopeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.ResourceScope.ResourceScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRbacResourceActionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRbacResourceActionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,57 +62,57 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Operations that an authorized principal is allowed to perform.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRbacResourceAction?> GetAsync(Action<RequestConfiguration<UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder.UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRbacResourceAction> GetAsync(Action<RequestConfiguration<UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder.UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property resourceActions in roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRbacResourceAction?> PatchAsync(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction?> PatchAsync(Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRbacResourceAction> PatchAsync(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction> PatchAsync(Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property resourceActions for roleManagement
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder.UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder.UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -177,11 +177,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceActionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UnifiedRbacResourceActionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new UnifiedRbacResourceActionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.R
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>
+        public class UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces.Item.ResourceActions.Item.UnifiedRbacResourceActionItemRequestBuilder.UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

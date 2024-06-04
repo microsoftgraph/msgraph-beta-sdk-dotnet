@@ -18,15 +18,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The admin configuration of the policy on the user&apos;s authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.</summary>
-        public AuthenticationAppAdminConfiguration? AdminConfiguration
+        public Microsoft.Graph.Beta.Models.AuthenticationAppAdminConfiguration? AdminConfiguration
         {
-            get { return BackingStore?.Get<AuthenticationAppAdminConfiguration?>("adminConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppAdminConfiguration?>("adminConfiguration"); }
             set { BackingStore?.Set("adminConfiguration", value); }
         }
         /// <summary>Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user&apos;s client authentication app. The possible values are: success, failure, unknownFutureValue.</summary>
-        public AuthenticationAppEvaluation? AuthenticationEvaluation
+        public Microsoft.Graph.Beta.Models.AuthenticationAppEvaluation? AuthenticationEvaluation
         {
-            get { return BackingStore?.Get<AuthenticationAppEvaluation?>("authenticationEvaluation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppEvaluation?>("authenticationEvaluation"); }
             set { BackingStore?.Set("authenticationEvaluation", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -64,13 +64,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Refers to whether the policy executed as expected on the user&apos;s client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.</summary>
-        public AuthenticationAppPolicyStatus? Status
+        public Microsoft.Graph.Beta.Models.AuthenticationAppPolicyStatus? Status
         {
-            get { return BackingStore?.Get<AuthenticationAppPolicyStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationAppPolicyDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails"/> and sets the default values.
         /// </summary>
         public AuthenticationAppPolicyDetails()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationAppPolicyDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationAppPolicyDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationAppPolicyDetails();
+            return new Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminConfiguration", n => { AdminConfiguration = n.GetEnumValue<AuthenticationAppAdminConfiguration>(); } },
-                { "authenticationEvaluation", n => { AuthenticationEvaluation = n.GetEnumValue<AuthenticationAppEvaluation>(); } },
+                { "adminConfiguration", n => { AdminConfiguration = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationAppAdminConfiguration>(); } },
+                { "authenticationEvaluation", n => { AuthenticationEvaluation = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationAppEvaluation>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyName", n => { PolicyName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<AuthenticationAppPolicyStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyStatus>(); } },
             };
         }
         /// <summary>
@@ -109,11 +109,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AuthenticationAppAdminConfiguration>("adminConfiguration", AdminConfiguration);
-            writer.WriteEnumValue<AuthenticationAppEvaluation>("authenticationEvaluation", AuthenticationEvaluation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationAppAdminConfiguration>("adminConfiguration", AdminConfiguration);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationAppEvaluation>("authenticationEvaluation", AuthenticationEvaluation);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyName", PolicyName);
-            writer.WriteEnumValue<AuthenticationAppPolicyStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

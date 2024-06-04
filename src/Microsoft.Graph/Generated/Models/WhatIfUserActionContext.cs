@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WhatIfUserActionContext : ConditionalAccessContext, IParsable
+    public class WhatIfUserActionContext : Microsoft.Graph.Beta.Models.ConditionalAccessContext, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userAction property</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userAction", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WhatIfUserActionContext"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WhatIfUserActionContext"/> and sets the default values.
         /// </summary>
         public WhatIfUserActionContext() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WhatIfUserActionContext"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WhatIfUserActionContext"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WhatIfUserActionContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WhatIfUserActionContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WhatIfUserActionContext();
+            return new Microsoft.Graph.Beta.Models.WhatIfUserActionContext();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userAction", n => { UserAction = n.GetEnumValue<UserAction>(); } },
+                { "userAction", n => { UserAction = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserAction>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<UserAction>("userAction", UserAction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserAction>("userAction", UserAction);
         }
     }
 }

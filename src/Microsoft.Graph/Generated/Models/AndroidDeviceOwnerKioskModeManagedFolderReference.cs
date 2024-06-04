@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A reference to folder containing apps and weblinks on the Managed Home Screen
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
+    public class AndroidDeviceOwnerKioskModeManagedFolderReference : Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
     {
         /// <summary>Unique identifier for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerKioskModeManagedFolderReference"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolderReference"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeManagedFolderReference() : base()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerKioskModeManagedFolderReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolderReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerKioskModeManagedFolderReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolderReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerKioskModeManagedFolderReference();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolderReference();
         }
         /// <summary>
         /// The deserialization information for the current model

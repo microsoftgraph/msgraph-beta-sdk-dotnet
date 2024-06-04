@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The scope property</summary>
-        public TeamsAppInstallationScopes? Scope
+        public Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes? Scope
         {
-            get { return BackingStore?.Get<TeamsAppInstallationScopes?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamsAppInstallationScopeInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo"/> and sets the default values.
         /// </summary>
         public TeamsAppInstallationScopeInfo()
         {
@@ -52,18 +52,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsAppInstallationScopeInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamsAppInstallationScopeInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.groupChatTeamsAppInstallationScopeInfo" => new GroupChatTeamsAppInstallationScopeInfo(),
-                "#microsoft.graph.personalTeamsAppInstallationScopeInfo" => new PersonalTeamsAppInstallationScopeInfo(),
-                "#microsoft.graph.teamTeamsAppInstallationScopeInfo" => new TeamTeamsAppInstallationScopeInfo(),
-                _ => new TeamsAppInstallationScopeInfo(),
+                "#microsoft.graph.groupChatTeamsAppInstallationScopeInfo" => new Microsoft.Graph.Beta.Models.GroupChatTeamsAppInstallationScopeInfo(),
+                "#microsoft.graph.personalTeamsAppInstallationScopeInfo" => new Microsoft.Graph.Beta.Models.PersonalTeamsAppInstallationScopeInfo(),
+                "#microsoft.graph.teamTeamsAppInstallationScopeInfo" => new Microsoft.Graph.Beta.Models.TeamTeamsAppInstallationScopeInfo(),
+                _ => new Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo(),
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<TeamsAppInstallationScopes>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes>(); } },
             };
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TeamsAppInstallationScopes>("scope", Scope);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopes>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppIdentity? App
+        public Microsoft.Graph.Beta.Models.AppIdentity? App
         {
-            get { return BackingStore?.Get<AppIdentity?>("app"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppIdentity?>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #nullable restore
 #else
-        public AppIdentity App
+        public Microsoft.Graph.Beta.Models.AppIdentity App
         {
-            get { return BackingStore?.Get<AppIdentity>("app"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppIdentity>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditUserIdentity? User
+        public Microsoft.Graph.Beta.Models.AuditUserIdentity? User
         {
-            get { return BackingStore?.Get<AuditUserIdentity?>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuditUserIdentity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public AuditUserIdentity User
+        public Microsoft.Graph.Beta.Models.AuditUserIdentity User
         {
-            get { return BackingStore?.Get<AuditUserIdentity>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuditUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuditActivityInitiator"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuditActivityInitiator"/> and sets the default values.
         /// </summary>
         public AuditActivityInitiator()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditActivityInitiator"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuditActivityInitiator"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuditActivityInitiator CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuditActivityInitiator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditActivityInitiator();
+            return new Microsoft.Graph.Beta.Models.AuditActivityInitiator();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<AppIdentity>(AppIdentity.CreateFromDiscriminatorValue); } },
+                { "app", n => { App = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppIdentity>(Microsoft.Graph.Beta.Models.AppIdentity.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<AuditUserIdentity>(AuditUserIdentity.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuditUserIdentity>(Microsoft.Graph.Beta.Models.AuditUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AppIdentity>("app", App);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppIdentity>("app", App);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AuditUserIdentity>("user", User);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuditUserIdentity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

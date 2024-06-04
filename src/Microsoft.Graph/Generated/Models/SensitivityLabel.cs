@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SensitivityLabel : Entity, IParsable
+    public class SensitivityLabel : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The applicableTo property</summary>
-        public SensitivityLabelTarget? ApplicableTo
+        public Microsoft.Graph.Beta.Models.SensitivityLabelTarget? ApplicableTo
         {
-            get { return BackingStore?.Get<SensitivityLabelTarget?>("applicableTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityLabelTarget?>("applicableTo"); }
             set { BackingStore?.Set("applicableTo", value); }
         }
         /// <summary>The applicationMode property</summary>
@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The assignedPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LabelPolicy>? AssignedPolicies
+        public List<Microsoft.Graph.Beta.Models.LabelPolicy>? AssignedPolicies
         {
-            get { return BackingStore?.Get<List<LabelPolicy>?>("assignedPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LabelPolicy>?>("assignedPolicies"); }
             set { BackingStore?.Set("assignedPolicies", value); }
         }
 #nullable restore
 #else
-        public List<LabelPolicy> AssignedPolicies
+        public List<Microsoft.Graph.Beta.Models.LabelPolicy> AssignedPolicies
         {
-            get { return BackingStore?.Get<List<LabelPolicy>>("assignedPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LabelPolicy>>("assignedPolicies"); }
             set { BackingStore?.Set("assignedPolicies", value); }
         }
 #endif
@@ -101,16 +101,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The labelActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LabelActionBase>? LabelActions
+        public List<Microsoft.Graph.Beta.Models.LabelActionBase>? LabelActions
         {
-            get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LabelActionBase>?>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
 #nullable restore
 #else
-        public List<LabelActionBase> LabelActions
+        public List<Microsoft.Graph.Beta.Models.LabelActionBase> LabelActions
         {
-            get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LabelActionBase>>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
 #endif
@@ -139,16 +139,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The sublabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitivityLabel>? Sublabels
+        public List<Microsoft.Graph.Beta.Models.SensitivityLabel>? Sublabels
         {
-            get { return BackingStore?.Get<List<SensitivityLabel>?>("sublabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitivityLabel>?>("sublabels"); }
             set { BackingStore?.Set("sublabels", value); }
         }
 #nullable restore
 #else
-        public List<SensitivityLabel> Sublabels
+        public List<Microsoft.Graph.Beta.Models.SensitivityLabel> Sublabels
         {
-            get { return BackingStore?.Get<List<SensitivityLabel>>("sublabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitivityLabel>>("sublabels"); }
             set { BackingStore?.Set("sublabels", value); }
         }
 #endif
@@ -171,12 +171,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SensitivityLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SensitivityLabel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SensitivityLabel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SensitivityLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SensitivityLabel();
+            return new Microsoft.Graph.Beta.Models.SensitivityLabel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -186,18 +186,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableTo", n => { ApplicableTo = n.GetEnumValue<SensitivityLabelTarget>(); } },
-                { "applicationMode", n => { ApplicationMode = n.GetEnumValue<ApplicationMode>(); } },
-                { "assignedPolicies", n => { AssignedPolicies = n.GetCollectionOfObjectValues<LabelPolicy>(LabelPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicableTo", n => { ApplicableTo = n.GetEnumValue<Microsoft.Graph.Beta.Models.SensitivityLabelTarget>(); } },
+                { "applicationMode", n => { ApplicationMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.ApplicationMode>(); } },
+                { "assignedPolicies", n => { AssignedPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LabelPolicy>(Microsoft.Graph.Beta.Models.LabelPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "autoLabeling", n => { AutoLabeling = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutoLabeling>(Microsoft.Graph.Beta.Models.AutoLabeling.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
-                { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LabelActionBase>(Microsoft.Graph.Beta.Models.LabelActionBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "sublabels", n => { Sublabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sublabels", n => { Sublabels = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitivityLabel>(Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "toolTip", n => { ToolTip = n.GetStringValue(); } },
             };
         }
@@ -209,18 +209,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<SensitivityLabelTarget>("applicableTo", ApplicableTo);
-            writer.WriteEnumValue<ApplicationMode>("applicationMode", ApplicationMode);
-            writer.WriteCollectionOfObjectValues<LabelPolicy>("assignedPolicies", AssignedPolicies);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SensitivityLabelTarget>("applicableTo", ApplicableTo);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ApplicationMode>("applicationMode", ApplicationMode);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LabelPolicy>("assignedPolicies", AssignedPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AutoLabeling>("autoLabeling", AutoLabeling);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);
-            writer.WriteCollectionOfObjectValues<LabelActionBase>("labelActions", LabelActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LabelActionBase>("labelActions", LabelActions);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteCollectionOfObjectValues<SensitivityLabel>("sublabels", Sublabels);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitivityLabel>("sublabels", Sublabels);
             writer.WriteStringValue("toolTip", ToolTip);
         }
     }

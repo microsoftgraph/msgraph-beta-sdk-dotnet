@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceHealthScriptRunSchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule"/> and sets the default values.
         /// </summary>
         public DeviceHealthScriptRunSchedule()
         {
@@ -53,19 +53,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptRunSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceHealthScriptRunSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceHealthScriptDailySchedule" => new DeviceHealthScriptDailySchedule(),
-                "#microsoft.graph.deviceHealthScriptHourlySchedule" => new DeviceHealthScriptHourlySchedule(),
-                "#microsoft.graph.deviceHealthScriptRunOnceSchedule" => new DeviceHealthScriptRunOnceSchedule(),
-                "#microsoft.graph.deviceHealthScriptTimeSchedule" => new DeviceHealthScriptTimeSchedule(),
-                _ => new DeviceHealthScriptRunSchedule(),
+                "#microsoft.graph.deviceHealthScriptDailySchedule" => new Microsoft.Graph.Beta.Models.DeviceHealthScriptDailySchedule(),
+                "#microsoft.graph.deviceHealthScriptHourlySchedule" => new Microsoft.Graph.Beta.Models.DeviceHealthScriptHourlySchedule(),
+                "#microsoft.graph.deviceHealthScriptRunOnceSchedule" => new Microsoft.Graph.Beta.Models.DeviceHealthScriptRunOnceSchedule(),
+                "#microsoft.graph.deviceHealthScriptTimeSchedule" => new Microsoft.Graph.Beta.Models.DeviceHealthScriptTimeSchedule(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule(),
             };
         }
         /// <summary>

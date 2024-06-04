@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing the configuration of a cached report.
     /// </summary>
-    public class DeviceManagementCachedReportConfiguration : Entity, IParsable
+    public class DeviceManagementCachedReportConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Time that the cached report expires.</summary>
         public DateTimeOffset? ExpirationDateTime
@@ -104,20 +104,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible statuses associated with a generated report.</summary>
-        public DeviceManagementReportStatus? Status
+        public Microsoft.Graph.Beta.Models.DeviceManagementReportStatus? Status
         {
-            get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementCachedReportConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementCachedReportConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementCachedReportConfiguration();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementCachedReportConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "reportName", n => { ReportName = n.GetStringValue(); } },
                 { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementReportStatus>(); } },
             };
         }
         /// <summary>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
             writer.WriteStringValue("reportName", ReportName);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
-            writer.WriteEnumValue<DeviceManagementReportStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementReportStatus>("status", Status);
         }
     }
 }

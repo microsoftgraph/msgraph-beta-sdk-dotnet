@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
     public class RoleSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
         /// <param name="position">The unique identifier of governanceRoleSetting</param>
-        /// <returns>A <see cref="GovernanceRoleSettingItemRequestBuilder"/></returns>
-        public GovernanceRoleSettingItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.GovernanceRoleSettingItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.GovernanceRoleSettingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("governanceRoleSetting%2Did", position);
-                return new GovernanceRoleSettingItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.GovernanceRoleSettingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <summary>
         /// A collection of role settings for the provider.
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleSettingCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<RoleSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernanceRoleSettingCollectionResponse> GetAsync(Action<RequestConfiguration<RoleSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleSettingCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernanceRoleSettingCollectionResponse>(requestInfo, GovernanceRoleSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernanceRoleSettingCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GovernanceRoleSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to roleSettings for privilegedAccess
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleSetting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleSetting?> PostAsync(GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleSetting?> PostAsync(Microsoft.Graph.Beta.Models.GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernanceRoleSetting> PostAsync(GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleSetting> PostAsync(Microsoft.Graph.Beta.Models.GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernanceRoleSetting>(requestInfo, Microsoft.Graph.Beta.Models.GovernanceRoleSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of role settings for the provider.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernanceRoleSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RoleSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RoleSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A collection of role settings for the provider.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleSettingsRequestBuilderGetQueryParameters>
+        public class RoleSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder.RoleSettingsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

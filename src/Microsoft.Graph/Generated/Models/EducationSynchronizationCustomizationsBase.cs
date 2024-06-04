@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationSynchronizationCustomizationsBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizationsBase"/> and sets the default values.
         /// </summary>
         public EducationSynchronizationCustomizationsBase()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationSynchronizationCustomizationsBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizationsBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EducationSynchronizationCustomizationsBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizationsBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.educationSynchronizationCustomizations" => new EducationSynchronizationCustomizations(),
-                _ => new EducationSynchronizationCustomizationsBase(),
+                "#microsoft.graph.educationSynchronizationCustomizations" => new Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations(),
+                _ => new Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizationsBase(),
             };
         }
         /// <summary>

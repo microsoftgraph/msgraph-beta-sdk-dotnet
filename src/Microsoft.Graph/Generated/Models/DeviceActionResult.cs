@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceActionResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceActionResult"/> and sets the default values.
         /// </summary>
         public DeviceActionResult()
         {
@@ -81,24 +81,24 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.activateDeviceEsimActionResult" => new ActivateDeviceEsimActionResult(),
-                "#microsoft.graph.configurationManagerActionResult" => new ConfigurationManagerActionResult(),
-                "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult" => new DeleteUserFromSharedAppleDeviceActionResult(),
-                "#microsoft.graph.locateDeviceActionResult" => new LocateDeviceActionResult(),
-                "#microsoft.graph.remoteLockActionResult" => new RemoteLockActionResult(),
-                "#microsoft.graph.resetPasscodeActionResult" => new ResetPasscodeActionResult(),
-                "#microsoft.graph.revokeAppleVppLicensesActionResult" => new RevokeAppleVppLicensesActionResult(),
-                "#microsoft.graph.rotateBitLockerKeysDeviceActionResult" => new RotateBitLockerKeysDeviceActionResult(),
-                "#microsoft.graph.windowsDefenderScanActionResult" => new WindowsDefenderScanActionResult(),
-                _ => new DeviceActionResult(),
+                "#microsoft.graph.activateDeviceEsimActionResult" => new Microsoft.Graph.Beta.Models.ActivateDeviceEsimActionResult(),
+                "#microsoft.graph.configurationManagerActionResult" => new Microsoft.Graph.Beta.Models.ConfigurationManagerActionResult(),
+                "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult" => new Microsoft.Graph.Beta.Models.DeleteUserFromSharedAppleDeviceActionResult(),
+                "#microsoft.graph.locateDeviceActionResult" => new Microsoft.Graph.Beta.Models.LocateDeviceActionResult(),
+                "#microsoft.graph.remoteLockActionResult" => new Microsoft.Graph.Beta.Models.RemoteLockActionResult(),
+                "#microsoft.graph.resetPasscodeActionResult" => new Microsoft.Graph.Beta.Models.ResetPasscodeActionResult(),
+                "#microsoft.graph.revokeAppleVppLicensesActionResult" => new Microsoft.Graph.Beta.Models.RevokeAppleVppLicensesActionResult(),
+                "#microsoft.graph.rotateBitLockerKeysDeviceActionResult" => new Microsoft.Graph.Beta.Models.RotateBitLockerKeysDeviceActionResult(),
+                "#microsoft.graph.windowsDefenderScanActionResult" => new Microsoft.Graph.Beta.Models.WindowsDefenderScanActionResult(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceActionResult(),
             };
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionName", n => { ActionName = n.GetStringValue(); } },
-                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ActionState>(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionName", ActionName);
-            writer.WriteEnumValue<ActionState>("actionState", ActionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ActionState>("actionState", ActionState);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

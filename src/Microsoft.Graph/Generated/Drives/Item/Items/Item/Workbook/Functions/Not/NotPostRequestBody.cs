@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not
         /// <summary>The logical property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Logical
+        public Microsoft.Graph.Beta.Models.Json? Logical
         {
-            get { return BackingStore?.Get<Json?>("logical"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("logical"); }
             set { BackingStore?.Set("logical", value); }
         }
 #nullable restore
 #else
-        public Json Logical
+        public Microsoft.Graph.Beta.Models.Json Logical
         {
-            get { return BackingStore?.Get<Json>("logical"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("logical"); }
             set { BackingStore?.Set("logical", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="NotPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not.NotPostRequestBody"/> and sets the default values.
         /// </summary>
         public NotPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NotPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not.NotPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NotPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not.NotPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NotPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not.NotPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "logical", n => { Logical = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "logical", n => { Logical = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Not
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("logical", Logical);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("logical", Logical);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.</summary>
-        public PersonRelationship? Relationship
+        public Microsoft.Graph.Beta.Models.PersonRelationship? Relationship
         {
-            get { return BackingStore?.Get<PersonRelationship?>("relationship"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonRelationship?>("relationship"); }
             set { BackingStore?.Set("relationship", value); }
         }
         /// <summary>The user&apos;s directory object ID (Microsoft Entra ID or CID).</summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RelatedPerson"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RelatedPerson"/> and sets the default values.
         /// </summary>
         public RelatedPerson()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RelatedPerson"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RelatedPerson"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RelatedPerson CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RelatedPerson CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RelatedPerson();
+            return new Microsoft.Graph.Beta.Models.RelatedPerson();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "relationship", n => { Relationship = n.GetEnumValue<PersonRelationship>(); } },
+                { "relationship", n => { Relationship = n.GetEnumValue<Microsoft.Graph.Beta.Models.PersonRelationship>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PersonRelationship>("relationship", Relationship);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PersonRelationship>("relationship", Relationship);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);

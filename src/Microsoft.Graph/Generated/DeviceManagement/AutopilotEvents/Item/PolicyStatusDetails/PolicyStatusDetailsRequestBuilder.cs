@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
     public class PolicyStatusDetailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.</summary>
         /// <param name="position">The unique identifier of deviceManagementAutopilotPolicyStatusDetail</param>
-        /// <returns>A <see cref="DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder"/></returns>
-        public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item.DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item.DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceManagementAutopilotPolicyStatusDetail%2Did", position);
-                return new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item.DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PolicyStatusDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PolicyStatusDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <summary>
         /// Policy and application status details for this device.
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementAutopilotPolicyStatusDetailCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementAutopilotPolicyStatusDetailCollectionResponse?> GetAsync(Action<RequestConfiguration<PolicyStatusDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetailCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder.PolicyStatusDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementAutopilotPolicyStatusDetailCollectionResponse> GetAsync(Action<RequestConfiguration<PolicyStatusDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetailCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder.PolicyStatusDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementAutopilotPolicyStatusDetailCollectionResponse>(requestInfo, DeviceManagementAutopilotPolicyStatusDetailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetailCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to policyStatusDetails for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementAutopilotPolicyStatusDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementAutopilotPolicyStatusDetail?> PostAsync(DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail?> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementAutopilotPolicyStatusDetail> PostAsync(DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementAutopilotPolicyStatusDetail>(requestInfo, DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Policy and application status details for this device.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PolicyStatusDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder.PolicyStatusDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PolicyStatusDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder.PolicyStatusDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PolicyStatusDetailsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PolicyStatusDetailsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder WithUrl(string rawUrl)
         {
-            return new PolicyStatusDetailsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Policy and application status details for this device.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PolicyStatusDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<PolicyStatusDetailsRequestBuilderGetQueryParameters>
+        public class PolicyStatusDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.PolicyStatusDetailsRequestBuilder.PolicyStatusDetailsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

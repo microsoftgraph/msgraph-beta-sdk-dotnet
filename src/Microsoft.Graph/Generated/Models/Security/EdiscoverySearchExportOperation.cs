@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoverySearchExportOperation : CaseOperation, IParsable
+    public class EdiscoverySearchExportOperation : Microsoft.Graph.Beta.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.</summary>
@@ -91,28 +91,28 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The eDiscovery searches under each case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoverySearch? Search
+        public Microsoft.Graph.Beta.Models.Security.EdiscoverySearch? Search
         {
-            get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #nullable restore
 #else
-        public EdiscoverySearch Search
+        public Microsoft.Graph.Beta.Models.Security.EdiscoverySearch Search
         {
-            get { return BackingStore?.Get<EdiscoverySearch>("search"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoverySearchExportOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoverySearchExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoverySearchExportOperation();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoverySearchExportOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,15 +122,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "additionalOptions", n => { AdditionalOptions = n.GetEnumValue<AdditionalOptions>(); } },
+                { "additionalOptions", n => { AdditionalOptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AdditionalOptions>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "exportCriteria", n => { ExportCriteria = n.GetEnumValue<ExportCriteria>(); } },
+                { "exportCriteria", n => { ExportCriteria = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportCriteria>(); } },
                 { "exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>(Microsoft.Graph.Beta.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "exportFormat", n => { ExportFormat = n.GetEnumValue<ExportFormat>(); } },
-                { "exportLocation", n => { ExportLocation = n.GetEnumValue<ExportLocation>(); } },
+                { "exportFormat", n => { ExportFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportFormat>(); } },
+                { "exportLocation", n => { ExportLocation = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportLocation>(); } },
                 { "exportSingleItems", n => { ExportSingleItems = n.GetBoolValue(); } },
-                { "search", n => { Search = n.GetObjectValue<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>(Microsoft.Graph.Beta.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -141,15 +141,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AdditionalOptions>("additionalOptions", AdditionalOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AdditionalOptions>("additionalOptions", AdditionalOptions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<ExportCriteria>("exportCriteria", ExportCriteria);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportCriteria>("exportCriteria", ExportCriteria);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>("exportFileMetadata", ExportFileMetadata);
-            writer.WriteEnumValue<ExportFormat>("exportFormat", ExportFormat);
-            writer.WriteEnumValue<ExportLocation>("exportLocation", ExportLocation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportFormat>("exportFormat", ExportFormat);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportLocation>("exportLocation", ExportLocation);
             writer.WriteBoolValue("exportSingleItems", ExportSingleItems);
-            writer.WriteObjectValue<EdiscoverySearch>("search", Search);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoverySearch>("search", Search);
         }
     }
 }

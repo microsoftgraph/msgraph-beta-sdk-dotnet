@@ -132,13 +132,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of address. Possible values are: unknown, home, business, other.</summary>
-        public PhysicalAddressType? Type
+        public Microsoft.Graph.Beta.Models.PhysicalAddressType? Type
         {
-            get { return BackingStore?.Get<PhysicalAddressType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddressType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PhysicalAddress"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PhysicalAddress"/> and sets the default values.
         /// </summary>
         public PhysicalAddress()
         {
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PhysicalAddress"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PhysicalAddress"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PhysicalAddress CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PhysicalAddress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PhysicalAddress();
+            return new Microsoft.Graph.Beta.Models.PhysicalAddress();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<PhysicalAddressType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.PhysicalAddressType>(); } },
             };
         }
         /// <summary>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("postOfficeBox", PostOfficeBox);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("street", Street);
-            writer.WriteEnumValue<PhysicalAddressType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PhysicalAddressType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
     public class WdacSupplementalPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of windowsDefenderApplicationControlSupplementalPolicy</param>
-        /// <returns>A <see cref="WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder"/></returns>
-        public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicy%2Did", position);
-                return new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WdacSupplementalPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WdacSupplementalPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
         /// <summary>
         /// The collection of Windows Defender Application Control Supplemental Policies.
         /// </summary>
-        /// <returns>A <see cref="WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<WdacSupplementalPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder.WdacSupplementalPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<WdacSupplementalPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder.WdacSupplementalPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to wdacSupplementalPolicies for deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="WindowsDefenderApplicationControlSupplementalPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsDefenderApplicationControlSupplementalPolicy?> PostAsync(WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy?> PostAsync(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsDefenderApplicationControlSupplementalPolicy> PostAsync(WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy> PostAsync(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicy>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy>(requestInfo, Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of Windows Defender Application Control Supplemental Policies.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WdacSupplementalPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder.WdacSupplementalPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WdacSupplementalPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder.WdacSupplementalPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WdacSupplementalPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WdacSupplementalPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new WdacSupplementalPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of Windows Defender Application Control Supplemental Policies.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WdacSupplementalPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<WdacSupplementalPoliciesRequestBuilderGetQueryParameters>
+        public class WdacSupplementalPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder.WdacSupplementalPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

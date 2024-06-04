@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("postingDate", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GeneralLedgerEntry"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GeneralLedgerEntry"/> and sets the default values.
         /// </summary>
         public GeneralLedgerEntry()
         {
@@ -163,12 +163,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GeneralLedgerEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GeneralLedgerEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GeneralLedgerEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GeneralLedgerEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GeneralLedgerEntry();
+            return new Microsoft.Graph.Beta.Models.GeneralLedgerEntry();
         }
         /// <summary>
         /// The deserialization information for the current model

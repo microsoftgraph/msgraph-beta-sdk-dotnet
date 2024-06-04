@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerRoster : Entity, IParsable
+    public class PlannerRoster : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignedSensitivityLabel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SensitivityLabelAssignment? AssignedSensitivityLabel
+        public Microsoft.Graph.Beta.Models.SensitivityLabelAssignment? AssignedSensitivityLabel
         {
-            get { return BackingStore?.Get<SensitivityLabelAssignment?>("assignedSensitivityLabel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityLabelAssignment?>("assignedSensitivityLabel"); }
             set { BackingStore?.Set("assignedSensitivityLabel", value); }
         }
 #nullable restore
 #else
-        public SensitivityLabelAssignment AssignedSensitivityLabel
+        public Microsoft.Graph.Beta.Models.SensitivityLabelAssignment AssignedSensitivityLabel
         {
-            get { return BackingStore?.Get<SensitivityLabelAssignment>("assignedSensitivityLabel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityLabelAssignment>("assignedSensitivityLabel"); }
             set { BackingStore?.Set("assignedSensitivityLabel", value); }
         }
 #endif
         /// <summary>Retrieves the members of the plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerRosterMember>? Members
+        public List<Microsoft.Graph.Beta.Models.PlannerRosterMember>? Members
         {
-            get { return BackingStore?.Get<List<PlannerRosterMember>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerRosterMember>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<PlannerRosterMember> Members
+        public List<Microsoft.Graph.Beta.Models.PlannerRosterMember> Members
         {
-            get { return BackingStore?.Get<List<PlannerRosterMember>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerRosterMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
         /// <summary>Retrieves the plans contained by the plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlan>? Plans
+        public List<Microsoft.Graph.Beta.Models.PlannerPlan>? Plans
         {
-            get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerPlan>?>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlan> Plans
+        public List<Microsoft.Graph.Beta.Models.PlannerPlan> Plans
         {
-            get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerRoster"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerRoster"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerRoster CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerRoster CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerRoster();
+            return new Microsoft.Graph.Beta.Models.PlannerRoster();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedSensitivityLabel", n => { AssignedSensitivityLabel = n.GetObjectValue<SensitivityLabelAssignment>(SensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<PlannerRosterMember>(PlannerRosterMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedSensitivityLabel", n => { AssignedSensitivityLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.SensitivityLabelAssignment>(Microsoft.Graph.Beta.Models.SensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerRosterMember>(Microsoft.Graph.Beta.Models.PlannerRosterMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "plans", n => { Plans = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerPlan>(Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<SensitivityLabelAssignment>("assignedSensitivityLabel", AssignedSensitivityLabel);
-            writer.WriteCollectionOfObjectValues<PlannerRosterMember>("members", Members);
-            writer.WriteCollectionOfObjectValues<PlannerPlan>("plans", Plans);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SensitivityLabelAssignment>("assignedSensitivityLabel", AssignedSensitivityLabel);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerRosterMember>("members", Members);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerPlan>("plans", Plans);
         }
     }
 }

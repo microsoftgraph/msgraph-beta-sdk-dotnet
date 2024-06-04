@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Sign
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SignDigestPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest.SignDigestPostRequestBody"/> and sets the default values.
         /// </summary>
         public SignDigestPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Sign
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SignDigestPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest.SignDigestPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SignDigestPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest.SignDigestPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SignDigestPostRequestBody();
+            return new Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest.SignDigestPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

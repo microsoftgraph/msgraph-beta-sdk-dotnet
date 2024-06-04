@@ -134,13 +134,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The userAccessLevel property</summary>
-        public CloudPcUserAccessLevel? UserAccessLevel
+        public Microsoft.Graph.Beta.Models.CloudPcUserAccessLevel? UserAccessLevel
         {
-            get { return BackingStore?.Get<CloudPcUserAccessLevel?>("userAccessLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcUserAccessLevel?>("userAccessLevel"); }
             set { BackingStore?.Set("userAccessLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcReviewStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcReviewStatus"/> and sets the default values.
         /// </summary>
         public CloudPcReviewStatus()
         {
@@ -150,12 +150,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcReviewStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcReviewStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcReviewStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcReviewStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcReviewStatus();
+            return new Microsoft.Graph.Beta.Models.CloudPcReviewStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "reviewStartDateTime", n => { ReviewStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
-                { "userAccessLevel", n => { UserAccessLevel = n.GetEnumValue<CloudPcUserAccessLevel>(); } },
+                { "userAccessLevel", n => { UserAccessLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcUserAccessLevel>(); } },
             };
         }
         /// <summary>
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("reviewStartDateTime", ReviewStartDateTime);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);
-            writer.WriteEnumValue<CloudPcUserAccessLevel>("userAccessLevel", UserAccessLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcUserAccessLevel>("userAccessLevel", UserAccessLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

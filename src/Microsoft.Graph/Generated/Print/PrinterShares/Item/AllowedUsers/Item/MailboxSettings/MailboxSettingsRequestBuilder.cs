@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
     public class MailboxSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MailboxSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MailboxSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MailboxSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MailboxSettings?> GetAsync(Action<RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MailboxSettings?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder.MailboxSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MailboxSettings> GetAsync(Action<RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MailboxSettings> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder.MailboxSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MailboxSettings>(requestInfo, Microsoft.Graph.Beta.Models.MailboxSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MailboxSettings>(requestInfo, Microsoft.Graph.Beta.Models.MailboxSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder.MailboxSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder.MailboxSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MailboxSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public MailboxSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MailboxSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<MailboxSettingsRequestBuilderGetQueryParameters>
+        public class MailboxSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder.MailboxSettingsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

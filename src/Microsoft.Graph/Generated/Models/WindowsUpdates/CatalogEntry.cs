@@ -41,19 +41,19 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CatalogEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new DriverUpdateCatalogEntry(),
-                "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new FeatureUpdateCatalogEntry(),
-                "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new QualityUpdateCatalogEntry(),
-                "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry" => new SoftwareUpdateCatalogEntry(),
-                _ => new CatalogEntry(),
+                "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.FeatureUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry(),
             };
         }
         /// <summary>

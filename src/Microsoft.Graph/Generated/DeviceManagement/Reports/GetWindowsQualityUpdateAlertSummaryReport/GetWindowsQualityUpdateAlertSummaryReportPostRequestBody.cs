@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateA
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetWindowsQualityUpdateAlertSummaryReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetWindowsQualityUpdateAlertSummaryReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateA
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetWindowsQualityUpdateAlertSummaryReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetWindowsQualityUpdateAlertSummaryReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetWindowsQualityUpdateAlertSummaryReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

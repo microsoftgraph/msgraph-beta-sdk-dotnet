@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExternalProfile : DirectoryObject, IParsable
+    public class ExternalProfile : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The office address of the external user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalOfficeAddress? Address
+        public Microsoft.Graph.Beta.Models.PhysicalOfficeAddress? Address
         {
-            get { return BackingStore?.Get<PhysicalOfficeAddress?>("address"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalOfficeAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PhysicalOfficeAddress Address
+        public Microsoft.Graph.Beta.Models.PhysicalOfficeAddress Address
         {
-            get { return BackingStore?.Get<PhysicalOfficeAddress>("address"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalOfficeAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #endif
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExternalProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalProfile"/> and sets the default values.
         /// </summary>
         public ExternalProfile() : base()
         {
@@ -166,17 +166,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.externalUserProfile" => new ExternalUserProfile(),
-                "#microsoft.graph.pendingExternalUserProfile" => new PendingExternalUserProfile(),
-                _ => new ExternalProfile(),
+                "#microsoft.graph.externalUserProfile" => new Microsoft.Graph.Beta.Models.ExternalUserProfile(),
+                "#microsoft.graph.pendingExternalUserProfile" => new Microsoft.Graph.Beta.Models.PendingExternalUserProfile(),
+                _ => new Microsoft.Graph.Beta.Models.ExternalProfile(),
             };
         }
         /// <summary>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "address", n => { Address = n.GetObjectValue<PhysicalOfficeAddress>(PhysicalOfficeAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<Microsoft.Graph.Beta.Models.PhysicalOfficeAddress>(Microsoft.Graph.Beta.Models.PhysicalOfficeAddress.CreateFromDiscriminatorValue); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PhysicalOfficeAddress>("address", Address);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PhysicalOfficeAddress>("address", Address);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

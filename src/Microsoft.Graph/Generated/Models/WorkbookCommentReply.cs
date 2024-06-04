@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookCommentReply : Entity, IParsable
+    public class WorkbookCommentReply : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content of replied comment.</summary>
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The task associated with the comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookDocumentTask? Task
+        public Microsoft.Graph.Beta.Models.WorkbookDocumentTask? Task
         {
-            get { return BackingStore?.Get<WorkbookDocumentTask?>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookDocumentTask?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public WorkbookDocumentTask Task
+        public Microsoft.Graph.Beta.Models.WorkbookDocumentTask Task
         {
-            get { return BackingStore?.Get<WorkbookDocumentTask>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookCommentReply"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookCommentReply"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookCommentReply CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkbookCommentReply CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookCommentReply();
+            return new Microsoft.Graph.Beta.Models.WorkbookCommentReply();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
-                { "task", n => { Task = n.GetObjectValue<WorkbookDocumentTask>(WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
+                { "task", n => { Task = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookDocumentTask>(Microsoft.Graph.Beta.Models.WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("contentType", ContentType);
-            writer.WriteObjectValue<WorkbookDocumentTask>("task", Task);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task", Task);
         }
     }
 }

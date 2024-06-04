@@ -379,16 +379,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>All users on the shared Apple device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedAppleDeviceUser>? SharedDeviceCachedUsers
+        public List<Microsoft.Graph.Beta.Models.SharedAppleDeviceUser>? SharedDeviceCachedUsers
         {
-            get { return BackingStore?.Get<List<SharedAppleDeviceUser>?>("sharedDeviceCachedUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedAppleDeviceUser>?>("sharedDeviceCachedUsers"); }
             set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
         }
 #nullable restore
 #else
-        public List<SharedAppleDeviceUser> SharedDeviceCachedUsers
+        public List<Microsoft.Graph.Beta.Models.SharedAppleDeviceUser> SharedDeviceCachedUsers
         {
-            get { return BackingStore?.Get<List<SharedAppleDeviceUser>>("sharedDeviceCachedUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedAppleDeviceUser>>("sharedDeviceCachedUsers"); }
             set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
         }
 #endif
@@ -527,7 +527,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HardwareInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.HardwareInformation"/> and sets the default values.
         /// </summary>
         public HardwareInformation()
         {
@@ -537,12 +537,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HardwareInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static HardwareInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.HardwareInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HardwareInformation();
+            return new Microsoft.Graph.Beta.Models.HardwareInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -558,12 +558,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "batterySerialNumber", n => { BatterySerialNumber = n.GetStringValue(); } },
                 { "cellularTechnology", n => { CellularTechnology = n.GetStringValue(); } },
                 { "deviceFullQualifiedDomainName", n => { DeviceFullQualifiedDomainName = n.GetStringValue(); } },
-                { "deviceGuardLocalSystemAuthorityCredentialGuardState", n => { DeviceGuardLocalSystemAuthorityCredentialGuardState = n.GetEnumValue<DeviceGuardLocalSystemAuthorityCredentialGuardState>(); } },
-                { "deviceGuardVirtualizationBasedSecurityHardwareRequirementState", n => { DeviceGuardVirtualizationBasedSecurityHardwareRequirementState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>(); } },
-                { "deviceGuardVirtualizationBasedSecurityState", n => { DeviceGuardVirtualizationBasedSecurityState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityState>(); } },
+                { "deviceGuardLocalSystemAuthorityCredentialGuardState", n => { DeviceGuardLocalSystemAuthorityCredentialGuardState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState>(); } },
+                { "deviceGuardVirtualizationBasedSecurityHardwareRequirementState", n => { DeviceGuardVirtualizationBasedSecurityHardwareRequirementState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>(); } },
+                { "deviceGuardVirtualizationBasedSecurityState", n => { DeviceGuardVirtualizationBasedSecurityState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState>(); } },
                 { "deviceLicensingLastErrorCode", n => { DeviceLicensingLastErrorCode = n.GetIntValue(); } },
                 { "deviceLicensingLastErrorDescription", n => { DeviceLicensingLastErrorDescription = n.GetStringValue(); } },
-                { "deviceLicensingStatus", n => { DeviceLicensingStatus = n.GetEnumValue<DeviceLicensingStatus>(); } },
+                { "deviceLicensingStatus", n => { DeviceLicensingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceLicensingStatus>(); } },
                 { "esimIdentifier", n => { EsimIdentifier = n.GetStringValue(); } },
                 { "freeStorageSpace", n => { FreeStorageSpace = n.GetLongValue(); } },
                 { "imei", n => { Imei = n.GetStringValue(); } },
@@ -583,7 +583,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "productName", n => { ProductName = n.GetStringValue(); } },
                 { "residentUsersCount", n => { ResidentUsersCount = n.GetIntValue(); } },
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                { "sharedDeviceCachedUsers", n => { SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>(SharedAppleDeviceUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharedDeviceCachedUsers", n => { SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedAppleDeviceUser>(Microsoft.Graph.Beta.Models.SharedAppleDeviceUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "subnetAddress", n => { SubnetAddress = n.GetStringValue(); } },
                 { "subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
                 { "systemManagementBIOSVersion", n => { SystemManagementBIOSVersion = n.GetStringValue(); } },
@@ -608,12 +608,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("batterySerialNumber", BatterySerialNumber);
             writer.WriteStringValue("cellularTechnology", CellularTechnology);
             writer.WriteStringValue("deviceFullQualifiedDomainName", DeviceFullQualifiedDomainName);
-            writer.WriteEnumValue<DeviceGuardLocalSystemAuthorityCredentialGuardState>("deviceGuardLocalSystemAuthorityCredentialGuardState", DeviceGuardLocalSystemAuthorityCredentialGuardState);
-            writer.WriteEnumValue<DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>("deviceGuardVirtualizationBasedSecurityHardwareRequirementState", DeviceGuardVirtualizationBasedSecurityHardwareRequirementState);
-            writer.WriteEnumValue<DeviceGuardVirtualizationBasedSecurityState>("deviceGuardVirtualizationBasedSecurityState", DeviceGuardVirtualizationBasedSecurityState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState>("deviceGuardLocalSystemAuthorityCredentialGuardState", DeviceGuardLocalSystemAuthorityCredentialGuardState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>("deviceGuardVirtualizationBasedSecurityHardwareRequirementState", DeviceGuardVirtualizationBasedSecurityHardwareRequirementState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState>("deviceGuardVirtualizationBasedSecurityState", DeviceGuardVirtualizationBasedSecurityState);
             writer.WriteIntValue("deviceLicensingLastErrorCode", DeviceLicensingLastErrorCode);
             writer.WriteStringValue("deviceLicensingLastErrorDescription", DeviceLicensingLastErrorDescription);
-            writer.WriteEnumValue<DeviceLicensingStatus>("deviceLicensingStatus", DeviceLicensingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceLicensingStatus>("deviceLicensingStatus", DeviceLicensingStatus);
             writer.WriteStringValue("esimIdentifier", EsimIdentifier);
             writer.WriteLongValue("freeStorageSpace", FreeStorageSpace);
             writer.WriteStringValue("imei", Imei);
@@ -633,7 +633,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("productName", ProductName);
             writer.WriteIntValue("residentUsersCount", ResidentUsersCount);
             writer.WriteStringValue("serialNumber", SerialNumber);
-            writer.WriteCollectionOfObjectValues<SharedAppleDeviceUser>("sharedDeviceCachedUsers", SharedDeviceCachedUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedAppleDeviceUser>("sharedDeviceCachedUsers", SharedDeviceCachedUsers);
             writer.WriteStringValue("subnetAddress", SubnetAddress);
             writer.WriteStringValue("subscriberCarrier", SubscriberCarrier);
             writer.WriteStringValue("systemManagementBIOSVersion", SystemManagementBIOSVersion);

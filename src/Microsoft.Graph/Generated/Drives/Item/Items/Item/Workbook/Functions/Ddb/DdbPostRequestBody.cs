@@ -23,85 +23,85 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb
         /// <summary>The cost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cost
+        public Microsoft.Graph.Beta.Models.Json? Cost
         {
-            get { return BackingStore?.Get<Json?>("cost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("cost"); }
             set { BackingStore?.Set("cost", value); }
         }
 #nullable restore
 #else
-        public Json Cost
+        public Microsoft.Graph.Beta.Models.Json Cost
         {
-            get { return BackingStore?.Get<Json>("cost"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("cost"); }
             set { BackingStore?.Set("cost", value); }
         }
 #endif
         /// <summary>The factor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Factor
+        public Microsoft.Graph.Beta.Models.Json? Factor
         {
-            get { return BackingStore?.Get<Json?>("factor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("factor"); }
             set { BackingStore?.Set("factor", value); }
         }
 #nullable restore
 #else
-        public Json Factor
+        public Microsoft.Graph.Beta.Models.Json Factor
         {
-            get { return BackingStore?.Get<Json>("factor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("factor"); }
             set { BackingStore?.Set("factor", value); }
         }
 #endif
         /// <summary>The life property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Life
+        public Microsoft.Graph.Beta.Models.Json? Life
         {
-            get { return BackingStore?.Get<Json?>("life"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("life"); }
             set { BackingStore?.Set("life", value); }
         }
 #nullable restore
 #else
-        public Json Life
+        public Microsoft.Graph.Beta.Models.Json Life
         {
-            get { return BackingStore?.Get<Json>("life"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("life"); }
             set { BackingStore?.Set("life", value); }
         }
 #endif
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Period
+        public Microsoft.Graph.Beta.Models.Json? Period
         {
-            get { return BackingStore?.Get<Json?>("period"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("period"); }
             set { BackingStore?.Set("period", value); }
         }
 #nullable restore
 #else
-        public Json Period
+        public Microsoft.Graph.Beta.Models.Json Period
         {
-            get { return BackingStore?.Get<Json>("period"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("period"); }
             set { BackingStore?.Set("period", value); }
         }
 #endif
         /// <summary>The salvage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Salvage
+        public Microsoft.Graph.Beta.Models.Json? Salvage
         {
-            get { return BackingStore?.Get<Json?>("salvage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("salvage"); }
             set { BackingStore?.Set("salvage", value); }
         }
 #nullable restore
 #else
-        public Json Salvage
+        public Microsoft.Graph.Beta.Models.Json Salvage
         {
-            get { return BackingStore?.Get<Json>("salvage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("salvage"); }
             set { BackingStore?.Set("salvage", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DdbPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb.DdbPostRequestBody"/> and sets the default values.
         /// </summary>
         public DdbPostRequestBody()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DdbPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb.DdbPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DdbPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb.DdbPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DdbPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb.DdbPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cost", n => { Cost = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "factor", n => { Factor = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "life", n => { Life = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "period", n => { Period = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "salvage", n => { Salvage = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "factor", n => { Factor = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "life", n => { Life = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "period", n => { Period = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "salvage", n => { Salvage = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ddb
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("cost", Cost);
-            writer.WriteObjectValue<Json>("factor", Factor);
-            writer.WriteObjectValue<Json>("life", Life);
-            writer.WriteObjectValue<Json>("period", Period);
-            writer.WriteObjectValue<Json>("salvage", Salvage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("cost", Cost);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("factor", Factor);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("life", Life);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("period", Period);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("salvage", Salvage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

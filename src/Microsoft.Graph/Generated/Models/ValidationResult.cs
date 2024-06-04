@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("validationPassed", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ValidationResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ValidationResult"/> and sets the default values.
         /// </summary>
         public ValidationResult()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ValidationResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ValidationResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ValidationResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ValidationResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ValidationResult();
+            return new Microsoft.Graph.Beta.Models.ValidationResult();
         }
         /// <summary>
         /// The deserialization information for the current model

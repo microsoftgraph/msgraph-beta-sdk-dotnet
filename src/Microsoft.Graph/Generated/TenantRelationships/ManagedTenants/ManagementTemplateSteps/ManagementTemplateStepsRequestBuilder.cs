@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
     public class ManagementTemplateStepsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         /// <param name="position">The unique identifier of managementTemplateStep</param>
-        /// <returns>A <see cref="ManagementTemplateStepItemRequestBuilder"/></returns>
-        public ManagementTemplateStepItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.ManagementTemplateStepItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.ManagementTemplateStepItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managementTemplateStep%2Did", position);
-                return new ManagementTemplateStepItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.ManagementTemplateStepItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagementTemplateStepsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagementTemplateStepsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>
         /// Get managementTemplateSteps from tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateStepCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagementTemplateStepCollectionResponse?> GetAsync(Action<RequestConfiguration<ManagementTemplateStepsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder.ManagementTemplateStepsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagementTemplateStepCollectionResponse> GetAsync(Action<RequestConfiguration<ManagementTemplateStepsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder.ManagementTemplateStepsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagementTemplateStepCollectionResponse>(requestInfo, ManagementTemplateStepCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managementTemplateSteps for tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateStep"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagementTemplateStep?> PostAsync(ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep?> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagementTemplateStep> PostAsync(ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagementTemplateStep>(requestInfo, ManagementTemplateStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get managementTemplateSteps from tenantRelationships
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagementTemplateStepsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder.ManagementTemplateStepsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagementTemplateStepsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder.ManagementTemplateStepsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateStepsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagementTemplateStepsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagementTemplateStepsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get managementTemplateSteps from tenantRelationships
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagementTemplateStepsRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagementTemplateStepsRequestBuilderGetQueryParameters>
+        public class ManagementTemplateStepsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder.ManagementTemplateStepsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

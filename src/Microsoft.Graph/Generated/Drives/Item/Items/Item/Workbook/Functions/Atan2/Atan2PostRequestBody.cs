@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2
         /// <summary>The xNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? XNum
+        public Microsoft.Graph.Beta.Models.Json? XNum
         {
-            get { return BackingStore?.Get<Json?>("xNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("xNum"); }
             set { BackingStore?.Set("xNum", value); }
         }
 #nullable restore
 #else
-        public Json XNum
+        public Microsoft.Graph.Beta.Models.Json XNum
         {
-            get { return BackingStore?.Get<Json>("xNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("xNum"); }
             set { BackingStore?.Set("xNum", value); }
         }
 #endif
         /// <summary>The yNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? YNum
+        public Microsoft.Graph.Beta.Models.Json? YNum
         {
-            get { return BackingStore?.Get<Json?>("yNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("yNum"); }
             set { BackingStore?.Set("yNum", value); }
         }
 #nullable restore
 #else
-        public Json YNum
+        public Microsoft.Graph.Beta.Models.Json YNum
         {
-            get { return BackingStore?.Get<Json>("yNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("yNum"); }
             set { BackingStore?.Set("yNum", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Atan2PostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2.Atan2PostRequestBody"/> and sets the default values.
         /// </summary>
         public Atan2PostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Atan2PostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2.Atan2PostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Atan2PostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2.Atan2PostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Atan2PostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2.Atan2PostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "xNum", n => { XNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "yNum", n => { YNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "xNum", n => { XNum = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "yNum", n => { YNum = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Atan2
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("xNum", XNum);
-            writer.WriteObjectValue<Json>("yNum", YNum);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("xNum", XNum);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("yNum", YNum);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

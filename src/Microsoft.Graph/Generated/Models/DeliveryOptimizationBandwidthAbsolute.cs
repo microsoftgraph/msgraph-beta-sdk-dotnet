@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Bandwidth limits in kilobytes per second.
     /// </summary>
-    public class DeliveryOptimizationBandwidthAbsolute : DeliveryOptimizationBandwidth, IParsable
+    public class DeliveryOptimizationBandwidthAbsolute : Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth, IParsable
     {
         /// <summary>Specifies the maximum download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization. Valid values 0 to 4294967295</summary>
         public long? MaximumDownloadBandwidthInKilobytesPerSecond
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("maximumUploadBandwidthInKilobytesPerSecond", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeliveryOptimizationBandwidthAbsolute"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthAbsolute"/> and sets the default values.
         /// </summary>
         public DeliveryOptimizationBandwidthAbsolute() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeliveryOptimizationBandwidthAbsolute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthAbsolute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeliveryOptimizationBandwidthAbsolute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthAbsolute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeliveryOptimizationBandwidthAbsolute();
+            return new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthAbsolute();
         }
         /// <summary>
         /// The deserialization information for the current model

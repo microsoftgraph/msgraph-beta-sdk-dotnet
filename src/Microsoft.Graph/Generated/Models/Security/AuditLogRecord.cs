@@ -167,20 +167,20 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.</summary>
-        public AuditLogUserType? UserType
+        public Microsoft.Graph.Beta.Models.Security.AuditLogUserType? UserType
         {
-            get { return BackingStore?.Get<AuditLogUserType?>("userType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AuditLogUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditLogRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AuditLogRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuditLogRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.AuditLogRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditLogRecord();
+            return new Microsoft.Graph.Beta.Models.Security.AuditLogRecord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "auditData", n => { AuditData = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AuditData>(Microsoft.Graph.Beta.Models.Security.AuditData.CreateFromDiscriminatorValue); } },
-                { "auditLogRecordType", n => { AuditLogRecordType = n.GetEnumValue<AuditLogRecordType>(); } },
+                { "auditLogRecordType", n => { AuditLogRecordType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType>(); } },
                 { "clientIp", n => { ClientIp = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userType", n => { UserType = n.GetEnumValue<AuditLogUserType>(); } },
+                { "userType", n => { UserType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AuditLogUserType>(); } },
             };
         }
         /// <summary>
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("administrativeUnits", AdministrativeUnits);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AuditData>("auditData", AuditData);
-            writer.WriteEnumValue<AuditLogRecordType>("auditLogRecordType", AuditLogRecordType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType>("auditLogRecordType", AuditLogRecordType);
             writer.WriteStringValue("clientIp", ClientIp);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("objectId", ObjectId);
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteEnumValue<AuditLogUserType>("userType", UserType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AuditLogUserType>("userType", UserType);
         }
     }
 }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
 {
     [Obsolete("This class is obsolete. Use GenerateDownloadUrlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GenerateDownloadUrlResponse : GenerateDownloadUrlPostResponse, IParsable
+    public class GenerateDownloadUrlResponse : Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl.GenerateDownloadUrlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GenerateDownloadUrlResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl.GenerateDownloadUrlResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GenerateDownloadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl.GenerateDownloadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GenerateDownloadUrlResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl.GenerateDownloadUrlResponse();
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSettingDependedOnBy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingDependedOnBy()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSettingDependedOnBy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationSettingDependedOnBy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSettingDependedOnBy();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy();
         }
         /// <summary>
         /// The deserialization information for the current model

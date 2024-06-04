@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The kind of entity that&apos;s targeted. The possible values are: group, administrativeUnit, role, unknownFutureValue.</summary>
-        public FeatureTargetType? TargetType
+        public Microsoft.Graph.Beta.Models.FeatureTargetType? TargetType
         {
-            get { return BackingStore?.Get<FeatureTargetType?>("targetType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FeatureTargetType?>("targetType"); }
             set { BackingStore?.Set("targetType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FeatureTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.FeatureTarget"/> and sets the default values.
         /// </summary>
         public FeatureTarget()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FeatureTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.FeatureTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FeatureTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.FeatureTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FeatureTarget();
+            return new Microsoft.Graph.Beta.Models.FeatureTarget();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "targetType", n => { TargetType = n.GetEnumValue<FeatureTargetType>(); } },
+                { "targetType", n => { TargetType = n.GetEnumValue<Microsoft.Graph.Beta.Models.FeatureTargetType>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<FeatureTargetType>("targetType", TargetType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.FeatureTargetType>("targetType", TargetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

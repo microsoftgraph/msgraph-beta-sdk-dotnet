@@ -7,65 +7,65 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventWebinar : VirtualEvent, IParsable
+    public class VirtualEventWebinar : Microsoft.Graph.Beta.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>To whom the webinar is visible.</summary>
-        public MeetingAudience? Audience
+        public Microsoft.Graph.Beta.Models.MeetingAudience? Audience
         {
-            get { return BackingStore?.Get<MeetingAudience?>("audience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>Identity information of coorganizers of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommunicationsUserIdentity>? CoOrganizers
+        public List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>? CoOrganizers
         {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>?>("coOrganizers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>?>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #nullable restore
 #else
-        public List<CommunicationsUserIdentity> CoOrganizers
+        public List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity> CoOrganizers
         {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>>("coOrganizers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
         /// <summary>Registration configuration of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventWebinarRegistrationConfiguration? RegistrationConfiguration
+        public Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration? RegistrationConfiguration
         {
-            get { return BackingStore?.Get<VirtualEventWebinarRegistrationConfiguration?>("registrationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration?>("registrationConfiguration"); }
             set { BackingStore?.Set("registrationConfiguration", value); }
         }
 #nullable restore
 #else
-        public VirtualEventWebinarRegistrationConfiguration RegistrationConfiguration
+        public Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration RegistrationConfiguration
         {
-            get { return BackingStore?.Get<VirtualEventWebinarRegistrationConfiguration>("registrationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration>("registrationConfiguration"); }
             set { BackingStore?.Set("registrationConfiguration", value); }
         }
 #endif
         /// <summary>Registration records of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistration>? Registrations
+        public List<Microsoft.Graph.Beta.Models.VirtualEventRegistration>? Registrations
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistration>?>("registrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventRegistration>?>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistration> Registrations
+        public List<Microsoft.Graph.Beta.Models.VirtualEventRegistration> Registrations
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistration>>("registrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventRegistration>>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEventWebinar"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VirtualEventWebinar"/> and sets the default values.
         /// </summary>
         public VirtualEventWebinar() : base()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventWebinar"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventWebinar"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventWebinar CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventWebinar CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventWebinar();
+            return new Microsoft.Graph.Beta.Models.VirtualEventWebinar();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
-                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<VirtualEventWebinarRegistrationConfiguration>(VirtualEventWebinarRegistrationConfiguration.CreateFromDiscriminatorValue); } },
-                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "audience", n => { Audience = n.GetEnumValue<Microsoft.Graph.Beta.Models.MeetingAudience>(); } },
+                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>(Microsoft.Graph.Beta.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration>(Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration.CreateFromDiscriminatorValue); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventRegistration>(Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -103,10 +103,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MeetingAudience>("audience", Audience);
-            writer.WriteCollectionOfObjectValues<CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
-            writer.WriteObjectValue<VirtualEventWebinarRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistration>("registrations", Registrations);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MeetingAudience>("audience", Audience);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualEventWebinarRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

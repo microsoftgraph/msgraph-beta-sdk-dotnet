@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
     public class FilteringPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filteringPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         /// <param name="position">The unique identifier of filteringPolicy</param>
-        /// <returns>A <see cref="FilteringPolicyItemRequestBuilder"/></returns>
-        public FilteringPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Item.FilteringPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Item.FilteringPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("filteringPolicy%2Did", position);
-                return new FilteringPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Item.FilteringPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilteringPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilteringPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
         /// Get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-filteringpolicies?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="FilteringPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilteringPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<FilteringPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder.FilteringPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilteringPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<FilteringPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder.FilteringPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilteringPolicyCollectionResponse>(requestInfo, FilteringPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to filteringPolicies for networkAccess
         /// </summary>
-        /// <returns>A <see cref="FilteringPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilteringPolicy?> PostAsync(FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy?> PostAsync(Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FilteringPolicy> PostAsync(FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy> PostAsync(Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FilteringPolicy>(requestInfo, FilteringPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilteringPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder.FilteringPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilteringPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder.FilteringPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FilteringPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FilteringPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new FilteringPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilteringPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<FilteringPoliciesRequestBuilderGetQueryParameters>
+        public class FilteringPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder.FilteringPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

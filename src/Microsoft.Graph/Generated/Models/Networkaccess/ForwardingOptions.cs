@@ -11,20 +11,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     #pragma warning restore CS1591
     {
         /// <summary>The skipDnsLookupState property</summary>
-        public Status? SkipDnsLookupState
+        public Microsoft.Graph.Beta.Models.Networkaccess.Status? SkipDnsLookupState
         {
-            get { return BackingStore?.Get<Status?>("skipDnsLookupState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Status?>("skipDnsLookupState"); }
             set { BackingStore?.Set("skipDnsLookupState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForwardingOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ForwardingOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ForwardingOptions();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "skipDnsLookupState", n => { SkipDnsLookupState = n.GetEnumValue<Status>(); } },
+                { "skipDnsLookupState", n => { SkipDnsLookupState = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>(); } },
             };
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Status>("skipDnsLookupState", SkipDnsLookupState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>("skipDnsLookupState", SkipDnsLookupState);
         }
     }
 }

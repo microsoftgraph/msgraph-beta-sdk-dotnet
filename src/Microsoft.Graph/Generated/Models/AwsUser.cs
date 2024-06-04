@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsUser : AwsIdentity, IParsable
+    public class AwsUser : Microsoft.Graph.Beta.Models.AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Roles assumed by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsRole>? AssumableRoles
+        public List<Microsoft.Graph.Beta.Models.AwsRole>? AssumableRoles
         {
-            get { return BackingStore?.Get<List<AwsRole>?>("assumableRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsRole>?>("assumableRoles"); }
             set { BackingStore?.Set("assumableRoles", value); }
         }
 #nullable restore
 #else
-        public List<AwsRole> AssumableRoles
+        public List<Microsoft.Graph.Beta.Models.AwsRole> AssumableRoles
         {
-            get { return BackingStore?.Get<List<AwsRole>>("assumableRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsRole>>("assumableRoles"); }
             set { BackingStore?.Set("assumableRoles", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsUser"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsUser"/> and sets the default values.
         /// </summary>
         public AwsUser() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsUser();
+            return new Microsoft.Graph.Beta.Models.AwsUser();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assumableRoles", n => { AssumableRoles = n.GetCollectionOfObjectValues<AwsRole>(AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assumableRoles", n => { AssumableRoles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsRole>(Microsoft.Graph.Beta.Models.AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AwsRole>("assumableRoles", AssumableRoles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsRole>("assumableRoles", AssumableRoles);
         }
     }
 }

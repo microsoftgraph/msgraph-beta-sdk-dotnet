@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationTargetedUserAndDevice"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationTargetedUserAndDevice"/> and sets the default values.
         /// </summary>
         public DeviceConfigurationTargetedUserAndDevice()
         {
@@ -133,12 +133,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationTargetedUserAndDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationTargetedUserAndDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceConfigurationTargetedUserAndDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceConfigurationTargetedUserAndDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationTargetedUserAndDevice();
+            return new Microsoft.Graph.Beta.Models.DeviceConfigurationTargetedUserAndDevice();
         }
         /// <summary>
         /// The deserialization information for the current model

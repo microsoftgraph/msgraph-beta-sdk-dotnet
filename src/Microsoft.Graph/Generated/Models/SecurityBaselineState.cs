@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Security baseline state for a device.
     /// </summary>
-    public class SecurityBaselineState : Entity, IParsable
+    public class SecurityBaselineState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The display name of the security baseline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The security baseline state for different settings for a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityBaselineSettingState>? SettingStates
+        public List<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState>? SettingStates
         {
-            get { return BackingStore?.Get<List<SecurityBaselineSettingState>?>("settingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState>?>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #nullable restore
 #else
-        public List<SecurityBaselineSettingState> SettingStates
+        public List<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState> SettingStates
         {
-            get { return BackingStore?.Get<List<SecurityBaselineSettingState>>("settingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState>>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #endif
         /// <summary>Security Baseline Compliance State</summary>
-        public SecurityBaselineComplianceState? State
+        public Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState? State
         {
-            get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User Principal Name</summary>
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityBaselineState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityBaselineState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SecurityBaselineState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityBaselineState();
+            return new Microsoft.Graph.Beta.Models.SecurityBaselineState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "securityBaselineTemplateId", n => { SecurityBaselineTemplateId = n.GetStringValue(); } },
-                { "settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>(SecurityBaselineSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
+                { "settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState>(Microsoft.Graph.Beta.Models.SecurityBaselineSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -116,8 +116,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("securityBaselineTemplateId", SecurityBaselineTemplateId);
-            writer.WriteCollectionOfObjectValues<SecurityBaselineSettingState>("settingStates", SettingStates);
-            writer.WriteEnumValue<SecurityBaselineComplianceState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState>("settingStates", SettingStates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SecurityBaselineComplianceState>("state", State);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

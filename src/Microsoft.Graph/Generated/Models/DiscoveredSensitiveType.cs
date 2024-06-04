@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The classificationAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClassificationAttribute>? ClassificationAttributes
+        public List<Microsoft.Graph.Beta.Models.ClassificationAttribute>? ClassificationAttributes
         {
-            get { return BackingStore?.Get<List<ClassificationAttribute>?>("classificationAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ClassificationAttribute>?>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
 #nullable restore
 #else
-        public List<ClassificationAttribute> ClassificationAttributes
+        public List<Microsoft.Graph.Beta.Models.ClassificationAttribute> ClassificationAttributes
         {
-            get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ClassificationAttribute>>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
 #endif
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DiscoveredSensitiveType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DiscoveredSensitiveType"/> and sets the default values.
         /// </summary>
         public DiscoveredSensitiveType()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DiscoveredSensitiveType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DiscoveredSensitiveType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DiscoveredSensitiveType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DiscoveredSensitiveType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DiscoveredSensitiveType();
+            return new Microsoft.Graph.Beta.Models.DiscoveredSensitiveType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classificationAttributes", n => { ClassificationAttributes = n.GetCollectionOfObjectValues<ClassificationAttribute>(ClassificationAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classificationAttributes", n => { ClassificationAttributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ClassificationAttribute>(Microsoft.Graph.Beta.Models.ClassificationAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "confidence", n => { Confidence = n.GetIntValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ClassificationAttribute>("classificationAttributes", ClassificationAttributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ClassificationAttribute>("classificationAttributes", ClassificationAttributes);
             writer.WriteIntValue("confidence", Confidence);
             writer.WriteIntValue("count", Count);
             writer.WriteGuidValue("id", Id);

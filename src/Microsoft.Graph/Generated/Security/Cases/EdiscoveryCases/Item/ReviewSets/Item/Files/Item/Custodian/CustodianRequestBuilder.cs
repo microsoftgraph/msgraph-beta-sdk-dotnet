@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     public class CustodianRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CustodianRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustodianRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// <summary>
         /// Custodians associated with the file.
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryCustodian"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryCustodian?> GetAsync(Action<RequestConfiguration<CustodianRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder.CustodianRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EdiscoveryCustodian> GetAsync(Action<RequestConfiguration<CustodianRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder.CustodianRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EdiscoveryCustodian>(requestInfo, EdiscoveryCustodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian>(requestInfo, Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Custodians associated with the file.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustodianRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder.CustodianRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustodianRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder.CustodianRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CustodianRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CustodianRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder WithUrl(string rawUrl)
         {
-            return new CustodianRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Custodians associated with the file.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CustodianRequestBuilderGetRequestConfiguration : RequestConfiguration<CustodianRequestBuilderGetQueryParameters>
+        public class CustodianRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files.Item.Custodian.CustodianRequestBuilder.CustodianRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -9,42 +9,42 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an iOS Web Content Filter setting type, which installs URL bookmarks into iOS built-in browser. An example scenario is in the classroom where teachers would like the students to navigate websites through browser bookmarks configured on their iOS devices, and no access to other sites.
     /// </summary>
-    public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable
+    public class IosWebContentFilterSpecificWebsitesAccess : Microsoft.Graph.Beta.Models.IosWebContentFilterBase, IParsable
     {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosBookmark>? SpecificWebsitesOnly
+        public List<Microsoft.Graph.Beta.Models.IosBookmark>? SpecificWebsitesOnly
         {
-            get { return BackingStore?.Get<List<IosBookmark>?>("specificWebsitesOnly"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosBookmark>?>("specificWebsitesOnly"); }
             set { BackingStore?.Set("specificWebsitesOnly", value); }
         }
 #nullable restore
 #else
-        public List<IosBookmark> SpecificWebsitesOnly
+        public List<Microsoft.Graph.Beta.Models.IosBookmark> SpecificWebsitesOnly
         {
-            get { return BackingStore?.Get<List<IosBookmark>>("specificWebsitesOnly"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosBookmark>>("specificWebsitesOnly"); }
             set { BackingStore?.Set("specificWebsitesOnly", value); }
         }
 #endif
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosBookmark>? WebsiteList
+        public List<Microsoft.Graph.Beta.Models.IosBookmark>? WebsiteList
         {
-            get { return BackingStore?.Get<List<IosBookmark>?>("websiteList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosBookmark>?>("websiteList"); }
             set { BackingStore?.Set("websiteList", value); }
         }
 #nullable restore
 #else
-        public List<IosBookmark> WebsiteList
+        public List<Microsoft.Graph.Beta.Models.IosBookmark> WebsiteList
         {
-            get { return BackingStore?.Get<List<IosBookmark>>("websiteList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosBookmark>>("websiteList"); }
             set { BackingStore?.Set("websiteList", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosWebContentFilterSpecificWebsitesAccess"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosWebContentFilterSpecificWebsitesAccess"/> and sets the default values.
         /// </summary>
         public IosWebContentFilterSpecificWebsitesAccess() : base()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosWebContentFilterSpecificWebsitesAccess"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosWebContentFilterSpecificWebsitesAccess"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosWebContentFilterSpecificWebsitesAccess CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosWebContentFilterSpecificWebsitesAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosWebContentFilterSpecificWebsitesAccess();
+            return new Microsoft.Graph.Beta.Models.IosWebContentFilterSpecificWebsitesAccess();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "specificWebsitesOnly", n => { SpecificWebsitesOnly = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "websiteList", n => { WebsiteList = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "specificWebsitesOnly", n => { SpecificWebsitesOnly = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosBookmark>(Microsoft.Graph.Beta.Models.IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "websiteList", n => { WebsiteList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosBookmark>(Microsoft.Graph.Beta.Models.IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IosBookmark>("specificWebsitesOnly", SpecificWebsitesOnly);
-            writer.WriteCollectionOfObjectValues<IosBookmark>("websiteList", WebsiteList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosBookmark>("specificWebsitesOnly", SpecificWebsitesOnly);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosBookmark>("websiteList", WebsiteList);
         }
     }
 }

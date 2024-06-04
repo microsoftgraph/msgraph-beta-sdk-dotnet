@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an ADMX decimalTextBox element and an ADMX decimal element.
     /// </summary>
-    public class GroupPolicyPresentationDecimalTextBox : GroupPolicyUploadedPresentation, IParsable
+    public class GroupPolicyPresentationDecimalTextBox : Microsoft.Graph.Beta.Models.GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.</summary>
         public long? DefaultValue
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("spinStep", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyPresentationDecimalTextBox"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationDecimalTextBox"/> and sets the default values.
         /// </summary>
         public GroupPolicyPresentationDecimalTextBox() : base()
         {
@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyPresentationDecimalTextBox"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationDecimalTextBox"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyPresentationDecimalTextBox CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyPresentationDecimalTextBox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyPresentationDecimalTextBox();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyPresentationDecimalTextBox();
         }
         /// <summary>
         /// The deserialization information for the current model

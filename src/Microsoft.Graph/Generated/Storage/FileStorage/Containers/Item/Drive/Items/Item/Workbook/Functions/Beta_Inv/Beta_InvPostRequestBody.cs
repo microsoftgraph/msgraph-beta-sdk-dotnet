@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The A property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? A
+        public Microsoft.Graph.Beta.Models.Json? A
         {
-            get { return BackingStore?.Get<Json?>("A"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("A"); }
             set { BackingStore?.Set("A", value); }
         }
 #nullable restore
 #else
-        public Json A
+        public Microsoft.Graph.Beta.Models.Json A
         {
-            get { return BackingStore?.Get<Json>("A"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("A"); }
             set { BackingStore?.Set("A", value); }
         }
 #endif
@@ -37,32 +37,32 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Alpha
+        public Microsoft.Graph.Beta.Models.Json? Alpha
         {
-            get { return BackingStore?.Get<Json?>("alpha"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #nullable restore
 #else
-        public Json Alpha
+        public Microsoft.Graph.Beta.Models.Json Alpha
         {
-            get { return BackingStore?.Get<Json>("alpha"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #endif
         /// <summary>The B property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? B
+        public Microsoft.Graph.Beta.Models.Json? B
         {
-            get { return BackingStore?.Get<Json?>("B"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("B"); }
             set { BackingStore?.Set("B", value); }
         }
 #nullable restore
 #else
-        public Json B
+        public Microsoft.Graph.Beta.Models.Json B
         {
-            get { return BackingStore?.Get<Json>("B"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("B"); }
             set { BackingStore?.Set("B", value); }
         }
 #endif
@@ -71,37 +71,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The beta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Beta
+        public Microsoft.Graph.Beta.Models.Json? Beta
         {
-            get { return BackingStore?.Get<Json?>("beta"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("beta"); }
             set { BackingStore?.Set("beta", value); }
         }
 #nullable restore
 #else
-        public Json Beta
+        public Microsoft.Graph.Beta.Models.Json Beta
         {
-            get { return BackingStore?.Get<Json>("beta"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("beta"); }
             set { BackingStore?.Set("beta", value); }
         }
 #endif
         /// <summary>The probability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Probability
+        public Microsoft.Graph.Beta.Models.Json? Probability
         {
-            get { return BackingStore?.Get<Json?>("probability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
 #nullable restore
 #else
-        public Json Probability
+        public Microsoft.Graph.Beta.Models.Json Probability
         {
-            get { return BackingStore?.Get<Json>("probability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Beta_InvPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Beta_Inv.Beta_InvPostRequestBody"/> and sets the default values.
         /// </summary>
         public Beta_InvPostRequestBody()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Beta_InvPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Beta_Inv.Beta_InvPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Beta_InvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Beta_Inv.Beta_InvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Beta_InvPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Beta_Inv.Beta_InvPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "A", n => { A = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "B", n => { B = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "A", n => { A = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "alpha", n => { Alpha = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "B", n => { B = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "beta", n => { Beta = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "probability", n => { Probability = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("A", A);
-            writer.WriteObjectValue<Json>("alpha", Alpha);
-            writer.WriteObjectValue<Json>("B", B);
-            writer.WriteObjectValue<Json>("beta", Beta);
-            writer.WriteObjectValue<Json>("probability", Probability);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("A", A);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("alpha", Alpha);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("B", B);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("beta", Beta);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("probability", Probability);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

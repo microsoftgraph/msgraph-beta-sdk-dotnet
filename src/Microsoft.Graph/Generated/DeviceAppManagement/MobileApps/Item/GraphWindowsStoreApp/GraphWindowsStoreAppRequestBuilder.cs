@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
     public class GraphWindowsStoreAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.Categories.CategoriesRequestBuilder Categories
         {
-            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
-        public RelationshipsRequestBuilder Relationships
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.Relationships.RelationshipsRequestBuilder Relationships
         {
-            get => new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphWindowsStoreAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphWindowsStoreAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,25 +53,25 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
         /// </summary>
-        /// <returns>A <see cref="WindowsStoreApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsStoreApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsStoreApp?> GetAsync(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsStoreApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder.GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsStoreApp> GetAsync(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsStoreApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder.GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsStoreApp>(requestInfo, WindowsStoreApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsStoreApp>(requestInfo, Microsoft.Graph.Beta.Models.WindowsStoreApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
@@ -80,11 +80,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder.GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder.GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphWindowsStoreAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphWindowsStoreAppRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphWindowsStoreAppRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphWindowsStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>
+        public class GraphWindowsStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder.GraphWindowsStoreAppRequestBuilderGetQueryParameters>
         {
         }
     }

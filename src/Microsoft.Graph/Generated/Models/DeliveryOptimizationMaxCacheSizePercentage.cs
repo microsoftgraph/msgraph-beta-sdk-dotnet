@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Delivery Optimization Max cache size percentage types.
     /// </summary>
-    public class DeliveryOptimizationMaxCacheSizePercentage : DeliveryOptimizationMaxCacheSize, IParsable
+    public class DeliveryOptimizationMaxCacheSizePercentage : Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSize, IParsable
     {
         /// <summary>Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100</summary>
         public int? MaximumCacheSizePercentage
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("maximumCacheSizePercentage", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeliveryOptimizationMaxCacheSizePercentage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizePercentage"/> and sets the default values.
         /// </summary>
         public DeliveryOptimizationMaxCacheSizePercentage() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeliveryOptimizationMaxCacheSizePercentage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizePercentage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeliveryOptimizationMaxCacheSizePercentage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizePercentage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeliveryOptimizationMaxCacheSizePercentage();
+            return new Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizePercentage();
         }
         /// <summary>
         /// The deserialization information for the current model

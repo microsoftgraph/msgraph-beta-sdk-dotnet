@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS software update state summary for a device and user
     /// </summary>
-    public class MacOSSoftwareUpdateStateSummary : Entity, IParsable
+    public class MacOSSoftwareUpdateStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Human readable name of the software update</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,15 +50,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>MacOS Software Update State</summary>
-        public MacOSSoftwareUpdateState? State
+        public Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateState? State
         {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>MacOS Software Update Category</summary>
-        public MacOSSoftwareUpdateCategory? UpdateCategory
+        public Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory? UpdateCategory
         {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>("updateCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory?>("updateCategory"); }
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Version of the software update</summary>
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSSoftwareUpdateStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSSoftwareUpdateStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSSoftwareUpdateStateSummary();
+            return new Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,8 +98,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "productKey", n => { ProductKey = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<MacOSSoftwareUpdateState>(); } },
-                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateState>(); } },
+                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory>(); } },
                 { "updateVersion", n => { UpdateVersion = n.GetStringValue(); } },
             };
         }
@@ -114,8 +114,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("productKey", ProductKey);
-            writer.WriteEnumValue<MacOSSoftwareUpdateState>("state", State);
-            writer.WriteEnumValue<MacOSSoftwareUpdateCategory>("updateCategory", UpdateCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory>("updateCategory", UpdateCategory);
             writer.WriteStringValue("updateVersion", UpdateVersion);
         }
     }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ResizePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize.ResizePostRequestBody"/> and sets the default values.
         /// </summary>
         public ResizePostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResizePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize.ResizePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ResizePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize.ResizePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResizePostRequestBody();
+            return new Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize.ResizePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv
         /// <summary>The dates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Dates
+        public Microsoft.Graph.Beta.Models.Json? Dates
         {
-            get { return BackingStore?.Get<Json?>("dates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("dates"); }
             set { BackingStore?.Set("dates", value); }
         }
 #nullable restore
 #else
-        public Json Dates
+        public Microsoft.Graph.Beta.Models.Json Dates
         {
-            get { return BackingStore?.Get<Json>("dates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("dates"); }
             set { BackingStore?.Set("dates", value); }
         }
 #endif
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate
+        public Microsoft.Graph.Beta.Models.Json? Rate
         {
-            get { return BackingStore?.Get<Json?>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate
+        public Microsoft.Graph.Beta.Models.Json Rate
         {
-            get { return BackingStore?.Get<Json>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values
+        public Microsoft.Graph.Beta.Models.Json? Values
         {
-            get { return BackingStore?.Get<Json?>("values"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values
+        public Microsoft.Graph.Beta.Models.Json Values
         {
-            get { return BackingStore?.Get<Json>("values"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="XnpvPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv.XnpvPostRequestBody"/> and sets the default values.
         /// </summary>
         public XnpvPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="XnpvPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv.XnpvPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static XnpvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv.XnpvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new XnpvPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv.XnpvPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dates", n => { Dates = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "dates", n => { Dates = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Xnpv
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("dates", Dates);
-            writer.WriteObjectValue<Json>("rate", Rate);
-            writer.WriteObjectValue<Json>("values", Values);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("dates", Dates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rate", Rate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

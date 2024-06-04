@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StorageSettings? Settings
+        public Microsoft.Graph.Beta.Models.StorageSettings? Settings
         {
-            get { return BackingStore?.Get<StorageSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StorageSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public StorageSettings Settings
+        public Microsoft.Graph.Beta.Models.StorageSettings Settings
         {
-            get { return BackingStore?.Get<StorageSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StorageSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Storage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Storage"/> and sets the default values.
         /// </summary>
         public Storage()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Storage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Storage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Storage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Storage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Storage();
+            return new Microsoft.Graph.Beta.Models.Storage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "fileStorage", n => { FileStorage = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileStorage>(Microsoft.Graph.Beta.Models.FileStorage.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<StorageSettings>(StorageSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.StorageSettings>(Microsoft.Graph.Beta.Models.StorageSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileStorage>("fileStorage", FileStorage);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<StorageSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.StorageSettings>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

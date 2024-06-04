@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android Work Profile general device configuration.
     /// </summary>
-    public class AndroidWorkProfileGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class AndroidWorkProfileGeneralDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Determine domains allow-list for accounts that can be added to work profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Android Work Profile required password type.</summary>
-        public AndroidWorkProfileRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidWorkProfileRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before factory reset. Valid values 1 to 16</summary>
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
             set { BackingStore?.Set("requiredPasswordComplexity", value); }
         }
         /// <summary>Require the Android Verify apps feature is turned on.</summary>
@@ -128,9 +128,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("vpnEnableAlwaysOnLockdownMode", value); }
         }
         /// <summary>An enum representing possible values for account use in work profile.</summary>
-        public AndroidWorkProfileAccountUse? WorkProfileAccountUse
+        public Microsoft.Graph.Beta.Models.AndroidWorkProfileAccountUse? WorkProfileAccountUse
         {
-            get { return BackingStore?.Get<AndroidWorkProfileAccountUse?>("workProfileAccountUse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidWorkProfileAccountUse?>("workProfileAccountUse"); }
             set { BackingStore?.Set("workProfileAccountUse", value); }
         }
         /// <summary>Indicates whether to allow installation of apps from unknown sources.</summary>
@@ -200,15 +200,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfileBluetoothEnableContactSharing", value); }
         }
         /// <summary>Android Work Profile cross profile data sharing type.</summary>
-        public AndroidWorkProfileCrossProfileDataSharingType? WorkProfileDataSharingType
+        public Microsoft.Graph.Beta.Models.AndroidWorkProfileCrossProfileDataSharingType? WorkProfileDataSharingType
         {
-            get { return BackingStore?.Get<AndroidWorkProfileCrossProfileDataSharingType?>("workProfileDataSharingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidWorkProfileCrossProfileDataSharingType?>("workProfileDataSharingType"); }
             set { BackingStore?.Set("workProfileDataSharingType", value); }
         }
         /// <summary>Android Work Profile default app permission policy type.</summary>
-        public AndroidWorkProfileDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy
+        public Microsoft.Graph.Beta.Models.AndroidWorkProfileDefaultAppPermissionPolicyType? WorkProfileDefaultAppPermissionPolicy
         {
-            get { return BackingStore?.Get<AndroidWorkProfileDefaultAppPermissionPolicyType?>("workProfileDefaultAppPermissionPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidWorkProfileDefaultAppPermissionPolicyType?>("workProfileDefaultAppPermissionPolicy"); }
             set { BackingStore?.Set("workProfileDefaultAppPermissionPolicy", value); }
         }
         /// <summary>Indicates whether or not to block face unlock for work profile.</summary>
@@ -296,9 +296,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfilePasswordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Android Work Profile required password type.</summary>
-        public AndroidWorkProfileRequiredPasswordType? WorkProfilePasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType? WorkProfilePasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidWorkProfileRequiredPasswordType?>("workProfilePasswordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType?>("workProfilePasswordRequiredType"); }
             set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16</summary>
@@ -308,9 +308,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfilePasswordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-        public AndroidRequiredPasswordComplexity? WorkProfileRequiredPasswordComplexity
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity? WorkProfileRequiredPasswordComplexity
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("workProfileRequiredPasswordComplexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("workProfileRequiredPasswordComplexity"); }
             set { BackingStore?.Set("workProfileRequiredPasswordComplexity", value); }
         }
         /// <summary>Password is required or not for work profile</summary>
@@ -320,7 +320,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfileRequirePassword", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidWorkProfileGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidWorkProfileGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidWorkProfileGeneralDeviceConfiguration() : base()
         {
@@ -329,12 +329,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidWorkProfileGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidWorkProfileGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidWorkProfileGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidWorkProfileGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidWorkProfileGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidWorkProfileGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -354,13 +354,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidWorkProfileRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
-                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
+                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>(); } },
                 { "securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 { "vpnAlwaysOnPackageIdentifier", n => { VpnAlwaysOnPackageIdentifier = n.GetStringValue(); } },
                 { "vpnEnableAlwaysOnLockdownMode", n => { VpnEnableAlwaysOnLockdownMode = n.GetBoolValue(); } },
-                { "workProfileAccountUse", n => { WorkProfileAccountUse = n.GetEnumValue<AndroidWorkProfileAccountUse>(); } },
+                { "workProfileAccountUse", n => { WorkProfileAccountUse = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileAccountUse>(); } },
                 { "workProfileAllowAppInstallsFromUnknownSources", n => { WorkProfileAllowAppInstallsFromUnknownSources = n.GetBoolValue(); } },
                 { "workProfileAllowWidgets", n => { WorkProfileAllowWidgets = n.GetBoolValue(); } },
                 { "workProfileBlockAddingAccounts", n => { WorkProfileBlockAddingAccounts = n.GetBoolValue(); } },
@@ -372,8 +372,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "workProfileBlockPersonalAppInstallsFromUnknownSources", n => { WorkProfileBlockPersonalAppInstallsFromUnknownSources = n.GetBoolValue(); } },
                 { "workProfileBlockScreenCapture", n => { WorkProfileBlockScreenCapture = n.GetBoolValue(); } },
                 { "workProfileBluetoothEnableContactSharing", n => { WorkProfileBluetoothEnableContactSharing = n.GetBoolValue(); } },
-                { "workProfileDataSharingType", n => { WorkProfileDataSharingType = n.GetEnumValue<AndroidWorkProfileCrossProfileDataSharingType>(); } },
-                { "workProfileDefaultAppPermissionPolicy", n => { WorkProfileDefaultAppPermissionPolicy = n.GetEnumValue<AndroidWorkProfileDefaultAppPermissionPolicyType>(); } },
+                { "workProfileDataSharingType", n => { WorkProfileDataSharingType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileCrossProfileDataSharingType>(); } },
+                { "workProfileDefaultAppPermissionPolicy", n => { WorkProfileDefaultAppPermissionPolicy = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileDefaultAppPermissionPolicyType>(); } },
                 { "workProfilePasswordBlockFaceUnlock", n => { WorkProfilePasswordBlockFaceUnlock = n.GetBoolValue(); } },
                 { "workProfilePasswordBlockFingerprintUnlock", n => { WorkProfilePasswordBlockFingerprintUnlock = n.GetBoolValue(); } },
                 { "workProfilePasswordBlockIrisUnlock", n => { WorkProfilePasswordBlockIrisUnlock = n.GetBoolValue(); } },
@@ -388,10 +388,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "workProfilePasswordMinimumLength", n => { WorkProfilePasswordMinimumLength = n.GetIntValue(); } },
                 { "workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", n => { WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "workProfilePasswordPreviousPasswordBlockCount", n => { WorkProfilePasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<AndroidWorkProfileRequiredPasswordType>(); } },
+                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType>(); } },
                 { "workProfilePasswordSignInFailureCountBeforeFactoryReset", n => { WorkProfilePasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "workProfileRequirePassword", n => { WorkProfileRequirePassword = n.GetBoolValue(); } },
-                { "workProfileRequiredPasswordComplexity", n => { WorkProfileRequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
+                { "workProfileRequiredPasswordComplexity", n => { WorkProfileRequiredPasswordComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>(); } },
             };
         }
         /// <summary>
@@ -412,13 +412,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinimumLength", PasswordMinimumLength);
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
-            writer.WriteEnumValue<AndroidWorkProfileRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
-            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteStringValue("vpnAlwaysOnPackageIdentifier", VpnAlwaysOnPackageIdentifier);
             writer.WriteBoolValue("vpnEnableAlwaysOnLockdownMode", VpnEnableAlwaysOnLockdownMode);
-            writer.WriteEnumValue<AndroidWorkProfileAccountUse>("workProfileAccountUse", WorkProfileAccountUse);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileAccountUse>("workProfileAccountUse", WorkProfileAccountUse);
             writer.WriteBoolValue("workProfileAllowAppInstallsFromUnknownSources", WorkProfileAllowAppInstallsFromUnknownSources);
             writer.WriteBoolValue("workProfileAllowWidgets", WorkProfileAllowWidgets);
             writer.WriteBoolValue("workProfileBlockAddingAccounts", WorkProfileBlockAddingAccounts);
@@ -430,8 +430,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("workProfileBlockPersonalAppInstallsFromUnknownSources", WorkProfileBlockPersonalAppInstallsFromUnknownSources);
             writer.WriteBoolValue("workProfileBlockScreenCapture", WorkProfileBlockScreenCapture);
             writer.WriteBoolValue("workProfileBluetoothEnableContactSharing", WorkProfileBluetoothEnableContactSharing);
-            writer.WriteEnumValue<AndroidWorkProfileCrossProfileDataSharingType>("workProfileDataSharingType", WorkProfileDataSharingType);
-            writer.WriteEnumValue<AndroidWorkProfileDefaultAppPermissionPolicyType>("workProfileDefaultAppPermissionPolicy", WorkProfileDefaultAppPermissionPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileCrossProfileDataSharingType>("workProfileDataSharingType", WorkProfileDataSharingType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileDefaultAppPermissionPolicyType>("workProfileDefaultAppPermissionPolicy", WorkProfileDefaultAppPermissionPolicy);
             writer.WriteBoolValue("workProfilePasswordBlockFaceUnlock", WorkProfilePasswordBlockFaceUnlock);
             writer.WriteBoolValue("workProfilePasswordBlockFingerprintUnlock", WorkProfilePasswordBlockFingerprintUnlock);
             writer.WriteBoolValue("workProfilePasswordBlockIrisUnlock", WorkProfilePasswordBlockIrisUnlock);
@@ -446,9 +446,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("workProfilePasswordMinUpperCaseCharacters", WorkProfilePasswordMinUpperCaseCharacters);
             writer.WriteIntValue("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("workProfilePasswordPreviousPasswordBlockCount", WorkProfilePasswordPreviousPasswordBlockCount);
-            writer.WriteEnumValue<AndroidWorkProfileRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidWorkProfileRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
             writer.WriteIntValue("workProfilePasswordSignInFailureCountBeforeFactoryReset", WorkProfilePasswordSignInFailureCountBeforeFactoryReset);
-            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("workProfileRequiredPasswordComplexity", WorkProfileRequiredPasswordComplexity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>("workProfileRequiredPasswordComplexity", WorkProfileRequiredPasswordComplexity);
             writer.WriteBoolValue("workProfileRequirePassword", WorkProfileRequirePassword);
         }
     }

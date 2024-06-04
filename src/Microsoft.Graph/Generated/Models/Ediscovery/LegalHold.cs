@@ -127,66 +127,66 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Data source entity for SharePoint sites associated with the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SiteSource>? SiteSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.SiteSource>? SiteSources
         {
-            get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #nullable restore
 #else
-        public List<SiteSource> SiteSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.SiteSource> SiteSources
         {
-            get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #endif
         /// <summary>The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.</summary>
-        public LegalHoldStatus? Status
+        public Microsoft.Graph.Beta.Models.Ediscovery.LegalHoldStatus? Status
         {
-            get { return BackingStore?.Get<LegalHoldStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.LegalHoldStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The unifiedGroupSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedGroupSource>? UnifiedGroupSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource>? UnifiedGroupSources
         {
-            get { return BackingStore?.Get<List<UnifiedGroupSource>?>("unifiedGroupSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource>?>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedGroupSource> UnifiedGroupSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource> UnifiedGroupSources
         {
-            get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource>>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
 #endif
         /// <summary>Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSource>? UserSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.UserSource>? UserSources
         {
-            get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #nullable restore
 #else
-        public List<UserSource> UserSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.UserSource> UserSources
         {
-            get { return BackingStore?.Get<List<UserSource>>("userSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LegalHold"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.LegalHold"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LegalHold CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.LegalHold CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LegalHold();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.LegalHold();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -205,10 +205,10 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<LegalHoldStatus>(); } },
-                { "unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.SiteSource>(Microsoft.Graph.Beta.Models.Ediscovery.SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.LegalHoldStatus>(); } },
+                { "unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource>(Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.UserSource>(Microsoft.Graph.Beta.Models.Ediscovery.UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -228,10 +228,10 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<SiteSource>("siteSources", SiteSources);
-            writer.WriteEnumValue<LegalHoldStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", UnifiedGroupSources);
-            writer.WriteCollectionOfObjectValues<UserSource>("userSources", UserSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.SiteSource>("siteSources", SiteSources);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.LegalHoldStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource>("unifiedGroupSources", UnifiedGroupSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.UserSource>("userSources", UserSources);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows X WifiXml configuration profile
     /// </summary>
-    public class Windows10XWifiConfiguration : DeviceManagementResourceAccessProfileBase, IParsable
+    public class Windows10XWifiConfiguration : Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>ID to the Authentication Certificate</summary>
         public Guid? AuthenticationCertificateId
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows10XWifiConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10XWifiConfiguration"/> and sets the default values.
         /// </summary>
         public Windows10XWifiConfiguration() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10XWifiConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10XWifiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10XWifiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10XWifiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10XWifiConfiguration();
+            return new Microsoft.Graph.Beta.Models.Windows10XWifiConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

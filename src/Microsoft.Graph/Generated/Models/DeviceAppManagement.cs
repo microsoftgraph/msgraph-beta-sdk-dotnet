@@ -9,101 +9,101 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity that acts as a container for all device app management functionality.
     /// </summary>
-    public class DeviceAppManagement : Entity, IParsable
+    public class DeviceAppManagement : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Android managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidManagedAppProtection>? AndroidManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>? AndroidManagedAppProtections
         {
-            get { return BackingStore?.Get<List<AndroidManagedAppProtection>?>("androidManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>?>("androidManagedAppProtections"); }
             set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<AndroidManagedAppProtection> AndroidManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection> AndroidManagedAppProtections
         {
-            get { return BackingStore?.Get<List<AndroidManagedAppProtection>>("androidManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>>("androidManagedAppProtections"); }
             set { BackingStore?.Set("androidManagedAppProtections", value); }
         }
 #endif
         /// <summary>Default managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DefaultManagedAppProtection>? DefaultManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>? DefaultManagedAppProtections
         {
-            get { return BackingStore?.Get<List<DefaultManagedAppProtection>?>("defaultManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>?>("defaultManagedAppProtections"); }
             set { BackingStore?.Set("defaultManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<DefaultManagedAppProtection> DefaultManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.DefaultManagedAppProtection> DefaultManagedAppProtections
         {
-            get { return BackingStore?.Get<List<DefaultManagedAppProtection>>("defaultManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>>("defaultManagedAppProtections"); }
             set { BackingStore?.Set("defaultManagedAppProtections", value); }
         }
 #endif
         /// <summary>Device app management tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceAppManagementTask>? DeviceAppManagementTasks
+        public List<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>? DeviceAppManagementTasks
         {
-            get { return BackingStore?.Get<List<DeviceAppManagementTask>?>("deviceAppManagementTasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>?>("deviceAppManagementTasks"); }
             set { BackingStore?.Set("deviceAppManagementTasks", value); }
         }
 #nullable restore
 #else
-        public List<DeviceAppManagementTask> DeviceAppManagementTasks
+        public List<Microsoft.Graph.Beta.Models.DeviceAppManagementTask> DeviceAppManagementTasks
         {
-            get { return BackingStore?.Get<List<DeviceAppManagementTask>>("deviceAppManagementTasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>>("deviceAppManagementTasks"); }
             set { BackingStore?.Set("deviceAppManagementTasks", value); }
         }
 #endif
         /// <summary>The Windows Enterprise Code Signing Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EnterpriseCodeSigningCertificate>? EnterpriseCodeSigningCertificates
+        public List<Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate>? EnterpriseCodeSigningCertificates
         {
-            get { return BackingStore?.Get<List<EnterpriseCodeSigningCertificate>?>("enterpriseCodeSigningCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate>?>("enterpriseCodeSigningCertificates"); }
             set { BackingStore?.Set("enterpriseCodeSigningCertificates", value); }
         }
 #nullable restore
 #else
-        public List<EnterpriseCodeSigningCertificate> EnterpriseCodeSigningCertificates
+        public List<Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate> EnterpriseCodeSigningCertificates
         {
-            get { return BackingStore?.Get<List<EnterpriseCodeSigningCertificate>>("enterpriseCodeSigningCertificates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate>>("enterpriseCodeSigningCertificates"); }
             set { BackingStore?.Set("enterpriseCodeSigningCertificates", value); }
         }
 #endif
         /// <summary>The IOS Lob App Provisioning Configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosLobAppProvisioningConfiguration>? IosLobAppProvisioningConfigurations
+        public List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration>? IosLobAppProvisioningConfigurations
         {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfiguration>?>("iosLobAppProvisioningConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration>?>("iosLobAppProvisioningConfigurations"); }
             set { BackingStore?.Set("iosLobAppProvisioningConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<IosLobAppProvisioningConfiguration> IosLobAppProvisioningConfigurations
+        public List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration> IosLobAppProvisioningConfigurations
         {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfiguration>>("iosLobAppProvisioningConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration>>("iosLobAppProvisioningConfigurations"); }
             set { BackingStore?.Set("iosLobAppProvisioningConfigurations", value); }
         }
 #endif
         /// <summary>iOS managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosManagedAppProtection>? IosManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.IosManagedAppProtection>? IosManagedAppProtections
         {
-            get { return BackingStore?.Get<List<IosManagedAppProtection>?>("iosManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosManagedAppProtection>?>("iosManagedAppProtections"); }
             set { BackingStore?.Set("iosManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<IosManagedAppProtection> IosManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.IosManagedAppProtection> IosManagedAppProtections
         {
-            get { return BackingStore?.Get<List<IosManagedAppProtection>>("iosManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosManagedAppProtection>>("iosManagedAppProtections"); }
             set { BackingStore?.Set("iosManagedAppProtections", value); }
         }
 #endif
@@ -116,96 +116,96 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicy>? ManagedAppPolicies
+        public List<Microsoft.Graph.Beta.Models.ManagedAppPolicy>? ManagedAppPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>?>("managedAppPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppPolicy>?>("managedAppPolicies"); }
             set { BackingStore?.Set("managedAppPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicy> ManagedAppPolicies
+        public List<Microsoft.Graph.Beta.Models.ManagedAppPolicy> ManagedAppPolicies
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicy>>("managedAppPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppPolicy>>("managedAppPolicies"); }
             set { BackingStore?.Set("managedAppPolicies", value); }
         }
 #endif
         /// <summary>The managed app registrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppRegistration>? ManagedAppRegistrations
+        public List<Microsoft.Graph.Beta.Models.ManagedAppRegistration>? ManagedAppRegistrations
         {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>?>("managedAppRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppRegistration>?>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppRegistration> ManagedAppRegistrations
+        public List<Microsoft.Graph.Beta.Models.ManagedAppRegistration> ManagedAppRegistrations
         {
-            get { return BackingStore?.Get<List<ManagedAppRegistration>>("managedAppRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppRegistration>>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
 #endif
         /// <summary>The managed app statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppStatus>? ManagedAppStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedAppStatus>? ManagedAppStatuses
         {
-            get { return BackingStore?.Get<List<ManagedAppStatus>?>("managedAppStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppStatus>?>("managedAppStatuses"); }
             set { BackingStore?.Set("managedAppStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppStatus> ManagedAppStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedAppStatus> ManagedAppStatuses
         {
-            get { return BackingStore?.Get<List<ManagedAppStatus>>("managedAppStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppStatus>>("managedAppStatuses"); }
             set { BackingStore?.Set("managedAppStatuses", value); }
         }
 #endif
         /// <summary>The mobile eBook categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedEBookCategory>? ManagedEBookCategories
+        public List<Microsoft.Graph.Beta.Models.ManagedEBookCategory>? ManagedEBookCategories
         {
-            get { return BackingStore?.Get<List<ManagedEBookCategory>?>("managedEBookCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBookCategory>?>("managedEBookCategories"); }
             set { BackingStore?.Set("managedEBookCategories", value); }
         }
 #nullable restore
 #else
-        public List<ManagedEBookCategory> ManagedEBookCategories
+        public List<Microsoft.Graph.Beta.Models.ManagedEBookCategory> ManagedEBookCategories
         {
-            get { return BackingStore?.Get<List<ManagedEBookCategory>>("managedEBookCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBookCategory>>("managedEBookCategories"); }
             set { BackingStore?.Set("managedEBookCategories", value); }
         }
 #endif
         /// <summary>The Managed eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedEBook>? ManagedEBooks
+        public List<Microsoft.Graph.Beta.Models.ManagedEBook>? ManagedEBooks
         {
-            get { return BackingStore?.Get<List<ManagedEBook>?>("managedEBooks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBook>?>("managedEBooks"); }
             set { BackingStore?.Set("managedEBooks", value); }
         }
 #nullable restore
 #else
-        public List<ManagedEBook> ManagedEBooks
+        public List<Microsoft.Graph.Beta.Models.ManagedEBook> ManagedEBooks
         {
-            get { return BackingStore?.Get<List<ManagedEBook>>("managedEBooks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBook>>("managedEBooks"); }
             set { BackingStore?.Set("managedEBooks", value); }
         }
 #endif
         /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MdmWindowsInformationProtectionPolicy>? MdmWindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy>? MdmWindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>?>("mdmWindowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy>?>("mdmWindowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("mdmWindowsInformationProtectionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<MdmWindowsInformationProtectionPolicy>>("mdmWindowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy>>("mdmWindowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("mdmWindowsInformationProtectionPolicies", value); }
         }
 #endif
@@ -238,88 +238,88 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftStoreForBusinessLastSuccessfulSyncDateTime", value); }
         }
         /// <summary>Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.</summary>
-        public MicrosoftStoreForBusinessPortalSelectionOptions? MicrosoftStoreForBusinessPortalSelection
+        public Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessPortalSelectionOptions? MicrosoftStoreForBusinessPortalSelection
         {
-            get { return BackingStore?.Get<MicrosoftStoreForBusinessPortalSelectionOptions?>("microsoftStoreForBusinessPortalSelection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessPortalSelectionOptions?>("microsoftStoreForBusinessPortalSelection"); }
             set { BackingStore?.Set("microsoftStoreForBusinessPortalSelection", value); }
         }
         /// <summary>MobileAppCatalogPackage entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppCatalogPackage>? MobileAppCatalogPackages
+        public List<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>? MobileAppCatalogPackages
         {
-            get { return BackingStore?.Get<List<MobileAppCatalogPackage>?>("mobileAppCatalogPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>?>("mobileAppCatalogPackages"); }
             set { BackingStore?.Set("mobileAppCatalogPackages", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppCatalogPackage> MobileAppCatalogPackages
+        public List<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage> MobileAppCatalogPackages
         {
-            get { return BackingStore?.Get<List<MobileAppCatalogPackage>>("mobileAppCatalogPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>>("mobileAppCatalogPackages"); }
             set { BackingStore?.Set("mobileAppCatalogPackages", value); }
         }
 #endif
         /// <summary>The mobile app categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppCategory>? MobileAppCategories
+        public List<Microsoft.Graph.Beta.Models.MobileAppCategory>? MobileAppCategories
         {
-            get { return BackingStore?.Get<List<MobileAppCategory>?>("mobileAppCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppCategory>?>("mobileAppCategories"); }
             set { BackingStore?.Set("mobileAppCategories", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppCategory> MobileAppCategories
+        public List<Microsoft.Graph.Beta.Models.MobileAppCategory> MobileAppCategories
         {
-            get { return BackingStore?.Get<List<MobileAppCategory>>("mobileAppCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppCategory>>("mobileAppCategories"); }
             set { BackingStore?.Set("mobileAppCategories", value); }
         }
 #endif
         /// <summary>The Managed Device Mobile Application Configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfiguration>? MobileAppConfigurations
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>? MobileAppConfigurations
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>?>("mobileAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>?>("mobileAppConfigurations"); }
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfiguration> MobileAppConfigurations
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration> MobileAppConfigurations
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfiguration>>("mobileAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>>("mobileAppConfigurations"); }
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #endif
         /// <summary>The mobile apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileApp>? MobileApps
+        public List<Microsoft.Graph.Beta.Models.MobileApp>? MobileApps
         {
-            get { return BackingStore?.Get<List<MobileApp>?>("mobileApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileApp>?>("mobileApps"); }
             set { BackingStore?.Set("mobileApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileApp> MobileApps
+        public List<Microsoft.Graph.Beta.Models.MobileApp> MobileApps
         {
-            get { return BackingStore?.Get<List<MobileApp>>("mobileApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileApp>>("mobileApps"); }
             set { BackingStore?.Set("mobileApps", value); }
         }
 #endif
         /// <summary>The PolicySet of Policies and Applications</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySet>? PolicySets
+        public List<Microsoft.Graph.Beta.Models.PolicySet>? PolicySets
         {
-            get { return BackingStore?.Get<List<PolicySet>?>("policySets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySet>?>("policySets"); }
             set { BackingStore?.Set("policySets", value); }
         }
 #nullable restore
 #else
-        public List<PolicySet> PolicySets
+        public List<Microsoft.Graph.Beta.Models.PolicySet> PolicySets
         {
-            get { return BackingStore?.Get<List<PolicySet>>("policySets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySet>>("policySets"); }
             set { BackingStore?.Set("policySets", value); }
         }
 #endif
@@ -342,112 +342,112 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Targeted managed app configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppConfiguration>? TargetedManagedAppConfigurations
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>? TargetedManagedAppConfigurations
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>?>("targetedManagedAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>?>("targetedManagedAppConfigurations"); }
             set { BackingStore?.Set("targetedManagedAppConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppConfiguration> TargetedManagedAppConfigurations
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration> TargetedManagedAppConfigurations
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>("targetedManagedAppConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>>("targetedManagedAppConfigurations"); }
             set { BackingStore?.Set("targetedManagedAppConfigurations", value); }
         }
 #endif
         /// <summary>List of Vpp tokens for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VppToken>? VppTokens
+        public List<Microsoft.Graph.Beta.Models.VppToken>? VppTokens
         {
-            get { return BackingStore?.Get<List<VppToken>?>("vppTokens"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VppToken>?>("vppTokens"); }
             set { BackingStore?.Set("vppTokens", value); }
         }
 #nullable restore
 #else
-        public List<VppToken> VppTokens
+        public List<Microsoft.Graph.Beta.Models.VppToken> VppTokens
         {
-            get { return BackingStore?.Get<List<VppToken>>("vppTokens"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VppToken>>("vppTokens"); }
             set { BackingStore?.Set("vppTokens", value); }
         }
 #endif
         /// <summary>The collection of Windows Defender Application Control Supplemental Policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDefenderApplicationControlSupplementalPolicy>? WdacSupplementalPolicies
+        public List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy>? WdacSupplementalPolicies
         {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicy>?>("wdacSupplementalPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy>?>("wdacSupplementalPolicies"); }
             set { BackingStore?.Set("wdacSupplementalPolicies", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDefenderApplicationControlSupplementalPolicy> WdacSupplementalPolicies
+        public List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy> WdacSupplementalPolicies
         {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicy>>("wdacSupplementalPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy>>("wdacSupplementalPolicies"); }
             set { BackingStore?.Set("wdacSupplementalPolicies", value); }
         }
 #endif
         /// <summary>Windows information protection device registrations that are not MDM enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionDeviceRegistration>? WindowsInformationProtectionDeviceRegistrations
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration>? WindowsInformationProtectionDeviceRegistrations
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>?>("windowsInformationProtectionDeviceRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration>?>("windowsInformationProtectionDeviceRegistrations"); }
             set { BackingStore?.Set("windowsInformationProtectionDeviceRegistrations", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionDeviceRegistration> WindowsInformationProtectionDeviceRegistrations
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration> WindowsInformationProtectionDeviceRegistrations
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>>("windowsInformationProtectionDeviceRegistrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration>>("windowsInformationProtectionDeviceRegistrations"); }
             set { BackingStore?.Set("windowsInformationProtectionDeviceRegistrations", value); }
         }
 #endif
         /// <summary>Windows information protection for apps running on devices which are not MDM enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionPolicy>? WindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy>? WindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>?>("windowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy>?>("windowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy> WindowsInformationProtectionPolicies
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionPolicy>>("windowsInformationProtectionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy>>("windowsInformationProtectionPolicies"); }
             set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
 #endif
         /// <summary>Windows information protection wipe actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsInformationProtectionWipeAction>? WindowsInformationProtectionWipeActions
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction>? WindowsInformationProtectionWipeActions
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionWipeAction>?>("windowsInformationProtectionWipeActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction>?>("windowsInformationProtectionWipeActions"); }
             set { BackingStore?.Set("windowsInformationProtectionWipeActions", value); }
         }
 #nullable restore
 #else
-        public List<WindowsInformationProtectionWipeAction> WindowsInformationProtectionWipeActions
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction> WindowsInformationProtectionWipeActions
         {
-            get { return BackingStore?.Get<List<WindowsInformationProtectionWipeAction>>("windowsInformationProtectionWipeActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction>>("windowsInformationProtectionWipeActions"); }
             set { BackingStore?.Set("windowsInformationProtectionWipeActions", value); }
         }
 #endif
         /// <summary>Windows managed app policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsManagedAppProtection>? WindowsManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.WindowsManagedAppProtection>? WindowsManagedAppProtections
         {
-            get { return BackingStore?.Get<List<WindowsManagedAppProtection>?>("windowsManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsManagedAppProtection>?>("windowsManagedAppProtections"); }
             set { BackingStore?.Set("windowsManagedAppProtections", value); }
         }
 #nullable restore
 #else
-        public List<WindowsManagedAppProtection> WindowsManagedAppProtections
+        public List<Microsoft.Graph.Beta.Models.WindowsManagedAppProtection> WindowsManagedAppProtections
         {
-            get { return BackingStore?.Get<List<WindowsManagedAppProtection>>("windowsManagedAppProtections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsManagedAppProtection>>("windowsManagedAppProtections"); }
             set { BackingStore?.Set("windowsManagedAppProtections", value); }
         }
 #endif
@@ -470,12 +470,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAppManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAppManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceAppManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceAppManagement();
+            return new Microsoft.Graph.Beta.Models.DeviceAppManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -485,36 +485,36 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "androidManagedAppProtections", n => { AndroidManagedAppProtections = n.GetCollectionOfObjectValues<AndroidManagedAppProtection>(AndroidManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "defaultManagedAppProtections", n => { DefaultManagedAppProtections = n.GetCollectionOfObjectValues<DefaultManagedAppProtection>(DefaultManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceAppManagementTasks", n => { DeviceAppManagementTasks = n.GetCollectionOfObjectValues<DeviceAppManagementTask>(DeviceAppManagementTask.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "enterpriseCodeSigningCertificates", n => { EnterpriseCodeSigningCertificates = n.GetCollectionOfObjectValues<EnterpriseCodeSigningCertificate>(EnterpriseCodeSigningCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "iosLobAppProvisioningConfigurations", n => { IosLobAppProvisioningConfigurations = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfiguration>(IosLobAppProvisioningConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "iosManagedAppProtections", n => { IosManagedAppProtections = n.GetCollectionOfObjectValues<IosManagedAppProtection>(IosManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidManagedAppProtections", n => { AndroidManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>(Microsoft.Graph.Beta.Models.AndroidManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultManagedAppProtections", n => { DefaultManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>(Microsoft.Graph.Beta.Models.DefaultManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceAppManagementTasks", n => { DeviceAppManagementTasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>(Microsoft.Graph.Beta.Models.DeviceAppManagementTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseCodeSigningCertificates", n => { EnterpriseCodeSigningCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate>(Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iosLobAppProvisioningConfigurations", n => { IosLobAppProvisioningConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration>(Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iosManagedAppProtections", n => { IosManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosManagedAppProtection>(Microsoft.Graph.Beta.Models.IosManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isEnabledForMicrosoftStoreForBusiness", n => { IsEnabledForMicrosoftStoreForBusiness = n.GetBoolValue(); } },
-                { "managedAppPolicies", n => { ManagedAppPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>(ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedAppStatuses", n => { ManagedAppStatuses = n.GetCollectionOfObjectValues<ManagedAppStatus>(ManagedAppStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedEBookCategories", n => { ManagedEBookCategories = n.GetCollectionOfObjectValues<ManagedEBookCategory>(ManagedEBookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedEBooks", n => { ManagedEBooks = n.GetCollectionOfObjectValues<ManagedEBook>(ManagedEBook.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mdmWindowsInformationProtectionPolicies", n => { MdmWindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<MdmWindowsInformationProtectionPolicy>(MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppPolicies", n => { ManagedAppPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppPolicy>(Microsoft.Graph.Beta.Models.ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppRegistration>(Microsoft.Graph.Beta.Models.ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedAppStatuses", n => { ManagedAppStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppStatus>(Microsoft.Graph.Beta.Models.ManagedAppStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedEBookCategories", n => { ManagedEBookCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBookCategory>(Microsoft.Graph.Beta.Models.ManagedEBookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedEBooks", n => { ManagedEBooks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBook>(Microsoft.Graph.Beta.Models.ManagedEBook.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mdmWindowsInformationProtectionPolicies", n => { MdmWindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy>(Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "microsoftStoreForBusinessLanguage", n => { MicrosoftStoreForBusinessLanguage = n.GetStringValue(); } },
                 { "microsoftStoreForBusinessLastCompletedApplicationSyncTime", n => { MicrosoftStoreForBusinessLastCompletedApplicationSyncTime = n.GetDateTimeOffsetValue(); } },
                 { "microsoftStoreForBusinessLastSuccessfulSyncDateTime", n => { MicrosoftStoreForBusinessLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "microsoftStoreForBusinessPortalSelection", n => { MicrosoftStoreForBusinessPortalSelection = n.GetEnumValue<MicrosoftStoreForBusinessPortalSelectionOptions>(); } },
-                { "mobileAppCatalogPackages", n => { MobileAppCatalogPackages = n.GetCollectionOfObjectValues<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mobileAppCategories", n => { MobileAppCategories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfiguration>(ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<MobileApp>(MobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "policySets", n => { PolicySets = n.GetCollectionOfObjectValues<PolicySet>(PolicySet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microsoftStoreForBusinessPortalSelection", n => { MicrosoftStoreForBusinessPortalSelection = n.GetEnumValue<Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessPortalSelectionOptions>(); } },
+                { "mobileAppCatalogPackages", n => { MobileAppCatalogPackages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>(Microsoft.Graph.Beta.Models.MobileAppCatalogPackage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppCategories", n => { MobileAppCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppCategory>(Microsoft.Graph.Beta.Models.MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileApp>(Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policySets", n => { PolicySets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySet>(Microsoft.Graph.Beta.Models.PolicySet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "symantecCodeSigningCertificate", n => { SymantecCodeSigningCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>(Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate.CreateFromDiscriminatorValue); } },
-                { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<TargetedManagedAppConfiguration>(TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<VppToken>(VppToken.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "wdacSupplementalPolicies", n => { WdacSupplementalPolicies = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicy>(WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "windowsInformationProtectionDeviceRegistrations", n => { WindowsInformationProtectionDeviceRegistrations = n.GetCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>(WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "windowsInformationProtectionPolicies", n => { WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<WindowsInformationProtectionPolicy>(WindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "windowsInformationProtectionWipeActions", n => { WindowsInformationProtectionWipeActions = n.GetCollectionOfObjectValues<WindowsInformationProtectionWipeAction>(WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "windowsManagedAppProtections", n => { WindowsManagedAppProtections = n.GetCollectionOfObjectValues<WindowsManagedAppProtection>(WindowsManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>(Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VppToken>(Microsoft.Graph.Beta.Models.VppToken.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "wdacSupplementalPolicies", n => { WdacSupplementalPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy>(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsInformationProtectionDeviceRegistrations", n => { WindowsInformationProtectionDeviceRegistrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsInformationProtectionPolicies", n => { WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsInformationProtectionWipeActions", n => { WindowsInformationProtectionWipeActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsManagedAppProtections", n => { WindowsManagedAppProtections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsManagedAppProtection>(Microsoft.Graph.Beta.Models.WindowsManagedAppProtection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "windowsManagementApp", n => { WindowsManagementApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsManagementApp>(Microsoft.Graph.Beta.Models.WindowsManagementApp.CreateFromDiscriminatorValue); } },
             };
         }
@@ -526,36 +526,36 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
-            writer.WriteCollectionOfObjectValues<DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);
-            writer.WriteCollectionOfObjectValues<DeviceAppManagementTask>("deviceAppManagementTasks", DeviceAppManagementTasks);
-            writer.WriteCollectionOfObjectValues<EnterpriseCodeSigningCertificate>("enterpriseCodeSigningCertificates", EnterpriseCodeSigningCertificates);
-            writer.WriteCollectionOfObjectValues<IosLobAppProvisioningConfiguration>("iosLobAppProvisioningConfigurations", IosLobAppProvisioningConfigurations);
-            writer.WriteCollectionOfObjectValues<IosManagedAppProtection>("iosManagedAppProtections", IosManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>("androidManagedAppProtections", AndroidManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DefaultManagedAppProtection>("defaultManagedAppProtections", DefaultManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAppManagementTask>("deviceAppManagementTasks", DeviceAppManagementTasks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EnterpriseCodeSigningCertificate>("enterpriseCodeSigningCertificates", EnterpriseCodeSigningCertificates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration>("iosLobAppProvisioningConfigurations", IosLobAppProvisioningConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosManagedAppProtection>("iosManagedAppProtections", IosManagedAppProtections);
             writer.WriteBoolValue("isEnabledForMicrosoftStoreForBusiness", IsEnabledForMicrosoftStoreForBusiness);
-            writer.WriteCollectionOfObjectValues<ManagedAppPolicy>("managedAppPolicies", ManagedAppPolicies);
-            writer.WriteCollectionOfObjectValues<ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
-            writer.WriteCollectionOfObjectValues<ManagedAppStatus>("managedAppStatuses", ManagedAppStatuses);
-            writer.WriteCollectionOfObjectValues<ManagedEBookCategory>("managedEBookCategories", ManagedEBookCategories);
-            writer.WriteCollectionOfObjectValues<ManagedEBook>("managedEBooks", ManagedEBooks);
-            writer.WriteCollectionOfObjectValues<MdmWindowsInformationProtectionPolicy>("mdmWindowsInformationProtectionPolicies", MdmWindowsInformationProtectionPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppPolicy>("managedAppPolicies", ManagedAppPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppStatus>("managedAppStatuses", ManagedAppStatuses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBookCategory>("managedEBookCategories", ManagedEBookCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBook>("managedEBooks", ManagedEBooks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicy>("mdmWindowsInformationProtectionPolicies", MdmWindowsInformationProtectionPolicies);
             writer.WriteStringValue("microsoftStoreForBusinessLanguage", MicrosoftStoreForBusinessLanguage);
             writer.WriteDateTimeOffsetValue("microsoftStoreForBusinessLastCompletedApplicationSyncTime", MicrosoftStoreForBusinessLastCompletedApplicationSyncTime);
             writer.WriteDateTimeOffsetValue("microsoftStoreForBusinessLastSuccessfulSyncDateTime", MicrosoftStoreForBusinessLastSuccessfulSyncDateTime);
-            writer.WriteEnumValue<MicrosoftStoreForBusinessPortalSelectionOptions>("microsoftStoreForBusinessPortalSelection", MicrosoftStoreForBusinessPortalSelection);
-            writer.WriteCollectionOfObjectValues<MobileAppCatalogPackage>("mobileAppCatalogPackages", MobileAppCatalogPackages);
-            writer.WriteCollectionOfObjectValues<MobileAppCategory>("mobileAppCategories", MobileAppCategories);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
-            writer.WriteCollectionOfObjectValues<MobileApp>("mobileApps", MobileApps);
-            writer.WriteCollectionOfObjectValues<PolicySet>("policySets", PolicySets);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessPortalSelectionOptions>("microsoftStoreForBusinessPortalSelection", MicrosoftStoreForBusinessPortalSelection);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>("mobileAppCatalogPackages", MobileAppCatalogPackages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppCategory>("mobileAppCategories", MobileAppCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileApp>("mobileApps", MobileApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySet>("policySets", PolicySets);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate", SymantecCodeSigningCertificate);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
-            writer.WriteCollectionOfObjectValues<VppToken>("vppTokens", VppTokens);
-            writer.WriteCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicy>("wdacSupplementalPolicies", WdacSupplementalPolicies);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>("windowsInformationProtectionDeviceRegistrations", WindowsInformationProtectionDeviceRegistrations);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
-            writer.WriteCollectionOfObjectValues<WindowsInformationProtectionWipeAction>("windowsInformationProtectionWipeActions", WindowsInformationProtectionWipeActions);
-            writer.WriteCollectionOfObjectValues<WindowsManagedAppProtection>("windowsManagedAppProtections", WindowsManagedAppProtections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VppToken>("vppTokens", VppTokens);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy>("wdacSupplementalPolicies", WdacSupplementalPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistration>("windowsInformationProtectionDeviceRegistrations", WindowsInformationProtectionDeviceRegistrations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionWipeAction>("windowsInformationProtectionWipeActions", WindowsInformationProtectionWipeActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsManagedAppProtection>("windowsManagedAppProtections", WindowsManagedAppProtections);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsManagementApp>("windowsManagementApp", WindowsManagementApp);
         }
     }

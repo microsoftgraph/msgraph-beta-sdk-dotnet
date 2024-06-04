@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class AndroidVpnConfiguration : DeviceConfiguration, IParsable
+    public class AndroidVpnConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>VPN Authentication Method.</summary>
-        public VpnAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.VpnAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
@@ -34,40 +34,40 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Android VPN connection type.</summary>
-        public AndroidVpnConnectionType? ConnectionType
+        public Microsoft.Graph.Beta.Models.AndroidVpnConnectionType? ConnectionType
         {
-            get { return BackingStore?.Get<AndroidVpnConnectionType?>("connectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? CustomData
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? CustomData
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> CustomData
+        public List<Microsoft.Graph.Beta.Models.KeyValue> CustomData
         {
-            get { return BackingStore?.Get<List<KeyValue>>("customData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #endif
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomKeyValueData
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? CustomKeyValueData
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomKeyValueData
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> CustomKeyValueData
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #endif
@@ -90,16 +90,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidCertificateProfileBase? IdentityCertificate
+        public Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase? IdentityCertificate
         {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase?>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public AndroidCertificateProfileBase IdentityCertificate
+        public Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase IdentityCertificate
         {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
@@ -138,21 +138,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnServer>? Servers
+        public List<Microsoft.Graph.Beta.Models.VpnServer>? Servers
         {
-            get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #nullable restore
 #else
-        public List<VpnServer> Servers
+        public List<Microsoft.Graph.Beta.Models.VpnServer> Servers
         {
-            get { return BackingStore?.Get<List<VpnServer>>("servers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnServer>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidVpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidVpnConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidVpnConfiguration() : base()
         {
@@ -161,12 +161,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidVpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidVpnConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidVpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -176,16 +176,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>(); } },
                 { "connectionName", n => { ConnectionName = n.GetStringValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetEnumValue<AndroidVpnConnectionType>(); } },
-                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidVpnConnectionType>(); } },
+                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
-                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<AndroidCertificateProfileBase>(AndroidCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>(Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 { "realm", n => { Realm = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
-                { "servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servers", n => { Servers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnServer>(Microsoft.Graph.Beta.Models.VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -196,16 +196,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteStringValue("connectionName", ConnectionName);
-            writer.WriteEnumValue<AndroidVpnConnectionType>("connectionType", ConnectionType);
-            writer.WriteCollectionOfObjectValues<KeyValue>("customData", CustomData);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customKeyValueData", CustomKeyValueData);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidVpnConnectionType>("connectionType", ConnectionType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("customData", CustomData);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("customKeyValueData", CustomKeyValueData);
             writer.WriteStringValue("fingerprint", Fingerprint);
-            writer.WriteObjectValue<AndroidCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>("identityCertificate", IdentityCertificate);
             writer.WriteStringValue("realm", Realm);
             writer.WriteStringValue("role", Role);
-            writer.WriteCollectionOfObjectValues<VpnServer>("servers", Servers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnServer>("servers", Servers);
         }
     }
 }

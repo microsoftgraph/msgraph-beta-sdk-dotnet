@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
     public class CloudPcConnectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         /// <param name="position">The unique identifier of cloudPcConnection</param>
-        /// <returns>A <see cref="CloudPcConnectionItemRequestBuilder"/></returns>
-        public CloudPcConnectionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Item.CloudPcConnectionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Item.CloudPcConnectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudPcConnection%2Did", position);
-                return new CloudPcConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Item.CloudPcConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcConnectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcConnectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         /// Get a list of the cloudPcConnection objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="CloudPcConnectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcConnectionCollectionResponse?> GetAsync(Action<RequestConfiguration<CloudPcConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnectionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder.CloudPcConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcConnectionCollectionResponse> GetAsync(Action<RequestConfiguration<CloudPcConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnectionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder.CloudPcConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcConnectionCollectionResponse>(requestInfo, CloudPcConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnectionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to cloudPcConnections for tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="CloudPcConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcConnection?> PostAsync(CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection?> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudPcConnection> PostAsync(CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudPcConnection>(requestInfo, CloudPcConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the cloudPcConnection objects and their properties.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPcConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder.CloudPcConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPcConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder.CloudPcConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.CloudPcConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CloudPcConnectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CloudPcConnectionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CloudPcConnectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the cloudPcConnection objects and their properties.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPcConnectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<CloudPcConnectionsRequestBuilderGetQueryParameters>
+        public class CloudPcConnectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder.CloudPcConnectionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

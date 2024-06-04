@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The array property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Array
+        public Microsoft.Graph.Beta.Models.Json? Array
         {
-            get { return BackingStore?.Get<Json?>("array"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #nullable restore
 #else
-        public Json Array
+        public Microsoft.Graph.Beta.Models.Json Array
         {
-            get { return BackingStore?.Get<Json>("array"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #endif
@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The k property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? K
+        public Microsoft.Graph.Beta.Models.Json? K
         {
-            get { return BackingStore?.Get<Json?>("k"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("k"); }
             set { BackingStore?.Set("k", value); }
         }
 #nullable restore
 #else
-        public Json K
+        public Microsoft.Graph.Beta.Models.Json K
         {
-            get { return BackingStore?.Get<Json>("k"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("k"); }
             set { BackingStore?.Set("k", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Percentile_ExcPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Percentile_Exc.Percentile_ExcPostRequestBody"/> and sets the default values.
         /// </summary>
         public Percentile_ExcPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Percentile_ExcPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Percentile_Exc.Percentile_ExcPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Percentile_ExcPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Percentile_Exc.Percentile_ExcPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Percentile_ExcPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Percentile_Exc.Percentile_ExcPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "k", n => { K = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "array", n => { Array = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "k", n => { K = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("array", Array);
-            writer.WriteObjectValue<Json>("k", K);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("array", Array);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("k", K);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

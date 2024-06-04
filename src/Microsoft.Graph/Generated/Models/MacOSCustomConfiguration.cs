@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
     /// </summary>
-    public class MacOSCustomConfiguration : DeviceConfiguration, IParsable
+    public class MacOSCustomConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel</summary>
-        public AppleDeploymentChannel? DeploymentChannel
+        public Microsoft.Graph.Beta.Models.AppleDeploymentChannel? DeploymentChannel
         {
-            get { return BackingStore?.Get<AppleDeploymentChannel?>("deploymentChannel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleDeploymentChannel?>("deploymentChannel"); }
             set { BackingStore?.Set("deploymentChannel", value); }
         }
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MacOSCustomConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSCustomConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSCustomConfiguration() : base()
         {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSCustomConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSCustomConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSCustomConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSCustomConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSCustomConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSCustomConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deploymentChannel", n => { DeploymentChannel = n.GetEnumValue<AppleDeploymentChannel>(); } },
+                { "deploymentChannel", n => { DeploymentChannel = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppleDeploymentChannel>(); } },
                 { "payload", n => { Payload = n.GetByteArrayValue(); } },
                 { "payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
                 { "payloadName", n => { PayloadName = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AppleDeploymentChannel>("deploymentChannel", DeploymentChannel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppleDeploymentChannel>("deploymentChannel", DeploymentChannel);
             writer.WriteByteArrayValue("payload", Payload);
             writer.WriteStringValue("payloadFileName", PayloadFileName);
             writer.WriteStringValue("payloadName", PayloadName);

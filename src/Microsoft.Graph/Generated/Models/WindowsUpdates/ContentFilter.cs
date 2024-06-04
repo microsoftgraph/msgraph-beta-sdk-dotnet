@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ContentFilter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter"/> and sets the default values.
         /// </summary>
         public ContentFilter()
         {
@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentFilter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.driverUpdateFilter" => new DriverUpdateFilter(),
-                "#microsoft.graph.windowsUpdates.qualityUpdateFilter" => new QualityUpdateFilter(),
-                "#microsoft.graph.windowsUpdates.softwareUpdateFilter" => new SoftwareUpdateFilter(),
-                "#microsoft.graph.windowsUpdates.windowsUpdateFilter" => new WindowsUpdateFilter(),
-                _ => new ContentFilter(),
+                "#microsoft.graph.windowsUpdates.driverUpdateFilter" => new Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateFilter(),
+                "#microsoft.graph.windowsUpdates.qualityUpdateFilter" => new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter(),
+                "#microsoft.graph.windowsUpdates.softwareUpdateFilter" => new Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateFilter(),
+                "#microsoft.graph.windowsUpdates.windowsUpdateFilter" => new Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsUpdateFilter(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter(),
             };
         }
         /// <summary>

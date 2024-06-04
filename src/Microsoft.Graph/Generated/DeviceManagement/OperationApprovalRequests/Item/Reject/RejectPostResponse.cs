@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.R
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RejectPostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectPostResponse"/> and sets the default values.
         /// </summary>
         public RejectPostResponse()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.R
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RejectPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RejectPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RejectPostResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

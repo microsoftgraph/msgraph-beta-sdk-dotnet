@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetUserOwnedObjectsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects.GetUserOwnedObjectsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetUserOwnedObjectsPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetUserOwnedObjectsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects.GetUserOwnedObjectsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetUserOwnedObjectsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects.GetUserOwnedObjectsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetUserOwnedObjectsPostRequestBody();
+            return new Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects.GetUserOwnedObjectsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

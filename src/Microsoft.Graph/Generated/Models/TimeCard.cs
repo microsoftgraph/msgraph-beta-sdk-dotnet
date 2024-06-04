@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TimeCard : ChangeTrackedEntity, IParsable
+    public class TimeCard : Microsoft.Graph.Beta.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of breaks associated with the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeCardBreak>? Breaks
+        public List<Microsoft.Graph.Beta.Models.TimeCardBreak>? Breaks
         {
-            get { return BackingStore?.Get<List<TimeCardBreak>?>("breaks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeCardBreak>?>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
 #nullable restore
 #else
-        public List<TimeCardBreak> Breaks
+        public List<Microsoft.Graph.Beta.Models.TimeCardBreak> Breaks
         {
-            get { return BackingStore?.Get<List<TimeCardBreak>>("breaks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeCardBreak>>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
 #endif
         /// <summary>The clock-in event of the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? ClockInEvent
+        public Microsoft.Graph.Beta.Models.TimeCardEvent? ClockInEvent
         {
-            get { return BackingStore?.Get<TimeCardEvent?>("clockInEvent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent?>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent ClockInEvent
+        public Microsoft.Graph.Beta.Models.TimeCardEvent ClockInEvent
         {
-            get { return BackingStore?.Get<TimeCardEvent>("clockInEvent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
 #endif
         /// <summary>The clock-out event of the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? ClockOutEvent
+        public Microsoft.Graph.Beta.Models.TimeCardEvent? ClockOutEvent
         {
-            get { return BackingStore?.Get<TimeCardEvent?>("clockOutEvent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent?>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent ClockOutEvent
+        public Microsoft.Graph.Beta.Models.TimeCardEvent ClockOutEvent
         {
-            get { return BackingStore?.Get<TimeCardEvent>("clockOutEvent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
 #endif
@@ -67,39 +67,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Notes about the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Notes
+        public Microsoft.Graph.Beta.Models.ItemBody? Notes
         {
-            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public ItemBody Notes
+        public Microsoft.Graph.Beta.Models.ItemBody Notes
         {
-            get { return BackingStore?.Get<ItemBody>("notes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #endif
         /// <summary>The original timeCardEntry of the timeCard, before user edits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEntry? OriginalEntry
+        public Microsoft.Graph.Beta.Models.TimeCardEntry? OriginalEntry
         {
-            get { return BackingStore?.Get<TimeCardEntry?>("originalEntry"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEntry?>("originalEntry"); }
             set { BackingStore?.Set("originalEntry", value); }
         }
 #nullable restore
 #else
-        public TimeCardEntry OriginalEntry
+        public Microsoft.Graph.Beta.Models.TimeCardEntry OriginalEntry
         {
-            get { return BackingStore?.Get<TimeCardEntry>("originalEntry"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEntry>("originalEntry"); }
             set { BackingStore?.Set("originalEntry", value); }
         }
 #endif
         /// <summary>The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.</summary>
-        public TimeCardState? State
+        public Microsoft.Graph.Beta.Models.TimeCardState? State
         {
-            get { return BackingStore?.Get<TimeCardState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User ID to which  the timeCard belongs.</summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimeCard"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TimeCard"/> and sets the default values.
         /// </summary>
         public TimeCard() : base()
         {
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeCard"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TimeCard"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TimeCard CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TimeCard CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeCard();
+            return new Microsoft.Graph.Beta.Models.TimeCard();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,13 +143,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "breaks", n => { Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>(TimeCardBreak.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "clockInEvent", n => { ClockInEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
-                { "clockOutEvent", n => { ClockOutEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
-                { "confirmedBy", n => { ConfirmedBy = n.GetEnumValue<ConfirmedBy>(); } },
-                { "notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                { "originalEntry", n => { OriginalEntry = n.GetObjectValue<TimeCardEntry>(TimeCardEntry.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<TimeCardState>(); } },
+                { "breaks", n => { Breaks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeCardBreak>(Microsoft.Graph.Beta.Models.TimeCardBreak.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clockInEvent", n => { ClockInEvent = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>(Microsoft.Graph.Beta.Models.TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "clockOutEvent", n => { ClockOutEvent = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>(Microsoft.Graph.Beta.Models.TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "confirmedBy", n => { ConfirmedBy = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfirmedBy>(); } },
+                { "notes", n => { Notes = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "originalEntry", n => { OriginalEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeCardEntry>(Microsoft.Graph.Beta.Models.TimeCardEntry.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.TimeCardState>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -161,13 +161,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TimeCardBreak>("breaks", Breaks);
-            writer.WriteObjectValue<TimeCardEvent>("clockInEvent", ClockInEvent);
-            writer.WriteObjectValue<TimeCardEvent>("clockOutEvent", ClockOutEvent);
-            writer.WriteEnumValue<ConfirmedBy>("confirmedBy", ConfirmedBy);
-            writer.WriteObjectValue<ItemBody>("notes", Notes);
-            writer.WriteObjectValue<TimeCardEntry>("originalEntry", OriginalEntry);
-            writer.WriteEnumValue<TimeCardState>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeCardBreak>("breaks", Breaks);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>("clockInEvent", ClockInEvent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>("clockOutEvent", ClockOutEvent);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfirmedBy>("confirmedBy", ConfirmedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeCardEntry>("originalEntry", OriginalEntry);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TimeCardState>("state", State);
             writer.WriteStringValue("userId", UserId);
         }
     }

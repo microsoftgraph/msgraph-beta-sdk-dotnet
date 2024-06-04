@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity represents a collection of name/value pairs of a list box presentation on a policy definition.
     /// </summary>
-    public class GroupPolicyPresentationValueList : GroupPolicyPresentationValue, IParsable
+    public class GroupPolicyPresentationValueList : Microsoft.Graph.Beta.Models.GroupPolicyPresentationValue, IParsable
     {
         /// <summary>A list of pairs for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Values
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? Values
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Values
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> Values
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("values"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyPresentationValueList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationValueList"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyPresentationValueList CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyPresentationValueList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyPresentationValueList();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyPresentationValueList();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "values", n => { Values = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("values", Values);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("values", Values);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IpSecurityProfile : Entity, IParsable
+    public class IpSecurityProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityGroupNames property</summary>
@@ -95,16 +95,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The ipCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpCategory>? IpCategories
+        public List<Microsoft.Graph.Beta.Models.IpCategory>? IpCategories
         {
-            get { return BackingStore?.Get<List<IpCategory>?>("ipCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpCategory>?>("ipCategories"); }
             set { BackingStore?.Set("ipCategories", value); }
         }
 #nullable restore
 #else
-        public List<IpCategory> IpCategories
+        public List<Microsoft.Graph.Beta.Models.IpCategory> IpCategories
         {
-            get { return BackingStore?.Get<List<IpCategory>>("ipCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpCategory>>("ipCategories"); }
             set { BackingStore?.Set("ipCategories", value); }
         }
 #endif
@@ -165,28 +165,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IpSecurityProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IpSecurityProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IpSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IpSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IpSecurityProfile();
+            return new Microsoft.Graph.Beta.Models.IpSecurityProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -203,12 +203,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "countHits", n => { CountHits = n.GetIntValue(); } },
                 { "countHosts", n => { CountHosts = n.GetIntValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "ipCategories", n => { IpCategories = n.GetCollectionOfObjectValues<IpCategory>(IpCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ipCategories", n => { IpCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpCategory>(Microsoft.Graph.Beta.Models.IpCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "ipReferenceData", n => { IpReferenceData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpReferenceData>(Microsoft.Graph.Beta.Models.IpReferenceData.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>(Microsoft.Graph.Beta.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -226,12 +226,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("countHits", CountHits);
             writer.WriteIntValue("countHosts", CountHosts);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
-            writer.WriteCollectionOfObjectValues<IpCategory>("ipCategories", IpCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpCategory>("ipCategories", IpCategories);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpReferenceData>("ipReferenceData", IpReferenceData);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

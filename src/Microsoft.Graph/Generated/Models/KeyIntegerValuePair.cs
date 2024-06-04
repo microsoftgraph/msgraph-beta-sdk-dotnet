@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A key-value pair with a string key and an integer value.
     /// </summary>
-    public class KeyIntegerValuePair : KeyTypedValuePair, IParsable
+    public class KeyIntegerValuePair : Microsoft.Graph.Beta.Models.KeyTypedValuePair, IParsable
     {
         /// <summary>The integer value of the key-value pair.</summary>
         public int? Value
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="KeyIntegerValuePair"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.KeyIntegerValuePair"/> and sets the default values.
         /// </summary>
         public KeyIntegerValuePair() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KeyIntegerValuePair"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.KeyIntegerValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KeyIntegerValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.KeyIntegerValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KeyIntegerValuePair();
+            return new Microsoft.Graph.Beta.Models.KeyIntegerValuePair();
         }
         /// <summary>
         /// The deserialization information for the current model

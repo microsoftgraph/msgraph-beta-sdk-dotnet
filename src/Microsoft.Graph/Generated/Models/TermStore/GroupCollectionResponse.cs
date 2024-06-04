@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.TermStore
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? Value
+        public List<Microsoft.Graph.Beta.Models.TermStore.Group>? Value
         {
-            get { return BackingStore?.Get<List<Group>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermStore.Group>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Group> Value
+        public List<Microsoft.Graph.Beta.Models.TermStore.Group> Value
         {
-            get { return BackingStore?.Get<List<Group>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermStore.Group>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermStore.GroupCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TermStore.GroupCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.TermStore.GroupCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.TermStore
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermStore.Group>(Microsoft.Graph.Beta.Models.TermStore.Group.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.TermStore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Group>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermStore.Group>("value", Value);
         }
     }
 }

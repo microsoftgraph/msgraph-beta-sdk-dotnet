@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
     public class DirectoryProvisioningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.</summary>
         /// <param name="position">The unique identifier of provisioningObjectSummary</param>
-        /// <returns>A <see cref="ProvisioningObjectSummaryItemRequestBuilder"/></returns>
-        public ProvisioningObjectSummaryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.Item.ProvisioningObjectSummaryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.Item.ProvisioningObjectSummaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("provisioningObjectSummary%2Did", position);
-                return new ProvisioningObjectSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.Item.ProvisioningObjectSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryProvisioningRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryProvisioningRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
         /// <summary>
         /// Get directoryProvisioning from auditLogs
         /// </summary>
-        /// <returns>A <see cref="ProvisioningObjectSummaryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProvisioningObjectSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisioningObjectSummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<DirectoryProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProvisioningObjectSummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder.DirectoryProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProvisioningObjectSummaryCollectionResponse> GetAsync(Action<RequestConfiguration<DirectoryProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProvisioningObjectSummaryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder.DirectoryProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummaryCollectionResponse>(requestInfo, ProvisioningObjectSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProvisioningObjectSummaryCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ProvisioningObjectSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to directoryProvisioning for auditLogs
         /// </summary>
-        /// <returns>A <see cref="ProvisioningObjectSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProvisioningObjectSummary"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisioningObjectSummary?> PostAsync(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProvisioningObjectSummary?> PostAsync(Microsoft.Graph.Beta.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProvisioningObjectSummary> PostAsync(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ProvisioningObjectSummary> PostAsync(Microsoft.Graph.Beta.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProvisioningObjectSummary>(requestInfo, Microsoft.Graph.Beta.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get directoryProvisioning from auditLogs
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder.DirectoryProvisioningRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder.DirectoryProvisioningRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProvisioningObjectSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DirectoryProvisioningRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectoryProvisioningRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder WithUrl(string rawUrl)
         {
-            return new DirectoryProvisioningRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get directoryProvisioning from auditLogs
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryProvisioningRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectoryProvisioningRequestBuilderGetQueryParameters>
+        public class DirectoryProvisioningRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning.DirectoryProvisioningRequestBuilder.DirectoryProvisioningRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

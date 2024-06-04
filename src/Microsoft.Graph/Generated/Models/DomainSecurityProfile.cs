@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DomainSecurityProfile : Entity, IParsable
+    public class DomainSecurityProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityGroupNames property</summary>
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The domainCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReputationCategory>? DomainCategories
+        public List<Microsoft.Graph.Beta.Models.ReputationCategory>? DomainCategories
         {
-            get { return BackingStore?.Get<List<ReputationCategory>?>("domainCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ReputationCategory>?>("domainCategories"); }
             set { BackingStore?.Set("domainCategories", value); }
         }
 #nullable restore
 #else
-        public List<ReputationCategory> DomainCategories
+        public List<Microsoft.Graph.Beta.Models.ReputationCategory> DomainCategories
         {
-            get { return BackingStore?.Get<List<ReputationCategory>>("domainCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ReputationCategory>>("domainCategories"); }
             set { BackingStore?.Set("domainCategories", value); }
         }
 #endif
@@ -123,16 +123,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The registrant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DomainRegistrant? Registrant
+        public Microsoft.Graph.Beta.Models.DomainRegistrant? Registrant
         {
-            get { return BackingStore?.Get<DomainRegistrant?>("registrant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DomainRegistrant?>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #nullable restore
 #else
-        public DomainRegistrant Registrant
+        public Microsoft.Graph.Beta.Models.DomainRegistrant Registrant
         {
-            get { return BackingStore?.Get<DomainRegistrant>("registrant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DomainRegistrant>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #endif
@@ -171,28 +171,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DomainSecurityProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DomainSecurityProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DomainSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DomainSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DomainSecurityProfile();
+            return new Microsoft.Graph.Beta.Models.DomainSecurityProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -207,15 +207,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
                 { "countHits", n => { CountHits = n.GetIntValue(); } },
                 { "countInOrg", n => { CountInOrg = n.GetIntValue(); } },
-                { "domainCategories", n => { DomainCategories = n.GetCollectionOfObjectValues<ReputationCategory>(ReputationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domainCategories", n => { DomainCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ReputationCategory>(Microsoft.Graph.Beta.Models.ReputationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "registrant", n => { Registrant = n.GetObjectValue<DomainRegistrant>(DomainRegistrant.CreateFromDiscriminatorValue); } },
+                { "registrant", n => { Registrant = n.GetObjectValue<Microsoft.Graph.Beta.Models.DomainRegistrant>(Microsoft.Graph.Beta.Models.DomainRegistrant.CreateFromDiscriminatorValue); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>(Microsoft.Graph.Beta.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -231,15 +231,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("azureTenantId", AzureTenantId);
             writer.WriteIntValue("countHits", CountHits);
             writer.WriteIntValue("countInOrg", CountInOrg);
-            writer.WriteCollectionOfObjectValues<ReputationCategory>("domainCategories", DomainCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ReputationCategory>("domainCategories", DomainCategories);
             writer.WriteDateTimeOffsetValue("domainRegisteredDateTime", DomainRegisteredDateTime);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<DomainRegistrant>("registrant", Registrant);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DomainRegistrant>("registrant", Registrant);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

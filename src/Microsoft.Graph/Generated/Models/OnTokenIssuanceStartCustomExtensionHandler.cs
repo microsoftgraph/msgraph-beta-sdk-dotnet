@@ -7,43 +7,43 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnTokenIssuanceStartCustomExtensionHandler : OnTokenIssuanceStartHandler, IParsable
+    public class OnTokenIssuanceStartCustomExtensionHandler : Microsoft.Graph.Beta.Models.OnTokenIssuanceStartHandler, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionOverwriteConfiguration? Configuration
+        public Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration? Configuration
         {
-            get { return BackingStore?.Get<CustomExtensionOverwriteConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionOverwriteConfiguration Configuration
+        public Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration Configuration
         {
-            get { return BackingStore?.Get<CustomExtensionOverwriteConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
         /// <summary>The customExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnTokenIssuanceStartCustomExtension? CustomExtension
+        public Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension? CustomExtension
         {
-            get { return BackingStore?.Get<OnTokenIssuanceStartCustomExtension?>("customExtension"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #nullable restore
 #else
-        public OnTokenIssuanceStartCustomExtension CustomExtension
+        public Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension CustomExtension
         {
-            get { return BackingStore?.Get<OnTokenIssuanceStartCustomExtension>("customExtension"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnTokenIssuanceStartCustomExtensionHandler"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtensionHandler"/> and sets the default values.
         /// </summary>
         public OnTokenIssuanceStartCustomExtensionHandler() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnTokenIssuanceStartCustomExtensionHandler"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtensionHandler"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnTokenIssuanceStartCustomExtensionHandler CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtensionHandler CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnTokenIssuanceStartCustomExtensionHandler();
+            return new Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtensionHandler();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<CustomExtensionOverwriteConfiguration>(CustomExtensionOverwriteConfiguration.CreateFromDiscriminatorValue); } },
-                { "customExtension", n => { CustomExtension = n.GetObjectValue<OnTokenIssuanceStartCustomExtension>(OnTokenIssuanceStartCustomExtension.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration>(Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration.CreateFromDiscriminatorValue); } },
+                { "customExtension", n => { CustomExtension = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension>(Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CustomExtensionOverwriteConfiguration>("configuration", Configuration);
-            writer.WriteObjectValue<OnTokenIssuanceStartCustomExtension>("customExtension", CustomExtension);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CustomExtensionOverwriteConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension>("customExtension", CustomExtension);
         }
     }
 }

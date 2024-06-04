@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms
     public class FindRoomsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FindRoomsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FindRoomsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms
         /// <summary>
         /// Invoke function findRooms
         /// </summary>
-        /// <returns>A <see cref="FindRoomsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindRoomsGetResponse?> GetAsFindRoomsGetResponseAsync(Action<RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsGetResponse?> GetAsFindRoomsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindRoomsGetResponse> GetAsFindRoomsGetResponseAsync(Action<RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsGetResponse> GetAsFindRoomsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindRoomsGetResponse>(requestInfo, FindRoomsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsGetResponse>(requestInfo, Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function findRooms
         /// </summary>
-        /// <returns>A <see cref="FindRoomsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsFindRoomsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindRoomsResponse?> GetAsync(Action<RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindRoomsResponse> GetAsync(Action<RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindRoomsResponse>(requestInfo, FindRoomsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsResponse>(requestInfo, Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function findRooms
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FindRoomsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FindRoomsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder WithUrl(string rawUrl)
         {
-            return new FindRoomsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function findRooms
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FindRoomsRequestBuilderGetRequestConfiguration : RequestConfiguration<FindRoomsRequestBuilderGetQueryParameters>
+        public class FindRoomsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.FindRooms.FindRoomsRequestBuilder.FindRoomsRequestBuilderGetQueryParameters>
         {
         }
     }

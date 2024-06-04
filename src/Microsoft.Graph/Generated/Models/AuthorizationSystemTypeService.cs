@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthorizationSystemTypeService : Entity, IParsable
+    public class AuthorizationSystemTypeService : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions for the service in an authorization system that is onboarded to Permissions Management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemTypeAction>? Actions
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>? Actions
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeAction>?>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemTypeAction> Actions
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction> Actions
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeAction>>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystemTypeService"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationSystemTypeService CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthorizationSystemTypeService();
+            return new Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<AuthorizationSystemTypeAction>(AuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>(Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthorizationSystemTypeAction>("actions", Actions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction>("actions", Actions);
         }
     }
 }

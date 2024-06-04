@@ -31,82 +31,82 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
     public class DeviceManagementIntentItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assign.AssignRequestBuilder Assign
         {
-            get => new AssignRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public CategoriesRequestBuilder Categories
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.CategoriesRequestBuilder Categories
         {
-            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createCopy method.</summary>
-        public CreateCopyRequestBuilder CreateCopy
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy.CreateCopyRequestBuilder CreateCopy
         {
-            get => new CreateCopyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy.CreateCopyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public DeviceSettingStateSummariesRequestBuilder DeviceSettingStateSummaries
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateSummaries.DeviceSettingStateSummariesRequestBuilder DeviceSettingStateSummaries
         {
-            get => new DeviceSettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateSummaries.DeviceSettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStates property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public DeviceStatesRequestBuilder DeviceStates
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates.DeviceStatesRequestBuilder DeviceStates
         {
-            get => new DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates.DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public DeviceStateSummaryRequestBuilder DeviceStateSummary
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary.DeviceStateSummaryRequestBuilder DeviceStateSummary
         {
-            get => new DeviceStateSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary.DeviceStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCustomizedSettings method.</summary>
-        public GetCustomizedSettingsRequestBuilder GetCustomizedSettings
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder GetCustomizedSettings
         {
-            get => new GetCustomizedSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the migrateToTemplate method.</summary>
-        public MigrateToTemplateRequestBuilder MigrateToTemplate
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate.MigrateToTemplateRequestBuilder MigrateToTemplate
         {
-            get => new MigrateToTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate.MigrateToTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public SettingsRequestBuilder Settings
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateSettings method.</summary>
-        public UpdateSettingsRequestBuilder UpdateSettings
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings.UpdateSettingsRequestBuilder UpdateSettings
         {
-            get => new UpdateSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings.UpdateSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public UserStatesRequestBuilder UserStates
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates.UserStatesRequestBuilder UserStates
         {
-            get => new UserStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates.UserStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStateSummary property of the microsoft.graph.deviceManagementIntent entity.</summary>
-        public UserStateSummaryRequestBuilder UserStateSummary
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStateSummary.UserStateSummaryRequestBuilder UserStateSummary
         {
-            get => new UserStateSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStateSummary.UserStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the compare method.
         /// </summary>
-        /// <returns>A <see cref="CompareWithTemplateIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplateId.CompareWithTemplateIdRequestBuilder"/></returns>
         /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
-        public CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId)
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplateId.CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId)
         {
             if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
-            return new CompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
+            return new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplateId.CompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementIntentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementIntentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -139,57 +139,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The device management intents
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementIntent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementIntent?> GetAsync(Action<RequestConfiguration<DeviceManagementIntentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementIntent?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder.DeviceManagementIntentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementIntent> GetAsync(Action<RequestConfiguration<DeviceManagementIntentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementIntent> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder.DeviceManagementIntentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementIntent>(requestInfo, DeviceManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementIntent>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property intents in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementIntent"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementIntent?> PatchAsync(DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementIntent?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementIntent> PatchAsync(DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementIntent> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementIntent>(requestInfo, DeviceManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementIntent>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property intents for deviceManagement
@@ -217,11 +217,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceManagementIntentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder.DeviceManagementIntentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceManagementIntentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder.DeviceManagementIntentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -237,11 +237,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementIntent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -254,11 +254,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntentItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceManagementIntentItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceManagementIntentItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementIntentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceManagementIntentItemRequestBuilderGetQueryParameters>
+        public class DeviceManagementIntentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceManagementIntentItemRequestBuilder.DeviceManagementIntentItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

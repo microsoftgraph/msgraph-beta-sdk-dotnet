@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBet
         /// <summary>The bottom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Bottom
+        public Microsoft.Graph.Beta.Models.Json? Bottom
         {
-            get { return BackingStore?.Get<Json?>("bottom"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("bottom"); }
             set { BackingStore?.Set("bottom", value); }
         }
 #nullable restore
 #else
-        public Json Bottom
+        public Microsoft.Graph.Beta.Models.Json Bottom
         {
-            get { return BackingStore?.Get<Json>("bottom"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("bottom"); }
             set { BackingStore?.Set("bottom", value); }
         }
 #endif
         /// <summary>The top property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Top
+        public Microsoft.Graph.Beta.Models.Json? Top
         {
-            get { return BackingStore?.Get<Json?>("top"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("top"); }
             set { BackingStore?.Set("top", value); }
         }
 #nullable restore
 #else
-        public Json Top
+        public Microsoft.Graph.Beta.Models.Json Top
         {
-            get { return BackingStore?.Get<Json>("top"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("top"); }
             set { BackingStore?.Set("top", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RandBetweenPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBetween.RandBetweenPostRequestBody"/> and sets the default values.
         /// </summary>
         public RandBetweenPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBet
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RandBetweenPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBetween.RandBetweenPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RandBetweenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBetween.RandBetweenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RandBetweenPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBetween.RandBetweenPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBet
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bottom", n => { Bottom = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "top", n => { Top = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "bottom", n => { Bottom = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "top", n => { Top = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.RandBet
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("bottom", Bottom);
-            writer.WriteObjectValue<Json>("top", Top);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("bottom", Bottom);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("top", Top);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

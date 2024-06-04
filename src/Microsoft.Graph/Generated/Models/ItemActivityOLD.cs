@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ItemActivityOLD : Entity, IParsable
+    public class ItemActivityOLD : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionSet? Action
+        public Microsoft.Graph.Beta.Models.ItemActionSet? Action
         {
-            get { return BackingStore?.Get<ItemActionSet?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemActionSet?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
 #nullable restore
 #else
-        public ItemActionSet Action
+        public Microsoft.Graph.Beta.Models.ItemActionSet Action
         {
-            get { return BackingStore?.Get<ItemActionSet>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemActionSet>("action"); }
             set { BackingStore?.Set("action", value); }
         }
 #endif
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Actor
+        public Microsoft.Graph.Beta.Models.IdentitySet? Actor
         {
-            get { return BackingStore?.Get<IdentitySet?>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Actor
+        public Microsoft.Graph.Beta.Models.IdentitySet Actor
         {
-            get { return BackingStore?.Get<IdentitySet>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #endif
@@ -77,28 +77,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The times property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActivityTimeSet? Times
+        public Microsoft.Graph.Beta.Models.ItemActivityTimeSet? Times
         {
-            get { return BackingStore?.Get<ItemActivityTimeSet?>("times"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemActivityTimeSet?>("times"); }
             set { BackingStore?.Set("times", value); }
         }
 #nullable restore
 #else
-        public ItemActivityTimeSet Times
+        public Microsoft.Graph.Beta.Models.ItemActivityTimeSet Times
         {
-            get { return BackingStore?.Get<ItemActivityTimeSet>("times"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemActivityTimeSet>("times"); }
             set { BackingStore?.Set("times", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemActivityOLD"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemActivityOLD"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemActivityOLD CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ItemActivityOLD CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemActivityOLD();
+            return new Microsoft.Graph.Beta.Models.ItemActivityOLD();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetObjectValue<ItemActionSet>(ItemActionSet.CreateFromDiscriminatorValue); } },
-                { "actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemActionSet>(Microsoft.Graph.Beta.Models.ItemActionSet.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.ListItem>(Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
-                { "times", n => { Times = n.GetObjectValue<ItemActivityTimeSet>(ItemActivityTimeSet.CreateFromDiscriminatorValue); } },
+                { "times", n => { Times = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemActivityTimeSet>(Microsoft.Graph.Beta.Models.ItemActivityTimeSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -123,11 +123,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ItemActionSet>("action", Action);
-            writer.WriteObjectValue<IdentitySet>("actor", Actor);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemActionSet>("action", Action);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("actor", Actor);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DriveItem>("driveItem", DriveItem);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ListItem>("listItem", ListItem);
-            writer.WriteObjectValue<ItemActivityTimeSet>("times", Times);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemActivityTimeSet>("times", Times);
         }
     }
 }

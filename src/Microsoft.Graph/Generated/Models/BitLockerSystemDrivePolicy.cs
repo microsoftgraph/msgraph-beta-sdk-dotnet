@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
-        public BitLockerEncryptionMethod? EncryptionMethod
+        public Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod? EncryptionMethod
         {
-            get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Indicates the minimum length of startup pin. Valid values 4 to 20</summary>
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BitLockerRecoveryOptions? RecoveryOptions
+        public Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions? RecoveryOptions
         {
-            get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions?>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
 #nullable restore
 #else
-        public BitLockerRecoveryOptions RecoveryOptions
+        public Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions RecoveryOptions
         {
-            get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
 #endif
@@ -115,31 +115,31 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startupAuthenticationRequired", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmKeyUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? StartupAuthenticationTpmKeyUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmKeyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("startupAuthenticationTpmKeyUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmKeyUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmPinAndKeyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("startupAuthenticationTpmPinAndKeyUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmPinAndKeyUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmPinUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? StartupAuthenticationTpmPinUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmPinUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("startupAuthenticationTpmPinUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmPinUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? StartupAuthenticationTpmUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("startupAuthenticationTpmUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmUsage", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BitLockerSystemDrivePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy"/> and sets the default values.
         /// </summary>
         public BitLockerSystemDrivePolicy()
         {
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitLockerSystemDrivePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BitLockerSystemDrivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitLockerSystemDrivePolicy();
+            return new Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,19 +164,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
+                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod>(); } },
                 { "minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "prebootRecoveryEnableMessageAndUrl", n => { PrebootRecoveryEnableMessageAndUrl = n.GetBoolValue(); } },
                 { "prebootRecoveryMessage", n => { PrebootRecoveryMessage = n.GetStringValue(); } },
                 { "prebootRecoveryUrl", n => { PrebootRecoveryUrl = n.GetStringValue(); } },
-                { "recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<BitLockerRecoveryOptions>(BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
+                { "recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions>(Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
                 { "startupAuthenticationBlockWithoutTpmChip", n => { StartupAuthenticationBlockWithoutTpmChip = n.GetBoolValue(); } },
                 { "startupAuthenticationRequired", n => { StartupAuthenticationRequired = n.GetBoolValue(); } },
-                { "startupAuthenticationTpmKeyUsage", n => { StartupAuthenticationTpmKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                { "startupAuthenticationTpmPinAndKeyUsage", n => { StartupAuthenticationTpmPinAndKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                { "startupAuthenticationTpmPinUsage", n => { StartupAuthenticationTpmPinUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                { "startupAuthenticationTpmUsage", n => { StartupAuthenticationTpmUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmKeyUsage", n => { StartupAuthenticationTpmKeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmPinAndKeyUsage", n => { StartupAuthenticationTpmPinAndKeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmPinUsage", n => { StartupAuthenticationTpmPinUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmUsage", n => { StartupAuthenticationTpmUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
             };
         }
         /// <summary>
@@ -186,19 +186,19 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
             writer.WriteIntValue("minimumPinLength", MinimumPinLength);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("prebootRecoveryEnableMessageAndUrl", PrebootRecoveryEnableMessageAndUrl);
             writer.WriteStringValue("prebootRecoveryMessage", PrebootRecoveryMessage);
             writer.WriteStringValue("prebootRecoveryUrl", PrebootRecoveryUrl);
-            writer.WriteObjectValue<BitLockerRecoveryOptions>("recoveryOptions", RecoveryOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions>("recoveryOptions", RecoveryOptions);
             writer.WriteBoolValue("startupAuthenticationBlockWithoutTpmChip", StartupAuthenticationBlockWithoutTpmChip);
             writer.WriteBoolValue("startupAuthenticationRequired", StartupAuthenticationRequired);
-            writer.WriteEnumValue<ConfigurationUsage>("startupAuthenticationTpmKeyUsage", StartupAuthenticationTpmKeyUsage);
-            writer.WriteEnumValue<ConfigurationUsage>("startupAuthenticationTpmPinAndKeyUsage", StartupAuthenticationTpmPinAndKeyUsage);
-            writer.WriteEnumValue<ConfigurationUsage>("startupAuthenticationTpmPinUsage", StartupAuthenticationTpmPinUsage);
-            writer.WriteEnumValue<ConfigurationUsage>("startupAuthenticationTpmUsage", StartupAuthenticationTpmUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("startupAuthenticationTpmKeyUsage", StartupAuthenticationTpmKeyUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("startupAuthenticationTpmPinAndKeyUsage", StartupAuthenticationTpmPinAndKeyUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("startupAuthenticationTpmPinUsage", StartupAuthenticationTpmPinUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("startupAuthenticationTpmUsage", StartupAuthenticationTpmUsage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

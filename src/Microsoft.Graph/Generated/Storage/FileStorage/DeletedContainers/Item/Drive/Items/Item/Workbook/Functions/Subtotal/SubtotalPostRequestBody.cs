@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The functionNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FunctionNum
+        public Microsoft.Graph.Beta.Models.Json? FunctionNum
         {
-            get { return BackingStore?.Get<Json?>("functionNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("functionNum"); }
             set { BackingStore?.Set("functionNum", value); }
         }
 #nullable restore
 #else
-        public Json FunctionNum
+        public Microsoft.Graph.Beta.Models.Json FunctionNum
         {
-            get { return BackingStore?.Get<Json>("functionNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("functionNum"); }
             set { BackingStore?.Set("functionNum", value); }
         }
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values
+        public Microsoft.Graph.Beta.Models.Json? Values
         {
-            get { return BackingStore?.Get<Json?>("values"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values
+        public Microsoft.Graph.Beta.Models.Json Values
         {
-            get { return BackingStore?.Get<Json>("values"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SubtotalPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Subtotal.SubtotalPostRequestBody"/> and sets the default values.
         /// </summary>
         public SubtotalPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubtotalPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Subtotal.SubtotalPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubtotalPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Subtotal.SubtotalPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubtotalPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Subtotal.SubtotalPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionNum", n => { FunctionNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "functionNum", n => { FunctionNum = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("functionNum", FunctionNum);
-            writer.WriteObjectValue<Json>("values", Values);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("functionNum", FunctionNum);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

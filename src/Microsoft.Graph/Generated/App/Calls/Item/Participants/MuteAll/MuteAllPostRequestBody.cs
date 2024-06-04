@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MuteAllPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll.MuteAllPostRequestBody"/> and sets the default values.
         /// </summary>
         public MuteAllPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MuteAllPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll.MuteAllPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MuteAllPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll.MuteAllPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MuteAllPostRequestBody();
+            return new Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll.MuteAllPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

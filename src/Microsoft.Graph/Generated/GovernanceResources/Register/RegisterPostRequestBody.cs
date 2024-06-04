@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Register
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RegisterPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceResources.Register.RegisterPostRequestBody"/> and sets the default values.
         /// </summary>
         public RegisterPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Register
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RegisterPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceResources.Register.RegisterPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RegisterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.GovernanceResources.Register.RegisterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RegisterPostRequestBody();
+            return new Microsoft.Graph.Beta.GovernanceResources.Register.RegisterPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

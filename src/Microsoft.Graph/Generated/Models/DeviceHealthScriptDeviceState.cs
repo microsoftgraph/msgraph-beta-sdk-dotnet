@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for device run state of the device health script.
     /// </summary>
-    public class DeviceHealthScriptDeviceState : Entity, IParsable
+    public class DeviceHealthScriptDeviceState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
-        public RunState? DetectionState
+        public Microsoft.Graph.Beta.Models.RunState? DetectionState
         {
-            get { return BackingStore?.Get<RunState?>("detectionState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("detectionState"); }
             set { BackingStore?.Set("detectionState", value); }
         }
         /// <summary>The next timestamp of when the device health script is expected to execute</summary>
@@ -156,12 +156,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptDeviceState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptDeviceState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceHealthScriptDeviceState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceHealthScriptDeviceState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealthScriptDeviceState();
+            return new Microsoft.Graph.Beta.Models.DeviceHealthScriptDeviceState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "detectionState", n => { DetectionState = n.GetEnumValue<RunState>(); } },
+                { "detectionState", n => { DetectionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunState>(); } },
                 { "expectedStateUpdateDateTime", n => { ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "preRemediationDetectionScriptError", n => { PreRemediationDetectionScriptError = n.GetStringValue(); } },
                 { "preRemediationDetectionScriptOutput", n => { PreRemediationDetectionScriptOutput = n.GetStringValue(); } },
                 { "remediationScriptError", n => { RemediationScriptError = n.GetStringValue(); } },
-                { "remediationState", n => { RemediationState = n.GetEnumValue<RemediationState>(); } },
+                { "remediationState", n => { RemediationState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RemediationState>(); } },
             };
         }
         /// <summary>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("assignmentFilterIds", AssignmentFilterIds);
-            writer.WriteEnumValue<RunState>("detectionState", DetectionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunState>("detectionState", DetectionState);
             writer.WriteDateTimeOffsetValue("expectedStateUpdateDateTime", ExpectedStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("preRemediationDetectionScriptError", PreRemediationDetectionScriptError);
             writer.WriteStringValue("preRemediationDetectionScriptOutput", PreRemediationDetectionScriptOutput);
             writer.WriteStringValue("remediationScriptError", RemediationScriptError);
-            writer.WriteEnumValue<RemediationState>("remediationState", RemediationState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RemediationState>("remediationState", RemediationState);
         }
     }
 }

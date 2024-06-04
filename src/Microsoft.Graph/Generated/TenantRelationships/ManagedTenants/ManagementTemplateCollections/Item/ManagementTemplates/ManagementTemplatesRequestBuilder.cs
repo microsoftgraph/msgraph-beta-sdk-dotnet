@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
     public class ManagementTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.</summary>
         /// <param name="position">The unique identifier of managementTemplate</param>
-        /// <returns>A <see cref="ManagementTemplateItemRequestBuilder"/></returns>
-        public ManagementTemplateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Item.ManagementTemplateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Item.ManagementTemplateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managementTemplate%2Did", position);
-                return new ManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Item.ManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagementTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagementTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>
         /// Get managementTemplates from tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagementTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<ManagementTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder.ManagementTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagementTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<ManagementTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder.ManagementTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagementTemplateCollectionResponse>(requestInfo, ManagementTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get managementTemplates from tenantRelationships
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagementTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder.ManagementTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagementTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder.ManagementTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagementTemplatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ManagementTemplatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get managementTemplates from tenantRelationships
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagementTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagementTemplatesRequestBuilderGetQueryParameters>
+        public class ManagementTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.ManagementTemplatesRequestBuilder.ManagementTemplatesRequestBuilderGetQueryParameters>
         {
         }
     }

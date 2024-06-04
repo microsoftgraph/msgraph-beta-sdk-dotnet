@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SubjectRightsRequest : Entity, IParsable
+    public class SubjectRightsRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The approvers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Approvers
+        public List<Microsoft.Graph.Beta.Models.User>? Approvers
         {
-            get { return BackingStore?.Get<List<User>?>("approvers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("approvers"); }
             set { BackingStore?.Set("approvers", value); }
         }
 #nullable restore
 #else
-        public List<User> Approvers
+        public List<Microsoft.Graph.Beta.Models.User> Approvers
         {
-            get { return BackingStore?.Get<List<User>>("approvers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("approvers"); }
             set { BackingStore?.Set("approvers", value); }
         }
 #endif
         /// <summary>Identity that the request is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? AssignedTo
+        public Microsoft.Graph.Beta.Models.Identity? AssignedTo
         {
-            get { return BackingStore?.Get<Identity?>("assignedTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public Identity AssignedTo
+        public Microsoft.Graph.Beta.Models.Identity AssignedTo
         {
-            get { return BackingStore?.Get<Identity>("assignedTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collaborators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Collaborators
+        public List<Microsoft.Graph.Beta.Models.User>? Collaborators
         {
-            get { return BackingStore?.Get<List<User>?>("collaborators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("collaborators"); }
             set { BackingStore?.Set("collaborators", value); }
         }
 #nullable restore
 #else
-        public List<User> Collaborators
+        public List<Microsoft.Graph.Beta.Models.User> Collaborators
         {
-            get { return BackingStore?.Get<List<User>>("collaborators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("collaborators"); }
             set { BackingStore?.Set("collaborators", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity information for the entity that created the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -175,16 +175,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of history change events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectRightsRequestHistory>? History
+        public List<Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory>? History
         {
-            get { return BackingStore?.Get<List<SubjectRightsRequestHistory>?>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<SubjectRightsRequestHistory> History
+        public List<Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory> History
         {
-            get { return BackingStore?.Get<List<SubjectRightsRequestHistory>>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
@@ -203,16 +203,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Insight about the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestDetail? Insight
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail? Insight
         {
-            get { return BackingStore?.Get<SubjectRightsRequestDetail?>("insight"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail?>("insight"); }
             set { BackingStore?.Set("insight", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestDetail Insight
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail Insight
         {
-            get { return BackingStore?.Get<SubjectRightsRequestDetail>("insight"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail>("insight"); }
             set { BackingStore?.Set("insight", value); }
         }
 #endif
@@ -225,16 +225,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity information for the entity that last modified the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -247,32 +247,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestMailboxLocation? MailboxLocations
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation? MailboxLocations
         {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxLocations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation?>("mailboxLocations"); }
             set { BackingStore?.Set("mailboxLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestMailboxLocation MailboxLocations
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation MailboxLocations
         {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxLocations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation>("mailboxLocations"); }
             set { BackingStore?.Set("mailboxLocations", value); }
         }
 #endif
         /// <summary>List of notes associated with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthoredNote>? Notes
+        public List<Microsoft.Graph.Beta.Models.AuthoredNote>? Notes
         {
-            get { return BackingStore?.Get<List<AuthoredNote>?>("notes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthoredNote>?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public List<AuthoredNote> Notes
+        public List<Microsoft.Graph.Beta.Models.AuthoredNote> Notes
         {
-            get { return BackingStore?.Get<List<AuthoredNote>>("notes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthoredNote>>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #endif
@@ -301,39 +301,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestSiteLocation? SiteLocations
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation? SiteLocations
         {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("siteLocations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation?>("siteLocations"); }
             set { BackingStore?.Set("siteLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestSiteLocation SiteLocations
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation SiteLocations
         {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("siteLocations"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation>("siteLocations"); }
             set { BackingStore?.Set("siteLocations", value); }
         }
 #endif
         /// <summary>Information about the different stages for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectRightsRequestStageDetail>? Stages
+        public List<Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail>? Stages
         {
-            get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>?>("stages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<SubjectRightsRequestStageDetail> Stages
+        public List<Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail> Stages
         {
-            get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>>("stages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #endif
         /// <summary>The status of the request. Possible values are: active, closed, unknownFutureValue.</summary>
-        public SubjectRightsRequestStatus? Status
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestStatus? Status
         {
-            get { return BackingStore?.Get<SubjectRightsRequestStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Information about the Microsoft Teams team that was created for the request.</summary>
@@ -353,20 +353,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
-        public SubjectRightsRequestType? Type
+        public Microsoft.Graph.Beta.Models.SubjectRightsRequestType? Type
         {
-            get { return BackingStore?.Get<SubjectRightsRequestType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectRightsRequestType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SubjectRightsRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SubjectRightsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SubjectRightsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubjectRightsRequest();
+            return new Microsoft.Graph.Beta.Models.SubjectRightsRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -376,34 +376,34 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "approvers", n => { Approvers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignedTo", n => { AssignedTo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "approvers", n => { Approvers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedTo", n => { AssignedTo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "collaborators", n => { Collaborators = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "collaborators", n => { Collaborators = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contentQuery", n => { ContentQuery = n.GetStringValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "dataSubject", n => { DataSubject = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataSubject>(Microsoft.Graph.Beta.Models.DataSubject.CreateFromDiscriminatorValue); } },
-                { "dataSubjectType", n => { DataSubjectType = n.GetEnumValue<DataSubjectType>(); } },
+                { "dataSubjectType", n => { DataSubjectType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DataSubjectType>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "history", n => { History = n.GetCollectionOfObjectValues<SubjectRightsRequestHistory>(SubjectRightsRequestHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory>(Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "includeAllVersions", n => { IncludeAllVersions = n.GetBoolValue(); } },
                 { "includeAuthoredContent", n => { IncludeAuthoredContent = n.GetBoolValue(); } },
-                { "insight", n => { Insight = n.GetObjectValue<SubjectRightsRequestDetail>(SubjectRightsRequestDetail.CreateFromDiscriminatorValue); } },
+                { "insight", n => { Insight = n.GetObjectValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail>(Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail.CreateFromDiscriminatorValue); } },
                 { "internalDueDateTime", n => { InternalDueDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "mailboxLocations", n => { MailboxLocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
-                { "notes", n => { Notes = n.GetCollectionOfObjectValues<AuthoredNote>(AuthoredNote.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mailboxLocations", n => { MailboxLocations = n.GetObjectValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation>(Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
+                { "notes", n => { Notes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthoredNote>(Microsoft.Graph.Beta.Models.AuthoredNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "pauseAfterEstimate", n => { PauseAfterEstimate = n.GetBoolValue(); } },
                 { "regulations", n => { Regulations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "siteLocations", n => { SiteLocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
-                { "stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
+                { "siteLocations", n => { SiteLocations = n.GetObjectValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation>(Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail>(Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestStatus>(); } },
                 { "team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<SubjectRightsRequestType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestType>(); } },
             };
         }
         /// <summary>
@@ -414,34 +414,34 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<User>("approvers", Approvers);
-            writer.WriteObjectValue<Identity>("assignedTo", AssignedTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("approvers", Approvers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("assignedTo", AssignedTo);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
-            writer.WriteCollectionOfObjectValues<User>("collaborators", Collaborators);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("collaborators", Collaborators);
             writer.WriteStringValue("contentQuery", ContentQuery);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DataSubject>("dataSubject", DataSubject);
-            writer.WriteEnumValue<DataSubjectType>("dataSubjectType", DataSubjectType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DataSubjectType>("dataSubjectType", DataSubjectType);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteCollectionOfObjectValues<SubjectRightsRequestHistory>("history", History);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SubjectRightsRequestHistory>("history", History);
             writer.WriteBoolValue("includeAllVersions", IncludeAllVersions);
             writer.WriteBoolValue("includeAuthoredContent", IncludeAuthoredContent);
-            writer.WriteObjectValue<SubjectRightsRequestDetail>("insight", Insight);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestDetail>("insight", Insight);
             writer.WriteDateTimeOffsetValue("internalDueDateTime", InternalDueDateTime);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<SubjectRightsRequestMailboxLocation>("mailboxLocations", MailboxLocations);
-            writer.WriteCollectionOfObjectValues<AuthoredNote>("notes", Notes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation>("mailboxLocations", MailboxLocations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthoredNote>("notes", Notes);
             writer.WriteBoolValue("pauseAfterEstimate", PauseAfterEstimate);
             writer.WriteCollectionOfPrimitiveValues<string>("regulations", Regulations);
-            writer.WriteObjectValue<SubjectRightsRequestSiteLocation>("siteLocations", SiteLocations);
-            writer.WriteCollectionOfObjectValues<SubjectRightsRequestStageDetail>("stages", Stages);
-            writer.WriteEnumValue<SubjectRightsRequestStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestSiteLocation>("siteLocations", SiteLocations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SubjectRightsRequestStageDetail>("stages", Stages);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestStatus>("status", Status);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("team", Team);
-            writer.WriteEnumValue<SubjectRightsRequestType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectRightsRequestType>("type", Type);
         }
     }
 }

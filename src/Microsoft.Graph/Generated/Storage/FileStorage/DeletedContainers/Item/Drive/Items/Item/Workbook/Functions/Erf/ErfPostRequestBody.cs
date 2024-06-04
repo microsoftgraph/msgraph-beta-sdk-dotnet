@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The lowerLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LowerLimit
+        public Microsoft.Graph.Beta.Models.Json? LowerLimit
         {
-            get { return BackingStore?.Get<Json?>("lowerLimit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lowerLimit"); }
             set { BackingStore?.Set("lowerLimit", value); }
         }
 #nullable restore
 #else
-        public Json LowerLimit
+        public Microsoft.Graph.Beta.Models.Json LowerLimit
         {
-            get { return BackingStore?.Get<Json>("lowerLimit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lowerLimit"); }
             set { BackingStore?.Set("lowerLimit", value); }
         }
 #endif
         /// <summary>The upperLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? UpperLimit
+        public Microsoft.Graph.Beta.Models.Json? UpperLimit
         {
-            get { return BackingStore?.Get<Json?>("upperLimit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("upperLimit"); }
             set { BackingStore?.Set("upperLimit", value); }
         }
 #nullable restore
 #else
-        public Json UpperLimit
+        public Microsoft.Graph.Beta.Models.Json UpperLimit
         {
-            get { return BackingStore?.Get<Json>("upperLimit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("upperLimit"); }
             set { BackingStore?.Set("upperLimit", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ErfPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Erf.ErfPostRequestBody"/> and sets the default values.
         /// </summary>
         public ErfPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ErfPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Erf.ErfPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ErfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Erf.ErfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ErfPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Erf.ErfPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lowerLimit", n => { LowerLimit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "upperLimit", n => { UpperLimit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lowerLimit", n => { LowerLimit = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "upperLimit", n => { UpperLimit = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("lowerLimit", LowerLimit);
-            writer.WriteObjectValue<Json>("upperLimit", UpperLimit);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lowerLimit", LowerLimit);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("upperLimit", UpperLimit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

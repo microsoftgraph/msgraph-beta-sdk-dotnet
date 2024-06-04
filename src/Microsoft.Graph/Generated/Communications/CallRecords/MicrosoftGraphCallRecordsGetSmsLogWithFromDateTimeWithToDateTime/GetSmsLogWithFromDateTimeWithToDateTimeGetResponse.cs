@@ -9,34 +9,34 @@ using System;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime
 {
     #pragma warning disable CS1591
-    public class GetSmsLogWithFromDateTimeWithToDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetSmsLogWithFromDateTimeWithToDateTimeGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SmsLogRow>? Value
+        public List<Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow>? Value
         {
-            get { return BackingStore?.Get<List<SmsLogRow>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<SmsLogRow> Value
+        public List<Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow> Value
         {
-            get { return BackingStore?.Get<List<SmsLogRow>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSmsLogWithFromDateTimeWithToDateTimeGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSmsLogWithFromDateTimeWithToDateTimeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSmsLogWithFromDateTimeWithToDateTimeGetResponse();
+            return new Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime.GetSmsLogWithFromDateTimeWithToDateTimeGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<SmsLogRow>(SmsLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow>(Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SmsLogRow>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow>("value", Value);
         }
     }
 }

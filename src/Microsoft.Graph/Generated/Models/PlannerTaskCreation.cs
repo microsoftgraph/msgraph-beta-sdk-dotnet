@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.</summary>
-        public PlannerCreationSourceKind? CreationSourceKind
+        public Microsoft.Graph.Beta.Models.PlannerCreationSourceKind? CreationSourceKind
         {
-            get { return BackingStore?.Get<PlannerCreationSourceKind?>("creationSourceKind"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerCreationSourceKind?>("creationSourceKind"); }
             set { BackingStore?.Set("creationSourceKind", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTeamsPublicationInfo? TeamsPublicationInfo
+        public Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo? TeamsPublicationInfo
         {
-            get { return BackingStore?.Get<PlannerTeamsPublicationInfo?>("teamsPublicationInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo?>("teamsPublicationInfo"); }
             set { BackingStore?.Set("teamsPublicationInfo", value); }
         }
 #nullable restore
 #else
-        public PlannerTeamsPublicationInfo TeamsPublicationInfo
+        public Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo TeamsPublicationInfo
         {
-            get { return BackingStore?.Get<PlannerTeamsPublicationInfo>("teamsPublicationInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo>("teamsPublicationInfo"); }
             set { BackingStore?.Set("teamsPublicationInfo", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskCreation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTaskCreation"/> and sets the default values.
         /// </summary>
         public PlannerTaskCreation()
         {
@@ -68,17 +68,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskCreation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskCreation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerTaskCreation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerTaskCreation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.plannerExternalTaskSource" => new PlannerExternalTaskSource(),
-                "#microsoft.graph.plannerTeamsPublicationInfo" => new PlannerTeamsPublicationInfo(),
-                _ => new PlannerTaskCreation(),
+                "#microsoft.graph.plannerExternalTaskSource" => new Microsoft.Graph.Beta.Models.PlannerExternalTaskSource(),
+                "#microsoft.graph.plannerTeamsPublicationInfo" => new Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo(),
+                _ => new Microsoft.Graph.Beta.Models.PlannerTaskCreation(),
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "creationSourceKind", n => { CreationSourceKind = n.GetEnumValue<PlannerCreationSourceKind>(); } },
+                { "creationSourceKind", n => { CreationSourceKind = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerCreationSourceKind>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "teamsPublicationInfo", n => { TeamsPublicationInfo = n.GetObjectValue<PlannerTeamsPublicationInfo>(PlannerTeamsPublicationInfo.CreateFromDiscriminatorValue); } },
+                { "teamsPublicationInfo", n => { TeamsPublicationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo>(Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,9 +101,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<PlannerCreationSourceKind>("creationSourceKind", CreationSourceKind);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerCreationSourceKind>("creationSourceKind", CreationSourceKind);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PlannerTeamsPublicationInfo>("teamsPublicationInfo", TeamsPublicationInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo>("teamsPublicationInfo", TeamsPublicationInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

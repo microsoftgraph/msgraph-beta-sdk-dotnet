@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The manufacturerProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? ManufacturerProperties
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? ManufacturerProperties
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("manufacturerProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("manufacturerProperties"); }
             set { BackingStore?.Set("manufacturerProperties", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> ManufacturerProperties
+        public List<Microsoft.Graph.Beta.Models.KeyValue> ManufacturerProperties
         {
-            get { return BackingStore?.Get<List<KeyValue>>("manufacturerProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("manufacturerProperties"); }
             set { BackingStore?.Set("manufacturerProperties", value); }
         }
 #endif
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OathTokenMetadata"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OathTokenMetadata"/> and sets the default values.
         /// </summary>
         public OathTokenMetadata()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OathTokenMetadata"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OathTokenMetadata"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OathTokenMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OathTokenMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OathTokenMetadata();
+            return new Microsoft.Graph.Beta.Models.OathTokenMetadata();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                { "manufacturerProperties", n => { ManufacturerProperties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "manufacturerProperties", n => { ManufacturerProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 { "tokenType", n => { TokenType = n.GetStringValue(); } },
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("manufacturer", Manufacturer);
-            writer.WriteCollectionOfObjectValues<KeyValue>("manufacturerProperties", ManufacturerProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("manufacturerProperties", ManufacturerProperties);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("tokenType", TokenType);

@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The months property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Months
+        public Microsoft.Graph.Beta.Models.Json? Months
         {
-            get { return BackingStore?.Get<Json?>("months"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("months"); }
             set { BackingStore?.Set("months", value); }
         }
 #nullable restore
 #else
-        public Json Months
+        public Microsoft.Graph.Beta.Models.Json Months
         {
-            get { return BackingStore?.Get<Json>("months"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("months"); }
             set { BackingStore?.Set("months", value); }
         }
 #endif
         /// <summary>The startDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartDate
+        public Microsoft.Graph.Beta.Models.Json? StartDate
         {
-            get { return BackingStore?.Get<Json?>("startDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #nullable restore
 #else
-        public Json StartDate
+        public Microsoft.Graph.Beta.Models.Json StartDate
         {
-            get { return BackingStore?.Get<Json>("startDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Edate.EdatePostRequestBody"/> and sets the default values.
         /// </summary>
         public EdatePostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Edate.EdatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EdatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Edate.EdatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdatePostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Edate.EdatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "months", n => { Months = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "startDate", n => { StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "months", n => { Months = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "startDate", n => { StartDate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("months", Months);
-            writer.WriteObjectValue<Json>("startDate", StartDate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("months", Months);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

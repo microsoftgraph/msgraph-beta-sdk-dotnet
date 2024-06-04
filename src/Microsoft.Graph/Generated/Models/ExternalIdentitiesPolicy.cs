@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExternalIdentitiesPolicy : PolicyBase, IParsable
+    public class ExternalIdentitiesPolicy : Microsoft.Graph.Beta.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reserved for future use.</summary>
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowExternalIdentitiesToLeave", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExternalIdentitiesPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy"/> and sets the default values.
         /// </summary>
         public ExternalIdentitiesPolicy() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalIdentitiesPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalIdentitiesPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalIdentitiesPolicy();
+            return new Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The targetType property</summary>
-        public AuthenticationMethodTargetType? TargetType
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodTargetType? TargetType
         {
-            get { return BackingStore?.Get<AuthenticationMethodTargetType?>("targetType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodTargetType?>("targetType"); }
             set { BackingStore?.Set("targetType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationMethodsRegistrationCampaignIncludeTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget"/> and sets the default values.
         /// </summary>
         public AuthenticationMethodsRegistrationCampaignIncludeTarget()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodsRegistrationCampaignIncludeTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationMethodsRegistrationCampaignIncludeTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationMethodsRegistrationCampaignIncludeTarget();
+            return new Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
+                { "targetType", n => { TargetType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationMethodTargetType>(); } },
                 { "targetedAuthenticationMethod", n => { TargetedAuthenticationMethod = n.GetStringValue(); } },
             };
         }
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("targetedAuthenticationMethod", TargetedAuthenticationMethod);
-            writer.WriteEnumValue<AuthenticationMethodTargetType>("targetType", TargetType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationMethodTargetType>("targetType", TargetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

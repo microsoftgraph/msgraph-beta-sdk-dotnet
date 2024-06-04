@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewReviewerScope : AccessReviewScope, IParsable
+    public class AccessReviewReviewerScope : Microsoft.Graph.Beta.Models.AccessReviewScope, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The query specifying who will be the reviewer.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewReviewerScope"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessReviewReviewerScope"/> and sets the default values.
         /// </summary>
         public AccessReviewReviewerScope() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewReviewerScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewReviewerScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewReviewerScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessReviewReviewerScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewReviewerScope();
+            return new Microsoft.Graph.Beta.Models.AccessReviewReviewerScope();
         }
         /// <summary>
         /// The deserialization information for the current model

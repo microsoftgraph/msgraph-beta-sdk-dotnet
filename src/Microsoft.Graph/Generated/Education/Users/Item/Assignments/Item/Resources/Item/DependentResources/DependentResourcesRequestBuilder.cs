@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
     public class DependentResourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.</summary>
         /// <param name="position">The unique identifier of educationAssignmentResource</param>
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DependentResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DependentResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         /// <summary>
         /// Get dependentResources from education
         /// </summary>
-        /// <returns>A <see cref="EducationAssignmentResourceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationAssignmentResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<DependentResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder.DependentResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationAssignmentResourceCollectionResponse> GetAsync(Action<RequestConfiguration<DependentResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder.DependentResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationAssignmentResourceCollectionResponse>(requestInfo, EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to dependentResources for education
         /// </summary>
-        /// <returns>A <see cref="EducationAssignmentResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationAssignmentResource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationAssignmentResource?> PostAsync(EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignmentResource?> PostAsync(Microsoft.Graph.Beta.Models.EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationAssignmentResource> PostAsync(EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignmentResource> PostAsync(Microsoft.Graph.Beta.Models.EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EducationAssignmentResource>(requestInfo, Microsoft.Graph.Beta.Models.EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get dependentResources from education
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DependentResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder.DependentResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DependentResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder.DependentResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.EducationAssignmentResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DependentResourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DependentResourcesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DependentResourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get dependentResources from education
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DependentResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<DependentResourcesRequestBuilderGetQueryParameters>
+        public class DependentResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Resources.Item.DependentResources.DependentResourcesRequestBuilder.DependentResourcesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentMetadata? Metadata
+        public Microsoft.Graph.Beta.Models.ContentMetadata? Metadata
         {
-            get { return BackingStore?.Get<ContentMetadata?>("metadata"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentMetadata?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public ContentMetadata Metadata
+        public Microsoft.Graph.Beta.Models.ContentMetadata Metadata
         {
-            get { return BackingStore?.Get<ContentMetadata>("metadata"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentMetadata>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ContentProperties"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ContentProperties"/> and sets the default values.
         /// </summary>
         public ContentProperties()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentProperties"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ContentProperties"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentProperties CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ContentProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentProperties();
+            return new Microsoft.Graph.Beta.Models.ContentProperties();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "extensions", n => { Extensions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<ContentMetadata>(ContentMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentMetadata>(Microsoft.Graph.Beta.Models.ContentMetadata.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("extensions", Extensions);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<ContentMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentMetadata>("metadata", Metadata);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

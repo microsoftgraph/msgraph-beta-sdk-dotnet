@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             set { BackingStore?.Set("purgeType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PurgeDataPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData.PurgeDataPostRequestBody"/> and sets the default values.
         /// </summary>
         public PurgeDataPostRequestBody()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PurgeDataPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData.PurgeDataPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PurgeDataPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData.PurgeDataPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PurgeDataPostRequestBody();
+            return new Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData.PurgeDataPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "purgeAreas", n => { PurgeAreas = n.GetEnumValue<PurgeAreas>(); } },
-                { "purgeType", n => { PurgeType = n.GetEnumValue<PurgeType>(); } },
+                { "purgeAreas", n => { PurgeAreas = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.PurgeAreas>(); } },
+                { "purgeType", n => { PurgeType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.PurgeType>(); } },
             };
         }
         /// <summary>
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<PurgeAreas>("purgeAreas", PurgeAreas);
-            writer.WriteEnumValue<PurgeType>("purgeType", PurgeType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.PurgeAreas>("purgeAreas", PurgeAreas);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.PurgeType>("purgeType", PurgeType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceAndAppManagementAssignmentTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget"/> and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentTarget()
         {
@@ -69,21 +69,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAndAppManagementAssignmentTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.allDevicesAssignmentTarget" => new AllDevicesAssignmentTarget(),
-                "#microsoft.graph.allLicensedUsersAssignmentTarget" => new AllLicensedUsersAssignmentTarget(),
-                "#microsoft.graph.androidFotaDeploymentAssignmentTarget" => new AndroidFotaDeploymentAssignmentTarget(),
-                "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new ConfigurationManagerCollectionAssignmentTarget(),
-                "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
-                "#microsoft.graph.groupAssignmentTarget" => new GroupAssignmentTarget(),
-                _ => new DeviceAndAppManagementAssignmentTarget(),
+                "#microsoft.graph.allDevicesAssignmentTarget" => new Microsoft.Graph.Beta.Models.AllDevicesAssignmentTarget(),
+                "#microsoft.graph.allLicensedUsersAssignmentTarget" => new Microsoft.Graph.Beta.Models.AllLicensedUsersAssignmentTarget(),
+                "#microsoft.graph.androidFotaDeploymentAssignmentTarget" => new Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget(),
+                "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new Microsoft.Graph.Beta.Models.ConfigurationManagerCollectionAssignmentTarget(),
+                "#microsoft.graph.exclusionGroupAssignmentTarget" => new Microsoft.Graph.Beta.Models.ExclusionGroupAssignmentTarget(),
+                "#microsoft.graph.groupAssignmentTarget" => new Microsoft.Graph.Beta.Models.GroupAssignmentTarget(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget(),
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deviceAndAppManagementAssignmentFilterId", n => { DeviceAndAppManagementAssignmentFilterId = n.GetStringValue(); } },
-                { "deviceAndAppManagementAssignmentFilterType", n => { DeviceAndAppManagementAssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
+                { "deviceAndAppManagementAssignmentFilterType", n => { DeviceAndAppManagementAssignmentFilterType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceAndAppManagementAssignmentFilterId", DeviceAndAppManagementAssignmentFilterId);
-            writer.WriteEnumValue<DeviceAndAppManagementAssignmentFilterType>("deviceAndAppManagementAssignmentFilterType", DeviceAndAppManagementAssignmentFilterType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>("deviceAndAppManagementAssignmentFilterType", DeviceAndAppManagementAssignmentFilterType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

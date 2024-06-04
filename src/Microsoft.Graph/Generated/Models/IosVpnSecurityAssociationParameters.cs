@@ -49,19 +49,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("securityDiffieHellmanGroup", value); }
         }
         /// <summary>Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
-        public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm
+        public Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm
         {
-            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("securityEncryptionAlgorithm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType?>("securityEncryptionAlgorithm"); }
             set { BackingStore?.Set("securityEncryptionAlgorithm", value); }
         }
         /// <summary>Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
-        public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm
+        public Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm
         {
-            get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("securityIntegrityAlgorithm"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType?>("securityIntegrityAlgorithm"); }
             set { BackingStore?.Set("securityIntegrityAlgorithm", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosVpnSecurityAssociationParameters"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters"/> and sets the default values.
         /// </summary>
         public IosVpnSecurityAssociationParameters()
         {
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosVpnSecurityAssociationParameters"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosVpnSecurityAssociationParameters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosVpnSecurityAssociationParameters();
+            return new Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "securityDiffieHellmanGroup", n => { SecurityDiffieHellmanGroup = n.GetIntValue(); } },
-                { "securityEncryptionAlgorithm", n => { SecurityEncryptionAlgorithm = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
-                { "securityIntegrityAlgorithm", n => { SecurityIntegrityAlgorithm = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
+                { "securityEncryptionAlgorithm", n => { SecurityEncryptionAlgorithm = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType>(); } },
+                { "securityIntegrityAlgorithm", n => { SecurityIntegrityAlgorithm = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType>(); } },
             };
         }
         /// <summary>
@@ -103,8 +103,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("lifetimeInMinutes", LifetimeInMinutes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("securityDiffieHellmanGroup", SecurityDiffieHellmanGroup);
-            writer.WriteEnumValue<VpnEncryptionAlgorithmType>("securityEncryptionAlgorithm", SecurityEncryptionAlgorithm);
-            writer.WriteEnumValue<VpnIntegrityAlgorithmType>("securityIntegrityAlgorithm", SecurityIntegrityAlgorithm);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType>("securityEncryptionAlgorithm", SecurityEncryptionAlgorithm);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType>("securityIntegrityAlgorithm", SecurityIntegrityAlgorithm);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

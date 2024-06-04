@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Specify access control level per privacy data category
     /// </summary>
-    public class WindowsPrivacyDataAccessControlItem : Entity, IParsable
+    public class WindowsPrivacyDataAccessControlItem : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Determine the access level to specific Windows privacy data category.</summary>
-        public WindowsPrivacyDataAccessLevel? AccessLevel
+        public Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessLevel? AccessLevel
         {
-            get { return BackingStore?.Get<WindowsPrivacyDataAccessLevel?>("accessLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessLevel?>("accessLevel"); }
             set { BackingStore?.Set("accessLevel", value); }
         }
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
@@ -50,20 +50,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Windows privacy data category specifier for privacy data access.</summary>
-        public WindowsPrivacyDataCategory? DataCategory
+        public Microsoft.Graph.Beta.Models.WindowsPrivacyDataCategory? DataCategory
         {
-            get { return BackingStore?.Get<WindowsPrivacyDataCategory?>("dataCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsPrivacyDataCategory?>("dataCategory"); }
             set { BackingStore?.Set("dataCategory", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPrivacyDataAccessControlItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPrivacyDataAccessControlItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPrivacyDataAccessControlItem();
+            return new Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessLevel", n => { AccessLevel = n.GetEnumValue<WindowsPrivacyDataAccessLevel>(); } },
+                { "accessLevel", n => { AccessLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessLevel>(); } },
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 { "appPackageFamilyName", n => { AppPackageFamilyName = n.GetStringValue(); } },
-                { "dataCategory", n => { DataCategory = n.GetEnumValue<WindowsPrivacyDataCategory>(); } },
+                { "dataCategory", n => { DataCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsPrivacyDataCategory>(); } },
             };
         }
         /// <summary>
@@ -87,10 +87,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsPrivacyDataAccessLevel>("accessLevel", AccessLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessLevel>("accessLevel", AccessLevel);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appPackageFamilyName", AppPackageFamilyName);
-            writer.WriteEnumValue<WindowsPrivacyDataCategory>("dataCategory", DataCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsPrivacyDataCategory>("dataCategory", DataCategory);
         }
     }
 }

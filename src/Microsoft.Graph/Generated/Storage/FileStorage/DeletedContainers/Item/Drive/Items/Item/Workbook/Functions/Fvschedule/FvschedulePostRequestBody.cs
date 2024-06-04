@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The principal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Principal
+        public Microsoft.Graph.Beta.Models.Json? Principal
         {
-            get { return BackingStore?.Get<Json?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public Json Principal
+        public Microsoft.Graph.Beta.Models.Json Principal
         {
-            get { return BackingStore?.Get<Json>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Schedule
+        public Microsoft.Graph.Beta.Models.Json? Schedule
         {
-            get { return BackingStore?.Get<Json?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public Json Schedule
+        public Microsoft.Graph.Beta.Models.Json Schedule
         {
-            get { return BackingStore?.Get<Json>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FvschedulePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Fvschedule.FvschedulePostRequestBody"/> and sets the default values.
         /// </summary>
         public FvschedulePostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FvschedulePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Fvschedule.FvschedulePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FvschedulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Fvschedule.FvschedulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FvschedulePostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Fvschedule.FvschedulePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "principal", n => { Principal = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("principal", Principal);
-            writer.WriteObjectValue<Json>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("principal", Principal);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("schedule", Schedule);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

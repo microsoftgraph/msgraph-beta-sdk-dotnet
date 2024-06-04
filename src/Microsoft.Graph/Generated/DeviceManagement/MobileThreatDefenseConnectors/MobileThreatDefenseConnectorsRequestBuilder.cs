@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
     public class MobileThreatDefenseConnectorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of mobileThreatDefenseConnector</param>
-        /// <returns>A <see cref="MobileThreatDefenseConnectorItemRequestBuilder"/></returns>
-        public MobileThreatDefenseConnectorItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.Item.MobileThreatDefenseConnectorItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.Item.MobileThreatDefenseConnectorItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("mobileThreatDefenseConnector%2Did", position);
-                return new MobileThreatDefenseConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.Item.MobileThreatDefenseConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MobileThreatDefenseConnectorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MobileThreatDefenseConnectorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
         /// <summary>
         /// The list of Mobile threat Defense connectors configured by the tenant.
         /// </summary>
-        /// <returns>A <see cref="MobileThreatDefenseConnectorCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileThreatDefenseConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileThreatDefenseConnectorCollectionResponse?> GetAsync(Action<RequestConfiguration<MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnectorCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder.MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MobileThreatDefenseConnectorCollectionResponse> GetAsync(Action<RequestConfiguration<MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnectorCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder.MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MobileThreatDefenseConnectorCollectionResponse>(requestInfo, MobileThreatDefenseConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnectorCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MobileThreatDefenseConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="MobileThreatDefenseConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileThreatDefenseConnector?> PostAsync(MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector?> PostAsync(Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MobileThreatDefenseConnector> PostAsync(MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector> PostAsync(Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MobileThreatDefenseConnector>(requestInfo, MobileThreatDefenseConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>(requestInfo, Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of Mobile threat Defense connectors configured by the tenant.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder.MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder.MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MobileThreatDefenseConnectorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MobileThreatDefenseConnectorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new MobileThreatDefenseConnectorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of Mobile threat Defense connectors configured by the tenant.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MobileThreatDefenseConnectorsRequestBuilderGetRequestConfiguration : RequestConfiguration<MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>
+        public class MobileThreatDefenseConnectorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder.MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

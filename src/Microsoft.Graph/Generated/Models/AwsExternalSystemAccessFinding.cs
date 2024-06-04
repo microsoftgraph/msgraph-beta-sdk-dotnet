@@ -7,44 +7,44 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsExternalSystemAccessFinding : Finding, IParsable
+    public class AwsExternalSystemAccessFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessMethods property</summary>
-        public ExternalSystemAccessMethods? AccessMethods
+        public Microsoft.Graph.Beta.Models.ExternalSystemAccessMethods? AccessMethods
         {
-            get { return BackingStore?.Get<ExternalSystemAccessMethods?>("accessMethods"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalSystemAccessMethods?>("accessMethods"); }
             set { BackingStore?.Set("accessMethods", value); }
         }
         /// <summary>The affectedSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystem? AffectedSystem
+        public Microsoft.Graph.Beta.Models.AuthorizationSystem? AffectedSystem
         {
-            get { return BackingStore?.Get<AuthorizationSystem?>("affectedSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystem?>("affectedSystem"); }
             set { BackingStore?.Set("affectedSystem", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystem AffectedSystem
+        public Microsoft.Graph.Beta.Models.AuthorizationSystem AffectedSystem
         {
-            get { return BackingStore?.Get<AuthorizationSystem>("affectedSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystem>("affectedSystem"); }
             set { BackingStore?.Set("affectedSystem", value); }
         }
 #endif
         /// <summary>The systemWithAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemInfo? SystemWithAccess
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemInfo? SystemWithAccess
         {
-            get { return BackingStore?.Get<AuthorizationSystemInfo?>("systemWithAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemInfo?>("systemWithAccess"); }
             set { BackingStore?.Set("systemWithAccess", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemInfo SystemWithAccess
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemInfo SystemWithAccess
         {
-            get { return BackingStore?.Get<AuthorizationSystemInfo>("systemWithAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemInfo>("systemWithAccess"); }
             set { BackingStore?.Set("systemWithAccess", value); }
         }
 #endif
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsExternalSystemAccessFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsExternalSystemAccessFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsExternalSystemAccessFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsExternalSystemAccessFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsExternalSystemAccessFinding();
+            return new Microsoft.Graph.Beta.Models.AwsExternalSystemAccessFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessMethods", n => { AccessMethods = n.GetEnumValue<ExternalSystemAccessMethods>(); } },
-                { "affectedSystem", n => { AffectedSystem = n.GetObjectValue<AuthorizationSystem>(AuthorizationSystem.CreateFromDiscriminatorValue); } },
-                { "systemWithAccess", n => { SystemWithAccess = n.GetObjectValue<AuthorizationSystemInfo>(AuthorizationSystemInfo.CreateFromDiscriminatorValue); } },
+                { "accessMethods", n => { AccessMethods = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalSystemAccessMethods>(); } },
+                { "affectedSystem", n => { AffectedSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
+                { "systemWithAccess", n => { SystemWithAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemInfo>(Microsoft.Graph.Beta.Models.AuthorizationSystemInfo.CreateFromDiscriminatorValue); } },
                 { "trustedIdentityCount", n => { TrustedIdentityCount = n.GetIntValue(); } },
                 { "trustsAllIdentities", n => { TrustsAllIdentities = n.GetBoolValue(); } },
             };
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ExternalSystemAccessMethods>("accessMethods", AccessMethods);
-            writer.WriteObjectValue<AuthorizationSystem>("affectedSystem", AffectedSystem);
-            writer.WriteObjectValue<AuthorizationSystemInfo>("systemWithAccess", SystemWithAccess);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExternalSystemAccessMethods>("accessMethods", AccessMethods);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>("affectedSystem", AffectedSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemInfo>("systemWithAccess", SystemWithAccess);
             writer.WriteIntValue("trustedIdentityCount", TrustedIdentityCount);
             writer.WriteBoolValue("trustsAllIdentities", TrustsAllIdentities);
         }

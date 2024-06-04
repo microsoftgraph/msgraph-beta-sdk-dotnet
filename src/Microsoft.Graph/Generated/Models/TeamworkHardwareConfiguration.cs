@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The compute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Compute
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral? Compute
         {
-            get { return BackingStore?.Get<TeamworkPeripheral?>("compute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral?>("compute"); }
             set { BackingStore?.Set("compute", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Compute
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral Compute
         {
-            get { return BackingStore?.Get<TeamworkPeripheral>("compute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("compute"); }
             set { BackingStore?.Set("compute", value); }
         }
 #endif
         /// <summary>The hdmiIngest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? HdmiIngest
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral? HdmiIngest
         {
-            get { return BackingStore?.Get<TeamworkPeripheral?>("hdmiIngest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral?>("hdmiIngest"); }
             set { BackingStore?.Set("hdmiIngest", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral HdmiIngest
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral HdmiIngest
         {
-            get { return BackingStore?.Get<TeamworkPeripheral>("hdmiIngest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("hdmiIngest"); }
             set { BackingStore?.Set("hdmiIngest", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkHardwareConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkHardwareConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkHardwareConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkHardwareConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkHardwareConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,8 +109,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "compute", n => { Compute = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                { "hdmiIngest", n => { HdmiIngest = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "compute", n => { Compute = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "hdmiIngest", n => { HdmiIngest = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "processorModel", n => { ProcessorModel = n.GetStringValue(); } },
             };
@@ -122,8 +122,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkPeripheral>("compute", Compute);
-            writer.WriteObjectValue<TeamworkPeripheral>("hdmiIngest", HdmiIngest);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("compute", Compute);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("hdmiIngest", HdmiIngest);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("processorModel", ProcessorModel);
             writer.WriteAdditionalData(AdditionalData);

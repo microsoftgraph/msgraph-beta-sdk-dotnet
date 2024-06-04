@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdateAlertsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateAlertsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateAlertsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateAlertsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateAlertsPostRequestBody();
+            return new Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

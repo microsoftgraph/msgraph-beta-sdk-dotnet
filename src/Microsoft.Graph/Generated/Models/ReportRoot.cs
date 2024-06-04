@@ -10,21 +10,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The resource that represents an instance of Enrollment Failure Reports.
     /// </summary>
-    public class ReportRoot : Entity, IParsable
+    public class ReportRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Represents a collection of sign-in activities of application credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppCredentialSignInActivity>? AppCredentialSignInActivities
+        public List<Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>? AppCredentialSignInActivities
         {
-            get { return BackingStore?.Get<List<AppCredentialSignInActivity>?>("appCredentialSignInActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>?>("appCredentialSignInActivities"); }
             set { BackingStore?.Set("appCredentialSignInActivities", value); }
         }
 #nullable restore
 #else
-        public List<AppCredentialSignInActivity> AppCredentialSignInActivities
+        public List<Microsoft.Graph.Beta.Models.AppCredentialSignInActivity> AppCredentialSignInActivities
         {
-            get { return BackingStore?.Get<List<AppCredentialSignInActivity>>("appCredentialSignInActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>>("appCredentialSignInActivities"); }
             set { BackingStore?.Set("appCredentialSignInActivities", value); }
         }
 #endif
@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Container for navigation properties for Microsoft Entra authentication methods resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodsRoot? AuthenticationMethods
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot? AuthenticationMethods
         {
-            get { return BackingStore?.Get<AuthenticationMethodsRoot?>("authenticationMethods"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot?>("authenticationMethods"); }
             set { BackingStore?.Set("authenticationMethods", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodsRoot AuthenticationMethods
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot AuthenticationMethods
         {
-            get { return BackingStore?.Get<AuthenticationMethodsRoot>("authenticationMethods"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>("authenticationMethods"); }
             set { BackingStore?.Set("authenticationMethods", value); }
         }
 #endif
@@ -79,144 +79,144 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The dailyPrintUsage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsage>? DailyPrintUsage
+        public List<Microsoft.Graph.Beta.Models.PrintUsage>? DailyPrintUsage
         {
-            get { return BackingStore?.Get<List<PrintUsage>?>("dailyPrintUsage"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsage>?>("dailyPrintUsage"); }
             set { BackingStore?.Set("dailyPrintUsage", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsage> DailyPrintUsage
+        public List<Microsoft.Graph.Beta.Models.PrintUsage> DailyPrintUsage
         {
-            get { return BackingStore?.Get<List<PrintUsage>>("dailyPrintUsage"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsage>>("dailyPrintUsage"); }
             set { BackingStore?.Set("dailyPrintUsage", value); }
         }
 #endif
         /// <summary>Retrieve a list of daily print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>? DailyPrintUsageByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>?>("dailyPrintUsageByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByPrinter> DailyPrintUsageByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter> DailyPrintUsageByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
 #endif
         /// <summary>Retrieve a list of daily print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByUser>? DailyPrintUsageByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser>? DailyPrintUsageByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>?>("dailyPrintUsageByUser"); }
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByUser> DailyPrintUsageByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser> DailyPrintUsageByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>>("dailyPrintUsageByUser"); }
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
 #endif
         /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByPrinter>? DailyPrintUsageSummariesByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>? DailyPrintUsageSummariesByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageSummariesByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>?>("dailyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByPrinter", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageSummariesByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>>("dailyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByPrinter", value); }
         }
 #endif
         /// <summary>The dailyPrintUsageSummariesByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByUser>? DailyPrintUsageSummariesByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser>? DailyPrintUsageSummariesByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageSummariesByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>?>("dailyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByUser> DailyPrintUsageSummariesByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser> DailyPrintUsageSummariesByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageSummariesByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>>("dailyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
 #endif
         /// <summary>Retrieve a list of monthly print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>? MonthlyPrintUsageByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>?>("monthlyPrintUsageByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter> MonthlyPrintUsageByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
 #endif
         /// <summary>Retrieve a list of monthly print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByUser>? MonthlyPrintUsageByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser>? MonthlyPrintUsageByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>?>("monthlyPrintUsageByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByUser> MonthlyPrintUsageByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser> MonthlyPrintUsageByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>>("monthlyPrintUsageByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
 #endif
         /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByPrinter>? MonthlyPrintUsageSummariesByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>? MonthlyPrintUsageSummariesByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageSummariesByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>?>("monthlyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByPrinter", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter
         {
-            get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageSummariesByPrinter"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>>("monthlyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByPrinter", value); }
         }
 #endif
         /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintUsageByUser>? MonthlyPrintUsageSummariesByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser>? MonthlyPrintUsageSummariesByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageSummariesByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>?>("monthlyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
 #nullable restore
 #else
-        public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser
+        public List<Microsoft.Graph.Beta.Models.PrintUsageByUser> MonthlyPrintUsageSummariesByUser
         {
-            get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageSummariesByUser"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintUsageByUser>>("monthlyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
 #endif
@@ -239,16 +239,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Provides the ability to launch a simulated phishing attack that organizations can learn from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityReportsRoot? Security
+        public Microsoft.Graph.Beta.Models.SecurityReportsRoot? Security
         {
-            get { return BackingStore?.Get<SecurityReportsRoot?>("security"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityReportsRoot?>("security"); }
             set { BackingStore?.Set("security", value); }
         }
 #nullable restore
 #else
-        public SecurityReportsRoot Security
+        public Microsoft.Graph.Beta.Models.SecurityReportsRoot Security
         {
-            get { return BackingStore?.Get<SecurityReportsRoot>("security"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityReportsRoot>("security"); }
             set { BackingStore?.Set("security", value); }
         }
 #endif
@@ -271,32 +271,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents a collection of sign-in activities of service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalSignInActivity>? ServicePrincipalSignInActivities
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity>? ServicePrincipalSignInActivities
         {
-            get { return BackingStore?.Get<List<ServicePrincipalSignInActivity>?>("servicePrincipalSignInActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity>?>("servicePrincipalSignInActivities"); }
             set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalSignInActivity> ServicePrincipalSignInActivities
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity> ServicePrincipalSignInActivities
         {
-            get { return BackingStore?.Get<List<ServicePrincipalSignInActivity>>("servicePrincipalSignInActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity>>("servicePrincipalSignInActivities"); }
             set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
         }
 #endif
         /// <summary>Reports that relate to tenant-level Microsoft Entra SLA attainment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ServiceLevelAgreementRoot? Sla
+        public Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot? Sla
         {
-            get { return BackingStore?.Get<ServiceLevelAgreementRoot?>("sla"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot?>("sla"); }
             set { BackingStore?.Set("sla", value); }
         }
 #nullable restore
 #else
-        public ServiceLevelAgreementRoot Sla
+        public Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot Sla
         {
-            get { return BackingStore?.Get<ServiceLevelAgreementRoot>("sla"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot>("sla"); }
             set { BackingStore?.Set("sla", value); }
         }
 #endif
@@ -319,28 +319,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserInsightsRoot? UserInsights
+        public Microsoft.Graph.Beta.Models.UserInsightsRoot? UserInsights
         {
-            get { return BackingStore?.Get<UserInsightsRoot?>("userInsights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserInsightsRoot?>("userInsights"); }
             set { BackingStore?.Set("userInsights", value); }
         }
 #nullable restore
 #else
-        public UserInsightsRoot UserInsights
+        public Microsoft.Graph.Beta.Models.UserInsightsRoot UserInsights
         {
-            get { return BackingStore?.Get<UserInsightsRoot>("userInsights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserInsightsRoot>("userInsights"); }
             set { BackingStore?.Set("userInsights", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReportRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ReportRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ReportRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ReportRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReportRoot();
+            return new Microsoft.Graph.Beta.Models.ReportRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -350,26 +350,26 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appCredentialSignInActivities", n => { AppCredentialSignInActivities = n.GetCollectionOfObjectValues<AppCredentialSignInActivity>(AppCredentialSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appCredentialSignInActivities", n => { AppCredentialSignInActivities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>(Microsoft.Graph.Beta.Models.AppCredentialSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "applicationSignInDetailedSummary", n => { ApplicationSignInDetailedSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<AuthenticationMethodsRoot>(AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
+                { "authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>(Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
                 { "credentialUserRegistrationDetails", n => { CredentialUserRegistrationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dailyPrintUsage", n => { DailyPrintUsage = n.GetCollectionOfObjectValues<PrintUsage>(PrintUsage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dailyPrintUsageByPrinter", n => { DailyPrintUsageByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dailyPrintUsageByUser", n => { DailyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dailyPrintUsageSummariesByPrinter", n => { DailyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dailyPrintUsageSummariesByUser", n => { DailyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "monthlyPrintUsageByPrinter", n => { MonthlyPrintUsageByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "monthlyPrintUsageSummariesByUser", n => { MonthlyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dailyPrintUsage", n => { DailyPrintUsage = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsage>(Microsoft.Graph.Beta.Models.PrintUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dailyPrintUsageByPrinter", n => { DailyPrintUsageByPrinter = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dailyPrintUsageByUser", n => { DailyPrintUsageByUser = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>(Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dailyPrintUsageSummariesByPrinter", n => { DailyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dailyPrintUsageSummariesByUser", n => { DailyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>(Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monthlyPrintUsageByPrinter", n => { MonthlyPrintUsageByPrinter = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monthlyPrintUsageByUser", n => { MonthlyPrintUsageByUser = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>(Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>(Microsoft.Graph.Beta.Models.PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monthlyPrintUsageSummariesByUser", n => { MonthlyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>(Microsoft.Graph.Beta.Models.PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "partners", n => { Partners = n.GetObjectValue<Microsoft.Graph.Beta.Models.Partners.Partners>(Microsoft.Graph.Beta.Models.Partners.Partners.CreateFromDiscriminatorValue); } },
-                { "security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
+                { "security", n => { Security = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityReportsRoot>(Microsoft.Graph.Beta.Models.SecurityReportsRoot.CreateFromDiscriminatorValue); } },
                 { "serviceActivity", n => { ServiceActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceActivity>(Microsoft.Graph.Beta.Models.ServiceActivity.CreateFromDiscriminatorValue); } },
-                { "servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<ServicePrincipalSignInActivity>(ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sla", n => { Sla = n.GetObjectValue<ServiceLevelAgreementRoot>(ServiceLevelAgreementRoot.CreateFromDiscriminatorValue); } },
+                { "servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity>(Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sla", n => { Sla = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot>(Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot.CreateFromDiscriminatorValue); } },
                 { "userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userInsights", n => { UserInsights = n.GetObjectValue<UserInsightsRoot>(UserInsightsRoot.CreateFromDiscriminatorValue); } },
+                { "userInsights", n => { UserInsights = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserInsightsRoot>(Microsoft.Graph.Beta.Models.UserInsightsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -380,26 +380,26 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AppCredentialSignInActivity>("appCredentialSignInActivities", AppCredentialSignInActivities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppCredentialSignInActivity>("appCredentialSignInActivities", AppCredentialSignInActivities);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>("applicationSignInDetailedSummary", ApplicationSignInDetailedSummary);
-            writer.WriteObjectValue<AuthenticationMethodsRoot>("authenticationMethods", AuthenticationMethods);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsRoot>("authenticationMethods", AuthenticationMethods);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>("credentialUserRegistrationDetails", CredentialUserRegistrationDetails);
-            writer.WriteCollectionOfObjectValues<PrintUsage>("dailyPrintUsage", DailyPrintUsage);
-            writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("dailyPrintUsageByPrinter", DailyPrintUsageByPrinter);
-            writer.WriteCollectionOfObjectValues<PrintUsageByUser>("dailyPrintUsageByUser", DailyPrintUsageByUser);
-            writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("dailyPrintUsageSummariesByPrinter", DailyPrintUsageSummariesByPrinter);
-            writer.WriteCollectionOfObjectValues<PrintUsageByUser>("dailyPrintUsageSummariesByUser", DailyPrintUsageSummariesByUser);
-            writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("monthlyPrintUsageByPrinter", MonthlyPrintUsageByPrinter);
-            writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageByUser", MonthlyPrintUsageByUser);
-            writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);
-            writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageSummariesByUser", MonthlyPrintUsageSummariesByUser);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsage>("dailyPrintUsage", DailyPrintUsage);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("dailyPrintUsageByPrinter", DailyPrintUsageByPrinter);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>("dailyPrintUsageByUser", DailyPrintUsageByUser);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("dailyPrintUsageSummariesByPrinter", DailyPrintUsageSummariesByPrinter);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>("dailyPrintUsageSummariesByUser", DailyPrintUsageSummariesByUser);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("monthlyPrintUsageByPrinter", MonthlyPrintUsageByPrinter);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>("monthlyPrintUsageByUser", MonthlyPrintUsageByUser);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintUsageByUser>("monthlyPrintUsageSummariesByUser", MonthlyPrintUsageSummariesByUser);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Partners.Partners>("partners", Partners);
-            writer.WriteObjectValue<SecurityReportsRoot>("security", Security);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityReportsRoot>("security", Security);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceActivity>("serviceActivity", ServiceActivity);
-            writer.WriteCollectionOfObjectValues<ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
-            writer.WriteObjectValue<ServiceLevelAgreementRoot>("sla", Sla);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot>("sla", Sla);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);
-            writer.WriteObjectValue<UserInsightsRoot>("userInsights", UserInsights);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserInsightsRoot>("userInsights", UserInsights);
         }
     }
 }

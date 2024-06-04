@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dayofMonth", value); }
         }
         /// <summary>The dayofWeek property</summary>
-        public DayOfWeekObject? DayofWeek
+        public Microsoft.Graph.Beta.Models.DayOfWeekObject? DayofWeek
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("dayofWeek"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeekObject?>("dayofWeek"); }
             set { BackingStore?.Set("dayofWeek", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values for App update on Windows10 recurrence.</summary>
-        public Windows10AppsUpdateRecurrence? Recurrence
+        public Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<Windows10AppsUpdateRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
         /// <summary>If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.</summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskForceUpdateSchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule"/> and sets the default values.
         /// </summary>
         public WindowsKioskForceUpdateSchedule()
         {
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskForceUpdateSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsKioskForceUpdateSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskForceUpdateSchedule();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dayofMonth", n => { DayofMonth = n.GetIntValue(); } },
-                { "dayofWeek", n => { DayofWeek = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "dayofWeek", n => { DayofWeek = n.GetEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recurrence", n => { Recurrence = n.GetEnumValue<Windows10AppsUpdateRecurrence>(); } },
+                { "recurrence", n => { Recurrence = n.GetEnumValue<Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence>(); } },
                 { "runImmediatelyIfAfterStartDateTime", n => { RunImmediatelyIfAfterStartDateTime = n.GetBoolValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayofMonth", DayofMonth);
-            writer.WriteEnumValue<DayOfWeekObject>("dayofWeek", DayofWeek);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>("dayofWeek", DayofWeek);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<Windows10AppsUpdateRecurrence>("recurrence", Recurrence);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence>("recurrence", Recurrence);
             writer.WriteBoolValue("runImmediatelyIfAfterStartDateTime", RunImmediatelyIfAfterStartDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);

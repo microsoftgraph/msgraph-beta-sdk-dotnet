@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Encryption report per device
     /// </summary>
-    public class ManagedDeviceEncryptionState : Entity, IParsable
+    public class ManagedDeviceEncryptionState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.</summary>
-        public AdvancedBitLockerState? AdvancedBitLockerStates
+        public Microsoft.Graph.Beta.Models.AdvancedBitLockerState? AdvancedBitLockerStates
         {
-            get { return BackingStore?.Get<AdvancedBitLockerState?>("advancedBitLockerStates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedBitLockerState?>("advancedBitLockerStates"); }
             set { BackingStore?.Set("advancedBitLockerStates", value); }
         }
         /// <summary>Device name</summary>
@@ -34,15 +34,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device type.</summary>
-        public DeviceTypes? DeviceType
+        public Microsoft.Graph.Beta.Models.DeviceTypes? DeviceType
         {
-            get { return BackingStore?.Get<DeviceTypes?>("deviceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceTypes?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>The encryptionPolicySettingState property</summary>
-        public ComplianceStatus? EncryptionPolicySettingState
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? EncryptionPolicySettingState
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("encryptionPolicySettingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("encryptionPolicySettingState"); }
             set { BackingStore?.Set("encryptionPolicySettingState", value); }
         }
         /// <summary>Encryption readiness state</summary>
@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("encryptionState", value); }
         }
         /// <summary>FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.</summary>
-        public FileVaultState? FileVaultStates
+        public Microsoft.Graph.Beta.Models.FileVaultState? FileVaultStates
         {
-            get { return BackingStore?.Get<FileVaultState?>("fileVaultStates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileVaultState?>("fileVaultStates"); }
             set { BackingStore?.Set("fileVaultStates", value); }
         }
         /// <summary>Operating system version of the device</summary>
@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Policy Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EncryptionReportPolicyDetails>? PolicyDetails
+        public List<Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails>? PolicyDetails
         {
-            get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>?>("policyDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails>?>("policyDetails"); }
             set { BackingStore?.Set("policyDetails", value); }
         }
 #nullable restore
 #else
-        public List<EncryptionReportPolicyDetails> PolicyDetails
+        public List<Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails> PolicyDetails
         {
-            get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>>("policyDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails>>("policyDetails"); }
             set { BackingStore?.Set("policyDetails", value); }
         }
 #endif
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceEncryptionState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceEncryptionState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceEncryptionState();
+            return new Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,15 +145,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "advancedBitLockerStates", n => { AdvancedBitLockerStates = n.GetEnumValue<AdvancedBitLockerState>(); } },
+                { "advancedBitLockerStates", n => { AdvancedBitLockerStates = n.GetEnumValue<Microsoft.Graph.Beta.Models.AdvancedBitLockerState>(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceTypes>(); } },
-                { "encryptionPolicySettingState", n => { EncryptionPolicySettingState = n.GetEnumValue<ComplianceStatus>(); } },
-                { "encryptionReadinessState", n => { EncryptionReadinessState = n.GetEnumValue<EncryptionReadinessState>(); } },
-                { "encryptionState", n => { EncryptionState = n.GetEnumValue<EncryptionState>(); } },
-                { "fileVaultStates", n => { FileVaultStates = n.GetEnumValue<FileVaultState>(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceTypes>(); } },
+                { "encryptionPolicySettingState", n => { EncryptionPolicySettingState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
+                { "encryptionReadinessState", n => { EncryptionReadinessState = n.GetEnumValue<Microsoft.Graph.Beta.Models.EncryptionReadinessState>(); } },
+                { "encryptionState", n => { EncryptionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.EncryptionState>(); } },
+                { "fileVaultStates", n => { FileVaultStates = n.GetEnumValue<Microsoft.Graph.Beta.Models.FileVaultState>(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
-                { "policyDetails", n => { PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>(EncryptionReportPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policyDetails", n => { PolicyDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails>(Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -166,15 +166,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AdvancedBitLockerState>("advancedBitLockerStates", AdvancedBitLockerStates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AdvancedBitLockerState>("advancedBitLockerStates", AdvancedBitLockerStates);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteEnumValue<DeviceTypes>("deviceType", DeviceType);
-            writer.WriteEnumValue<ComplianceStatus>("encryptionPolicySettingState", EncryptionPolicySettingState);
-            writer.WriteEnumValue<EncryptionReadinessState>("encryptionReadinessState", EncryptionReadinessState);
-            writer.WriteEnumValue<EncryptionState>("encryptionState", EncryptionState);
-            writer.WriteEnumValue<FileVaultState>("fileVaultStates", FileVaultStates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceTypes>("deviceType", DeviceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("encryptionPolicySettingState", EncryptionPolicySettingState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EncryptionReadinessState>("encryptionReadinessState", EncryptionReadinessState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EncryptionState>("encryptionState", EncryptionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.FileVaultState>("fileVaultStates", FileVaultStates);
             writer.WriteStringValue("osVersion", OsVersion);
-            writer.WriteCollectionOfObjectValues<EncryptionReportPolicyDetails>("policyDetails", PolicyDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EncryptionReportPolicyDetails>("policyDetails", PolicyDetails);
             writer.WriteStringValue("tpmSpecificationVersion", TpmSpecificationVersion);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }

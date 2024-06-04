@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>In entitlement management, when the access should expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpirationPattern? Expiration
+        public Microsoft.Graph.Beta.Models.ExpirationPattern? Expiration
         {
-            get { return BackingStore?.Get<ExpirationPattern?>("expiration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpirationPattern?>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
 #nullable restore
 #else
-        public ExpirationPattern Expiration
+        public Microsoft.Graph.Beta.Models.ExpirationPattern Expiration
         {
-            get { return BackingStore?.Get<ExpirationPattern>("expiration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpirationPattern>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
 #endif
@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>For recurring access, or eligible or active assignment. This property is currently unsupported in both PIM and entitlement management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence
+        public Microsoft.Graph.Beta.Models.PatternedRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence
+        public Microsoft.Graph.Beta.Models.PatternedRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RequestSchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RequestSchedule"/> and sets the default values.
         /// </summary>
         public RequestSchedule()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RequestSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RequestSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RequestSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RequestSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RequestSchedule();
+            return new Microsoft.Graph.Beta.Models.RequestSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiration", n => { Expiration = n.GetObjectValue<ExpirationPattern>(ExpirationPattern.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExpirationPattern>(Microsoft.Graph.Beta.Models.ExpirationPattern.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Beta.Models.PatternedRecurrence>(Microsoft.Graph.Beta.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ExpirationPattern>("expiration", Expiration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExpirationPattern>("expiration", Expiration);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

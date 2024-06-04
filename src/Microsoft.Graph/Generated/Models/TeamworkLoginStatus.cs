@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the Exchange connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? ExchangeConnection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection? ExchangeConnection
         {
-            get { return BackingStore?.Get<TeamworkConnection?>("exchangeConnection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection?>("exchangeConnection"); }
             set { BackingStore?.Set("exchangeConnection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection ExchangeConnection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection ExchangeConnection
         {
-            get { return BackingStore?.Get<TeamworkConnection>("exchangeConnection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection>("exchangeConnection"); }
             set { BackingStore?.Set("exchangeConnection", value); }
         }
 #endif
@@ -54,37 +54,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the Skype for Business connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? SkypeConnection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection? SkypeConnection
         {
-            get { return BackingStore?.Get<TeamworkConnection?>("skypeConnection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection?>("skypeConnection"); }
             set { BackingStore?.Set("skypeConnection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection SkypeConnection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection SkypeConnection
         {
-            get { return BackingStore?.Get<TeamworkConnection>("skypeConnection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection>("skypeConnection"); }
             set { BackingStore?.Set("skypeConnection", value); }
         }
 #endif
         /// <summary>Information about the Teams connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? TeamsConnection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection? TeamsConnection
         {
-            get { return BackingStore?.Get<TeamworkConnection?>("teamsConnection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection?>("teamsConnection"); }
             set { BackingStore?.Set("teamsConnection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection TeamsConnection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection TeamsConnection
         {
-            get { return BackingStore?.Get<TeamworkConnection>("teamsConnection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection>("teamsConnection"); }
             set { BackingStore?.Set("teamsConnection", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkLoginStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkLoginStatus"/> and sets the default values.
         /// </summary>
         public TeamworkLoginStatus()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkLoginStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkLoginStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkLoginStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkLoginStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkLoginStatus();
+            return new Microsoft.Graph.Beta.Models.TeamworkLoginStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exchangeConnection", n => { ExchangeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "exchangeConnection", n => { ExchangeConnection = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>(Microsoft.Graph.Beta.Models.TeamworkConnection.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "skypeConnection", n => { SkypeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
-                { "teamsConnection", n => { TeamsConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "skypeConnection", n => { SkypeConnection = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>(Microsoft.Graph.Beta.Models.TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "teamsConnection", n => { TeamsConnection = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>(Microsoft.Graph.Beta.Models.TeamworkConnection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkConnection>("exchangeConnection", ExchangeConnection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>("exchangeConnection", ExchangeConnection);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TeamworkConnection>("skypeConnection", SkypeConnection);
-            writer.WriteObjectValue<TeamworkConnection>("teamsConnection", TeamsConnection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>("skypeConnection", SkypeConnection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>("teamsConnection", TeamsConnection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

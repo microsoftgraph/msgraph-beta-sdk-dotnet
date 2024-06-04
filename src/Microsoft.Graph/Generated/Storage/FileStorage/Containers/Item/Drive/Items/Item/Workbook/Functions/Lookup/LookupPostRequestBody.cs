@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The lookupValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupValue
+        public Microsoft.Graph.Beta.Models.Json? LookupValue
         {
-            get { return BackingStore?.Get<Json?>("lookupValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #nullable restore
 #else
-        public Json LookupValue
+        public Microsoft.Graph.Beta.Models.Json LookupValue
         {
-            get { return BackingStore?.Get<Json>("lookupValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #endif
         /// <summary>The lookupVector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupVector
+        public Microsoft.Graph.Beta.Models.Json? LookupVector
         {
-            get { return BackingStore?.Get<Json?>("lookupVector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lookupVector"); }
             set { BackingStore?.Set("lookupVector", value); }
         }
 #nullable restore
 #else
-        public Json LookupVector
+        public Microsoft.Graph.Beta.Models.Json LookupVector
         {
-            get { return BackingStore?.Get<Json>("lookupVector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lookupVector"); }
             set { BackingStore?.Set("lookupVector", value); }
         }
 #endif
         /// <summary>The resultVector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ResultVector
+        public Microsoft.Graph.Beta.Models.Json? ResultVector
         {
-            get { return BackingStore?.Get<Json?>("resultVector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("resultVector"); }
             set { BackingStore?.Set("resultVector", value); }
         }
 #nullable restore
 #else
-        public Json ResultVector
+        public Microsoft.Graph.Beta.Models.Json ResultVector
         {
-            get { return BackingStore?.Get<Json>("resultVector"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("resultVector"); }
             set { BackingStore?.Set("resultVector", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LookupPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Lookup.LookupPostRequestBody"/> and sets the default values.
         /// </summary>
         public LookupPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LookupPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Lookup.LookupPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LookupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Lookup.LookupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LookupPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Lookup.LookupPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "lookupVector", n => { LookupVector = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "resultVector", n => { ResultVector = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lookupValue", n => { LookupValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "lookupVector", n => { LookupVector = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "resultVector", n => { ResultVector = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("lookupValue", LookupValue);
-            writer.WriteObjectValue<Json>("lookupVector", LookupVector);
-            writer.WriteObjectValue<Json>("resultVector", ResultVector);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lookupValue", LookupValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lookupVector", LookupVector);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("resultVector", ResultVector);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

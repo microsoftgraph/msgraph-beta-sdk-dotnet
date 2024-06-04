@@ -22,48 +22,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The blockDownload link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkRoleAbilities? BlockDownloadLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities? BlockDownloadLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities?>("blockDownloadLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities?>("blockDownloadLinkAbilities"); }
             set { BackingStore?.Set("blockDownloadLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkRoleAbilities BlockDownloadLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities BlockDownloadLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities>("blockDownloadLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("blockDownloadLinkAbilities"); }
             set { BackingStore?.Set("blockDownloadLinkAbilities", value); }
         }
 #endif
         /// <summary>The editLinkAbilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkRoleAbilities? EditLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities? EditLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities?>("editLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities?>("editLinkAbilities"); }
             set { BackingStore?.Set("editLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkRoleAbilities EditLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities EditLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities>("editLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("editLinkAbilities"); }
             set { BackingStore?.Set("editLinkAbilities", value); }
         }
 #endif
         /// <summary>The manageList link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkRoleAbilities? ManageListLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities? ManageListLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities?>("manageListLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities?>("manageListLinkAbilities"); }
             set { BackingStore?.Set("manageListLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkRoleAbilities ManageListLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities ManageListLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities>("manageListLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("manageListLinkAbilities"); }
             set { BackingStore?.Set("manageListLinkAbilities", value); }
         }
 #endif
@@ -86,53 +86,53 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The readLinkAbilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkRoleAbilities? ReadLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities? ReadLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities?>("readLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities?>("readLinkAbilities"); }
             set { BackingStore?.Set("readLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkRoleAbilities ReadLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities ReadLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities>("readLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("readLinkAbilities"); }
             set { BackingStore?.Set("readLinkAbilities", value); }
         }
 #endif
         /// <summary>The review link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkRoleAbilities? ReviewLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities? ReviewLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities?>("reviewLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities?>("reviewLinkAbilities"); }
             set { BackingStore?.Set("reviewLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkRoleAbilities ReviewLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities ReviewLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities>("reviewLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("reviewLinkAbilities"); }
             set { BackingStore?.Set("reviewLinkAbilities", value); }
         }
 #endif
         /// <summary>The submitOnly link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkRoleAbilities? SubmitOnlyLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities? SubmitOnlyLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities?>("submitOnlyLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities?>("submitOnlyLinkAbilities"); }
             set { BackingStore?.Set("submitOnlyLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkRoleAbilities SubmitOnlyLinkAbilities
+        public Microsoft.Graph.Beta.Models.LinkRoleAbilities SubmitOnlyLinkAbilities
         {
-            get { return BackingStore?.Get<LinkRoleAbilities>("submitOnlyLinkAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("submitOnlyLinkAbilities"); }
             set { BackingStore?.Set("submitOnlyLinkAbilities", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LinkScopeAbilities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.LinkScopeAbilities"/> and sets the default values.
         /// </summary>
         public LinkScopeAbilities()
         {
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LinkScopeAbilities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LinkScopeAbilities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LinkScopeAbilities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.LinkScopeAbilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LinkScopeAbilities();
+            return new Microsoft.Graph.Beta.Models.LinkScopeAbilities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,13 +157,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blockDownloadLinkAbilities", n => { BlockDownloadLinkAbilities = n.GetObjectValue<LinkRoleAbilities>(LinkRoleAbilities.CreateFromDiscriminatorValue); } },
-                { "editLinkAbilities", n => { EditLinkAbilities = n.GetObjectValue<LinkRoleAbilities>(LinkRoleAbilities.CreateFromDiscriminatorValue); } },
-                { "manageListLinkAbilities", n => { ManageListLinkAbilities = n.GetObjectValue<LinkRoleAbilities>(LinkRoleAbilities.CreateFromDiscriminatorValue); } },
+                { "blockDownloadLinkAbilities", n => { BlockDownloadLinkAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>(Microsoft.Graph.Beta.Models.LinkRoleAbilities.CreateFromDiscriminatorValue); } },
+                { "editLinkAbilities", n => { EditLinkAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>(Microsoft.Graph.Beta.Models.LinkRoleAbilities.CreateFromDiscriminatorValue); } },
+                { "manageListLinkAbilities", n => { ManageListLinkAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>(Microsoft.Graph.Beta.Models.LinkRoleAbilities.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "readLinkAbilities", n => { ReadLinkAbilities = n.GetObjectValue<LinkRoleAbilities>(LinkRoleAbilities.CreateFromDiscriminatorValue); } },
-                { "reviewLinkAbilities", n => { ReviewLinkAbilities = n.GetObjectValue<LinkRoleAbilities>(LinkRoleAbilities.CreateFromDiscriminatorValue); } },
-                { "submitOnlyLinkAbilities", n => { SubmitOnlyLinkAbilities = n.GetObjectValue<LinkRoleAbilities>(LinkRoleAbilities.CreateFromDiscriminatorValue); } },
+                { "readLinkAbilities", n => { ReadLinkAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>(Microsoft.Graph.Beta.Models.LinkRoleAbilities.CreateFromDiscriminatorValue); } },
+                { "reviewLinkAbilities", n => { ReviewLinkAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>(Microsoft.Graph.Beta.Models.LinkRoleAbilities.CreateFromDiscriminatorValue); } },
+                { "submitOnlyLinkAbilities", n => { SubmitOnlyLinkAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>(Microsoft.Graph.Beta.Models.LinkRoleAbilities.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -173,13 +173,13 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<LinkRoleAbilities>("blockDownloadLinkAbilities", BlockDownloadLinkAbilities);
-            writer.WriteObjectValue<LinkRoleAbilities>("editLinkAbilities", EditLinkAbilities);
-            writer.WriteObjectValue<LinkRoleAbilities>("manageListLinkAbilities", ManageListLinkAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("blockDownloadLinkAbilities", BlockDownloadLinkAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("editLinkAbilities", EditLinkAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("manageListLinkAbilities", ManageListLinkAbilities);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<LinkRoleAbilities>("readLinkAbilities", ReadLinkAbilities);
-            writer.WriteObjectValue<LinkRoleAbilities>("reviewLinkAbilities", ReviewLinkAbilities);
-            writer.WriteObjectValue<LinkRoleAbilities>("submitOnlyLinkAbilities", SubmitOnlyLinkAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("readLinkAbilities", ReadLinkAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("reviewLinkAbilities", ReviewLinkAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LinkRoleAbilities>("submitOnlyLinkAbilities", SubmitOnlyLinkAbilities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

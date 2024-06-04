@@ -26,16 +26,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSet>? AllowedRequestors
+        public List<Microsoft.Graph.Beta.Models.UserSet>? AllowedRequestors
         {
-            get { return BackingStore?.Get<List<UserSet>?>("allowedRequestors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>?>("allowedRequestors"); }
             set { BackingStore?.Set("allowedRequestors", value); }
         }
 #nullable restore
 #else
-        public List<UserSet> AllowedRequestors
+        public List<Microsoft.Graph.Beta.Models.UserSet> AllowedRequestors
         {
-            get { return BackingStore?.Get<List<UserSet>>("allowedRequestors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>>("allowedRequestors"); }
             set { BackingStore?.Set("allowedRequestors", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RequestorSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RequestorSettings"/> and sets the default values.
         /// </summary>
         public RequestorSettings()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RequestorSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RequestorSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RequestorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RequestorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RequestorSettings();
+            return new Microsoft.Graph.Beta.Models.RequestorSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "acceptRequests", n => { AcceptRequests = n.GetBoolValue(); } },
-                { "allowedRequestors", n => { AllowedRequestors = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedRequestors", n => { AllowedRequestors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>(Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("acceptRequests", AcceptRequests);
-            writer.WriteCollectionOfObjectValues<UserSet>("allowedRequestors", AllowedRequestors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>("allowedRequestors", AllowedRequestors);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("scopeType", ScopeType);
             writer.WriteAdditionalData(AdditionalData);

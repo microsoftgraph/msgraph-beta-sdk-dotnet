@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the installation state of a mobile app for a device. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class MobileAppInstallStatus : Entity, IParsable
+    public class MobileAppInstallStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The navigation link to the mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileApp? App
+        public Microsoft.Graph.Beta.Models.MobileApp? App
         {
-            get { return BackingStore?.Get<MobileApp?>("app"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileApp?>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #nullable restore
 #else
-        public MobileApp App
+        public Microsoft.Graph.Beta.Models.MobileApp App
         {
-            get { return BackingStore?.Get<MobileApp>("app"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileApp>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #endif
@@ -82,15 +82,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
-        public ResultantAppState? InstallState
+        public Microsoft.Graph.Beta.Models.ResultantAppState? InstallState
         {
-            get { return BackingStore?.Get<ResultantAppState?>("installState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultantAppState?>("installState"); }
             set { BackingStore?.Set("installState", value); }
         }
         /// <summary>Enum indicating additional details regarding why an application has a particular install state.</summary>
-        public ResultantAppStateDetail? InstallStateDetail
+        public Microsoft.Graph.Beta.Models.ResultantAppStateDetail? InstallStateDetail
         {
-            get { return BackingStore?.Get<ResultantAppStateDetail?>("installStateDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultantAppStateDetail?>("installStateDetail"); }
             set { BackingStore?.Set("installStateDetail", value); }
         }
         /// <summary>Last sync date time</summary>
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
-        public ResultantAppState? MobileAppInstallStatusValue
+        public Microsoft.Graph.Beta.Models.ResultantAppState? MobileAppInstallStatusValue
         {
-            get { return BackingStore?.Get<ResultantAppState?>("mobileAppInstallStatusValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultantAppState?>("mobileAppInstallStatusValue"); }
             set { BackingStore?.Set("mobileAppInstallStatusValue", value); }
         }
         /// <summary>OS Description</summary>
@@ -172,12 +172,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppInstallStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppInstallStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppInstallStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppInstallStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppInstallStatus();
+            return new Microsoft.Graph.Beta.Models.MobileAppInstallStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -187,15 +187,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
+                { "app", n => { App = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileApp>(Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
                 { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
-                { "installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                { "installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
+                { "installState", n => { InstallState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ResultantAppState>(); } },
+                { "installStateDetail", n => { InstallStateDetail = n.GetEnumValue<Microsoft.Graph.Beta.Models.ResultantAppStateDetail>(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "mobileAppInstallStatusValue", n => { MobileAppInstallStatusValue = n.GetEnumValue<ResultantAppState>(); } },
+                { "mobileAppInstallStatusValue", n => { MobileAppInstallStatusValue = n.GetEnumValue<Microsoft.Graph.Beta.Models.ResultantAppState>(); } },
                 { "osDescription", n => { OsDescription = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
@@ -210,15 +210,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MobileApp>("app", App);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MobileApp>("app", App);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("displayVersion", DisplayVersion);
             writer.WriteIntValue("errorCode", ErrorCode);
-            writer.WriteEnumValue<ResultantAppState>("installState", InstallState);
-            writer.WriteEnumValue<ResultantAppStateDetail>("installStateDetail", InstallStateDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ResultantAppState>("installState", InstallState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ResultantAppStateDetail>("installStateDetail", InstallStateDetail);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteEnumValue<ResultantAppState>("mobileAppInstallStatusValue", MobileAppInstallStatusValue);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ResultantAppState>("mobileAppInstallStatusValue", MobileAppInstallStatusValue);
             writer.WriteStringValue("osDescription", OsDescription);
             writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteStringValue("userName", UserName);

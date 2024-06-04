@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for User state of the hardware configuration
     /// </summary>
-    public class HardwareConfigurationUserState : Entity, IParsable
+    public class HardwareConfigurationUserState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Error device count for specific user.</summary>
         public int? ErrorDeviceCount
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationUserState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfigurationUserState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HardwareConfigurationUserState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.HardwareConfigurationUserState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HardwareConfigurationUserState();
+            return new Microsoft.Graph.Beta.Models.HardwareConfigurationUserState();
         }
         /// <summary>
         /// The deserialization information for the current model

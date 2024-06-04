@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Derived Credential profile.
     /// </summary>
-    public class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable
+    public class IosDerivedCredentialAuthenticationConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosDerivedCredentialAuthenticationConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosDerivedCredentialAuthenticationConfiguration"/> and sets the default values.
         /// </summary>
         public IosDerivedCredentialAuthenticationConfiguration() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosDerivedCredentialAuthenticationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosDerivedCredentialAuthenticationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosDerivedCredentialAuthenticationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosDerivedCredentialAuthenticationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosDerivedCredentialAuthenticationConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosDerivedCredentialAuthenticationConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
         }
     }
 }

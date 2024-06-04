@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
     public class GroupPolicyUploadedDefinitionFilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of groupPolicyUploadedDefinitionFile</param>
-        /// <returns>A <see cref="GroupPolicyUploadedDefinitionFileItemRequestBuilder"/></returns>
-        public GroupPolicyUploadedDefinitionFileItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyUploadedDefinitionFileItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyUploadedDefinitionFileItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("groupPolicyUploadedDefinitionFile%2Did", position);
-                return new GroupPolicyUploadedDefinitionFileItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyUploadedDefinitionFileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyUploadedDefinitionFilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyUploadedDefinitionFilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <summary>
         /// The available group policy uploaded definition files for this account.
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyUploadedDefinitionFileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyUploadedDefinitionFileCollectionResponse?> GetAsync(Action<RequestConfiguration<GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder.GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupPolicyUploadedDefinitionFileCollectionResponse> GetAsync(Action<RequestConfiguration<GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder.GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupPolicyUploadedDefinitionFileCollectionResponse>(requestInfo, GroupPolicyUploadedDefinitionFileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groupPolicyUploadedDefinitionFiles for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyUploadedDefinitionFile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyUploadedDefinitionFile?> PostAsync(GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile?> PostAsync(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GroupPolicyUploadedDefinitionFile> PostAsync(GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile> PostAsync(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GroupPolicyUploadedDefinitionFile>(requestInfo, GroupPolicyUploadedDefinitionFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>(requestInfo, Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The available group policy uploaded definition files for this account.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder.GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder.GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyUploadedDefinitionFilesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupPolicyUploadedDefinitionFilesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupPolicyUploadedDefinitionFilesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The available group policy uploaded definition files for this account.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupPolicyUploadedDefinitionFilesRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>
+        public class GroupPolicyUploadedDefinitionFilesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder.GroupPolicyUploadedDefinitionFilesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

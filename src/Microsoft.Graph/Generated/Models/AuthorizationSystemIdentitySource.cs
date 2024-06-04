@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuthorizationSystemIdentitySource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource"/> and sets the default values.
         /// </summary>
         public AuthorizationSystemIdentitySource()
         {
@@ -62,20 +62,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystemIdentitySource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthorizationSystemIdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.aadSource" => new AadSource(),
-                "#microsoft.graph.awsSource" => new AwsSource(),
-                "#microsoft.graph.azureSource" => new AzureSource(),
-                "#microsoft.graph.gsuiteSource" => new GsuiteSource(),
-                "#microsoft.graph.unknownSource" => new UnknownSource(),
-                _ => new AuthorizationSystemIdentitySource(),
+                "#microsoft.graph.aadSource" => new Microsoft.Graph.Beta.Models.AadSource(),
+                "#microsoft.graph.awsSource" => new Microsoft.Graph.Beta.Models.AwsSource(),
+                "#microsoft.graph.azureSource" => new Microsoft.Graph.Beta.Models.AzureSource(),
+                "#microsoft.graph.gsuiteSource" => new Microsoft.Graph.Beta.Models.GsuiteSource(),
+                "#microsoft.graph.unknownSource" => new Microsoft.Graph.Beta.Models.UnknownSource(),
+                _ => new Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource(),
             };
         }
         /// <summary>

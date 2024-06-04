@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class LanguageProficiency : ItemFacet, IParsable
+    public class LanguageProficiency : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the long-form name for the language.</summary>
@@ -27,21 +27,21 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The proficiency property</summary>
-        public LanguageProficiencyLevel? Proficiency
+        public Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Proficiency
         {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>("proficiency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("proficiency"); }
             set { BackingStore?.Set("proficiency", value); }
         }
         /// <summary>Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
-        public LanguageProficiencyLevel? Reading
+        public Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Reading
         {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>("reading"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("reading"); }
             set { BackingStore?.Set("reading", value); }
         }
         /// <summary>Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
-        public LanguageProficiencyLevel? Spoken
+        public Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Spoken
         {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>("spoken"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("spoken"); }
             set { BackingStore?.Set("spoken", value); }
         }
         /// <summary>Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).</summary>
@@ -77,13 +77,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
-        public LanguageProficiencyLevel? Written
+        public Microsoft.Graph.Beta.Models.LanguageProficiencyLevel? Written
         {
-            get { return BackingStore?.Get<LanguageProficiencyLevel?>("written"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel?>("written"); }
             set { BackingStore?.Set("written", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LanguageProficiency"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.LanguageProficiency"/> and sets the default values.
         /// </summary>
         public LanguageProficiency() : base()
         {
@@ -92,12 +92,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LanguageProficiency"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LanguageProficiency"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LanguageProficiency CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.LanguageProficiency CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LanguageProficiency();
+            return new Microsoft.Graph.Beta.Models.LanguageProficiency();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "proficiency", n => { Proficiency = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                { "reading", n => { Reading = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                { "spoken", n => { Spoken = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                { "proficiency", n => { Proficiency = n.GetEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>(); } },
+                { "reading", n => { Reading = n.GetEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>(); } },
+                { "spoken", n => { Spoken = n.GetEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
                 { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
-                { "written", n => { Written = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                { "written", n => { Written = n.GetEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>(); } },
             };
         }
         /// <summary>
@@ -125,12 +125,12 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<LanguageProficiencyLevel>("proficiency", Proficiency);
-            writer.WriteEnumValue<LanguageProficiencyLevel>("reading", Reading);
-            writer.WriteEnumValue<LanguageProficiencyLevel>("spoken", Spoken);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>("proficiency", Proficiency);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>("reading", Reading);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>("spoken", Spoken);
             writer.WriteStringValue("tag", Tag);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);
-            writer.WriteEnumValue<LanguageProficiencyLevel>("written", Written);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.LanguageProficiencyLevel>("written", Written);
         }
     }
 }

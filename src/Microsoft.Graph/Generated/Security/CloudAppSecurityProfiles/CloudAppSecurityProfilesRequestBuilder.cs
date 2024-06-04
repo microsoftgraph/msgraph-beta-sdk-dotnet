@@ -20,25 +20,25 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of cloudAppSecurityProfile</param>
-        /// <returns>A <see cref="CloudAppSecurityProfileItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Item.CloudAppSecurityProfileItemRequestBuilder"/></returns>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public CloudAppSecurityProfileItemRequestBuilder this[string position]
+        public Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Item.CloudAppSecurityProfileItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudAppSecurityProfile%2Did", position);
-                return new CloudAppSecurityProfileItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Item.CloudAppSecurityProfileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudAppSecurityProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudAppSecurityProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,52 +56,52 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
         /// <summary>
         /// Get cloudAppSecurityProfiles from security
         /// </summary>
-        /// <returns>A <see cref="CloudAppSecurityProfileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudAppSecurityProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudAppSecurityProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<CloudAppSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudAppSecurityProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder.CloudAppSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudAppSecurityProfileCollectionResponse> GetAsync(Action<RequestConfiguration<CloudAppSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudAppSecurityProfileCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder.CloudAppSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudAppSecurityProfileCollectionResponse>(requestInfo, CloudAppSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudAppSecurityProfileCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CloudAppSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to cloudAppSecurityProfiles for security
         /// </summary>
-        /// <returns>A <see cref="CloudAppSecurityProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudAppSecurityProfile"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudAppSecurityProfile?> PostAsync(CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudAppSecurityProfile?> PostAsync(Microsoft.Graph.Beta.Models.CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudAppSecurityProfile> PostAsync(CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudAppSecurityProfile> PostAsync(Microsoft.Graph.Beta.Models.CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudAppSecurityProfile>(requestInfo, CloudAppSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudAppSecurityProfile>(requestInfo, Microsoft.Graph.Beta.Models.CloudAppSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get cloudAppSecurityProfiles from security
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudAppSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder.CloudAppSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudAppSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder.CloudAppSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudAppSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CloudAppSecurityProfilesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public CloudAppSecurityProfilesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new CloudAppSecurityProfilesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get cloudAppSecurityProfiles from security
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudAppSecurityProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<CloudAppSecurityProfilesRequestBuilderGetQueryParameters>
+        public class CloudAppSecurityProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.CloudAppSecurityProfilesRequestBuilder.CloudAppSecurityProfilesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

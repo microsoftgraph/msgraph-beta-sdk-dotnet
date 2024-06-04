@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventRegistration : Entity, IParsable
+    public class VirtualEventRegistration : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -105,39 +105,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The registrant&apos;s answer to the registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers
+        public List<Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionAnswer>?>("registrationQuestionAnswers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>?>("registrationQuestionAnswers"); }
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistrationQuestionAnswer> RegistrationQuestionAnswers
+        public List<Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer> RegistrationQuestionAnswers
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionAnswer>>("registrationQuestionAnswers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>>("registrationQuestionAnswers"); }
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventSession>? Sessions
+        public List<Microsoft.Graph.Beta.Models.VirtualEventSession>? Sessions
         {
-            get { return BackingStore?.Get<List<VirtualEventSession>?>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventSession>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventSession> Sessions
+        public List<Microsoft.Graph.Beta.Models.VirtualEventSession> Sessions
         {
-            get { return BackingStore?.Get<List<VirtualEventSession>>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventSession>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
         /// <summary>Registration status of the registrant. Read-only.</summary>
-        public VirtualEventAttendeeRegistrationStatus? Status
+        public Microsoft.Graph.Beta.Models.VirtualEventAttendeeRegistrationStatus? Status
         {
-            get { return BackingStore?.Get<VirtualEventAttendeeRegistrationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventAttendeeRegistrationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The registrant&apos;s ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.</summary>
@@ -159,12 +159,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventRegistration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventRegistration();
+            return new Microsoft.Graph.Beta.Models.VirtualEventRegistration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -181,9 +181,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "preferredTimezone", n => { PreferredTimezone = n.GetStringValue(); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>(VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<VirtualEventAttendeeRegistrationStatus>(); } },
+                { "registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>(Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventSession>(Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.VirtualEventAttendeeRegistrationStatus>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -202,9 +202,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredTimezone", PreferredTimezone);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>("registrationQuestionAnswers", RegistrationQuestionAnswers);
-            writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);
-            writer.WriteEnumValue<VirtualEventAttendeeRegistrationStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionAnswer>("registrationQuestionAnswers", RegistrationQuestionAnswers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventSession>("sessions", Sessions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VirtualEventAttendeeRegistrationStatus>("status", Status);
             writer.WriteStringValue("userId", UserId);
         }
     }

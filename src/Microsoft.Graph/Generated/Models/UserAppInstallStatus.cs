@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class UserAppInstallStatus : Entity, IParsable
+    public class UserAppInstallStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The navigation link to the mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileApp? App
+        public Microsoft.Graph.Beta.Models.MobileApp? App
         {
-            get { return BackingStore?.Get<MobileApp?>("app"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileApp?>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #nullable restore
 #else
-        public MobileApp App
+        public Microsoft.Graph.Beta.Models.MobileApp App
         {
-            get { return BackingStore?.Get<MobileApp>("app"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileApp>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #endif
         /// <summary>The install state of the app on devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppInstallStatus>? DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.MobileAppInstallStatus>? DeviceStatuses
         {
-            get { return BackingStore?.Get<List<MobileAppInstallStatus>?>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppInstallStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppInstallStatus> DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.MobileAppInstallStatus> DeviceStatuses
         {
-            get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppInstallStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserAppInstallStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserAppInstallStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserAppInstallStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserAppInstallStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserAppInstallStatus();
+            return new Microsoft.Graph.Beta.Models.UserAppInstallStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
-                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "app", n => { App = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileApp>(Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppInstallStatus>(Microsoft.Graph.Beta.Models.MobileAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
                 { "installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
                 { "notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
@@ -128,8 +128,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MobileApp>("app", App);
-            writer.WriteCollectionOfObjectValues<MobileAppInstallStatus>("deviceStatuses", DeviceStatuses);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MobileApp>("app", App);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppInstallStatus>("deviceStatuses", DeviceStatuses);
             writer.WriteIntValue("failedDeviceCount", FailedDeviceCount);
             writer.WriteIntValue("installedDeviceCount", InstalledDeviceCount);
             writer.WriteIntValue("notInstalledDeviceCount", NotInstalledDeviceCount);

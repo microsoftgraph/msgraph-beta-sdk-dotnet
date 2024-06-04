@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members
     public class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Education.Classes.Item.Members.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Beta.Education.Classes.Item.Members.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Members.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.education.classes.item.members.item collection</summary>
         /// <param name="position">The unique identifier of educationUser</param>
-        /// <returns>A <see cref="EducationUserItemRequestBuilder"/></returns>
-        public EducationUserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Members.Item.EducationUserItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Education.Classes.Item.Members.Item.EducationUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("educationUser%2Did", position);
-                return new EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Education.Classes.Item.Members.Item.EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MembersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +61,25 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members
         /// Retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="EducationUserCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationUserCollectionResponse?> GetAsync(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationUserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationUserCollectionResponse> GetAsync(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationUserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EducationUserCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MembersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MembersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder WithUrl(string rawUrl)
         {
-            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MembersRequestBuilderGetRequestConfiguration : RequestConfiguration<MembersRequestBuilderGetQueryParameters>
+        public class MembersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>
         {
         }
     }

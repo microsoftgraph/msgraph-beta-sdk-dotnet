@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ManagedDeviceCertificateState : Entity, IParsable
+    public class ManagedDeviceCertificateState : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Extended key usage</summary>
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateIssuanceDateTime", value); }
         }
         /// <summary>Certificate Issuance State Options.</summary>
-        public CertificateIssuanceStates? CertificateIssuanceState
+        public Microsoft.Graph.Beta.Models.CertificateIssuanceStates? CertificateIssuanceState
         {
-            get { return BackingStore?.Get<CertificateIssuanceStates?>("certificateIssuanceState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateIssuanceStates?>("certificateIssuanceState"); }
             set { BackingStore?.Set("certificateIssuanceState", value); }
         }
         /// <summary>Issuer</summary>
@@ -73,15 +73,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateKeyLength", value); }
         }
         /// <summary>Key Storage Provider (KSP) Import Options.</summary>
-        public KeyStorageProviderOption? CertificateKeyStorageProvider
+        public Microsoft.Graph.Beta.Models.KeyStorageProviderOption? CertificateKeyStorageProvider
         {
-            get { return BackingStore?.Get<KeyStorageProviderOption?>("certificateKeyStorageProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyStorageProviderOption?>("certificateKeyStorageProvider"); }
             set { BackingStore?.Set("certificateKeyStorageProvider", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? CertificateKeyUsage
+        public Microsoft.Graph.Beta.Models.KeyUsages? CertificateKeyUsage
         {
-            get { return BackingStore?.Get<KeyUsages?>("certificateKeyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyUsages?>("certificateKeyUsage"); }
             set { BackingStore?.Set("certificateKeyUsage", value); }
         }
         /// <summary>Last certificate issuance state change</summary>
@@ -107,9 +107,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Certificate Revocation Status.</summary>
-        public CertificateRevocationStatus? CertificateRevokeStatus
+        public Microsoft.Graph.Beta.Models.CertificateRevocationStatus? CertificateRevokeStatus
         {
-            get { return BackingStore?.Get<CertificateRevocationStatus?>("certificateRevokeStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateRevocationStatus?>("certificateRevokeStatus"); }
             set { BackingStore?.Set("certificateRevokeStatus", value); }
         }
         /// <summary>Serial number</summary>
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Subject Alternative Name Options.</summary>
-        public SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat
+        public Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat
         {
-            get { return BackingStore?.Get<SubjectAlternativeNameType?>("certificateSubjectAlternativeNameFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("certificateSubjectAlternativeNameFormat"); }
             set { BackingStore?.Set("certificateSubjectAlternativeNameFormat", value); }
         }
         /// <summary>Subject alternative name format string for custom formats</summary>
@@ -151,9 +151,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Subject Name Format Options.</summary>
-        public SubjectNameFormat? CertificateSubjectNameFormat
+        public Microsoft.Graph.Beta.Models.SubjectNameFormat? CertificateSubjectNameFormat
         {
-            get { return BackingStore?.Get<SubjectNameFormat?>("certificateSubjectNameFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectNameFormat?>("certificateSubjectNameFormat"); }
             set { BackingStore?.Set("certificateSubjectNameFormat", value); }
         }
         /// <summary>Subject name format string for custom subject name formats</summary>
@@ -195,9 +195,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateValidityPeriod", value); }
         }
         /// <summary>Certificate Validity Period Options.</summary>
-        public CertificateValidityPeriodScale? CertificateValidityPeriodUnits
+        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodUnits
         {
-            get { return BackingStore?.Get<CertificateValidityPeriodScale?>("certificateValidityPeriodUnits"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodUnits"); }
             set { BackingStore?.Set("certificateValidityPeriodUnits", value); }
         }
         /// <summary>Device display name</summary>
@@ -217,9 +217,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? DevicePlatform
+        public Microsoft.Graph.Beta.Models.DevicePlatformType? DevicePlatform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("devicePlatform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DevicePlatformType?>("devicePlatform"); }
             set { BackingStore?.Set("devicePlatform", value); }
         }
         /// <summary>Last certificate issuance state change</summary>
@@ -247,12 +247,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceCertificateState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceCertificateState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceCertificateState();
+            return new Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -266,24 +266,24 @@ namespace Microsoft.Graph.Beta.Models
                 { "certificateErrorCode", n => { CertificateErrorCode = n.GetIntValue(); } },
                 { "certificateExpirationDateTime", n => { CertificateExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "certificateIssuanceDateTime", n => { CertificateIssuanceDateTime = n.GetDateTimeOffsetValue(); } },
-                { "certificateIssuanceState", n => { CertificateIssuanceState = n.GetEnumValue<CertificateIssuanceStates>(); } },
+                { "certificateIssuanceState", n => { CertificateIssuanceState = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateIssuanceStates>(); } },
                 { "certificateIssuer", n => { CertificateIssuer = n.GetStringValue(); } },
                 { "certificateKeyLength", n => { CertificateKeyLength = n.GetIntValue(); } },
-                { "certificateKeyStorageProvider", n => { CertificateKeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
-                { "certificateKeyUsage", n => { CertificateKeyUsage = n.GetEnumValue<KeyUsages>(); } },
+                { "certificateKeyStorageProvider", n => { CertificateKeyStorageProvider = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeyStorageProviderOption>(); } },
+                { "certificateKeyUsage", n => { CertificateKeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>(); } },
                 { "certificateLastIssuanceStateChangedDateTime", n => { CertificateLastIssuanceStateChangedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "certificateProfileDisplayName", n => { CertificateProfileDisplayName = n.GetStringValue(); } },
-                { "certificateRevokeStatus", n => { CertificateRevokeStatus = n.GetEnumValue<CertificateRevocationStatus>(); } },
+                { "certificateRevokeStatus", n => { CertificateRevokeStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateRevocationStatus>(); } },
                 { "certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
-                { "certificateSubjectAlternativeNameFormat", n => { CertificateSubjectAlternativeNameFormat = n.GetEnumValue<SubjectAlternativeNameType>(); } },
+                { "certificateSubjectAlternativeNameFormat", n => { CertificateSubjectAlternativeNameFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>(); } },
                 { "certificateSubjectAlternativeNameFormatString", n => { CertificateSubjectAlternativeNameFormatString = n.GetStringValue(); } },
-                { "certificateSubjectNameFormat", n => { CertificateSubjectNameFormat = n.GetEnumValue<SubjectNameFormat>(); } },
+                { "certificateSubjectNameFormat", n => { CertificateSubjectNameFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectNameFormat>(); } },
                 { "certificateSubjectNameFormatString", n => { CertificateSubjectNameFormatString = n.GetStringValue(); } },
                 { "certificateThumbprint", n => { CertificateThumbprint = n.GetStringValue(); } },
                 { "certificateValidityPeriod", n => { CertificateValidityPeriod = n.GetIntValue(); } },
-                { "certificateValidityPeriodUnits", n => { CertificateValidityPeriodUnits = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateValidityPeriodUnits", n => { CertificateValidityPeriodUnits = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>(); } },
                 { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
-                { "devicePlatform", n => { DevicePlatform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "devicePlatform", n => { DevicePlatform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
                 { "lastCertificateStateChangeDateTime", n => { LastCertificateStateChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
             };
@@ -300,24 +300,24 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("certificateErrorCode", CertificateErrorCode);
             writer.WriteDateTimeOffsetValue("certificateExpirationDateTime", CertificateExpirationDateTime);
             writer.WriteDateTimeOffsetValue("certificateIssuanceDateTime", CertificateIssuanceDateTime);
-            writer.WriteEnumValue<CertificateIssuanceStates>("certificateIssuanceState", CertificateIssuanceState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateIssuanceStates>("certificateIssuanceState", CertificateIssuanceState);
             writer.WriteStringValue("certificateIssuer", CertificateIssuer);
             writer.WriteIntValue("certificateKeyLength", CertificateKeyLength);
-            writer.WriteEnumValue<KeyStorageProviderOption>("certificateKeyStorageProvider", CertificateKeyStorageProvider);
-            writer.WriteEnumValue<KeyUsages>("certificateKeyUsage", CertificateKeyUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeyStorageProviderOption>("certificateKeyStorageProvider", CertificateKeyStorageProvider);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KeyUsages>("certificateKeyUsage", CertificateKeyUsage);
             writer.WriteDateTimeOffsetValue("certificateLastIssuanceStateChangedDateTime", CertificateLastIssuanceStateChangedDateTime);
             writer.WriteStringValue("certificateProfileDisplayName", CertificateProfileDisplayName);
-            writer.WriteEnumValue<CertificateRevocationStatus>("certificateRevokeStatus", CertificateRevokeStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateRevocationStatus>("certificateRevokeStatus", CertificateRevokeStatus);
             writer.WriteStringValue("certificateSerialNumber", CertificateSerialNumber);
-            writer.WriteEnumValue<SubjectAlternativeNameType>("certificateSubjectAlternativeNameFormat", CertificateSubjectAlternativeNameFormat);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>("certificateSubjectAlternativeNameFormat", CertificateSubjectAlternativeNameFormat);
             writer.WriteStringValue("certificateSubjectAlternativeNameFormatString", CertificateSubjectAlternativeNameFormatString);
-            writer.WriteEnumValue<SubjectNameFormat>("certificateSubjectNameFormat", CertificateSubjectNameFormat);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectNameFormat>("certificateSubjectNameFormat", CertificateSubjectNameFormat);
             writer.WriteStringValue("certificateSubjectNameFormatString", CertificateSubjectNameFormatString);
             writer.WriteStringValue("certificateThumbprint", CertificateThumbprint);
             writer.WriteIntValue("certificateValidityPeriod", CertificateValidityPeriod);
-            writer.WriteEnumValue<CertificateValidityPeriodScale>("certificateValidityPeriodUnits", CertificateValidityPeriodUnits);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>("certificateValidityPeriodUnits", CertificateValidityPeriodUnits);
             writer.WriteStringValue("deviceDisplayName", DeviceDisplayName);
-            writer.WriteEnumValue<DevicePlatformType>("devicePlatform", DevicePlatform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>("devicePlatform", DevicePlatform);
             writer.WriteDateTimeOffsetValue("lastCertificateStateChangeDateTime", LastCertificateStateChangeDateTime);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
         }

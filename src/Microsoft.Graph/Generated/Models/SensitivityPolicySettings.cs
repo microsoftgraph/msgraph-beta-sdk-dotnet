@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SensitivityPolicySettings : Entity, IParsable
+    public class SensitivityPolicySettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The applicableTo property</summary>
-        public SensitivityLabelTarget? ApplicableTo
+        public Microsoft.Graph.Beta.Models.SensitivityLabelTarget? ApplicableTo
         {
-            get { return BackingStore?.Get<SensitivityLabelTarget?>("applicableTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityLabelTarget?>("applicableTo"); }
             set { BackingStore?.Set("applicableTo", value); }
         }
         /// <summary>The downgradeSensitivityRequiresJustification property</summary>
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SensitivityPolicySettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SensitivityPolicySettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SensitivityPolicySettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SensitivityPolicySettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SensitivityPolicySettings();
+            return new Microsoft.Graph.Beta.Models.SensitivityPolicySettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableTo", n => { ApplicableTo = n.GetEnumValue<SensitivityLabelTarget>(); } },
+                { "applicableTo", n => { ApplicableTo = n.GetEnumValue<Microsoft.Graph.Beta.Models.SensitivityLabelTarget>(); } },
                 { "downgradeSensitivityRequiresJustification", n => { DowngradeSensitivityRequiresJustification = n.GetBoolValue(); } },
                 { "helpWebUrl", n => { HelpWebUrl = n.GetStringValue(); } },
                 { "isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<SensitivityLabelTarget>("applicableTo", ApplicableTo);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SensitivityLabelTarget>("applicableTo", ApplicableTo);
             writer.WriteBoolValue("downgradeSensitivityRequiresJustification", DowngradeSensitivityRequiresJustification);
             writer.WriteStringValue("helpWebUrl", HelpWebUrl);
             writer.WriteBoolValue("isMandatory", IsMandatory);

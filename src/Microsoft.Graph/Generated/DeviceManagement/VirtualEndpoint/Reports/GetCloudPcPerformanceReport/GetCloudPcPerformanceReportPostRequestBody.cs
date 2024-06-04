@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
         }
 #endif
         /// <summary>The reportName property</summary>
-        public CloudPCPerformanceReportName? ReportName
+        public Microsoft.Graph.Beta.Models.CloudPCPerformanceReportName? ReportName
         {
-            get { return BackingStore?.Get<CloudPCPerformanceReportName?>("reportName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPCPerformanceReportName?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
         /// <summary>The search property</summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCloudPcPerformanceReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetCloudPcPerformanceReportPostRequestBody()
         {
@@ -129,12 +129,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCloudPcPerformanceReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetCloudPcPerformanceReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCloudPcPerformanceReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloudPcPerformanceReport.GetCloudPcPerformanceReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "reportName", n => { ReportName = n.GetEnumValue<CloudPCPerformanceReportName>(); } },
+                { "reportName", n => { ReportName = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPCPerformanceReportName>(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "skip", n => { Skip = n.GetIntValue(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
             writer.WriteStringValue("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
-            writer.WriteEnumValue<CloudPCPerformanceReportName>("reportName", ReportName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPCPerformanceReportName>("reportName", ReportName);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteIntValue("skip", Skip);

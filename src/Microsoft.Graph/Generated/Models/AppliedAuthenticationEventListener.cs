@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.</summary>
-        public AuthenticationEventType? EventType
+        public Microsoft.Graph.Beta.Models.AuthenticationEventType? EventType
         {
-            get { return BackingStore?.Get<AuthenticationEventType?>("eventType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>ID of the authentication event listener that was executed.</summary>
@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationEventHandlerResult? HandlerResult
+        public Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult? HandlerResult
         {
-            get { return BackingStore?.Get<AuthenticationEventHandlerResult?>("handlerResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult?>("handlerResult"); }
             set { BackingStore?.Set("handlerResult", value); }
         }
 #nullable restore
 #else
-        public AuthenticationEventHandlerResult HandlerResult
+        public Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult HandlerResult
         {
-            get { return BackingStore?.Get<AuthenticationEventHandlerResult>("handlerResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult>("handlerResult"); }
             set { BackingStore?.Set("handlerResult", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppliedAuthenticationEventListener"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener"/> and sets the default values.
         /// </summary>
         public AppliedAuthenticationEventListener()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppliedAuthenticationEventListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppliedAuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppliedAuthenticationEventListener();
+            return new Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eventType", n => { EventType = n.GetEnumValue<AuthenticationEventType>(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationEventType>(); } },
                 { "executedListenerId", n => { ExecutedListenerId = n.GetStringValue(); } },
-                { "handlerResult", n => { HandlerResult = n.GetObjectValue<AuthenticationEventHandlerResult>(AuthenticationEventHandlerResult.CreateFromDiscriminatorValue); } },
+                { "handlerResult", n => { HandlerResult = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult>(Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AuthenticationEventType>("eventType", EventType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationEventType>("eventType", EventType);
             writer.WriteStringValue("executedListenerId", ExecutedListenerId);
-            writer.WriteObjectValue<AuthenticationEventHandlerResult>("handlerResult", HandlerResult);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationEventHandlerResult>("handlerResult", HandlerResult);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

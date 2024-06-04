@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings, IParsable
+    public class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : Microsoft.Graph.Beta.Models.EducationSynchronizationConnectionSettings, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The scope of the access request (see RFC6749).</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationSynchronizationOAuth2ClientCredentialsConnectionSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationOAuth2ClientCredentialsConnectionSettings"/> and sets the default values.
         /// </summary>
         public EducationSynchronizationOAuth2ClientCredentialsConnectionSettings() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationSynchronizationOAuth2ClientCredentialsConnectionSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationOAuth2ClientCredentialsConnectionSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationSynchronizationOAuth2ClientCredentialsConnectionSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings();
+            return new Microsoft.Graph.Beta.Models.EducationSynchronizationOAuth2ClientCredentialsConnectionSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -12,9 +12,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     #pragma warning restore CS1591
     {
         /// <summary>The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
-        public MonitoringAction? Action
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction? Action
         {
-            get { return BackingStore?.Get<MonitoringAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
-        public MonitoringSignal? Signal
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal? Signal
         {
-            get { return BackingStore?.Get<MonitoringSignal?>("signal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal?>("signal"); }
             set { BackingStore?.Set("signal", value); }
         }
         /// <summary>The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.</summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("threshold", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MonitoringRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringRule"/> and sets the default values.
         /// </summary>
         public MonitoringRule()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MonitoringRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MonitoringRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MonitoringRule();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<MonitoringAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "signal", n => { Signal = n.GetEnumValue<MonitoringSignal>(); } },
+                { "signal", n => { Signal = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal>(); } },
                 { "threshold", n => { Threshold = n.GetIntValue(); } },
             };
         }
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<MonitoringAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<MonitoringSignal>("signal", Signal);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSignal>("signal", Signal);
             writer.WriteIntValue("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }

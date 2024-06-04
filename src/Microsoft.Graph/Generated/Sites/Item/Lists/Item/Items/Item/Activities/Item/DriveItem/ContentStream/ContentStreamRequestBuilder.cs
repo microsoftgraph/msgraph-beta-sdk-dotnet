@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
     public class ContentStreamRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ContentStreamRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem.ContentStream.ContentStreamRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContentStreamRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem.ContentStream.ContentStreamRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PutAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -123,11 +123,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ContentStreamRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem.ContentStream.ContentStreamRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ContentStreamRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem.ContentStream.ContentStreamRequestBuilder WithUrl(string rawUrl)
         {
-            return new ContentStreamRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem.ContentStream.ContentStreamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

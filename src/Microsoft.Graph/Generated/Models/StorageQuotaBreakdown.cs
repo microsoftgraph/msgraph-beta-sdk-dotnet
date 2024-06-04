@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class StorageQuotaBreakdown : Entity, IParsable
+    public class StorageQuotaBreakdown : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The displayName property</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StorageQuotaBreakdown"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.StorageQuotaBreakdown"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new StorageQuotaBreakdown CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.StorageQuotaBreakdown CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.serviceStorageQuotaBreakdown" => new ServiceStorageQuotaBreakdown(),
-                _ => new StorageQuotaBreakdown(),
+                "#microsoft.graph.serviceStorageQuotaBreakdown" => new Microsoft.Graph.Beta.Models.ServiceStorageQuotaBreakdown(),
+                _ => new Microsoft.Graph.Beta.Models.StorageQuotaBreakdown(),
             };
         }
         /// <summary>

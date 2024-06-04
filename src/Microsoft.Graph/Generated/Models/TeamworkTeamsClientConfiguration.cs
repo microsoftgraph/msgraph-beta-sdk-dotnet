@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The configuration of the Microsoft Teams client user account for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkAccountConfiguration? AccountConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration? AccountConfiguration
         {
-            get { return BackingStore?.Get<TeamworkAccountConfiguration?>("accountConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration?>("accountConfiguration"); }
             set { BackingStore?.Set("accountConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkAccountConfiguration AccountConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration AccountConfiguration
         {
-            get { return BackingStore?.Get<TeamworkAccountConfiguration>("accountConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration>("accountConfiguration"); }
             set { BackingStore?.Set("accountConfiguration", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The configuration of Microsoft Teams client features for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkFeaturesConfiguration? FeaturesConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration? FeaturesConfiguration
         {
-            get { return BackingStore?.Get<TeamworkFeaturesConfiguration?>("featuresConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration?>("featuresConfiguration"); }
             set { BackingStore?.Set("featuresConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkFeaturesConfiguration FeaturesConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration FeaturesConfiguration
         {
-            get { return BackingStore?.Get<TeamworkFeaturesConfiguration>("featuresConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration>("featuresConfiguration"); }
             set { BackingStore?.Set("featuresConfiguration", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkTeamsClientConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkTeamsClientConfiguration()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkTeamsClientConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkTeamsClientConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkTeamsClientConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountConfiguration", n => { AccountConfiguration = n.GetObjectValue<TeamworkAccountConfiguration>(TeamworkAccountConfiguration.CreateFromDiscriminatorValue); } },
-                { "featuresConfiguration", n => { FeaturesConfiguration = n.GetObjectValue<TeamworkFeaturesConfiguration>(TeamworkFeaturesConfiguration.CreateFromDiscriminatorValue); } },
+                { "accountConfiguration", n => { AccountConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration>(Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration.CreateFromDiscriminatorValue); } },
+                { "featuresConfiguration", n => { FeaturesConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration>(Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkAccountConfiguration>("accountConfiguration", AccountConfiguration);
-            writer.WriteObjectValue<TeamworkFeaturesConfiguration>("featuresConfiguration", FeaturesConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkAccountConfiguration>("accountConfiguration", AccountConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkFeaturesConfiguration>("featuresConfiguration", FeaturesConfiguration);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

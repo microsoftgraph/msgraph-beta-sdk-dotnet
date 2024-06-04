@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ReorderPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Reorder.ReorderPostRequestBody"/> and sets the default values.
         /// </summary>
         public ReorderPostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReorderPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Reorder.ReorderPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReorderPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Reorder.ReorderPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReorderPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Reorder.ReorderPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

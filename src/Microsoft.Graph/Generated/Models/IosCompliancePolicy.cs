@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This class contains compliance settings for IOS.
     /// </summary>
-    public class IosCompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class IosCompliancePolicy : Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("advancedThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Require that devices have enabled device threat protection .</summary>
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Indicates whether or not to require a managed email profile.</summary>
@@ -148,24 +148,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passcodeRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasscodeRequiredType
+        public Microsoft.Graph.Beta.Models.RequiredPasswordType? PasscodeRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passcodeRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequiredPasswordType?>("passcodeRequiredType"); }
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? RestrictedApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? RestrictedApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("restrictedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> RestrictedApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem> RestrictedApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("restrictedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
 #endif
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosCompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosCompliancePolicy"/> and sets the default values.
         /// </summary>
         public IosCompliancePolicy() : base()
         {
@@ -185,12 +185,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosCompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosCompliancePolicy();
+            return new Microsoft.Graph.Beta.Models.IosCompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -200,9 +200,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
                 { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
                 { "managedEmailProfileRequired", n => { ManagedEmailProfileRequired = n.GetBoolValue(); } },
                 { "osMaximumBuildVersion", n => { OsMaximumBuildVersion = n.GetStringValue(); } },
                 { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
@@ -216,8 +216,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "passcodeMinutesOfInactivityBeforeScreenTimeout", n => { PasscodeMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passcodePreviousPasscodeBlockCount", n => { PasscodePreviousPasscodeBlockCount = n.GetIntValue(); } },
                 { "passcodeRequired", n => { PasscodeRequired = n.GetBoolValue(); } },
-                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                { "restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>(); } },
+                { "restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
             };
         }
@@ -229,9 +229,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("advancedThreatProtectionRequiredSecurityLevel", AdvancedThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("advancedThreatProtectionRequiredSecurityLevel", AdvancedThreatProtectionRequiredSecurityLevel);
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteBoolValue("managedEmailProfileRequired", ManagedEmailProfileRequired);
             writer.WriteStringValue("osMaximumBuildVersion", OsMaximumBuildVersion);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
@@ -245,8 +245,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passcodeMinutesOfInactivityBeforeScreenTimeout", PasscodeMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passcodePreviousPasscodeBlockCount", PasscodePreviousPasscodeBlockCount);
             writer.WriteBoolValue("passcodeRequired", PasscodeRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
-            writer.WriteCollectionOfObjectValues<AppListItem>("restrictedApps", RestrictedApps);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("restrictedApps", RestrictedApps);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
         }
     }

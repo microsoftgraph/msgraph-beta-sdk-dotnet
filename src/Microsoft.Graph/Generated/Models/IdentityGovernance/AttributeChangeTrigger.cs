@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance
 {
     #pragma warning disable CS1591
-    public class AttributeChangeTrigger : WorkflowExecutionTrigger, IParsable
+    public class AttributeChangeTrigger : Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The trigger attribute being changed that triggers the workflowexecutiontrigger of a workflow.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TriggerAttribute>? TriggerAttributes
+        public List<Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute>? TriggerAttributes
         {
-            get { return BackingStore?.Get<List<TriggerAttribute>?>("triggerAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute>?>("triggerAttributes"); }
             set { BackingStore?.Set("triggerAttributes", value); }
         }
 #nullable restore
 #else
-        public List<TriggerAttribute> TriggerAttributes
+        public List<Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute> TriggerAttributes
         {
-            get { return BackingStore?.Get<List<TriggerAttribute>>("triggerAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute>>("triggerAttributes"); }
             set { BackingStore?.Set("triggerAttributes", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AttributeChangeTrigger"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger"/> and sets the default values.
         /// </summary>
         public AttributeChangeTrigger() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttributeChangeTrigger"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AttributeChangeTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttributeChangeTrigger();
+            return new Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "triggerAttributes", n => { TriggerAttributes = n.GetCollectionOfObjectValues<TriggerAttribute>(TriggerAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "triggerAttributes", n => { TriggerAttributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute>(Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TriggerAttribute>("triggerAttributes", TriggerAttributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityGovernance.TriggerAttribute>("triggerAttributes", TriggerAttributes);
         }
     }
 }

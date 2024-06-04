@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
     public class AndroidManagedAppProtectionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the apps property of the microsoft.graph.androidManagedAppProtection entity.</summary>
-        public AppsRequestBuilder Apps
+        public Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.Apps.AppsRequestBuilder Apps
         {
-            get => new AppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppProtection entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deploymentSummary property of the microsoft.graph.androidManagedAppProtection entity.</summary>
-        public DeploymentSummaryRequestBuilder DeploymentSummary
+        public Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.DeploymentSummary.DeploymentSummaryRequestBuilder DeploymentSummary
         {
-            get => new DeploymentSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.DeploymentSummary.DeploymentSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidManagedAppProtectionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidManagedAppProtectionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,57 +68,57 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Android managed app policies.
         /// </summary>
-        /// <returns>A <see cref="AndroidManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidManagedAppProtection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AndroidManagedAppProtection?> GetAsync(Action<RequestConfiguration<AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder.AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AndroidManagedAppProtection> GetAsync(Action<RequestConfiguration<AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder.AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>(requestInfo, Microsoft.Graph.Beta.Models.AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property androidManagedAppProtections in deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="AndroidManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidManagedAppProtection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AndroidManagedAppProtection?> PatchAsync(AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection?> PatchAsync(Microsoft.Graph.Beta.Models.AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AndroidManagedAppProtection> PatchAsync(AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection> PatchAsync(Microsoft.Graph.Beta.Models.AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AndroidManagedAppProtection>(requestInfo, Microsoft.Graph.Beta.Models.AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property androidManagedAppProtections for deviceAppManagement
@@ -146,11 +146,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder.AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder.AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -166,11 +166,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.AndroidManagedAppProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -183,11 +183,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AndroidManagedAppProtectionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AndroidManagedAppProtectionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AndroidManagedAppProtectionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AndroidManagedAppProtectionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>
+        public class AndroidManagedAppProtectionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item.AndroidManagedAppProtectionItemRequestBuilder.AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

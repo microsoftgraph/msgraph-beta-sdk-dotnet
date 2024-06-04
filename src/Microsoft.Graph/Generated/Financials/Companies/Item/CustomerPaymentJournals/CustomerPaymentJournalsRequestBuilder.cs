@@ -19,37 +19,37 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
     public class CustomerPaymentJournalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of customerPaymentJournal</param>
-        /// <returns>A <see cref="CustomerPaymentJournalItemRequestBuilder"/></returns>
-        public CustomerPaymentJournalItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPaymentJournalItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPaymentJournalItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("customerPaymentJournal%2Did", position);
-                return new CustomerPaymentJournalItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPaymentJournalItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>Provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of customerPaymentJournal</param>
-        /// <returns>A <see cref="CustomerPaymentJournalItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPaymentJournalItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public CustomerPaymentJournalItemRequestBuilder this[string position]
+        public Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPaymentJournalItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("customerPaymentJournal%2Did", position);
-                return new CustomerPaymentJournalItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPaymentJournalItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomerPaymentJournalsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomerPaymentJournalsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,50 +67,50 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// <summary>
         /// Get customerPaymentJournals from financials
         /// </summary>
-        /// <returns>A <see cref="CustomerPaymentJournalCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomerPaymentJournalCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomerPaymentJournalCollectionResponse?> GetAsync(Action<RequestConfiguration<CustomerPaymentJournalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CustomerPaymentJournalCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder.CustomerPaymentJournalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CustomerPaymentJournalCollectionResponse> GetAsync(Action<RequestConfiguration<CustomerPaymentJournalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CustomerPaymentJournalCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder.CustomerPaymentJournalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CustomerPaymentJournalCollectionResponse>(requestInfo, CustomerPaymentJournalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CustomerPaymentJournalCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CustomerPaymentJournalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to customerPaymentJournals for financials
         /// </summary>
-        /// <returns>A <see cref="CustomerPaymentJournal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomerPaymentJournal"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomerPaymentJournal?> PostAsync(CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CustomerPaymentJournal?> PostAsync(Microsoft.Graph.Beta.Models.CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CustomerPaymentJournal> PostAsync(CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CustomerPaymentJournal> PostAsync(Microsoft.Graph.Beta.Models.CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CustomerPaymentJournal>(requestInfo, CustomerPaymentJournal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CustomerPaymentJournal>(requestInfo, Microsoft.Graph.Beta.Models.CustomerPaymentJournal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get customerPaymentJournals from financials
@@ -119,11 +119,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustomerPaymentJournalsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder.CustomerPaymentJournalsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustomerPaymentJournalsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder.CustomerPaymentJournalsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CustomerPaymentJournal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -156,11 +156,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CustomerPaymentJournalsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CustomerPaymentJournalsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CustomerPaymentJournalsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get customerPaymentJournals from financials
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CustomerPaymentJournalsRequestBuilderGetRequestConfiguration : RequestConfiguration<CustomerPaymentJournalsRequestBuilderGetQueryParameters>
+        public class CustomerPaymentJournalsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder.CustomerPaymentJournalsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

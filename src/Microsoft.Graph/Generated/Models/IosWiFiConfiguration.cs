@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the iOS device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class IosWiFiConfiguration : DeviceConfiguration, IParsable
+    public class IosWiFiConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Wi-Fi Proxy Settings.</summary>
-        public WiFiProxySetting? ProxySettings
+        public Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySettings
         {
-            get { return BackingStore?.Get<WiFiProxySetting?>("proxySettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySettings"); }
             set { BackingStore?.Set("proxySettings", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosWiFiConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosWiFiConfiguration"/> and sets the default values.
         /// </summary>
         public IosWiFiConfiguration() : base()
         {
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosWiFiConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosEnterpriseWiFiConfiguration" => new IosEnterpriseWiFiConfiguration(),
-                _ => new IosWiFiConfiguration(),
+                "#microsoft.graph.iosEnterpriseWiFiConfiguration" => new Microsoft.Graph.Beta.Models.IosEnterpriseWiFiConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.IosWiFiConfiguration(),
             };
         }
         /// <summary>
@@ -165,9 +165,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
                 { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
                 { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                { "proxySettings", n => { ProxySettings = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "proxySettings", n => { ProxySettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
-                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<WiFiSecurityType>(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiSecurityType>(); } },
             };
         }
         /// <summary>
@@ -186,9 +186,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("proxyAutomaticConfigurationUrl", ProxyAutomaticConfigurationUrl);
             writer.WriteStringValue("proxyManualAddress", ProxyManualAddress);
             writer.WriteIntValue("proxyManualPort", ProxyManualPort);
-            writer.WriteEnumValue<WiFiProxySetting>("proxySettings", ProxySettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySettings", ProxySettings);
             writer.WriteStringValue("ssid", Ssid);
-            writer.WriteEnumValue<WiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }
     }
 }

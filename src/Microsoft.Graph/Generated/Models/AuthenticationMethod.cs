@@ -7,31 +7,31 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationMethod : Entity, IParsable
+    public class AuthenticationMethod : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.emailAuthenticationMethod" => new EmailAuthenticationMethod(),
-                "#microsoft.graph.fido2AuthenticationMethod" => new Fido2AuthenticationMethod(),
-                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new MicrosoftAuthenticatorAuthenticationMethod(),
-                "#microsoft.graph.passwordAuthenticationMethod" => new PasswordAuthenticationMethod(),
-                "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
-                "#microsoft.graph.phoneAuthenticationMethod" => new PhoneAuthenticationMethod(),
-                "#microsoft.graph.platformCredentialAuthenticationMethod" => new PlatformCredentialAuthenticationMethod(),
-                "#microsoft.graph.softwareOathAuthenticationMethod" => new SoftwareOathAuthenticationMethod(),
-                "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new TemporaryAccessPassAuthenticationMethod(),
-                "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new WindowsHelloForBusinessAuthenticationMethod(),
-                _ => new AuthenticationMethod(),
+                "#microsoft.graph.emailAuthenticationMethod" => new Microsoft.Graph.Beta.Models.EmailAuthenticationMethod(),
+                "#microsoft.graph.fido2AuthenticationMethod" => new Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod(),
+                "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod(),
+                "#microsoft.graph.passwordAuthenticationMethod" => new Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod(),
+                "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
+                "#microsoft.graph.phoneAuthenticationMethod" => new Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod(),
+                "#microsoft.graph.platformCredentialAuthenticationMethod" => new Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod(),
+                "#microsoft.graph.softwareOathAuthenticationMethod" => new Microsoft.Graph.Beta.Models.SoftwareOathAuthenticationMethod(),
+                "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new Microsoft.Graph.Beta.Models.TemporaryAccessPassAuthenticationMethod(),
+                "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod(),
+                _ => new Microsoft.Graph.Beta.Models.AuthenticationMethod(),
             };
         }
         /// <summary>

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ProtectGroup : LabelActionBase, IParsable
+    public class ProtectGroup : Microsoft.Graph.Beta.Models.LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allowEmailFromGuestUsers property</summary>
@@ -23,13 +23,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowGuestUsers", value); }
         }
         /// <summary>The privacy property</summary>
-        public GroupPrivacy? Privacy
+        public Microsoft.Graph.Beta.Models.GroupPrivacy? Privacy
         {
-            get { return BackingStore?.Get<GroupPrivacy?>("privacy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPrivacy?>("privacy"); }
             set { BackingStore?.Set("privacy", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProtectGroup"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ProtectGroup"/> and sets the default values.
         /// </summary>
         public ProtectGroup() : base()
         {
@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProtectGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProtectGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProtectGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ProtectGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProtectGroup();
+            return new Microsoft.Graph.Beta.Models.ProtectGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowEmailFromGuestUsers", n => { AllowEmailFromGuestUsers = n.GetBoolValue(); } },
                 { "allowGuestUsers", n => { AllowGuestUsers = n.GetBoolValue(); } },
-                { "privacy", n => { Privacy = n.GetEnumValue<GroupPrivacy>(); } },
+                { "privacy", n => { Privacy = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupPrivacy>(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allowEmailFromGuestUsers", AllowEmailFromGuestUsers);
             writer.WriteBoolValue("allowGuestUsers", AllowGuestUsers);
-            writer.WriteEnumValue<GroupPrivacy>("privacy", Privacy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupPrivacy>("privacy", Privacy);
         }
     }
 }

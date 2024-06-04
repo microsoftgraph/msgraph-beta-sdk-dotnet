@@ -38,37 +38,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RecurrencePattern? Pattern
+        public Microsoft.Graph.Beta.Models.RecurrencePattern? Pattern
         {
-            get { return BackingStore?.Get<RecurrencePattern?>("pattern"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecurrencePattern?>("pattern"); }
             set { BackingStore?.Set("pattern", value); }
         }
 #nullable restore
 #else
-        public RecurrencePattern Pattern
+        public Microsoft.Graph.Beta.Models.RecurrencePattern Pattern
         {
-            get { return BackingStore?.Get<RecurrencePattern>("pattern"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecurrencePattern>("pattern"); }
             set { BackingStore?.Set("pattern", value); }
         }
 #endif
         /// <summary>The duration of an event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RecurrenceRange? Range
+        public Microsoft.Graph.Beta.Models.RecurrenceRange? Range
         {
-            get { return BackingStore?.Get<RecurrenceRange?>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecurrenceRange?>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #nullable restore
 #else
-        public RecurrenceRange Range
+        public Microsoft.Graph.Beta.Models.RecurrenceRange Range
         {
-            get { return BackingStore?.Get<RecurrenceRange>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecurrenceRange>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PatternedRecurrence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PatternedRecurrence"/> and sets the default values.
         /// </summary>
         public PatternedRecurrence()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PatternedRecurrence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PatternedRecurrence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PatternedRecurrence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PatternedRecurrence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PatternedRecurrence();
+            return new Microsoft.Graph.Beta.Models.PatternedRecurrence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "pattern", n => { Pattern = n.GetObjectValue<RecurrencePattern>(RecurrencePattern.CreateFromDiscriminatorValue); } },
-                { "range", n => { Range = n.GetObjectValue<RecurrenceRange>(RecurrenceRange.CreateFromDiscriminatorValue); } },
+                { "pattern", n => { Pattern = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecurrencePattern>(Microsoft.Graph.Beta.Models.RecurrencePattern.CreateFromDiscriminatorValue); } },
+                { "range", n => { Range = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecurrenceRange>(Microsoft.Graph.Beta.Models.RecurrenceRange.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<RecurrencePattern>("pattern", Pattern);
-            writer.WriteObjectValue<RecurrenceRange>("range", Range);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecurrencePattern>("pattern", Pattern);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecurrenceRange>("range", Range);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

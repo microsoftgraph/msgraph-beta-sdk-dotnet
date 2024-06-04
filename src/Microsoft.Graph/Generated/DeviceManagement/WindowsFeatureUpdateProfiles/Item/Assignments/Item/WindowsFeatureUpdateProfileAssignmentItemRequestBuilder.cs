@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
     public class WindowsFeatureUpdateProfileAssignmentItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WindowsFeatureUpdateProfileAssignmentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsFeatureUpdateProfileAssignmentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,57 +50,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignments of the profile.
         /// </summary>
-        /// <returns>A <see cref="WindowsFeatureUpdateProfileAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsFeatureUpdateProfileAssignment?> GetAsync(Action<RequestConfiguration<WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder.WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsFeatureUpdateProfileAssignment> GetAsync(Action<RequestConfiguration<WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder.WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsFeatureUpdateProfileAssignment>(requestInfo, WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment>(requestInfo, Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property assignments in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="WindowsFeatureUpdateProfileAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsFeatureUpdateProfileAssignment?> PatchAsync(WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment?> PatchAsync(Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsFeatureUpdateProfileAssignment> PatchAsync(WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment> PatchAsync(Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsFeatureUpdateProfileAssignment>(requestInfo, WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment>(requestInfo, Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property assignments for deviceManagement
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder.WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder.WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WindowsFeatureUpdateProfileAssignmentItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WindowsFeatureUpdateProfileAssignmentItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WindowsFeatureUpdateProfileAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>
+        public class WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item.WindowsFeatureUpdateProfileAssignmentItemRequestBuilder.WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Mac OS certificate profile.
     /// </summary>
-    public class MacOSCertificateProfileBase : DeviceConfiguration, IParsable
+    public class MacOSCertificateProfileBase : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale
@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subjectAlternativeNameType", value); }
         }
         /// <summary>Subject Name Format Options for Apple devices.</summary>
-        public AppleSubjectNameFormat? SubjectNameFormat
+        public Microsoft.Graph.Beta.Models.AppleSubjectNameFormat? SubjectNameFormat
         {
-            get { return BackingStore?.Get<AppleSubjectNameFormat?>("subjectNameFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleSubjectNameFormat?>("subjectNameFormat"); }
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSCertificateProfileBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase"/> and sets the default values.
         /// </summary>
         public MacOSCertificateProfileBase() : base()
         {
@@ -51,18 +51,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSCertificateProfileBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.macOSImportedPFXCertificateProfile" => new MacOSImportedPFXCertificateProfile(),
-                "#microsoft.graph.macOSPkcsCertificateProfile" => new MacOSPkcsCertificateProfile(),
-                "#microsoft.graph.macOSScepCertificateProfile" => new MacOSScepCertificateProfile(),
-                _ => new MacOSCertificateProfileBase(),
+                "#microsoft.graph.macOSImportedPFXCertificateProfile" => new Microsoft.Graph.Beta.Models.MacOSImportedPFXCertificateProfile(),
+                "#microsoft.graph.macOSPkcsCertificateProfile" => new Microsoft.Graph.Beta.Models.MacOSPkcsCertificateProfile(),
+                "#microsoft.graph.macOSScepCertificateProfile" => new Microsoft.Graph.Beta.Models.MacOSScepCertificateProfile(),
+                _ => new Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase(),
             };
         }
         /// <summary>
@@ -73,11 +73,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>(); } },
                 { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
                 { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                { "subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
-                { "subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<AppleSubjectNameFormat>(); } },
+                { "subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>(); } },
+                { "subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppleSubjectNameFormat>(); } },
             };
         }
         /// <summary>
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
             writer.WriteIntValue("certificateValidityPeriodValue", CertificateValidityPeriodValue);
             writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
-            writer.WriteEnumValue<SubjectAlternativeNameType>("subjectAlternativeNameType", SubjectAlternativeNameType);
-            writer.WriteEnumValue<AppleSubjectNameFormat>("subjectNameFormat", SubjectNameFormat);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>("subjectAlternativeNameType", SubjectAlternativeNameType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppleSubjectNameFormat>("subjectNameFormat", SubjectNameFormat);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The OperationApprovalPolicy entity allows an administrator to configure which operations require admin approval and the set of admins who can perform that approval. Creating a policy enables the multiple admin approval service to catch requests which are targeted by the specific policy type defined.
     /// </summary>
-    public class OperationApprovalPolicy : Entity, IParsable
+    public class OperationApprovalPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the user to define the possible approvers for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,42 +66,42 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.</summary>
-        public OperationApprovalPolicyPlatform? PolicyPlatform
+        public Microsoft.Graph.Beta.Models.OperationApprovalPolicyPlatform? PolicyPlatform
         {
-            get { return BackingStore?.Get<OperationApprovalPolicyPlatform?>("policyPlatform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationApprovalPolicyPlatform?>("policyPlatform"); }
             set { BackingStore?.Set("policyPlatform", value); }
         }
         /// <summary>Indicates areas of the Intune UX that could support MAA UX for the current logged in user. This property is required, and is defined by the user in order to correctly show the expected experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OperationApprovalPolicySet? PolicySet
+        public Microsoft.Graph.Beta.Models.OperationApprovalPolicySet? PolicySet
         {
-            get { return BackingStore?.Get<OperationApprovalPolicySet?>("policySet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationApprovalPolicySet?>("policySet"); }
             set { BackingStore?.Set("policySet", value); }
         }
 #nullable restore
 #else
-        public OperationApprovalPolicySet PolicySet
+        public Microsoft.Graph.Beta.Models.OperationApprovalPolicySet PolicySet
         {
-            get { return BackingStore?.Get<OperationApprovalPolicySet>("policySet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationApprovalPolicySet>("policySet"); }
             set { BackingStore?.Set("policySet", value); }
         }
 #endif
         /// <summary>The set of available policy types that can be configured for approval. The policy type must always be defined in an OperationApprovalRequest.</summary>
-        public OperationApprovalPolicyType? PolicyType
+        public Microsoft.Graph.Beta.Models.OperationApprovalPolicyType? PolicyType
         {
-            get { return BackingStore?.Get<OperationApprovalPolicyType?>("policyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OperationApprovalPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OperationApprovalPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OperationApprovalPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OperationApprovalPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OperationApprovalPolicy();
+            return new Microsoft.Graph.Beta.Models.OperationApprovalPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "policyPlatform", n => { PolicyPlatform = n.GetEnumValue<OperationApprovalPolicyPlatform>(); } },
-                { "policySet", n => { PolicySet = n.GetObjectValue<OperationApprovalPolicySet>(OperationApprovalPolicySet.CreateFromDiscriminatorValue); } },
-                { "policyType", n => { PolicyType = n.GetEnumValue<OperationApprovalPolicyType>(); } },
+                { "policyPlatform", n => { PolicyPlatform = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalPolicyPlatform>(); } },
+                { "policySet", n => { PolicySet = n.GetObjectValue<Microsoft.Graph.Beta.Models.OperationApprovalPolicySet>(Microsoft.Graph.Beta.Models.OperationApprovalPolicySet.CreateFromDiscriminatorValue); } },
+                { "policyType", n => { PolicyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType>(); } },
             };
         }
         /// <summary>
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("approverGroupIds", ApproverGroupIds);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<OperationApprovalPolicyPlatform>("policyPlatform", PolicyPlatform);
-            writer.WriteObjectValue<OperationApprovalPolicySet>("policySet", PolicySet);
-            writer.WriteEnumValue<OperationApprovalPolicyType>("policyType", PolicyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalPolicyPlatform>("policyPlatform", PolicyPlatform);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OperationApprovalPolicySet>("policySet", PolicySet);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType>("policyType", PolicyType);
         }
     }
 }

@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSetting>? Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>? Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSetting> Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting> Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ChangeSettingsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings.ChangeSettingsPostRequestBody"/> and sets the default values.
         /// </summary>
         public ChangeSettingsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChangeSettingsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings.ChangeSettingsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChangeSettingsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings.ChangeSettingsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChangeSettingsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings.ChangeSettingsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Instance of a GroupSetting
     /// </summary>
-    public class DeviceManagementConfigurationGroupSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable
+    public class DeviceManagementConfigurationGroupSettingInstance : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>The groupSettingValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationGroupSettingValue? GroupSettingValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue? GroupSettingValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationGroupSettingValue?>("groupSettingValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue?>("groupSettingValue"); }
             set { BackingStore?.Set("groupSettingValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationGroupSettingValue GroupSettingValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue GroupSettingValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationGroupSettingValue>("groupSettingValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>("groupSettingValue"); }
             set { BackingStore?.Set("groupSettingValue", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationGroupSettingInstance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingInstance"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingInstance() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationGroupSettingInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationGroupSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationGroupSettingInstance();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "groupSettingValue", n => { GroupSettingValue = n.GetObjectValue<DeviceManagementConfigurationGroupSettingValue>(DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue); } },
+                { "groupSettingValue", n => { GroupSettingValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceManagementConfigurationGroupSettingValue>("groupSettingValue", GroupSettingValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>("groupSettingValue", GroupSettingValue);
         }
     }
 }

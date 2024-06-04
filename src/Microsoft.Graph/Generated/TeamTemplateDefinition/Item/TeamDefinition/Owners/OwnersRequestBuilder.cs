@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners
     public class OwnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.team entity.</summary>
         /// <param name="position">The unique identifier of user</param>
-        /// <returns>A <see cref="UserItemRequestBuilder"/></returns>
-        public UserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.Item.UserItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.Item.UserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user%2Did", position);
-                return new UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OwnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OwnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners
         /// <summary>
         /// The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
         /// </summary>
-        /// <returns>A <see cref="UserCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserCollectionResponse?> GetAsync(Action<RequestConfiguration<OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserCollectionResponse> GetAsync(Action<RequestConfiguration<OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OwnersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OwnersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder WithUrl(string rawUrl)
         {
-            return new OwnersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OwnersRequestBuilderGetRequestConfiguration : RequestConfiguration<OwnersRequestBuilderGetQueryParameters>
+        public class OwnersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,45 +7,45 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MeetingRegistrationBase : Entity, IParsable
+    public class MeetingRegistrationBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies who can register for the meeting.</summary>
-        public MeetingAudience? AllowedRegistrant
+        public Microsoft.Graph.Beta.Models.MeetingAudience? AllowedRegistrant
         {
-            get { return BackingStore?.Get<MeetingAudience?>("allowedRegistrant"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingAudience?>("allowedRegistrant"); }
             set { BackingStore?.Set("allowedRegistrant", value); }
         }
         /// <summary>Registrants of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingRegistrantBase>? Registrants
+        public List<Microsoft.Graph.Beta.Models.MeetingRegistrantBase>? Registrants
         {
-            get { return BackingStore?.Get<List<MeetingRegistrantBase>?>("registrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingRegistrantBase>?>("registrants"); }
             set { BackingStore?.Set("registrants", value); }
         }
 #nullable restore
 #else
-        public List<MeetingRegistrantBase> Registrants
+        public List<Microsoft.Graph.Beta.Models.MeetingRegistrantBase> Registrants
         {
-            get { return BackingStore?.Get<List<MeetingRegistrantBase>>("registrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingRegistrantBase>>("registrants"); }
             set { BackingStore?.Set("registrants", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingRegistrationBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrationBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MeetingRegistrationBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MeetingRegistrationBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.externalMeetingRegistration" => new ExternalMeetingRegistration(),
-                "#microsoft.graph.meetingRegistration" => new MeetingRegistration(),
-                _ => new MeetingRegistrationBase(),
+                "#microsoft.graph.externalMeetingRegistration" => new Microsoft.Graph.Beta.Models.ExternalMeetingRegistration(),
+                "#microsoft.graph.meetingRegistration" => new Microsoft.Graph.Beta.Models.MeetingRegistration(),
+                _ => new Microsoft.Graph.Beta.Models.MeetingRegistrationBase(),
             };
         }
         /// <summary>
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedRegistrant", n => { AllowedRegistrant = n.GetEnumValue<MeetingAudience>(); } },
-                { "registrants", n => { Registrants = n.GetCollectionOfObjectValues<MeetingRegistrantBase>(MeetingRegistrantBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedRegistrant", n => { AllowedRegistrant = n.GetEnumValue<Microsoft.Graph.Beta.Models.MeetingAudience>(); } },
+                { "registrants", n => { Registrants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingRegistrantBase>(Microsoft.Graph.Beta.Models.MeetingRegistrantBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MeetingAudience>("allowedRegistrant", AllowedRegistrant);
-            writer.WriteCollectionOfObjectValues<MeetingRegistrantBase>("registrants", Registrants);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MeetingAudience>("allowedRegistrant", AllowedRegistrant);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingRegistrantBase>("registrants", Registrants);
         }
     }
 }

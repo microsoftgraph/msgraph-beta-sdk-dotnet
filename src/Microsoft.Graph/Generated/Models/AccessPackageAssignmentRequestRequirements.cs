@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Answers that have already been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAnswer>? ExistingAnswers
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAnswer>? ExistingAnswers
         {
-            get { return BackingStore?.Get<List<AccessPackageAnswer>?>("existingAnswers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAnswer>?>("existingAnswers"); }
             set { BackingStore?.Set("existingAnswers", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAnswer> ExistingAnswers
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAnswer> ExistingAnswers
         {
-            get { return BackingStore?.Get<List<AccessPackageAnswer>>("existingAnswers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAnswer>>("existingAnswers"); }
             set { BackingStore?.Set("existingAnswers", value); }
         }
 #endif
@@ -126,32 +126,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the isRequired property on accessPackageQuestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageQuestion>? Questions
+        public List<Microsoft.Graph.Beta.Models.AccessPackageQuestion>? Questions
         {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageQuestion> Questions
+        public List<Microsoft.Graph.Beta.Models.AccessPackageQuestion> Questions
         {
-            get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageQuestion>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #endif
         /// <summary>Schedule restrictions enforced, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.RequestSchedule? Schedule
         {
-            get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule Schedule
+        public Microsoft.Graph.Beta.Models.RequestSchedule Schedule
         {
-            get { return BackingStore?.Get<RequestSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAssignmentRequestRequirements"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestRequirements"/> and sets the default values.
         /// </summary>
         public AccessPackageAssignmentRequestRequirements()
         {
@@ -182,12 +182,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentRequestRequirements"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestRequirements"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageAssignmentRequestRequirements CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestRequirements CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentRequestRequirements();
+            return new Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequestRequirements();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "existingAnswers", n => { ExistingAnswers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "existingAnswers", n => { ExistingAnswers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAnswer>(Microsoft.Graph.Beta.Models.AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
                 { "isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
                 { "isCustomAssignmentScheduleAllowed", n => { IsCustomAssignmentScheduleAllowed = n.GetBoolValue(); } },
@@ -206,8 +206,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
                 { "policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
-                { "questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageQuestion>(Microsoft.Graph.Beta.Models.AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>(Microsoft.Graph.Beta.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
                 { "verifiableCredentialRequirementStatus", n => { VerifiableCredentialRequirementStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>(Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus.CreateFromDiscriminatorValue); } },
             };
         }
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AccessPackageAnswer>("existingAnswers", ExistingAnswers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAnswer>("existingAnswers", ExistingAnswers);
             writer.WriteBoolValue("isApprovalRequired", IsApprovalRequired);
             writer.WriteBoolValue("isApprovalRequiredForExtension", IsApprovalRequiredForExtension);
             writer.WriteBoolValue("isCustomAssignmentScheduleAllowed", IsCustomAssignmentScheduleAllowed);
@@ -227,8 +227,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("policyDescription", PolicyDescription);
             writer.WriteStringValue("policyDisplayName", PolicyDisplayName);
             writer.WriteStringValue("policyId", PolicyId);
-            writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
-            writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageQuestion>("questions", Questions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>("schedule", Schedule);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>("verifiableCredentialRequirementStatus", VerifiableCredentialRequirementStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

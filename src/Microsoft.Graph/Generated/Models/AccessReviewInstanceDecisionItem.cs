@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewInstanceDecisionItem : Entity, IParsable
+    public class AccessReviewInstanceDecisionItem : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the accessReviewInstance parent. Supports $select. Read-only.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identifier of the user who applied the decision. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t applied the decision or it was automatically applied. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? AppliedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? AppliedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity AppliedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity AppliedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #endif
@@ -83,32 +83,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceInsight>? Insights
+        public List<Microsoft.Graph.Beta.Models.GovernanceInsight>? Insights
         {
-            get { return BackingStore?.Get<List<GovernanceInsight>?>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceInsight> Insights
+        public List<Microsoft.Graph.Beta.Models.GovernanceInsight> Insights
         {
-            get { return BackingStore?.Get<List<GovernanceInsight>>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #endif
         /// <summary>There&apos;s exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewInstance? Instance
+        public Microsoft.Graph.Beta.Models.AccessReviewInstance? Instance
         {
-            get { return BackingStore?.Get<AccessReviewInstance?>("instance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewInstance?>("instance"); }
             set { BackingStore?.Set("instance", value); }
         }
 #nullable restore
 #else
-        public AccessReviewInstance Instance
+        public Microsoft.Graph.Beta.Models.AccessReviewInstance Instance
         {
-            get { return BackingStore?.Get<AccessReviewInstance>("instance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewInstance>("instance"); }
             set { BackingStore?.Set("instance", value); }
         }
 #endif
@@ -131,16 +131,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Principal
+        public Microsoft.Graph.Beta.Models.Identity? Principal
         {
-            get { return BackingStore?.Get<Identity?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public Identity Principal
+        public Microsoft.Graph.Beta.Models.Identity Principal
         {
-            get { return BackingStore?.Get<Identity>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
@@ -163,16 +163,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Every decision item in an access review represents a principal&apos;s membership to a resource. This property provides the details of the membership. For example, whether the principal has direct access or indirect access to the resource. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DecisionItemPrincipalResourceMembership? PrincipalResourceMembership
+        public Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership? PrincipalResourceMembership
         {
-            get { return BackingStore?.Get<DecisionItemPrincipalResourceMembership?>("principalResourceMembership"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership?>("principalResourceMembership"); }
             set { BackingStore?.Set("principalResourceMembership", value); }
         }
 #nullable restore
 #else
-        public DecisionItemPrincipalResourceMembership PrincipalResourceMembership
+        public Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership PrincipalResourceMembership
         {
-            get { return BackingStore?.Get<DecisionItemPrincipalResourceMembership>("principalResourceMembership"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership>("principalResourceMembership"); }
             set { BackingStore?.Set("principalResourceMembership", value); }
         }
 #endif
@@ -195,16 +195,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the resource. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is Bob and the resource is &apos;Sales&apos;. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewInstanceDecisionItemResource? Resource
+        public Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource? Resource
         {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AccessReviewInstanceDecisionItemResource Resource
+        public Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource Resource
         {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -227,16 +227,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? ReviewedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? ReviewedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity ReviewedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity ReviewedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
@@ -249,28 +249,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The target of this specific decision. Decision targets can be of different types – each one with its own specific properties. See accessReviewInstanceDecisionItemTarget. Read-only.  This property is replaced by the principal and resource properties in v1.0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewInstanceDecisionItemTarget? Target
+        public Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget? Target
         {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public AccessReviewInstanceDecisionItemTarget Target
+        public Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget Target
         {
-            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewInstanceDecisionItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewInstanceDecisionItem();
+            return new Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -281,22 +281,22 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
-                { "appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "appliedBy", n => { AppliedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
-                { "insights", n => { Insights = n.GetCollectionOfObjectValues<GovernanceInsight>(GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "instance", n => { Instance = n.GetObjectValue<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceInsight>(Microsoft.Graph.Beta.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "instance", n => { Instance = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewInstance>(Microsoft.Graph.Beta.Models.AccessReviewInstance.CreateFromDiscriminatorValue); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
-                { "principal", n => { Principal = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "principalLink", n => { PrincipalLink = n.GetStringValue(); } },
-                { "principalResourceMembership", n => { PrincipalResourceMembership = n.GetObjectValue<DecisionItemPrincipalResourceMembership>(DecisionItemPrincipalResourceMembership.CreateFromDiscriminatorValue); } },
+                { "principalResourceMembership", n => { PrincipalResourceMembership = n.GetObjectValue<Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership>(Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership.CreateFromDiscriminatorValue); } },
                 { "recommendation", n => { Recommendation = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<AccessReviewInstanceDecisionItemResource>(AccessReviewInstanceDecisionItemResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource>(Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource.CreateFromDiscriminatorValue); } },
                 { "resourceLink", n => { ResourceLink = n.GetStringValue(); } },
-                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "target", n => { Target = n.GetObjectValue<AccessReviewInstanceDecisionItemTarget>(AccessReviewInstanceDecisionItemTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget>(Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -308,22 +308,22 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accessReviewId", AccessReviewId);
-            writer.WriteObjectValue<UserIdentity>("appliedBy", AppliedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("appliedBy", AppliedBy);
             writer.WriteDateTimeOffsetValue("appliedDateTime", AppliedDateTime);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("decision", Decision);
-            writer.WriteCollectionOfObjectValues<GovernanceInsight>("insights", Insights);
-            writer.WriteObjectValue<AccessReviewInstance>("instance", Instance);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceInsight>("insights", Insights);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewInstance>("instance", Instance);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<Identity>("principal", Principal);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("principal", Principal);
             writer.WriteStringValue("principalLink", PrincipalLink);
-            writer.WriteObjectValue<DecisionItemPrincipalResourceMembership>("principalResourceMembership", PrincipalResourceMembership);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DecisionItemPrincipalResourceMembership>("principalResourceMembership", PrincipalResourceMembership);
             writer.WriteStringValue("recommendation", Recommendation);
-            writer.WriteObjectValue<AccessReviewInstanceDecisionItemResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemResource>("resource", Resource);
             writer.WriteStringValue("resourceLink", ResourceLink);
-            writer.WriteObjectValue<UserIdentity>("reviewedBy", ReviewedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("reviewedBy", ReviewedBy);
             writer.WriteDateTimeOffsetValue("reviewedDateTime", ReviewedDateTime);
-            writer.WriteObjectValue<AccessReviewInstanceDecisionItemTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget>("target", Target);
         }
     }
 }

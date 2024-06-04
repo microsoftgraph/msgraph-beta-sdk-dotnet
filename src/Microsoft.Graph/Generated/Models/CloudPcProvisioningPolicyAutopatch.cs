@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcProvisioningPolicyAutopatch"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch"/> and sets the default values.
         /// </summary>
         public CloudPcProvisioningPolicyAutopatch()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcProvisioningPolicyAutopatch"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcProvisioningPolicyAutopatch CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcProvisioningPolicyAutopatch();
+            return new Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch();
         }
         /// <summary>
         /// The deserialization information for the current model

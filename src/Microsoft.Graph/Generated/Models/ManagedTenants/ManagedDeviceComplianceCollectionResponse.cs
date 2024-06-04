@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCompliance>? Value
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance>? Value
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCompliance>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCompliance> Value
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance> Value
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCompliance>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceComplianceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceComplianceCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceComplianceCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceComplianceCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceComplianceCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceComplianceCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>(ManagedDeviceCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceCompliance>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedDeviceCompliance>("value", Value);
         }
     }
 }

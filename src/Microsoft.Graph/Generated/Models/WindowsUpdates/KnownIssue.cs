@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>The knownIssueHistories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KnownIssueHistoryItem>? KnownIssueHistories
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem>? KnownIssueHistories
         {
-            get { return BackingStore?.Get<List<KnownIssueHistoryItem>?>("knownIssueHistories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem>?>("knownIssueHistories"); }
             set { BackingStore?.Set("knownIssueHistories", value); }
         }
 #nullable restore
 #else
-        public List<KnownIssueHistoryItem> KnownIssueHistories
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem> KnownIssueHistories
         {
-            get { return BackingStore?.Get<List<KnownIssueHistoryItem>>("knownIssueHistories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem>>("knownIssueHistories"); }
             set { BackingStore?.Set("knownIssueHistories", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Knowledge base article associated with the release when the known issue was first reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KnowledgeBaseArticle? OriginatingKnowledgeBaseArticle
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle? OriginatingKnowledgeBaseArticle
         {
-            get { return BackingStore?.Get<KnowledgeBaseArticle?>("originatingKnowledgeBaseArticle"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle?>("originatingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("originatingKnowledgeBaseArticle", value); }
         }
 #nullable restore
 #else
-        public KnowledgeBaseArticle OriginatingKnowledgeBaseArticle
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle OriginatingKnowledgeBaseArticle
         {
-            get { return BackingStore?.Get<KnowledgeBaseArticle>("originatingKnowledgeBaseArticle"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("originatingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("originatingKnowledgeBaseArticle", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Knowledge base article associated with the release when the known issue was resolved or mitigated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KnowledgeBaseArticle? ResolvingKnowledgeBaseArticle
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle? ResolvingKnowledgeBaseArticle
         {
-            get { return BackingStore?.Get<KnowledgeBaseArticle?>("resolvingKnowledgeBaseArticle"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle?>("resolvingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("resolvingKnowledgeBaseArticle", value); }
         }
 #nullable restore
 #else
-        public KnowledgeBaseArticle ResolvingKnowledgeBaseArticle
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle ResolvingKnowledgeBaseArticle
         {
-            get { return BackingStore?.Get<KnowledgeBaseArticle>("resolvingKnowledgeBaseArticle"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("resolvingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("resolvingKnowledgeBaseArticle", value); }
         }
 #endif
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public WindowsReleaseHealthStatus? Status
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsReleaseHealthStatus? Status
         {
-            get { return BackingStore?.Get<WindowsReleaseHealthStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsReleaseHealthStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The title of the known issue.</summary>
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KnownIssue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KnownIssue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KnownIssue();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,14 +165,14 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "knownIssueHistories", n => { KnownIssueHistories = n.GetCollectionOfObjectValues<KnownIssueHistoryItem>(KnownIssueHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "knownIssueHistories", n => { KnownIssueHistories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "originatingKnowledgeBaseArticle", n => { OriginatingKnowledgeBaseArticle = n.GetObjectValue<KnowledgeBaseArticle>(KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
+                { "originatingKnowledgeBaseArticle", n => { OriginatingKnowledgeBaseArticle = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
                 { "resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "resolvingKnowledgeBaseArticle", n => { ResolvingKnowledgeBaseArticle = n.GetObjectValue<KnowledgeBaseArticle>(KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
+                { "resolvingKnowledgeBaseArticle", n => { ResolvingKnowledgeBaseArticle = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
                 { "safeguardHoldIds", n => { SafeguardHoldIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<WindowsReleaseHealthStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsReleaseHealthStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "webViewUrl", n => { WebViewUrl = n.GetStringValue(); } },
             };
@@ -186,14 +186,14 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<KnownIssueHistoryItem>("knownIssueHistories", KnownIssueHistories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssueHistoryItem>("knownIssueHistories", KnownIssueHistories);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
-            writer.WriteObjectValue<KnowledgeBaseArticle>("originatingKnowledgeBaseArticle", OriginatingKnowledgeBaseArticle);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("originatingKnowledgeBaseArticle", OriginatingKnowledgeBaseArticle);
             writer.WriteDateTimeOffsetValue("resolvedDateTime", ResolvedDateTime);
-            writer.WriteObjectValue<KnowledgeBaseArticle>("resolvingKnowledgeBaseArticle", ResolvingKnowledgeBaseArticle);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("resolvingKnowledgeBaseArticle", ResolvingKnowledgeBaseArticle);
             writer.WriteCollectionOfPrimitiveValues<int?>("safeguardHoldIds", SafeguardHoldIds);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<WindowsReleaseHealthStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsReleaseHealthStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("webViewUrl", WebViewUrl);
         }

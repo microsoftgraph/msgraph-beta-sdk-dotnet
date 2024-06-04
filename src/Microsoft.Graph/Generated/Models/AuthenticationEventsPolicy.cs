@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationEventsPolicy : Entity, IParsable
+    public class AuthenticationEventsPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of applicable actions to be taken on sign-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationListener>? OnSignupStart
+        public List<Microsoft.Graph.Beta.Models.AuthenticationListener>? OnSignupStart
         {
-            get { return BackingStore?.Get<List<AuthenticationListener>?>("onSignupStart"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationListener>?>("onSignupStart"); }
             set { BackingStore?.Set("onSignupStart", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationListener> OnSignupStart
+        public List<Microsoft.Graph.Beta.Models.AuthenticationListener> OnSignupStart
         {
-            get { return BackingStore?.Get<List<AuthenticationListener>>("onSignupStart"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationListener>>("onSignupStart"); }
             set { BackingStore?.Set("onSignupStart", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationEventsPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationEventsPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationEventsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthenticationEventsPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationEventsPolicy();
+            return new Microsoft.Graph.Beta.Models.AuthenticationEventsPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "onSignupStart", n => { OnSignupStart = n.GetCollectionOfObjectValues<AuthenticationListener>(AuthenticationListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onSignupStart", n => { OnSignupStart = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationListener>(Microsoft.Graph.Beta.Models.AuthenticationListener.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationListener>("onSignupStart", OnSignupStart);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationListener>("onSignupStart", OnSignupStart);
         }
     }
 }

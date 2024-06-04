@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGr
 {
     [Obsolete("This class is obsolete. Use AsHierarchyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AsHierarchyResponse : AsHierarchyGetResponse, IParsable
+    public class AsHierarchyResponse : Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGraphEdiscoveryAsHierarchy.AsHierarchyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AsHierarchyResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGraphEdiscoveryAsHierarchy.AsHierarchyResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AsHierarchyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGraphEdiscoveryAsHierarchy.AsHierarchyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AsHierarchyResponse();
+            return new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGraphEdiscoveryAsHierarchy.AsHierarchyResponse();
         }
     }
 }

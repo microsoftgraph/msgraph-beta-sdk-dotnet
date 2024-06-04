@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class DateDrivenRolloutSettings : GradualRolloutSettings, IParsable
+    public class DateDrivenRolloutSettings : Microsoft.Graph.Beta.Models.WindowsUpdates.GradualRolloutSettings, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime isn&apos;t set, all devices in the deployment are offered content at the same time.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DateDrivenRolloutSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.DateDrivenRolloutSettings"/> and sets the default values.
         /// </summary>
         public DateDrivenRolloutSettings() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DateDrivenRolloutSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.DateDrivenRolloutSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DateDrivenRolloutSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.DateDrivenRolloutSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DateDrivenRolloutSettings();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.DateDrivenRolloutSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

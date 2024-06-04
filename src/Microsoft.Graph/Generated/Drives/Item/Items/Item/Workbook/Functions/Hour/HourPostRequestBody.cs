@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour
         /// <summary>The serialNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? SerialNumber
+        public Microsoft.Graph.Beta.Models.Json? SerialNumber
         {
-            get { return BackingStore?.Get<Json?>("serialNumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public Json SerialNumber
+        public Microsoft.Graph.Beta.Models.Json SerialNumber
         {
-            get { return BackingStore?.Get<Json>("serialNumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HourPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour.HourPostRequestBody"/> and sets the default values.
         /// </summary>
         public HourPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HourPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour.HourPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static HourPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour.HourPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HourPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour.HourPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "serialNumber", n => { SerialNumber = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "serialNumber", n => { SerialNumber = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hour
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("serialNumber", SerialNumber);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("serialNumber", SerialNumber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

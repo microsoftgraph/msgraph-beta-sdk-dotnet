@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VerifiableCredentialRetrieved : VerifiableCredentialRequirementStatus, IParsable
+    public class VerifiableCredentialRetrieved : Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The specific date and time that the presentation request will expire and a new one will need to be generated.</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("expiryDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VerifiableCredentialRetrieved"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialRetrieved"/> and sets the default values.
         /// </summary>
         public VerifiableCredentialRetrieved() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifiableCredentialRetrieved"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialRetrieved"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VerifiableCredentialRetrieved CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VerifiableCredentialRetrieved CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VerifiableCredentialRetrieved();
+            return new Microsoft.Graph.Beta.Models.VerifiableCredentialRetrieved();
         }
         /// <summary>
         /// The deserialization information for the current model

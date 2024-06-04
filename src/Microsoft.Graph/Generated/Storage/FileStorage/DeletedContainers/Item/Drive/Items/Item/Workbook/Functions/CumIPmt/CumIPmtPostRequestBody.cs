@@ -23,101 +23,101 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The endPeriod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? EndPeriod
+        public Microsoft.Graph.Beta.Models.Json? EndPeriod
         {
-            get { return BackingStore?.Get<Json?>("endPeriod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("endPeriod"); }
             set { BackingStore?.Set("endPeriod", value); }
         }
 #nullable restore
 #else
-        public Json EndPeriod
+        public Microsoft.Graph.Beta.Models.Json EndPeriod
         {
-            get { return BackingStore?.Get<Json>("endPeriod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("endPeriod"); }
             set { BackingStore?.Set("endPeriod", value); }
         }
 #endif
         /// <summary>The nper property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Nper
+        public Microsoft.Graph.Beta.Models.Json? Nper
         {
-            get { return BackingStore?.Get<Json?>("nper"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("nper"); }
             set { BackingStore?.Set("nper", value); }
         }
 #nullable restore
 #else
-        public Json Nper
+        public Microsoft.Graph.Beta.Models.Json Nper
         {
-            get { return BackingStore?.Get<Json>("nper"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("nper"); }
             set { BackingStore?.Set("nper", value); }
         }
 #endif
         /// <summary>The pv property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Pv
+        public Microsoft.Graph.Beta.Models.Json? Pv
         {
-            get { return BackingStore?.Get<Json?>("pv"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("pv"); }
             set { BackingStore?.Set("pv", value); }
         }
 #nullable restore
 #else
-        public Json Pv
+        public Microsoft.Graph.Beta.Models.Json Pv
         {
-            get { return BackingStore?.Get<Json>("pv"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("pv"); }
             set { BackingStore?.Set("pv", value); }
         }
 #endif
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate
+        public Microsoft.Graph.Beta.Models.Json? Rate
         {
-            get { return BackingStore?.Get<Json?>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate
+        public Microsoft.Graph.Beta.Models.Json Rate
         {
-            get { return BackingStore?.Get<Json>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #endif
         /// <summary>The startPeriod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartPeriod
+        public Microsoft.Graph.Beta.Models.Json? StartPeriod
         {
-            get { return BackingStore?.Get<Json?>("startPeriod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("startPeriod"); }
             set { BackingStore?.Set("startPeriod", value); }
         }
 #nullable restore
 #else
-        public Json StartPeriod
+        public Microsoft.Graph.Beta.Models.Json StartPeriod
         {
-            get { return BackingStore?.Get<Json>("startPeriod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("startPeriod"); }
             set { BackingStore?.Set("startPeriod", value); }
         }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Type
+        public Microsoft.Graph.Beta.Models.Json? Type
         {
-            get { return BackingStore?.Get<Json?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public Json Type
+        public Microsoft.Graph.Beta.Models.Json Type
         {
-            get { return BackingStore?.Get<Json>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CumIPmtPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.CumIPmt.CumIPmtPostRequestBody"/> and sets the default values.
         /// </summary>
         public CumIPmtPostRequestBody()
         {
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CumIPmtPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.CumIPmt.CumIPmtPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CumIPmtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.CumIPmt.CumIPmtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CumIPmtPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.CumIPmt.CumIPmtPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endPeriod", n => { EndPeriod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "nper", n => { Nper = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "pv", n => { Pv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "startPeriod", n => { StartPeriod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "endPeriod", n => { EndPeriod = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "nper", n => { Nper = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "pv", n => { Pv = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "startPeriod", n => { StartPeriod = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -157,12 +157,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("endPeriod", EndPeriod);
-            writer.WriteObjectValue<Json>("nper", Nper);
-            writer.WriteObjectValue<Json>("pv", Pv);
-            writer.WriteObjectValue<Json>("rate", Rate);
-            writer.WriteObjectValue<Json>("startPeriod", StartPeriod);
-            writer.WriteObjectValue<Json>("type", Type);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("endPeriod", EndPeriod);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("nper", Nper);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("pv", Pv);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rate", Rate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("startPeriod", StartPeriod);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

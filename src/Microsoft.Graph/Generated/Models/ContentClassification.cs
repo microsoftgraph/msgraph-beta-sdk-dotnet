@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MatchLocation>? Matches
+        public List<Microsoft.Graph.Beta.Models.MatchLocation>? Matches
         {
-            get { return BackingStore?.Get<List<MatchLocation>?>("matches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MatchLocation>?>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #nullable restore
 #else
-        public List<MatchLocation> Matches
+        public List<Microsoft.Graph.Beta.Models.MatchLocation> Matches
         {
-            get { return BackingStore?.Get<List<MatchLocation>>("matches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MatchLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #endif
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uniqueCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContentClassification"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ContentClassification"/> and sets the default values.
         /// </summary>
         public ContentClassification()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentClassification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ContentClassification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentClassification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ContentClassification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentClassification();
+            return new Microsoft.Graph.Beta.Models.ContentClassification();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "confidence", n => { Confidence = n.GetIntValue(); } },
-                { "matches", n => { Matches = n.GetCollectionOfObjectValues<MatchLocation>(MatchLocation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matches", n => { Matches = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MatchLocation>(Microsoft.Graph.Beta.Models.MatchLocation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
                 { "uniqueCount", n => { UniqueCount = n.GetIntValue(); } },
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("confidence", Confidence);
-            writer.WriteCollectionOfObjectValues<MatchLocation>("matches", Matches);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MatchLocation>("matches", Matches);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sensitiveTypeId", SensitiveTypeId);
             writer.WriteIntValue("uniqueCount", UniqueCount);

@@ -21,34 +21,34 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
     public class DeviceEnrollmentConfigurationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createEnrollmentNotificationConfiguration method.</summary>
-        public CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration
+        public Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration.CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration
         {
-            get => new CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration.CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public HasPayloadLinksRequestBuilder HasPayloadLinks
+        public Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.HasPayloadLinks.HasPayloadLinksRequestBuilder HasPayloadLinks
         {
-            get => new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.HasPayloadLinks.HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of deviceEnrollmentConfiguration</param>
-        /// <returns>A <see cref="DeviceEnrollmentConfigurationItemRequestBuilder"/></returns>
-        public DeviceEnrollmentConfigurationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.DeviceEnrollmentConfigurationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.DeviceEnrollmentConfigurationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceEnrollmentConfiguration%2Did", position);
-                return new DeviceEnrollmentConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.DeviceEnrollmentConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceEnrollmentConfigurationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceEnrollmentConfigurationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -66,50 +66,50 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
         /// <summary>
         /// Get enrollment configurations targeted to the user
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentConfigurationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceEnrollmentConfigurationCollectionResponse?> GetAsync(Action<RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder.DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceEnrollmentConfigurationCollectionResponse> GetAsync(Action<RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder.DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceEnrollmentConfigurations for users
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceEnrollmentConfiguration?> PostAsync(DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration?> PostAsync(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceEnrollmentConfiguration> PostAsync(DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration> PostAsync(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get enrollment configurations targeted to the user
@@ -118,11 +118,11 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder.DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder.DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentConfigurationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceEnrollmentConfigurationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceEnrollmentConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get enrollment configurations targeted to the user
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>
+        public class DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder.DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

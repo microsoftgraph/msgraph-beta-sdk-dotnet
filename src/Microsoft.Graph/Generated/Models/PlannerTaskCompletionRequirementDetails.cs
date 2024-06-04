@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the requirements of an approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerApprovalRequirement? ApprovalRequirement
+        public Microsoft.Graph.Beta.Models.PlannerApprovalRequirement? ApprovalRequirement
         {
-            get { return BackingStore?.Get<PlannerApprovalRequirement?>("approvalRequirement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerApprovalRequirement?>("approvalRequirement"); }
             set { BackingStore?.Set("approvalRequirement", value); }
         }
 #nullable restore
 #else
-        public PlannerApprovalRequirement ApprovalRequirement
+        public Microsoft.Graph.Beta.Models.PlannerApprovalRequirement ApprovalRequirement
         {
-            get { return BackingStore?.Get<PlannerApprovalRequirement>("approvalRequirement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerApprovalRequirement>("approvalRequirement"); }
             set { BackingStore?.Set("approvalRequirement", value); }
         }
 #endif
@@ -38,32 +38,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the requirements for completing the checklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerChecklistRequirement? ChecklistRequirement
+        public Microsoft.Graph.Beta.Models.PlannerChecklistRequirement? ChecklistRequirement
         {
-            get { return BackingStore?.Get<PlannerChecklistRequirement?>("checklistRequirement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerChecklistRequirement?>("checklistRequirement"); }
             set { BackingStore?.Set("checklistRequirement", value); }
         }
 #nullable restore
 #else
-        public PlannerChecklistRequirement ChecklistRequirement
+        public Microsoft.Graph.Beta.Models.PlannerChecklistRequirement ChecklistRequirement
         {
-            get { return BackingStore?.Get<PlannerChecklistRequirement>("checklistRequirement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerChecklistRequirement>("checklistRequirement"); }
             set { BackingStore?.Set("checklistRequirement", value); }
         }
 #endif
         /// <summary>Information about the requirements for completing the forms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFormsRequirement? FormsRequirement
+        public Microsoft.Graph.Beta.Models.PlannerFormsRequirement? FormsRequirement
         {
-            get { return BackingStore?.Get<PlannerFormsRequirement?>("formsRequirement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFormsRequirement?>("formsRequirement"); }
             set { BackingStore?.Set("formsRequirement", value); }
         }
 #nullable restore
 #else
-        public PlannerFormsRequirement FormsRequirement
+        public Microsoft.Graph.Beta.Models.PlannerFormsRequirement FormsRequirement
         {
-            get { return BackingStore?.Get<PlannerFormsRequirement>("formsRequirement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFormsRequirement>("formsRequirement"); }
             set { BackingStore?.Set("formsRequirement", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskCompletionRequirementDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails"/> and sets the default values.
         /// </summary>
         public PlannerTaskCompletionRequirementDetails()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskCompletionRequirementDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerTaskCompletionRequirementDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTaskCompletionRequirementDetails();
+            return new Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirementDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approvalRequirement", n => { ApprovalRequirement = n.GetObjectValue<PlannerApprovalRequirement>(PlannerApprovalRequirement.CreateFromDiscriminatorValue); } },
-                { "checklistRequirement", n => { ChecklistRequirement = n.GetObjectValue<PlannerChecklistRequirement>(PlannerChecklistRequirement.CreateFromDiscriminatorValue); } },
-                { "formsRequirement", n => { FormsRequirement = n.GetObjectValue<PlannerFormsRequirement>(PlannerFormsRequirement.CreateFromDiscriminatorValue); } },
+                { "approvalRequirement", n => { ApprovalRequirement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerApprovalRequirement>(Microsoft.Graph.Beta.Models.PlannerApprovalRequirement.CreateFromDiscriminatorValue); } },
+                { "checklistRequirement", n => { ChecklistRequirement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerChecklistRequirement>(Microsoft.Graph.Beta.Models.PlannerChecklistRequirement.CreateFromDiscriminatorValue); } },
+                { "formsRequirement", n => { FormsRequirement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFormsRequirement>(Microsoft.Graph.Beta.Models.PlannerFormsRequirement.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PlannerApprovalRequirement>("approvalRequirement", ApprovalRequirement);
-            writer.WriteObjectValue<PlannerChecklistRequirement>("checklistRequirement", ChecklistRequirement);
-            writer.WriteObjectValue<PlannerFormsRequirement>("formsRequirement", FormsRequirement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerApprovalRequirement>("approvalRequirement", ApprovalRequirement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerChecklistRequirement>("checklistRequirement", ChecklistRequirement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFormsRequirement>("formsRequirement", FormsRequirement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

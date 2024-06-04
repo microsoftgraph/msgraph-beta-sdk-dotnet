@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperation
     public class TableRowOperationResultWithKeyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="TableRowOperationResultWithKeyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperationResultWithKey.TableRowOperationResultWithKeyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="key">Usage: key=&apos;{key}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperation
             if (!string.IsNullOrWhiteSpace(key)) PathParameters.Add("key", key);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TableRowOperationResultWithKeyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperationResultWithKey.TableRowOperationResultWithKeyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,25 +37,25 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperation
         /// <summary>
         /// Invoke function tableRowOperationResult
         /// </summary>
-        /// <returns>A <see cref="WorkbookTableRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookTableRow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookTableRow?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WorkbookTableRow?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkbookTableRow> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WorkbookTableRow> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WorkbookTableRow>(requestInfo, Microsoft.Graph.Beta.Models.WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function tableRowOperationResult
@@ -79,11 +79,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperation
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TableRowOperationResultWithKeyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperationResultWithKey.TableRowOperationResultWithKeyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TableRowOperationResultWithKeyRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperationResultWithKey.TableRowOperationResultWithKeyRequestBuilder WithUrl(string rawUrl)
         {
-            return new TableRowOperationResultWithKeyRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperationResultWithKey.TableRowOperationResultWithKeyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

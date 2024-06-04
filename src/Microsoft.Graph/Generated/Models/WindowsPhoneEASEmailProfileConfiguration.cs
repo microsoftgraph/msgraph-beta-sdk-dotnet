@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing configurations in this profile you can instruct the native email client on Windows Phone to communicate with an Exchange server and get email, contacts, calendar, and tasks. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class WindowsPhoneEASEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable
+    public class WindowsPhoneEASEmailProfileConfiguration : Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase, IParsable
     {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,15 +34,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applyOnlyToWindowsPhone81", value); }
         }
         /// <summary>Possible values for email sync duration.</summary>
-        public EmailSyncDuration? DurationOfEmailToSync
+        public Microsoft.Graph.Beta.Models.EmailSyncDuration? DurationOfEmailToSync
         {
-            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncDuration?>("durationOfEmailToSync"); }
             set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
         /// <summary>Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.</summary>
-        public UserEmailSource? EmailAddressSource
+        public Microsoft.Graph.Beta.Models.UserEmailSource? EmailAddressSource
         {
-            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserEmailSource?>("emailAddressSource"); }
             set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Possible values for email sync schedule.</summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhoneEASEmailProfileConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsPhoneEASEmailProfileConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsPhoneEASEmailProfileConfiguration() : base()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhoneEASEmailProfileConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPhoneEASEmailProfileConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhoneEASEmailProfileConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPhoneEASEmailProfileConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhoneEASEmailProfileConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsPhoneEASEmailProfileConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
                 { "applyOnlyToWindowsPhone81", n => { ApplyOnlyToWindowsPhone81 = n.GetBoolValue(); } },
-                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<EmailSyncDuration>(); } },
-                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<UserEmailSource>(); } },
-                { "emailSyncSchedule", n => { EmailSyncSchedule = n.GetEnumValue<EmailSyncSchedule>(); } },
+                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailSyncDuration>(); } },
+                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>(); } },
+                { "emailSyncSchedule", n => { EmailSyncSchedule = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailSyncSchedule>(); } },
                 { "hostName", n => { HostName = n.GetStringValue(); } },
                 { "requireSsl", n => { RequireSsl = n.GetBoolValue(); } },
                 { "syncCalendar", n => { SyncCalendar = n.GetBoolValue(); } },
@@ -137,9 +137,9 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountName", AccountName);
-            writer.WriteEnumValue<EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
-            writer.WriteEnumValue<UserEmailSource>("emailAddressSource", EmailAddressSource);
-            writer.WriteEnumValue<EmailSyncSchedule>("emailSyncSchedule", EmailSyncSchedule);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>("emailAddressSource", EmailAddressSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailSyncSchedule>("emailSyncSchedule", EmailSyncSchedule);
             writer.WriteStringValue("hostName", HostName);
             writer.WriteBoolValue("requireSsl", RequireSsl);
             writer.WriteBoolValue("syncCalendar", SyncCalendar);

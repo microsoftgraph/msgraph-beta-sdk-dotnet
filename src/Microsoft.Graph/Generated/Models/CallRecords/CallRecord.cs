@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? Modalities
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Modality?>? Modalities
         {
-            get { return BackingStore?.Get<List<Modality?>?>("modalities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Modality?>?>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> Modalities
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Modality?> Modalities
         {
-            get { return BackingStore?.Get<List<Modality?>>("modalities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Modality?>>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
 #endif
@@ -105,32 +105,32 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>List of distinct participants in the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Participant>? ParticipantsV2
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Participant>? ParticipantsV2
         {
-            get { return BackingStore?.Get<List<Participant>?>("participants_v2"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Participant>?>("participants_v2"); }
             set { BackingStore?.Set("participants_v2", value); }
         }
 #nullable restore
 #else
-        public List<Participant> ParticipantsV2
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Participant> ParticipantsV2
         {
-            get { return BackingStore?.Get<List<Participant>>("participants_v2"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Participant>>("participants_v2"); }
             set { BackingStore?.Set("participants_v2", value); }
         }
 #endif
         /// <summary>List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Session>? Sessions
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Session>? Sessions
         {
-            get { return BackingStore?.Get<List<Session>?>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Session>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<Session> Sessions
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Session> Sessions
         {
-            get { return BackingStore?.Get<List<Session>>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Session>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The type property</summary>
-        public CallType? Type
+        public Microsoft.Graph.Beta.Models.CallRecords.CallType? Type
         {
-            get { return BackingStore?.Get<CallType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.CallType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>Monotonically increasing version of the call record. Higher version call records with the same ID include additional data compared to the lower version.</summary>
@@ -155,12 +155,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.CallRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CallRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.CallRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CallRecord();
+            return new Microsoft.Graph.Beta.Models.CallRecords.CallRecord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -173,14 +173,14 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "modalities", n => { Modalities = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.CallRecords.Modality>()?.ToList(); } },
                 { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "organizer_v2", n => { OrganizerV2 = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.Organizer>(Microsoft.Graph.Beta.Models.CallRecords.Organizer.CreateFromDiscriminatorValue); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "participants_v2", n => { ParticipantsV2 = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "participants_v2", n => { ParticipantsV2 = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.Participant>(Microsoft.Graph.Beta.Models.CallRecords.Participant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.Session>(Microsoft.Graph.Beta.Models.CallRecords.Session.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<CallType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.CallRecords.CallType>(); } },
                 { "version", n => { Version = n.GetLongValue(); } },
             };
         }
@@ -195,14 +195,14 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfEnumValues<Modality>("modalities", Modalities);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.CallRecords.Modality>("modalities", Modalities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("organizer", Organizer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CallRecords.Organizer>("organizer_v2", OrganizerV2);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>("participants", Participants);
-            writer.WriteCollectionOfObjectValues<Participant>("participants_v2", ParticipantsV2);
-            writer.WriteCollectionOfObjectValues<Session>("sessions", Sessions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.Participant>("participants_v2", ParticipantsV2);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.Session>("sessions", Sessions);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<CallType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CallRecords.CallType>("type", Type);
             writer.WriteLongValue("version", Version);
         }
     }

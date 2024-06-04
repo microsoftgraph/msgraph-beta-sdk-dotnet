@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify an autologon kiosk configuration
     /// </summary>
-    public class WindowsKioskAutologon : WindowsKioskUser, IParsable
+    public class WindowsKioskAutologon : Microsoft.Graph.Beta.Models.WindowsKioskUser, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskAutologon"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskAutologon"/> and sets the default values.
         /// </summary>
         public WindowsKioskAutologon() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskAutologon"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskAutologon"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskAutologon CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskAutologon CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskAutologon();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskAutologon();
         }
         /// <summary>
         /// The deserialization information for the current model

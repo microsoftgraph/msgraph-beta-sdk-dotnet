@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A key-value pair with a string key and a Boolean value.
     /// </summary>
-    public class KeyBooleanValuePair : KeyTypedValuePair, IParsable
+    public class KeyBooleanValuePair : Microsoft.Graph.Beta.Models.KeyTypedValuePair, IParsable
     {
         /// <summary>The Boolean value of the key-value pair.</summary>
         public bool? Value
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="KeyBooleanValuePair"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.KeyBooleanValuePair"/> and sets the default values.
         /// </summary>
         public KeyBooleanValuePair() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KeyBooleanValuePair"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.KeyBooleanValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KeyBooleanValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.KeyBooleanValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KeyBooleanValuePair();
+            return new Microsoft.Graph.Beta.Models.KeyBooleanValuePair();
         }
         /// <summary>
         /// The deserialization information for the current model

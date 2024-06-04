@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Translation override behavior for languages, if any.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TranslationLanguageOverride>? LanguageOverrides
+        public List<Microsoft.Graph.Beta.Models.TranslationLanguageOverride>? LanguageOverrides
         {
-            get { return BackingStore?.Get<List<TranslationLanguageOverride>?>("languageOverrides"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TranslationLanguageOverride>?>("languageOverrides"); }
             set { BackingStore?.Set("languageOverrides", value); }
         }
 #nullable restore
 #else
-        public List<TranslationLanguageOverride> LanguageOverrides
+        public List<Microsoft.Graph.Beta.Models.TranslationLanguageOverride> LanguageOverrides
         {
-            get { return BackingStore?.Get<List<TranslationLanguageOverride>>("languageOverrides"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TranslationLanguageOverride>>("languageOverrides"); }
             set { BackingStore?.Set("languageOverrides", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TranslationPreferences"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TranslationPreferences"/> and sets the default values.
         /// </summary>
         public TranslationPreferences()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TranslationPreferences"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TranslationPreferences"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TranslationPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TranslationPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TranslationPreferences();
+            return new Microsoft.Graph.Beta.Models.TranslationPreferences();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "languageOverrides", n => { LanguageOverrides = n.GetCollectionOfObjectValues<TranslationLanguageOverride>(TranslationLanguageOverride.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "languageOverrides", n => { LanguageOverrides = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TranslationLanguageOverride>(Microsoft.Graph.Beta.Models.TranslationLanguageOverride.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "translationBehavior", n => { TranslationBehavior = n.GetEnumValue<TranslationBehavior>(); } },
+                { "translationBehavior", n => { TranslationBehavior = n.GetEnumValue<Microsoft.Graph.Beta.Models.TranslationBehavior>(); } },
                 { "untranslatedLanguages", n => { UntranslatedLanguages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<TranslationLanguageOverride>("languageOverrides", LanguageOverrides);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TranslationLanguageOverride>("languageOverrides", LanguageOverrides);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TranslationBehavior>("translationBehavior", TranslationBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TranslationBehavior>("translationBehavior", TranslationBehavior);
             writer.WriteCollectionOfPrimitiveValues<string>("untranslatedLanguages", UntranslatedLanguages);
             writer.WriteAdditionalData(AdditionalData);
         }

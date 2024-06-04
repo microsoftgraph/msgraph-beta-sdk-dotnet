@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the health summary of the Windows management app.
     /// </summary>
-    public class WindowsManagementAppHealthSummary : Entity, IParsable
+    public class WindowsManagementAppHealthSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Healthy device count.</summary>
         public int? HealthyDeviceCount
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsManagementAppHealthSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsManagementAppHealthSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsManagementAppHealthSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsManagementAppHealthSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsManagementAppHealthSummary();
+            return new Microsoft.Graph.Beta.Models.WindowsManagementAppHealthSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

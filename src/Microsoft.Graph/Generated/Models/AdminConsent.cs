@@ -37,19 +37,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Admin consent state.</summary>
-        public AdminConsentState? ShareAPNSData
+        public Microsoft.Graph.Beta.Models.AdminConsentState? ShareAPNSData
         {
-            get { return BackingStore?.Get<AdminConsentState?>("shareAPNSData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsentState?>("shareAPNSData"); }
             set { BackingStore?.Set("shareAPNSData", value); }
         }
         /// <summary>Admin consent state.</summary>
-        public AdminConsentState? ShareUserExperienceAnalyticsData
+        public Microsoft.Graph.Beta.Models.AdminConsentState? ShareUserExperienceAnalyticsData
         {
-            get { return BackingStore?.Get<AdminConsentState?>("shareUserExperienceAnalyticsData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsentState?>("shareUserExperienceAnalyticsData"); }
             set { BackingStore?.Set("shareUserExperienceAnalyticsData", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdminConsent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AdminConsent"/> and sets the default values.
         /// </summary>
         public AdminConsent()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdminConsent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdminConsent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AdminConsent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AdminConsent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdminConsent();
+            return new Microsoft.Graph.Beta.Models.AdminConsent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "shareAPNSData", n => { ShareAPNSData = n.GetEnumValue<AdminConsentState>(); } },
-                { "shareUserExperienceAnalyticsData", n => { ShareUserExperienceAnalyticsData = n.GetEnumValue<AdminConsentState>(); } },
+                { "shareAPNSData", n => { ShareAPNSData = n.GetEnumValue<Microsoft.Graph.Beta.Models.AdminConsentState>(); } },
+                { "shareUserExperienceAnalyticsData", n => { ShareUserExperienceAnalyticsData = n.GetEnumValue<Microsoft.Graph.Beta.Models.AdminConsentState>(); } },
             };
         }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AdminConsentState>("shareAPNSData", ShareAPNSData);
-            writer.WriteEnumValue<AdminConsentState>("shareUserExperienceAnalyticsData", ShareUserExperienceAnalyticsData);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AdminConsentState>("shareAPNSData", ShareAPNSData);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AdminConsentState>("shareUserExperienceAnalyticsData", ShareUserExperienceAnalyticsData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

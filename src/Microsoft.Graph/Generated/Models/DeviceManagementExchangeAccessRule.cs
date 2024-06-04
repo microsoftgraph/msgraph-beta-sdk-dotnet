@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Models
     public class DeviceManagementExchangeAccessRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Access Level in Exchange.</summary>
-        public DeviceManagementExchangeAccessLevel? AccessLevel
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel? AccessLevel
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessLevel?>("accessLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel?>("accessLevel"); }
             set { BackingStore?.Set("accessLevel", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Device Class which will be impacted by this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementExchangeDeviceClass? DeviceClass
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass? DeviceClass
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeDeviceClass?>("deviceClass"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass?>("deviceClass"); }
             set { BackingStore?.Set("deviceClass", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementExchangeDeviceClass DeviceClass
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass DeviceClass
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeDeviceClass>("deviceClass"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>("deviceClass"); }
             set { BackingStore?.Set("deviceClass", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementExchangeAccessRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule"/> and sets the default values.
         /// </summary>
         public DeviceManagementExchangeAccessRule()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementExchangeAccessRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementExchangeAccessRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementExchangeAccessRule();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessLevel", n => { AccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
-                { "deviceClass", n => { DeviceClass = n.GetObjectValue<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue); } },
+                { "accessLevel", n => { AccessLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel>(); } },
+                { "deviceClass", n => { DeviceClass = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DeviceManagementExchangeAccessLevel>("accessLevel", AccessLevel);
-            writer.WriteObjectValue<DeviceManagementExchangeDeviceClass>("deviceClass", DeviceClass);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessLevel>("accessLevel", AccessLevel);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass>("deviceClass", DeviceClass);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

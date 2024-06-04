@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GcpRole : Entity, IParsable
+    public class GcpRole : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the GCP role. Supports $filter and (eq,contains).</summary>
@@ -51,28 +51,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Resources that an identity assigned this GCP role can perform actions on. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpScope>? Scopes
+        public List<Microsoft.Graph.Beta.Models.GcpScope>? Scopes
         {
-            get { return BackingStore?.Get<List<GcpScope>?>("scopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpScope>?>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #nullable restore
 #else
-        public List<GcpScope> Scopes
+        public List<Microsoft.Graph.Beta.Models.GcpScope> Scopes
         {
-            get { return BackingStore?.Get<List<GcpScope>>("scopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpScope>>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GcpRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GcpRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GcpRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GcpRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GcpRole();
+            return new Microsoft.Graph.Beta.Models.GcpRole();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "gcpRoleType", n => { GcpRoleType = n.GetEnumValue<GcpRoleType>(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<GcpScope>(GcpScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "gcpRoleType", n => { GcpRoleType = n.GetEnumValue<Microsoft.Graph.Beta.Models.GcpRoleType>(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpScope>(Microsoft.Graph.Beta.Models.GcpScope.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -98,8 +98,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteEnumValue<GcpRoleType>("gcpRoleType", GcpRoleType);
-            writer.WriteCollectionOfObjectValues<GcpScope>("scopes", Scopes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GcpRoleType>("gcpRoleType", GcpRoleType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpScope>("scopes", Scopes);
         }
     }
 }

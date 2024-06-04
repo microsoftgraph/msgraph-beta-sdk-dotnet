@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         /// <summary>The scheduledActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementComplianceScheduledActionForRule>? ScheduledActions
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule>? ScheduledActions
         {
-            get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>?>("scheduledActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule>?>("scheduledActions"); }
             set { BackingStore?.Set("scheduledActions", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementComplianceScheduledActionForRule> ScheduledActions
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule> ScheduledActions
         {
-            get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>("scheduledActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule>>("scheduledActions"); }
             set { BackingStore?.Set("scheduledActions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SetScheduledActionsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions.SetScheduledActionsPostRequestBody"/> and sets the default values.
         /// </summary>
         public SetScheduledActionsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetScheduledActionsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions.SetScheduledActionsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetScheduledActionsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions.SetScheduledActionsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetScheduledActionsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions.SetScheduledActionsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scheduledActions", n => { ScheduledActions = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scheduledActions", n => { ScheduledActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule>(Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>("scheduledActions", ScheduledActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementComplianceScheduledActionForRule>("scheduledActions", ScheduledActions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

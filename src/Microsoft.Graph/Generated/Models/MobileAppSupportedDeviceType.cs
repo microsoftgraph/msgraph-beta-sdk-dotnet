@@ -69,13 +69,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device type.</summary>
-        public DeviceType? Type
+        public Microsoft.Graph.Beta.Models.DeviceType? Type
         {
-            get { return BackingStore?.Get<DeviceType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MobileAppSupportedDeviceType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType"/> and sets the default values.
         /// </summary>
         public MobileAppSupportedDeviceType()
         {
@@ -85,12 +85,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppSupportedDeviceType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MobileAppSupportedDeviceType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppSupportedDeviceType();
+            return new Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "maximumOperatingSystemVersion", n => { MaximumOperatingSystemVersion = n.GetStringValue(); } },
                 { "minimumOperatingSystemVersion", n => { MinimumOperatingSystemVersion = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<DeviceType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceType>(); } },
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("maximumOperatingSystemVersion", MaximumOperatingSystemVersion);
             writer.WriteStringValue("minimumOperatingSystemVersion", MinimumOperatingSystemVersion);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeviceType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

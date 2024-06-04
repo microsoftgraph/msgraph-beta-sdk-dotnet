@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("useLocalTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WinGetAppInstallTimeSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings"/> and sets the default values.
         /// </summary>
         public WinGetAppInstallTimeSettings()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WinGetAppInstallTimeSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WinGetAppInstallTimeSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WinGetAppInstallTimeSettings();
+            return new Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

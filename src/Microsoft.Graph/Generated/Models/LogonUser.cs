@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
-        public UserAccountSecurityType? AccountType
+        public Microsoft.Graph.Beta.Models.UserAccountSecurityType? AccountType
         {
-            get { return BackingStore?.Get<UserAccountSecurityType?>("accountType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserAccountSecurityType?>("accountType"); }
             set { BackingStore?.Set("accountType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -88,16 +88,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LogonType?>? LogonTypes
+        public List<Microsoft.Graph.Beta.Models.LogonType?>? LogonTypes
         {
-            get { return BackingStore?.Get<List<LogonType?>?>("logonTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LogonType?>?>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
 #nullable restore
 #else
-        public List<LogonType?> LogonTypes
+        public List<Microsoft.Graph.Beta.Models.LogonType?> LogonTypes
         {
-            get { return BackingStore?.Get<List<LogonType?>>("logonTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LogonType?>>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
 #endif
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LogonUser"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.LogonUser"/> and sets the default values.
         /// </summary>
         public LogonUser()
         {
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LogonUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LogonUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LogonUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.LogonUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LogonUser();
+            return new Microsoft.Graph.Beta.Models.LogonUser();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accountDomain", n => { AccountDomain = n.GetStringValue(); } },
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
-                { "accountType", n => { AccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
+                { "accountType", n => { AccountType = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserAccountSecurityType>(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "logonId", n => { LogonId = n.GetStringValue(); } },
-                { "logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<LogonType>()?.ToList(); } },
+                { "logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.LogonType>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -162,11 +162,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountDomain", AccountDomain);
             writer.WriteStringValue("accountName", AccountName);
-            writer.WriteEnumValue<UserAccountSecurityType>("accountType", AccountType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserAccountSecurityType>("accountType", AccountType);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("logonId", LogonId);
-            writer.WriteCollectionOfEnumValues<LogonType>("logonTypes", LogonTypes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.LogonType>("logonTypes", LogonTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

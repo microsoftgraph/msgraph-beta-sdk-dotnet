@@ -22,96 +22,96 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A comment was added to the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CommentAction? Comment
+        public Microsoft.Graph.Beta.Models.CommentAction? Comment
         {
-            get { return BackingStore?.Get<CommentAction?>("comment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CommentAction?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public CommentAction Comment
+        public Microsoft.Graph.Beta.Models.CommentAction Comment
         {
-            get { return BackingStore?.Get<CommentAction>("comment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CommentAction>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>An item was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CreateAction? Create
+        public Microsoft.Graph.Beta.Models.CreateAction? Create
         {
-            get { return BackingStore?.Get<CreateAction?>("create"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CreateAction?>("create"); }
             set { BackingStore?.Set("create", value); }
         }
 #nullable restore
 #else
-        public CreateAction Create
+        public Microsoft.Graph.Beta.Models.CreateAction Create
         {
-            get { return BackingStore?.Get<CreateAction>("create"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CreateAction>("create"); }
             set { BackingStore?.Set("create", value); }
         }
 #endif
         /// <summary>An item was deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeleteAction? Delete
+        public Microsoft.Graph.Beta.Models.DeleteAction? Delete
         {
-            get { return BackingStore?.Get<DeleteAction?>("delete"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeleteAction?>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
 #nullable restore
 #else
-        public DeleteAction Delete
+        public Microsoft.Graph.Beta.Models.DeleteAction Delete
         {
-            get { return BackingStore?.Get<DeleteAction>("delete"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeleteAction>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
 #endif
         /// <summary>An item was edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EditAction? Edit
+        public Microsoft.Graph.Beta.Models.EditAction? Edit
         {
-            get { return BackingStore?.Get<EditAction?>("edit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EditAction?>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
 #nullable restore
 #else
-        public EditAction Edit
+        public Microsoft.Graph.Beta.Models.EditAction Edit
         {
-            get { return BackingStore?.Get<EditAction>("edit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EditAction>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
 #endif
         /// <summary>A user was mentioned in the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MentionAction? Mention
+        public Microsoft.Graph.Beta.Models.MentionAction? Mention
         {
-            get { return BackingStore?.Get<MentionAction?>("mention"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MentionAction?>("mention"); }
             set { BackingStore?.Set("mention", value); }
         }
 #nullable restore
 #else
-        public MentionAction Mention
+        public Microsoft.Graph.Beta.Models.MentionAction Mention
         {
-            get { return BackingStore?.Get<MentionAction>("mention"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MentionAction>("mention"); }
             set { BackingStore?.Set("mention", value); }
         }
 #endif
         /// <summary>An item was moved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MoveAction? Move
+        public Microsoft.Graph.Beta.Models.MoveAction? Move
         {
-            get { return BackingStore?.Get<MoveAction?>("move"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MoveAction?>("move"); }
             set { BackingStore?.Set("move", value); }
         }
 #nullable restore
 #else
-        public MoveAction Move
+        public Microsoft.Graph.Beta.Models.MoveAction Move
         {
-            get { return BackingStore?.Get<MoveAction>("move"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MoveAction>("move"); }
             set { BackingStore?.Set("move", value); }
         }
 #endif
@@ -134,69 +134,69 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>An item was renamed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RenameAction? Rename
+        public Microsoft.Graph.Beta.Models.RenameAction? Rename
         {
-            get { return BackingStore?.Get<RenameAction?>("rename"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RenameAction?>("rename"); }
             set { BackingStore?.Set("rename", value); }
         }
 #nullable restore
 #else
-        public RenameAction Rename
+        public Microsoft.Graph.Beta.Models.RenameAction Rename
         {
-            get { return BackingStore?.Get<RenameAction>("rename"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RenameAction>("rename"); }
             set { BackingStore?.Set("rename", value); }
         }
 #endif
         /// <summary>An item was restored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RestoreAction? Restore
+        public Microsoft.Graph.Beta.Models.RestoreAction? Restore
         {
-            get { return BackingStore?.Get<RestoreAction?>("restore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestoreAction?>("restore"); }
             set { BackingStore?.Set("restore", value); }
         }
 #nullable restore
 #else
-        public RestoreAction Restore
+        public Microsoft.Graph.Beta.Models.RestoreAction Restore
         {
-            get { return BackingStore?.Get<RestoreAction>("restore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestoreAction>("restore"); }
             set { BackingStore?.Set("restore", value); }
         }
 #endif
         /// <summary>An item was shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShareAction? Share
+        public Microsoft.Graph.Beta.Models.ShareAction? Share
         {
-            get { return BackingStore?.Get<ShareAction?>("share"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShareAction?>("share"); }
             set { BackingStore?.Set("share", value); }
         }
 #nullable restore
 #else
-        public ShareAction Share
+        public Microsoft.Graph.Beta.Models.ShareAction Share
         {
-            get { return BackingStore?.Get<ShareAction>("share"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShareAction>("share"); }
             set { BackingStore?.Set("share", value); }
         }
 #endif
         /// <summary>An item was versioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VersionAction? Version
+        public Microsoft.Graph.Beta.Models.VersionAction? Version
         {
-            get { return BackingStore?.Get<VersionAction?>("version"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VersionAction?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public VersionAction Version
+        public Microsoft.Graph.Beta.Models.VersionAction Version
         {
-            get { return BackingStore?.Get<VersionAction>("version"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VersionAction>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ItemActionSet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ItemActionSet"/> and sets the default values.
         /// </summary>
         public ItemActionSet()
         {
@@ -206,12 +206,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemActionSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemActionSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ItemActionSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ItemActionSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemActionSet();
+            return new Microsoft.Graph.Beta.Models.ItemActionSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -221,17 +221,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<CommentAction>(CommentAction.CreateFromDiscriminatorValue); } },
-                { "create", n => { Create = n.GetObjectValue<CreateAction>(CreateAction.CreateFromDiscriminatorValue); } },
-                { "delete", n => { Delete = n.GetObjectValue<DeleteAction>(DeleteAction.CreateFromDiscriminatorValue); } },
-                { "edit", n => { Edit = n.GetObjectValue<EditAction>(EditAction.CreateFromDiscriminatorValue); } },
-                { "mention", n => { Mention = n.GetObjectValue<MentionAction>(MentionAction.CreateFromDiscriminatorValue); } },
-                { "move", n => { Move = n.GetObjectValue<MoveAction>(MoveAction.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetObjectValue<Microsoft.Graph.Beta.Models.CommentAction>(Microsoft.Graph.Beta.Models.CommentAction.CreateFromDiscriminatorValue); } },
+                { "create", n => { Create = n.GetObjectValue<Microsoft.Graph.Beta.Models.CreateAction>(Microsoft.Graph.Beta.Models.CreateAction.CreateFromDiscriminatorValue); } },
+                { "delete", n => { Delete = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeleteAction>(Microsoft.Graph.Beta.Models.DeleteAction.CreateFromDiscriminatorValue); } },
+                { "edit", n => { Edit = n.GetObjectValue<Microsoft.Graph.Beta.Models.EditAction>(Microsoft.Graph.Beta.Models.EditAction.CreateFromDiscriminatorValue); } },
+                { "mention", n => { Mention = n.GetObjectValue<Microsoft.Graph.Beta.Models.MentionAction>(Microsoft.Graph.Beta.Models.MentionAction.CreateFromDiscriminatorValue); } },
+                { "move", n => { Move = n.GetObjectValue<Microsoft.Graph.Beta.Models.MoveAction>(Microsoft.Graph.Beta.Models.MoveAction.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "rename", n => { Rename = n.GetObjectValue<RenameAction>(RenameAction.CreateFromDiscriminatorValue); } },
-                { "restore", n => { Restore = n.GetObjectValue<RestoreAction>(RestoreAction.CreateFromDiscriminatorValue); } },
-                { "share", n => { Share = n.GetObjectValue<ShareAction>(ShareAction.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetObjectValue<VersionAction>(VersionAction.CreateFromDiscriminatorValue); } },
+                { "rename", n => { Rename = n.GetObjectValue<Microsoft.Graph.Beta.Models.RenameAction>(Microsoft.Graph.Beta.Models.RenameAction.CreateFromDiscriminatorValue); } },
+                { "restore", n => { Restore = n.GetObjectValue<Microsoft.Graph.Beta.Models.RestoreAction>(Microsoft.Graph.Beta.Models.RestoreAction.CreateFromDiscriminatorValue); } },
+                { "share", n => { Share = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShareAction>(Microsoft.Graph.Beta.Models.ShareAction.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetObjectValue<Microsoft.Graph.Beta.Models.VersionAction>(Microsoft.Graph.Beta.Models.VersionAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -241,17 +241,17 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<CommentAction>("comment", Comment);
-            writer.WriteObjectValue<CreateAction>("create", Create);
-            writer.WriteObjectValue<DeleteAction>("delete", Delete);
-            writer.WriteObjectValue<EditAction>("edit", Edit);
-            writer.WriteObjectValue<MentionAction>("mention", Mention);
-            writer.WriteObjectValue<MoveAction>("move", Move);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CommentAction>("comment", Comment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CreateAction>("create", Create);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeleteAction>("delete", Delete);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EditAction>("edit", Edit);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MentionAction>("mention", Mention);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MoveAction>("move", Move);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<RenameAction>("rename", Rename);
-            writer.WriteObjectValue<RestoreAction>("restore", Restore);
-            writer.WriteObjectValue<ShareAction>("share", Share);
-            writer.WriteObjectValue<VersionAction>("version", Version);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RenameAction>("rename", Rename);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RestoreAction>("restore", Restore);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ShareAction>("share", Share);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VersionAction>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

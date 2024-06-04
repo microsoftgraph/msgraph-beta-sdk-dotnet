@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
     public class AuthorizationPolicyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.</summary>
         /// <param name="position">The unique identifier of authorizationPolicy</param>
-        /// <returns>A <see cref="AuthorizationPolicyItemRequestBuilder"/></returns>
-        public AuthorizationPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.AuthorizationPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.AuthorizationPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("authorizationPolicy%2Did", position);
-                return new AuthorizationPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.AuthorizationPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthorizationPolicyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthorizationPolicyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
         /// Retrieve the properties of an authorizationPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="AuthorizationPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthorizationPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<AuthorizationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder.AuthorizationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthorizationPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<AuthorizationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder.AuthorizationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthorizationPolicyCollectionResponse>(requestInfo, AuthorizationPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to authorizationPolicy for policies
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicy?> PostAsync(Microsoft.Graph.Beta.Models.AuthorizationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorizationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder.AuthorizationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorizationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder.AuthorizationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthorizationPolicyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthorizationPolicyRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthorizationPolicyRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties of an authorizationPolicy object.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthorizationPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthorizationPolicyRequestBuilderGetQueryParameters>
+        public class AuthorizationPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder.AuthorizationPolicyRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

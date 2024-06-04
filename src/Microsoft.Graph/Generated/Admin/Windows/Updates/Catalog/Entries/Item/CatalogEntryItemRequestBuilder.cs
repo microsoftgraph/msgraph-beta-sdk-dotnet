@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
     public class CatalogEntryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CatalogEntryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CatalogEntryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -60,20 +60,20 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry?> GetAsync(Action<RequestConfiguration<CatalogEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder.CatalogEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry> GetAsync(Action<RequestConfiguration<CatalogEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder.CatalogEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry?> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CatalogEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder.CatalogEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CatalogEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder.CatalogEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CatalogEntryItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CatalogEntryItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new CatalogEntryItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CatalogEntryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CatalogEntryItemRequestBuilderGetQueryParameters>
+        public class CatalogEntryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item.CatalogEntryItemRequestBuilder.CatalogEntryItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

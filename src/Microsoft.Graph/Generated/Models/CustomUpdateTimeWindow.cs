@@ -22,9 +22,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDay property</summary>
-        public DayOfWeekObject? EndDay
+        public Microsoft.Graph.Beta.Models.DayOfWeekObject? EndDay
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("endDay"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeekObject?>("endDay"); }
             set { BackingStore?.Set("endDay", value); }
         }
         /// <summary>End time of the time window</summary>
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The startDay property</summary>
-        public DayOfWeekObject? StartDay
+        public Microsoft.Graph.Beta.Models.DayOfWeekObject? StartDay
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("startDay"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeekObject?>("startDay"); }
             set { BackingStore?.Set("startDay", value); }
         }
         /// <summary>Start time of the time window</summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomUpdateTimeWindow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow"/> and sets the default values.
         /// </summary>
         public CustomUpdateTimeWindow()
         {
@@ -72,12 +72,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomUpdateTimeWindow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomUpdateTimeWindow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomUpdateTimeWindow();
+            return new Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,10 +87,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endDay", n => { EndDay = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "endDay", n => { EndDay = n.GetEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>(); } },
                 { "endTime", n => { EndTime = n.GetTimeValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "startDay", n => { StartDay = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "startDay", n => { StartDay = n.GetEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>(); } },
                 { "startTime", n => { StartTime = n.GetTimeValue(); } },
             };
         }
@@ -101,10 +101,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DayOfWeekObject>("endDay", EndDay);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>("endDay", EndDay);
             writer.WriteTimeValue("endTime", EndTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DayOfWeekObject>("startDay", StartDay);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>("startDay", StartDay);
             writer.WriteTimeValue("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }

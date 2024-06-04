@@ -29,28 +29,28 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The set of roles included in the role group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleReferenceValue>? Roles
+        public List<Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue>? Roles
         {
-            get { return BackingStore?.Get<List<RoleReferenceValue>?>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<RoleReferenceValue> Roles
+        public List<Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue> Roles
         {
-            get { return BackingStore?.Get<List<RoleReferenceValue>>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.RoleGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RoleGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.RoleGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RoleGroup();
+            return new Microsoft.Graph.Beta.Models.IndustryData.RoleGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "roles", n => { Roles = n.GetCollectionOfObjectValues<RoleReferenceValue>(RoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<RoleReferenceValue>("roles", Roles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue>("roles", Roles);
         }
     }
 }

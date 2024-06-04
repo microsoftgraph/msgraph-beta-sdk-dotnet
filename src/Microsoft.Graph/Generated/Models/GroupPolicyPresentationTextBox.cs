@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an ADMX textBox element and an ADMX text element.
     /// </summary>
-    public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable
+    public class GroupPolicyPresentationTextBox : Microsoft.Graph.Beta.Models.GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>Localized default string displayed in the text box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyPresentationTextBox"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationTextBox"/> and sets the default values.
         /// </summary>
         public GroupPolicyPresentationTextBox() : base()
         {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyPresentationTextBox"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationTextBox"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyPresentationTextBox CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyPresentationTextBox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyPresentationTextBox();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyPresentationTextBox();
         }
         /// <summary>
         /// The deserialization information for the current model

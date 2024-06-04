@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ServicePrincipalCreationPolicy : PolicyBase, IParsable
+    public class ServicePrincipalCreationPolicy : Microsoft.Graph.Beta.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The excludes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalCreationConditionSet>? Excludes
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>? Excludes
         {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>?>("excludes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>?>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalCreationConditionSet> Excludes
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet> Excludes
         {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("excludes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #endif
         /// <summary>The includes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalCreationConditionSet>? Includes
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>? Includes
         {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>?>("includes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>?>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalCreationConditionSet> Includes
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet> Includes
         {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("includes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #endif
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServicePrincipalCreationPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy"/> and sets the default values.
         /// </summary>
         public ServicePrincipalCreationPolicy() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServicePrincipalCreationPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServicePrincipalCreationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServicePrincipalCreationPolicy();
+            return new Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<ServicePrincipalCreationConditionSet>(ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "includes", n => { Includes = n.GetCollectionOfObjectValues<ServicePrincipalCreationConditionSet>(ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>(Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includes", n => { Includes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>(Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
             };
         }
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ServicePrincipalCreationConditionSet>("excludes", Excludes);
-            writer.WriteCollectionOfObjectValues<ServicePrincipalCreationConditionSet>("includes", Includes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>("excludes", Excludes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalCreationConditionSet>("includes", Includes);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
         }
     }

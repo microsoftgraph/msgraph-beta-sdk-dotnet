@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
 {
     [Obsolete("This class is obsolete. Use GetDevicesScheduledToRetireGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetDevicesScheduledToRetireResponse : GetDevicesScheduledToRetireGetResponse, IParsable
+    public class GetDevicesScheduledToRetireResponse : Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire.GetDevicesScheduledToRetireGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetDevicesScheduledToRetireResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire.GetDevicesScheduledToRetireResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetDevicesScheduledToRetireResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire.GetDevicesScheduledToRetireResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetDevicesScheduledToRetireResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire.GetDevicesScheduledToRetireResponse();
         }
     }
 }

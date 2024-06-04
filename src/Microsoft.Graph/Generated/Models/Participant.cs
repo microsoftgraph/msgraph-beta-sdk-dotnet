@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Participant : Entity, IParsable
+    public class Participant : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? Info
+        public Microsoft.Graph.Beta.Models.ParticipantInfo? Info
         {
-            get { return BackingStore?.Get<ParticipantInfo?>("info"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParticipantInfo?>("info"); }
             set { BackingStore?.Set("info", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo Info
+        public Microsoft.Graph.Beta.Models.ParticipantInfo Info
         {
-            get { return BackingStore?.Get<ParticipantInfo>("info"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParticipantInfo>("info"); }
             set { BackingStore?.Set("info", value); }
         }
 #endif
@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of media streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaStream>? MediaStreams
+        public List<Microsoft.Graph.Beta.Models.MediaStream>? MediaStreams
         {
-            get { return BackingStore?.Get<List<MediaStream>?>("mediaStreams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MediaStream>?>("mediaStreams"); }
             set { BackingStore?.Set("mediaStreams", value); }
         }
 #nullable restore
 #else
-        public List<MediaStream> MediaStreams
+        public List<Microsoft.Graph.Beta.Models.MediaStream> MediaStreams
         {
-            get { return BackingStore?.Get<List<MediaStream>>("mediaStreams"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MediaStream>>("mediaStreams"); }
             set { BackingStore?.Set("mediaStreams", value); }
         }
 #endif
@@ -127,16 +127,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the reason or reasons why media content from this participant is restricted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnlineMeetingRestricted? RestrictedExperience
+        public Microsoft.Graph.Beta.Models.OnlineMeetingRestricted? RestrictedExperience
         {
-            get { return BackingStore?.Get<OnlineMeetingRestricted?>("restrictedExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingRestricted?>("restrictedExperience"); }
             set { BackingStore?.Set("restrictedExperience", value); }
         }
 #nullable restore
 #else
-        public OnlineMeetingRestricted RestrictedExperience
+        public Microsoft.Graph.Beta.Models.OnlineMeetingRestricted RestrictedExperience
         {
-            get { return BackingStore?.Get<OnlineMeetingRestricted>("restrictedExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingRestricted>("restrictedExperience"); }
             set { BackingStore?.Set("restrictedExperience", value); }
         }
 #endif
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Participant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Participant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Participant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Participant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Participant();
+            return new Microsoft.Graph.Beta.Models.Participant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,16 +164,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "info", n => { Info = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<Microsoft.Graph.Beta.Models.ParticipantInfo>(Microsoft.Graph.Beta.Models.ParticipantInfo.CreateFromDiscriminatorValue); } },
                 { "isIdentityAnonymized", n => { IsIdentityAnonymized = n.GetBoolValue(); } },
                 { "isInLobby", n => { IsInLobby = n.GetBoolValue(); } },
                 { "isMuted", n => { IsMuted = n.GetBoolValue(); } },
-                { "mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MediaStream>(Microsoft.Graph.Beta.Models.MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
                 { "preferredDisplayName", n => { PreferredDisplayName = n.GetStringValue(); } },
                 { "recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
                 { "removedState", n => { RemovedState = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemovedState>(Microsoft.Graph.Beta.Models.RemovedState.CreateFromDiscriminatorValue); } },
-                { "restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<OnlineMeetingRestricted>(OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
+                { "restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnlineMeetingRestricted>(Microsoft.Graph.Beta.Models.OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
                 { "rosterSequenceNumber", n => { RosterSequenceNumber = n.GetLongValue(); } },
             };
         }
@@ -185,16 +185,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ParticipantInfo>("info", Info);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ParticipantInfo>("info", Info);
             writer.WriteBoolValue("isIdentityAnonymized", IsIdentityAnonymized);
             writer.WriteBoolValue("isInLobby", IsInLobby);
             writer.WriteBoolValue("isMuted", IsMuted);
-            writer.WriteCollectionOfObjectValues<MediaStream>("mediaStreams", MediaStreams);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MediaStream>("mediaStreams", MediaStreams);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteStringValue("preferredDisplayName", PreferredDisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo", RecordingInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemovedState>("removedState", RemovedState);
-            writer.WriteObjectValue<OnlineMeetingRestricted>("restrictedExperience", RestrictedExperience);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnlineMeetingRestricted>("restrictedExperience", RestrictedExperience);
             writer.WriteLongValue("rosterSequenceNumber", RosterSequenceNumber);
         }
     }

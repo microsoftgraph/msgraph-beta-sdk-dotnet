@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionsCreepIndexDistribution : Entity, IParsable
+    public class PermissionsCreepIndexDistribution : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authorizationSystem property</summary>
@@ -35,60 +35,60 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The highRiskProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskProfile? HighRiskProfile
+        public Microsoft.Graph.Beta.Models.RiskProfile? HighRiskProfile
         {
-            get { return BackingStore?.Get<RiskProfile?>("highRiskProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskProfile?>("highRiskProfile"); }
             set { BackingStore?.Set("highRiskProfile", value); }
         }
 #nullable restore
 #else
-        public RiskProfile HighRiskProfile
+        public Microsoft.Graph.Beta.Models.RiskProfile HighRiskProfile
         {
-            get { return BackingStore?.Get<RiskProfile>("highRiskProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskProfile>("highRiskProfile"); }
             set { BackingStore?.Set("highRiskProfile", value); }
         }
 #endif
         /// <summary>The lowRiskProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskProfile? LowRiskProfile
+        public Microsoft.Graph.Beta.Models.RiskProfile? LowRiskProfile
         {
-            get { return BackingStore?.Get<RiskProfile?>("lowRiskProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskProfile?>("lowRiskProfile"); }
             set { BackingStore?.Set("lowRiskProfile", value); }
         }
 #nullable restore
 #else
-        public RiskProfile LowRiskProfile
+        public Microsoft.Graph.Beta.Models.RiskProfile LowRiskProfile
         {
-            get { return BackingStore?.Get<RiskProfile>("lowRiskProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskProfile>("lowRiskProfile"); }
             set { BackingStore?.Set("lowRiskProfile", value); }
         }
 #endif
         /// <summary>The mediumRiskProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskProfile? MediumRiskProfile
+        public Microsoft.Graph.Beta.Models.RiskProfile? MediumRiskProfile
         {
-            get { return BackingStore?.Get<RiskProfile?>("mediumRiskProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskProfile?>("mediumRiskProfile"); }
             set { BackingStore?.Set("mediumRiskProfile", value); }
         }
 #nullable restore
 #else
-        public RiskProfile MediumRiskProfile
+        public Microsoft.Graph.Beta.Models.RiskProfile MediumRiskProfile
         {
-            get { return BackingStore?.Get<RiskProfile>("mediumRiskProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskProfile>("mediumRiskProfile"); }
             set { BackingStore?.Set("mediumRiskProfile", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsCreepIndexDistribution"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionsCreepIndexDistribution CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionsCreepIndexDistribution();
+            return new Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "highRiskProfile", n => { HighRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
-                { "lowRiskProfile", n => { LowRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
-                { "mediumRiskProfile", n => { MediumRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
+                { "highRiskProfile", n => { HighRiskProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.RiskProfile>(Microsoft.Graph.Beta.Models.RiskProfile.CreateFromDiscriminatorValue); } },
+                { "lowRiskProfile", n => { LowRiskProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.RiskProfile>(Microsoft.Graph.Beta.Models.RiskProfile.CreateFromDiscriminatorValue); } },
+                { "mediumRiskProfile", n => { MediumRiskProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.RiskProfile>(Microsoft.Graph.Beta.Models.RiskProfile.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystem", AuthorizationSystem);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<RiskProfile>("highRiskProfile", HighRiskProfile);
-            writer.WriteObjectValue<RiskProfile>("lowRiskProfile", LowRiskProfile);
-            writer.WriteObjectValue<RiskProfile>("mediumRiskProfile", MediumRiskProfile);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RiskProfile>("highRiskProfile", HighRiskProfile);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RiskProfile>("lowRiskProfile", LowRiskProfile);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RiskProfile>("mediumRiskProfile", MediumRiskProfile);
         }
     }
 }

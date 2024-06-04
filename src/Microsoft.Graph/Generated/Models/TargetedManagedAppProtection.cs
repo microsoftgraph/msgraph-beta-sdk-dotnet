@@ -9,27 +9,27 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups
     /// </summary>
-    public class TargetedManagedAppProtection : ManagedAppProtection, IParsable
+    public class TargetedManagedAppProtection : Microsoft.Graph.Beta.Models.ManagedAppProtection, IParsable
     {
         /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
-        public TargetedManagedAppGroupType? AppGroupType
+        public Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType? AppGroupType
         {
-            get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType?>("appGroupType"); }
             set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -40,13 +40,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>Management levels for apps</summary>
-        public AppManagementLevel? TargetedAppManagementLevels
+        public Microsoft.Graph.Beta.Models.AppManagementLevel? TargetedAppManagementLevels
         {
-            get { return BackingStore?.Get<AppManagementLevel?>("targetedAppManagementLevels"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppManagementLevel?>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TargetedManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TargetedManagedAppProtection"/> and sets the default values.
         /// </summary>
         public TargetedManagedAppProtection() : base()
         {
@@ -55,17 +55,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TargetedManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TargetedManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TargetedManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TargetedManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidManagedAppProtection" => new AndroidManagedAppProtection(),
-                "#microsoft.graph.iosManagedAppProtection" => new IosManagedAppProtection(),
-                _ => new TargetedManagedAppProtection(),
+                "#microsoft.graph.androidManagedAppProtection" => new Microsoft.Graph.Beta.Models.AndroidManagedAppProtection(),
+                "#microsoft.graph.iosManagedAppProtection" => new Microsoft.Graph.Beta.Models.IosManagedAppProtection(),
+                _ => new Microsoft.Graph.Beta.Models.TargetedManagedAppProtection(),
             };
         }
         /// <summary>
@@ -76,10 +76,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appGroupType", n => { AppGroupType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType>(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>(Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
-                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
+                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppManagementLevel>(); } },
             };
         }
         /// <summary>
@@ -90,10 +90,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TargetedManagedAppGroupType>("appGroupType", AppGroupType);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType>("appGroupType", AppGroupType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteBoolValue("isAssigned", IsAssigned);
-            writer.WriteEnumValue<AppManagementLevel>("targetedAppManagementLevels", TargetedAppManagementLevels);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppManagementLevel>("targetedAppManagementLevels", TargetedAppManagementLevels);
         }
     }
 }

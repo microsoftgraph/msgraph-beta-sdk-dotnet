@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AgedAccountsReceivable"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AgedAccountsReceivable"/> and sets the default values.
         /// </summary>
         public AgedAccountsReceivable()
         {
@@ -169,12 +169,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AgedAccountsReceivable"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AgedAccountsReceivable"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AgedAccountsReceivable CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AgedAccountsReceivable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AgedAccountsReceivable();
+            return new Microsoft.Graph.Beta.Models.AgedAccountsReceivable();
         }
         /// <summary>
         /// The deserialization information for the current model

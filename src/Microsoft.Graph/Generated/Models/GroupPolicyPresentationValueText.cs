@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity represents a string value for a drop-down list, combo box, or text box presentation on a policy definition.
     /// </summary>
-    public class GroupPolicyPresentationValueText : GroupPolicyPresentationValue, IParsable
+    public class GroupPolicyPresentationValueText : Microsoft.Graph.Beta.Models.GroupPolicyPresentationValue, IParsable
     {
         /// <summary>A string value for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyPresentationValueText"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationValueText"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyPresentationValueText CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyPresentationValueText CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyPresentationValueText();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyPresentationValueText();
         }
         /// <summary>
         /// The deserialization information for the current model

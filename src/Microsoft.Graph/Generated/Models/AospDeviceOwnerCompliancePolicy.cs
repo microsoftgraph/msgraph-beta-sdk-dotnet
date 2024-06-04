@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPCompliancePolicy resource.
     /// </summary>
-    public class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class AospDeviceOwnerCompliancePolicy : Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Minimum Android security patch level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
-        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AospDeviceOwnerCompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AospDeviceOwnerCompliancePolicy"/> and sets the default values.
         /// </summary>
         public AospDeviceOwnerCompliancePolicy() : base()
         {
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AospDeviceOwnerCompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AospDeviceOwnerCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AospDeviceOwnerCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AospDeviceOwnerCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AospDeviceOwnerCompliancePolicy();
+            return new Microsoft.Graph.Beta.Models.AospDeviceOwnerCompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>(); } },
                 { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
                 { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinimumLength", PasswordMinimumLength);
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeLock", PasswordMinutesOfInactivityBeforeLock);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
             writer.WriteBoolValue("storageRequireEncryption", StorageRequireEncryption);
         }

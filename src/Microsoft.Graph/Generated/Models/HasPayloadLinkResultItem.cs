@@ -77,21 +77,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The reason where the link comes from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceAndAppManagementAssignmentSource?>? Sources
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource?>? Sources
         {
-            get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>?>("sources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource?>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #nullable restore
 #else
-        public List<DeviceAndAppManagementAssignmentSource?> Sources
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource?> Sources
         {
-            get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>>("sources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource?>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HasPayloadLinkResultItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem"/> and sets the default values.
         /// </summary>
         public HasPayloadLinkResultItem()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HasPayloadLinkResultItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static HasPayloadLinkResultItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HasPayloadLinkResultItem();
+            return new Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "hasLink", n => { HasLink = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "payloadId", n => { PayloadId = n.GetStringValue(); } },
-                { "sources", n => { Sources = n.GetCollectionOfEnumValues<DeviceAndAppManagementAssignmentSource>()?.ToList(); } },
+                { "sources", n => { Sources = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("hasLink", HasLink);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("payloadId", PayloadId);
-            writer.WriteCollectionOfEnumValues<DeviceAndAppManagementAssignmentSource>("sources", Sources);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource>("sources", Sources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

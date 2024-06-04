@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         /// <summary>The X property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X
+        public Microsoft.Graph.Beta.Models.Json? X
         {
-            get { return BackingStore?.Get<Json?>("X"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("X"); }
             set { BackingStore?.Set("X", value); }
         }
 #nullable restore
 #else
-        public Json X
+        public Microsoft.Graph.Beta.Models.Json X
         {
-            get { return BackingStore?.Get<Json>("X"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("X"); }
             set { BackingStore?.Set("X", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ErfC_PrecisePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Precise.ErfC_PrecisePostRequestBody"/> and sets the default values.
         /// </summary>
         public ErfC_PrecisePostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ErfC_PrecisePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Precise.ErfC_PrecisePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ErfC_PrecisePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Precise.ErfC_PrecisePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ErfC_PrecisePostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Precise.ErfC_PrecisePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "X", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "X", n => { X = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("X", X);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("X", X);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

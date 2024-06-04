@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomAppConfiguration resource.
     /// </summary>
-    public class MacOSCustomAppConfiguration : DeviceConfiguration, IParsable
+    public class MacOSCustomAppConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Bundle id for targeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MacOSCustomAppConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSCustomAppConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSCustomAppConfiguration() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSCustomAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSCustomAppConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSCustomAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSCustomAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSCustomAppConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSCustomAppConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

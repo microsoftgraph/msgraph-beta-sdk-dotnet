@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A termsAndConditionsGroupAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
     /// </summary>
-    public class TermsAndConditionsGroupAssignment : Entity, IParsable
+    public class TermsAndConditionsGroupAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Unique identifier of a group that the T&amp;C policy is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TermsAndConditionsGroupAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermsAndConditionsGroupAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TermsAndConditionsGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TermsAndConditionsGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TermsAndConditionsGroupAssignment();
+            return new Microsoft.Graph.Beta.Models.TermsAndConditionsGroupAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model

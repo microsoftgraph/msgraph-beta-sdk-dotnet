@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>The lifecycleWorkflows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LifecycleWorkflowsContainer? LifecycleWorkflows
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer? LifecycleWorkflows
         {
-            get { return BackingStore?.Get<LifecycleWorkflowsContainer?>("lifecycleWorkflows"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer?>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
 #nullable restore
 #else
-        public LifecycleWorkflowsContainer LifecycleWorkflows
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer LifecycleWorkflows
         {
-            get { return BackingStore?.Get<LifecycleWorkflowsContainer>("lifecycleWorkflows"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
 #endif
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IdentityGovernance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance"/> and sets the default values.
         /// </summary>
         public IdentityGovernance()
         {
@@ -190,12 +190,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityGovernance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IdentityGovernance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityGovernance();
+            return new Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "accessReviews", n => { AccessReviews = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSet>(Microsoft.Graph.Beta.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
                 { "appConsent", n => { AppConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>(Microsoft.Graph.Beta.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
                 { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>(Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
-                { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
+                { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>(Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "permissionsAnalytics", n => { PermissionsAnalytics = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>(Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation.CreateFromDiscriminatorValue); } },
                 { "permissionsManagement", n => { PermissionsManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>(Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue); } },
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSet>("accessReviews", AccessReviews);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>("appConsent", AppConsent);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
-            writer.WriteObjectValue<LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>("permissionsAnalytics", PermissionsAnalytics);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>("permissionsManagement", PermissionsManagement);

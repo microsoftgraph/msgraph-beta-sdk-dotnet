@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Credential>? Credentials
+        public List<Microsoft.Graph.Beta.Models.Credential>? Credentials
         {
-            get { return BackingStore?.Get<List<Credential>?>("credentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Credential>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #nullable restore
 #else
-        public List<Credential> Credentials
+        public List<Microsoft.Graph.Beta.Models.Credential> Credentials
         {
-            get { return BackingStore?.Get<List<Credential>>("credentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Credential>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #endif
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdatePasswordSingleSignOnCredentialsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOnCredentials.UpdatePasswordSingleSignOnCredentialsPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdatePasswordSingleSignOnCredentialsPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatePasswordSingleSignOnCredentialsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOnCredentials.UpdatePasswordSingleSignOnCredentialsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdatePasswordSingleSignOnCredentialsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOnCredentials.UpdatePasswordSingleSignOnCredentialsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatePasswordSingleSignOnCredentialsPostRequestBody();
+            return new Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOnCredentials.UpdatePasswordSingleSignOnCredentialsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<Credential>(Credential.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Credential>(Microsoft.Graph.Beta.Models.Credential.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Credential>("credentials", Credentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Credential>("credentials", Credentials);
             writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }

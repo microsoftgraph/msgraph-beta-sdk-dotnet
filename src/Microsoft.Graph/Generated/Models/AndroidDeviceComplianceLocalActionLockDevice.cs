@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Local Action Lock Device Only Configuration
     /// </summary>
-    public class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase, IParsable
+    public class AndroidDeviceComplianceLocalActionLockDevice : Microsoft.Graph.Beta.Models.AndroidDeviceComplianceLocalActionBase, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceComplianceLocalActionLockDevice"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceComplianceLocalActionLockDevice"/> and sets the default values.
         /// </summary>
         public AndroidDeviceComplianceLocalActionLockDevice() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceComplianceLocalActionLockDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceComplianceLocalActionLockDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceComplianceLocalActionLockDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceComplianceLocalActionLockDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceComplianceLocalActionLockDevice();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceComplianceLocalActionLockDevice();
         }
         /// <summary>
         /// The deserialization information for the current model

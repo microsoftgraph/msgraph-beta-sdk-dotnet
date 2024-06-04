@@ -14,32 +14,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates whether the current user can add existing guest recipients to this item using direct sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddExistingExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? AddExistingExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("addExistingExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("addExistingExternalUsers"); }
             set { BackingStore?.Set("addExistingExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddExistingExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus AddExistingExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("addExistingExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addExistingExternalUsers"); }
             set { BackingStore?.Set("addExistingExternalUsers", value); }
         }
 #endif
         /// <summary>Indicates whether the current user can add internal recipients to this item using direct sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddInternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? AddInternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("addInternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("addInternalUsers"); }
             set { BackingStore?.Set("addInternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddInternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus AddInternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("addInternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addInternalUsers"); }
             set { BackingStore?.Set("addInternalUsers", value); }
         }
 #endif
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates whether the current user can add new guest recipients to this item using direct sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddNewExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? AddNewExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("addNewExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("addNewExternalUsers"); }
             set { BackingStore?.Set("addNewExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddNewExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus AddNewExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("addNewExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addNewExternalUsers"); }
             set { BackingStore?.Set("addNewExternalUsers", value); }
         }
 #endif
@@ -86,21 +86,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates whether the user querying this endpoint can request access for the user or on behalf of other users, after which, site admins, can approve or deny the creation of a potential sharing link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? RequestGrantAccess
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? RequestGrantAccess
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("requestGrantAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("requestGrantAccess"); }
             set { BackingStore?.Set("requestGrantAccess", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus RequestGrantAccess
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus RequestGrantAccess
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("requestGrantAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("requestGrantAccess"); }
             set { BackingStore?.Set("requestGrantAccess", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DirectSharingAbilities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DirectSharingAbilities"/> and sets the default values.
         /// </summary>
         public DirectSharingAbilities()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectSharingAbilities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectSharingAbilities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DirectSharingAbilities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DirectSharingAbilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectSharingAbilities();
+            return new Microsoft.Graph.Beta.Models.DirectSharingAbilities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addExistingExternalUsers", n => { AddExistingExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "addInternalUsers", n => { AddInternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "addNewExternalUsers", n => { AddNewExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addExistingExternalUsers", n => { AddExistingExternalUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addInternalUsers", n => { AddInternalUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addNewExternalUsers", n => { AddNewExternalUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "requestGrantAccess", n => { RequestGrantAccess = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "requestGrantAccess", n => { RequestGrantAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<SharingOperationStatus>("addExistingExternalUsers", AddExistingExternalUsers);
-            writer.WriteObjectValue<SharingOperationStatus>("addInternalUsers", AddInternalUsers);
-            writer.WriteObjectValue<SharingOperationStatus>("addNewExternalUsers", AddNewExternalUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addExistingExternalUsers", AddExistingExternalUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addInternalUsers", AddInternalUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addNewExternalUsers", AddNewExternalUsers);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SharingOperationStatus>("requestGrantAccess", RequestGrantAccess);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("requestGrantAccess", RequestGrantAccess);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

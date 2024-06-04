@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the iOS device to connect to desired IKEv2 VPN endpoint.
     /// </summary>
-    public class IosikEv2VpnConfiguration : IosVpnConfiguration, IParsable
+    public class IosikEv2VpnConfiguration : Microsoft.Graph.Beta.Models.IosVpnConfiguration, IParsable
     {
         /// <summary>Allows the use of child security association parameters by setting all parameters to the device&apos;s default unless explicitly specified.</summary>
         public bool? AllowDefaultChildSecurityAssociationParameters
@@ -26,45 +26,45 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>AlwaysOn Configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppleVpnAlwaysOnConfiguration? AlwaysOnConfiguration
+        public Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration? AlwaysOnConfiguration
         {
-            get { return BackingStore?.Get<AppleVpnAlwaysOnConfiguration?>("alwaysOnConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration?>("alwaysOnConfiguration"); }
             set { BackingStore?.Set("alwaysOnConfiguration", value); }
         }
 #nullable restore
 #else
-        public AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration
+        public Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration
         {
-            get { return BackingStore?.Get<AppleVpnAlwaysOnConfiguration>("alwaysOnConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration>("alwaysOnConfiguration"); }
             set { BackingStore?.Set("alwaysOnConfiguration", value); }
         }
 #endif
         /// <summary>Child Security Association Parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosVpnSecurityAssociationParameters? ChildSecurityAssociationParameters
+        public Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters? ChildSecurityAssociationParameters
         {
-            get { return BackingStore?.Get<IosVpnSecurityAssociationParameters?>("childSecurityAssociationParameters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters?>("childSecurityAssociationParameters"); }
             set { BackingStore?.Set("childSecurityAssociationParameters", value); }
         }
 #nullable restore
 #else
-        public IosVpnSecurityAssociationParameters ChildSecurityAssociationParameters
+        public Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters ChildSecurityAssociationParameters
         {
-            get { return BackingStore?.Get<IosVpnSecurityAssociationParameters>("childSecurityAssociationParameters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters>("childSecurityAssociationParameters"); }
             set { BackingStore?.Set("childSecurityAssociationParameters", value); }
         }
 #endif
         /// <summary>The type of VPN client authentication type</summary>
-        public VpnClientAuthenticationType? ClientAuthenticationType
+        public Microsoft.Graph.Beta.Models.VpnClientAuthenticationType? ClientAuthenticationType
         {
-            get { return BackingStore?.Get<VpnClientAuthenticationType?>("clientAuthenticationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnClientAuthenticationType?>("clientAuthenticationType"); }
             set { BackingStore?.Set("clientAuthenticationType", value); }
         }
         /// <summary>Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.</summary>
-        public VpnDeadPeerDetectionRate? DeadPeerDetectionRate
+        public Microsoft.Graph.Beta.Models.VpnDeadPeerDetectionRate? DeadPeerDetectionRate
         {
-            get { return BackingStore?.Get<VpnDeadPeerDetectionRate?>("deadPeerDetectionRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnDeadPeerDetectionRate?>("deadPeerDetectionRate"); }
             set { BackingStore?.Set("deadPeerDetectionRate", value); }
         }
         /// <summary>Disable MOBIKE</summary>
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("enableUseInternalSubnetAttributes", value); }
         }
         /// <summary>The type of VPN local identifier</summary>
-        public VpnLocalIdentifier? LocalIdentifier
+        public Microsoft.Graph.Beta.Models.VpnLocalIdentifier? LocalIdentifier
         {
-            get { return BackingStore?.Get<VpnLocalIdentifier?>("localIdentifier"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnLocalIdentifier?>("localIdentifier"); }
             set { BackingStore?.Set("localIdentifier", value); }
         }
         /// <summary>Maximum transmission unit. Valid values 1280 to 1400</summary>
@@ -140,16 +140,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Security Association Parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosVpnSecurityAssociationParameters? SecurityAssociationParameters
+        public Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters? SecurityAssociationParameters
         {
-            get { return BackingStore?.Get<IosVpnSecurityAssociationParameters?>("securityAssociationParameters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters?>("securityAssociationParameters"); }
             set { BackingStore?.Set("securityAssociationParameters", value); }
         }
 #nullable restore
 #else
-        public IosVpnSecurityAssociationParameters SecurityAssociationParameters
+        public Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters SecurityAssociationParameters
         {
-            get { return BackingStore?.Get<IosVpnSecurityAssociationParameters>("securityAssociationParameters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters>("securityAssociationParameters"); }
             set { BackingStore?.Set("securityAssociationParameters", value); }
         }
 #endif
@@ -186,9 +186,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.</summary>
-        public VpnServerCertificateType? ServerCertificateType
+        public Microsoft.Graph.Beta.Models.VpnServerCertificateType? ServerCertificateType
         {
-            get { return BackingStore?.Get<VpnServerCertificateType?>("serverCertificateType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnServerCertificateType?>("serverCertificateType"); }
             set { BackingStore?.Set("serverCertificateType", value); }
         }
         /// <summary>Used when Shared Secret Authentication is selected</summary>
@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosikEv2VpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosikEv2VpnConfiguration"/> and sets the default values.
         /// </summary>
         public IosikEv2VpnConfiguration() : base()
         {
@@ -249,12 +249,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosikEv2VpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosikEv2VpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosikEv2VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosikEv2VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosikEv2VpnConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosikEv2VpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -266,10 +266,10 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowDefaultChildSecurityAssociationParameters", n => { AllowDefaultChildSecurityAssociationParameters = n.GetBoolValue(); } },
                 { "allowDefaultSecurityAssociationParameters", n => { AllowDefaultSecurityAssociationParameters = n.GetBoolValue(); } },
-                { "alwaysOnConfiguration", n => { AlwaysOnConfiguration = n.GetObjectValue<AppleVpnAlwaysOnConfiguration>(AppleVpnAlwaysOnConfiguration.CreateFromDiscriminatorValue); } },
-                { "childSecurityAssociationParameters", n => { ChildSecurityAssociationParameters = n.GetObjectValue<IosVpnSecurityAssociationParameters>(IosVpnSecurityAssociationParameters.CreateFromDiscriminatorValue); } },
-                { "clientAuthenticationType", n => { ClientAuthenticationType = n.GetEnumValue<VpnClientAuthenticationType>(); } },
-                { "deadPeerDetectionRate", n => { DeadPeerDetectionRate = n.GetEnumValue<VpnDeadPeerDetectionRate>(); } },
+                { "alwaysOnConfiguration", n => { AlwaysOnConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration>(Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration.CreateFromDiscriminatorValue); } },
+                { "childSecurityAssociationParameters", n => { ChildSecurityAssociationParameters = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters>(Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters.CreateFromDiscriminatorValue); } },
+                { "clientAuthenticationType", n => { ClientAuthenticationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnClientAuthenticationType>(); } },
+                { "deadPeerDetectionRate", n => { DeadPeerDetectionRate = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnDeadPeerDetectionRate>(); } },
                 { "disableMobilityAndMultihoming", n => { DisableMobilityAndMultihoming = n.GetBoolValue(); } },
                 { "disableRedirect", n => { DisableRedirect = n.GetBoolValue(); } },
                 { "enableAlwaysOnConfiguration", n => { EnableAlwaysOnConfiguration = n.GetBoolValue(); } },
@@ -277,13 +277,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "enableEAP", n => { EnableEAP = n.GetBoolValue(); } },
                 { "enablePerfectForwardSecrecy", n => { EnablePerfectForwardSecrecy = n.GetBoolValue(); } },
                 { "enableUseInternalSubnetAttributes", n => { EnableUseInternalSubnetAttributes = n.GetBoolValue(); } },
-                { "localIdentifier", n => { LocalIdentifier = n.GetEnumValue<VpnLocalIdentifier>(); } },
+                { "localIdentifier", n => { LocalIdentifier = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnLocalIdentifier>(); } },
                 { "mtuSizeInBytes", n => { MtuSizeInBytes = n.GetIntValue(); } },
                 { "remoteIdentifier", n => { RemoteIdentifier = n.GetStringValue(); } },
-                { "securityAssociationParameters", n => { SecurityAssociationParameters = n.GetObjectValue<IosVpnSecurityAssociationParameters>(IosVpnSecurityAssociationParameters.CreateFromDiscriminatorValue); } },
+                { "securityAssociationParameters", n => { SecurityAssociationParameters = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters>(Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters.CreateFromDiscriminatorValue); } },
                 { "serverCertificateCommonName", n => { ServerCertificateCommonName = n.GetStringValue(); } },
                 { "serverCertificateIssuerCommonName", n => { ServerCertificateIssuerCommonName = n.GetStringValue(); } },
-                { "serverCertificateType", n => { ServerCertificateType = n.GetEnumValue<VpnServerCertificateType>(); } },
+                { "serverCertificateType", n => { ServerCertificateType = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnServerCertificateType>(); } },
                 { "sharedSecret", n => { SharedSecret = n.GetStringValue(); } },
                 { "tlsMaximumVersion", n => { TlsMaximumVersion = n.GetStringValue(); } },
                 { "tlsMinimumVersion", n => { TlsMinimumVersion = n.GetStringValue(); } },
@@ -299,10 +299,10 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allowDefaultChildSecurityAssociationParameters", AllowDefaultChildSecurityAssociationParameters);
             writer.WriteBoolValue("allowDefaultSecurityAssociationParameters", AllowDefaultSecurityAssociationParameters);
-            writer.WriteObjectValue<AppleVpnAlwaysOnConfiguration>("alwaysOnConfiguration", AlwaysOnConfiguration);
-            writer.WriteObjectValue<IosVpnSecurityAssociationParameters>("childSecurityAssociationParameters", ChildSecurityAssociationParameters);
-            writer.WriteEnumValue<VpnClientAuthenticationType>("clientAuthenticationType", ClientAuthenticationType);
-            writer.WriteEnumValue<VpnDeadPeerDetectionRate>("deadPeerDetectionRate", DeadPeerDetectionRate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppleVpnAlwaysOnConfiguration>("alwaysOnConfiguration", AlwaysOnConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters>("childSecurityAssociationParameters", ChildSecurityAssociationParameters);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnClientAuthenticationType>("clientAuthenticationType", ClientAuthenticationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnDeadPeerDetectionRate>("deadPeerDetectionRate", DeadPeerDetectionRate);
             writer.WriteBoolValue("disableMobilityAndMultihoming", DisableMobilityAndMultihoming);
             writer.WriteBoolValue("disableRedirect", DisableRedirect);
             writer.WriteBoolValue("enableAlwaysOnConfiguration", EnableAlwaysOnConfiguration);
@@ -310,13 +310,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("enableEAP", EnableEAP);
             writer.WriteBoolValue("enablePerfectForwardSecrecy", EnablePerfectForwardSecrecy);
             writer.WriteBoolValue("enableUseInternalSubnetAttributes", EnableUseInternalSubnetAttributes);
-            writer.WriteEnumValue<VpnLocalIdentifier>("localIdentifier", LocalIdentifier);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnLocalIdentifier>("localIdentifier", LocalIdentifier);
             writer.WriteIntValue("mtuSizeInBytes", MtuSizeInBytes);
             writer.WriteStringValue("remoteIdentifier", RemoteIdentifier);
-            writer.WriteObjectValue<IosVpnSecurityAssociationParameters>("securityAssociationParameters", SecurityAssociationParameters);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosVpnSecurityAssociationParameters>("securityAssociationParameters", SecurityAssociationParameters);
             writer.WriteStringValue("serverCertificateCommonName", ServerCertificateCommonName);
             writer.WriteStringValue("serverCertificateIssuerCommonName", ServerCertificateIssuerCommonName);
-            writer.WriteEnumValue<VpnServerCertificateType>("serverCertificateType", ServerCertificateType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnServerCertificateType>("serverCertificateType", ServerCertificateType);
             writer.WriteStringValue("sharedSecret", SharedSecret);
             writer.WriteStringValue("tlsMaximumVersion", TlsMaximumVersion);
             writer.WriteStringValue("tlsMinimumVersion", TlsMinimumVersion);

@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChart : Entity, IParsable
+    public class WorkbookChart : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents chart axes. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxes? Axes
+        public Microsoft.Graph.Beta.Models.WorkbookChartAxes? Axes
         {
-            get { return BackingStore?.Get<WorkbookChartAxes?>("axes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartAxes?>("axes"); }
             set { BackingStore?.Set("axes", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxes Axes
+        public Microsoft.Graph.Beta.Models.WorkbookChartAxes Axes
         {
-            get { return BackingStore?.Get<WorkbookChartAxes>("axes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartAxes>("axes"); }
             set { BackingStore?.Set("axes", value); }
         }
 #endif
         /// <summary>Represents the datalabels on the chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartDataLabels? DataLabels
+        public Microsoft.Graph.Beta.Models.WorkbookChartDataLabels? DataLabels
         {
-            get { return BackingStore?.Get<WorkbookChartDataLabels?>("dataLabels"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartDataLabels?>("dataLabels"); }
             set { BackingStore?.Set("dataLabels", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartDataLabels DataLabels
+        public Microsoft.Graph.Beta.Models.WorkbookChartDataLabels DataLabels
         {
-            get { return BackingStore?.Get<WorkbookChartDataLabels>("dataLabels"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartDataLabels>("dataLabels"); }
             set { BackingStore?.Set("dataLabels", value); }
         }
 #endif
         /// <summary>Encapsulates the format properties for the chart area. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAreaFormat? Format
+        public Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat? Format
         {
-            get { return BackingStore?.Get<WorkbookChartAreaFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAreaFormat Format
+        public Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat Format
         {
-            get { return BackingStore?.Get<WorkbookChartAreaFormat>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the legend for the chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLegend? Legend
+        public Microsoft.Graph.Beta.Models.WorkbookChartLegend? Legend
         {
-            get { return BackingStore?.Get<WorkbookChartLegend?>("legend"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartLegend?>("legend"); }
             set { BackingStore?.Set("legend", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLegend Legend
+        public Microsoft.Graph.Beta.Models.WorkbookChartLegend Legend
         {
-            get { return BackingStore?.Get<WorkbookChartLegend>("legend"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartLegend>("legend"); }
             set { BackingStore?.Set("legend", value); }
         }
 #endif
@@ -105,32 +105,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents either a single series or collection of series in the chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookChartSeries>? Series
+        public List<Microsoft.Graph.Beta.Models.WorkbookChartSeries>? Series
         {
-            get { return BackingStore?.Get<List<WorkbookChartSeries>?>("series"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookChartSeries>?>("series"); }
             set { BackingStore?.Set("series", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookChartSeries> Series
+        public List<Microsoft.Graph.Beta.Models.WorkbookChartSeries> Series
         {
-            get { return BackingStore?.Get<List<WorkbookChartSeries>>("series"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookChartSeries>>("series"); }
             set { BackingStore?.Set("series", value); }
         }
 #endif
         /// <summary>Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartTitle? Title
+        public Microsoft.Graph.Beta.Models.WorkbookChartTitle? Title
         {
-            get { return BackingStore?.Get<WorkbookChartTitle?>("title"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartTitle?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartTitle Title
+        public Microsoft.Graph.Beta.Models.WorkbookChartTitle Title
         {
-            get { return BackingStore?.Get<WorkbookChartTitle>("title"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartTitle>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #endif
@@ -149,28 +149,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The worksheet containing the current chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookWorksheet? Worksheet
+        public Microsoft.Graph.Beta.Models.WorkbookWorksheet? Worksheet
         {
-            get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookWorksheet?>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
 #nullable restore
 #else
-        public WorkbookWorksheet Worksheet
+        public Microsoft.Graph.Beta.Models.WorkbookWorksheet Worksheet
         {
-            get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookWorksheet>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChart"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookChart"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChart CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkbookChart CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChart();
+            return new Microsoft.Graph.Beta.Models.WorkbookChart();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,18 +180,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "axes", n => { Axes = n.GetObjectValue<WorkbookChartAxes>(WorkbookChartAxes.CreateFromDiscriminatorValue); } },
-                { "dataLabels", n => { DataLabels = n.GetObjectValue<WorkbookChartDataLabels>(WorkbookChartDataLabels.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetObjectValue<WorkbookChartAreaFormat>(WorkbookChartAreaFormat.CreateFromDiscriminatorValue); } },
+                { "axes", n => { Axes = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartAxes>(Microsoft.Graph.Beta.Models.WorkbookChartAxes.CreateFromDiscriminatorValue); } },
+                { "dataLabels", n => { DataLabels = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartDataLabels>(Microsoft.Graph.Beta.Models.WorkbookChartDataLabels.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat>(Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat.CreateFromDiscriminatorValue); } },
                 { "height", n => { Height = n.GetDoubleValue(); } },
                 { "left", n => { Left = n.GetDoubleValue(); } },
-                { "legend", n => { Legend = n.GetObjectValue<WorkbookChartLegend>(WorkbookChartLegend.CreateFromDiscriminatorValue); } },
+                { "legend", n => { Legend = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartLegend>(Microsoft.Graph.Beta.Models.WorkbookChartLegend.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "series", n => { Series = n.GetCollectionOfObjectValues<WorkbookChartSeries>(WorkbookChartSeries.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "title", n => { Title = n.GetObjectValue<WorkbookChartTitle>(WorkbookChartTitle.CreateFromDiscriminatorValue); } },
+                { "series", n => { Series = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookChartSeries>(Microsoft.Graph.Beta.Models.WorkbookChartSeries.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "title", n => { Title = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartTitle>(Microsoft.Graph.Beta.Models.WorkbookChartTitle.CreateFromDiscriminatorValue); } },
                 { "top", n => { Top = n.GetDoubleValue(); } },
                 { "width", n => { Width = n.GetDoubleValue(); } },
-                { "worksheet", n => { Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
+                { "worksheet", n => { Worksheet = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookWorksheet>(Microsoft.Graph.Beta.Models.WorkbookWorksheet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -202,18 +202,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartAxes>("axes", Axes);
-            writer.WriteObjectValue<WorkbookChartDataLabels>("dataLabels", DataLabels);
-            writer.WriteObjectValue<WorkbookChartAreaFormat>("format", Format);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartAxes>("axes", Axes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartDataLabels>("dataLabels", DataLabels);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartAreaFormat>("format", Format);
             writer.WriteDoubleValue("height", Height);
             writer.WriteDoubleValue("left", Left);
-            writer.WriteObjectValue<WorkbookChartLegend>("legend", Legend);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartLegend>("legend", Legend);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<WorkbookChartSeries>("series", Series);
-            writer.WriteObjectValue<WorkbookChartTitle>("title", Title);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookChartSeries>("series", Series);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartTitle>("title", Title);
             writer.WriteDoubleValue("top", Top);
             writer.WriteDoubleValue("width", Width);
-            writer.WriteObjectValue<WorkbookWorksheet>("worksheet", Worksheet);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookWorksheet>("worksheet", Worksheet);
         }
     }
 }

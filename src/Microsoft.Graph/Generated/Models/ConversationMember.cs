@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ConversationMember : Entity, IParsable
+    public class ConversationMember : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the user.</summary>
@@ -51,21 +51,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConversationMember"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConversationMember"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ConversationMember CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.aadUserConversationMember" => new AadUserConversationMember(),
-                "#microsoft.graph.anonymousGuestConversationMember" => new AnonymousGuestConversationMember(),
-                "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new AzureCommunicationServicesUserConversationMember(),
-                "#microsoft.graph.microsoftAccountUserConversationMember" => new MicrosoftAccountUserConversationMember(),
-                "#microsoft.graph.skypeForBusinessUserConversationMember" => new SkypeForBusinessUserConversationMember(),
-                "#microsoft.graph.skypeUserConversationMember" => new SkypeUserConversationMember(),
-                _ => new ConversationMember(),
+                "#microsoft.graph.aadUserConversationMember" => new Microsoft.Graph.Beta.Models.AadUserConversationMember(),
+                "#microsoft.graph.anonymousGuestConversationMember" => new Microsoft.Graph.Beta.Models.AnonymousGuestConversationMember(),
+                "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new Microsoft.Graph.Beta.Models.AzureCommunicationServicesUserConversationMember(),
+                "#microsoft.graph.microsoftAccountUserConversationMember" => new Microsoft.Graph.Beta.Models.MicrosoftAccountUserConversationMember(),
+                "#microsoft.graph.skypeForBusinessUserConversationMember" => new Microsoft.Graph.Beta.Models.SkypeForBusinessUserConversationMember(),
+                "#microsoft.graph.skypeUserConversationMember" => new Microsoft.Graph.Beta.Models.SkypeUserConversationMember(),
+                _ => new Microsoft.Graph.Beta.Models.ConversationMember(),
             };
         }
         /// <summary>

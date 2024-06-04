@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InformationProtectionPolicySetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.InformationProtectionPolicySetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InformationProtectionPolicySetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.InformationProtectionPolicySetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InformationProtectionPolicySetting();
+            return new Microsoft.Graph.Beta.Models.Security.InformationProtectionPolicySetting();
         }
         /// <summary>
         /// The deserialization information for the current model

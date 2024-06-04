@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count
     public class CountRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CountRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CountRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,21 +37,21 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count
         /// <returns>A <see cref="int"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<int?> GetAsync(Action<RequestConfiguration<CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<int?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<int?> GetAsync(Action<RequestConfiguration<CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<int?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<int?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -63,11 +63,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CountRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CountRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CountRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks")]
-        public CountRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder WithUrl(string rawUrl)
         {
-            return new CountRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the number of the resource
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CountRequestBuilderGetRequestConfiguration : RequestConfiguration<CountRequestBuilderGetQueryParameters>
+        public class CountRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>
         {
         }
     }

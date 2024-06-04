@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryHoldPolicy>? Value
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy>? Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryHoldPolicy> Value
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy> Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryHoldPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryHoldPolicyCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryHoldPolicyCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicyCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EdiscoveryHoldPolicy>(EdiscoveryHoldPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy>(Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EdiscoveryHoldPolicy>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy>("value", Value);
         }
     }
 }

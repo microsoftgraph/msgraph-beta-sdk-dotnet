@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The locale information for the user, including the preferred language and country/region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? Language
+        public Microsoft.Graph.Beta.Models.LocaleInfo? Language
         {
-            get { return BackingStore?.Get<LocaleInfo?>("language"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocaleInfo?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo Language
+        public Microsoft.Graph.Beta.Models.LocaleInfo Language
         {
-            get { return BackingStore?.Get<LocaleInfo>("language"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocaleInfo>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #endif
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userPurpose", value); }
         }
         /// <summary>The userPurposeV2 property</summary>
-        public MailboxRecipientType? UserPurposeV2
+        public Microsoft.Graph.Beta.Models.MailboxRecipientType? UserPurposeV2
         {
-            get { return BackingStore?.Get<MailboxRecipientType?>("userPurposeV2"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MailboxRecipientType?>("userPurposeV2"); }
             set { BackingStore?.Set("userPurposeV2", value); }
         }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MailboxSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MailboxSettings"/> and sets the default values.
         /// </summary>
         public MailboxSettings()
         {
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MailboxSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MailboxSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MailboxSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MailboxSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MailboxSettings();
+            return new Microsoft.Graph.Beta.Models.MailboxSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -194,13 +194,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "archiveFolder", n => { ArchiveFolder = n.GetStringValue(); } },
                 { "automaticRepliesSetting", n => { AutomaticRepliesSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting>(Microsoft.Graph.Beta.Models.AutomaticRepliesSetting.CreateFromDiscriminatorValue); } },
                 { "dateFormat", n => { DateFormat = n.GetStringValue(); } },
-                { "delegateMeetingMessageDeliveryOptions", n => { DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<DelegateMeetingMessageDeliveryOptions>(); } },
-                { "language", n => { Language = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "delegateMeetingMessageDeliveryOptions", n => { DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.DelegateMeetingMessageDeliveryOptions>(); } },
+                { "language", n => { Language = n.GetObjectValue<Microsoft.Graph.Beta.Models.LocaleInfo>(Microsoft.Graph.Beta.Models.LocaleInfo.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "timeFormat", n => { TimeFormat = n.GetStringValue(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
-                { "userPurpose", n => { UserPurpose = n.GetEnumValue<UserPurpose>(); } },
-                { "userPurposeV2", n => { UserPurposeV2 = n.GetEnumValue<MailboxRecipientType>(); } },
+                { "userPurpose", n => { UserPurpose = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserPurpose>(); } },
+                { "userPurposeV2", n => { UserPurposeV2 = n.GetEnumValue<Microsoft.Graph.Beta.Models.MailboxRecipientType>(); } },
                 { "workingHours", n => { WorkingHours = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkingHours>(Microsoft.Graph.Beta.Models.WorkingHours.CreateFromDiscriminatorValue); } },
             };
         }
@@ -214,13 +214,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("archiveFolder", ArchiveFolder);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting>("automaticRepliesSetting", AutomaticRepliesSetting);
             writer.WriteStringValue("dateFormat", DateFormat);
-            writer.WriteEnumValue<DelegateMeetingMessageDeliveryOptions>("delegateMeetingMessageDeliveryOptions", DelegateMeetingMessageDeliveryOptions);
-            writer.WriteObjectValue<LocaleInfo>("language", Language);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DelegateMeetingMessageDeliveryOptions>("delegateMeetingMessageDeliveryOptions", DelegateMeetingMessageDeliveryOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LocaleInfo>("language", Language);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("timeFormat", TimeFormat);
             writer.WriteStringValue("timeZone", TimeZone);
-            writer.WriteEnumValue<UserPurpose>("userPurpose", UserPurpose);
-            writer.WriteEnumValue<MailboxRecipientType>("userPurposeV2", UserPurposeV2);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserPurpose>("userPurpose", UserPurpose);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MailboxRecipientType>("userPurposeV2", UserPurposeV2);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkingHours>("workingHours", WorkingHours);
             writer.WriteAdditionalData(AdditionalData);
         }

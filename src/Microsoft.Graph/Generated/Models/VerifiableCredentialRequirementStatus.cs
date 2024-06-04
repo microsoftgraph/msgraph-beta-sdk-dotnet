@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VerifiableCredentialRequirementStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus"/> and sets the default values.
         /// </summary>
         public VerifiableCredentialRequirementStatus()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifiableCredentialRequirementStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VerifiableCredentialRequirementStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.verifiableCredentialRequired" => new VerifiableCredentialRequired(),
-                "#microsoft.graph.verifiableCredentialRetrieved" => new VerifiableCredentialRetrieved(),
-                "#microsoft.graph.verifiableCredentialVerified" => new VerifiableCredentialVerified(),
-                _ => new VerifiableCredentialRequirementStatus(),
+                "#microsoft.graph.verifiableCredentialRequired" => new Microsoft.Graph.Beta.Models.VerifiableCredentialRequired(),
+                "#microsoft.graph.verifiableCredentialRetrieved" => new Microsoft.Graph.Beta.Models.VerifiableCredentialRetrieved(),
+                "#microsoft.graph.verifiableCredentialVerified" => new Microsoft.Graph.Beta.Models.VerifiableCredentialVerified(),
+                _ => new Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus(),
             };
         }
         /// <summary>

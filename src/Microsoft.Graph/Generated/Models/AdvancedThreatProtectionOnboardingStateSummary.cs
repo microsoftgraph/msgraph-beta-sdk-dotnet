@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows defender advanced threat protection onboarding state summary across the account.
     /// </summary>
-    public class AdvancedThreatProtectionOnboardingStateSummary : Entity, IParsable
+    public class AdvancedThreatProtectionOnboardingStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The advancedThreatProtectionOnboardingDeviceSettingStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdvancedThreatProtectionOnboardingDeviceSettingState>? AdvancedThreatProtectionOnboardingDeviceSettingStates
+        public List<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState>? AdvancedThreatProtectionOnboardingDeviceSettingStates
         {
-            get { return BackingStore?.Get<List<AdvancedThreatProtectionOnboardingDeviceSettingState>?>("advancedThreatProtectionOnboardingDeviceSettingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState>?>("advancedThreatProtectionOnboardingDeviceSettingStates"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingDeviceSettingStates", value); }
         }
 #nullable restore
 #else
-        public List<AdvancedThreatProtectionOnboardingDeviceSettingState> AdvancedThreatProtectionOnboardingDeviceSettingStates
+        public List<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState> AdvancedThreatProtectionOnboardingDeviceSettingStates
         {
-            get { return BackingStore?.Get<List<AdvancedThreatProtectionOnboardingDeviceSettingState>>("advancedThreatProtectionOnboardingDeviceSettingStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState>>("advancedThreatProtectionOnboardingDeviceSettingStates"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingDeviceSettingStates", value); }
         }
 #endif
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdvancedThreatProtectionOnboardingStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdvancedThreatProtectionOnboardingStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdvancedThreatProtectionOnboardingStateSummary();
+            return new Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "advancedThreatProtectionOnboardingDeviceSettingStates", n => { AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>(AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "advancedThreatProtectionOnboardingDeviceSettingStates", n => { AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState>(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
                 { "conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
                 { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>("advancedThreatProtectionOnboardingDeviceSettingStates", AdvancedThreatProtectionOnboardingDeviceSettingStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingDeviceSettingState>("advancedThreatProtectionOnboardingDeviceSettingStates", AdvancedThreatProtectionOnboardingDeviceSettingStates);
             writer.WriteIntValue("compliantDeviceCount", CompliantDeviceCount);
             writer.WriteIntValue("conflictDeviceCount", ConflictDeviceCount);
             writer.WriteIntValue("errorDeviceCount", ErrorDeviceCount);

@@ -9,34 +9,34 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for Group Assignment of a Mobile App.
     /// </summary>
-    public class MobileAppAssignment : Entity, IParsable
+    public class MobileAppAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>
-        public InstallIntent? Intent
+        public Microsoft.Graph.Beta.Models.InstallIntent? Intent
         {
-            get { return BackingStore?.Get<InstallIntent?>("intent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InstallIntent?>("intent"); }
             set { BackingStore?.Set("intent", value); }
         }
         /// <summary>The settings for target assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppAssignmentSettings? Settings
+        public Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings? Settings
         {
-            get { return BackingStore?.Get<MobileAppAssignmentSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public MobileAppAssignmentSettings Settings
+        public Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings Settings
         {
-            get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Represents source of assignment.</summary>
-        public DeviceAndAppManagementAssignmentSource? Source
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource? Source
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment. This property is read-only.</summary>
@@ -58,28 +58,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The target group assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppAssignment();
+            return new Microsoft.Graph.Beta.Models.MobileAppAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "intent", n => { Intent = n.GetEnumValue<InstallIntent>(); } },
-                { "settings", n => { Settings = n.GetObjectValue<MobileAppAssignmentSettings>(MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
+                { "intent", n => { Intent = n.GetEnumValue<Microsoft.Graph.Beta.Models.InstallIntent>(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings>(Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource>(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,10 +104,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<InstallIntent>("intent", Intent);
-            writer.WriteObjectValue<MobileAppAssignmentSettings>("settings", Settings);
-            writer.WriteEnumValue<DeviceAndAppManagementAssignmentSource>("source", Source);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InstallIntent>("intent", Intent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings>("settings", Settings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentSource>("source", Source);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

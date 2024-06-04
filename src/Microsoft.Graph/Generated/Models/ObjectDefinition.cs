@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Defines attributes of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeDefinition>? Attributes
+        public List<Microsoft.Graph.Beta.Models.AttributeDefinition>? Attributes
         {
-            get { return BackingStore?.Get<List<AttributeDefinition>?>("attributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttributeDefinition>?>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #nullable restore
 #else
-        public List<AttributeDefinition> Attributes
+        public List<Microsoft.Graph.Beta.Models.AttributeDefinition> Attributes
         {
-            get { return BackingStore?.Get<List<AttributeDefinition>>("attributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttributeDefinition>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Metadata for the given object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectDefinitionMetadataEntry>? Metadata
+        public List<Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry>? Metadata
         {
-            get { return BackingStore?.Get<List<ObjectDefinitionMetadataEntry>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<ObjectDefinitionMetadataEntry> Metadata
+        public List<Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry> Metadata
         {
-            get { return BackingStore?.Get<List<ObjectDefinitionMetadataEntry>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ObjectDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ObjectDefinition"/> and sets the default values.
         /// </summary>
         public ObjectDefinition()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ObjectDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ObjectDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ObjectDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ObjectDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ObjectDefinition();
+            return new Microsoft.Graph.Beta.Models.ObjectDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,8 +125,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<ObjectDefinitionMetadataEntry>(ObjectDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttributeDefinition>(Microsoft.Graph.Beta.Models.AttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry>(Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "supportedApis", n => { SupportedApis = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -139,8 +139,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AttributeDefinition>("attributes", Attributes);
-            writer.WriteCollectionOfObjectValues<ObjectDefinitionMetadataEntry>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttributeDefinition>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ObjectDefinitionMetadataEntry>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedApis", SupportedApis);

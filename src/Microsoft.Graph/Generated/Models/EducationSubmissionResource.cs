@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationSubmissionResource : Entity, IParsable
+    public class EducationSubmissionResource : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.</summary>
@@ -29,44 +29,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The dependentResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSubmissionResource>? DependentResources
+        public List<Microsoft.Graph.Beta.Models.EducationSubmissionResource>? DependentResources
         {
-            get { return BackingStore?.Get<List<EducationSubmissionResource>?>("dependentResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationSubmissionResource>?>("dependentResources"); }
             set { BackingStore?.Set("dependentResources", value); }
         }
 #nullable restore
 #else
-        public List<EducationSubmissionResource> DependentResources
+        public List<Microsoft.Graph.Beta.Models.EducationSubmissionResource> DependentResources
         {
-            get { return BackingStore?.Get<List<EducationSubmissionResource>>("dependentResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationSubmissionResource>>("dependentResources"); }
             set { BackingStore?.Set("dependentResources", value); }
         }
 #endif
         /// <summary>Resource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationResource? Resource
+        public Microsoft.Graph.Beta.Models.EducationResource? Resource
         {
-            get { return BackingStore?.Get<EducationResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public EducationResource Resource
+        public Microsoft.Graph.Beta.Models.EducationResource Resource
         {
-            get { return BackingStore?.Get<EducationResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationSubmissionResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationSubmissionResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationSubmissionResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationSubmissionResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationSubmissionResource();
+            return new Microsoft.Graph.Beta.Models.EducationSubmissionResource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
-                { "dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<EducationSubmissionResource>(EducationSubmissionResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
+                { "dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationSubmissionResource>(Microsoft.Graph.Beta.Models.EducationSubmissionResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationResource>(Microsoft.Graph.Beta.Models.EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignmentResourceUrl", AssignmentResourceUrl);
-            writer.WriteCollectionOfObjectValues<EducationSubmissionResource>("dependentResources", DependentResources);
-            writer.WriteObjectValue<EducationResource>("resource", Resource);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationSubmissionResource>("dependentResources", DependentResources);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationResource>("resource", Resource);
         }
     }
 }

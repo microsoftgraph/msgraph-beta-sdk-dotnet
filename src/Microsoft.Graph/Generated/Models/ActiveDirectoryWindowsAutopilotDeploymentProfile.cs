@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable
+    public class ActiveDirectoryWindowsAutopilotDeploymentProfile : Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile, IParsable
     {
         /// <summary>Configuration to join Active Directory domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDomainJoinConfiguration? DomainJoinConfiguration
+        public Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration? DomainJoinConfiguration
         {
-            get { return BackingStore?.Get<WindowsDomainJoinConfiguration?>("domainJoinConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration?>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
 #nullable restore
 #else
-        public WindowsDomainJoinConfiguration DomainJoinConfiguration
+        public Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration DomainJoinConfiguration
         {
-            get { return BackingStore?.Get<WindowsDomainJoinConfiguration>("domainJoinConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
 #endif
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("hybridAzureADJoinSkipConnectivityCheck", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActiveDirectoryWindowsAutopilotDeploymentProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ActiveDirectoryWindowsAutopilotDeploymentProfile"/> and sets the default values.
         /// </summary>
         public ActiveDirectoryWindowsAutopilotDeploymentProfile() : base()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ActiveDirectoryWindowsAutopilotDeploymentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ActiveDirectoryWindowsAutopilotDeploymentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ActiveDirectoryWindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ActiveDirectoryWindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ActiveDirectoryWindowsAutopilotDeploymentProfile();
+            return new Microsoft.Graph.Beta.Models.ActiveDirectoryWindowsAutopilotDeploymentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<WindowsDomainJoinConfiguration>(WindowsDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
+                { "domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration>(Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
                 { "hybridAzureADJoinSkipConnectivityCheck", n => { HybridAzureADJoinSkipConnectivityCheck = n.GetBoolValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WindowsDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);
             writer.WriteBoolValue("hybridAzureADJoinSkipConnectivityCheck", HybridAzureADJoinSkipConnectivityCheck);
         }
     }

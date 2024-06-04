@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
     public class ConnectorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         /// <param name="position">The unique identifier of connector</param>
-        /// <returns>A <see cref="ConnectorItemRequestBuilder"/></returns>
-        public ConnectorItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.ConnectorItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.ConnectorItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("connector%2Did", position);
-                return new ConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.ConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConnectorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConnectorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
         /// <summary>
         /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="ConnectorCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConnectorCollectionResponse?> GetAsync(Action<RequestConfiguration<ConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ConnectorCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ConnectorCollectionResponse> GetAsync(Action<RequestConfiguration<ConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ConnectorCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ConnectorCollectionResponse>(requestInfo, ConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectorCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to connectors for onPremisesPublishingProfiles
         /// </summary>
-        /// <returns>A <see cref="Connector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Connector"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Connector?> PostAsync(Connector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Connector?> PostAsync(Microsoft.Graph.Beta.Models.Connector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Connector> PostAsync(Connector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Connector> PostAsync(Microsoft.Graph.Beta.Models.Connector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Connector>(requestInfo, Connector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Connector>(requestInfo, Microsoft.Graph.Beta.Models.Connector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Connector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Connector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Connector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Connector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ConnectorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConnectorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ConnectorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ConnectorsRequestBuilderGetRequestConfiguration : RequestConfiguration<ConnectorsRequestBuilderGetQueryParameters>
+        public class ConnectorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

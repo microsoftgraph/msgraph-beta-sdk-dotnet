@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a Kerberos-type Single Sign-On extension profile for macOS devices.
     /// </summary>
-    public class MacOSKerberosSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable
+    public class MacOSKerberosSingleSignOnExtension : Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension, IParsable
     {
         /// <summary>Gets or sets the Active Directory site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -322,7 +322,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userSetupDelayed", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSKerberosSingleSignOnExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSKerberosSingleSignOnExtension"/> and sets the default values.
         /// </summary>
         public MacOSKerberosSingleSignOnExtension() : base()
         {
@@ -331,12 +331,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSKerberosSingleSignOnExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSKerberosSingleSignOnExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSKerberosSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSKerberosSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSKerberosSingleSignOnExtension();
+            return new Microsoft.Graph.Beta.Models.MacOSKerberosSingleSignOnExtension();
         }
         /// <summary>
         /// The deserialization information for the current model

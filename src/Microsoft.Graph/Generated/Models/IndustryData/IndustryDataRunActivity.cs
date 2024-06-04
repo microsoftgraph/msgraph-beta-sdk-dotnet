@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The flow that was run by this activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IndustryDataActivity? Activity
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity? Activity
         {
-            get { return BackingStore?.Get<IndustryDataActivity?>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public IndustryDataActivity Activity
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity Activity
         {
-            get { return BackingStore?.Get<IndustryDataActivity>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
@@ -59,25 +59,25 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>The status property</summary>
-        public IndustryDataActivityStatus? Status
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus? Status
         {
-            get { return BackingStore?.Get<IndustryDataActivityStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataRunActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IndustryDataRunActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.inboundFlowActivity" => new InboundFlowActivity(),
-                "#microsoft.graph.industryData.outboundFlowActivity" => new OutboundFlowActivity(),
-                _ => new IndustryDataRunActivity(),
+                "#microsoft.graph.industryData.inboundFlowActivity" => new Microsoft.Graph.Beta.Models.IndustryData.InboundFlowActivity(),
+                "#microsoft.graph.industryData.outboundFlowActivity" => new Microsoft.Graph.Beta.Models.IndustryData.OutboundFlowActivity(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity(),
             };
         }
         /// <summary>
@@ -88,10 +88,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activity", n => { Activity = n.GetObjectValue<IndustryDataActivity>(IndustryDataActivity.CreateFromDiscriminatorValue); } },
+                { "activity", n => { Activity = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity.CreateFromDiscriminatorValue); } },
                 { "blockingError", n => { BlockingError = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<IndustryDataActivityStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus>(); } },
             };
         }
         /// <summary>
@@ -102,8 +102,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IndustryDataActivity>("activity", Activity);
-            writer.WriteEnumValue<IndustryDataActivityStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity>("activity", Activity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatus>("status", Status);
         }
     }
 }

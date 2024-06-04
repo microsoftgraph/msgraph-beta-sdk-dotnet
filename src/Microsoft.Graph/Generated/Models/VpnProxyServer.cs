@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VpnProxyServer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VpnProxyServer"/> and sets the default values.
         /// </summary>
         public VpnProxyServer()
         {
@@ -85,17 +85,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VpnProxyServer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VpnProxyServer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VpnProxyServer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.VpnProxyServer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windows10VpnProxyServer" => new Windows10VpnProxyServer(),
-                "#microsoft.graph.windows81VpnProxyServer" => new Windows81VpnProxyServer(),
-                _ => new VpnProxyServer(),
+                "#microsoft.graph.windows10VpnProxyServer" => new Microsoft.Graph.Beta.Models.Windows10VpnProxyServer(),
+                "#microsoft.graph.windows81VpnProxyServer" => new Microsoft.Graph.Beta.Models.Windows81VpnProxyServer(),
+                _ => new Microsoft.Graph.Beta.Models.VpnProxyServer(),
             };
         }
         /// <summary>

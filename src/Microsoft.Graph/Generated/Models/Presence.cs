@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Presence : Entity, IParsable
+    public class Presence : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.</summary>
@@ -61,28 +61,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The presence status message of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PresenceStatusMessage? StatusMessage
+        public Microsoft.Graph.Beta.Models.PresenceStatusMessage? StatusMessage
         {
-            get { return BackingStore?.Get<PresenceStatusMessage?>("statusMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PresenceStatusMessage?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #nullable restore
 #else
-        public PresenceStatusMessage StatusMessage
+        public Microsoft.Graph.Beta.Models.PresenceStatusMessage StatusMessage
         {
-            get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PresenceStatusMessage>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Presence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Presence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Presence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Presence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Presence();
+            return new Microsoft.Graph.Beta.Models.Presence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "activity", n => { Activity = n.GetStringValue(); } },
                 { "availability", n => { Availability = n.GetStringValue(); } },
                 { "outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(Microsoft.Graph.Beta.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
-                { "statusMessage", n => { StatusMessage = n.GetObjectValue<PresenceStatusMessage>(PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "statusMessage", n => { StatusMessage = n.GetObjectValue<Microsoft.Graph.Beta.Models.PresenceStatusMessage>(Microsoft.Graph.Beta.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("activity", Activity);
             writer.WriteStringValue("availability", Availability);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
-            writer.WriteObjectValue<PresenceStatusMessage>("statusMessage", StatusMessage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
         }
     }
 }

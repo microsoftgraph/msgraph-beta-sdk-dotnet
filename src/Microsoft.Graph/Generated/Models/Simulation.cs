@@ -7,19 +7,19 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Simulation : Entity, IParsable
+    public class Simulation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.</summary>
-        public SimulationAttackTechnique? AttackTechnique
+        public Microsoft.Graph.Beta.Models.SimulationAttackTechnique? AttackTechnique
         {
-            get { return BackingStore?.Get<SimulationAttackTechnique?>("attackTechnique"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationAttackTechnique?>("attackTechnique"); }
             set { BackingStore?.Set("attackTechnique", value); }
         }
         /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
-        public SimulationAttackType? AttackType
+        public Microsoft.Graph.Beta.Models.SimulationAttackType? AttackType
         {
-            get { return BackingStore?.Get<SimulationAttackType?>("attackType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationAttackType?>("attackType"); }
             set { BackingStore?.Set("attackType", value); }
         }
         /// <summary>Unique identifier for the attack simulation automation.</summary>
@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity of the user who created the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.EmailIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.EmailIdentity CreatedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -123,32 +123,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Users excluded from the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccountTargetContent? ExcludedAccountTarget
+        public Microsoft.Graph.Beta.Models.AccountTargetContent? ExcludedAccountTarget
         {
-            get { return BackingStore?.Get<AccountTargetContent?>("excludedAccountTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccountTargetContent?>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
 #nullable restore
 #else
-        public AccountTargetContent ExcludedAccountTarget
+        public Microsoft.Graph.Beta.Models.AccountTargetContent ExcludedAccountTarget
         {
-            get { return BackingStore?.Get<AccountTargetContent>("excludedAccountTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccountTargetContent>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
 #endif
         /// <summary>Users targeted in the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccountTargetContent? IncludedAccountTarget
+        public Microsoft.Graph.Beta.Models.AccountTargetContent? IncludedAccountTarget
         {
-            get { return BackingStore?.Get<AccountTargetContent?>("includedAccountTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccountTargetContent?>("includedAccountTarget"); }
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
 #nullable restore
 #else
-        public AccountTargetContent IncludedAccountTarget
+        public Microsoft.Graph.Beta.Models.AccountTargetContent IncludedAccountTarget
         {
-            get { return BackingStore?.Get<AccountTargetContent>("includedAccountTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccountTargetContent>("includedAccountTarget"); }
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
 #endif
@@ -177,16 +177,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity of the user who most recently modified the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.EmailIdentity? LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy
+        public Microsoft.Graph.Beta.Models.EmailIdentity LastModifiedBy
         {
-            get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -259,23 +259,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Report of the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SimulationReport? Report
+        public Microsoft.Graph.Beta.Models.SimulationReport? Report
         {
-            get { return BackingStore?.Get<SimulationReport?>("report"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationReport?>("report"); }
             set { BackingStore?.Set("report", value); }
         }
 #nullable restore
 #else
-        public SimulationReport Report
+        public Microsoft.Graph.Beta.Models.SimulationReport Report
         {
-            get { return BackingStore?.Get<SimulationReport>("report"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationReport>("report"); }
             set { BackingStore?.Set("report", value); }
         }
 #endif
         /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
-        public SimulationStatus? Status
+        public Microsoft.Graph.Beta.Models.SimulationStatus? Status
         {
-            get { return BackingStore?.Get<SimulationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Details about the training settings for a simulation.</summary>
@@ -297,12 +297,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Simulation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Simulation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Simulation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Simulation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Simulation();
+            return new Microsoft.Graph.Beta.Models.Simulation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -312,29 +312,29 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attackTechnique", n => { AttackTechnique = n.GetEnumValue<SimulationAttackTechnique>(); } },
-                { "attackType", n => { AttackType = n.GetEnumValue<SimulationAttackType>(); } },
+                { "attackTechnique", n => { AttackTechnique = n.GetEnumValue<Microsoft.Graph.Beta.Models.SimulationAttackTechnique>(); } },
+                { "attackType", n => { AttackType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SimulationAttackType>(); } },
                 { "automationId", n => { AutomationId = n.GetStringValue(); } },
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailIdentity>(Microsoft.Graph.Beta.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
                 { "endUserNotificationSetting", n => { EndUserNotificationSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.EndUserNotificationSetting>(Microsoft.Graph.Beta.Models.EndUserNotificationSetting.CreateFromDiscriminatorValue); } },
-                { "excludedAccountTarget", n => { ExcludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
-                { "includedAccountTarget", n => { IncludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
+                { "excludedAccountTarget", n => { ExcludedAccountTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccountTargetContent>(Microsoft.Graph.Beta.Models.AccountTargetContent.CreateFromDiscriminatorValue); } },
+                { "includedAccountTarget", n => { IncludedAccountTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccountTargetContent>(Microsoft.Graph.Beta.Models.AccountTargetContent.CreateFromDiscriminatorValue); } },
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 { "landingPage", n => { LandingPage = n.GetObjectValue<Microsoft.Graph.Beta.Models.LandingPage>(Microsoft.Graph.Beta.Models.LandingPage.CreateFromDiscriminatorValue); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailIdentity>(Microsoft.Graph.Beta.Models.EmailIdentity.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
                 { "loginPage", n => { LoginPage = n.GetObjectValue<Microsoft.Graph.Beta.Models.LoginPage>(Microsoft.Graph.Beta.Models.LoginPage.CreateFromDiscriminatorValue); } },
                 { "oAuthConsentAppDetail", n => { OAuthConsentAppDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.OAuthConsentAppDetail>(Microsoft.Graph.Beta.Models.OAuthConsentAppDetail.CreateFromDiscriminatorValue); } },
                 { "payload", n => { Payload = n.GetObjectValue<Microsoft.Graph.Beta.Models.Payload>(Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue); } },
-                { "payloadDeliveryPlatform", n => { PayloadDeliveryPlatform = n.GetEnumValue<PayloadDeliveryPlatform>(); } },
-                { "report", n => { Report = n.GetObjectValue<SimulationReport>(SimulationReport.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<SimulationStatus>(); } },
+                { "payloadDeliveryPlatform", n => { PayloadDeliveryPlatform = n.GetEnumValue<Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform>(); } },
+                { "report", n => { Report = n.GetObjectValue<Microsoft.Graph.Beta.Models.SimulationReport>(Microsoft.Graph.Beta.Models.SimulationReport.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.SimulationStatus>(); } },
                 { "trainingSetting", n => { TrainingSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingSetting>(Microsoft.Graph.Beta.Models.TrainingSetting.CreateFromDiscriminatorValue); } },
             };
         }
@@ -346,29 +346,29 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<SimulationAttackTechnique>("attackTechnique", AttackTechnique);
-            writer.WriteEnumValue<SimulationAttackType>("attackType", AttackType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SimulationAttackTechnique>("attackTechnique", AttackTechnique);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SimulationAttackType>("attackType", AttackType);
             writer.WriteStringValue("automationId", AutomationId);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
-            writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("durationInDays", DurationInDays);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EndUserNotificationSetting>("endUserNotificationSetting", EndUserNotificationSetting);
-            writer.WriteObjectValue<AccountTargetContent>("excludedAccountTarget", ExcludedAccountTarget);
-            writer.WriteObjectValue<AccountTargetContent>("includedAccountTarget", IncludedAccountTarget);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccountTargetContent>("excludedAccountTarget", ExcludedAccountTarget);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccountTargetContent>("includedAccountTarget", IncludedAccountTarget);
             writer.WriteBoolValue("isAutomated", IsAutomated);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LandingPage>("landingPage", LandingPage);
-            writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("launchDateTime", LaunchDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LoginPage>("loginPage", LoginPage);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OAuthConsentAppDetail>("oAuthConsentAppDetail", OAuthConsentAppDetail);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Payload>("payload", Payload);
-            writer.WriteEnumValue<PayloadDeliveryPlatform>("payloadDeliveryPlatform", PayloadDeliveryPlatform);
-            writer.WriteObjectValue<SimulationReport>("report", Report);
-            writer.WriteEnumValue<SimulationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform>("payloadDeliveryPlatform", PayloadDeliveryPlatform);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SimulationReport>("report", Report);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SimulationStatus>("status", Status);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TrainingSetting>("trainingSetting", TrainingSetting);
         }
     }

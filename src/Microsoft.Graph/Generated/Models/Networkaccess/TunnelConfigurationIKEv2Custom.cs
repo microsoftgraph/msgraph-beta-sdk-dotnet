@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class TunnelConfigurationIKEv2Custom : TunnelConfiguration, IParsable
+    public class TunnelConfigurationIKEv2Custom : Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dhGroup property</summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("saLifeTimeSeconds", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TunnelConfigurationIKEv2Custom"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfigurationIKEv2Custom"/> and sets the default values.
         /// </summary>
         public TunnelConfigurationIKEv2Custom() : base()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TunnelConfigurationIKEv2Custom"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfigurationIKEv2Custom"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TunnelConfigurationIKEv2Custom CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfigurationIKEv2Custom CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TunnelConfigurationIKEv2Custom();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfigurationIKEv2Custom();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dhGroup", n => { DhGroup = n.GetEnumValue<DhGroup>(); } },
-                { "ikeEncryption", n => { IkeEncryption = n.GetEnumValue<IkeEncryption>(); } },
-                { "ikeIntegrity", n => { IkeIntegrity = n.GetEnumValue<IkeIntegrity>(); } },
-                { "ipSecEncryption", n => { IpSecEncryption = n.GetEnumValue<IpSecEncryption>(); } },
-                { "ipSecIntegrity", n => { IpSecIntegrity = n.GetEnumValue<IpSecIntegrity>(); } },
-                { "pfsGroup", n => { PfsGroup = n.GetEnumValue<PfsGroup>(); } },
+                { "dhGroup", n => { DhGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.DhGroup>(); } },
+                { "ikeEncryption", n => { IkeEncryption = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IkeEncryption>(); } },
+                { "ikeIntegrity", n => { IkeIntegrity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IkeIntegrity>(); } },
+                { "ipSecEncryption", n => { IpSecEncryption = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IpSecEncryption>(); } },
+                { "ipSecIntegrity", n => { IpSecIntegrity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IpSecIntegrity>(); } },
+                { "pfsGroup", n => { PfsGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.PfsGroup>(); } },
                 { "saLifeTimeSeconds", n => { SaLifeTimeSeconds = n.GetLongValue(); } },
             };
         }
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DhGroup>("dhGroup", DhGroup);
-            writer.WriteEnumValue<IkeEncryption>("ikeEncryption", IkeEncryption);
-            writer.WriteEnumValue<IkeIntegrity>("ikeIntegrity", IkeIntegrity);
-            writer.WriteEnumValue<IpSecEncryption>("ipSecEncryption", IpSecEncryption);
-            writer.WriteEnumValue<IpSecIntegrity>("ipSecIntegrity", IpSecIntegrity);
-            writer.WriteEnumValue<PfsGroup>("pfsGroup", PfsGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.DhGroup>("dhGroup", DhGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IkeEncryption>("ikeEncryption", IkeEncryption);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IkeIntegrity>("ikeIntegrity", IkeIntegrity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IpSecEncryption>("ipSecEncryption", IpSecEncryption);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.IpSecIntegrity>("ipSecIntegrity", IpSecIntegrity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.PfsGroup>("pfsGroup", PfsGroup);
             writer.WriteLongValue("saLifeTimeSeconds", SaLifeTimeSeconds);
         }
     }

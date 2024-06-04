@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotien
         /// <summary>The denominator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Denominator
+        public Microsoft.Graph.Beta.Models.Json? Denominator
         {
-            get { return BackingStore?.Get<Json?>("denominator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("denominator"); }
             set { BackingStore?.Set("denominator", value); }
         }
 #nullable restore
 #else
-        public Json Denominator
+        public Microsoft.Graph.Beta.Models.Json Denominator
         {
-            get { return BackingStore?.Get<Json>("denominator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("denominator"); }
             set { BackingStore?.Set("denominator", value); }
         }
 #endif
         /// <summary>The numerator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Numerator
+        public Microsoft.Graph.Beta.Models.Json? Numerator
         {
-            get { return BackingStore?.Get<Json?>("numerator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("numerator"); }
             set { BackingStore?.Set("numerator", value); }
         }
 #nullable restore
 #else
-        public Json Numerator
+        public Microsoft.Graph.Beta.Models.Json Numerator
         {
-            get { return BackingStore?.Get<Json>("numerator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("numerator"); }
             set { BackingStore?.Set("numerator", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="QuotientPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotient.QuotientPostRequestBody"/> and sets the default values.
         /// </summary>
         public QuotientPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotien
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QuotientPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotient.QuotientPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QuotientPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotient.QuotientPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QuotientPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotient.QuotientPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotien
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "denominator", n => { Denominator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "numerator", n => { Numerator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "denominator", n => { Denominator = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "numerator", n => { Numerator = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quotien
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("denominator", Denominator);
-            writer.WriteObjectValue<Json>("numerator", Numerator);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("denominator", Denominator);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("numerator", Numerator);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The inumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Inumber
+        public Microsoft.Graph.Beta.Models.Json? Inumber
         {
-            get { return BackingStore?.Get<Json?>("inumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("inumber"); }
             set { BackingStore?.Set("inumber", value); }
         }
 #nullable restore
 #else
-        public Json Inumber
+        public Microsoft.Graph.Beta.Models.Json Inumber
         {
-            get { return BackingStore?.Get<Json>("inumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("inumber"); }
             set { BackingStore?.Set("inumber", value); }
         }
 #endif
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number
+        public Microsoft.Graph.Beta.Models.Json? Number
         {
-            get { return BackingStore?.Get<Json?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number
+        public Microsoft.Graph.Beta.Models.Json Number
         {
-            get { return BackingStore?.Get<Json>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ImPowerPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ImPower.ImPowerPostRequestBody"/> and sets the default values.
         /// </summary>
         public ImPowerPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImPowerPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ImPower.ImPowerPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImPowerPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ImPower.ImPowerPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImPowerPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ImPower.ImPowerPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inumber", n => { Inumber = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "inumber", n => { Inumber = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("inumber", Inumber);
-            writer.WriteObjectValue<Json>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("inumber", Inumber);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number", Number);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

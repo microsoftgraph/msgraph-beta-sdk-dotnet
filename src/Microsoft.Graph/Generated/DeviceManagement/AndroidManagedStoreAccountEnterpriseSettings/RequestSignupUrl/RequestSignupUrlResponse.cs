@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
 {
     [Obsolete("This class is obsolete. Use RequestSignupUrlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RequestSignupUrlResponse : RequestSignupUrlPostResponse, IParsable
+    public class RequestSignupUrlResponse : Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RequestSignupUrlResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RequestSignupUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RequestSignupUrlResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl.RequestSignupUrlResponse();
         }
     }
 }

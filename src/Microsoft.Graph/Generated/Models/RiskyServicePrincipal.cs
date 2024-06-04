@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RiskyServicePrincipal : Entity, IParsable
+    public class RiskyServicePrincipal : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>true if the service principal account is enabled; otherwise, false.</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the risk history of Microsoft Entra service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskyServicePrincipalHistoryItem>? History
+        public List<Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem>? History
         {
-            get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>?>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<RiskyServicePrincipalHistoryItem> History
+        public List<Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem> History
         {
-            get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>>("history"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
@@ -119,16 +119,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RiskyServicePrincipal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RiskyServicePrincipal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RiskyServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RiskyServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.riskyServicePrincipalHistoryItem" => new RiskyServicePrincipalHistoryItem(),
-                _ => new RiskyServicePrincipal(),
+                "#microsoft.graph.riskyServicePrincipalHistoryItem" => new Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem(),
+                _ => new Microsoft.Graph.Beta.Models.RiskyServicePrincipal(),
             };
         }
         /// <summary>
@@ -142,13 +142,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "history", n => { History = n.GetCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>(RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem>(Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
-                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskDetail>(); } },
                 { "riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "riskLevel", n => { RiskLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskState>(); } },
                 { "servicePrincipalType", n => { ServicePrincipalType = n.GetStringValue(); } },
             };
         }
@@ -163,13 +163,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>("history", History);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RiskyServicePrincipalHistoryItem>("history", History);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isProcessing", IsProcessing);
-            writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteDateTimeOffsetValue("riskLastUpdatedDateTime", RiskLastUpdatedDateTime);
-            writer.WriteEnumValue<RiskLevel>("riskLevel", RiskLevel);
-            writer.WriteEnumValue<RiskState>("riskState", RiskState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>("riskLevel", RiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskState>("riskState", RiskState);
             writer.WriteStringValue("servicePrincipalType", ServicePrincipalType);
         }
     }

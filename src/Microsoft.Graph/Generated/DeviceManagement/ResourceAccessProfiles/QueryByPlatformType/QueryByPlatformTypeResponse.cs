@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
 {
     [Obsolete("This class is obsolete. Use QueryByPlatformTypePostResponse instead.")]
     #pragma warning disable CS1591
-    public class QueryByPlatformTypeResponse : QueryByPlatformTypePostResponse, IParsable
+    public class QueryByPlatformTypeResponse : Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QueryByPlatformTypeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new QueryByPlatformTypeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QueryByPlatformTypeResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypeResponse();
         }
     }
 }

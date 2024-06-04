@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Event : OutlookItem, IParsable
+    public class Event : Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.</summary>
@@ -19,48 +19,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attachment>? Attachments
+        public List<Microsoft.Graph.Beta.Models.Attachment>? Attachments
         {
-            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<Attachment> Attachments
+        public List<Microsoft.Graph.Beta.Models.Attachment> Attachments
         {
-            get { return BackingStore?.Get<List<Attachment>>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
         /// <summary>The collection of attendees for the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attendee>? Attendees
+        public List<Microsoft.Graph.Beta.Models.Attendee>? Attendees
         {
-            get { return BackingStore?.Get<List<Attendee>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Attendee>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<Attendee> Attendees
+        public List<Microsoft.Graph.Beta.Models.Attendee> Attendees
         {
-            get { return BackingStore?.Get<List<Attendee>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Attendee>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
         /// <summary>The body of the message associated with the event. It can be in HTML or text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body
+        public Microsoft.Graph.Beta.Models.ItemBody? Body
         {
-            get { return BackingStore?.Get<ItemBody?>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body
+        public Microsoft.Graph.Beta.Models.ItemBody Body
         {
-            get { return BackingStore?.Get<ItemBody>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -115,48 +115,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? End
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? End
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone End
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone End
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #endif
         /// <summary>The exceptionOccurrences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? ExceptionOccurrences
+        public List<Microsoft.Graph.Beta.Models.Event>? ExceptionOccurrences
         {
-            get { return BackingStore?.Get<List<Event>?>("exceptionOccurrences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>?>("exceptionOccurrences"); }
             set { BackingStore?.Set("exceptionOccurrences", value); }
         }
 #nullable restore
 #else
-        public List<Event> ExceptionOccurrences
+        public List<Microsoft.Graph.Beta.Models.Event> ExceptionOccurrences
         {
-            get { return BackingStore?.Get<List<Event>>("exceptionOccurrences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>>("exceptionOccurrences"); }
             set { BackingStore?.Set("exceptionOccurrences", value); }
         }
 #endif
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -197,16 +197,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? Instances
+        public List<Microsoft.Graph.Beta.Models.Event>? Instances
         {
-            get { return BackingStore?.Get<List<Event>?>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<Event> Instances
+        public List<Microsoft.Graph.Beta.Models.Event> Instances
         {
-            get { return BackingStore?.Get<List<Event>>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
@@ -281,16 +281,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of multi-value extended properties defined for the event. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -313,23 +313,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnlineMeetingInfo? OnlineMeeting
+        public Microsoft.Graph.Beta.Models.OnlineMeetingInfo? OnlineMeeting
         {
-            get { return BackingStore?.Get<OnlineMeetingInfo?>("onlineMeeting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingInfo?>("onlineMeeting"); }
             set { BackingStore?.Set("onlineMeeting", value); }
         }
 #nullable restore
 #else
-        public OnlineMeetingInfo OnlineMeeting
+        public Microsoft.Graph.Beta.Models.OnlineMeetingInfo OnlineMeeting
         {
-            get { return BackingStore?.Get<OnlineMeetingInfo>("onlineMeeting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingInfo>("onlineMeeting"); }
             set { BackingStore?.Set("onlineMeeting", value); }
         }
 #endif
         /// <summary>Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.</summary>
-        public OnlineMeetingProviderType? OnlineMeetingProvider
+        public Microsoft.Graph.Beta.Models.OnlineMeetingProviderType? OnlineMeetingProvider
         {
-            get { return BackingStore?.Get<OnlineMeetingProviderType?>("onlineMeetingProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingProviderType?>("onlineMeetingProvider"); }
             set { BackingStore?.Set("onlineMeetingProvider", value); }
         }
         /// <summary>A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.</summary>
@@ -351,16 +351,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The organizer of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Recipient? Organizer
+        public Microsoft.Graph.Beta.Models.Recipient? Organizer
         {
-            get { return BackingStore?.Get<Recipient?>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Recipient?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public Recipient Organizer
+        public Microsoft.Graph.Beta.Models.Recipient Organizer
         {
-            get { return BackingStore?.Get<Recipient>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Recipient>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #endif
@@ -405,16 +405,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The recurrence pattern for the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence
+        public Microsoft.Graph.Beta.Models.PatternedRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence
+        public Microsoft.Graph.Beta.Models.PatternedRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
@@ -469,40 +469,40 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? ShowAs
+        public Microsoft.Graph.Beta.Models.FreeBusyStatus? ShowAs
         {
-            get { return BackingStore?.Get<FreeBusyStatus?>("showAs"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FreeBusyStatus?>("showAs"); }
             set { BackingStore?.Set("showAs", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the event. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
         /// <summary>The start date, time, and time zone of the event. By default, the start time is in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? Start
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? Start
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone Start
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone Start
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #endif
@@ -539,9 +539,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only</summary>
-        public EventType? Type
+        public Microsoft.Graph.Beta.Models.EventType? Type
         {
-            get { return BackingStore?.Get<EventType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions.</summary>
@@ -577,7 +577,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Event"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Event"/> and sets the default values.
         /// </summary>
         public Event() : base()
         {
@@ -586,12 +586,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Event"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Event"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Event CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Event CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Event();
+            return new Microsoft.Graph.Beta.Models.Event();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -602,20 +602,20 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowNewTimeProposals", n => { AllowNewTimeProposals = n.GetBoolValue(); } },
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Attendee>(Attendee.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Attachment>(Microsoft.Graph.Beta.Models.Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Attendee>(Microsoft.Graph.Beta.Models.Attendee.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
                 { "calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue); } },
                 { "cancelledOccurrences", n => { CancelledOccurrences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "exceptionOccurrences", n => { ExceptionOccurrences = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "end", n => { End = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "exceptionOccurrences", n => { ExceptionOccurrences = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 { "hideAttendees", n => { HideAttendees = n.GetBoolValue(); } },
                 { "iCalUId", n => { ICalUId = n.GetStringValue(); } },
-                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
-                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Beta.Models.Importance>(); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
                 { "isCancelled", n => { IsCancelled = n.GetBoolValue(); } },
                 { "isDraft", n => { IsDraft = n.GetBoolValue(); } },
@@ -624,27 +624,27 @@ namespace Microsoft.Graph.Beta.Models
                 { "isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "occurrenceId", n => { OccurrenceId = n.GetStringValue(); } },
-                { "onlineMeeting", n => { OnlineMeeting = n.GetObjectValue<OnlineMeetingInfo>(OnlineMeetingInfo.CreateFromDiscriminatorValue); } },
-                { "onlineMeetingProvider", n => { OnlineMeetingProvider = n.GetEnumValue<OnlineMeetingProviderType>(); } },
+                { "onlineMeeting", n => { OnlineMeeting = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnlineMeetingInfo>(Microsoft.Graph.Beta.Models.OnlineMeetingInfo.CreateFromDiscriminatorValue); } },
+                { "onlineMeetingProvider", n => { OnlineMeetingProvider = n.GetEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingProviderType>(); } },
                 { "onlineMeetingUrl", n => { OnlineMeetingUrl = n.GetStringValue(); } },
-                { "organizer", n => { Organizer = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Recipient>(Microsoft.Graph.Beta.Models.Recipient.CreateFromDiscriminatorValue); } },
                 { "originalEndTimeZone", n => { OriginalEndTimeZone = n.GetStringValue(); } },
                 { "originalStart", n => { OriginalStart = n.GetDateTimeOffsetValue(); } },
                 { "originalStartTimeZone", n => { OriginalStartTimeZone = n.GetStringValue(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Beta.Models.PatternedRecurrence>(Microsoft.Graph.Beta.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 { "reminderMinutesBeforeStart", n => { ReminderMinutesBeforeStart = n.GetIntValue(); } },
                 { "responseRequested", n => { ResponseRequested = n.GetBoolValue(); } },
                 { "responseStatus", n => { ResponseStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResponseStatus>(Microsoft.Graph.Beta.Models.ResponseStatus.CreateFromDiscriminatorValue); } },
-                { "sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
+                { "sensitivity", n => { Sensitivity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Sensitivity>(); } },
                 { "seriesMasterId", n => { SeriesMasterId = n.GetStringValue(); } },
-                { "showAs", n => { ShowAs = n.GetEnumValue<FreeBusyStatus>(); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "showAs", n => { ShowAs = n.GetEnumValue<Microsoft.Graph.Beta.Models.FreeBusyStatus>(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "start", n => { Start = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "transactionId", n => { TransactionId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<EventType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.EventType>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "webLink", n => { WebLink = n.GetStringValue(); } },
             };
@@ -658,20 +658,20 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowNewTimeProposals", AllowNewTimeProposals);
-            writer.WriteCollectionOfObjectValues<Attachment>("attachments", Attachments);
-            writer.WriteCollectionOfObjectValues<Attendee>("attendees", Attendees);
-            writer.WriteObjectValue<ItemBody>("body", Body);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Attachment>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Attendee>("attendees", Attendees);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
             writer.WriteStringValue("bodyPreview", BodyPreview);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Calendar>("calendar", Calendar);
             writer.WriteCollectionOfPrimitiveValues<string>("cancelledOccurrences", CancelledOccurrences);
-            writer.WriteObjectValue<DateTimeTimeZone>("end", End);
-            writer.WriteCollectionOfObjectValues<Event>("exceptionOccurrences", ExceptionOccurrences);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("end", End);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>("exceptionOccurrences", ExceptionOccurrences);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteBoolValue("hideAttendees", HideAttendees);
             writer.WriteStringValue("iCalUId", ICalUId);
-            writer.WriteEnumValue<Importance>("importance", Importance);
-            writer.WriteCollectionOfObjectValues<Event>("instances", Instances);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Importance>("importance", Importance);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>("instances", Instances);
             writer.WriteBoolValue("isAllDay", IsAllDay);
             writer.WriteBoolValue("isCancelled", IsCancelled);
             writer.WriteBoolValue("isDraft", IsDraft);
@@ -680,27 +680,27 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isReminderOn", IsReminderOn);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Location>("location", Location);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Location>("locations", Locations);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("occurrenceId", OccurrenceId);
-            writer.WriteObjectValue<OnlineMeetingInfo>("onlineMeeting", OnlineMeeting);
-            writer.WriteEnumValue<OnlineMeetingProviderType>("onlineMeetingProvider", OnlineMeetingProvider);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnlineMeetingInfo>("onlineMeeting", OnlineMeeting);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingProviderType>("onlineMeetingProvider", OnlineMeetingProvider);
             writer.WriteStringValue("onlineMeetingUrl", OnlineMeetingUrl);
-            writer.WriteObjectValue<Recipient>("organizer", Organizer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Recipient>("organizer", Organizer);
             writer.WriteStringValue("originalEndTimeZone", OriginalEndTimeZone);
             writer.WriteDateTimeOffsetValue("originalStart", OriginalStart);
             writer.WriteStringValue("originalStartTimeZone", OriginalStartTimeZone);
-            writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteIntValue("reminderMinutesBeforeStart", ReminderMinutesBeforeStart);
             writer.WriteBoolValue("responseRequested", ResponseRequested);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResponseStatus>("responseStatus", ResponseStatus);
-            writer.WriteEnumValue<Sensitivity>("sensitivity", Sensitivity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Sensitivity>("sensitivity", Sensitivity);
             writer.WriteStringValue("seriesMasterId", SeriesMasterId);
-            writer.WriteEnumValue<FreeBusyStatus>("showAs", ShowAs);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
-            writer.WriteObjectValue<DateTimeTimeZone>("start", Start);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.FreeBusyStatus>("showAs", ShowAs);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("start", Start);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("transactionId", TransactionId);
-            writer.WriteEnumValue<EventType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EventType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("webLink", WebLink);
         }

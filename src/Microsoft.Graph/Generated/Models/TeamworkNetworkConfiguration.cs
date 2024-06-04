@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkNetworkConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkNetworkConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkNetworkConfiguration()
         {
@@ -170,12 +170,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkNetworkConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkNetworkConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkNetworkConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkNetworkConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

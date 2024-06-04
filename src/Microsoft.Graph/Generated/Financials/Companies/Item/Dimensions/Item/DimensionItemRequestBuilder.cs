@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item
     public class DimensionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.</summary>
-        public DimensionValuesRequestBuilder DimensionValues
+        public Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionValues.DimensionValuesRequestBuilder DimensionValues
         {
-            get => new DimensionValuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionValues.DimensionValuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DimensionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DimensionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +41,25 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item
         /// <summary>
         /// Get dimensions from financials
         /// </summary>
-        /// <returns>A <see cref="Dimension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Dimension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Dimension?> GetAsync(Action<RequestConfiguration<DimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Dimension?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder.DimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Dimension> GetAsync(Action<RequestConfiguration<DimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Dimension> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder.DimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Dimension>(requestInfo, Dimension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Dimension>(requestInfo, Microsoft.Graph.Beta.Models.Dimension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get dimensions from financials
@@ -68,11 +68,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder.DimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder.DimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DimensionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DimensionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DimensionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get dimensions from financials
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DimensionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DimensionItemRequestBuilderGetQueryParameters>
+        public class DimensionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionItemRequestBuilder.DimensionItemRequestBuilderGetQueryParameters>
         {
         }
     }

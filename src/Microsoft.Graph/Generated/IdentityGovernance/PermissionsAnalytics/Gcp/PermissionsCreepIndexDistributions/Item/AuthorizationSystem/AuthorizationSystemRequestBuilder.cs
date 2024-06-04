@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.Permi
     public class AuthorizationSystemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AuthorizationSystemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.Permi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthorizationSystemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,20 +38,20 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.Permi
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem?> GetAsync(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder.AuthorizationSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem> GetAsync(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder.AuthorizationSystemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationSystem>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.Permi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder.AuthorizationSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder.AuthorizationSystemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.Permi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthorizationSystemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthorizationSystemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents an authorization system onboarded to Permissions Management.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.Permi
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthorizationSystemRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>
+        public class AuthorizationSystemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions.Item.AuthorizationSystem.AuthorizationSystemRequestBuilder.AuthorizationSystemRequestBuilderGetQueryParameters>
         {
         }
     }

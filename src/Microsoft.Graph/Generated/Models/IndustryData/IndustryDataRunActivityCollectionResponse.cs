@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataRunActivity>? Value
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>? Value
         {
-            get { return BackingStore?.Get<List<IndustryDataRunActivity>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataRunActivity> Value
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity> Value
         {
-            get { return BackingStore?.Get<List<IndustryDataRunActivity>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataRunActivityCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivityCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IndustryDataRunActivityCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivityCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IndustryDataRunActivityCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivityCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<IndustryDataRunActivity>(IndustryDataRunActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IndustryDataRunActivity>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>("value", Value);
         }
     }
 }

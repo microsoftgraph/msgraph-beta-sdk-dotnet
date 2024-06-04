@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Content represented in a format for a specific locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageLocalizedText>? LocalizedTexts
+        public List<Microsoft.Graph.Beta.Models.AccessPackageLocalizedText>? LocalizedTexts
         {
-            get { return BackingStore?.Get<List<AccessPackageLocalizedText>?>("localizedTexts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageLocalizedText>?>("localizedTexts"); }
             set { BackingStore?.Set("localizedTexts", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageLocalizedText> LocalizedTexts
+        public List<Microsoft.Graph.Beta.Models.AccessPackageLocalizedText> LocalizedTexts
         {
-            get { return BackingStore?.Get<List<AccessPackageLocalizedText>>("localizedTexts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageLocalizedText>>("localizedTexts"); }
             set { BackingStore?.Set("localizedTexts", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageLocalizedContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessPackageLocalizedContent"/> and sets the default values.
         /// </summary>
         public AccessPackageLocalizedContent()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageLocalizedContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageLocalizedContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageLocalizedContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessPackageLocalizedContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageLocalizedContent();
+            return new Microsoft.Graph.Beta.Models.AccessPackageLocalizedContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "defaultText", n => { DefaultText = n.GetStringValue(); } },
-                { "localizedTexts", n => { LocalizedTexts = n.GetCollectionOfObjectValues<AccessPackageLocalizedText>(AccessPackageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizedTexts", n => { LocalizedTexts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageLocalizedText>(Microsoft.Graph.Beta.Models.AccessPackageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultText", DefaultText);
-            writer.WriteCollectionOfObjectValues<AccessPackageLocalizedText>("localizedTexts", LocalizedTexts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageLocalizedText>("localizedTexts", LocalizedTexts);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

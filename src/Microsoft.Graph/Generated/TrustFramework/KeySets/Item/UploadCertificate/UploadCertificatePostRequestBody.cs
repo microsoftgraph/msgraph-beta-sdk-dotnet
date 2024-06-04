@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UploadCertificatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate.UploadCertificatePostRequestBody"/> and sets the default values.
         /// </summary>
         public UploadCertificatePostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UploadCertificatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate.UploadCertificatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UploadCertificatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate.UploadCertificatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UploadCertificatePostRequestBody();
+            return new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate.UploadCertificatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

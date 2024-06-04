@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The attribute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomClaimAttributeBase? Attribute
+        public Microsoft.Graph.Beta.Models.CustomClaimAttributeBase? Attribute
         {
-            get { return BackingStore?.Get<CustomClaimAttributeBase?>("attribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase?>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
 #nullable restore
 #else
-        public CustomClaimAttributeBase Attribute
+        public Microsoft.Graph.Beta.Models.CustomClaimAttributeBase Attribute
         {
-            get { return BackingStore?.Get<CustomClaimAttributeBase>("attribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("treatAsMultiValue", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TransformationAttribute"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TransformationAttribute"/> and sets the default values.
         /// </summary>
         public TransformationAttribute()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TransformationAttribute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TransformationAttribute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TransformationAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TransformationAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TransformationAttribute();
+            return new Microsoft.Graph.Beta.Models.TransformationAttribute();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute", n => { Attribute = n.GetObjectValue<CustomClaimAttributeBase>(CustomClaimAttributeBase.CreateFromDiscriminatorValue); } },
+                { "attribute", n => { Attribute = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase>(Microsoft.Graph.Beta.Models.CustomClaimAttributeBase.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "treatAsMultiValue", n => { TreatAsMultiValue = n.GetBoolValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<CustomClaimAttributeBase>("attribute", Attribute);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase>("attribute", Attribute);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("treatAsMultiValue", TreatAsMultiValue);
             writer.WriteAdditionalData(AdditionalData);

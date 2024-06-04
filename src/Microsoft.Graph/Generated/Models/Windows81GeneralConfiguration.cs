@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows81GeneralConfiguration resource.
     /// </summary>
-    public class Windows81GeneralConfiguration : DeviceConfiguration, IParsable
+    public class Windows81GeneralConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
         public bool? AccountsBlockAddingNonMicrosoftAccountEmail
@@ -88,15 +88,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values for internet site security level.</summary>
-        public InternetSiteSecurityLevel? BrowserInternetSecurityLevel
+        public Microsoft.Graph.Beta.Models.InternetSiteSecurityLevel? BrowserInternetSecurityLevel
         {
-            get { return BackingStore?.Get<InternetSiteSecurityLevel?>("browserInternetSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InternetSiteSecurityLevel?>("browserInternetSecurityLevel"); }
             set { BackingStore?.Set("browserInternetSecurityLevel", value); }
         }
         /// <summary>Possible values for site security level.</summary>
-        public SiteSecurityLevel? BrowserIntranetSecurityLevel
+        public Microsoft.Graph.Beta.Models.SiteSecurityLevel? BrowserIntranetSecurityLevel
         {
-            get { return BackingStore?.Get<SiteSecurityLevel?>("browserIntranetSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SiteSecurityLevel?>("browserIntranetSecurityLevel"); }
             set { BackingStore?.Set("browserIntranetSecurityLevel", value); }
         }
         /// <summary>The logging report location.</summary>
@@ -140,9 +140,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("browserRequireSmartScreen", value); }
         }
         /// <summary>Possible values for site security level.</summary>
-        public SiteSecurityLevel? BrowserTrustedSitesSecurityLevel
+        public Microsoft.Graph.Beta.Models.SiteSecurityLevel? BrowserTrustedSitesSecurityLevel
         {
-            get { return BackingStore?.Get<SiteSecurityLevel?>("browserTrustedSitesSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SiteSecurityLevel?>("browserTrustedSitesSecurityLevel"); }
             set { BackingStore?.Set("browserTrustedSitesSecurityLevel", value); }
         }
         /// <summary>Indicates whether or not to block data roaming.</summary>
@@ -158,9 +158,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("diagnosticsBlockDataSubmission", value); }
         }
         /// <summary>Possible values for automatic update classification.</summary>
-        public UpdateClassification? MinimumAutoInstallClassification
+        public Microsoft.Graph.Beta.Models.UpdateClassification? MinimumAutoInstallClassification
         {
-            get { return BackingStore?.Get<UpdateClassification?>("minimumAutoInstallClassification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateClassification?>("minimumAutoInstallClassification"); }
             set { BackingStore?.Set("minimumAutoInstallClassification", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using a pictures password and pin.</summary>
@@ -200,9 +200,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.RequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>The number of sign in failures before factory reset.</summary>
@@ -218,9 +218,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("storageRequireDeviceEncryption", value); }
         }
         /// <summary>Possible values for automatic update classification.</summary>
-        public UpdateClassification? UpdatesMinimumAutoInstallClassification
+        public Microsoft.Graph.Beta.Models.UpdateClassification? UpdatesMinimumAutoInstallClassification
         {
-            get { return BackingStore?.Get<UpdateClassification?>("updatesMinimumAutoInstallClassification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateClassification?>("updatesMinimumAutoInstallClassification"); }
             set { BackingStore?.Set("updatesMinimumAutoInstallClassification", value); }
         }
         /// <summary>Indicates whether or not to require automatic updates.</summary>
@@ -230,9 +230,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("updatesRequireAutomaticUpdates", value); }
         }
         /// <summary>Possible values for Windows user account control settings.</summary>
-        public WindowsUserAccountControlSettings? UserAccountControlSettings
+        public Microsoft.Graph.Beta.Models.WindowsUserAccountControlSettings? UserAccountControlSettings
         {
-            get { return BackingStore?.Get<WindowsUserAccountControlSettings?>("userAccountControlSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUserAccountControlSettings?>("userAccountControlSettings"); }
             set { BackingStore?.Set("userAccountControlSettings", value); }
         }
         /// <summary>The work folders url.</summary>
@@ -252,7 +252,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows81GeneralConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows81GeneralConfiguration"/> and sets the default values.
         /// </summary>
         public Windows81GeneralConfiguration() : base()
         {
@@ -261,12 +261,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows81GeneralConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows81GeneralConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows81GeneralConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows81GeneralConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows81GeneralConfiguration();
+            return new Microsoft.Graph.Beta.Models.Windows81GeneralConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -287,29 +287,29 @@ namespace Microsoft.Graph.Beta.Models
                 { "browserBlockSendingDoNotTrackHeader", n => { BrowserBlockSendingDoNotTrackHeader = n.GetBoolValue(); } },
                 { "browserBlockSingleWordEntryOnIntranetSites", n => { BrowserBlockSingleWordEntryOnIntranetSites = n.GetBoolValue(); } },
                 { "browserEnterpriseModeSiteListLocation", n => { BrowserEnterpriseModeSiteListLocation = n.GetStringValue(); } },
-                { "browserInternetSecurityLevel", n => { BrowserInternetSecurityLevel = n.GetEnumValue<InternetSiteSecurityLevel>(); } },
-                { "browserIntranetSecurityLevel", n => { BrowserIntranetSecurityLevel = n.GetEnumValue<SiteSecurityLevel>(); } },
+                { "browserInternetSecurityLevel", n => { BrowserInternetSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.InternetSiteSecurityLevel>(); } },
+                { "browserIntranetSecurityLevel", n => { BrowserIntranetSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.SiteSecurityLevel>(); } },
                 { "browserLoggingReportLocation", n => { BrowserLoggingReportLocation = n.GetStringValue(); } },
                 { "browserRequireFirewall", n => { BrowserRequireFirewall = n.GetBoolValue(); } },
                 { "browserRequireFraudWarning", n => { BrowserRequireFraudWarning = n.GetBoolValue(); } },
                 { "browserRequireHighSecurityForRestrictedSites", n => { BrowserRequireHighSecurityForRestrictedSites = n.GetBoolValue(); } },
                 { "browserRequireSmartScreen", n => { BrowserRequireSmartScreen = n.GetBoolValue(); } },
-                { "browserTrustedSitesSecurityLevel", n => { BrowserTrustedSitesSecurityLevel = n.GetEnumValue<SiteSecurityLevel>(); } },
+                { "browserTrustedSitesSecurityLevel", n => { BrowserTrustedSitesSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.SiteSecurityLevel>(); } },
                 { "cellularBlockDataRoaming", n => { CellularBlockDataRoaming = n.GetBoolValue(); } },
                 { "diagnosticsBlockDataSubmission", n => { DiagnosticsBlockDataSubmission = n.GetBoolValue(); } },
-                { "minimumAutoInstallClassification", n => { MinimumAutoInstallClassification = n.GetEnumValue<UpdateClassification>(); } },
+                { "minimumAutoInstallClassification", n => { MinimumAutoInstallClassification = n.GetEnumValue<Microsoft.Graph.Beta.Models.UpdateClassification>(); } },
                 { "passwordBlockPicturePasswordAndPin", n => { PasswordBlockPicturePasswordAndPin = n.GetBoolValue(); } },
                 { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
                 { "passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
                 { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "storageRequireDeviceEncryption", n => { StorageRequireDeviceEncryption = n.GetBoolValue(); } },
-                { "updatesMinimumAutoInstallClassification", n => { UpdatesMinimumAutoInstallClassification = n.GetEnumValue<UpdateClassification>(); } },
+                { "updatesMinimumAutoInstallClassification", n => { UpdatesMinimumAutoInstallClassification = n.GetEnumValue<Microsoft.Graph.Beta.Models.UpdateClassification>(); } },
                 { "updatesRequireAutomaticUpdates", n => { UpdatesRequireAutomaticUpdates = n.GetBoolValue(); } },
-                { "userAccountControlSettings", n => { UserAccountControlSettings = n.GetEnumValue<WindowsUserAccountControlSettings>(); } },
+                { "userAccountControlSettings", n => { UserAccountControlSettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUserAccountControlSettings>(); } },
                 { "workFoldersUrl", n => { WorkFoldersUrl = n.GetStringValue(); } },
             };
         }
@@ -331,29 +331,29 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("browserBlockSendingDoNotTrackHeader", BrowserBlockSendingDoNotTrackHeader);
             writer.WriteBoolValue("browserBlockSingleWordEntryOnIntranetSites", BrowserBlockSingleWordEntryOnIntranetSites);
             writer.WriteStringValue("browserEnterpriseModeSiteListLocation", BrowserEnterpriseModeSiteListLocation);
-            writer.WriteEnumValue<InternetSiteSecurityLevel>("browserInternetSecurityLevel", BrowserInternetSecurityLevel);
-            writer.WriteEnumValue<SiteSecurityLevel>("browserIntranetSecurityLevel", BrowserIntranetSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InternetSiteSecurityLevel>("browserInternetSecurityLevel", BrowserInternetSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SiteSecurityLevel>("browserIntranetSecurityLevel", BrowserIntranetSecurityLevel);
             writer.WriteStringValue("browserLoggingReportLocation", BrowserLoggingReportLocation);
             writer.WriteBoolValue("browserRequireFirewall", BrowserRequireFirewall);
             writer.WriteBoolValue("browserRequireFraudWarning", BrowserRequireFraudWarning);
             writer.WriteBoolValue("browserRequireHighSecurityForRestrictedSites", BrowserRequireHighSecurityForRestrictedSites);
             writer.WriteBoolValue("browserRequireSmartScreen", BrowserRequireSmartScreen);
-            writer.WriteEnumValue<SiteSecurityLevel>("browserTrustedSitesSecurityLevel", BrowserTrustedSitesSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SiteSecurityLevel>("browserTrustedSitesSecurityLevel", BrowserTrustedSitesSecurityLevel);
             writer.WriteBoolValue("cellularBlockDataRoaming", CellularBlockDataRoaming);
             writer.WriteBoolValue("diagnosticsBlockDataSubmission", DiagnosticsBlockDataSubmission);
-            writer.WriteEnumValue<UpdateClassification>("minimumAutoInstallClassification", MinimumAutoInstallClassification);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UpdateClassification>("minimumAutoInstallClassification", MinimumAutoInstallClassification);
             writer.WriteBoolValue("passwordBlockPicturePasswordAndPin", PasswordBlockPicturePasswordAndPin);
             writer.WriteIntValue("passwordExpirationDays", PasswordExpirationDays);
             writer.WriteIntValue("passwordMinimumCharacterSetCount", PasswordMinimumCharacterSetCount);
             writer.WriteIntValue("passwordMinimumLength", PasswordMinimumLength);
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
-            writer.WriteEnumValue<RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
             writer.WriteBoolValue("storageRequireDeviceEncryption", StorageRequireDeviceEncryption);
-            writer.WriteEnumValue<UpdateClassification>("updatesMinimumAutoInstallClassification", UpdatesMinimumAutoInstallClassification);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UpdateClassification>("updatesMinimumAutoInstallClassification", UpdatesMinimumAutoInstallClassification);
             writer.WriteBoolValue("updatesRequireAutomaticUpdates", UpdatesRequireAutomaticUpdates);
-            writer.WriteEnumValue<WindowsUserAccountControlSettings>("userAccountControlSettings", UserAccountControlSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUserAccountControlSettings>("userAccountControlSettings", UserAccountControlSettings);
             writer.WriteStringValue("workFoldersUrl", WorkFoldersUrl);
         }
     }

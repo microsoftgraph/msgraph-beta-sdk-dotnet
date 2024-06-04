@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// String Setting Value Template
     /// </summary>
-    public class DeviceManagementConfigurationStringSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
+    public class DeviceManagementConfigurationStringSettingValueTemplate : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
     {
         /// <summary>String Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationStringSettingValueDefaultTemplate? DefaultValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate? DefaultValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationStringSettingValueDefaultTemplate?>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationStringSettingValueDefaultTemplate DefaultValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate DefaultValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationStringSettingValueDefaultTemplate>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationStringSettingValueTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationStringSettingValueTemplate() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationStringSettingValueTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationStringSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationStringSettingValueTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationStringSettingValueDefaultTemplate>(DeviceManagementConfigurationStringSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceManagementConfigurationStringSettingValueDefaultTemplate>("defaultValue", DefaultValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate>("defaultValue", DefaultValue);
         }
     }
 }

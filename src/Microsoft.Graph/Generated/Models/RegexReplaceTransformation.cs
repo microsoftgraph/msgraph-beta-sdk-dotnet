@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RegexReplaceTransformation : CustomClaimTransformation, IParsable
+    public class RegexReplaceTransformation : Microsoft.Graph.Beta.Models.CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Additional attributes that can be referenced within the replacement string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SourcedAttribute>? AdditionalAttributes
+        public List<Microsoft.Graph.Beta.Models.SourcedAttribute>? AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<SourcedAttribute>?>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SourcedAttribute>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<SourcedAttribute> AdditionalAttributes
+        public List<Microsoft.Graph.Beta.Models.SourcedAttribute> AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<SourcedAttribute>>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SourcedAttribute>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RegexReplaceTransformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RegexReplaceTransformation"/> and sets the default values.
         /// </summary>
         public RegexReplaceTransformation() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RegexReplaceTransformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RegexReplaceTransformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RegexReplaceTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RegexReplaceTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RegexReplaceTransformation();
+            return new Microsoft.Graph.Beta.Models.RegexReplaceTransformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfObjectValues<SourcedAttribute>(SourcedAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SourcedAttribute>(Microsoft.Graph.Beta.Models.SourcedAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "regex", n => { Regex = n.GetStringValue(); } },
                 { "replacement", n => { Replacement = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SourcedAttribute>("additionalAttributes", AdditionalAttributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SourcedAttribute>("additionalAttributes", AdditionalAttributes);
             writer.WriteStringValue("regex", Regex);
             writer.WriteStringValue("replacement", Replacement);
         }

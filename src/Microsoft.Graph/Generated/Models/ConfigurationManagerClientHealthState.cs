@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Configuration manager client state</summary>
-        public ConfigurationManagerClientState? State
+        public Microsoft.Graph.Beta.Models.ConfigurationManagerClientState? State
         {
-            get { return BackingStore?.Get<ConfigurationManagerClientState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationManagerClientState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfigurationManagerClientHealthState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState"/> and sets the default values.
         /// </summary>
         public ConfigurationManagerClientHealthState()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConfigurationManagerClientHealthState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConfigurationManagerClientHealthState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConfigurationManagerClientHealthState();
+            return new Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<ConfigurationManagerClientState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientState>(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ConfigurationManagerClientState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

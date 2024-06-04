@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android Device Owner Trusted Root Certificate configuration profile
     /// </summary>
-    public class AndroidDeviceOwnerTrustedRootCertificate : DeviceConfiguration, IParsable
+    public class AndroidDeviceOwnerTrustedRootCertificate : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerTrustedRootCertificate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerTrustedRootCertificate() : base()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerTrustedRootCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerTrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerTrustedRootCertificate();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model

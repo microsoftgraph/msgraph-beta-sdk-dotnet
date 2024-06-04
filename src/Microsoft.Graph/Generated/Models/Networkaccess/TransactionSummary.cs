@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("trafficType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TransactionSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.TransactionSummary"/> and sets the default values.
         /// </summary>
         public TransactionSummary()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TransactionSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.TransactionSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TransactionSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.TransactionSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TransactionSummary();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.TransactionSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "blockedCount", n => { BlockedCount = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "totalCount", n => { TotalCount = n.GetIntValue(); } },
-                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteIntValue("blockedCount", BlockedCount);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("totalCount", TotalCount);
-            writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>("trafficType", TrafficType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

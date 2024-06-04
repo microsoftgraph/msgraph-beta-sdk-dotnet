@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPC : Entity, IParsable
+    public class CloudPC : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Microsoft Entra device ID of the Cloud PC.</summary>
@@ -45,55 +45,55 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The connectionSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcConnectionSettings? ConnectionSettings
+        public Microsoft.Graph.Beta.Models.CloudPcConnectionSettings? ConnectionSettings
         {
-            get { return BackingStore?.Get<CloudPcConnectionSettings?>("connectionSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectionSettings?>("connectionSettings"); }
             set { BackingStore?.Set("connectionSettings", value); }
         }
 #nullable restore
 #else
-        public CloudPcConnectionSettings ConnectionSettings
+        public Microsoft.Graph.Beta.Models.CloudPcConnectionSettings ConnectionSettings
         {
-            get { return BackingStore?.Get<CloudPcConnectionSettings>("connectionSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectionSettings>("connectionSettings"); }
             set { BackingStore?.Set("connectionSettings", value); }
         }
 #endif
         /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcConnectivityResult? ConnectivityResult
+        public Microsoft.Graph.Beta.Models.CloudPcConnectivityResult? ConnectivityResult
         {
-            get { return BackingStore?.Get<CloudPcConnectivityResult?>("connectivityResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectivityResult?>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
         }
 #nullable restore
 #else
-        public CloudPcConnectivityResult ConnectivityResult
+        public Microsoft.Graph.Beta.Models.CloudPcConnectivityResult ConnectivityResult
         {
-            get { return BackingStore?.Get<CloudPcConnectivityResult>("connectivityResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectivityResult>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
         }
 #endif
         /// <summary>The disasterRecoveryCapability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcDisasterRecoveryCapability? DisasterRecoveryCapability
+        public Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability? DisasterRecoveryCapability
         {
-            get { return BackingStore?.Get<CloudPcDisasterRecoveryCapability?>("disasterRecoveryCapability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability?>("disasterRecoveryCapability"); }
             set { BackingStore?.Set("disasterRecoveryCapability", value); }
         }
 #nullable restore
 #else
-        public CloudPcDisasterRecoveryCapability DisasterRecoveryCapability
+        public Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability DisasterRecoveryCapability
         {
-            get { return BackingStore?.Get<CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability"); }
             set { BackingStore?.Set("disasterRecoveryCapability", value); }
         }
 #endif
         /// <summary>The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.</summary>
-        public CloudPcDiskEncryptionState? DiskEncryptionState
+        public Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState? DiskEncryptionState
         {
-            get { return BackingStore?.Get<CloudPcDiskEncryptionState?>("diskEncryptionState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState?>("diskEncryptionState"); }
             set { BackingStore?.Set("diskEncryptionState", value); }
         }
         /// <summary>The display name of the Cloud PC.</summary>
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The last login result of the Cloud PC. For example, { &apos;time&apos;: &apos;2014-01-01T00:00:00Z&apos;}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcLoginResult? LastLoginResult
+        public Microsoft.Graph.Beta.Models.CloudPcLoginResult? LastLoginResult
         {
-            get { return BackingStore?.Get<CloudPcLoginResult?>("lastLoginResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcLoginResult?>("lastLoginResult"); }
             set { BackingStore?.Set("lastLoginResult", value); }
         }
 #nullable restore
 #else
-        public CloudPcLoginResult LastLoginResult
+        public Microsoft.Graph.Beta.Models.CloudPcLoginResult LastLoginResult
         {
-            get { return BackingStore?.Get<CloudPcLoginResult>("lastLoginResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult"); }
             set { BackingStore?.Set("lastLoginResult", value); }
         }
 #endif
@@ -159,16 +159,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, Troubleshoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcRemoteActionResult? LastRemoteActionResult
+        public Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult? LastRemoteActionResult
         {
-            get { return BackingStore?.Get<CloudPcRemoteActionResult?>("lastRemoteActionResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult?>("lastRemoteActionResult"); }
             set { BackingStore?.Set("lastRemoteActionResult", value); }
         }
 #nullable restore
 #else
-        public CloudPcRemoteActionResult LastRemoteActionResult
+        public Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult LastRemoteActionResult
         {
-            get { return BackingStore?.Get<CloudPcRemoteActionResult>("lastRemoteActionResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>("lastRemoteActionResult"); }
             set { BackingStore?.Set("lastRemoteActionResult", value); }
         }
 #endif
@@ -221,31 +221,31 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.</summary>
-        public CloudPcOperatingSystem? OsVersion
+        public Microsoft.Graph.Beta.Models.CloudPcOperatingSystem? OsVersion
         {
-            get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcOperatingSystem?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>The results of every partner agent&apos;s installation status on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcPartnerAgentInstallResult>? PartnerAgentInstallResults
+        public List<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>? PartnerAgentInstallResults
         {
-            get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>?>("partnerAgentInstallResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>?>("partnerAgentInstallResults"); }
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults
+        public List<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults
         {
-            get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>>("partnerAgentInstallResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>>("partnerAgentInstallResults"); }
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #endif
         /// <summary>The power state of a Cloud PC. The possible values are: running, poweredOff, unknown. This property only supports shift work Cloud PCs.</summary>
-        public CloudPcPowerState? PowerState
+        public Microsoft.Graph.Beta.Models.CloudPcPowerState? PowerState
         {
-            get { return BackingStore?.Get<CloudPcPowerState?>("powerState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcPowerState?>("powerState"); }
             set { BackingStore?.Set("powerState", value); }
         }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
@@ -281,9 +281,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByUser. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.</summary>
-        public CloudPcProvisioningType? ProvisioningType
+        public Microsoft.Graph.Beta.Models.CloudPcProvisioningType? ProvisioningType
         {
-            get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
         /// <summary>The scopeIds property</summary>
@@ -335,37 +335,37 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The service plan type of the Cloud PC.</summary>
-        public CloudPcServicePlanType? ServicePlanType
+        public Microsoft.Graph.Beta.Models.CloudPcServicePlanType? ServicePlanType
         {
-            get { return BackingStore?.Get<CloudPcServicePlanType?>("servicePlanType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcServicePlanType?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
         /// <summary>The status property</summary>
-        public CloudPcStatus? Status
+        public Microsoft.Graph.Beta.Models.CloudPcStatus? Status
         {
-            get { return BackingStore?.Get<CloudPcStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The details of the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcStatusDetails? StatusDetails
+        public Microsoft.Graph.Beta.Models.CloudPcStatusDetails? StatusDetails
         {
-            get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcStatusDetails?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public CloudPcStatusDetails StatusDetails
+        public Microsoft.Graph.Beta.Models.CloudPcStatusDetails StatusDetails
         {
-            get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
         /// <summary>The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.</summary>
-        public CloudPcUserAccountType? UserAccountType
+        public Microsoft.Graph.Beta.Models.CloudPcUserAccountType? UserAccountType
         {
-            get { return BackingStore?.Get<CloudPcUserAccountType?>("userAccountType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>The user principal name (UPN) of the user assigned to the Cloud PC.</summary>
@@ -387,12 +387,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPC"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPC"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPC CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPC CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPC();
+            return new Microsoft.Graph.Beta.Models.CloudPC();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -404,32 +404,32 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
                 { "allotmentDisplayName", n => { AllotmentDisplayName = n.GetStringValue(); } },
-                { "connectionSettings", n => { ConnectionSettings = n.GetObjectValue<CloudPcConnectionSettings>(CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
-                { "connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
-                { "disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<CloudPcDisasterRecoveryCapability>(CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
-                { "diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<CloudPcDiskEncryptionState>(); } },
+                { "connectionSettings", n => { ConnectionSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcConnectionSettings>(Microsoft.Graph.Beta.Models.CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
+                { "connectivityResult", n => { ConnectivityResult = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityResult>(Microsoft.Graph.Beta.Models.CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
+                { "disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>(Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
+                { "diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
-                { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(CloudPcLoginResult.CreateFromDiscriminatorValue); } },
+                { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcLoginResult>(Microsoft.Graph.Beta.Models.CloudPcLoginResult.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
+                { "lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>(Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
                 { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
                 { "onPremisesConnectionName", n => { OnPremisesConnectionName = n.GetStringValue(); } },
-                { "osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
-                { "partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>(CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "powerState", n => { PowerState = n.GetEnumValue<CloudPcPowerState>(); } },
+                { "osVersion", n => { OsVersion = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcOperatingSystem>(); } },
+                { "partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>(Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "powerState", n => { PowerState = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcPowerState>(); } },
                 { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 { "provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
-                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
+                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
                 { "servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
-                { "servicePlanType", n => { ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
-                { "status", n => { Status = n.GetEnumValue<CloudPcStatus>(); } },
-                { "statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
-                { "userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
+                { "servicePlanType", n => { ServicePlanType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcServicePlanType>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcStatus>(); } },
+                { "statusDetails", n => { StatusDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcStatusDetails>(Microsoft.Graph.Beta.Models.CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
+                { "userAccountType", n => { UserAccountType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcUserAccountType>(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -443,32 +443,32 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
             writer.WriteStringValue("allotmentDisplayName", AllotmentDisplayName);
-            writer.WriteObjectValue<CloudPcConnectionSettings>("connectionSettings", ConnectionSettings);
-            writer.WriteObjectValue<CloudPcConnectivityResult>("connectivityResult", ConnectivityResult);
-            writer.WriteObjectValue<CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability", DisasterRecoveryCapability);
-            writer.WriteEnumValue<CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcConnectionSettings>("connectionSettings", ConnectionSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityResult>("connectivityResult", ConnectivityResult);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability", DisasterRecoveryCapability);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
-            writer.WriteObjectValue<CloudPcLoginResult>("lastLoginResult", LastLoginResult);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcLoginResult>("lastLoginResult", LastLoginResult);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<CloudPcRemoteActionResult>("lastRemoteActionResult", LastRemoteActionResult);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>("lastRemoteActionResult", LastRemoteActionResult);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteStringValue("onPremisesConnectionName", OnPremisesConnectionName);
-            writer.WriteEnumValue<CloudPcOperatingSystem>("osVersion", OsVersion);
-            writer.WriteCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
-            writer.WriteEnumValue<CloudPcPowerState>("powerState", PowerState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcOperatingSystem>("osVersion", OsVersion);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcPowerState>("powerState", PowerState);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
-            writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("servicePlanId", ServicePlanId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
-            writer.WriteEnumValue<CloudPcServicePlanType>("servicePlanType", ServicePlanType);
-            writer.WriteEnumValue<CloudPcStatus>("status", Status);
-            writer.WriteObjectValue<CloudPcStatusDetails>("statusDetails", StatusDetails);
-            writer.WriteEnumValue<CloudPcUserAccountType>("userAccountType", UserAccountType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcServicePlanType>("servicePlanType", ServicePlanType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails", StatusDetails);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcUserAccountType>("userAccountType", UserAccountType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

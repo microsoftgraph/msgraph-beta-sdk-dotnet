@@ -39,32 +39,32 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>The connections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalConnection>? Connections
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>? Connections
         {
-            get { return BackingStore?.Get<List<ExternalConnection>?>("connections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>?>("connections"); }
             set { BackingStore?.Set("connections", value); }
         }
 #nullable restore
 #else
-        public List<ExternalConnection> Connections
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection> Connections
         {
-            get { return BackingStore?.Get<List<ExternalConnection>>("connections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>>("connections"); }
             set { BackingStore?.Set("connections", value); }
         }
 #endif
         /// <summary>The industryData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IndustryDataRoot? IndustryData
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot? IndustryData
         {
-            get { return BackingStore?.Get<IndustryDataRoot?>("industryData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot?>("industryData"); }
             set { BackingStore?.Set("industryData", value); }
         }
 #nullable restore
 #else
-        public IndustryDataRoot IndustryData
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot IndustryData
         {
-            get { return BackingStore?.Get<IndustryDataRoot>("industryData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot>("industryData"); }
             set { BackingStore?.Set("industryData", value); }
         }
 #endif
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="External"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.External"/> and sets the default values.
         /// </summary>
         public External()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="External"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.External"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static External CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ExternalConnectors.External CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new External();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.External();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authorizationSystems", n => { AuthorizationSystems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "connections", n => { Connections = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "industryData", n => { IndustryData = n.GetObjectValue<IndustryDataRoot>(IndustryDataRoot.CreateFromDiscriminatorValue); } },
+                { "connections", n => { Connections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "industryData", n => { IndustryData = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -124,8 +124,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystems", AuthorizationSystems);
-            writer.WriteCollectionOfObjectValues<ExternalConnection>("connections", Connections);
-            writer.WriteObjectValue<IndustryDataRoot>("industryData", IndustryData);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>("connections", Connections);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRoot>("industryData", IndustryData);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

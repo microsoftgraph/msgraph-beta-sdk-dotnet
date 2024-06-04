@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The fields to capture to fill the user credentials for password-based single sign-on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PasswordSingleSignOnField>? Fields
+        public List<Microsoft.Graph.Beta.Models.PasswordSingleSignOnField>? Fields
         {
-            get { return BackingStore?.Get<List<PasswordSingleSignOnField>?>("fields"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordSingleSignOnField>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public List<PasswordSingleSignOnField> Fields
+        public List<Microsoft.Graph.Beta.Models.PasswordSingleSignOnField> Fields
         {
-            get { return BackingStore?.Get<List<PasswordSingleSignOnField>>("fields"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordSingleSignOnField>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PasswordSingleSignOnSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PasswordSingleSignOnSettings"/> and sets the default values.
         /// </summary>
         public PasswordSingleSignOnSettings()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PasswordSingleSignOnSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PasswordSingleSignOnSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PasswordSingleSignOnSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PasswordSingleSignOnSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PasswordSingleSignOnSettings();
+            return new Microsoft.Graph.Beta.Models.PasswordSingleSignOnSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<PasswordSingleSignOnField>(PasswordSingleSignOnField.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordSingleSignOnField>(Microsoft.Graph.Beta.Models.PasswordSingleSignOnField.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<PasswordSingleSignOnField>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordSingleSignOnField>("fields", Fields);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

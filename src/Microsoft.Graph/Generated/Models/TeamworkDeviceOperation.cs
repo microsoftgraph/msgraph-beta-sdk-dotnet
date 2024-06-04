@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkDeviceOperation : Entity, IParsable
+    public class TeamworkDeviceOperation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity of the user who created the device operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -41,32 +41,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Error details are available only in case of a failed status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OperationError? Error
+        public Microsoft.Graph.Beta.Models.OperationError? Error
         {
-            get { return BackingStore?.Get<OperationError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public OperationError Error
+        public Microsoft.Graph.Beta.Models.OperationError Error
         {
-            get { return BackingStore?.Get<OperationError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>Identity of the user who last modified the device operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastActionBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastActionBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastActionBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastActionBy"); }
             set { BackingStore?.Set("lastActionBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastActionBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastActionBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastActionBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastActionBy"); }
             set { BackingStore?.Set("lastActionBy", value); }
         }
 #endif
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The operationType property</summary>
-        public TeamworkDeviceOperationType? OperationType
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceOperationType? OperationType
         {
-            get { return BackingStore?.Get<TeamworkDeviceOperationType?>("operationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Time at which the operation was started.</summary>
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkDeviceOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDeviceOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkDeviceOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamworkDeviceOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkDeviceOperation();
+            return new Microsoft.Graph.Beta.Models.TeamworkDeviceOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,12 +123,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
-                { "lastActionBy", n => { LastActionBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.OperationError>(Microsoft.Graph.Beta.Models.OperationError.CreateFromDiscriminatorValue); } },
+                { "lastActionBy", n => { LastActionBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "operationType", n => { OperationType = n.GetEnumValue<TeamworkDeviceOperationType>(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceOperationType>(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<OperationError>("error", Error);
-            writer.WriteObjectValue<IdentitySet>("lastActionBy", LastActionBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OperationError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastActionBy", LastActionBy);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteEnumValue<TeamworkDeviceOperationType>("operationType", OperationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkDeviceOperationType>("operationType", OperationType);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteStringValue("status", Status);
         }

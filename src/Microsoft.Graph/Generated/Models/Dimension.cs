@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The dimensionValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DimensionValue>? DimensionValues
+        public List<Microsoft.Graph.Beta.Models.DimensionValue>? DimensionValues
         {
-            get { return BackingStore?.Get<List<DimensionValue>?>("dimensionValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DimensionValue>?>("dimensionValues"); }
             set { BackingStore?.Set("dimensionValues", value); }
         }
 #nullable restore
 #else
-        public List<DimensionValue> DimensionValues
+        public List<Microsoft.Graph.Beta.Models.DimensionValue> DimensionValues
         {
-            get { return BackingStore?.Get<List<DimensionValue>>("dimensionValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DimensionValue>>("dimensionValues"); }
             set { BackingStore?.Set("dimensionValues", value); }
         }
 #endif
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Dimension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Dimension"/> and sets the default values.
         /// </summary>
         public Dimension()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Dimension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Dimension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Dimension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Dimension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Dimension();
+            return new Microsoft.Graph.Beta.Models.Dimension();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "dimensionValues", n => { DimensionValues = n.GetCollectionOfObjectValues<DimensionValue>(DimensionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dimensionValues", n => { DimensionValues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DimensionValue>(Microsoft.Graph.Beta.Models.DimensionValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteCollectionOfObjectValues<DimensionValue>("dimensionValues", DimensionValues);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DimensionValue>("dimensionValues", DimensionValues);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GovernanceRoleSetting : Entity, IParsable
+    public class GovernanceRoleSetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The rule settings that are evaluated when an administrator tries to add an eligible role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceRuleSetting>? AdminEligibleSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>? AdminEligibleSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("adminEligibleSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>?>("adminEligibleSettings"); }
             set { BackingStore?.Set("adminEligibleSettings", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceRuleSetting> AdminEligibleSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting> AdminEligibleSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>>("adminEligibleSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>>("adminEligibleSettings"); }
             set { BackingStore?.Set("adminEligibleSettings", value); }
         }
 #endif
         /// <summary>The rule settings that are evaluated when an administrator tries to add a direct member role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceRuleSetting>? AdminMemberSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>? AdminMemberSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("adminMemberSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>?>("adminMemberSettings"); }
             set { BackingStore?.Set("adminMemberSettings", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceRuleSetting> AdminMemberSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting> AdminMemberSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>>("adminMemberSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>>("adminMemberSettings"); }
             set { BackingStore?.Set("adminMemberSettings", value); }
         }
 #endif
@@ -73,16 +73,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The associated resource for this role setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceResource? Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource? Resource
         {
-            get { return BackingStore?.Get<GovernanceResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public GovernanceResource Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource Resource
         {
-            get { return BackingStore?.Get<GovernanceResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -105,16 +105,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The role definition that is enforced with this role setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleDefinition? RoleDefinition
+        public Microsoft.Graph.Beta.Models.GovernanceRoleDefinition? RoleDefinition
         {
-            get { return BackingStore?.Get<GovernanceRoleDefinition?>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleDefinition RoleDefinition
+        public Microsoft.Graph.Beta.Models.GovernanceRoleDefinition RoleDefinition
         {
-            get { return BackingStore?.Get<GovernanceRoleDefinition>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #endif
@@ -137,44 +137,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceRuleSetting>? UserEligibleSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>? UserEligibleSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("userEligibleSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>?>("userEligibleSettings"); }
             set { BackingStore?.Set("userEligibleSettings", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceRuleSetting> UserEligibleSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting> UserEligibleSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>>("userEligibleSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>>("userEligibleSettings"); }
             set { BackingStore?.Set("userEligibleSettings", value); }
         }
 #endif
         /// <summary>The rule settings that are evaluated when a user tries to activate his role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceRuleSetting>? UserMemberSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>? UserMemberSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("userMemberSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>?>("userMemberSettings"); }
             set { BackingStore?.Set("userMemberSettings", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceRuleSetting> UserMemberSettings
+        public List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting> UserMemberSettings
         {
-            get { return BackingStore?.Get<List<GovernanceRuleSetting>>("userMemberSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>>("userMemberSettings"); }
             set { BackingStore?.Set("userMemberSettings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernanceRoleSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GovernanceRoleSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceRoleSetting();
+            return new Microsoft.Graph.Beta.Models.GovernanceRoleSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -184,17 +184,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "adminEligibleSettings", n => { AdminEligibleSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "adminMemberSettings", n => { AdminMemberSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "adminEligibleSettings", n => { AdminEligibleSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>(Microsoft.Graph.Beta.Models.GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "adminMemberSettings", n => { AdminMemberSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>(Microsoft.Graph.Beta.Models.GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "lastUpdatedBy", n => { LastUpdatedBy = n.GetStringValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>(Microsoft.Graph.Beta.Models.GovernanceResource.CreateFromDiscriminatorValue); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>(Microsoft.Graph.Beta.Models.GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
-                { "userEligibleSettings", n => { UserEligibleSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userMemberSettings", n => { UserMemberSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userEligibleSettings", n => { UserEligibleSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>(Microsoft.Graph.Beta.Models.GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userMemberSettings", n => { UserMemberSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>(Microsoft.Graph.Beta.Models.GovernanceRuleSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -205,17 +205,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<GovernanceRuleSetting>("adminEligibleSettings", AdminEligibleSettings);
-            writer.WriteCollectionOfObjectValues<GovernanceRuleSetting>("adminMemberSettings", AdminMemberSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>("adminEligibleSettings", AdminEligibleSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>("adminMemberSettings", AdminMemberSettings);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteStringValue("lastUpdatedBy", LastUpdatedBy);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
-            writer.WriteObjectValue<GovernanceResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>("resource", Resource);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteObjectValue<GovernanceRoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
-            writer.WriteCollectionOfObjectValues<GovernanceRuleSetting>("userEligibleSettings", UserEligibleSettings);
-            writer.WriteCollectionOfObjectValues<GovernanceRuleSetting>("userMemberSettings", UserMemberSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>("userEligibleSettings", UserEligibleSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceRuleSetting>("userMemberSettings", UserMemberSettings);
         }
     }
 }

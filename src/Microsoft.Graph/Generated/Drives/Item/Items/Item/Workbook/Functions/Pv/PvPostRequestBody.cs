@@ -23,85 +23,85 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv
         /// <summary>The fv property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Fv
+        public Microsoft.Graph.Beta.Models.Json? Fv
         {
-            get { return BackingStore?.Get<Json?>("fv"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("fv"); }
             set { BackingStore?.Set("fv", value); }
         }
 #nullable restore
 #else
-        public Json Fv
+        public Microsoft.Graph.Beta.Models.Json Fv
         {
-            get { return BackingStore?.Get<Json>("fv"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("fv"); }
             set { BackingStore?.Set("fv", value); }
         }
 #endif
         /// <summary>The nper property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Nper
+        public Microsoft.Graph.Beta.Models.Json? Nper
         {
-            get { return BackingStore?.Get<Json?>("nper"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("nper"); }
             set { BackingStore?.Set("nper", value); }
         }
 #nullable restore
 #else
-        public Json Nper
+        public Microsoft.Graph.Beta.Models.Json Nper
         {
-            get { return BackingStore?.Get<Json>("nper"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("nper"); }
             set { BackingStore?.Set("nper", value); }
         }
 #endif
         /// <summary>The pmt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Pmt
+        public Microsoft.Graph.Beta.Models.Json? Pmt
         {
-            get { return BackingStore?.Get<Json?>("pmt"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("pmt"); }
             set { BackingStore?.Set("pmt", value); }
         }
 #nullable restore
 #else
-        public Json Pmt
+        public Microsoft.Graph.Beta.Models.Json Pmt
         {
-            get { return BackingStore?.Get<Json>("pmt"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("pmt"); }
             set { BackingStore?.Set("pmt", value); }
         }
 #endif
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate
+        public Microsoft.Graph.Beta.Models.Json? Rate
         {
-            get { return BackingStore?.Get<Json?>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate
+        public Microsoft.Graph.Beta.Models.Json Rate
         {
-            get { return BackingStore?.Get<Json>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Type
+        public Microsoft.Graph.Beta.Models.Json? Type
         {
-            get { return BackingStore?.Get<Json?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public Json Type
+        public Microsoft.Graph.Beta.Models.Json Type
         {
-            get { return BackingStore?.Get<Json>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PvPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv.PvPostRequestBody"/> and sets the default values.
         /// </summary>
         public PvPostRequestBody()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PvPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv.PvPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv.PvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PvPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv.PvPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fv", n => { Fv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "nper", n => { Nper = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "pmt", n => { Pmt = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fv", n => { Fv = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "nper", n => { Nper = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "pmt", n => { Pmt = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Pv
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("fv", Fv);
-            writer.WriteObjectValue<Json>("nper", Nper);
-            writer.WriteObjectValue<Json>("pmt", Pmt);
-            writer.WriteObjectValue<Json>("rate", Rate);
-            writer.WriteObjectValue<Json>("type", Type);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("fv", Fv);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("nper", Nper);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("pmt", Pmt);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rate", Rate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows web apps.
     /// </summary>
-    public class WindowsWebApp : MobileApp, IParsable
+    public class WindowsWebApp : Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>Indicates the Windows web app URL. Example: &apos;https://www.contoso.com&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsWebApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsWebApp"/> and sets the default values.
         /// </summary>
         public WindowsWebApp() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsWebApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsWebApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsWebApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsWebApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsWebApp();
+            return new Microsoft.Graph.Beta.Models.WindowsWebApp();
         }
         /// <summary>
         /// The deserialization information for the current model

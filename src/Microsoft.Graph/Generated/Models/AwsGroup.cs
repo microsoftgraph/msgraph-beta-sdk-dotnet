@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsGroup : AwsIdentity, IParsable
+    public class AwsGroup : Microsoft.Graph.Beta.Models.AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="AwsGroup"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsGroup"/> and sets the default values.
         /// </summary>
         public AwsGroup() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsGroup();
+            return new Microsoft.Graph.Beta.Models.AwsGroup();
         }
         /// <summary>
         /// The deserialization information for the current model

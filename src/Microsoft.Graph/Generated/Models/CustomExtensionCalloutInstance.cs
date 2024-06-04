@@ -100,13 +100,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status of the request to the custom extension. The possible values are: calloutSent, callbackReceived, calloutFailed, callbackTimedOut, waitingForCallback, unknownFutureValue.</summary>
-        public CustomExtensionCalloutInstanceStatus? Status
+        public Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstanceStatus? Status
         {
-            get { return BackingStore?.Get<CustomExtensionCalloutInstanceStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstanceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionCalloutInstance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance"/> and sets the default values.
         /// </summary>
         public CustomExtensionCalloutInstance()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionCalloutInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionCalloutInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionCalloutInstance();
+            return new Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "externalCorrelationId", n => { ExternalCorrelationId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CustomExtensionCalloutInstanceStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstanceStatus>(); } },
             };
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("externalCorrelationId", ExternalCorrelationId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<CustomExtensionCalloutInstanceStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstanceStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

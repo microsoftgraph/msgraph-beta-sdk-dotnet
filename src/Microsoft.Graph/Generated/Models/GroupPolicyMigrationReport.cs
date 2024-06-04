@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Group Policy migration report.
     /// </summary>
-    public class GroupPolicyMigrationReport : Entity, IParsable
+    public class GroupPolicyMigrationReport : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? CreatedDateTime
@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicySettingMapping>? GroupPolicySettingMappings
+        public List<Microsoft.Graph.Beta.Models.GroupPolicySettingMapping>? GroupPolicySettingMappings
         {
-            get { return BackingStore?.Get<List<GroupPolicySettingMapping>?>("groupPolicySettingMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicySettingMapping>?>("groupPolicySettingMappings"); }
             set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicySettingMapping> GroupPolicySettingMappings
+        public List<Microsoft.Graph.Beta.Models.GroupPolicySettingMapping> GroupPolicySettingMappings
         {
-            get { return BackingStore?.Get<List<GroupPolicySettingMapping>>("groupPolicySettingMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicySettingMapping>>("groupPolicySettingMappings"); }
             set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
 #endif
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Indicates if the Group Policy Object file is covered and ready for Intune migration.</summary>
-        public GroupPolicyMigrationReadiness? MigrationReadiness
+        public Microsoft.Graph.Beta.Models.GroupPolicyMigrationReadiness? MigrationReadiness
         {
-            get { return BackingStore?.Get<GroupPolicyMigrationReadiness?>("migrationReadiness"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReadiness?>("migrationReadiness"); }
             set { BackingStore?.Set("migrationReadiness", value); }
         }
         /// <summary>The distinguished name of the OU.</summary>
@@ -138,28 +138,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnsupportedGroupPolicyExtension>? UnsupportedGroupPolicyExtensions
+        public List<Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension>? UnsupportedGroupPolicyExtensions
         {
-            get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>?>("unsupportedGroupPolicyExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension>?>("unsupportedGroupPolicyExtensions"); }
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
 #nullable restore
 #else
-        public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions
+        public List<Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions
         {
-            get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>>("unsupportedGroupPolicyExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension>>("unsupportedGroupPolicyExtensions"); }
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyMigrationReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyMigrationReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyMigrationReport();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -174,16 +174,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "groupPolicyCreatedDateTime", n => { GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "groupPolicyLastModifiedDateTime", n => { GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
-                { "groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicySettingMapping>(Microsoft.Graph.Beta.Models.GroupPolicySettingMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
+                { "migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReadiness>(); } },
                 { "ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "supportedSettingsCount", n => { SupportedSettingsCount = n.GetIntValue(); } },
                 { "supportedSettingsPercent", n => { SupportedSettingsPercent = n.GetIntValue(); } },
                 { "targetedInActiveDirectory", n => { TargetedInActiveDirectory = n.GetBoolValue(); } },
                 { "totalSettingsCount", n => { TotalSettingsCount = n.GetIntValue(); } },
-                { "unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension>(Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -199,16 +199,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("groupPolicyCreatedDateTime", GroupPolicyCreatedDateTime);
             writer.WriteDateTimeOffsetValue("groupPolicyLastModifiedDateTime", GroupPolicyLastModifiedDateTime);
             writer.WriteGuidValue("groupPolicyObjectId", GroupPolicyObjectId);
-            writer.WriteCollectionOfObjectValues<GroupPolicySettingMapping>("groupPolicySettingMappings", GroupPolicySettingMappings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicySettingMapping>("groupPolicySettingMappings", GroupPolicySettingMappings);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<GroupPolicyMigrationReadiness>("migrationReadiness", MigrationReadiness);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReadiness>("migrationReadiness", MigrationReadiness);
             writer.WriteStringValue("ouDistinguishedName", OuDistinguishedName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteIntValue("supportedSettingsCount", SupportedSettingsCount);
             writer.WriteIntValue("supportedSettingsPercent", SupportedSettingsPercent);
             writer.WriteBoolValue("targetedInActiveDirectory", TargetedInActiveDirectory);
             writer.WriteIntValue("totalSettingsCount", TotalSettingsCount);
-            writer.WriteCollectionOfObjectValues<UnsupportedGroupPolicyExtension>("unsupportedGroupPolicyExtensions", UnsupportedGroupPolicyExtensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnsupportedGroupPolicyExtension>("unsupportedGroupPolicyExtensions", UnsupportedGroupPolicyExtensions);
         }
     }
 }

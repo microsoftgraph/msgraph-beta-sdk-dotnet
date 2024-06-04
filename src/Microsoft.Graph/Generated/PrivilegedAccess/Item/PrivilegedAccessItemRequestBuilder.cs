@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
     public class PrivilegedAccessItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.</summary>
-        public ResourcesRequestBuilder Resources
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.ResourcesRequestBuilder Resources
         {
-            get => new ResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.</summary>
-        public RoleAssignmentRequestsRequestBuilder RoleAssignmentRequests
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.RoleAssignmentRequestsRequestBuilder RoleAssignmentRequests
         {
-            get => new RoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.RoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.</summary>
-        public RoleAssignmentsRequestBuilder RoleAssignments
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
         {
-            get => new RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.</summary>
-        public RoleDefinitionsRequestBuilder RoleDefinitions
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
         {
-            get => new RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
-        public RoleSettingsRequestBuilder RoleSettings
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder RoleSettings
         {
-            get => new RoleSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.RoleSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedAccessItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedAccessItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,20 +90,20 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedAccess"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.PrivilegedAccess?> GetAsync(Action<RequestConfiguration<PrivilegedAccessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedAccess?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.PrivilegedAccess> GetAsync(Action<RequestConfiguration<PrivilegedAccessItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedAccess> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedAccess>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedAccess.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.PrivilegedAccess?> PatchAsync(Microsoft.Graph.Beta.Models.PrivilegedAccess body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedAccess>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedAccess.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -158,11 +158,11 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedAccessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedAccessItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -195,11 +195,11 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrivilegedAccessItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrivilegedAccessItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrivilegedAccessItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegedAccessItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegedAccessItemRequestBuilderGetQueryParameters>
+        public class PrivilegedAccessItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.PrivilegedAccess.Item.PrivilegedAccessItemRequestBuilder.PrivilegedAccessItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

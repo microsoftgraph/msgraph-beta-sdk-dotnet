@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>List of connectivity configurations for deviceLink objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectivityConfigurationLink>? Links
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>? Links
         {
-            get { return BackingStore?.Get<List<ConnectivityConfigurationLink>?>("links"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public List<ConnectivityConfigurationLink> Links
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink> Links
         {
-            get { return BackingStore?.Get<List<ConnectivityConfigurationLink>>("links"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RemoteNetworkConnectivityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration"/> and sets the default values.
         /// </summary>
         public RemoteNetworkConnectivityConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteNetworkConnectivityConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemoteNetworkConnectivityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteNetworkConnectivityConfiguration();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "links", n => { Links = n.GetCollectionOfObjectValues<ConnectivityConfigurationLink>(ConnectivityConfigurationLink.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>(Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
                 { "remoteNetworkName", n => { RemoteNetworkName = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ConnectivityConfigurationLink>("links", Links);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>("links", Links);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("remoteNetworkId", RemoteNetworkId);
             writer.WriteStringValue("remoteNetworkName", RemoteNetworkName);

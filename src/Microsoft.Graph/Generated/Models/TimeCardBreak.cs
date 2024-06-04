@@ -38,32 +38,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The start event of the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? End
+        public Microsoft.Graph.Beta.Models.TimeCardEvent? End
         {
-            get { return BackingStore?.Get<TimeCardEvent?>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent End
+        public Microsoft.Graph.Beta.Models.TimeCardEvent End
         {
-            get { return BackingStore?.Get<TimeCardEvent>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #endif
         /// <summary>Notes about the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Notes
+        public Microsoft.Graph.Beta.Models.ItemBody? Notes
         {
-            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public ItemBody Notes
+        public Microsoft.Graph.Beta.Models.ItemBody Notes
         {
-            get { return BackingStore?.Get<ItemBody>("notes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #endif
@@ -86,21 +86,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? Start
+        public Microsoft.Graph.Beta.Models.TimeCardEvent? Start
         {
-            get { return BackingStore?.Get<TimeCardEvent?>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent Start
+        public Microsoft.Graph.Beta.Models.TimeCardEvent Start
         {
-            get { return BackingStore?.Get<TimeCardEvent>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeCardEvent>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimeCardBreak"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TimeCardBreak"/> and sets the default values.
         /// </summary>
         public TimeCardBreak()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeCardBreak"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TimeCardBreak"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimeCardBreak CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TimeCardBreak CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeCardBreak();
+            return new Microsoft.Graph.Beta.Models.TimeCardBreak();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,10 +126,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "breakId", n => { BreakId = n.GetStringValue(); } },
-                { "end", n => { End = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
-                { "notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>(Microsoft.Graph.Beta.Models.TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "notes", n => { Notes = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "start", n => { Start = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "start", n => { Start = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>(Microsoft.Graph.Beta.Models.TimeCardEvent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,10 +140,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("breakId", BreakId);
-            writer.WriteObjectValue<TimeCardEvent>("end", End);
-            writer.WriteObjectValue<ItemBody>("notes", Notes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>("end", End);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TimeCardEvent>("start", Start);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeCardEvent>("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

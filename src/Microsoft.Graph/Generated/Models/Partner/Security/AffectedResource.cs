@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AffectedResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource"/> and sets the default values.
         /// </summary>
         public AffectedResource()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AffectedResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AffectedResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AffectedResource();
+            return new Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource();
         }
         /// <summary>
         /// The deserialization information for the current model

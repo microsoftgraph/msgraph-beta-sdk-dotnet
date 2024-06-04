@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithS
 {
     [Obsolete("This class is obsolete. Use GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse : GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse, IParsable
+    public class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse : Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse();
+            return new Microsoft.Graph.Beta.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse();
         }
     }
 }

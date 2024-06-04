@@ -23,69 +23,69 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substit
         /// <summary>The instanceNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? InstanceNum
+        public Microsoft.Graph.Beta.Models.Json? InstanceNum
         {
-            get { return BackingStore?.Get<Json?>("instanceNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("instanceNum"); }
             set { BackingStore?.Set("instanceNum", value); }
         }
 #nullable restore
 #else
-        public Json InstanceNum
+        public Microsoft.Graph.Beta.Models.Json InstanceNum
         {
-            get { return BackingStore?.Get<Json>("instanceNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("instanceNum"); }
             set { BackingStore?.Set("instanceNum", value); }
         }
 #endif
         /// <summary>The newText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NewText
+        public Microsoft.Graph.Beta.Models.Json? NewText
         {
-            get { return BackingStore?.Get<Json?>("newText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("newText"); }
             set { BackingStore?.Set("newText", value); }
         }
 #nullable restore
 #else
-        public Json NewText
+        public Microsoft.Graph.Beta.Models.Json NewText
         {
-            get { return BackingStore?.Get<Json>("newText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("newText"); }
             set { BackingStore?.Set("newText", value); }
         }
 #endif
         /// <summary>The oldText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? OldText
+        public Microsoft.Graph.Beta.Models.Json? OldText
         {
-            get { return BackingStore?.Get<Json?>("oldText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("oldText"); }
             set { BackingStore?.Set("oldText", value); }
         }
 #nullable restore
 #else
-        public Json OldText
+        public Microsoft.Graph.Beta.Models.Json OldText
         {
-            get { return BackingStore?.Get<Json>("oldText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("oldText"); }
             set { BackingStore?.Set("oldText", value); }
         }
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Text
+        public Microsoft.Graph.Beta.Models.Json? Text
         {
-            get { return BackingStore?.Get<Json?>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public Json Text
+        public Microsoft.Graph.Beta.Models.Json Text
         {
-            get { return BackingStore?.Get<Json>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SubstitutePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substitute.SubstitutePostRequestBody"/> and sets the default values.
         /// </summary>
         public SubstitutePostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substit
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubstitutePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substitute.SubstitutePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubstitutePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substitute.SubstitutePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubstitutePostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substitute.SubstitutePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,10 +110,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substit
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "instanceNum", n => { InstanceNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "newText", n => { NewText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "oldText", n => { OldText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "instanceNum", n => { InstanceNum = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "newText", n => { NewText = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "oldText", n => { OldText = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Substit
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("instanceNum", InstanceNum);
-            writer.WriteObjectValue<Json>("newText", NewText);
-            writer.WriteObjectValue<Json>("oldText", OldText);
-            writer.WriteObjectValue<Json>("text", Text);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("instanceNum", InstanceNum);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("newText", NewText);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("oldText", OldText);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

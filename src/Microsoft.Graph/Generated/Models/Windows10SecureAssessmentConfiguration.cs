@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
     /// </summary>
-    public class Windows10SecureAssessmentConfiguration : DeviceConfiguration, IParsable
+    public class Windows10SecureAssessmentConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to allow the app from printing during the test.</summary>
         public bool? AllowPrinting
@@ -62,9 +62,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.</summary>
-        public SecureAssessmentAccountType? ConfigurationAccountType
+        public Microsoft.Graph.Beta.Models.SecureAssessmentAccountType? ConfigurationAccountType
         {
-            get { return BackingStore?.Get<SecureAssessmentAccountType?>("configurationAccountType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecureAssessmentAccountType?>("configurationAccountType"); }
             set { BackingStore?.Set("configurationAccountType", value); }
         }
         /// <summary>Url link to an assessment that&apos;s automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).</summary>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows10SecureAssessmentConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10SecureAssessmentConfiguration"/> and sets the default values.
         /// </summary>
         public Windows10SecureAssessmentConfiguration() : base()
         {
@@ -109,12 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10SecureAssessmentConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10SecureAssessmentConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10SecureAssessmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10SecureAssessmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10SecureAssessmentConfiguration();
+            return new Microsoft.Graph.Beta.Models.Windows10SecureAssessmentConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowTextSuggestion", n => { AllowTextSuggestion = n.GetBoolValue(); } },
                 { "assessmentAppUserModelId", n => { AssessmentAppUserModelId = n.GetStringValue(); } },
                 { "configurationAccount", n => { ConfigurationAccount = n.GetStringValue(); } },
-                { "configurationAccountType", n => { ConfigurationAccountType = n.GetEnumValue<SecureAssessmentAccountType>(); } },
+                { "configurationAccountType", n => { ConfigurationAccountType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SecureAssessmentAccountType>(); } },
                 { "launchUri", n => { LaunchUri = n.GetStringValue(); } },
                 { "localGuestAccountName", n => { LocalGuestAccountName = n.GetStringValue(); } },
             };
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allowTextSuggestion", AllowTextSuggestion);
             writer.WriteStringValue("assessmentAppUserModelId", AssessmentAppUserModelId);
             writer.WriteStringValue("configurationAccount", ConfigurationAccount);
-            writer.WriteEnumValue<SecureAssessmentAccountType>("configurationAccountType", ConfigurationAccountType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SecureAssessmentAccountType>("configurationAccountType", ConfigurationAccountType);
             writer.WriteStringValue("launchUri", LaunchUri);
             writer.WriteStringValue("localGuestAccountName", LocalGuestAccountName);
         }

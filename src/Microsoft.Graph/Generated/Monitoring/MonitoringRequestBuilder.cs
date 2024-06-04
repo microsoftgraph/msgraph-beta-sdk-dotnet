@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Monitoring
     public class MonitoringRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
-        public AlertRecordsRequestBuilder AlertRecords
+        public Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder AlertRecords
         {
-            get => new AlertRecordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
-        public AlertRulesRequestBuilder AlertRules
+        public Microsoft.Graph.Beta.Monitoring.AlertRules.AlertRulesRequestBuilder AlertRules
         {
-            get => new AlertRulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Monitoring.AlertRules.AlertRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="MonitoringRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Monitoring
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MonitoringRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,20 +50,20 @@ namespace Microsoft.Graph.Beta.Monitoring
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring?> GetAsync(Action<RequestConfiguration<MonitoringRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder.MonitoringRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring> GetAsync(Action<RequestConfiguration<MonitoringRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder.MonitoringRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Monitoring
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Monitoring
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -99,11 +99,11 @@ namespace Microsoft.Graph.Beta.Monitoring
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonitoringRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder.MonitoringRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonitoringRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder.MonitoringRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -136,11 +136,11 @@ namespace Microsoft.Graph.Beta.Monitoring
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MonitoringRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MonitoringRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder WithUrl(string rawUrl)
         {
-            return new MonitoringRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get monitoring
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Monitoring
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonitoringRequestBuilderGetRequestConfiguration : RequestConfiguration<MonitoringRequestBuilderGetQueryParameters>
+        public class MonitoringRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder.MonitoringRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Organization : DirectoryObject, IParsable
+    public class Organization : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedPlan>? AssignedPlans
+        public List<Microsoft.Graph.Beta.Models.AssignedPlan>? AssignedPlans
         {
-            get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedPlan>?>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #nullable restore
 #else
-        public List<AssignedPlan> AssignedPlans
+        public List<Microsoft.Graph.Beta.Models.AssignedPlan> AssignedPlans
         {
-            get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #endif
         /// <summary>Resource to manage the default branding for the organization. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OrganizationalBranding? Branding
+        public Microsoft.Graph.Beta.Models.OrganizationalBranding? Branding
         {
-            get { return BackingStore?.Get<OrganizationalBranding?>("branding"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OrganizationalBranding?>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
 #nullable restore
 #else
-        public OrganizationalBranding Branding
+        public Microsoft.Graph.Beta.Models.OrganizationalBranding Branding
         {
-            get { return BackingStore?.Get<OrganizationalBranding>("branding"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OrganizationalBranding>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
 #endif
@@ -195,16 +195,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of open extensions defined for the organization resource. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -231,9 +231,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Mobile device management authority.</summary>
-        public MdmAuthority? MobileDeviceManagementAuthority
+        public Microsoft.Graph.Beta.Models.MdmAuthority? MobileDeviceManagementAuthority
         {
-            get { return BackingStore?.Get<MdmAuthority?>("mobileDeviceManagementAuthority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MdmAuthority?>("mobileDeviceManagementAuthority"); }
             set { BackingStore?.Set("mobileDeviceManagementAuthority", value); }
         }
         /// <summary>The last time a password sync request was received for the tenant.</summary>
@@ -327,16 +327,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisionedPlan>? ProvisionedPlans
+        public List<Microsoft.Graph.Beta.Models.ProvisionedPlan>? ProvisionedPlans
         {
-            get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProvisionedPlan>?>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #nullable restore
 #else
-        public List<ProvisionedPlan> ProvisionedPlans
+        public List<Microsoft.Graph.Beta.Models.ProvisionedPlan> ProvisionedPlans
         {
-            get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
@@ -375,16 +375,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OrganizationSettings? Settings
+        public Microsoft.Graph.Beta.Models.OrganizationSettings? Settings
         {
-            get { return BackingStore?.Get<OrganizationSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OrganizationSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public OrganizationSettings Settings
+        public Microsoft.Graph.Beta.Models.OrganizationSettings Settings
         {
-            get { return BackingStore?.Get<OrganizationSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OrganizationSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
@@ -455,21 +455,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of domains associated with this tenant. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VerifiedDomain>? VerifiedDomains
+        public List<Microsoft.Graph.Beta.Models.VerifiedDomain>? VerifiedDomains
         {
-            get { return BackingStore?.Get<List<VerifiedDomain>?>("verifiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VerifiedDomain>?>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
 #nullable restore
 #else
-        public List<VerifiedDomain> VerifiedDomains
+        public List<Microsoft.Graph.Beta.Models.VerifiedDomain> VerifiedDomains
         {
-            get { return BackingStore?.Get<List<VerifiedDomain>>("verifiedDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VerifiedDomain>>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Organization"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Organization"/> and sets the default values.
         /// </summary>
         public Organization() : base()
         {
@@ -478,12 +478,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Organization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Organization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Organization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Organization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Organization();
+            return new Microsoft.Graph.Beta.Models.Organization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -493,8 +493,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "branding", n => { Branding = n.GetObjectValue<OrganizationalBranding>(OrganizationalBranding.CreateFromDiscriminatorValue); } },
+                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedPlan>(Microsoft.Graph.Beta.Models.AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "branding", n => { Branding = n.GetObjectValue<Microsoft.Graph.Beta.Models.OrganizationalBranding>(Microsoft.Graph.Beta.Models.OrganizationalBranding.CreateFromDiscriminatorValue); } },
                 { "businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "certificateBasedAuthConfiguration", n => { CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>(Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "certificateConnectorSetting", n => { CertificateConnectorSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.CertificateConnectorSetting>(Microsoft.Graph.Beta.Models.CertificateConnectorSetting.CreateFromDiscriminatorValue); } },
@@ -505,27 +505,27 @@ namespace Microsoft.Graph.Beta.Models
                 { "defaultUsageLocation", n => { DefaultUsageLocation = n.GetStringValue(); } },
                 { "directorySizeQuota", n => { DirectorySizeQuota = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectorySizeQuota>(Microsoft.Graph.Beta.Models.DirectorySizeQuota.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isMultipleDataLocationsForServicesEnabled", n => { IsMultipleDataLocationsForServicesEnabled = n.GetBoolValue(); } },
                 { "marketingNotificationEmails", n => { MarketingNotificationEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<MdmAuthority>(); } },
+                { "mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<Microsoft.Graph.Beta.Models.MdmAuthority>(); } },
                 { "onPremisesLastPasswordSyncDateTime", n => { OnPremisesLastPasswordSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "partnerInformation", n => { PartnerInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>(Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue); } },
-                { "partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<PartnerTenantType>(); } },
+                { "partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PartnerTenantType>(); } },
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "privacyProfile", n => { PrivacyProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivacyProfile>(Microsoft.Graph.Beta.Models.PrivacyProfile.CreateFromDiscriminatorValue); } },
-                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProvisionedPlan>(Microsoft.Graph.Beta.Models.ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "securityComplianceNotificationMails", n => { SecurityComplianceNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "securityComplianceNotificationPhones", n => { SecurityComplianceNotificationPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<OrganizationSettings>(OrganizationSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OrganizationSettings>(Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
                 { "technicalNotificationMails", n => { TechnicalNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tenantType", n => { TenantType = n.GetStringValue(); } },
-                { "verifiedDomains", n => { VerifiedDomains = n.GetCollectionOfObjectValues<VerifiedDomain>(VerifiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "verifiedDomains", n => { VerifiedDomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VerifiedDomain>(Microsoft.Graph.Beta.Models.VerifiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -536,8 +536,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
-            writer.WriteObjectValue<OrganizationalBranding>("branding", Branding);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedPlan>("assignedPlans", AssignedPlans);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OrganizationalBranding>("branding", Branding);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>("certificateBasedAuthConfiguration", CertificateBasedAuthConfiguration);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CertificateConnectorSetting>("certificateConnectorSetting", CertificateConnectorSetting);
@@ -548,27 +548,27 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("defaultUsageLocation", DefaultUsageLocation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectorySizeQuota>("directorySizeQuota", DirectorySizeQuota);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isMultipleDataLocationsForServicesEnabled", IsMultipleDataLocationsForServicesEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("marketingNotificationEmails", MarketingNotificationEmails);
-            writer.WriteEnumValue<MdmAuthority>("mobileDeviceManagementAuthority", MobileDeviceManagementAuthority);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MdmAuthority>("mobileDeviceManagementAuthority", MobileDeviceManagementAuthority);
             writer.WriteDateTimeOffsetValue("onPremisesLastPasswordSyncDateTime", OnPremisesLastPasswordSyncDateTime);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>("partnerInformation", PartnerInformation);
-            writer.WriteEnumValue<PartnerTenantType>("partnerTenantType", PartnerTenantType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PartnerTenantType>("partnerTenantType", PartnerTenantType);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivacyProfile>("privacyProfile", PrivacyProfile);
-            writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationMails", SecurityComplianceNotificationMails);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationPhones", SecurityComplianceNotificationPhones);
-            writer.WriteObjectValue<OrganizationSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OrganizationSettings>("settings", Settings);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("street", Street);
             writer.WriteCollectionOfPrimitiveValues<string>("technicalNotificationMails", TechnicalNotificationMails);
             writer.WriteStringValue("tenantType", TenantType);
-            writer.WriteCollectionOfObjectValues<VerifiedDomain>("verifiedDomains", VerifiedDomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VerifiedDomain>("verifiedDomains", VerifiedDomains);
         }
     }
 }

@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
     /// </summary>
-    public class UserExperienceAnalyticsOverview : Entity, IParsable
+    public class UserExperienceAnalyticsOverview : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The user experience analytics insights. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsInsight>? Insights
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight>? Insights
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>?>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsInsight> Insights
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight> Insights
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsOverview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsOverview();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsInsight>("insights", Insights);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsInsight>("insights", Insights);
         }
     }
 }

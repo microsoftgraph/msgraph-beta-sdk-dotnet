@@ -21,34 +21,34 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
     public class AlertRecordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Monitoring.AlertRecords.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Monitoring.AlertRecords.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changeAlertRecordsPortalNotificationAsSent method.</summary>
-        public MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent
+        public Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent
         {
-            get => new MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent.MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPortalNotifications method.</summary>
-        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder MicrosoftGraphDeviceManagementGetPortalNotifications
+        public Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder MicrosoftGraphDeviceManagementGetPortalNotifications
         {
-            get => new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications.MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
         /// <param name="position">The unique identifier of alertRecord</param>
-        /// <returns>A <see cref="AlertRecordItemRequestBuilder"/></returns>
-        public AlertRecordItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.AlertRecordItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.AlertRecordItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("alertRecord%2Did", position);
-                return new AlertRecordItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.AlertRecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AlertRecordsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AlertRecordsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -66,50 +66,50 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
         /// <summary>
         /// The collection of records of alert events.
         /// </summary>
-        /// <returns>A <see cref="AlertRecordCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AlertRecordCollectionResponse?> GetAsync(Action<RequestConfiguration<AlertRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder.AlertRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AlertRecordCollectionResponse> GetAsync(Action<RequestConfiguration<AlertRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder.AlertRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AlertRecordCollectionResponse>(requestInfo, AlertRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to alertRecords for monitoring
         /// </summary>
-        /// <returns>A <see cref="AlertRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AlertRecord?> PostAsync(AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord?> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AlertRecord> PostAsync(AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AlertRecord>(requestInfo, AlertRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of records of alert events.
@@ -118,11 +118,11 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlertRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder.AlertRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlertRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder.AlertRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AlertRecordsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AlertRecordsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AlertRecordsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of records of alert events.
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AlertRecordsRequestBuilderGetRequestConfiguration : RequestConfiguration<AlertRecordsRequestBuilderGetQueryParameters>
+        public class AlertRecordsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Monitoring.AlertRecords.AlertRecordsRequestBuilder.AlertRecordsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

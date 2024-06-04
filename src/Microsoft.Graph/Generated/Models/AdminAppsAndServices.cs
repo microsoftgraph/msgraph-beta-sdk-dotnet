@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AdminAppsAndServices : Entity, IParsable
+    public class AdminAppsAndServices : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppsAndServicesSettings? Settings
+        public Microsoft.Graph.Beta.Models.AppsAndServicesSettings? Settings
         {
-            get { return BackingStore?.Get<AppsAndServicesSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppsAndServicesSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public AppsAndServicesSettings Settings
+        public Microsoft.Graph.Beta.Models.AppsAndServicesSettings Settings
         {
-            get { return BackingStore?.Get<AppsAndServicesSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppsAndServicesSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdminAppsAndServices"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdminAppsAndServices"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdminAppsAndServices CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AdminAppsAndServices CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdminAppsAndServices();
+            return new Microsoft.Graph.Beta.Models.AdminAppsAndServices();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "settings", n => { Settings = n.GetObjectValue<AppsAndServicesSettings>(AppsAndServicesSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppsAndServicesSettings>(Microsoft.Graph.Beta.Models.AppsAndServicesSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AppsAndServicesSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppsAndServicesSettings>("settings", Settings);
         }
     }
 }

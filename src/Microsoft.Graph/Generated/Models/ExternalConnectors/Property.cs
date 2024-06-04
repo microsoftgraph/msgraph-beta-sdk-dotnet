@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Label?>? Labels
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Label?>? Labels
         {
-            get { return BackingStore?.Get<List<Label?>?>("labels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.Label?>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public List<Label?> Labels
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Label?> Labels
         {
-            get { return BackingStore?.Get<List<Label?>>("labels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.Label?>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #endif
@@ -130,13 +130,13 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>The type property</summary>
-        public PropertyType? Type
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyType? Type
         {
-            get { return BackingStore?.Get<PropertyType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Property"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.Property"/> and sets the default values.
         /// </summary>
         public Property()
         {
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Property"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.Property"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Property CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ExternalConnectors.Property CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Property();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.Property();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
                 { "isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
                 { "isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
                 { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                { "labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
+                { "labels", n => { Labels = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Label>()?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "rankingHint", n => { RankingHint = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>(Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<PropertyType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyType>(); } },
             };
         }
         /// <summary>
@@ -187,11 +187,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             writer.WriteBoolValue("isRefinable", IsRefinable);
             writer.WriteBoolValue("isRetrievable", IsRetrievable);
             writer.WriteBoolValue("isSearchable", IsSearchable);
-            writer.WriteCollectionOfEnumValues<Label>("labels", Labels);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Label>("labels", Labels);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>("rankingHint", RankingHint);
-            writer.WriteEnumValue<PropertyType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

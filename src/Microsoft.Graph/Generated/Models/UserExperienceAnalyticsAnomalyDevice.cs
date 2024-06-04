@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics anomaly entity contains device details.
     /// </summary>
-    public class UserExperienceAnalyticsAnomalyDevice : Entity, IParsable
+    public class UserExperienceAnalyticsAnomalyDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The unique identifier of the anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,9 +120,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.</summary>
-        public UserExperienceAnalyticsDeviceStatus? DeviceStatus
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStatus? DeviceStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsDeviceStatus?>("deviceStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStatus?>("deviceStatus"); }
             set { BackingStore?.Set("deviceStatus", value); }
         }
         /// <summary>The name of the OS installed on the device.</summary>
@@ -160,12 +160,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAnomalyDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAnomalyDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAnomalyDevice();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
                 { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "deviceStatus", n => { DeviceStatus = n.GetEnumValue<UserExperienceAnalyticsDeviceStatus>(); } },
+                { "deviceStatus", n => { DeviceStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStatus>(); } },
                 { "osName", n => { OsName = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
             };
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceManufacturer", DeviceManufacturer);
             writer.WriteStringValue("deviceModel", DeviceModel);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteEnumValue<UserExperienceAnalyticsDeviceStatus>("deviceStatus", DeviceStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStatus>("deviceStatus", DeviceStatus);
             writer.WriteStringValue("osName", OsName);
             writer.WriteStringValue("osVersion", OsVersion);
         }

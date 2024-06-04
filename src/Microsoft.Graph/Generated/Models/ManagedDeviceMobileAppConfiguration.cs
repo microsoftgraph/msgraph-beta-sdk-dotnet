@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An abstract class for Mobile app configuration for enrolled devices.
     /// </summary>
-    public class ManagedDeviceMobileAppConfiguration : Entity, IParsable
+    public class ManagedDeviceMobileAppConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignemenets for app configration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -52,32 +52,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of ManagedDeviceMobileAppConfigurationDeviceStatus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
         /// <summary>App configuration device status summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedDeviceMobileAppConfigurationDeviceSummary? DeviceStatusSummary
+        public Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary? DeviceStatusSummary
         {
-            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary?>("deviceStatusSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary?>("deviceStatusSummary"); }
             set { BackingStore?.Set("deviceStatusSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary
+        public Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary
         {
-            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary>("deviceStatusSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary>("deviceStatusSummary"); }
             set { BackingStore?.Set("deviceStatusSummary", value); }
         }
 #endif
@@ -138,32 +138,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of ManagedDeviceMobileAppConfigurationUserStatus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #endif
         /// <summary>App configuration user status summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedDeviceMobileAppConfigurationUserSummary? UserStatusSummary
+        public Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary? UserStatusSummary
         {
-            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary?>("userStatusSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary?>("userStatusSummary"); }
             set { BackingStore?.Set("userStatusSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary
+        public Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary
         {
-            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary>("userStatusSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary>("userStatusSummary"); }
             set { BackingStore?.Set("userStatusSummary", value); }
         }
 #endif
@@ -176,18 +176,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceMobileAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidForWorkMobileAppConfiguration" => new AndroidForWorkMobileAppConfiguration(),
-                "#microsoft.graph.androidManagedStoreAppConfiguration" => new AndroidManagedStoreAppConfiguration(),
-                "#microsoft.graph.iosMobileAppConfiguration" => new IosMobileAppConfiguration(),
-                _ => new ManagedDeviceMobileAppConfiguration(),
+                "#microsoft.graph.androidForWorkMobileAppConfiguration" => new Microsoft.Graph.Beta.Models.AndroidForWorkMobileAppConfiguration(),
+                "#microsoft.graph.androidManagedStoreAppConfiguration" => new Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfiguration(),
+                "#microsoft.graph.iosMobileAppConfiguration" => new Microsoft.Graph.Beta.Models.IosMobileAppConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration(),
             };
         }
         /// <summary>
@@ -198,17 +198,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationAssignment>(ManagedDeviceMobileAppConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceStatusSummary", n => { DeviceStatusSummary = n.GetObjectValue<ManagedDeviceMobileAppConfigurationDeviceSummary>(ManagedDeviceMobileAppConfigurationDeviceSummary.CreateFromDiscriminatorValue); } },
-                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStatusSummary", n => { DeviceStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary.CreateFromDiscriminatorValue); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "userStatusSummary", n => { UserStatusSummary = n.GetObjectValue<ManagedDeviceMobileAppConfigurationUserSummary>(ManagedDeviceMobileAppConfigurationUserSummary.CreateFromDiscriminatorValue); } },
-                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userStatusSummary", n => { UserStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary.CreateFromDiscriminatorValue); } },
+                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -220,17 +220,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>("deviceStatuses", DeviceStatuses);
-            writer.WriteObjectValue<ManagedDeviceMobileAppConfigurationDeviceSummary>("deviceStatusSummary", DeviceStatusSummary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>("deviceStatuses", DeviceStatuses);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceSummary>("deviceStatusSummary", DeviceStatusSummary);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("targetedMobileApps", TargetedMobileApps);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>("userStatuses", UserStatuses);
-            writer.WriteObjectValue<ManagedDeviceMobileAppConfigurationUserSummary>("userStatusSummary", UserStatusSummary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>("userStatuses", UserStatuses);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserSummary>("userStatusSummary", UserStatusSummary);
             writer.WriteIntValue("version", Version);
         }
     }

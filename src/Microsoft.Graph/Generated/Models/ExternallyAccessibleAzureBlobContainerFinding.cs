@@ -7,46 +7,46 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExternallyAccessibleAzureBlobContainerFinding : Finding, IParsable
+    public class ExternallyAccessibleAzureBlobContainerFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessibility property</summary>
-        public AzureAccessType? Accessibility
+        public Microsoft.Graph.Beta.Models.AzureAccessType? Accessibility
         {
-            get { return BackingStore?.Get<AzureAccessType?>("accessibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureAccessType?>("accessibility"); }
             set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>The encryptionManagedBy property</summary>
-        public AzureEncryption? EncryptionManagedBy
+        public Microsoft.Graph.Beta.Models.AzureEncryption? EncryptionManagedBy
         {
-            get { return BackingStore?.Get<AzureEncryption?>("encryptionManagedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureEncryption?>("encryptionManagedBy"); }
             set { BackingStore?.Set("encryptionManagedBy", value); }
         }
         /// <summary>The storageAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? StorageAccount
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource? StorageAccount
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource?>("storageAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource?>("storageAccount"); }
             set { BackingStore?.Set("storageAccount", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource StorageAccount
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource StorageAccount
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource>("storageAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("storageAccount"); }
             set { BackingStore?.Set("storageAccount", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternallyAccessibleAzureBlobContainerFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternallyAccessibleAzureBlobContainerFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternallyAccessibleAzureBlobContainerFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternallyAccessibleAzureBlobContainerFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternallyAccessibleAzureBlobContainerFinding();
+            return new Microsoft.Graph.Beta.Models.ExternallyAccessibleAzureBlobContainerFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessibility", n => { Accessibility = n.GetEnumValue<AzureAccessType>(); } },
-                { "encryptionManagedBy", n => { EncryptionManagedBy = n.GetEnumValue<AzureEncryption>(); } },
-                { "storageAccount", n => { StorageAccount = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "accessibility", n => { Accessibility = n.GetEnumValue<Microsoft.Graph.Beta.Models.AzureAccessType>(); } },
+                { "encryptionManagedBy", n => { EncryptionManagedBy = n.GetEnumValue<Microsoft.Graph.Beta.Models.AzureEncryption>(); } },
+                { "storageAccount", n => { StorageAccount = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AzureAccessType>("accessibility", Accessibility);
-            writer.WriteEnumValue<AzureEncryption>("encryptionManagedBy", EncryptionManagedBy);
-            writer.WriteObjectValue<AuthorizationSystemResource>("storageAccount", StorageAccount);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AzureAccessType>("accessibility", Accessibility);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AzureEncryption>("encryptionManagedBy", EncryptionManagedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("storageAccount", StorageAccount);
         }
     }
 }

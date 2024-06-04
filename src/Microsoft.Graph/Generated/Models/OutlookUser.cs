@@ -7,82 +7,82 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OutlookUser : Entity, IParsable
+    public class OutlookUser : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of categories defined for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookCategory>? MasterCategories
+        public List<Microsoft.Graph.Beta.Models.OutlookCategory>? MasterCategories
         {
-            get { return BackingStore?.Get<List<OutlookCategory>?>("masterCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookCategory>?>("masterCategories"); }
             set { BackingStore?.Set("masterCategories", value); }
         }
 #nullable restore
 #else
-        public List<OutlookCategory> MasterCategories
+        public List<Microsoft.Graph.Beta.Models.OutlookCategory> MasterCategories
         {
-            get { return BackingStore?.Get<List<OutlookCategory>>("masterCategories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookCategory>>("masterCategories"); }
             set { BackingStore?.Set("masterCategories", value); }
         }
 #endif
         /// <summary>The user&apos;s Outlook task folders. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTaskFolder>? TaskFolders
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>? TaskFolders
         {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>?>("taskFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>?>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTaskFolder> TaskFolders
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskFolder> TaskFolders
         {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
 #endif
         /// <summary>The user&apos;s Outlook task groups. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTaskGroup>? TaskGroups
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskGroup>? TaskGroups
         {
-            get { return BackingStore?.Get<List<OutlookTaskGroup>?>("taskGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskGroup>?>("taskGroups"); }
             set { BackingStore?.Set("taskGroups", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTaskGroup> TaskGroups
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskGroup> TaskGroups
         {
-            get { return BackingStore?.Get<List<OutlookTaskGroup>>("taskGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskGroup>>("taskGroups"); }
             set { BackingStore?.Set("taskGroups", value); }
         }
 #endif
         /// <summary>The user&apos;s Outlook tasks. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTask>? Tasks
+        public List<Microsoft.Graph.Beta.Models.OutlookTask>? Tasks
         {
-            get { return BackingStore?.Get<List<OutlookTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTask> Tasks
+        public List<Microsoft.Graph.Beta.Models.OutlookTask> Tasks
         {
-            get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutlookUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OutlookUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutlookUser();
+            return new Microsoft.Graph.Beta.Models.OutlookUser();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "masterCategories", n => { MasterCategories = n.GetCollectionOfObjectValues<OutlookCategory>(OutlookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "taskGroups", n => { TaskGroups = n.GetCollectionOfObjectValues<OutlookTaskGroup>(OutlookTaskGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "masterCategories", n => { MasterCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookCategory>(Microsoft.Graph.Beta.Models.OutlookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskFolder>(Microsoft.Graph.Beta.Models.OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taskGroups", n => { TaskGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskGroup>(Microsoft.Graph.Beta.Models.OutlookTaskGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTask>(Microsoft.Graph.Beta.Models.OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OutlookCategory>("masterCategories", MasterCategories);
-            writer.WriteCollectionOfObjectValues<OutlookTaskFolder>("taskFolders", TaskFolders);
-            writer.WriteCollectionOfObjectValues<OutlookTaskGroup>("taskGroups", TaskGroups);
-            writer.WriteCollectionOfObjectValues<OutlookTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookCategory>("masterCategories", MasterCategories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskFolder>("taskFolders", TaskFolders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskGroup>("taskGroups", TaskGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTask>("tasks", Tasks);
         }
     }
 }

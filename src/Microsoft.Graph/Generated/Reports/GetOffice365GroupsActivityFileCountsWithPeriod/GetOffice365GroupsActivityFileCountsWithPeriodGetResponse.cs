@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithPeriod
 {
     #pragma warning disable CS1591
-    public class GetOffice365GroupsActivityFileCountsWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetOffice365GroupsActivityFileCountsWithPeriodGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Office365GroupsActivityFileCounts>? Value
+        public List<Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts>? Value
         {
-            get { return BackingStore?.Get<List<Office365GroupsActivityFileCounts>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Office365GroupsActivityFileCounts> Value
+        public List<Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts> Value
         {
-            get { return BackingStore?.Get<List<Office365GroupsActivityFileCounts>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetOffice365GroupsActivityFileCountsWithPeriodGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithPeriod.GetOffice365GroupsActivityFileCountsWithPeriodGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOffice365GroupsActivityFileCountsWithPeriodGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithPeriod.GetOffice365GroupsActivityFileCountsWithPeriodGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetOffice365GroupsActivityFileCountsWithPeriodGetResponse();
+            return new Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithPeriod.GetOffice365GroupsActivityFileCountsWithPeriodGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityFileCounts>(Office365GroupsActivityFileCounts.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts>(Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Office365GroupsActivityFileCounts>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Office365GroupsActivityFileCounts>("value", Value);
         }
     }
 }

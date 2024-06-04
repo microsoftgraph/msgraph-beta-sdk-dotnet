@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ReferenceDefinition? Value
+        public Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition? Value
         {
-            get { return BackingStore?.Get<ReferenceDefinition?>("value"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public ReferenceDefinition Value
+        public Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition Value
         {
-            get { return BackingStore?.Get<ReferenceDefinition>("value"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ReferenceValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue"/> and sets the default values.
         /// </summary>
         public ReferenceValue()
         {
@@ -78,20 +78,20 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReferenceValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReferenceValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.identifierTypeReferenceValue" => new IdentifierTypeReferenceValue(),
-                "#microsoft.graph.industryData.roleReferenceValue" => new RoleReferenceValue(),
-                "#microsoft.graph.industryData.sectionRoleReferenceValue" => new SectionRoleReferenceValue(),
-                "#microsoft.graph.industryData.userMatchTargetReferenceValue" => new UserMatchTargetReferenceValue(),
-                "#microsoft.graph.industryData.yearReferenceValue" => new YearReferenceValue(),
-                _ => new ReferenceValue(),
+                "#microsoft.graph.industryData.identifierTypeReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue(),
+                "#microsoft.graph.industryData.roleReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue(),
+                "#microsoft.graph.industryData.sectionRoleReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue(),
+                "#microsoft.graph.industryData.userMatchTargetReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue(),
+                "#microsoft.graph.industryData.yearReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue(),
             };
         }
         /// <summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             {
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<ReferenceDefinition>(ReferenceDefinition.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>(Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ReferenceDefinition>("value", Value);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

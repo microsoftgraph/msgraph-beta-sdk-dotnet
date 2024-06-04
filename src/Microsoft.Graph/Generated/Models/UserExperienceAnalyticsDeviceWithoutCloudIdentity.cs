@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics Device without Cloud Identity.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable
+    public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Azure Active Directory Device Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceWithoutCloudIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDeviceWithoutCloudIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDeviceWithoutCloudIdentity();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model

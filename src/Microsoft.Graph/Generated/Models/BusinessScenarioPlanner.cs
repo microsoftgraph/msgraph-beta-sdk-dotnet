@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class BusinessScenarioPlanner : Entity, IParsable
+    public class BusinessScenarioPlanner : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration of Planner plans that will be created for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerPlanConfiguration? PlanConfiguration
+        public Microsoft.Graph.Beta.Models.PlannerPlanConfiguration? PlanConfiguration
         {
-            get { return BackingStore?.Get<PlannerPlanConfiguration?>("planConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerPlanConfiguration?>("planConfiguration"); }
             set { BackingStore?.Set("planConfiguration", value); }
         }
 #nullable restore
 #else
-        public PlannerPlanConfiguration PlanConfiguration
+        public Microsoft.Graph.Beta.Models.PlannerPlanConfiguration PlanConfiguration
         {
-            get { return BackingStore?.Get<PlannerPlanConfiguration>("planConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerPlanConfiguration>("planConfiguration"); }
             set { BackingStore?.Set("planConfiguration", value); }
         }
 #endif
         /// <summary>The configuration of Planner tasks that will be created for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskConfiguration? TaskConfiguration
+        public Microsoft.Graph.Beta.Models.PlannerTaskConfiguration? TaskConfiguration
         {
-            get { return BackingStore?.Get<PlannerTaskConfiguration?>("taskConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration?>("taskConfiguration"); }
             set { BackingStore?.Set("taskConfiguration", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskConfiguration TaskConfiguration
+        public Microsoft.Graph.Beta.Models.PlannerTaskConfiguration TaskConfiguration
         {
-            get { return BackingStore?.Get<PlannerTaskConfiguration>("taskConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>("taskConfiguration"); }
             set { BackingStore?.Set("taskConfiguration", value); }
         }
 #endif
         /// <summary>The Planner tasks for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BusinessScenarioTask>? Tasks
+        public List<Microsoft.Graph.Beta.Models.BusinessScenarioTask>? Tasks
         {
-            get { return BackingStore?.Get<List<BusinessScenarioTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BusinessScenarioTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<BusinessScenarioTask> Tasks
+        public List<Microsoft.Graph.Beta.Models.BusinessScenarioTask> Tasks
         {
-            get { return BackingStore?.Get<List<BusinessScenarioTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BusinessScenarioTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioPlanner"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioPlanner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BusinessScenarioPlanner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BusinessScenarioPlanner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BusinessScenarioPlanner();
+            return new Microsoft.Graph.Beta.Models.BusinessScenarioPlanner();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "planConfiguration", n => { PlanConfiguration = n.GetObjectValue<PlannerPlanConfiguration>(PlannerPlanConfiguration.CreateFromDiscriminatorValue); } },
-                { "taskConfiguration", n => { TaskConfiguration = n.GetObjectValue<PlannerTaskConfiguration>(PlannerTaskConfiguration.CreateFromDiscriminatorValue); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<BusinessScenarioTask>(BusinessScenarioTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "planConfiguration", n => { PlanConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerPlanConfiguration>(Microsoft.Graph.Beta.Models.PlannerPlanConfiguration.CreateFromDiscriminatorValue); } },
+                { "taskConfiguration", n => { TaskConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>(Microsoft.Graph.Beta.Models.PlannerTaskConfiguration.CreateFromDiscriminatorValue); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BusinessScenarioTask>(Microsoft.Graph.Beta.Models.BusinessScenarioTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PlannerPlanConfiguration>("planConfiguration", PlanConfiguration);
-            writer.WriteObjectValue<PlannerTaskConfiguration>("taskConfiguration", TaskConfiguration);
-            writer.WriteCollectionOfObjectValues<BusinessScenarioTask>("tasks", Tasks);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerPlanConfiguration>("planConfiguration", PlanConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>("taskConfiguration", TaskConfiguration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BusinessScenarioTask>("tasks", Tasks);
         }
     }
 }

@@ -7,40 +7,40 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CustomExtensionHandler : Entity, IParsable
+    public class CustomExtensionHandler : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomAccessPackageWorkflowExtension? CustomExtension
+        public Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension? CustomExtension
         {
-            get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension?>("customExtension"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #nullable restore
 #else
-        public CustomAccessPackageWorkflowExtension CustomExtension
+        public Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension CustomExtension
         {
-            get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension>("customExtension"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #endif
         /// <summary>Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
-        public AccessPackageCustomExtensionStage? Stage
+        public Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage? Stage
         {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionHandler"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomExtensionHandler"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomExtensionHandler CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CustomExtensionHandler CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionHandler();
+            return new Microsoft.Graph.Beta.Models.CustomExtensionHandler();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customExtension", n => { CustomExtension = n.GetObjectValue<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue); } },
-                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                { "customExtension", n => { CustomExtension = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>(Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue); } },
+                { "stage", n => { Stage = n.GetEnumValue<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage>(); } },
             };
         }
         /// <summary>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CustomAccessPackageWorkflowExtension>("customExtension", CustomExtension);
-            writer.WriteEnumValue<AccessPackageCustomExtensionStage>("stage", Stage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>("customExtension", CustomExtension);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage>("stage", Stage);
         }
     }
 }

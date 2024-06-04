@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
     public class GroupAssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.deviceShellScript entity.</summary>
         /// <param name="position">The unique identifier of deviceManagementScriptGroupAssignment</param>
-        /// <returns>A <see cref="DeviceManagementScriptGroupAssignmentItemRequestBuilder"/></returns>
-        public DeviceManagementScriptGroupAssignmentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.Item.DeviceManagementScriptGroupAssignmentItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.Item.DeviceManagementScriptGroupAssignmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceManagementScriptGroupAssignment%2Did", position);
-                return new DeviceManagementScriptGroupAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.Item.DeviceManagementScriptGroupAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
         /// <summary>
         /// The list of group assignments for the device management script.
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementScriptGroupAssignmentCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementScriptGroupAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<GroupAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder.GroupAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementScriptGroupAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<GroupAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder.GroupAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementScriptGroupAssignmentCollectionResponse>(requestInfo, DeviceManagementScriptGroupAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignmentCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groupAssignments for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementScriptGroupAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementScriptGroupAssignment?> PostAsync(DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment?> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementScriptGroupAssignment> PostAsync(DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementScriptGroupAssignment>(requestInfo, DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignments for the device management script.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder.GroupAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder.GroupAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupAssignmentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupAssignmentsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupAssignmentsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of group assignments for the device management script.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAss
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupAssignmentsRequestBuilderGetQueryParameters>
+        public class GroupAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.GroupAssignments.GroupAssignmentsRequestBuilder.GroupAssignmentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

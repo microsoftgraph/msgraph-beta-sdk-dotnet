@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The keySets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrustFrameworkKeySet>? KeySets
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>? KeySets
         {
-            get { return BackingStore?.Get<List<TrustFrameworkKeySet>?>("keySets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>?>("keySets"); }
             set { BackingStore?.Set("keySets", value); }
         }
 #nullable restore
 #else
-        public List<TrustFrameworkKeySet> KeySets
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet> KeySets
         {
-            get { return BackingStore?.Get<List<TrustFrameworkKeySet>>("keySets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>>("keySets"); }
             set { BackingStore?.Set("keySets", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrustFrameworkPolicy>? Policies
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkPolicy>? Policies
         {
-            get { return BackingStore?.Get<List<TrustFrameworkPolicy>?>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<TrustFrameworkPolicy> Policies
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkPolicy> Policies
         {
-            get { return BackingStore?.Get<List<TrustFrameworkPolicy>>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TrustFramework"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TrustFramework"/> and sets the default values.
         /// </summary>
         public TrustFramework()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrustFramework"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustFramework"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrustFramework CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TrustFramework CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrustFramework();
+            return new Microsoft.Graph.Beta.Models.TrustFramework();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keySets", n => { KeySets = n.GetCollectionOfObjectValues<TrustFrameworkKeySet>(TrustFrameworkKeySet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keySets", n => { KeySets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>(Microsoft.Graph.Beta.Models.TrustFrameworkKeySet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<TrustFrameworkPolicy>(TrustFrameworkPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkPolicy>(Microsoft.Graph.Beta.Models.TrustFrameworkPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<TrustFrameworkKeySet>("keySets", KeySets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>("keySets", KeySets);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<TrustFrameworkPolicy>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkPolicy>("policies", Policies);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

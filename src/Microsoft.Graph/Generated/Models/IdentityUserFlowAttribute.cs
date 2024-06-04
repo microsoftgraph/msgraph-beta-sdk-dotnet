@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IdentityUserFlowAttribute : Entity, IParsable
+    public class IdentityUserFlowAttribute : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dataType property</summary>
-        public IdentityUserFlowAttributeDataType? DataType
+        public Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeDataType? DataType
         {
-            get { return BackingStore?.Get<IdentityUserFlowAttributeDataType?>("dataType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeDataType?>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
         /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign up.</summary>
@@ -49,25 +49,25 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The userFlowAttributeType property</summary>
-        public IdentityUserFlowAttributeType? UserFlowAttributeType
+        public Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeType? UserFlowAttributeType
         {
-            get { return BackingStore?.Get<IdentityUserFlowAttributeType?>("userFlowAttributeType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeType?>("userFlowAttributeType"); }
             set { BackingStore?.Set("userFlowAttributeType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityUserFlowAttribute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityUserFlowAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.identityBuiltInUserFlowAttribute" => new IdentityBuiltInUserFlowAttribute(),
-                "#microsoft.graph.identityCustomUserFlowAttribute" => new IdentityCustomUserFlowAttribute(),
-                _ => new IdentityUserFlowAttribute(),
+                "#microsoft.graph.identityBuiltInUserFlowAttribute" => new Microsoft.Graph.Beta.Models.IdentityBuiltInUserFlowAttribute(),
+                "#microsoft.graph.identityCustomUserFlowAttribute" => new Microsoft.Graph.Beta.Models.IdentityCustomUserFlowAttribute(),
+                _ => new Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute(),
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dataType", n => { DataType = n.GetEnumValue<IdentityUserFlowAttributeDataType>(); } },
+                { "dataType", n => { DataType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeDataType>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "userFlowAttributeType", n => { UserFlowAttributeType = n.GetEnumValue<IdentityUserFlowAttributeType>(); } },
+                { "userFlowAttributeType", n => { UserFlowAttributeType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeType>(); } },
             };
         }
         /// <summary>
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<IdentityUserFlowAttributeDataType>("dataType", DataType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeDataType>("dataType", DataType);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<IdentityUserFlowAttributeType>("userFlowAttributeType", UserFlowAttributeType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeType>("userFlowAttributeType", UserFlowAttributeType);
         }
     }
 }

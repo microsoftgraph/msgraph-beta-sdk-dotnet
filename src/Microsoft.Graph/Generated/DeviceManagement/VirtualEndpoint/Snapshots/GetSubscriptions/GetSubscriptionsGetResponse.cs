@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions
 {
     #pragma warning disable CS1591
-    public class GetSubscriptionsGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetSubscriptionsGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcSubscription>? Value
+        public List<Microsoft.Graph.Beta.Models.CloudPcSubscription>? Value
         {
-            get { return BackingStore?.Get<List<CloudPcSubscription>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcSubscription>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcSubscription> Value
+        public List<Microsoft.Graph.Beta.Models.CloudPcSubscription> Value
         {
-            get { return BackingStore?.Get<List<CloudPcSubscription>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcSubscription>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSubscriptionsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSubscriptionsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSubscriptionsGetResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSub
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<CloudPcSubscription>(CloudPcSubscription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcSubscription>(Microsoft.Graph.Beta.Models.CloudPcSubscription.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSub
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CloudPcSubscription>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcSubscription>("value", Value);
         }
     }
 }

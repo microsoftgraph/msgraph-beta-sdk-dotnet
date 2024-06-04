@@ -20,22 +20,22 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
     public class CallRecordItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the organizer_v2 property of the microsoft.graph.callRecords.callRecord entity.</summary>
-        public Organizer_v2RequestBuilder Organizer_v2
+        public Microsoft.Graph.Beta.Communications.CallRecords.Item.Organizer_v2.Organizer_v2RequestBuilder Organizer_v2
         {
-            get => new Organizer_v2RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.CallRecords.Item.Organizer_v2.Organizer_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the participants_v2 property of the microsoft.graph.callRecords.callRecord entity.</summary>
-        public Participants_v2RequestBuilder Participants_v2
+        public Microsoft.Graph.Beta.Communications.CallRecords.Item.Participants_v2.Participants_v2RequestBuilder Participants_v2
         {
-            get => new Participants_v2RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.CallRecords.Item.Participants_v2.Participants_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.</summary>
-        public SessionsRequestBuilder Sessions
+        public Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.SessionsRequestBuilder Sessions
         {
-            get => new SessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="CallRecordItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CallRecordItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,50 +76,50 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="CallRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.CallRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CallRecord?> GetAsync(Action<RequestConfiguration<CallRecordItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CallRecords.CallRecord?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder.CallRecordItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CallRecord> GetAsync(Action<RequestConfiguration<CallRecordItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CallRecords.CallRecord> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder.CallRecordItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CallRecord>(requestInfo, CallRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CallRecords.CallRecord>(requestInfo, Microsoft.Graph.Beta.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property callRecords in communications
         /// </summary>
-        /// <returns>A <see cref="CallRecord"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.CallRecord"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CallRecord?> PatchAsync(CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CallRecords.CallRecord?> PatchAsync(Microsoft.Graph.Beta.Models.CallRecords.CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CallRecord> PatchAsync(CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CallRecords.CallRecord> PatchAsync(Microsoft.Graph.Beta.Models.CallRecords.CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CallRecord>(requestInfo, CallRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CallRecords.CallRecord>(requestInfo, Microsoft.Graph.Beta.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property callRecords for communications
@@ -147,11 +147,11 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CallRecordItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder.CallRecordItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CallRecordItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder.CallRecordItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.CallRecords.CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.CallRecords.CallRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CallRecordItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CallRecordItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new CallRecordItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallRecordItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CallRecordItemRequestBuilderGetQueryParameters>
+        public class CallRecordItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Communications.CallRecords.Item.CallRecordItemRequestBuilder.CallRecordItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

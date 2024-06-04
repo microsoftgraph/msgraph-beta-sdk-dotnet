@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpirin
 {
     [Obsolete("This class is obsolete. Use GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse : GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse, IParsable
+    public class GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse : Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse();
         }
     }
 }

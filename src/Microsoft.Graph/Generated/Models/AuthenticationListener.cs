@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationListener : Entity, IParsable
+    public class AuthenticationListener : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.</summary>
@@ -19,32 +19,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationSourceFilter? SourceFilter
+        public Microsoft.Graph.Beta.Models.AuthenticationSourceFilter? SourceFilter
         {
-            get { return BackingStore?.Get<AuthenticationSourceFilter?>("sourceFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationSourceFilter?>("sourceFilter"); }
             set { BackingStore?.Set("sourceFilter", value); }
         }
 #nullable restore
 #else
-        public AuthenticationSourceFilter SourceFilter
+        public Microsoft.Graph.Beta.Models.AuthenticationSourceFilter SourceFilter
         {
-            get { return BackingStore?.Get<AuthenticationSourceFilter>("sourceFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationSourceFilter>("sourceFilter"); }
             set { BackingStore?.Set("sourceFilter", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthenticationListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.invokeUserFlowListener" => new InvokeUserFlowListener(),
-                _ => new AuthenticationListener(),
+                "#microsoft.graph.invokeUserFlowListener" => new Microsoft.Graph.Beta.Models.InvokeUserFlowListener(),
+                _ => new Microsoft.Graph.Beta.Models.AuthenticationListener(),
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "sourceFilter", n => { SourceFilter = n.GetObjectValue<AuthenticationSourceFilter>(AuthenticationSourceFilter.CreateFromDiscriminatorValue); } },
+                { "sourceFilter", n => { SourceFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationSourceFilter>(Microsoft.Graph.Beta.Models.AuthenticationSourceFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteObjectValue<AuthenticationSourceFilter>("sourceFilter", SourceFilter);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationSourceFilter>("sourceFilter", SourceFilter);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InformationProtectionAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.InformationProtectionAction"/> and sets the default values.
         /// </summary>
         public InformationProtectionAction()
         {
@@ -46,30 +46,30 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InformationProtectionAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InformationProtectionAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InformationProtectionAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.InformationProtectionAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.addContentFooterAction" => new AddContentFooterAction(),
-                "#microsoft.graph.addContentHeaderAction" => new AddContentHeaderAction(),
-                "#microsoft.graph.addWatermarkAction" => new AddWatermarkAction(),
-                "#microsoft.graph.applyLabelAction" => new ApplyLabelAction(),
-                "#microsoft.graph.customAction" => new CustomAction(),
-                "#microsoft.graph.justifyAction" => new JustifyAction(),
-                "#microsoft.graph.metadataAction" => new MetadataAction(),
-                "#microsoft.graph.protectAdhocAction" => new ProtectAdhocAction(),
-                "#microsoft.graph.protectByTemplateAction" => new ProtectByTemplateAction(),
-                "#microsoft.graph.protectDoNotForwardAction" => new ProtectDoNotForwardAction(),
-                "#microsoft.graph.recommendLabelAction" => new RecommendLabelAction(),
-                "#microsoft.graph.removeContentFooterAction" => new RemoveContentFooterAction(),
-                "#microsoft.graph.removeContentHeaderAction" => new RemoveContentHeaderAction(),
-                "#microsoft.graph.removeProtectionAction" => new RemoveProtectionAction(),
-                "#microsoft.graph.removeWatermarkAction" => new RemoveWatermarkAction(),
-                _ => new InformationProtectionAction(),
+                "#microsoft.graph.addContentFooterAction" => new Microsoft.Graph.Beta.Models.AddContentFooterAction(),
+                "#microsoft.graph.addContentHeaderAction" => new Microsoft.Graph.Beta.Models.AddContentHeaderAction(),
+                "#microsoft.graph.addWatermarkAction" => new Microsoft.Graph.Beta.Models.AddWatermarkAction(),
+                "#microsoft.graph.applyLabelAction" => new Microsoft.Graph.Beta.Models.ApplyLabelAction(),
+                "#microsoft.graph.customAction" => new Microsoft.Graph.Beta.Models.CustomAction(),
+                "#microsoft.graph.justifyAction" => new Microsoft.Graph.Beta.Models.JustifyAction(),
+                "#microsoft.graph.metadataAction" => new Microsoft.Graph.Beta.Models.MetadataAction(),
+                "#microsoft.graph.protectAdhocAction" => new Microsoft.Graph.Beta.Models.ProtectAdhocAction(),
+                "#microsoft.graph.protectByTemplateAction" => new Microsoft.Graph.Beta.Models.ProtectByTemplateAction(),
+                "#microsoft.graph.protectDoNotForwardAction" => new Microsoft.Graph.Beta.Models.ProtectDoNotForwardAction(),
+                "#microsoft.graph.recommendLabelAction" => new Microsoft.Graph.Beta.Models.RecommendLabelAction(),
+                "#microsoft.graph.removeContentFooterAction" => new Microsoft.Graph.Beta.Models.RemoveContentFooterAction(),
+                "#microsoft.graph.removeContentHeaderAction" => new Microsoft.Graph.Beta.Models.RemoveContentHeaderAction(),
+                "#microsoft.graph.removeProtectionAction" => new Microsoft.Graph.Beta.Models.RemoveProtectionAction(),
+                "#microsoft.graph.removeWatermarkAction" => new Microsoft.Graph.Beta.Models.RemoveWatermarkAction(),
+                _ => new Microsoft.Graph.Beta.Models.InformationProtectionAction(),
             };
         }
         /// <summary>

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The automatic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EvaluateLabelJobResult? Automatic
+        public Microsoft.Graph.Beta.Models.EvaluateLabelJobResult? Automatic
         {
-            get { return BackingStore?.Get<EvaluateLabelJobResult?>("automatic"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult?>("automatic"); }
             set { BackingStore?.Set("automatic", value); }
         }
 #nullable restore
 #else
-        public EvaluateLabelJobResult Automatic
+        public Microsoft.Graph.Beta.Models.EvaluateLabelJobResult Automatic
         {
-            get { return BackingStore?.Get<EvaluateLabelJobResult>("automatic"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult>("automatic"); }
             set { BackingStore?.Set("automatic", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The recommended property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EvaluateLabelJobResult? Recommended
+        public Microsoft.Graph.Beta.Models.EvaluateLabelJobResult? Recommended
         {
-            get { return BackingStore?.Get<EvaluateLabelJobResult?>("recommended"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult?>("recommended"); }
             set { BackingStore?.Set("recommended", value); }
         }
 #nullable restore
 #else
-        public EvaluateLabelJobResult Recommended
+        public Microsoft.Graph.Beta.Models.EvaluateLabelJobResult Recommended
         {
-            get { return BackingStore?.Get<EvaluateLabelJobResult>("recommended"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult>("recommended"); }
             set { BackingStore?.Set("recommended", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EvaluateLabelJobResultGroup"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup"/> and sets the default values.
         /// </summary>
         public EvaluateLabelJobResultGroup()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluateLabelJobResultGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EvaluateLabelJobResultGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluateLabelJobResultGroup();
+            return new Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "automatic", n => { Automatic = n.GetObjectValue<EvaluateLabelJobResult>(EvaluateLabelJobResult.CreateFromDiscriminatorValue); } },
+                { "automatic", n => { Automatic = n.GetObjectValue<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult>(Microsoft.Graph.Beta.Models.EvaluateLabelJobResult.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recommended", n => { Recommended = n.GetObjectValue<EvaluateLabelJobResult>(EvaluateLabelJobResult.CreateFromDiscriminatorValue); } },
+                { "recommended", n => { Recommended = n.GetObjectValue<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult>(Microsoft.Graph.Beta.Models.EvaluateLabelJobResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<EvaluateLabelJobResult>("automatic", Automatic);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult>("automatic", Automatic);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<EvaluateLabelJobResult>("recommended", Recommended);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EvaluateLabelJobResult>("recommended", Recommended);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

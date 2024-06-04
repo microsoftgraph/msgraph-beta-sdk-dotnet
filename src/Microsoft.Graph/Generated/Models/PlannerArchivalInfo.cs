@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The statusChangedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? StatusChangedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? StatusChangedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("statusChangedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("statusChangedBy"); }
             set { BackingStore?.Set("statusChangedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet StatusChangedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet StatusChangedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("statusChangedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("statusChangedBy"); }
             set { BackingStore?.Set("statusChangedBy", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("statusChangedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerArchivalInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerArchivalInfo"/> and sets the default values.
         /// </summary>
         public PlannerArchivalInfo()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerArchivalInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerArchivalInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerArchivalInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerArchivalInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerArchivalInfo();
+            return new Microsoft.Graph.Beta.Models.PlannerArchivalInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "statusChangedBy", n => { StatusChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "statusChangedBy", n => { StatusChangedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "statusChangedDateTime", n => { StatusChangedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("justification", Justification);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentitySet>("statusChangedBy", StatusChangedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("statusChangedBy", StatusChangedBy);
             writer.WriteDateTimeOffsetValue("statusChangedDateTime", StatusChangedDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

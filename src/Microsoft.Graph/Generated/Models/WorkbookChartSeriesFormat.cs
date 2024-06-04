@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookChartSeriesFormat : Entity, IParsable
+    public class WorkbookChartSeriesFormat : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the fill format of a chart series, which includes background formatting information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartFill? Fill
+        public Microsoft.Graph.Beta.Models.WorkbookChartFill? Fill
         {
-            get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartFill Fill
+        public Microsoft.Graph.Beta.Models.WorkbookChartFill Fill
         {
-            get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartFill>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
 #endif
         /// <summary>Represents line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLineFormat? Line
+        public Microsoft.Graph.Beta.Models.WorkbookChartLineFormat? Line
         {
-            get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLineFormat Line
+        public Microsoft.Graph.Beta.Models.WorkbookChartLineFormat Line
         {
-            get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookChartSeriesFormat"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookChartSeriesFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookChartSeriesFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkbookChartSeriesFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookChartSeriesFormat();
+            return new Microsoft.Graph.Beta.Models.WorkbookChartSeriesFormat();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fill", n => { Fill = n.GetObjectValue<WorkbookChartFill>(WorkbookChartFill.CreateFromDiscriminatorValue); } },
-                { "line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
+                { "fill", n => { Fill = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartFill>(Microsoft.Graph.Beta.Models.WorkbookChartFill.CreateFromDiscriminatorValue); } },
+                { "line", n => { Line = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartLineFormat>(Microsoft.Graph.Beta.Models.WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WorkbookChartFill>("fill", Fill);
-            writer.WriteObjectValue<WorkbookChartLineFormat>("line", Line);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartFill>("fill", Fill);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookChartLineFormat>("line", Line);
         }
     }
 }

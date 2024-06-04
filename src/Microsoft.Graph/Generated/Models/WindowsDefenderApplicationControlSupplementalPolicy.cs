@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable
+    public class WindowsDefenderApplicationControlSupplementalPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The associated group assignments for the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>WindowsDefenderApplicationControl supplemental policy deployment summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary? DeploySummary
+        public Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary? DeploySummary
         {
-            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary?>("deploySummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary?>("deploySummary"); }
             set { BackingStore?.Set("deploySummary", value); }
         }
 #nullable restore
 #else
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary DeploySummary
+        public Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary DeploySummary
         {
-            get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>("deploySummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>("deploySummary"); }
             set { BackingStore?.Set("deploySummary", value); }
         }
 #endif
@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>? DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>? DeviceStatuses
         {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>?>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> DeviceStatuses
         {
-            get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
@@ -169,12 +169,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsDefenderApplicationControlSupplementalPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsDefenderApplicationControlSupplementalPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsDefenderApplicationControlSupplementalPolicy();
+            return new Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -184,13 +184,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment>(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "content", n => { Content = n.GetByteArrayValue(); } },
                 { "contentFileName", n => { ContentFileName = n.GetStringValue(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "deploySummary", n => { DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "deploySummary", n => { DeploySummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -205,13 +205,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyAssignment>("assignments", Assignments);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteStringValue("contentFileName", ContentFileName);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
-            writer.WriteObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>("deploySummary", DeploySummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>("deploySummary", DeploySummary);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>("deviceStatuses", DeviceStatuses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>("deviceStatuses", DeviceStatuses);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Document : Entity, IParsable
+    public class Document : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DocumentComment>? Comments
+        public List<Microsoft.Graph.Beta.Models.DocumentComment>? Comments
         {
-            get { return BackingStore?.Get<List<DocumentComment>?>("comments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DocumentComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #nullable restore
 #else
-        public List<DocumentComment> Comments
+        public List<Microsoft.Graph.Beta.Models.DocumentComment> Comments
         {
-            get { return BackingStore?.Get<List<DocumentComment>>("comments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DocumentComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Document"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Document"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Document CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Document CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Document();
+            return new Microsoft.Graph.Beta.Models.Document();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "comments", n => { Comments = n.GetCollectionOfObjectValues<DocumentComment>(DocumentComment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "comments", n => { Comments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DocumentComment>(Microsoft.Graph.Beta.Models.DocumentComment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DocumentComment>("comments", Comments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DocumentComment>("comments", Comments);
         }
     }
 }

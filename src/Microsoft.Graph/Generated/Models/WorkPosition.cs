@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkPosition : ItemFacet, IParsable
+    public class WorkPosition : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Categories that the user has associated with this position.</summary>
@@ -29,32 +29,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Colleagues that are associated with this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedPerson>? Colleagues
+        public List<Microsoft.Graph.Beta.Models.RelatedPerson>? Colleagues
         {
-            get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RelatedPerson>?>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
 #nullable restore
 #else
-        public List<RelatedPerson> Colleagues
+        public List<Microsoft.Graph.Beta.Models.RelatedPerson> Colleagues
         {
-            get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RelatedPerson>>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
 #endif
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PositionDetail? Detail
+        public Microsoft.Graph.Beta.Models.PositionDetail? Detail
         {
-            get { return BackingStore?.Get<PositionDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PositionDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PositionDetail Detail
+        public Microsoft.Graph.Beta.Models.PositionDetail Detail
         {
-            get { return BackingStore?.Get<PositionDetail>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PositionDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
@@ -67,21 +67,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RelatedPerson? Manager
+        public Microsoft.Graph.Beta.Models.RelatedPerson? Manager
         {
-            get { return BackingStore?.Get<RelatedPerson?>("manager"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RelatedPerson?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #nullable restore
 #else
-        public RelatedPerson Manager
+        public Microsoft.Graph.Beta.Models.RelatedPerson Manager
         {
-            get { return BackingStore?.Get<RelatedPerson>("manager"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RelatedPerson>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkPosition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WorkPosition"/> and sets the default values.
         /// </summary>
         public WorkPosition() : base()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkPosition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkPosition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkPosition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkPosition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkPosition();
+            return new Microsoft.Graph.Beta.Models.WorkPosition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
+                { "colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RelatedPerson>(Microsoft.Graph.Beta.Models.RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detail", n => { Detail = n.GetObjectValue<Microsoft.Graph.Beta.Models.PositionDetail>(Microsoft.Graph.Beta.Models.PositionDetail.CreateFromDiscriminatorValue); } },
                 { "isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
-                { "manager", n => { Manager = n.GetObjectValue<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue); } },
+                { "manager", n => { Manager = n.GetObjectValue<Microsoft.Graph.Beta.Models.RelatedPerson>(Microsoft.Graph.Beta.Models.RelatedPerson.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,10 +121,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteCollectionOfObjectValues<RelatedPerson>("colleagues", Colleagues);
-            writer.WriteObjectValue<PositionDetail>("detail", Detail);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RelatedPerson>("colleagues", Colleagues);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PositionDetail>("detail", Detail);
             writer.WriteBoolValue("isCurrent", IsCurrent);
-            writer.WriteObjectValue<RelatedPerson>("manager", Manager);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RelatedPerson>("manager", Manager);
         }
     }
 }

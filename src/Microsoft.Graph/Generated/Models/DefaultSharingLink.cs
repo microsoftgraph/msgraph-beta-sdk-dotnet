@@ -42,19 +42,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The default sharing link role. The possible values are: none, view, edit, manageList, review, restrictedView, submitOnly, unknownFutureValue.</summary>
-        public SharingRole? Role
+        public Microsoft.Graph.Beta.Models.SharingRole? Role
         {
-            get { return BackingStore?.Get<SharingRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>The default sharing link scope. The possible values are: anyone, organization, specificPeople, anonymous, users, unknownFutureValue.</summary>
-        public SharingScope? Scope
+        public Microsoft.Graph.Beta.Models.SharingScope? Scope
         {
-            get { return BackingStore?.Get<SharingScope?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DefaultSharingLink"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DefaultSharingLink"/> and sets the default values.
         /// </summary>
         public DefaultSharingLink()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DefaultSharingLink"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DefaultSharingLink"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DefaultSharingLink CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DefaultSharingLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DefaultSharingLink();
+            return new Microsoft.Graph.Beta.Models.DefaultSharingLink();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "defaultToExistingAccess", n => { DefaultToExistingAccess = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<SharingRole>(); } },
-                { "scope", n => { Scope = n.GetEnumValue<SharingScope>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Beta.Models.SharingRole>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<Microsoft.Graph.Beta.Models.SharingScope>(); } },
             };
         }
         /// <summary>
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("defaultToExistingAccess", DefaultToExistingAccess);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SharingRole>("role", Role);
-            writer.WriteEnumValue<SharingScope>("scope", Scope);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SharingRole>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SharingScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

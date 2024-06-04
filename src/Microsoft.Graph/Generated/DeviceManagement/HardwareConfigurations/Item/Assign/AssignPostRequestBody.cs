@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         /// <summary>The hardwareConfigurationAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HardwareConfigurationAssignment>? HardwareConfigurationAssignments
+        public List<Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment>? HardwareConfigurationAssignments
         {
-            get { return BackingStore?.Get<List<HardwareConfigurationAssignment>?>("hardwareConfigurationAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment>?>("hardwareConfigurationAssignments"); }
             set { BackingStore?.Set("hardwareConfigurationAssignments", value); }
         }
 #nullable restore
 #else
-        public List<HardwareConfigurationAssignment> HardwareConfigurationAssignments
+        public List<Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment> HardwareConfigurationAssignments
         {
-            get { return BackingStore?.Get<List<HardwareConfigurationAssignment>>("hardwareConfigurationAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment>>("hardwareConfigurationAssignments"); }
             set { BackingStore?.Set("hardwareConfigurationAssignments", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assign.AssignPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assign.AssignPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assign.AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assign.AssignPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hardwareConfigurationAssignments", n => { HardwareConfigurationAssignments = n.GetCollectionOfObjectValues<HardwareConfigurationAssignment>(HardwareConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hardwareConfigurationAssignments", n => { HardwareConfigurationAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment>(Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<HardwareConfigurationAssignment>("hardwareConfigurationAssignments", HardwareConfigurationAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfigurationAssignment>("hardwareConfigurationAssignments", HardwareConfigurationAssignments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

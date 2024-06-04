@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ResponsiblePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ResponsiblePolicy"/> and sets the default values.
         /// </summary>
         public ResponsiblePolicy()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResponsiblePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ResponsiblePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ResponsiblePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ResponsiblePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResponsiblePolicy();
+            return new Microsoft.Graph.Beta.Models.ResponsiblePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model

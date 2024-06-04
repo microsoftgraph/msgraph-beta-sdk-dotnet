@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class AzureADDeviceRegistrationError : UpdatableAssetError, IParsable
+    public class AzureADDeviceRegistrationError : Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The reason property</summary>
-        public AzureADDeviceRegistrationErrorReason? Reason
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationErrorReason? Reason
         {
-            get { return BackingStore?.Get<AzureADDeviceRegistrationErrorReason?>("reason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationErrorReason?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AzureADDeviceRegistrationError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationError"/> and sets the default values.
         /// </summary>
         public AzureADDeviceRegistrationError() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureADDeviceRegistrationError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureADDeviceRegistrationError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureADDeviceRegistrationError();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationError();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "reason", n => { Reason = n.GetEnumValue<AzureADDeviceRegistrationErrorReason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationErrorReason>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AzureADDeviceRegistrationErrorReason>("reason", Reason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationErrorReason>("reason", Reason);
         }
     }
 }

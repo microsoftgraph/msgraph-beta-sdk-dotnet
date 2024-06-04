@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthorizationSystemIdentity : Entity, IParsable
+    public class AuthorizationSystemIdentity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Navigation to the authorizationSystem object</summary>
@@ -61,49 +61,49 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents details of the source of the identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentitySource? Source
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource? Source
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentitySource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentitySource Source
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource Source
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentitySource>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystemIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationSystemIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsAccessKey" => new AwsAccessKey(),
-                "#microsoft.graph.awsEc2Instance" => new AwsEc2Instance(),
-                "#microsoft.graph.awsGroup" => new AwsGroup(),
-                "#microsoft.graph.awsIdentity" => new AwsIdentity(),
-                "#microsoft.graph.awsLambda" => new AwsLambda(),
-                "#microsoft.graph.awsRole" => new AwsRole(),
-                "#microsoft.graph.awsUser" => new AwsUser(),
-                "#microsoft.graph.azureGroup" => new AzureGroup(),
-                "#microsoft.graph.azureIdentity" => new AzureIdentity(),
-                "#microsoft.graph.azureManagedIdentity" => new AzureManagedIdentity(),
-                "#microsoft.graph.azureServerlessFunction" => new AzureServerlessFunction(),
-                "#microsoft.graph.azureServicePrincipal" => new AzureServicePrincipal(),
-                "#microsoft.graph.azureUser" => new AzureUser(),
-                "#microsoft.graph.gcpCloudFunction" => new GcpCloudFunction(),
-                "#microsoft.graph.gcpGroup" => new GcpGroup(),
-                "#microsoft.graph.gcpIdentity" => new GcpIdentity(),
-                "#microsoft.graph.gcpServiceAccount" => new GcpServiceAccount(),
-                "#microsoft.graph.gcpUser" => new GcpUser(),
-                _ => new AuthorizationSystemIdentity(),
+                "#microsoft.graph.awsAccessKey" => new Microsoft.Graph.Beta.Models.AwsAccessKey(),
+                "#microsoft.graph.awsEc2Instance" => new Microsoft.Graph.Beta.Models.AwsEc2Instance(),
+                "#microsoft.graph.awsGroup" => new Microsoft.Graph.Beta.Models.AwsGroup(),
+                "#microsoft.graph.awsIdentity" => new Microsoft.Graph.Beta.Models.AwsIdentity(),
+                "#microsoft.graph.awsLambda" => new Microsoft.Graph.Beta.Models.AwsLambda(),
+                "#microsoft.graph.awsRole" => new Microsoft.Graph.Beta.Models.AwsRole(),
+                "#microsoft.graph.awsUser" => new Microsoft.Graph.Beta.Models.AwsUser(),
+                "#microsoft.graph.azureGroup" => new Microsoft.Graph.Beta.Models.AzureGroup(),
+                "#microsoft.graph.azureIdentity" => new Microsoft.Graph.Beta.Models.AzureIdentity(),
+                "#microsoft.graph.azureManagedIdentity" => new Microsoft.Graph.Beta.Models.AzureManagedIdentity(),
+                "#microsoft.graph.azureServerlessFunction" => new Microsoft.Graph.Beta.Models.AzureServerlessFunction(),
+                "#microsoft.graph.azureServicePrincipal" => new Microsoft.Graph.Beta.Models.AzureServicePrincipal(),
+                "#microsoft.graph.azureUser" => new Microsoft.Graph.Beta.Models.AzureUser(),
+                "#microsoft.graph.gcpCloudFunction" => new Microsoft.Graph.Beta.Models.GcpCloudFunction(),
+                "#microsoft.graph.gcpGroup" => new Microsoft.Graph.Beta.Models.GcpGroup(),
+                "#microsoft.graph.gcpIdentity" => new Microsoft.Graph.Beta.Models.GcpIdentity(),
+                "#microsoft.graph.gcpServiceAccount" => new Microsoft.Graph.Beta.Models.GcpServiceAccount(),
+                "#microsoft.graph.gcpUser" => new Microsoft.Graph.Beta.Models.GcpUser(),
+                _ => new Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity(),
             };
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<AuthorizationSystemIdentitySource>(AuthorizationSystemIdentitySource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource>(Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystem", AuthorizationSystem);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<AuthorizationSystemIdentitySource>("source", Source);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource>("source", Source);
         }
     }
 }

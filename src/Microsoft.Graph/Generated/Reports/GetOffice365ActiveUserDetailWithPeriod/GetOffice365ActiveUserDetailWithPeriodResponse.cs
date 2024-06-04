@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod
 {
     [Obsolete("This class is obsolete. Use GetOffice365ActiveUserDetailWithPeriodGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365ActiveUserDetailWithPeriodResponse : GetOffice365ActiveUserDetailWithPeriodGetResponse, IParsable
+    public class GetOffice365ActiveUserDetailWithPeriodResponse : Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod.GetOffice365ActiveUserDetailWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetOffice365ActiveUserDetailWithPeriodResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod.GetOffice365ActiveUserDetailWithPeriodResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOffice365ActiveUserDetailWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod.GetOffice365ActiveUserDetailWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetOffice365ActiveUserDetailWithPeriodResponse();
+            return new Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod.GetOffice365ActiveUserDetailWithPeriodResponse();
         }
     }
 }

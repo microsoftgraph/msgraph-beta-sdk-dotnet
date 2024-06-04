@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The logicalTest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LogicalTest
+        public Microsoft.Graph.Beta.Models.Json? LogicalTest
         {
-            get { return BackingStore?.Get<Json?>("logicalTest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("logicalTest"); }
             set { BackingStore?.Set("logicalTest", value); }
         }
 #nullable restore
 #else
-        public Json LogicalTest
+        public Microsoft.Graph.Beta.Models.Json LogicalTest
         {
-            get { return BackingStore?.Get<Json>("logicalTest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("logicalTest"); }
             set { BackingStore?.Set("logicalTest", value); }
         }
 #endif
         /// <summary>The valueIfFalse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ValueIfFalse
+        public Microsoft.Graph.Beta.Models.Json? ValueIfFalse
         {
-            get { return BackingStore?.Get<Json?>("valueIfFalse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("valueIfFalse"); }
             set { BackingStore?.Set("valueIfFalse", value); }
         }
 #nullable restore
 #else
-        public Json ValueIfFalse
+        public Microsoft.Graph.Beta.Models.Json ValueIfFalse
         {
-            get { return BackingStore?.Get<Json>("valueIfFalse"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("valueIfFalse"); }
             set { BackingStore?.Set("valueIfFalse", value); }
         }
 #endif
         /// <summary>The valueIfTrue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ValueIfTrue
+        public Microsoft.Graph.Beta.Models.Json? ValueIfTrue
         {
-            get { return BackingStore?.Get<Json?>("valueIfTrue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("valueIfTrue"); }
             set { BackingStore?.Set("valueIfTrue", value); }
         }
 #nullable restore
 #else
-        public Json ValueIfTrue
+        public Microsoft.Graph.Beta.Models.Json ValueIfTrue
         {
-            get { return BackingStore?.Get<Json>("valueIfTrue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("valueIfTrue"); }
             set { BackingStore?.Set("valueIfTrue", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IfPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.If.IfPostRequestBody"/> and sets the default values.
         /// </summary>
         public IfPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IfPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.If.IfPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.If.IfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IfPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.If.IfPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "logicalTest", n => { LogicalTest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "valueIfFalse", n => { ValueIfFalse = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "valueIfTrue", n => { ValueIfTrue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "logicalTest", n => { LogicalTest = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "valueIfFalse", n => { ValueIfFalse = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "valueIfTrue", n => { ValueIfTrue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("logicalTest", LogicalTest);
-            writer.WriteObjectValue<Json>("valueIfFalse", ValueIfFalse);
-            writer.WriteObjectValue<Json>("valueIfTrue", ValueIfTrue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("logicalTest", LogicalTest);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("valueIfFalse", ValueIfFalse);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("valueIfTrue", ValueIfTrue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Management Configuration Policy
     /// </summary>
-    public class DeviceManagementConfigurationPolicy : Entity, IParsable
+    public class DeviceManagementConfigurationPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Policy assignments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -94,24 +94,24 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DeviceManagementConfigurationPlatforms? Platforms
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms? Platforms
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Indicates the priority of each policies that are selected by the admin during enrollment process</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementPriorityMetaData? PriorityMetaData
+        public Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData? PriorityMetaData
         {
-            get { return BackingStore?.Get<DeviceManagementPriorityMetaData?>("priorityMetaData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData?>("priorityMetaData"); }
             set { BackingStore?.Set("priorityMetaData", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementPriorityMetaData PriorityMetaData
+        public Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData PriorityMetaData
         {
-            get { return BackingStore?.Get<DeviceManagementPriorityMetaData>("priorityMetaData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData>("priorityMetaData"); }
             set { BackingStore?.Set("priorityMetaData", value); }
         }
 #endif
@@ -140,50 +140,50 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Policy settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSetting>? Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>? Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSetting> Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting> Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Describes which technology this setting can be deployed with</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies? Technologies
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>Template reference information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationPolicyTemplateReference? TemplateReference
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference? TemplateReference
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPolicyTemplateReference?>("templateReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference?>("templateReference"); }
             set { BackingStore?.Set("templateReference", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationPolicyTemplateReference TemplateReference
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference TemplateReference
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPolicyTemplateReference>("templateReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference>("templateReference"); }
             set { BackingStore?.Set("templateReference", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationPolicy();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -193,20 +193,20 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "creationSource", n => { CreationSource = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                { "priorityMetaData", n => { PriorityMetaData = n.GetObjectValue<DeviceManagementPriorityMetaData>(DeviceManagementPriorityMetaData.CreateFromDiscriminatorValue); } },
+                { "platforms", n => { Platforms = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>(); } },
+                { "priorityMetaData", n => { PriorityMetaData = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData>(Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData.CreateFromDiscriminatorValue); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "settingCount", n => { SettingCount = n.GetIntValue(); } },
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                { "templateReference", n => { TemplateReference = n.GetObjectValue<DeviceManagementConfigurationPolicyTemplateReference>(DeviceManagementConfigurationPolicyTemplateReference.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "technologies", n => { Technologies = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>(); } },
+                { "templateReference", n => { TemplateReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -217,19 +217,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("creationSource", CreationSource);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
-            writer.WriteObjectValue<DeviceManagementPriorityMetaData>("priorityMetaData", PriorityMetaData);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>("platforms", Platforms);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementPriorityMetaData>("priorityMetaData", PriorityMetaData);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteIntValue("settingCount", SettingCount);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", Settings);
-            writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
-            writer.WriteObjectValue<DeviceManagementConfigurationPolicyTemplateReference>("templateReference", TemplateReference);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>("settings", Settings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>("technologies", Technologies);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference>("templateReference", TemplateReference);
         }
     }
 }

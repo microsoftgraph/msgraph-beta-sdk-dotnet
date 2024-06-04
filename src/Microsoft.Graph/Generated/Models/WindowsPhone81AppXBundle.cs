@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows Phone 8.1 AppX Bundle Line Of Business apps. Inherits from graph.windowsPhone81AppX (which is also to be deprecated at the same time). Will be deprecated in February 2023.
     /// </summary>
-    public class WindowsPhone81AppXBundle : WindowsPhone81AppX, IParsable
+    public class WindowsPhone81AppXBundle : Microsoft.Graph.Beta.Models.WindowsPhone81AppX, IParsable
     {
         /// <summary>The list of AppX Package Information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsPackageInformation>? AppXPackageInformationList
+        public List<Microsoft.Graph.Beta.Models.WindowsPackageInformation>? AppXPackageInformationList
         {
-            get { return BackingStore?.Get<List<WindowsPackageInformation>?>("appXPackageInformationList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsPackageInformation>?>("appXPackageInformationList"); }
             set { BackingStore?.Set("appXPackageInformationList", value); }
         }
 #nullable restore
 #else
-        public List<WindowsPackageInformation> AppXPackageInformationList
+        public List<Microsoft.Graph.Beta.Models.WindowsPackageInformation> AppXPackageInformationList
         {
-            get { return BackingStore?.Get<List<WindowsPackageInformation>>("appXPackageInformationList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsPackageInformation>>("appXPackageInformationList"); }
             set { BackingStore?.Set("appXPackageInformationList", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhone81AppXBundle"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81AppXBundle"/> and sets the default values.
         /// </summary>
         public WindowsPhone81AppXBundle() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhone81AppXBundle"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81AppXBundle"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81AppXBundle CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPhone81AppXBundle CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81AppXBundle();
+            return new Microsoft.Graph.Beta.Models.WindowsPhone81AppXBundle();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appXPackageInformationList", n => { AppXPackageInformationList = n.GetCollectionOfObjectValues<WindowsPackageInformation>(WindowsPackageInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appXPackageInformationList", n => { AppXPackageInformationList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsPackageInformation>(Microsoft.Graph.Beta.Models.WindowsPackageInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WindowsPackageInformation>("appXPackageInformationList", AppXPackageInformationList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsPackageInformation>("appXPackageInformationList", AppXPackageInformationList);
         }
     }
 }

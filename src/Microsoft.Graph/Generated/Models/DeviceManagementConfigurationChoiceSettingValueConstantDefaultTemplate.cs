@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Choice Setting Value Constant Default Template
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable
+    public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Option Children</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingInstanceTemplate>? Children
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>? Children
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingInstanceTemplate> Children
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate> Children
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #endif
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate() : base()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "settingDefinitionOptionId", n => { SettingDefinitionOptionId = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingInstanceTemplate>("children", Children);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>("children", Children);
             writer.WriteStringValue("settingDefinitionOptionId", SettingDefinitionOptionId);
         }
     }

@@ -7,91 +7,91 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GcpAuthorizationSystem : AuthorizationSystem, IParsable
+    public class GcpAuthorizationSystem : Microsoft.Graph.Beta.Models.AuthorizationSystem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpAuthorizationSystemTypeAction>? Actions
+        public List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction>? Actions
         {
-            get { return BackingStore?.Get<List<GcpAuthorizationSystemTypeAction>?>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<GcpAuthorizationSystemTypeAction> Actions
+        public List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction> Actions
         {
-            get { return BackingStore?.Get<List<GcpAuthorizationSystemTypeAction>>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GcpAssociatedIdentities? AssociatedIdentities
+        public Microsoft.Graph.Beta.Models.GcpAssociatedIdentities? AssociatedIdentities
         {
-            get { return BackingStore?.Get<GcpAssociatedIdentities?>("associatedIdentities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GcpAssociatedIdentities?>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #nullable restore
 #else
-        public GcpAssociatedIdentities AssociatedIdentities
+        public Microsoft.Graph.Beta.Models.GcpAssociatedIdentities AssociatedIdentities
         {
-            get { return BackingStore?.Get<GcpAssociatedIdentities>("associatedIdentities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GcpAssociatedIdentities>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #endif
         /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpAuthorizationSystemResource>? Resources
+        public List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource>? Resources
         {
-            get { return BackingStore?.Get<List<GcpAuthorizationSystemResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<GcpAuthorizationSystemResource> Resources
+        public List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource> Resources
         {
-            get { return BackingStore?.Get<List<GcpAuthorizationSystemResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>Roles associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpRole>? Roles
+        public List<Microsoft.Graph.Beta.Models.GcpRole>? Roles
         {
-            get { return BackingStore?.Get<List<GcpRole>?>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpRole>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<GcpRole> Roles
+        public List<Microsoft.Graph.Beta.Models.GcpRole> Roles
         {
-            get { return BackingStore?.Get<List<GcpRole>>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpRole>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #endif
         /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemTypeService>? Services
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>? Services
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeService>?>("services"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemTypeService> Services
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService> Services
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeService>>("services"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GcpAuthorizationSystem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GcpAuthorizationSystem"/> and sets the default values.
         /// </summary>
         public GcpAuthorizationSystem() : base()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GcpAuthorizationSystem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GcpAuthorizationSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GcpAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GcpAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GcpAuthorizationSystem();
+            return new Microsoft.Graph.Beta.Models.GcpAuthorizationSystem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<GcpAuthorizationSystemTypeAction>(GcpAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<GcpAssociatedIdentities>(GcpAssociatedIdentities.CreateFromDiscriminatorValue); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<GcpAuthorizationSystemResource>(GcpAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roles", n => { Roles = n.GetCollectionOfObjectValues<GcpRole>(GcpRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction>(Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<Microsoft.Graph.Beta.Models.GcpAssociatedIdentities>(Microsoft.Graph.Beta.Models.GcpAssociatedIdentities.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource>(Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpRole>(Microsoft.Graph.Beta.Models.GcpRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>(Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<GcpAuthorizationSystemTypeAction>("actions", Actions);
-            writer.WriteObjectValue<GcpAssociatedIdentities>("associatedIdentities", AssociatedIdentities);
-            writer.WriteCollectionOfObjectValues<GcpAuthorizationSystemResource>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<GcpRole>("roles", Roles);
-            writer.WriteCollectionOfObjectValues<AuthorizationSystemTypeService>("services", Services);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction>("actions", Actions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GcpAssociatedIdentities>("associatedIdentities", AssociatedIdentities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpRole>("roles", Roles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>("services", Services);
         }
     }
 }

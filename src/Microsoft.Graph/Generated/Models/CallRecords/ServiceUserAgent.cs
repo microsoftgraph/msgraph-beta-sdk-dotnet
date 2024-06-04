@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class ServiceUserAgent : UserAgent, IParsable
+    public class ServiceUserAgent : Microsoft.Graph.Beta.Models.CallRecords.UserAgent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The role property</summary>
-        public ServiceRole? Role
+        public Microsoft.Graph.Beta.Models.CallRecords.ServiceRole? Role
         {
-            get { return BackingStore?.Get<ServiceRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.ServiceRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ServiceUserAgent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CallRecords.ServiceUserAgent"/> and sets the default values.
         /// </summary>
         public ServiceUserAgent() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceUserAgent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.ServiceUserAgent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceUserAgent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.ServiceUserAgent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServiceUserAgent();
+            return new Microsoft.Graph.Beta.Models.CallRecords.ServiceUserAgent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "role", n => { Role = n.GetEnumValue<ServiceRole>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Beta.Models.CallRecords.ServiceRole>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ServiceRole>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CallRecords.ServiceRole>("role", Role);
         }
     }
 }

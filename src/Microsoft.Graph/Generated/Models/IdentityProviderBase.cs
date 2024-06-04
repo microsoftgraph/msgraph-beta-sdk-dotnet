@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IdentityProviderBase : Entity, IParsable
+    public class IdentityProviderBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the identity provider.</summary>
@@ -29,22 +29,22 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityProviderBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityProviderBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityProviderBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityProviderBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.appleManagedIdentityProvider" => new AppleManagedIdentityProvider(),
-                "#microsoft.graph.builtInIdentityProvider" => new BuiltInIdentityProvider(),
-                "#microsoft.graph.internalDomainFederation" => new InternalDomainFederation(),
-                "#microsoft.graph.openIdConnectIdentityProvider" => new OpenIdConnectIdentityProvider(),
-                "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new SamlOrWsFedExternalDomainFederation(),
-                "#microsoft.graph.samlOrWsFedProvider" => new SamlOrWsFedProvider(),
-                "#microsoft.graph.socialIdentityProvider" => new SocialIdentityProvider(),
-                _ => new IdentityProviderBase(),
+                "#microsoft.graph.appleManagedIdentityProvider" => new Microsoft.Graph.Beta.Models.AppleManagedIdentityProvider(),
+                "#microsoft.graph.builtInIdentityProvider" => new Microsoft.Graph.Beta.Models.BuiltInIdentityProvider(),
+                "#microsoft.graph.internalDomainFederation" => new Microsoft.Graph.Beta.Models.InternalDomainFederation(),
+                "#microsoft.graph.openIdConnectIdentityProvider" => new Microsoft.Graph.Beta.Models.OpenIdConnectIdentityProvider(),
+                "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new Microsoft.Graph.Beta.Models.SamlOrWsFedExternalDomainFederation(),
+                "#microsoft.graph.samlOrWsFedProvider" => new Microsoft.Graph.Beta.Models.SamlOrWsFedProvider(),
+                "#microsoft.graph.socialIdentityProvider" => new Microsoft.Graph.Beta.Models.SocialIdentityProvider(),
+                _ => new Microsoft.Graph.Beta.Models.IdentityProviderBase(),
             };
         }
         /// <summary>

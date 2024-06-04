@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Applicability for an Exchange Online Setting
     /// </summary>
-    public class DeviceManagementConfigurationExchangeOnlineSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable
+    public class DeviceManagementConfigurationExchangeOnlineSettingApplicability : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationExchangeOnlineSettingApplicability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationExchangeOnlineSettingApplicability() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationExchangeOnlineSettingApplicability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationExchangeOnlineSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationExchangeOnlineSettingApplicability();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsDefinitionIdentitySource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource"/> and sets the default values.
         /// </summary>
         public PermissionsDefinitionIdentitySource()
         {
@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsDefinitionIdentitySource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PermissionsDefinitionIdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsIdentitySource" => new AwsIdentitySource(),
-                "#microsoft.graph.edIdentitySource" => new EdIdentitySource(),
-                "#microsoft.graph.localIdentitySource" => new LocalIdentitySource(),
-                "#microsoft.graph.samlIdentitySource" => new SamlIdentitySource(),
-                _ => new PermissionsDefinitionIdentitySource(),
+                "#microsoft.graph.awsIdentitySource" => new Microsoft.Graph.Beta.Models.AwsIdentitySource(),
+                "#microsoft.graph.edIdentitySource" => new Microsoft.Graph.Beta.Models.EdIdentitySource(),
+                "#microsoft.graph.localIdentitySource" => new Microsoft.Graph.Beta.Models.LocalIdentitySource(),
+                "#microsoft.graph.samlIdentitySource" => new Microsoft.Graph.Beta.Models.SamlIdentitySource(),
+                _ => new Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource(),
             };
         }
         /// <summary>

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>A list of all child nodes in the chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DetonationChain>? ChildNodes
+        public List<Microsoft.Graph.Beta.Models.Security.DetonationChain>? ChildNodes
         {
-            get { return BackingStore?.Get<List<DetonationChain>?>("childNodes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.DetonationChain>?>("childNodes"); }
             set { BackingStore?.Set("childNodes", value); }
         }
 #nullable restore
 #else
-        public List<DetonationChain> ChildNodes
+        public List<Microsoft.Graph.Beta.Models.Security.DetonationChain> ChildNodes
         {
-            get { return BackingStore?.Get<List<DetonationChain>>("childNodes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.DetonationChain>>("childNodes"); }
             set { BackingStore?.Set("childNodes", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DetonationChain"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.DetonationChain"/> and sets the default values.
         /// </summary>
         public DetonationChain()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DetonationChain"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.DetonationChain"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DetonationChain CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.DetonationChain CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DetonationChain();
+            return new Microsoft.Graph.Beta.Models.Security.DetonationChain();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "childNodes", n => { ChildNodes = n.GetCollectionOfObjectValues<DetonationChain>(DetonationChain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "childNodes", n => { ChildNodes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.DetonationChain>(Microsoft.Graph.Beta.Models.Security.DetonationChain.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DetonationChain>("childNodes", ChildNodes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.DetonationChain>("childNodes", ChildNodes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

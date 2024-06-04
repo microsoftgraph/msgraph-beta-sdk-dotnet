@@ -21,30 +21,30 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.b2cUserFlows.item.identityProviders.item collection</summary>
         /// <param name="position">The unique identifier of identityProvider</param>
-        /// <returns>A <see cref="IdentityProviderItemRequestBuilder"/></returns>
-        public IdentityProviderItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item.IdentityProviderItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item.IdentityProviderItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("identityProvider%2Did", position);
-                return new IdentityProviderItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item.IdentityProviderItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IdentityProvidersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IdentityProvidersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -63,26 +63,26 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         /// Get the identity providers in a b2cIdentityUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="IdentityProviderCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityProviderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityProviderCollectionResponse?> GetAsync(Action<RequestConfiguration<IdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IdentityProviderCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IdentityProviderCollectionResponse> GetAsync(Action<RequestConfiguration<IdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IdentityProviderCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityProviderCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the identity providers in a b2cIdentityUserFlow object.
@@ -92,11 +92,11 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="IdentityProvidersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider")]
-        public IdentityProvidersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder WithUrl(string rawUrl)
         {
-            return new IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the identity providers in a b2cIdentityUserFlow object.
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IdentityProvidersRequestBuilderGetRequestConfiguration : RequestConfiguration<IdentityProvidersRequestBuilderGetQueryParameters>
+        public class IdentityProvidersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder.IdentityProvidersRequestBuilderGetQueryParameters>
         {
         }
     }

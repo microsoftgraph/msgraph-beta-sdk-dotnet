@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewScope"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessReviewScope"/> and sets the default values.
         /// </summary>
         public AccessReviewScope()
         {
@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessReviewScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new AccessReviewInactiveUsersQueryScope(),
-                "#microsoft.graph.accessReviewQueryScope" => new AccessReviewQueryScope(),
-                "#microsoft.graph.accessReviewReviewerScope" => new AccessReviewReviewerScope(),
-                "#microsoft.graph.principalResourceMembershipsScope" => new PrincipalResourceMembershipsScope(),
-                _ => new AccessReviewScope(),
+                "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new Microsoft.Graph.Beta.Models.AccessReviewInactiveUsersQueryScope(),
+                "#microsoft.graph.accessReviewQueryScope" => new Microsoft.Graph.Beta.Models.AccessReviewQueryScope(),
+                "#microsoft.graph.accessReviewReviewerScope" => new Microsoft.Graph.Beta.Models.AccessReviewReviewerScope(),
+                "#microsoft.graph.principalResourceMembershipsScope" => new Microsoft.Graph.Beta.Models.PrincipalResourceMembershipsScope(),
+                _ => new Microsoft.Graph.Beta.Models.AccessReviewScope(),
             };
         }
         /// <summary>

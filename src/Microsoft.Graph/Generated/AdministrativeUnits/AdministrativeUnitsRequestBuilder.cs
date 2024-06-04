@@ -23,44 +23,44 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
     public class AdministrativeUnitsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.AdministrativeUnits.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AdministrativeUnits.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta
+        public Microsoft.Graph.Beta.AdministrativeUnits.Delta.DeltaRequestBuilder Delta
         {
-            get => new DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AdministrativeUnits.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds
+        public Microsoft.Graph.Beta.AdministrativeUnits.GetByIds.GetByIdsRequestBuilder GetByIds
         {
-            get => new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AdministrativeUnits.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
+        public Microsoft.Graph.Beta.AdministrativeUnits.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
         {
-            get => new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AdministrativeUnits.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties
+        public Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
         /// <param name="position">The unique identifier of administrativeUnit</param>
-        /// <returns>A <see cref="AdministrativeUnitItemRequestBuilder"/></returns>
-        public AdministrativeUnitItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("administrativeUnit%2Did", position);
-                return new AdministrativeUnitItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.AdministrativeUnits.Item.AdministrativeUnitItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnitsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnitsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,25 +79,25 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
         /// Retrieve a list of administrativeUnit objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnitCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdministrativeUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AdministrativeUnitCollectionResponse?> GetAsync(Action<RequestConfiguration<AdministrativeUnitsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AdministrativeUnitCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder.AdministrativeUnitsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AdministrativeUnitCollectionResponse> GetAsync(Action<RequestConfiguration<AdministrativeUnitsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AdministrativeUnitCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder.AdministrativeUnitsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AdministrativeUnitCollectionResponse>(requestInfo, AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnitCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API to create a new administrativeUnit.
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.AdministrativeUnit?> PostAsync(Microsoft.Graph.Beta.Models.AdministrativeUnit body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdministrativeUnitsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder.AdministrativeUnitsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdministrativeUnitsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder.AdministrativeUnitsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -169,11 +169,11 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnitsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AdministrativeUnitsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AdministrativeUnitsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of administrativeUnit objects.
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AdministrativeUnitsRequestBuilderGetRequestConfiguration : RequestConfiguration<AdministrativeUnitsRequestBuilderGetQueryParameters>
+        public class AdministrativeUnitsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder.AdministrativeUnitsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

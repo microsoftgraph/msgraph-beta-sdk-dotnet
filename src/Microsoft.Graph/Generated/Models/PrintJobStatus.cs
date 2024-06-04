@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Additional details for print job state. Valid values are described in the following table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintJobStateDetail?>? Details
+        public List<Microsoft.Graph.Beta.Models.PrintJobStateDetail?>? Details
         {
-            get { return BackingStore?.Get<List<PrintJobStateDetail?>?>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintJobStateDetail?>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<PrintJobStateDetail?> Details
+        public List<Microsoft.Graph.Beta.Models.PrintJobStateDetail?> Details
         {
-            get { return BackingStore?.Get<List<PrintJobStateDetail?>>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintJobStateDetail?>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -80,9 +80,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The processingState property</summary>
-        public PrintJobProcessingState? ProcessingState
+        public Microsoft.Graph.Beta.Models.PrintJobProcessingState? ProcessingState
         {
-            get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobProcessingState?>("processingState"); }
             set { BackingStore?.Set("processingState", value); }
         }
         /// <summary>The processingStateDescription property</summary>
@@ -102,13 +102,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public PrintJobProcessingState? State
+        public Microsoft.Graph.Beta.Models.PrintJobProcessingState? State
         {
-            get { return BackingStore?.Get<PrintJobProcessingState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobProcessingState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintJobStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PrintJobStatus"/> and sets the default values.
         /// </summary>
         public PrintJobStatus()
         {
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintJobStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintJobStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrintJobStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PrintJobStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintJobStatus();
+            return new Microsoft.Graph.Beta.Models.PrintJobStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,12 +135,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "acquiredByPrinter", n => { AcquiredByPrinter = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetCollectionOfEnumValues<PrintJobStateDetail>()?.ToList(); } },
+                { "details", n => { Details = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintJobStateDetail>()?.ToList(); } },
                 { "isAcquiredByPrinter", n => { IsAcquiredByPrinter = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
+                { "processingState", n => { ProcessingState = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintJobProcessingState>(); } },
                 { "processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<PrintJobProcessingState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintJobProcessingState>(); } },
             };
         }
         /// <summary>
@@ -152,12 +152,12 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("acquiredByPrinter", AcquiredByPrinter);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfEnumValues<PrintJobStateDetail>("details", Details);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintJobStateDetail>("details", Details);
             writer.WriteBoolValue("isAcquiredByPrinter", IsAcquiredByPrinter);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintJobProcessingState>("processingState", ProcessingState);
             writer.WriteStringValue("processingStateDescription", ProcessingStateDescription);
-            writer.WriteEnumValue<PrintJobProcessingState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintJobProcessingState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

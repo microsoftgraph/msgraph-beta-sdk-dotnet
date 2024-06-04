@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The password settings for the users to be provisioned with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PasswordSettings? DefaultPasswordSettings
+        public Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings? DefaultPasswordSettings
         {
-            get { return BackingStore?.Get<PasswordSettings?>("defaultPasswordSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings?>("defaultPasswordSettings"); }
             set { BackingStore?.Set("defaultPasswordSettings", value); }
         }
 #nullable restore
 #else
-        public PasswordSettings DefaultPasswordSettings
+        public Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings DefaultPasswordSettings
         {
-            get { return BackingStore?.Get<PasswordSettings>("defaultPasswordSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings>("defaultPasswordSettings"); }
             set { BackingStore?.Set("defaultPasswordSettings", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration"/> and sets the default values.
         /// </summary>
         public UserConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserConfiguration();
+            return new Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "defaultPasswordSettings", n => { DefaultPasswordSettings = n.GetObjectValue<PasswordSettings>(PasswordSettings.CreateFromDiscriminatorValue); } },
+                { "defaultPasswordSettings", n => { DefaultPasswordSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings>(Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings.CreateFromDiscriminatorValue); } },
                 { "licenseSkus", n => { LicenseSkus = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "roleGroup", n => { RoleGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>(Microsoft.Graph.Beta.Models.IndustryData.RoleGroup.CreateFromDiscriminatorValue); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PasswordSettings>("defaultPasswordSettings", DefaultPasswordSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings>("defaultPasswordSettings", DefaultPasswordSettings);
             writer.WriteCollectionOfPrimitiveValues<string>("licenseSkus", LicenseSkus);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>("roleGroup", RoleGroup);

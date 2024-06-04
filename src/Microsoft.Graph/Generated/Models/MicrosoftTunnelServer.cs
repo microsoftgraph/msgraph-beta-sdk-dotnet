@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a single Microsoft Tunnel server
     /// </summary>
-    public class MicrosoftTunnelServer : Entity, IParsable
+    public class MicrosoftTunnelServer : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The digest of the current agent image running on this server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,20 +66,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Enum of possible MicrosoftTunnelServer health status types</summary>
-        public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus
+        public Microsoft.Graph.Beta.Models.MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus
         {
-            get { return BackingStore?.Get<MicrosoftTunnelServerHealthStatus?>("tunnelServerHealthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerHealthStatus?>("tunnelServerHealthStatus"); }
             set { BackingStore?.Set("tunnelServerHealthStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelServer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftTunnelServer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftTunnelServer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftTunnelServer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftTunnelServer();
+            return new Microsoft.Graph.Beta.Models.MicrosoftTunnelServer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
                 { "serverImageDigest", n => { ServerImageDigest = n.GetStringValue(); } },
-                { "tunnelServerHealthStatus", n => { TunnelServerHealthStatus = n.GetEnumValue<MicrosoftTunnelServerHealthStatus>(); } },
+                { "tunnelServerHealthStatus", n => { TunnelServerHealthStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerHealthStatus>(); } },
             };
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastCheckinDateTime", LastCheckinDateTime);
             writer.WriteStringValue("serverImageDigest", ServerImageDigest);
-            writer.WriteEnumValue<MicrosoftTunnelServerHealthStatus>("tunnelServerHealthStatus", TunnelServerHealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerHealthStatus>("tunnelServerHealthStatus", TunnelServerHealthStatus);
         }
     }
 }

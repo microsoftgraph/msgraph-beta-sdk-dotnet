@@ -9,42 +9,42 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable
+    public class Windows81CertificateProfileBase : Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase, IParsable
     {
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
+        public List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
         {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #nullable restore
 #else
-        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames
+        public List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName> CustomSubjectAlternativeNames
         {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #endif
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>? ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage> ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows81CertificateProfileBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows81CertificateProfileBase"/> and sets the default values.
         /// </summary>
         public Windows81CertificateProfileBase() : base()
         {
@@ -53,16 +53,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows81CertificateProfileBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows81CertificateProfileBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows81CertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows81CertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windows81SCEPCertificateProfile" => new Windows81SCEPCertificateProfile(),
-                _ => new Windows81CertificateProfileBase(),
+                "#microsoft.graph.windows81SCEPCertificateProfile" => new Microsoft.Graph.Beta.Models.Windows81SCEPCertificateProfile(),
+                _ => new Microsoft.Graph.Beta.Models.Windows81CertificateProfileBase(),
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>(Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>(Microsoft.Graph.Beta.Models.ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
-            writer.WriteCollectionOfObjectValues<ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device compliance setting State for a given device.
     /// </summary>
-    public class DeviceComplianceSettingState : Entity, IParsable
+    public class DeviceComplianceSettingState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device type.</summary>
-        public DeviceType? PlatformType
+        public Microsoft.Graph.Beta.Models.DeviceType? PlatformType
         {
-            get { return BackingStore?.Get<DeviceType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>The setting class name and property name.</summary>
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public ComplianceStatus? State
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? State
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The User email address that is being reported</summary>
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceSettingState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceComplianceSettingState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceComplianceSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceComplianceSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceComplianceSettingState();
+            return new Microsoft.Graph.Beta.Models.DeviceComplianceSettingState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -195,10 +195,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<DeviceType>(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceType>(); } },
                 { "setting", n => { Setting = n.GetStringValue(); } },
                 { "settingName", n => { SettingName = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
@@ -217,10 +217,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceModel", DeviceModel);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteEnumValue<DeviceType>("platformType", PlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceType>("platformType", PlatformType);
             writer.WriteStringValue("setting", Setting);
             writer.WriteStringValue("settingName", SettingName);
-            writer.WriteEnumValue<ComplianceStatus>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("state", State);
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);

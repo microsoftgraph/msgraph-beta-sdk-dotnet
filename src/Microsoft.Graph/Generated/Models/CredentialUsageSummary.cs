@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CredentialUsageSummary : Entity, IParsable
+    public class CredentialUsageSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authMethod property</summary>
-        public UsageAuthMethod? AuthMethod
+        public Microsoft.Graph.Beta.Models.UsageAuthMethod? AuthMethod
         {
-            get { return BackingStore?.Get<UsageAuthMethod?>("authMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UsageAuthMethod?>("authMethod"); }
             set { BackingStore?.Set("authMethod", value); }
         }
         /// <summary>Provides the count of failed resets or registration data.</summary>
@@ -23,9 +23,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("failureActivityCount", value); }
         }
         /// <summary>The feature property</summary>
-        public FeatureType? Feature
+        public Microsoft.Graph.Beta.Models.FeatureType? Feature
         {
-            get { return BackingStore?.Get<FeatureType?>("feature"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FeatureType?>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Provides the count of successful registrations or resets.</summary>
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CredentialUsageSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CredentialUsageSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CredentialUsageSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CredentialUsageSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CredentialUsageSummary();
+            return new Microsoft.Graph.Beta.Models.CredentialUsageSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
+                { "authMethod", n => { AuthMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.UsageAuthMethod>(); } },
                 { "failureActivityCount", n => { FailureActivityCount = n.GetLongValue(); } },
-                { "feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
+                { "feature", n => { Feature = n.GetEnumValue<Microsoft.Graph.Beta.Models.FeatureType>(); } },
                 { "successfulActivityCount", n => { SuccessfulActivityCount = n.GetLongValue(); } },
             };
         }
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<UsageAuthMethod>("authMethod", AuthMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UsageAuthMethod>("authMethod", AuthMethod);
             writer.WriteLongValue("failureActivityCount", FailureActivityCount);
-            writer.WriteEnumValue<FeatureType>("feature", Feature);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.FeatureType>("feature", Feature);
             writer.WriteLongValue("successfulActivityCount", SuccessfulActivityCount);
         }
     }

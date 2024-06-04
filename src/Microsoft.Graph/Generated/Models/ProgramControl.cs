@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ProgramControl : Entity, IParsable
+    public class ProgramControl : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user who created the program control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? Owner
+        public Microsoft.Graph.Beta.Models.UserIdentity? Owner
         {
-            get { return BackingStore?.Get<UserIdentity?>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public UserIdentity Owner
+        public Microsoft.Graph.Beta.Models.UserIdentity Owner
         {
-            get { return BackingStore?.Get<UserIdentity>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #endif
@@ -115,16 +115,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The resource, a group or an app, targeted by this program control&apos;s access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProgramResource? Resource
+        public Microsoft.Graph.Beta.Models.ProgramResource? Resource
         {
-            get { return BackingStore?.Get<ProgramResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProgramResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public ProgramResource Resource
+        public Microsoft.Graph.Beta.Models.ProgramResource Resource
         {
-            get { return BackingStore?.Get<ProgramResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProgramResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -147,12 +147,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProgramControl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProgramControl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProgramControl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ProgramControl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProgramControl();
+            return new Microsoft.Graph.Beta.Models.ProgramControl();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,10 +166,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "controlTypeId", n => { ControlTypeId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "program", n => { Program = n.GetObjectValue<Microsoft.Graph.Beta.Models.Program>(Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue); } },
                 { "programId", n => { ProgramId = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<ProgramResource>(ProgramResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProgramResource>(Microsoft.Graph.Beta.Models.ProgramResource.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -185,10 +185,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("controlTypeId", ControlTypeId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<UserIdentity>("owner", Owner);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("owner", Owner);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Program>("program", Program);
             writer.WriteStringValue("programId", ProgramId);
-            writer.WriteObjectValue<ProgramResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ProgramResource>("resource", Resource);
             writer.WriteStringValue("status", Status);
         }
     }

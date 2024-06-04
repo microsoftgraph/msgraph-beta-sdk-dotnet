@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserSecurityProfile : Entity, IParsable
+    public class UserSecurityProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserAccount>? Accounts
+        public List<Microsoft.Graph.Beta.Models.UserAccount>? Accounts
         {
-            get { return BackingStore?.Get<List<UserAccount>?>("accounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserAccount>?>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
 #nullable restore
 #else
-        public List<UserAccount> Accounts
+        public List<Microsoft.Graph.Beta.Models.UserAccount> Accounts
         {
-            get { return BackingStore?.Get<List<UserAccount>>("accounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserAccount>>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
 #endif
@@ -137,28 +137,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSecurityProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserSecurityProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSecurityProfile();
+            return new Microsoft.Graph.Beta.Models.UserSecurityProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<UserAccount>(UserAccount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserAccount>(Microsoft.Graph.Beta.Models.UserAccount.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
                 { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>(Microsoft.Graph.Beta.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserAccount>("accounts", Accounts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserAccount>("accounts", Accounts);
             writer.WriteStringValue("azureSubscriptionId", AzureSubscriptionId);
             writer.WriteStringValue("azureTenantId", AzureTenantId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

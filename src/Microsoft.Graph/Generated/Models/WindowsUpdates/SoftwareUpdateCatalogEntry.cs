@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class SoftwareUpdateCatalogEntry : CatalogEntry, IParsable
+    public class SoftwareUpdateCatalogEntry : Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="SoftwareUpdateCatalogEntry"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry"/> and sets the default values.
         /// </summary>
         public SoftwareUpdateCatalogEntry() : base()
         {
@@ -20,18 +20,18 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SoftwareUpdateCatalogEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SoftwareUpdateCatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new DriverUpdateCatalogEntry(),
-                "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new FeatureUpdateCatalogEntry(),
-                "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new QualityUpdateCatalogEntry(),
-                _ => new SoftwareUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.DriverUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.FeatureUpdateCatalogEntry(),
+                "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry(),
             };
         }
         /// <summary>

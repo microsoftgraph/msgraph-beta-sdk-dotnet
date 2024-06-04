@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
     public class CancelApprovalRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CancelApprovalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CancelApprovalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,53 +34,53 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
         /// <summary>
         /// Cancels an already approved instance of an operationApprovalRequest.
         /// </summary>
-        /// <returns>A <see cref="CancelApprovalPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CancelApprovalPostResponse?> PostAsCancelApprovalPostResponseAsync(CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostResponse?> PostAsCancelApprovalPostResponseAsync(Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CancelApprovalPostResponse> PostAsCancelApprovalPostResponseAsync(CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostResponse> PostAsCancelApprovalPostResponseAsync(Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CancelApprovalPostResponse>(requestInfo, CancelApprovalPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancels an already approved instance of an operationApprovalRequest.
         /// </summary>
-        /// <returns>A <see cref="CancelApprovalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsCancelApprovalPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CancelApprovalResponse?> PostAsync(CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse?> PostAsync(Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CancelApprovalResponse> PostAsync(CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse> PostAsync(Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CancelApprovalResponse>(requestInfo, CancelApprovalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancels an already approved instance of an operationApprovalRequest.
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CancelApprovalRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CancelApprovalRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalRequestBuilder WithUrl(string rawUrl)
         {
-            return new CancelApprovalRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

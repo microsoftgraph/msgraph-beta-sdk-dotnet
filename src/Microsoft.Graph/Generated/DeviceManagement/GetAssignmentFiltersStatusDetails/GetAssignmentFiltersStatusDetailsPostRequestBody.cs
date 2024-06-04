@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetAssignmentFiltersStatusDetailsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetAssignmentFiltersStatusDetailsPostRequestBody()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAssignmentFiltersStatusDetailsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetAssignmentFiltersStatusDetailsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAssignmentFiltersStatusDetailsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

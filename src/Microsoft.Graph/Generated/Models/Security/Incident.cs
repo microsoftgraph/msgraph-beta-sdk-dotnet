@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The list of related alerts. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Alert>? Alerts
+        public List<Microsoft.Graph.Beta.Models.Security.Alert>? Alerts
         {
-            get { return BackingStore?.Get<List<Alert>?>("alerts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.Alert>?>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
 #nullable restore
 #else
-        public List<Alert> Alerts
+        public List<Microsoft.Graph.Beta.Models.Security.Alert> Alerts
         {
-            get { return BackingStore?.Get<List<Alert>>("alerts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.Alert>>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
 #endif
@@ -43,24 +43,24 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
-        public AlertClassification? Classification
+        public Microsoft.Graph.Beta.Models.Security.AlertClassification? Classification
         {
-            get { return BackingStore?.Get<AlertClassification?>("classification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AlertClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Array of comments created by the Security Operations (SecOps) team when the incident is managed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertComment>? Comments
+        public List<Microsoft.Graph.Beta.Models.Security.AlertComment>? Comments
         {
-            get { return BackingStore?.Get<List<AlertComment>?>("comments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AlertComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #nullable restore
 #else
-        public List<AlertComment> Comments
+        public List<Microsoft.Graph.Beta.Models.Security.AlertComment> Comments
         {
-            get { return BackingStore?.Get<List<AlertComment>>("comments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AlertComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #endif
@@ -103,9 +103,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
-        public AlertDetermination? Determination
+        public Microsoft.Graph.Beta.Models.Security.AlertDetermination? Determination
         {
-            get { return BackingStore?.Get<AlertDetermination?>("determination"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AlertDetermination?>("determination"); }
             set { BackingStore?.Set("determination", value); }
         }
         /// <summary>The incident name.</summary>
@@ -181,16 +181,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>List of hunting Kusto Query Language (KQL) queries related to the incident</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RecommendedHuntingQuery>? RecommendedHuntingQueries
+        public List<Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>? RecommendedHuntingQueries
         {
-            get { return BackingStore?.Get<List<RecommendedHuntingQuery>?>("recommendedHuntingQueries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>?>("recommendedHuntingQueries"); }
             set { BackingStore?.Set("recommendedHuntingQueries", value); }
         }
 #nullable restore
 #else
-        public List<RecommendedHuntingQuery> RecommendedHuntingQueries
+        public List<Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery> RecommendedHuntingQueries
         {
-            get { return BackingStore?.Get<List<RecommendedHuntingQuery>>("recommendedHuntingQueries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>>("recommendedHuntingQueries"); }
             set { BackingStore?.Set("recommendedHuntingQueries", value); }
         }
 #endif
@@ -227,15 +227,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The severity property</summary>
-        public AlertSeverity? Severity
+        public Microsoft.Graph.Beta.Models.Security.AlertSeverity? Severity
         {
-            get { return BackingStore?.Get<AlertSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The status property</summary>
-        public IncidentStatus? Status
+        public Microsoft.Graph.Beta.Models.Security.IncidentStatus? Status
         {
-            get { return BackingStore?.Get<IncidentStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.IncidentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The collection of system tags that are associated with the incident.</summary>
@@ -273,12 +273,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Incident"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.Incident"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Incident CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.Incident CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Incident();
+            return new Microsoft.Graph.Beta.Models.Security.Incident();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -288,24 +288,24 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.Alert>(Microsoft.Graph.Beta.Models.Security.Alert.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                { "classification", n => { Classification = n.GetEnumValue<AlertClassification>(); } },
-                { "comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classification", n => { Classification = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AlertClassification>(); } },
+                { "comments", n => { Comments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AlertComment>(Microsoft.Graph.Beta.Models.Security.AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customTags", n => { CustomTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
+                { "determination", n => { Determination = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AlertDetermination>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 { "recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
-                { "recommendedHuntingQueries", n => { RecommendedHuntingQueries = n.GetCollectionOfObjectValues<RecommendedHuntingQuery>(RecommendedHuntingQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendedHuntingQueries", n => { RecommendedHuntingQueries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>(Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
                 { "resolvingComment", n => { ResolvingComment = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
-                { "status", n => { Status = n.GetEnumValue<IncidentStatus>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AlertSeverity>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.IncidentStatus>(); } },
                 { "systemTags", n => { SystemTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
@@ -318,24 +318,24 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Alert>("alerts", Alerts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.Alert>("alerts", Alerts);
             writer.WriteStringValue("assignedTo", AssignedTo);
-            writer.WriteEnumValue<AlertClassification>("classification", Classification);
-            writer.WriteCollectionOfObjectValues<AlertComment>("comments", Comments);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AlertClassification>("classification", Classification);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AlertComment>("comments", Comments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("customTags", CustomTags);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<AlertDetermination>("determination", Determination);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AlertDetermination>("determination", Determination);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
             writer.WriteStringValue("recommendedActions", RecommendedActions);
-            writer.WriteCollectionOfObjectValues<RecommendedHuntingQuery>("recommendedHuntingQueries", RecommendedHuntingQueries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery>("recommendedHuntingQueries", RecommendedHuntingQueries);
             writer.WriteStringValue("redirectIncidentId", RedirectIncidentId);
             writer.WriteStringValue("resolvingComment", ResolvingComment);
-            writer.WriteEnumValue<AlertSeverity>("severity", Severity);
-            writer.WriteEnumValue<IncidentStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AlertSeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.IncidentStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("systemTags", SystemTags);
             writer.WriteStringValue("tenantId", TenantId);
         }

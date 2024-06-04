@@ -21,32 +21,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents an app in the list of managed applications</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppListItem? AppDetail
+        public Microsoft.Graph.Beta.Models.AppListItem? AppDetail
         {
-            get { return BackingStore?.Get<AppListItem?>("appDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppListItem?>("appDetail"); }
             set { BackingStore?.Set("appDetail", value); }
         }
 #nullable restore
 #else
-        public AppListItem AppDetail
+        public Microsoft.Graph.Beta.Models.AppListItem AppDetail
         {
-            get { return BackingStore?.Get<AppListItem>("appDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppListItem>("appDetail"); }
             set { BackingStore?.Set("appDetail", value); }
         }
 #endif
         /// <summary>List of scopes an app has been assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerDelegatedAppScopeType?>? AppScopes
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedAppScopeType?>? AppScopes
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerDelegatedAppScopeType?>?>("appScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedAppScopeType?>?>("appScopes"); }
             set { BackingStore?.Set("appScopes", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerDelegatedAppScopeType?> AppScopes
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedAppScopeType?> AppScopes
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerDelegatedAppScopeType?>>("appScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedAppScopeType?>>("appScopes"); }
             set { BackingStore?.Set("appScopes", value); }
         }
 #endif
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerDelegatedScopeAppSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerDelegatedScopeAppSetting()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerDelegatedScopeAppSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidDeviceOwnerDelegatedScopeAppSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerDelegatedScopeAppSetting();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appDetail", n => { AppDetail = n.GetObjectValue<AppListItem>(AppListItem.CreateFromDiscriminatorValue); } },
-                { "appScopes", n => { AppScopes = n.GetCollectionOfEnumValues<AndroidDeviceOwnerDelegatedAppScopeType>()?.ToList(); } },
+                { "appDetail", n => { AppDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue); } },
+                { "appScopes", n => { AppScopes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedAppScopeType>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AppListItem>("appDetail", AppDetail);
-            writer.WriteCollectionOfEnumValues<AndroidDeviceOwnerDelegatedAppScopeType>("appScopes", AppScopes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppListItem>("appDetail", AppDetail);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedAppScopeType>("appScopes", AppScopes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

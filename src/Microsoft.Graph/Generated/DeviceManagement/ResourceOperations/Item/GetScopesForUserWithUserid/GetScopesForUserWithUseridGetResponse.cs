@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid
 {
     #pragma warning disable CS1591
-    public class GetScopesForUserWithUseridGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetScopesForUserWithUseridGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetScopesForUserWithUseridGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid.GetScopesForUserWithUseridGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetScopesForUserWithUseridGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid.GetScopesForUserWithUseridGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetScopesForUserWithUseridGetResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid.GetScopesForUserWithUseridGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

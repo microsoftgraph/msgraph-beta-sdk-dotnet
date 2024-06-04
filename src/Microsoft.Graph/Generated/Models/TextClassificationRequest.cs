@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TextClassificationRequest : Entity, IParsable
+    public class TextClassificationRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The contentMetaData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClassificationRequestContentMetaData? ContentMetaData
+        public Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData? ContentMetaData
         {
-            get { return BackingStore?.Get<ClassificationRequestContentMetaData?>("contentMetaData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData?>("contentMetaData"); }
             set { BackingStore?.Set("contentMetaData", value); }
         }
 #nullable restore
 #else
-        public ClassificationRequestContentMetaData ContentMetaData
+        public Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData ContentMetaData
         {
-            get { return BackingStore?.Get<ClassificationRequestContentMetaData>("contentMetaData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData>("contentMetaData"); }
             set { BackingStore?.Set("contentMetaData", value); }
         }
 #endif
@@ -43,15 +43,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The matchTolerancesToInclude property</summary>
-        public MlClassificationMatchTolerance? MatchTolerancesToInclude
+        public Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance? MatchTolerancesToInclude
         {
-            get { return BackingStore?.Get<MlClassificationMatchTolerance?>("matchTolerancesToInclude"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance?>("matchTolerancesToInclude"); }
             set { BackingStore?.Set("matchTolerancesToInclude", value); }
         }
         /// <summary>The scopesToRun property</summary>
-        public SensitiveTypeScope? ScopesToRun
+        public Microsoft.Graph.Beta.Models.SensitiveTypeScope? ScopesToRun
         {
-            get { return BackingStore?.Get<SensitiveTypeScope?>("scopesToRun"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeScope?>("scopesToRun"); }
             set { BackingStore?.Set("scopesToRun", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TextClassificationRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TextClassificationRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TextClassificationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TextClassificationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TextClassificationRequest();
+            return new Microsoft.Graph.Beta.Models.TextClassificationRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,10 +104,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "contentMetaData", n => { ContentMetaData = n.GetObjectValue<ClassificationRequestContentMetaData>(ClassificationRequestContentMetaData.CreateFromDiscriminatorValue); } },
+                { "contentMetaData", n => { ContentMetaData = n.GetObjectValue<Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData>(Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData.CreateFromDiscriminatorValue); } },
                 { "fileExtension", n => { FileExtension = n.GetStringValue(); } },
-                { "matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
-                { "scopesToRun", n => { ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
+                { "matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance>(); } },
+                { "scopesToRun", n => { ScopesToRun = n.GetEnumValue<Microsoft.Graph.Beta.Models.SensitiveTypeScope>(); } },
                 { "sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -120,10 +120,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ClassificationRequestContentMetaData>("contentMetaData", ContentMetaData);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ClassificationRequestContentMetaData>("contentMetaData", ContentMetaData);
             writer.WriteStringValue("fileExtension", FileExtension);
-            writer.WriteEnumValue<MlClassificationMatchTolerance>("matchTolerancesToInclude", MatchTolerancesToInclude);
-            writer.WriteEnumValue<SensitiveTypeScope>("scopesToRun", ScopesToRun);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MlClassificationMatchTolerance>("matchTolerancesToInclude", MatchTolerancesToInclude);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SensitiveTypeScope>("scopesToRun", ScopesToRun);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveTypeIds", SensitiveTypeIds);
             writer.WriteStringValue("text", Text);
         }

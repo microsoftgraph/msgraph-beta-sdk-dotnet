@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
 {
     [Obsolete("This class is obsolete. Use LookupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class LookupResponse : LookupPostResponse, IParsable
+    public class LookupResponse : Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LookupResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LookupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LookupResponse();
+            return new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse();
         }
     }
 }

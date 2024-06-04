@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnassignTagPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsUnassignTag.UnassignTagPostRequestBody"/> and sets the default values.
         /// </summary>
         public UnassignTagPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnassignTagPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsUnassignTag.UnassignTagPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UnassignTagPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsUnassignTag.UnassignTagPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnassignTagPostRequestBody();
+            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsUnassignTag.UnassignTagPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

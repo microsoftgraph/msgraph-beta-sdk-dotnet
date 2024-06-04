@@ -90,16 +90,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Detailed settings for recurrence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewRecurrenceSettings? RecurrenceSettings
+        public Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings? RecurrenceSettings
         {
-            get { return BackingStore?.Get<AccessReviewRecurrenceSettings?>("recurrenceSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings?>("recurrenceSettings"); }
             set { BackingStore?.Set("recurrenceSettings", value); }
         }
 #nullable restore
 #else
-        public AccessReviewRecurrenceSettings RecurrenceSettings
+        public Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings RecurrenceSettings
         {
-            get { return BackingStore?.Get<AccessReviewRecurrenceSettings>("recurrenceSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings>("recurrenceSettings"); }
             set { BackingStore?.Set("recurrenceSettings", value); }
         }
 #endif
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("remindersEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessReviewSettings"/> and sets the default values.
         /// </summary>
         public AccessReviewSettings()
         {
@@ -120,16 +120,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.businessFlowSettings" => new BusinessFlowSettings(),
-                _ => new AccessReviewSettings(),
+                "#microsoft.graph.businessFlowSettings" => new Microsoft.Graph.Beta.Models.BusinessFlowSettings(),
+                _ => new Microsoft.Graph.Beta.Models.AccessReviewSettings(),
             };
         }
         /// <summary>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "justificationRequiredOnApproval", n => { JustificationRequiredOnApproval = n.GetBoolValue(); } },
                 { "mailNotificationsEnabled", n => { MailNotificationsEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recurrenceSettings", n => { RecurrenceSettings = n.GetObjectValue<AccessReviewRecurrenceSettings>(AccessReviewRecurrenceSettings.CreateFromDiscriminatorValue); } },
+                { "recurrenceSettings", n => { RecurrenceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings>(Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings.CreateFromDiscriminatorValue); } },
                 { "remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
             };
         }
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("justificationRequiredOnApproval", JustificationRequiredOnApproval);
             writer.WriteBoolValue("mailNotificationsEnabled", MailNotificationsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AccessReviewRecurrenceSettings>("recurrenceSettings", RecurrenceSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewRecurrenceSettings>("recurrenceSettings", RecurrenceSettings);
             writer.WriteBoolValue("remindersEnabled", RemindersEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

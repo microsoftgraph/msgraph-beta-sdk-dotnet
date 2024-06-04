@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Me.People.Item
     public class PersonItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PersonItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Me.People.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PersonItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Beta.Me.People.Item
         /// <summary>
         /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
         /// </summary>
-        /// <returns>A <see cref="Person"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Person"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Person?> GetAsync(Action<RequestConfiguration<PersonItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Person?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder.PersonItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Person> GetAsync(Action<RequestConfiguration<PersonItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Person> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder.PersonItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Person>(requestInfo, Person.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Person>(requestInfo, Microsoft.Graph.Beta.Models.Person.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Beta.Me.People.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder.PersonItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder.PersonItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.Me.People.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PersonItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PersonItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PersonItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.People.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PersonItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PersonItemRequestBuilderGetQueryParameters>
+        public class PersonItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.People.Item.PersonItemRequestBuilder.PersonItemRequestBuilderGetQueryParameters>
         {
         }
     }

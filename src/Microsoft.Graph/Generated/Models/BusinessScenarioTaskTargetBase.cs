@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The taskTargetKind property</summary>
-        public PlannerTaskTargetKind? TaskTargetKind
+        public Microsoft.Graph.Beta.Models.PlannerTaskTargetKind? TaskTargetKind
         {
-            get { return BackingStore?.Get<PlannerTaskTargetKind?>("taskTargetKind"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskTargetKind?>("taskTargetKind"); }
             set { BackingStore?.Set("taskTargetKind", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BusinessScenarioTaskTargetBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase"/> and sets the default values.
         /// </summary>
         public BusinessScenarioTaskTargetBase()
         {
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioTaskTargetBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BusinessScenarioTaskTargetBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.businessScenarioGroupTarget" => new BusinessScenarioGroupTarget(),
-                _ => new BusinessScenarioTaskTargetBase(),
+                "#microsoft.graph.businessScenarioGroupTarget" => new Microsoft.Graph.Beta.Models.BusinessScenarioGroupTarget(),
+                _ => new Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase(),
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "taskTargetKind", n => { TaskTargetKind = n.GetEnumValue<PlannerTaskTargetKind>(); } },
+                { "taskTargetKind", n => { TaskTargetKind = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerTaskTargetKind>(); } },
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PlannerTaskTargetKind>("taskTargetKind", TaskTargetKind);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerTaskTargetKind>("taskTargetKind", TaskTargetKind);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

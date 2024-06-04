@@ -55,21 +55,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Resource Actions each containing a set of allowed and not allowed permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceAction>? ResourceActions
+        public List<Microsoft.Graph.Beta.Models.ResourceAction>? ResourceActions
         {
-            get { return BackingStore?.Get<List<ResourceAction>?>("resourceActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceAction>?>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #nullable restore
 #else
-        public List<ResourceAction> ResourceActions
+        public List<Microsoft.Graph.Beta.Models.ResourceAction> ResourceActions
         {
-            get { return BackingStore?.Get<List<ResourceAction>>("resourceActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RolePermission"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RolePermission"/> and sets the default values.
         /// </summary>
         public RolePermission()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RolePermission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RolePermission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RolePermission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RolePermission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RolePermission();
+            return new Microsoft.Graph.Beta.Models.RolePermission();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<ResourceAction>(ResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceAction>(Microsoft.Graph.Beta.Models.ResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<ResourceAction>("resourceActions", ResourceActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceAction>("resourceActions", ResourceActions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

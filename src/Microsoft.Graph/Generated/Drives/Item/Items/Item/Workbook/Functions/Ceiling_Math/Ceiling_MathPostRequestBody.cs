@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling
         /// <summary>The mode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Mode
+        public Microsoft.Graph.Beta.Models.Json? Mode
         {
-            get { return BackingStore?.Get<Json?>("mode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("mode"); }
             set { BackingStore?.Set("mode", value); }
         }
 #nullable restore
 #else
-        public Json Mode
+        public Microsoft.Graph.Beta.Models.Json Mode
         {
-            get { return BackingStore?.Get<Json>("mode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("mode"); }
             set { BackingStore?.Set("mode", value); }
         }
 #endif
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number
+        public Microsoft.Graph.Beta.Models.Json? Number
         {
-            get { return BackingStore?.Get<Json?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number
+        public Microsoft.Graph.Beta.Models.Json Number
         {
-            get { return BackingStore?.Get<Json>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>The significance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Significance
+        public Microsoft.Graph.Beta.Models.Json? Significance
         {
-            get { return BackingStore?.Get<Json?>("significance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("significance"); }
             set { BackingStore?.Set("significance", value); }
         }
 #nullable restore
 #else
-        public Json Significance
+        public Microsoft.Graph.Beta.Models.Json Significance
         {
-            get { return BackingStore?.Get<Json>("significance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("significance"); }
             set { BackingStore?.Set("significance", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Ceiling_MathPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math.Ceiling_MathPostRequestBody"/> and sets the default values.
         /// </summary>
         public Ceiling_MathPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Ceiling_MathPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math.Ceiling_MathPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Ceiling_MathPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math.Ceiling_MathPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Ceiling_MathPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling_Math.Ceiling_MathPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "significance", n => { Significance = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "significance", n => { Significance = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Ceiling
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("mode", Mode);
-            writer.WriteObjectValue<Json>("number", Number);
-            writer.WriteObjectValue<Json>("significance", Significance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("mode", Mode);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("significance", Significance);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

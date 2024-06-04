@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
     public class UserExperienceAnalyticsDeviceScopesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsDeviceScope</param>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScopeItemRequestBuilder"/></returns>
-        public UserExperienceAnalyticsDeviceScopeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Item.UserExperienceAnalyticsDeviceScopeItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Item.UserExperienceAnalyticsDeviceScopeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userExperienceAnalyticsDeviceScope%2Did", position);
-                return new UserExperienceAnalyticsDeviceScopeItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Item.UserExperienceAnalyticsDeviceScopeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceScopesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceScopesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <summary>
         /// The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScopeCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScopeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsDeviceScopeCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScopeCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder.UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsDeviceScopeCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScopeCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder.UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceScopeCollectionResponse>(requestInfo, UserExperienceAnalyticsDeviceScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScopeCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsDeviceScopes for deviceManagement
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder.UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder.UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScopesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsDeviceScopesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserExperienceAnalyticsDeviceScopesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsDeviceScopesRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>
+        public class UserExperienceAnalyticsDeviceScopesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder.UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

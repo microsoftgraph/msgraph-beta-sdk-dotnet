@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The different management choices for the users to be provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserConfiguration>? Configurations
+        public List<Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration>? Configurations
         {
-            get { return BackingStore?.Get<List<UserConfiguration>?>("configurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #nullable restore
 #else
-        public List<UserConfiguration> Configurations
+        public List<Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration> Configurations
         {
-            get { return BackingStore?.Get<List<UserConfiguration>>("configurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserCreationOptions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions"/> and sets the default values.
         /// </summary>
         public UserCreationOptions()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserCreationOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserCreationOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserCreationOptions();
+            return new Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration>(Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<UserConfiguration>("configurations", Configurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.UserConfiguration>("configurations", Configurations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

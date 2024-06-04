@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeri
 {
     [Obsolete("This class is obsolete. Use GetOffice365GroupsActivityStorageWithPeriodGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365GroupsActivityStorageWithPeriodResponse : GetOffice365GroupsActivityStorageWithPeriodGetResponse, IParsable
+    public class GetOffice365GroupsActivityStorageWithPeriodResponse : Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod.GetOffice365GroupsActivityStorageWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetOffice365GroupsActivityStorageWithPeriodResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod.GetOffice365GroupsActivityStorageWithPeriodResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOffice365GroupsActivityStorageWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod.GetOffice365GroupsActivityStorageWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetOffice365GroupsActivityStorageWithPeriodResponse();
+            return new Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod.GetOffice365GroupsActivityStorageWithPeriodResponse();
         }
     }
 }

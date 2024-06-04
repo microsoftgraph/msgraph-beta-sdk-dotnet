@@ -22,39 +22,39 @@ namespace Microsoft.Graph.Beta.Me.Chats
     public class ChatsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the allMessages method.</summary>
-        public AllMessagesRequestBuilder AllMessages
+        public Microsoft.Graph.Beta.Me.Chats.AllMessages.AllMessagesRequestBuilder AllMessages
         {
-            get => new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Chats.AllMessages.AllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Me.Chats.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Chats.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllMessages method.</summary>
-        public GetAllMessagesRequestBuilder GetAllMessages
+        public Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder GetAllMessages
         {
-            get => new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllRetainedMessages method.</summary>
-        public GetAllRetainedMessagesRequestBuilder GetAllRetainedMessages
+        public Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder GetAllRetainedMessages
         {
-            get => new GetAllRetainedMessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of chat</param>
-        /// <returns>A <see cref="ChatItemRequestBuilder"/></returns>
-        public ChatItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Chats.Item.ChatItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Me.Chats.Item.ChatItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("chat%2Did", position);
-                return new ChatItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Me.Chats.Item.ChatItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChatsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChatsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -72,25 +72,25 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <summary>
         /// Get chats from me
         /// </summary>
-        /// <returns>A <see cref="ChatCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ChatCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChatCollectionResponse?> GetAsync(Action<RequestConfiguration<ChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ChatCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ChatCollectionResponse> GetAsync(Action<RequestConfiguration<ChatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ChatCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ChatCollectionResponse>(requestInfo, ChatCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ChatCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ChatCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to chats for me
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Chat?> PostAsync(Microsoft.Graph.Beta.Models.Chat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -124,11 +124,11 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChatsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -161,11 +161,11 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ChatsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChatsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ChatsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get chats from me
@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChatsRequestBuilderGetRequestConfiguration : RequestConfiguration<ChatsRequestBuilderGetQueryParameters>
+        public class ChatsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

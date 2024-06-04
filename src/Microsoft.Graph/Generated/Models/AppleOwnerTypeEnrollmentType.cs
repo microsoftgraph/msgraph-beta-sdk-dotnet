@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enrollmentType property</summary>
-        public AppleUserInitiatedEnrollmentType? EnrollmentType
+        public Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType? EnrollmentType
         {
-            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>("enrollmentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType?>("enrollmentType"); }
             set { BackingStore?.Set("enrollmentType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Owner type of device.</summary>
-        public ManagedDeviceOwnerType? OwnerType
+        public Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType? OwnerType
         {
-            get { return BackingStore?.Get<ManagedDeviceOwnerType?>("ownerType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppleOwnerTypeEnrollmentType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType"/> and sets the default values.
         /// </summary>
         public AppleOwnerTypeEnrollmentType()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppleOwnerTypeEnrollmentType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppleOwnerTypeEnrollmentType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppleOwnerTypeEnrollmentType();
+            return new Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enrollmentType", n => { EnrollmentType = n.GetEnumValue<AppleUserInitiatedEnrollmentType>(); } },
+                { "enrollmentType", n => { EnrollmentType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AppleUserInitiatedEnrollmentType>("enrollmentType", EnrollmentType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType>("enrollmentType", EnrollmentType);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ManagedDeviceOwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType>("ownerType", OwnerType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

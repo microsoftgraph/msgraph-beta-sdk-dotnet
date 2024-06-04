@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RecordOperation : CommsOperation, IParsable
+    public class RecordOperation : Microsoft.Graph.Beta.Models.CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.</summary>
-        public RecordCompletionReason? CompletionReason
+        public Microsoft.Graph.Beta.Models.RecordCompletionReason? CompletionReason
         {
-            get { return BackingStore?.Get<RecordCompletionReason?>("completionReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordCompletionReason?>("completionReason"); }
             set { BackingStore?.Set("completionReason", value); }
         }
         /// <summary>The access token required to retrieve the recording.</summary>
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecordOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecordOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RecordOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RecordOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecordOperation();
+            return new Microsoft.Graph.Beta.Models.RecordOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "completionReason", n => { CompletionReason = n.GetEnumValue<RecordCompletionReason>(); } },
+                { "completionReason", n => { CompletionReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecordCompletionReason>(); } },
                 { "recordingAccessToken", n => { RecordingAccessToken = n.GetStringValue(); } },
                 { "recordingLocation", n => { RecordingLocation = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<RecordCompletionReason>("completionReason", CompletionReason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecordCompletionReason>("completionReason", CompletionReason);
             writer.WriteStringValue("recordingAccessToken", RecordingAccessToken);
             writer.WriteStringValue("recordingLocation", RecordingLocation);
         }

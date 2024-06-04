@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAl
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAl
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosBookmark"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosBookmark"/> and sets the default values.
         /// </summary>
         public IosBookmark()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosBookmark"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosBookmark"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosBookmark CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IosBookmark CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosBookmark();
+            return new Microsoft.Graph.Beta.Models.IosBookmark();
         }
         /// <summary>
         /// The deserialization information for the current model

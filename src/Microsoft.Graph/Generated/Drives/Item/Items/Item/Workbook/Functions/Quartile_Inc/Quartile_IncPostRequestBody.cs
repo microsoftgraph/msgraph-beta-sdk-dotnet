@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartil
         /// <summary>The array property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Array
+        public Microsoft.Graph.Beta.Models.Json? Array
         {
-            get { return BackingStore?.Get<Json?>("array"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #nullable restore
 #else
-        public Json Array
+        public Microsoft.Graph.Beta.Models.Json Array
         {
-            get { return BackingStore?.Get<Json>("array"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #endif
@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartil
         /// <summary>The quart property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Quart
+        public Microsoft.Graph.Beta.Models.Json? Quart
         {
-            get { return BackingStore?.Get<Json?>("quart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("quart"); }
             set { BackingStore?.Set("quart", value); }
         }
 #nullable restore
 #else
-        public Json Quart
+        public Microsoft.Graph.Beta.Models.Json Quart
         {
-            get { return BackingStore?.Get<Json>("quart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("quart"); }
             set { BackingStore?.Set("quart", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Quartile_IncPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartile_Inc.Quartile_IncPostRequestBody"/> and sets the default values.
         /// </summary>
         public Quartile_IncPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartil
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Quartile_IncPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartile_Inc.Quartile_IncPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Quartile_IncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartile_Inc.Quartile_IncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Quartile_IncPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartile_Inc.Quartile_IncPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartil
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "quart", n => { Quart = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "array", n => { Array = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "quart", n => { Quart = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Quartil
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("array", Array);
-            writer.WriteObjectValue<Json>("quart", Quart);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("array", Array);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("quart", Quart);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

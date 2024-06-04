@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettings
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetConfigurationSettingsReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetConfigurationSettingsReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettings
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetConfigurationSettingsReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetConfigurationSettingsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetConfigurationSettingsReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

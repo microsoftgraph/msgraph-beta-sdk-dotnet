@@ -22,48 +22,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The cameras property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkPeripheral>? Cameras
+        public List<Microsoft.Graph.Beta.Models.TeamworkPeripheral>? Cameras
         {
-            get { return BackingStore?.Get<List<TeamworkPeripheral>?>("cameras"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkPeripheral>?>("cameras"); }
             set { BackingStore?.Set("cameras", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkPeripheral> Cameras
+        public List<Microsoft.Graph.Beta.Models.TeamworkPeripheral> Cameras
         {
-            get { return BackingStore?.Get<List<TeamworkPeripheral>>("cameras"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkPeripheral>>("cameras"); }
             set { BackingStore?.Set("cameras", value); }
         }
 #endif
         /// <summary>The configuration for the content camera.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkContentCameraConfiguration? ContentCameraConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration? ContentCameraConfiguration
         {
-            get { return BackingStore?.Get<TeamworkContentCameraConfiguration?>("contentCameraConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration?>("contentCameraConfiguration"); }
             set { BackingStore?.Set("contentCameraConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkContentCameraConfiguration ContentCameraConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration ContentCameraConfiguration
         {
-            get { return BackingStore?.Get<TeamworkContentCameraConfiguration>("contentCameraConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration>("contentCameraConfiguration"); }
             set { BackingStore?.Set("contentCameraConfiguration", value); }
         }
 #endif
         /// <summary>The defaultContentCamera property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? DefaultContentCamera
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral? DefaultContentCamera
         {
-            get { return BackingStore?.Get<TeamworkPeripheral?>("defaultContentCamera"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral?>("defaultContentCamera"); }
             set { BackingStore?.Set("defaultContentCamera", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral DefaultContentCamera
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral DefaultContentCamera
         {
-            get { return BackingStore?.Get<TeamworkPeripheral>("defaultContentCamera"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("defaultContentCamera"); }
             set { BackingStore?.Set("defaultContentCamera", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkCameraConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkCameraConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkCameraConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkCameraConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkCameraConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cameras", n => { Cameras = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "contentCameraConfiguration", n => { ContentCameraConfiguration = n.GetObjectValue<TeamworkContentCameraConfiguration>(TeamworkContentCameraConfiguration.CreateFromDiscriminatorValue); } },
-                { "defaultContentCamera", n => { DefaultContentCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "cameras", n => { Cameras = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentCameraConfiguration", n => { ContentCameraConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration>(Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration.CreateFromDiscriminatorValue); } },
+                { "defaultContentCamera", n => { DefaultContentCamera = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<TeamworkPeripheral>("cameras", Cameras);
-            writer.WriteObjectValue<TeamworkContentCameraConfiguration>("contentCameraConfiguration", ContentCameraConfiguration);
-            writer.WriteObjectValue<TeamworkPeripheral>("defaultContentCamera", DefaultContentCamera);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("cameras", Cameras);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkContentCameraConfiguration>("contentCameraConfiguration", ContentCameraConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("defaultContentCamera", DefaultContentCamera);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -1792,15 +1792,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         }
 #endif
         /// <summary>Tenant mobile device management subscriptions.</summary>
-        public DeviceManagementSubscriptions? Subscriptions
+        public Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions? Subscriptions
         {
-            get { return BackingStore?.Get<DeviceManagementSubscriptions?>("subscriptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
         /// <summary>Tenant mobile device management subscription state.</summary>
-        public DeviceManagementSubscriptionState? SubscriptionState
+        public Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState? SubscriptionState
         {
-            get { return BackingStore?.Get<DeviceManagementSubscriptionState?>("subscriptionState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState?>("subscriptionState"); }
             set { BackingStore?.Set("subscriptionState", value); }
         }
         /// <summary>The telecom expense management partners.</summary>
@@ -2916,12 +2916,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagement();
+            return new Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -3046,8 +3046,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>(Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
                 { "softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
-                { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<DeviceManagementSubscriptionState>(); } },
-                { "subscriptions", n => { Subscriptions = n.GetEnumValue<DeviceManagementSubscriptions>(); } },
+                { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState>(); } },
+                { "subscriptions", n => { Subscriptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions>(); } },
                 { "telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>(Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateInsights", n => { TemplateInsights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateSettings", n => { TemplateSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -3240,8 +3240,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>("settingDefinitions", SettingDefinitions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings", Settings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary", SoftwareUpdateStatusSummary);
-            writer.WriteEnumValue<DeviceManagementSubscriptions>("subscriptions", Subscriptions);
-            writer.WriteEnumValue<DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions>("subscriptions", Subscriptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>("telecomExpenseManagementPartners", TelecomExpenseManagementPartners);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>("templateInsights", TemplateInsights);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>("templates", Templates);

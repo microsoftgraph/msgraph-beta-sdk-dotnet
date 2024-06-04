@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             set { BackingStore?.Set("postponeUntilDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PostponePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.Item.Postpone.PostponePostRequestBody"/> and sets the default values.
         /// </summary>
         public PostponePostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PostponePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.Item.Postpone.PostponePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PostponePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.Item.Postpone.PostponePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PostponePostRequestBody();
+            return new Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources.Item.Postpone.PostponePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

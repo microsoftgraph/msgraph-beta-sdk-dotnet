@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods
     public class PlatformCredentialMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of platformCredentialAuthenticationMethod</param>
-        /// <returns>A <see cref="PlatformCredentialAuthenticationMethodItemRequestBuilder"/></returns>
-        public PlatformCredentialAuthenticationMethodItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("platformCredentialAuthenticationMethod%2Did", position);
-                return new PlatformCredentialAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlatformCredentialMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlatformCredentialMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods
         /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PlatformCredentialAuthenticationMethodCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlatformCredentialAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlatformCredentialAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlatformCredentialAuthenticationMethodCollectionResponse>(requestInfo, PlatformCredentialAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethodCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PlatformCredentialMethodsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlatformCredentialMethodsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder WithUrl(string rawUrl)
         {
-            return new PlatformCredentialMethodsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PlatformCredentialMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters>
+        public class PlatformCredentialMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>
         {
         }
     }

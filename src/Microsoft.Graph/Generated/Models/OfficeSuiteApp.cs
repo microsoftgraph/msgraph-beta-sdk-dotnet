@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for the Office365 Suite App.
     /// </summary>
-    public class OfficeSuiteApp : MobileApp, IParsable
+    public class OfficeSuiteApp : Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The value to accept the EULA automatically on the enduser&apos;s device.</summary>
         public bool? AutoAcceptEula
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The Enum to specify the level of display for the Installation Progress Setup UI on the Device.</summary>
-        public OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel
+        public Microsoft.Graph.Beta.Models.OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel
         {
-            get { return BackingStore?.Get<OfficeSuiteInstallProgressDisplayLevel?>("installProgressDisplayLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OfficeSuiteInstallProgressDisplayLevel?>("installProgressDisplayLevel"); }
             set { BackingStore?.Set("installProgressDisplayLevel", value); }
         }
         /// <summary>The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx</summary>
@@ -72,30 +72,30 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? OfficePlatformArchitecture
+        public Microsoft.Graph.Beta.Models.WindowsArchitecture? OfficePlatformArchitecture
         {
-            get { return BackingStore?.Get<WindowsArchitecture?>("officePlatformArchitecture"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsArchitecture?>("officePlatformArchitecture"); }
             set { BackingStore?.Set("officePlatformArchitecture", value); }
         }
         /// <summary>Describes the OfficeSuiteApp file format types that can be selected.</summary>
-        public OfficeSuiteDefaultFileFormatType? OfficeSuiteAppDefaultFileFormat
+        public Microsoft.Graph.Beta.Models.OfficeSuiteDefaultFileFormatType? OfficeSuiteAppDefaultFileFormat
         {
-            get { return BackingStore?.Get<OfficeSuiteDefaultFileFormatType?>("officeSuiteAppDefaultFileFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OfficeSuiteDefaultFileFormatType?>("officeSuiteAppDefaultFileFormat"); }
             set { BackingStore?.Set("officeSuiteAppDefaultFileFormat", value); }
         }
         /// <summary>The Product Ids that represent the Office365 Suite SKU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OfficeProductId?>? ProductIds
+        public List<Microsoft.Graph.Beta.Models.OfficeProductId?>? ProductIds
         {
-            get { return BackingStore?.Get<List<OfficeProductId?>?>("productIds"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OfficeProductId?>?>("productIds"); }
             set { BackingStore?.Set("productIds", value); }
         }
 #nullable restore
 #else
-        public List<OfficeProductId?> ProductIds
+        public List<Microsoft.Graph.Beta.Models.OfficeProductId?> ProductIds
         {
-            get { return BackingStore?.Get<List<OfficeProductId?>>("productIds"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OfficeProductId?>>("productIds"); }
             set { BackingStore?.Set("productIds", value); }
         }
 #endif
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The Enum to specify the Office365 Updates Channel.</summary>
-        public OfficeUpdateChannel? UpdateChannel
+        public Microsoft.Graph.Beta.Models.OfficeUpdateChannel? UpdateChannel
         {
-            get { return BackingStore?.Get<OfficeUpdateChannel?>("updateChannel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OfficeUpdateChannel?>("updateChannel"); }
             set { BackingStore?.Set("updateChannel", value); }
         }
         /// <summary>The property to represent the update version in which the specific target version is available for the Office365 app suite.</summary>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("useSharedComputerActivation", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OfficeSuiteApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OfficeSuiteApp"/> and sets the default values.
         /// </summary>
         public OfficeSuiteApp() : base()
         {
@@ -159,12 +159,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OfficeSuiteApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OfficeSuiteApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OfficeSuiteApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OfficeSuiteApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OfficeSuiteApp();
+            return new Microsoft.Graph.Beta.Models.OfficeSuiteApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -176,15 +176,15 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "autoAcceptEula", n => { AutoAcceptEula = n.GetBoolValue(); } },
                 { "excludedApps", n => { ExcludedApps = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExcludedApps>(Microsoft.Graph.Beta.Models.ExcludedApps.CreateFromDiscriminatorValue); } },
-                { "installProgressDisplayLevel", n => { InstallProgressDisplayLevel = n.GetEnumValue<OfficeSuiteInstallProgressDisplayLevel>(); } },
+                { "installProgressDisplayLevel", n => { InstallProgressDisplayLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.OfficeSuiteInstallProgressDisplayLevel>(); } },
                 { "localesToInstall", n => { LocalesToInstall = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "officeConfigurationXml", n => { OfficeConfigurationXml = n.GetByteArrayValue(); } },
-                { "officePlatformArchitecture", n => { OfficePlatformArchitecture = n.GetEnumValue<WindowsArchitecture>(); } },
-                { "officeSuiteAppDefaultFileFormat", n => { OfficeSuiteAppDefaultFileFormat = n.GetEnumValue<OfficeSuiteDefaultFileFormatType>(); } },
-                { "productIds", n => { ProductIds = n.GetCollectionOfEnumValues<OfficeProductId>()?.ToList(); } },
+                { "officePlatformArchitecture", n => { OfficePlatformArchitecture = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
+                { "officeSuiteAppDefaultFileFormat", n => { OfficeSuiteAppDefaultFileFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.OfficeSuiteDefaultFileFormatType>(); } },
+                { "productIds", n => { ProductIds = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.OfficeProductId>()?.ToList(); } },
                 { "shouldUninstallOlderVersionsOfOffice", n => { ShouldUninstallOlderVersionsOfOffice = n.GetBoolValue(); } },
                 { "targetVersion", n => { TargetVersion = n.GetStringValue(); } },
-                { "updateChannel", n => { UpdateChannel = n.GetEnumValue<OfficeUpdateChannel>(); } },
+                { "updateChannel", n => { UpdateChannel = n.GetEnumValue<Microsoft.Graph.Beta.Models.OfficeUpdateChannel>(); } },
                 { "updateVersion", n => { UpdateVersion = n.GetStringValue(); } },
                 { "useSharedComputerActivation", n => { UseSharedComputerActivation = n.GetBoolValue(); } },
             };
@@ -199,15 +199,15 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("autoAcceptEula", AutoAcceptEula);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExcludedApps>("excludedApps", ExcludedApps);
-            writer.WriteEnumValue<OfficeSuiteInstallProgressDisplayLevel>("installProgressDisplayLevel", InstallProgressDisplayLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OfficeSuiteInstallProgressDisplayLevel>("installProgressDisplayLevel", InstallProgressDisplayLevel);
             writer.WriteCollectionOfPrimitiveValues<string>("localesToInstall", LocalesToInstall);
             writer.WriteByteArrayValue("officeConfigurationXml", OfficeConfigurationXml);
-            writer.WriteEnumValue<WindowsArchitecture>("officePlatformArchitecture", OfficePlatformArchitecture);
-            writer.WriteEnumValue<OfficeSuiteDefaultFileFormatType>("officeSuiteAppDefaultFileFormat", OfficeSuiteAppDefaultFileFormat);
-            writer.WriteCollectionOfEnumValues<OfficeProductId>("productIds", ProductIds);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsArchitecture>("officePlatformArchitecture", OfficePlatformArchitecture);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OfficeSuiteDefaultFileFormatType>("officeSuiteAppDefaultFileFormat", OfficeSuiteAppDefaultFileFormat);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.OfficeProductId>("productIds", ProductIds);
             writer.WriteBoolValue("shouldUninstallOlderVersionsOfOffice", ShouldUninstallOlderVersionsOfOffice);
             writer.WriteStringValue("targetVersion", TargetVersion);
-            writer.WriteEnumValue<OfficeUpdateChannel>("updateChannel", UpdateChannel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OfficeUpdateChannel>("updateChannel", UpdateChannel);
             writer.WriteStringValue("updateVersion", UpdateVersion);
             writer.WriteBoolValue("useSharedComputerActivation", UseSharedComputerActivation);
         }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
 {
     [Obsolete("This class is obsolete. Use HasPayloadLinksPostResponse instead.")]
     #pragma warning disable CS1591
-    public class HasPayloadLinksResponse : HasPayloadLinksPostResponse, IParsable
+    public class HasPayloadLinksResponse : Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks.HasPayloadLinksPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HasPayloadLinksResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks.HasPayloadLinksResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HasPayloadLinksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks.HasPayloadLinksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HasPayloadLinksResponse();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks.HasPayloadLinksResponse();
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ProjectParticipation : ItemFacet, IParsable
+    public class ProjectParticipation : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains categories a user has associated with the project (for example, digital transformation, oil rig).</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains detailed information about the client the project was for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CompanyDetail? Client
+        public Microsoft.Graph.Beta.Models.CompanyDetail? Client
         {
-            get { return BackingStore?.Get<CompanyDetail?>("client"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CompanyDetail?>("client"); }
             set { BackingStore?.Set("client", value); }
         }
 #nullable restore
 #else
-        public CompanyDetail Client
+        public Microsoft.Graph.Beta.Models.CompanyDetail Client
         {
-            get { return BackingStore?.Get<CompanyDetail>("client"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CompanyDetail>("client"); }
             set { BackingStore?.Set("client", value); }
         }
 #endif
@@ -61,32 +61,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Lists people that also worked on the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedPerson>? Colleagues
+        public List<Microsoft.Graph.Beta.Models.RelatedPerson>? Colleagues
         {
-            get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RelatedPerson>?>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
 #nullable restore
 #else
-        public List<RelatedPerson> Colleagues
+        public List<Microsoft.Graph.Beta.Models.RelatedPerson> Colleagues
         {
-            get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RelatedPerson>>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
 #endif
         /// <summary>Contains detail about the user&apos;s role on the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PositionDetail? Detail
+        public Microsoft.Graph.Beta.Models.PositionDetail? Detail
         {
-            get { return BackingStore?.Get<PositionDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PositionDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PositionDetail Detail
+        public Microsoft.Graph.Beta.Models.PositionDetail Detail
         {
-            get { return BackingStore?.Get<PositionDetail>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PositionDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
@@ -109,16 +109,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The Person or people who sponsored the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedPerson>? Sponsors
+        public List<Microsoft.Graph.Beta.Models.RelatedPerson>? Sponsors
         {
-            get { return BackingStore?.Get<List<RelatedPerson>?>("sponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RelatedPerson>?>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
 #nullable restore
 #else
-        public List<RelatedPerson> Sponsors
+        public List<Microsoft.Graph.Beta.Models.RelatedPerson> Sponsors
         {
-            get { return BackingStore?.Get<List<RelatedPerson>>("sponsors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RelatedPerson>>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
 #endif
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProjectParticipation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ProjectParticipation"/> and sets the default values.
         /// </summary>
         public ProjectParticipation() : base()
         {
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProjectParticipation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProjectParticipation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProjectParticipation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ProjectParticipation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProjectParticipation();
+            return new Microsoft.Graph.Beta.Models.ProjectParticipation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,12 +164,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "client", n => { Client = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
+                { "client", n => { Client = n.GetObjectValue<Microsoft.Graph.Beta.Models.CompanyDetail>(Microsoft.Graph.Beta.Models.CompanyDetail.CreateFromDiscriminatorValue); } },
                 { "collaborationTags", n => { CollaborationTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
+                { "colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RelatedPerson>(Microsoft.Graph.Beta.Models.RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detail", n => { Detail = n.GetObjectValue<Microsoft.Graph.Beta.Models.PositionDetail>(Microsoft.Graph.Beta.Models.PositionDetail.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RelatedPerson>(Microsoft.Graph.Beta.Models.RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
         }
@@ -182,12 +182,12 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteObjectValue<CompanyDetail>("client", Client);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CompanyDetail>("client", Client);
             writer.WriteCollectionOfPrimitiveValues<string>("collaborationTags", CollaborationTags);
-            writer.WriteCollectionOfObjectValues<RelatedPerson>("colleagues", Colleagues);
-            writer.WriteObjectValue<PositionDetail>("detail", Detail);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RelatedPerson>("colleagues", Colleagues);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PositionDetail>("detail", Detail);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<RelatedPerson>("sponsors", Sponsors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RelatedPerson>("sponsors", Sponsors);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);
         }
     }

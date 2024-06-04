@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.
     /// </summary>
-    public class GroupPolicyConfigurationAssignment : Entity, IParsable
+    public class GroupPolicyConfigurationAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
@@ -20,28 +20,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The type of groups targeted the group policy configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyConfigurationAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyConfigurationAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyConfigurationAssignment();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

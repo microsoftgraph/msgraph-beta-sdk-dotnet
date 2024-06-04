@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageSubject : Entity, IParsable
+    public class AccessPackageSubject : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Not Supported.</summary>
@@ -145,9 +145,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.</summary>
-        public AccessPackageSubjectLifecycle? SubjectLifecycle
+        public Microsoft.Graph.Beta.Models.AccessPackageSubjectLifecycle? SubjectLifecycle
         {
-            get { return BackingStore?.Get<AccessPackageSubjectLifecycle?>("subjectLifecycle"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubjectLifecycle?>("subjectLifecycle"); }
             set { BackingStore?.Set("subjectLifecycle", value); }
         }
         /// <summary>The resource type of the subject.</summary>
@@ -169,12 +169,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageSubject"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageSubject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageSubject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageSubject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageSubject();
+            return new Microsoft.Graph.Beta.Models.AccessPackageSubject();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "principalName", n => { PrincipalName = n.GetStringValue(); } },
-                { "subjectLifecycle", n => { SubjectLifecycle = n.GetEnumValue<AccessPackageSubjectLifecycle>(); } },
+                { "subjectLifecycle", n => { SubjectLifecycle = n.GetEnumValue<Microsoft.Graph.Beta.Models.AccessPackageSubjectLifecycle>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("principalName", PrincipalName);
-            writer.WriteEnumValue<AccessPackageSubjectLifecycle>("subjectLifecycle", SubjectLifecycle);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AccessPackageSubjectLifecycle>("subjectLifecycle", SubjectLifecycle);
             writer.WriteStringValue("type", Type);
         }
     }

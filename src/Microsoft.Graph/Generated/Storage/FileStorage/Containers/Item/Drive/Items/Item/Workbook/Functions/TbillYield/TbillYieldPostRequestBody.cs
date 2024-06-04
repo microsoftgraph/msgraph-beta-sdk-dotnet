@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The maturity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Maturity
+        public Microsoft.Graph.Beta.Models.Json? Maturity
         {
-            get { return BackingStore?.Get<Json?>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #nullable restore
 #else
-        public Json Maturity
+        public Microsoft.Graph.Beta.Models.Json Maturity
         {
-            get { return BackingStore?.Get<Json>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #endif
         /// <summary>The pr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Pr
+        public Microsoft.Graph.Beta.Models.Json? Pr
         {
-            get { return BackingStore?.Get<Json?>("pr"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("pr"); }
             set { BackingStore?.Set("pr", value); }
         }
 #nullable restore
 #else
-        public Json Pr
+        public Microsoft.Graph.Beta.Models.Json Pr
         {
-            get { return BackingStore?.Get<Json>("pr"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("pr"); }
             set { BackingStore?.Set("pr", value); }
         }
 #endif
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement
+        public Microsoft.Graph.Beta.Models.Json? Settlement
         {
-            get { return BackingStore?.Get<Json?>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement
+        public Microsoft.Graph.Beta.Models.Json Settlement
         {
-            get { return BackingStore?.Get<Json>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TbillYieldPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.TbillYield.TbillYieldPostRequestBody"/> and sets the default values.
         /// </summary>
         public TbillYieldPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TbillYieldPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.TbillYield.TbillYieldPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TbillYieldPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.TbillYield.TbillYieldPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TbillYieldPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.TbillYield.TbillYieldPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "pr", n => { Pr = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "maturity", n => { Maturity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "pr", n => { Pr = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("maturity", Maturity);
-            writer.WriteObjectValue<Json>("pr", Pr);
-            writer.WriteObjectValue<Json>("settlement", Settlement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("maturity", Maturity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("pr", Pr);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("settlement", Settlement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

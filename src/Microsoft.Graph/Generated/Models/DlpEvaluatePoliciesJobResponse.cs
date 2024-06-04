@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable
+    public class DlpEvaluatePoliciesJobResponse : Microsoft.Graph.Beta.Models.JobResponseBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DlpPoliciesJobResult? Result
+        public Microsoft.Graph.Beta.Models.DlpPoliciesJobResult? Result
         {
-            get { return BackingStore?.Get<DlpPoliciesJobResult?>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DlpPoliciesJobResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #nullable restore
 #else
-        public DlpPoliciesJobResult Result
+        public Microsoft.Graph.Beta.Models.DlpPoliciesJobResult Result
         {
-            get { return BackingStore?.Get<DlpPoliciesJobResult>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DlpPoliciesJobResult>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DlpEvaluatePoliciesJobResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DlpEvaluatePoliciesJobResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DlpEvaluatePoliciesJobResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DlpEvaluatePoliciesJobResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DlpEvaluatePoliciesJobResponse();
+            return new Microsoft.Graph.Beta.Models.DlpEvaluatePoliciesJobResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<DlpPoliciesJobResult>(DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<Microsoft.Graph.Beta.Models.DlpPoliciesJobResult>(Microsoft.Graph.Beta.Models.DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DlpPoliciesJobResult>("result", Result);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DlpPoliciesJobResult>("result", Result);
         }
     }
 }

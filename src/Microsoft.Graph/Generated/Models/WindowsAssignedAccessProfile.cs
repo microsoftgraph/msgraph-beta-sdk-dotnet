@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Assigned Access profile for Windows.
     /// </summary>
-    public class WindowsAssignedAccessProfile : Entity, IParsable
+    public class WindowsAssignedAccessProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsAssignedAccessProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsAssignedAccessProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsAssignedAccessProfile();
+            return new Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile();
         }
         /// <summary>
         /// The deserialization information for the current model

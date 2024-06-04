@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.
     /// </summary>
-    public class DeviceShellScript : Entity, IParsable
+    public class DeviceShellScript : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of run states for this script across all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptDeviceState>? DeviceRunStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState>? DeviceRunStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptDeviceState> DeviceRunStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState> DeviceRunStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState>>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
 #endif
@@ -112,16 +112,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of group assignments for the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptGroupAssignment>? GroupAssignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>? GroupAssignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("groupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptGroupAssignment> GroupAssignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment> GroupAssignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("groupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #endif
@@ -154,24 +154,24 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the type of execution context the app runs in.</summary>
-        public RunAsAccountType? RunAsAccount
+        public Microsoft.Graph.Beta.Models.RunAsAccountType? RunAsAccount
         {
-            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>Run summary for device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementScriptRunSummary? RunSummary
+        public Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary? RunSummary
         {
-            get { return BackingStore?.Get<DeviceManagementScriptRunSummary?>("runSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary?>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementScriptRunSummary RunSummary
+        public Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary RunSummary
         {
-            get { return BackingStore?.Get<DeviceManagementScriptRunSummary>("runSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
 #endif
@@ -194,28 +194,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of run states for this script across all users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptUserState>? UserRunStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState>? UserRunStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptUserState>?>("userRunStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState>?>("userRunStates"); }
             set { BackingStore?.Set("userRunStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptUserState> UserRunStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState> UserRunStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptUserState>>("userRunStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState>>("userRunStates"); }
             set { BackingStore?.Set("userRunStates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceShellScript"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceShellScript"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceShellScript CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceShellScript CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceShellScript();
+            return new Microsoft.Graph.Beta.Models.DeviceShellScript();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -225,22 +225,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "blockExecutionNotifications", n => { BlockExecutionNotifications = n.GetBoolValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState>(Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "executionFrequency", n => { ExecutionFrequency = n.GetTimeSpanValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
-                { "groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "retryCount", n => { RetryCount = n.GetIntValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                { "runSummary", n => { RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue); } },
+                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunAsAccountType>(); } },
+                { "runSummary", n => { RunSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary>(Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue); } },
                 { "scriptContent", n => { ScriptContent = n.GetByteArrayValue(); } },
-                { "userRunStates", n => { UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>(DeviceManagementScriptUserState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRunStates", n => { UserRunStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState>(Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -251,20 +251,20 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>("assignments", Assignments);
             writer.WriteBoolValue("blockExecutionNotifications", BlockExecutionNotifications);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<DeviceManagementScriptDeviceState>("deviceRunStates", DeviceRunStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteTimeSpanValue("executionFrequency", ExecutionFrequency);
             writer.WriteStringValue("fileName", FileName);
-            writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("groupAssignments", GroupAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>("groupAssignments", GroupAssignments);
             writer.WriteIntValue("retryCount", RetryCount);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
-            writer.WriteObjectValue<DeviceManagementScriptRunSummary>("runSummary", RunSummary);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunAsAccountType>("runAsAccount", RunAsAccount);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary>("runSummary", RunSummary);
             writer.WriteByteArrayValue("scriptContent", ScriptContent);
-            writer.WriteCollectionOfObjectValues<DeviceManagementScriptUserState>("userRunStates", UserRunStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptUserState>("userRunStates", UserRunStates);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="KeyTypedValuePair"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.KeyTypedValuePair"/> and sets the default values.
         /// </summary>
         public KeyTypedValuePair()
         {
@@ -63,19 +63,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="KeyTypedValuePair"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.KeyTypedValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static KeyTypedValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.KeyTypedValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.keyBooleanValuePair" => new KeyBooleanValuePair(),
-                "#microsoft.graph.keyIntegerValuePair" => new KeyIntegerValuePair(),
-                "#microsoft.graph.keyRealValuePair" => new KeyRealValuePair(),
-                "#microsoft.graph.keyStringValuePair" => new KeyStringValuePair(),
-                _ => new KeyTypedValuePair(),
+                "#microsoft.graph.keyBooleanValuePair" => new Microsoft.Graph.Beta.Models.KeyBooleanValuePair(),
+                "#microsoft.graph.keyIntegerValuePair" => new Microsoft.Graph.Beta.Models.KeyIntegerValuePair(),
+                "#microsoft.graph.keyRealValuePair" => new Microsoft.Graph.Beta.Models.KeyRealValuePair(),
+                "#microsoft.graph.keyStringValuePair" => new Microsoft.Graph.Beta.Models.KeyStringValuePair(),
+                _ => new Microsoft.Graph.Beta.Models.KeyTypedValuePair(),
             };
         }
         /// <summary>

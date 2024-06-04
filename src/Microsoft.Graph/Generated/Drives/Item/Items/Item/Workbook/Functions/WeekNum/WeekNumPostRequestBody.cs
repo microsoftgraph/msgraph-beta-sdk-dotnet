@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum
         /// <summary>The returnType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ReturnType
+        public Microsoft.Graph.Beta.Models.Json? ReturnType
         {
-            get { return BackingStore?.Get<Json?>("returnType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("returnType"); }
             set { BackingStore?.Set("returnType", value); }
         }
 #nullable restore
 #else
-        public Json ReturnType
+        public Microsoft.Graph.Beta.Models.Json ReturnType
         {
-            get { return BackingStore?.Get<Json>("returnType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("returnType"); }
             set { BackingStore?.Set("returnType", value); }
         }
 #endif
         /// <summary>The serialNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? SerialNumber
+        public Microsoft.Graph.Beta.Models.Json? SerialNumber
         {
-            get { return BackingStore?.Get<Json?>("serialNumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public Json SerialNumber
+        public Microsoft.Graph.Beta.Models.Json SerialNumber
         {
-            get { return BackingStore?.Get<Json>("serialNumber"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WeekNumPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum.WeekNumPostRequestBody"/> and sets the default values.
         /// </summary>
         public WeekNumPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WeekNumPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum.WeekNumPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WeekNumPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum.WeekNumPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WeekNumPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum.WeekNumPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "returnType", n => { ReturnType = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "serialNumber", n => { SerialNumber = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "returnType", n => { ReturnType = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "serialNumber", n => { SerialNumber = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.WeekNum
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("returnType", ReturnType);
-            writer.WriteObjectValue<Json>("serialNumber", SerialNumber);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("returnType", ReturnType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("serialNumber", SerialNumber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

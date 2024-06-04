@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VisualProperties? VisualContent
+        public Microsoft.Graph.Beta.Models.VisualProperties? VisualContent
         {
-            get { return BackingStore?.Get<VisualProperties?>("visualContent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisualProperties?>("visualContent"); }
             set { BackingStore?.Set("visualContent", value); }
         }
 #nullable restore
 #else
-        public VisualProperties VisualContent
+        public Microsoft.Graph.Beta.Models.VisualProperties VisualContent
         {
-            get { return BackingStore?.Get<VisualProperties>("visualContent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisualProperties>("visualContent"); }
             set { BackingStore?.Set("visualContent", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PayloadTypes"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PayloadTypes"/> and sets the default values.
         /// </summary>
         public PayloadTypes()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PayloadTypes"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PayloadTypes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PayloadTypes CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PayloadTypes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PayloadTypes();
+            return new Microsoft.Graph.Beta.Models.PayloadTypes();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "rawContent", n => { RawContent = n.GetStringValue(); } },
-                { "visualContent", n => { VisualContent = n.GetObjectValue<VisualProperties>(VisualProperties.CreateFromDiscriminatorValue); } },
+                { "visualContent", n => { VisualContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.VisualProperties>(Microsoft.Graph.Beta.Models.VisualProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("rawContent", RawContent);
-            writer.WriteObjectValue<VisualProperties>("visualContent", VisualContent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VisualProperties>("visualContent", VisualContent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

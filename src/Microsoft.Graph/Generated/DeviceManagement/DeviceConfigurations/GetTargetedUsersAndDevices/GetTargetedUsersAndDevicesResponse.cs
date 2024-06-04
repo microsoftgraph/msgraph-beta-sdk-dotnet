@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
 {
     [Obsolete("This class is obsolete. Use GetTargetedUsersAndDevicesPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetTargetedUsersAndDevicesResponse : GetTargetedUsersAndDevicesPostResponse, IParsable
+    public class GetTargetedUsersAndDevicesResponse : Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices.GetTargetedUsersAndDevicesPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetTargetedUsersAndDevicesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices.GetTargetedUsersAndDevicesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetTargetedUsersAndDevicesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices.GetTargetedUsersAndDevicesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetTargetedUsersAndDevicesResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices.GetTargetedUsersAndDevicesResponse();
         }
     }
 }

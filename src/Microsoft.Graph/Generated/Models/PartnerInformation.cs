@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The companyType property</summary>
-        public PartnerTenantType? CompanyType
+        public Microsoft.Graph.Beta.Models.PartnerTenantType? CompanyType
         {
-            get { return BackingStore?.Get<PartnerTenantType?>("companyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerTenantType?>("companyType"); }
             set { BackingStore?.Set("companyType", value); }
         }
         /// <summary>The helpUrl property</summary>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PartnerInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PartnerInformation"/> and sets the default values.
         /// </summary>
         public PartnerInformation()
         {
@@ -164,12 +164,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PartnerInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PartnerInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PartnerInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PartnerInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PartnerInformation();
+            return new Microsoft.Graph.Beta.Models.PartnerInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "commerceUrl", n => { CommerceUrl = n.GetStringValue(); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
-                { "companyType", n => { CompanyType = n.GetEnumValue<PartnerTenantType>(); } },
+                { "companyType", n => { CompanyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PartnerTenantType>(); } },
                 { "helpUrl", n => { HelpUrl = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "partnerTenantId", n => { PartnerTenantId = n.GetStringValue(); } },
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("commerceUrl", CommerceUrl);
             writer.WriteStringValue("companyName", CompanyName);
-            writer.WriteEnumValue<PartnerTenantType>("companyType", CompanyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PartnerTenantType>("companyType", CompanyType);
             writer.WriteStringValue("helpUrl", HelpUrl);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("partnerTenantId", PartnerTenantId);

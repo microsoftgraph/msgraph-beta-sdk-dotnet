@@ -38,23 +38,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The AWS conditions associated with the statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsCondition? Condition
+        public Microsoft.Graph.Beta.Models.AwsCondition? Condition
         {
-            get { return BackingStore?.Get<AwsCondition?>("condition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsCondition?>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
 #nullable restore
 #else
-        public AwsCondition Condition
+        public Microsoft.Graph.Beta.Models.AwsCondition Condition
         {
-            get { return BackingStore?.Get<AwsCondition>("condition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsCondition>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
 #endif
         /// <summary>The effect property</summary>
-        public AwsStatementEffect? Effect
+        public Microsoft.Graph.Beta.Models.AwsStatementEffect? Effect
         {
-            get { return BackingStore?.Get<AwsStatementEffect?>("effect"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsStatementEffect?>("effect"); }
             set { BackingStore?.Set("effect", value); }
         }
         /// <summary>AWS Not Actions</summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsStatement"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsStatement"/> and sets the default values.
         /// </summary>
         public AwsStatement()
         {
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsStatement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsStatement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AwsStatement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AwsStatement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsStatement();
+            return new Microsoft.Graph.Beta.Models.AwsStatement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,8 +164,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "condition", n => { Condition = n.GetObjectValue<AwsCondition>(AwsCondition.CreateFromDiscriminatorValue); } },
-                { "effect", n => { Effect = n.GetEnumValue<AwsStatementEffect>(); } },
+                { "condition", n => { Condition = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsCondition>(Microsoft.Graph.Beta.Models.AwsCondition.CreateFromDiscriminatorValue); } },
+                { "effect", n => { Effect = n.GetEnumValue<Microsoft.Graph.Beta.Models.AwsStatementEffect>(); } },
                 { "notActions", n => { NotActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "notResources", n => { NotResources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -181,8 +181,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
-            writer.WriteObjectValue<AwsCondition>("condition", Condition);
-            writer.WriteEnumValue<AwsStatementEffect>("effect", Effect);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsCondition>("condition", Condition);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AwsStatementEffect>("effect", Effect);
             writer.WriteCollectionOfPrimitiveValues<string>("notActions", NotActions);
             writer.WriteCollectionOfPrimitiveValues<string>("notResources", NotResources);
             writer.WriteStringValue("@odata.type", OdataType);

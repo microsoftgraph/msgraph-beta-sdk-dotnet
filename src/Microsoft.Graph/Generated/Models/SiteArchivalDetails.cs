@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents the current archive status of the site collection. Returned only on $select.</summary>
-        public SiteArchiveStatus? ArchiveStatus
+        public Microsoft.Graph.Beta.Models.SiteArchiveStatus? ArchiveStatus
         {
-            get { return BackingStore?.Get<SiteArchiveStatus?>("archiveStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SiteArchiveStatus?>("archiveStatus"); }
             set { BackingStore?.Set("archiveStatus", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SiteArchivalDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SiteArchivalDetails"/> and sets the default values.
         /// </summary>
         public SiteArchivalDetails()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SiteArchivalDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SiteArchivalDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SiteArchivalDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SiteArchivalDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SiteArchivalDetails();
+            return new Microsoft.Graph.Beta.Models.SiteArchivalDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "archiveStatus", n => { ArchiveStatus = n.GetEnumValue<SiteArchiveStatus>(); } },
+                { "archiveStatus", n => { ArchiveStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.SiteArchiveStatus>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SiteArchiveStatus>("archiveStatus", ArchiveStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SiteArchiveStatus>("archiveStatus", ArchiveStatus);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

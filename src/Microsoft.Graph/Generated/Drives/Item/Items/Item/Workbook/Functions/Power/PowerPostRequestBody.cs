@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number
+        public Microsoft.Graph.Beta.Models.Json? Number
         {
-            get { return BackingStore?.Get<Json?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number
+        public Microsoft.Graph.Beta.Models.Json Number
         {
-            get { return BackingStore?.Get<Json>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>The power property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Power
+        public Microsoft.Graph.Beta.Models.Json? Power
         {
-            get { return BackingStore?.Get<Json?>("power"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("power"); }
             set { BackingStore?.Set("power", value); }
         }
 #nullable restore
 #else
-        public Json Power
+        public Microsoft.Graph.Beta.Models.Json Power
         {
-            get { return BackingStore?.Get<Json>("power"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("power"); }
             set { BackingStore?.Set("power", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PowerPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power.PowerPostRequestBody"/> and sets the default values.
         /// </summary>
         public PowerPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PowerPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power.PowerPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PowerPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power.PowerPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PowerPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power.PowerPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "power", n => { Power = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "power", n => { Power = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Power
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("number", Number);
-            writer.WriteObjectValue<Json>("power", Power);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("power", Power);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

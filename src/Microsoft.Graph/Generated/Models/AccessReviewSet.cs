@@ -7,82 +7,82 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewSet : Entity, IParsable
+    public class AccessReviewSet : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a Microsoft Entra access review decision on an instance of a review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewInstanceDecisionItem>? Decisions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>? Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>?>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewInstanceDecisionItem> Decisions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem> Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
         /// <summary>Represents the template and scheduling for an access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScheduleDefinition>? Definitions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>? Definitions
         {
-            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>?>("definitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScheduleDefinition> Definitions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition> Definitions
         {
-            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>("definitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
 #endif
         /// <summary>Represents a collection of access review history data and the scopes used to collect that data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewHistoryDefinition>? HistoryDefinitions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>? HistoryDefinitions
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>?>("historyDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>?>("historyDefinitions"); }
             set { BackingStore?.Set("historyDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewHistoryDefinition> HistoryDefinitions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition> HistoryDefinitions
         {
-            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>("historyDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>>("historyDefinitions"); }
             set { BackingStore?.Set("historyDefinitions", value); }
         }
 #endif
         /// <summary>Resource that enables administrators to manage directory-level access review policies in their tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewPolicy? Policy
+        public Microsoft.Graph.Beta.Models.AccessReviewPolicy? Policy
         {
-            get { return BackingStore?.Get<AccessReviewPolicy?>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public AccessReviewPolicy Policy
+        public Microsoft.Graph.Beta.Models.AccessReviewPolicy Policy
         {
-            get { return BackingStore?.Get<AccessReviewPolicy>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewSet();
+            return new Microsoft.Graph.Beta.Models.AccessReviewSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<AccessReviewInstanceDecisionItem>(AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<AccessReviewScheduleDefinition>(AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<AccessReviewHistoryDefinition>(AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "policy", n => { Policy = n.GetObjectValue<AccessReviewPolicy>(AccessReviewPolicy.CreateFromDiscriminatorValue); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>(Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>(Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>(Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessReviewInstanceDecisionItem>("decisions", Decisions);
-            writer.WriteCollectionOfObjectValues<AccessReviewScheduleDefinition>("definitions", Definitions);
-            writer.WriteCollectionOfObjectValues<AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
-            writer.WriteObjectValue<AccessReviewPolicy>("policy", Policy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItem>("decisions", Decisions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewScheduleDefinition>("definitions", Definitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewPolicy>("policy", Policy);
         }
     }
 }

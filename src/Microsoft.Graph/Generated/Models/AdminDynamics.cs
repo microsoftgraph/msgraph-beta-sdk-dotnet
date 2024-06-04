@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AdminDynamics : Entity, IParsable
+    public class AdminDynamics : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The customerVoice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomerVoiceSettings? CustomerVoice
+        public Microsoft.Graph.Beta.Models.CustomerVoiceSettings? CustomerVoice
         {
-            get { return BackingStore?.Get<CustomerVoiceSettings?>("customerVoice"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomerVoiceSettings?>("customerVoice"); }
             set { BackingStore?.Set("customerVoice", value); }
         }
 #nullable restore
 #else
-        public CustomerVoiceSettings CustomerVoice
+        public Microsoft.Graph.Beta.Models.CustomerVoiceSettings CustomerVoice
         {
-            get { return BackingStore?.Get<CustomerVoiceSettings>("customerVoice"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomerVoiceSettings>("customerVoice"); }
             set { BackingStore?.Set("customerVoice", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdminDynamics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdminDynamics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdminDynamics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AdminDynamics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdminDynamics();
+            return new Microsoft.Graph.Beta.Models.AdminDynamics();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customerVoice", n => { CustomerVoice = n.GetObjectValue<CustomerVoiceSettings>(CustomerVoiceSettings.CreateFromDiscriminatorValue); } },
+                { "customerVoice", n => { CustomerVoice = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomerVoiceSettings>(Microsoft.Graph.Beta.Models.CustomerVoiceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<CustomerVoiceSettings>("customerVoice", CustomerVoice);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CustomerVoiceSettings>("customerVoice", CustomerVoice);
         }
     }
 }

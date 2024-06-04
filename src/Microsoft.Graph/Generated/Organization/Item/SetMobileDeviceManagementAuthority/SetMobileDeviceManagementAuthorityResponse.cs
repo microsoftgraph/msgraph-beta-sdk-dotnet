@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthor
 {
     [Obsolete("This class is obsolete. Use SetMobileDeviceManagementAuthorityPostResponse instead.")]
     #pragma warning disable CS1591
-    public class SetMobileDeviceManagementAuthorityResponse : SetMobileDeviceManagementAuthorityPostResponse, IParsable
+    public class SetMobileDeviceManagementAuthorityResponse : Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetMobileDeviceManagementAuthorityResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SetMobileDeviceManagementAuthorityResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetMobileDeviceManagementAuthorityResponse();
+            return new Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityResponse();
         }
     }
 }

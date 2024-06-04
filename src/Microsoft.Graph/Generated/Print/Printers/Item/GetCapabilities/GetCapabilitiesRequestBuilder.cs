@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities
     public class GetCapabilitiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetCapabilitiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCapabilitiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,26 +36,26 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities
         /// Get a list of capabilities for the printer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-getcapabilities?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PrinterCapabilities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrinterCapabilities"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrinterCapabilities?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrinterCapabilities?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrinterCapabilities> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrinterCapabilities> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrinterCapabilities>(requestInfo, PrinterCapabilities.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrinterCapabilities>(requestInfo, Microsoft.Graph.Beta.Models.PrinterCapabilities.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of capabilities for the printer.
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetCapabilitiesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public GetCapabilitiesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetCapabilitiesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities.GetCapabilitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

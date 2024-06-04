@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices
 {
     #pragma warning disable CS1591
-    public class GetLoggedOnManagedDevicesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetLoggedOnManagedDevicesGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -30,12 +30,12 @@ namespace Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetLoggedOnManagedDevicesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetLoggedOnManagedDevicesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetLoggedOnManagedDevicesGetResponse();
+            return new Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

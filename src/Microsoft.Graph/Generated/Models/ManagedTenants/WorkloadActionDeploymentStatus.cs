@@ -128,13 +128,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>The status property</summary>
-        public WorkloadActionStatus? Status
+        public Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionStatus? Status
         {
-            get { return BackingStore?.Get<WorkloadActionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkloadActionDeploymentStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus"/> and sets the default values.
         /// </summary>
         public WorkloadActionDeploymentStatus()
         {
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkloadActionDeploymentStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkloadActionDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkloadActionDeploymentStatus();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "lastDeploymentDateTime", n => { LastDeploymentDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<WorkloadActionStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionStatus>(); } },
             };
         }
         /// <summary>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteCollectionOfPrimitiveValues<string>("includeGroups", IncludeGroups);
             writer.WriteDateTimeOffsetValue("lastDeploymentDateTime", LastDeploymentDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<WorkloadActionStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SubstringTransformation : CustomClaimTransformation, IParsable
+    public class SubstringTransformation : Microsoft.Graph.Beta.Models.CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The start index of the substring operation, where 0 is the first character in the string.</summary>
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("length", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubstringTransformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SubstringTransformation"/> and sets the default values.
         /// </summary>
         public SubstringTransformation() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubstringTransformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SubstringTransformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SubstringTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SubstringTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubstringTransformation();
+            return new Microsoft.Graph.Beta.Models.SubstringTransformation();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of criteria for this rubric quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RubricCriterion>? Criteria
+        public List<Microsoft.Graph.Beta.Models.RubricCriterion>? Criteria
         {
-            get { return BackingStore?.Get<List<RubricCriterion>?>("criteria"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RubricCriterion>?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #nullable restore
 #else
-        public List<RubricCriterion> Criteria
+        public List<Microsoft.Graph.Beta.Models.RubricCriterion> Criteria
         {
-            get { return BackingStore?.Get<List<RubricCriterion>>("criteria"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RubricCriterion>>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #endif
         /// <summary>The description of this rubric quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationItemBody? Description
+        public Microsoft.Graph.Beta.Models.EducationItemBody? Description
         {
-            get { return BackingStore?.Get<EducationItemBody?>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public EducationItemBody Description
+        public Microsoft.Graph.Beta.Models.EducationItemBody Description
         {
-            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("weight", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RubricQuality"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RubricQuality"/> and sets the default values.
         /// </summary>
         public RubricQuality()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RubricQuality"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RubricQuality"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RubricQuality CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RubricQuality CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RubricQuality();
+            return new Microsoft.Graph.Beta.Models.RubricQuality();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,8 +131,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetCollectionOfObjectValues<RubricCriterion>(RubricCriterion.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "description", n => { Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RubricCriterion>(Microsoft.Graph.Beta.Models.RubricCriterion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationItemBody>(Microsoft.Graph.Beta.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "qualityId", n => { QualityId = n.GetStringValue(); } },
@@ -146,8 +146,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<RubricCriterion>("criteria", Criteria);
-            writer.WriteObjectValue<EducationItemBody>("description", Description);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RubricCriterion>("criteria", Criteria);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationItemBody>("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("qualityId", QualityId);

@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Criteria
+        public Microsoft.Graph.Beta.Models.Json? Criteria
         {
-            get { return BackingStore?.Get<Json?>("criteria"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #nullable restore
 #else
-        public Json Criteria
+        public Microsoft.Graph.Beta.Models.Json Criteria
         {
-            get { return BackingStore?.Get<Json>("criteria"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #endif
         /// <summary>The range property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Range
+        public Microsoft.Graph.Beta.Models.Json? Range
         {
-            get { return BackingStore?.Get<Json?>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #nullable restore
 #else
-        public Json Range
+        public Microsoft.Graph.Beta.Models.Json Range
         {
-            get { return BackingStore?.Get<Json>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #endif
         /// <summary>The sumRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? SumRange
+        public Microsoft.Graph.Beta.Models.Json? SumRange
         {
-            get { return BackingStore?.Get<Json?>("sumRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("sumRange"); }
             set { BackingStore?.Set("sumRange", value); }
         }
 #nullable restore
 #else
-        public Json SumRange
+        public Microsoft.Graph.Beta.Models.Json SumRange
         {
-            get { return BackingStore?.Get<Json>("sumRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("sumRange"); }
             set { BackingStore?.Set("sumRange", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SumIfPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.SumIf.SumIfPostRequestBody"/> and sets the default values.
         /// </summary>
         public SumIfPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SumIfPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.SumIf.SumIfPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SumIfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.SumIf.SumIfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SumIfPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.SumIf.SumIfPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "range", n => { Range = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "sumRange", n => { SumRange = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "range", n => { Range = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "sumRange", n => { SumRange = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("criteria", Criteria);
-            writer.WriteObjectValue<Json>("range", Range);
-            writer.WriteObjectValue<Json>("sumRange", SumRange);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("criteria", Criteria);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("range", Range);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("sumRange", SumRange);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

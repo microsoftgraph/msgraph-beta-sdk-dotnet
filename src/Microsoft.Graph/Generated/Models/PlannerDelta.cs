@@ -7,31 +7,31 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerDelta : Entity, IParsable
+    public class PlannerDelta : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerDelta"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerDelta"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerDelta CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerDelta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.businessScenarioTask" => new BusinessScenarioTask(),
-                "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new PlannerAssignedToTaskBoardTaskFormat(),
-                "#microsoft.graph.plannerBucket" => new PlannerBucket(),
-                "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new PlannerBucketTaskBoardTaskFormat(),
-                "#microsoft.graph.plannerPlan" => new PlannerPlan(),
-                "#microsoft.graph.plannerPlanDetails" => new PlannerPlanDetails(),
-                "#microsoft.graph.plannerProgressTaskBoardTaskFormat" => new PlannerProgressTaskBoardTaskFormat(),
-                "#microsoft.graph.plannerTask" => new PlannerTask(),
-                "#microsoft.graph.plannerTaskDetails" => new PlannerTaskDetails(),
-                "#microsoft.graph.plannerUser" => new PlannerUser(),
-                _ => new PlannerDelta(),
+                "#microsoft.graph.businessScenarioTask" => new Microsoft.Graph.Beta.Models.BusinessScenarioTask(),
+                "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerBucket" => new Microsoft.Graph.Beta.Models.PlannerBucket(),
+                "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerPlan" => new Microsoft.Graph.Beta.Models.PlannerPlan(),
+                "#microsoft.graph.plannerPlanDetails" => new Microsoft.Graph.Beta.Models.PlannerPlanDetails(),
+                "#microsoft.graph.plannerProgressTaskBoardTaskFormat" => new Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat(),
+                "#microsoft.graph.plannerTask" => new Microsoft.Graph.Beta.Models.PlannerTask(),
+                "#microsoft.graph.plannerTaskDetails" => new Microsoft.Graph.Beta.Models.PlannerTaskDetails(),
+                "#microsoft.graph.plannerUser" => new Microsoft.Graph.Beta.Models.PlannerUser(),
+                _ => new Microsoft.Graph.Beta.Models.PlannerDelta(),
             };
         }
         /// <summary>

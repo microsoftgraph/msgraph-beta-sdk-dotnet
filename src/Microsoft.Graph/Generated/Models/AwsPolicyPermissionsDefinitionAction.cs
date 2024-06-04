@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsPolicyPermissionsDefinitionAction : AwsPermissionsDefinitionAction, IParsable
+    public class AwsPolicyPermissionsDefinitionAction : Microsoft.Graph.Beta.Models.AwsPermissionsDefinitionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID for the role.</summary>
@@ -29,21 +29,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionsDefinitionAwsPolicy>? Policies
+        public List<Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy>? Policies
         {
-            get { return BackingStore?.Get<List<PermissionsDefinitionAwsPolicy>?>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<PermissionsDefinitionAwsPolicy> Policies
+        public List<Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy> Policies
         {
-            get { return BackingStore?.Get<List<PermissionsDefinitionAwsPolicy>>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsPolicyPermissionsDefinitionAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsPolicyPermissionsDefinitionAction"/> and sets the default values.
         /// </summary>
         public AwsPolicyPermissionsDefinitionAction() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsPolicyPermissionsDefinitionAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsPolicyPermissionsDefinitionAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsPolicyPermissionsDefinitionAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsPolicyPermissionsDefinitionAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsPolicyPermissionsDefinitionAction();
+            return new Microsoft.Graph.Beta.Models.AwsPolicyPermissionsDefinitionAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignToRoleId", n => { AssignToRoleId = n.GetStringValue(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<PermissionsDefinitionAwsPolicy>(PermissionsDefinitionAwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy>(Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignToRoleId", AssignToRoleId);
-            writer.WriteCollectionOfObjectValues<PermissionsDefinitionAwsPolicy>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionsDefinitionAwsPolicy>("policies", Policies);
         }
     }
 }

@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CertificateConnectorSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CertificateConnectorSetting"/> and sets the default values.
         /// </summary>
         public CertificateConnectorSetting()
         {
@@ -103,12 +103,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CertificateConnectorSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CertificateConnectorSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CertificateConnectorSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CertificateConnectorSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CertificateConnectorSetting();
+            return new Microsoft.Graph.Beta.Models.CertificateConnectorSetting();
         }
         /// <summary>
         /// The deserialization information for the current model

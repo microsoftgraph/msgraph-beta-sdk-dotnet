@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery
 {
     #pragma warning disable CS1591
-    public class CaseExportOperation : CaseOperation, IParsable
+    public class CaseExportOperation : Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</summary>
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
-        public ExportFileStructure? ExportStructure
+        public Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure? ExportStructure
         {
-            get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The output folder ID.</summary>
@@ -121,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CaseExportOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CaseExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CaseExportOperation();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,8 +139,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
                 { "azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
                 { "azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
-                { "exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                { "exportOptions", n => { ExportOptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions>(); } },
+                { "exportStructure", n => { ExportStructure = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure>(); } },
                 { "outputFolderId", n => { OutputFolderId = n.GetStringValue(); } },
                 { "outputName", n => { OutputName = n.GetStringValue(); } },
                 { "reviewSet", n => { ReviewSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet.CreateFromDiscriminatorValue); } },
@@ -157,8 +157,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             writer.WriteStringValue("azureBlobContainer", AzureBlobContainer);
             writer.WriteStringValue("azureBlobToken", AzureBlobToken);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<ExportOptions>("exportOptions", ExportOptions);
-            writer.WriteEnumValue<ExportFileStructure>("exportStructure", ExportStructure);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions>("exportOptions", ExportOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.ExportFileStructure>("exportStructure", ExportStructure);
             writer.WriteStringValue("outputFolderId", OutputFolderId);
             writer.WriteStringValue("outputName", OutputName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet", ReviewSet);

@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identitySource property</summary>
-        public IdentitySourceType? IdentitySource
+        public Microsoft.Graph.Beta.Models.IdentitySourceType? IdentitySource
         {
-            get { return BackingStore?.Get<IdentitySourceType?>("identitySource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySourceType?>("identitySource"); }
             set { BackingStore?.Set("identitySource", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -48,9 +48,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type property</summary>
-        public AclType? Type
+        public Microsoft.Graph.Beta.Models.AclType? Type
         {
-            get { return BackingStore?.Get<AclType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AclType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The value property</summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Acl"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Acl"/> and sets the default values.
         /// </summary>
         public Acl()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Acl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Acl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Acl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Acl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Acl();
+            return new Microsoft.Graph.Beta.Models.Acl();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,10 +95,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
-                { "identitySource", n => { IdentitySource = n.GetEnumValue<IdentitySourceType>(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AccessType>(); } },
+                { "identitySource", n => { IdentitySource = n.GetEnumValue<Microsoft.Graph.Beta.Models.IdentitySourceType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<AclType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.AclType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AccessType>("accessType", AccessType);
-            writer.WriteEnumValue<IdentitySourceType>("identitySource", IdentitySource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AccessType>("accessType", AccessType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IdentitySourceType>("identitySource", IdentitySource);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AclType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AclType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

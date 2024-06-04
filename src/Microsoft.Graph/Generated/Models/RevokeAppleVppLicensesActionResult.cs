@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Revoke Apple Vpp licenses action result
     /// </summary>
-    public class RevokeAppleVppLicensesActionResult : DeviceActionResult, IParsable
+    public class RevokeAppleVppLicensesActionResult : Microsoft.Graph.Beta.Models.DeviceActionResult, IParsable
     {
         /// <summary>Total number of Apple Vpp licenses that failed to revoke</summary>
         public int? FailedLicensesCount
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RevokeAppleVppLicensesActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RevokeAppleVppLicensesActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RevokeAppleVppLicensesActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RevokeAppleVppLicensesActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RevokeAppleVppLicensesActionResult();
+            return new Microsoft.Graph.Beta.Models.RevokeAppleVppLicensesActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model

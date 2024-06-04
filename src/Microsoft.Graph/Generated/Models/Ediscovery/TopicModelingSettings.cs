@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("topicCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TopicModelingSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Ediscovery.TopicModelingSettings"/> and sets the default values.
         /// </summary>
         public TopicModelingSettings()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TopicModelingSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.TopicModelingSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TopicModelingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Ediscovery.TopicModelingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TopicModelingSettings();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.TopicModelingSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

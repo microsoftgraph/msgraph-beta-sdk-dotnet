@@ -80,9 +80,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The sensorType property</summary>
-        public WorkplaceSensorType? SensorType
+        public Microsoft.Graph.Beta.Models.WorkplaceSensorType? SensorType
         {
-            get { return BackingStore?.Get<WorkplaceSensorType?>("sensorType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkplaceSensorType?>("sensorType"); }
             set { BackingStore?.Set("sensorType", value); }
         }
         /// <summary>The date and time when the sensor measured and reported its value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("timestamp", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkplaceSensorDeviceTelemetry"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WorkplaceSensorDeviceTelemetry"/> and sets the default values.
         /// </summary>
         public WorkplaceSensorDeviceTelemetry()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkplaceSensorDeviceTelemetry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkplaceSensorDeviceTelemetry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkplaceSensorDeviceTelemetry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WorkplaceSensorDeviceTelemetry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkplaceSensorDeviceTelemetry();
+            return new Microsoft.Graph.Beta.Models.WorkplaceSensorDeviceTelemetry();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "intValue", n => { IntValue = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sensorId", n => { SensorId = n.GetStringValue(); } },
-                { "sensorType", n => { SensorType = n.GetEnumValue<WorkplaceSensorType>(); } },
+                { "sensorType", n => { SensorType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WorkplaceSensorType>(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("intValue", IntValue);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sensorId", SensorId);
-            writer.WriteEnumValue<WorkplaceSensorType>("sensorType", SensorType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WorkplaceSensorType>("sensorType", SensorType);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

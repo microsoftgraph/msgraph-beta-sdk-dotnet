@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class NoEntitlementsDataCollection : EntitlementsDataCollectionInfo, IParsable
+    public class NoEntitlementsDataCollection : Microsoft.Graph.Beta.Models.EntitlementsDataCollectionInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="NoEntitlementsDataCollection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.NoEntitlementsDataCollection"/> and sets the default values.
         /// </summary>
         public NoEntitlementsDataCollection() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NoEntitlementsDataCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.NoEntitlementsDataCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new NoEntitlementsDataCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.NoEntitlementsDataCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NoEntitlementsDataCollection();
+            return new Microsoft.Graph.Beta.Models.NoEntitlementsDataCollection();
         }
         /// <summary>
         /// The deserialization information for the current model

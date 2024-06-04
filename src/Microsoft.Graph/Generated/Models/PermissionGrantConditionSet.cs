@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionGrantConditionSet : Entity, IParsable
+    public class PermissionGrantConditionSet : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.</summary>
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionGrantConditionSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionGrantConditionSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionGrantConditionSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionGrantConditionSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionGrantConditionSet();
+            return new Microsoft.Graph.Beta.Models.PermissionGrantConditionSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
                 { "permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
-                { "permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
+                { "permissionType", n => { PermissionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PermissionType>(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
             };
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("clientApplicationTenantIds", ClientApplicationTenantIds);
             writer.WriteStringValue("permissionClassification", PermissionClassification);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
-            writer.WriteEnumValue<PermissionType>("permissionType", PermissionType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PermissionType>("permissionType", PermissionType);
             writer.WriteStringValue("resourceApplication", ResourceApplication);
         }
     }

@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of Settings that depends on this option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>?>("dependedOnBy"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy>?>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
 #endif
         /// <summary>List of dependent settings for this option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationDependentOn>? DependentOn
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn>? DependentOn
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>?>("dependentOn"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn>?>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationDependentOn> DependentOn
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn> DependentOn
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn>>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
 #endif
@@ -150,21 +150,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Value of the option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingValue? OptionValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue? OptionValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue?>("optionValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue?>("optionValue"); }
             set { BackingStore?.Set("optionValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingValue OptionValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue OptionValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>("optionValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue>("optionValue"); }
             set { BackingStore?.Set("optionValue", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationOptionDefinition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationOptionDefinition"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationOptionDefinition()
         {
@@ -174,12 +174,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationOptionDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationOptionDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationOptionDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationOptionDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationOptionDefinition();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationOptionDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -189,15 +189,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>(DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dependentOn", n => { DependentOn = n.GetCollectionOfObjectValues<DeviceManagementConfigurationDependentOn>(DeviceManagementConfigurationDependentOn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dependentOn", n => { DependentOn = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "helpText", n => { HelpText = n.GetStringValue(); } },
                 { "itemId", n => { ItemId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "optionValue", n => { OptionValue = n.GetObjectValue<DeviceManagementConfigurationSettingValue>(DeviceManagementConfigurationSettingValue.CreateFromDiscriminatorValue); } },
+                { "optionValue", n => { OptionValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -207,15 +207,15 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>("dependedOnBy", DependedOnBy);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationDependentOn>("dependentOn", DependentOn);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy>("dependedOnBy", DependedOnBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn>("dependentOn", DependentOn);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("helpText", HelpText);
             writer.WriteStringValue("itemId", ItemId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DeviceManagementConfigurationSettingValue>("optionValue", OptionValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue>("optionValue", OptionValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

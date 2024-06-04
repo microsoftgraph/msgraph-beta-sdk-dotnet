@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByComplia
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetDeviceStatusByCompliancePolicySettingReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetDeviceStatusByCompliancePolicySettingReportPostRequestBody()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByComplia
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetDeviceStatusByCompliancePolicySettingReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetDeviceStatusByCompliancePolicySettingReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetDeviceStatusByCompliancePolicySettingReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

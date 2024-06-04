@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class FileSecurityProfile : Entity, IParsable
+    public class FileSecurityProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityGroupNames property</summary>
@@ -115,16 +115,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The hashes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FileHash>? Hashes
+        public List<Microsoft.Graph.Beta.Models.FileHash>? Hashes
         {
-            get { return BackingStore?.Get<List<FileHash>?>("hashes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FileHash>?>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
 #nullable restore
 #else
-        public List<FileHash> Hashes
+        public List<Microsoft.Graph.Beta.Models.FileHash> Hashes
         {
-            get { return BackingStore?.Get<List<FileHash>>("hashes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FileHash>>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
 #endif
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The malwareStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MalwareState>? MalwareStates
+        public List<Microsoft.Graph.Beta.Models.MalwareState>? MalwareStates
         {
-            get { return BackingStore?.Get<List<MalwareState>?>("malwareStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MalwareState>?>("malwareStates"); }
             set { BackingStore?.Set("malwareStates", value); }
         }
 #nullable restore
 #else
-        public List<MalwareState> MalwareStates
+        public List<Microsoft.Graph.Beta.Models.MalwareState> MalwareStates
         {
-            get { return BackingStore?.Get<List<MalwareState>>("malwareStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MalwareState>>("malwareStates"); }
             set { BackingStore?.Set("malwareStates", value); }
         }
 #endif
@@ -207,44 +207,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>The vulnerabilityStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VulnerabilityState>? VulnerabilityStates
+        public List<Microsoft.Graph.Beta.Models.VulnerabilityState>? VulnerabilityStates
         {
-            get { return BackingStore?.Get<List<VulnerabilityState>?>("vulnerabilityStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VulnerabilityState>?>("vulnerabilityStates"); }
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
 #nullable restore
 #else
-        public List<VulnerabilityState> VulnerabilityStates
+        public List<Microsoft.Graph.Beta.Models.VulnerabilityState> VulnerabilityStates
         {
-            get { return BackingStore?.Get<List<VulnerabilityState>>("vulnerabilityStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VulnerabilityState>>("vulnerabilityStates"); }
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileSecurityProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.FileSecurityProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.FileSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileSecurityProfile();
+            return new Microsoft.Graph.Beta.Models.FileSecurityProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -261,15 +261,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "extensions", n => { Extensions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "fileType", n => { FileType = n.GetStringValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "hashes", n => { Hashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hashes", n => { Hashes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FileHash>(Microsoft.Graph.Beta.Models.FileHash.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "malwareStates", n => { MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "malwareStates", n => { MalwareStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MalwareState>(Microsoft.Graph.Beta.Models.MalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "names", n => { Names = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
-                { "vulnerabilityStates", n => { VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>(Microsoft.Graph.Beta.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vulnerabilityStates", n => { VulnerabilityStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VulnerabilityState>(Microsoft.Graph.Beta.Models.VulnerabilityState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -287,15 +287,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("extensions", Extensions);
             writer.WriteStringValue("fileType", FileType);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
-            writer.WriteCollectionOfObjectValues<FileHash>("hashes", Hashes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FileHash>("hashes", Hashes);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteCollectionOfObjectValues<MalwareState>("malwareStates", MalwareStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MalwareState>("malwareStates", MalwareStates);
             writer.WriteCollectionOfPrimitiveValues<string>("names", Names);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteLongValue("size", Size);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
-            writer.WriteCollectionOfObjectValues<VulnerabilityState>("vulnerabilityStates", VulnerabilityStates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VulnerabilityState>("vulnerabilityStates", VulnerabilityStates);
         }
     }
 }

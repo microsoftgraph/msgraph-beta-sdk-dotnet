@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity, IParsable
+    public class UserExperienceAnalyticsBatteryHealthModelPerformance : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of active devices for that model. Valid values 0 to 2147483647</summary>
         public int? ActiveDevices
@@ -98,20 +98,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("modelBatteryHealthScore", value); }
         }
         /// <summary>The modelHealthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? ModelHealthStatus
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState? ModelHealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("modelHealthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState?>("modelHealthStatus"); }
             set { BackingStore?.Set("modelHealthStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBatteryHealthModelPerformance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsBatteryHealthModelPerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsBatteryHealthModelPerformance();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "medianMaxCapacityPercentage", n => { MedianMaxCapacityPercentage = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "modelBatteryHealthScore", n => { ModelBatteryHealthScore = n.GetIntValue(); } },
-                { "modelHealthStatus", n => { ModelHealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "modelHealthStatus", n => { ModelHealthStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState>(); } },
             };
         }
         /// <summary>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("medianMaxCapacityPercentage", MedianMaxCapacityPercentage);
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("modelBatteryHealthScore", ModelBatteryHealthScore);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("modelHealthStatus", ModelHealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState>("modelHealthStatus", ModelHealthStatus);
         }
     }
 }

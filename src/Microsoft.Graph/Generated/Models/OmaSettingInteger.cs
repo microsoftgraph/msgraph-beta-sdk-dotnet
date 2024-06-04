@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// OMA Settings Integer definition.
     /// </summary>
-    public class OmaSettingInteger : OmaSetting, IParsable
+    public class OmaSettingInteger : Microsoft.Graph.Beta.Models.OmaSetting, IParsable
     {
         /// <summary>By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set</summary>
         public bool? IsReadOnly
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OmaSettingInteger"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OmaSettingInteger"/> and sets the default values.
         /// </summary>
         public OmaSettingInteger() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OmaSettingInteger"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OmaSettingInteger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OmaSettingInteger CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OmaSettingInteger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OmaSettingInteger();
+            return new Microsoft.Graph.Beta.Models.OmaSettingInteger();
         }
         /// <summary>
         /// The deserialization information for the current model

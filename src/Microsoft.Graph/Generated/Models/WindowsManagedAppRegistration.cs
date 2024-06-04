@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents the synchronization details of a Windows app, with management capabilities, for a specific user.
     /// </summary>
-    public class WindowsManagedAppRegistration : ManagedAppRegistration, IParsable
+    public class WindowsManagedAppRegistration : Microsoft.Graph.Beta.Models.ManagedAppRegistration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="WindowsManagedAppRegistration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsManagedAppRegistration"/> and sets the default values.
         /// </summary>
         public WindowsManagedAppRegistration() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsManagedAppRegistration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsManagedAppRegistration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsManagedAppRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsManagedAppRegistration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsManagedAppRegistration();
+            return new Microsoft.Graph.Beta.Models.WindowsManagedAppRegistration();
         }
         /// <summary>
         /// The deserialization information for the current model

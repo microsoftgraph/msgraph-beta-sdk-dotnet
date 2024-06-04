@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("completeOrCanceledDateTime", value); }
         }
         /// <summary>An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.</summary>
-        public ZebraFotaErrorCode? ErrorCode
+        public Microsoft.Graph.Beta.Models.ZebraFotaErrorCode? ErrorCode
         {
-            get { return BackingStore?.Get<ZebraFotaErrorCode?>("errorCode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Date and time when the deployment status was updated from Zebra</summary>
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Represents the state of Zebra FOTA deployment.</summary>
-        public ZebraFotaDeploymentState? State
+        public Microsoft.Graph.Beta.Models.ZebraFotaDeploymentState? State
         {
-            get { return BackingStore?.Get<ZebraFotaDeploymentState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaDeploymentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>An integer that indicates the total number of devices where installation was successful.</summary>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("totalUnknown", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ZebraFotaDeploymentStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus"/> and sets the default values.
         /// </summary>
         public ZebraFotaDeploymentStatus()
         {
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ZebraFotaDeploymentStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ZebraFotaDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ZebraFotaDeploymentStatus();
+            return new Microsoft.Graph.Beta.Models.ZebraFotaDeploymentStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,10 +154,10 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "cancelRequested", n => { CancelRequested = n.GetBoolValue(); } },
                 { "completeOrCanceledDateTime", n => { CompleteOrCanceledDateTime = n.GetDateTimeOffsetValue(); } },
-                { "errorCode", n => { ErrorCode = n.GetEnumValue<ZebraFotaErrorCode>(); } },
+                { "errorCode", n => { ErrorCode = n.GetEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaErrorCode>(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<ZebraFotaDeploymentState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaDeploymentState>(); } },
                 { "totalAwaitingInstall", n => { TotalAwaitingInstall = n.GetIntValue(); } },
                 { "totalCanceled", n => { TotalCanceled = n.GetIntValue(); } },
                 { "totalCreated", n => { TotalCreated = n.GetIntValue(); } },
@@ -179,10 +179,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("cancelRequested", CancelRequested);
             writer.WriteDateTimeOffsetValue("completeOrCanceledDateTime", CompleteOrCanceledDateTime);
-            writer.WriteEnumValue<ZebraFotaErrorCode>("errorCode", ErrorCode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaErrorCode>("errorCode", ErrorCode);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ZebraFotaDeploymentState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaDeploymentState>("state", State);
             writer.WriteIntValue("totalAwaitingInstall", TotalAwaitingInstall);
             writer.WriteIntValue("totalCanceled", TotalCanceled);
             writer.WriteIntValue("totalCreated", TotalCreated);

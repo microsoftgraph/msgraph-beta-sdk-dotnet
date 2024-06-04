@@ -20,23 +20,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The email address and type of attendee - whether it&apos;s a person or a resource, and whether required or optional if it&apos;s a person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttendeeBase? Attendee
+        public Microsoft.Graph.Beta.Models.AttendeeBase? Attendee
         {
-            get { return BackingStore?.Get<AttendeeBase?>("attendee"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttendeeBase?>("attendee"); }
             set { BackingStore?.Set("attendee", value); }
         }
 #nullable restore
 #else
-        public AttendeeBase Attendee
+        public Microsoft.Graph.Beta.Models.AttendeeBase Attendee
         {
-            get { return BackingStore?.Get<AttendeeBase>("attendee"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttendeeBase>("attendee"); }
             set { BackingStore?.Set("attendee", value); }
         }
 #endif
         /// <summary>The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? Availability
+        public Microsoft.Graph.Beta.Models.FreeBusyStatus? Availability
         {
-            get { return BackingStore?.Get<FreeBusyStatus?>("availability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FreeBusyStatus?>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AttendeeAvailability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AttendeeAvailability"/> and sets the default values.
         /// </summary>
         public AttendeeAvailability()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttendeeAvailability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AttendeeAvailability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttendeeAvailability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AttendeeAvailability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttendeeAvailability();
+            return new Microsoft.Graph.Beta.Models.AttendeeAvailability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendee", n => { Attendee = n.GetObjectValue<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue); } },
-                { "availability", n => { Availability = n.GetEnumValue<FreeBusyStatus>(); } },
+                { "attendee", n => { Attendee = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttendeeBase>(Microsoft.Graph.Beta.Models.AttendeeBase.CreateFromDiscriminatorValue); } },
+                { "availability", n => { Availability = n.GetEnumValue<Microsoft.Graph.Beta.Models.FreeBusyStatus>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AttendeeBase>("attendee", Attendee);
-            writer.WriteEnumValue<FreeBusyStatus>("availability", Availability);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttendeeBase>("attendee", Attendee);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.FreeBusyStatus>("availability", Availability);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

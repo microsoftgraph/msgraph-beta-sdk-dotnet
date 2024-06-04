@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
     public class RoleDefinitionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
         /// <param name="position">The unique identifier of unifiedRoleDefinition</param>
-        /// <returns>A <see cref="UnifiedRoleDefinitionItemRequestBuilder"/></returns>
-        public UnifiedRoleDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("unifiedRoleDefinition%2Did", position);
-                return new UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleDefinitionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RoleDefinitionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
         /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Microsoft Entra ID) - entitlement management (Microsoft Entra ID)- Exchange Online
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<RoleDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder.RoleDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<RoleDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder.RoleDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleDefinitionCollectionResponse>(requestInfo, UnifiedRoleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRoleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- directory (Microsoft Entra ID)
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleDefinition"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleDefinition?> PostAsync(UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition?> PostAsync(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleDefinition> PostAsync(UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition> PostAsync(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Microsoft Entra ID) - entitlement management (Microsoft Entra ID)- Exchange Online
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder.RoleDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder.RoleDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RoleDefinitionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleDefinitionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Microsoft Entra ID) - entitlement management (Microsoft Entra ID)- Exchange Online
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleDefinitionsRequestBuilderGetQueryParameters>
+        public class RoleDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.RoleDefinitionsRequestBuilder.RoleDefinitionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

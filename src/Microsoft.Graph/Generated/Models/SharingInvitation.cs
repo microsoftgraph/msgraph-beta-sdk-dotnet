@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Provides information about who sent the invitation that created this permission, if that information is available. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? InvitedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? InvitedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("invitedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("invitedBy"); }
             set { BackingStore?.Set("invitedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet InvitedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet InvitedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("invitedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("invitedBy"); }
             set { BackingStore?.Set("invitedBy", value); }
         }
 #endif
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signInRequired", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SharingInvitation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SharingInvitation"/> and sets the default values.
         /// </summary>
         public SharingInvitation()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharingInvitation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SharingInvitation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharingInvitation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SharingInvitation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharingInvitation();
+            return new Microsoft.Graph.Beta.Models.SharingInvitation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "invitedBy", n => { InvitedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "invitedBy", n => { InvitedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "redeemedBy", n => { RedeemedBy = n.GetStringValue(); } },
                 { "signInRequired", n => { SignInRequired = n.GetBoolValue(); } },
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<IdentitySet>("invitedBy", InvitedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("invitedBy", InvitedBy);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("redeemedBy", RedeemedBy);
             writer.WriteBoolValue("signInRequired", SignInRequired);

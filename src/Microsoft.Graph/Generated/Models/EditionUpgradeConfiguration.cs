@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows 10 Edition Upgrade configuration.
     /// </summary>
-    public class EditionUpgradeConfiguration : DeviceConfiguration, IParsable
+    public class EditionUpgradeConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Edition Upgrade License File Content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Edition Upgrade License type</summary>
-        public EditionUpgradeLicenseType? LicenseType
+        public Microsoft.Graph.Beta.Models.EditionUpgradeLicenseType? LicenseType
         {
-            get { return BackingStore?.Get<EditionUpgradeLicenseType?>("licenseType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EditionUpgradeLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>Edition Upgrade Product Key.</summary>
@@ -50,19 +50,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Windows 10 Edition type.</summary>
-        public Windows10EditionType? TargetEdition
+        public Microsoft.Graph.Beta.Models.Windows10EditionType? TargetEdition
         {
-            get { return BackingStore?.Get<Windows10EditionType?>("targetEdition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10EditionType?>("targetEdition"); }
             set { BackingStore?.Set("targetEdition", value); }
         }
         /// <summary>The possible options to configure S mode unlock</summary>
-        public WindowsSModeConfiguration? WindowsSMode
+        public Microsoft.Graph.Beta.Models.WindowsSModeConfiguration? WindowsSMode
         {
-            get { return BackingStore?.Get<WindowsSModeConfiguration?>("windowsSMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsSModeConfiguration?>("windowsSMode"); }
             set { BackingStore?.Set("windowsSMode", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EditionUpgradeConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EditionUpgradeConfiguration"/> and sets the default values.
         /// </summary>
         public EditionUpgradeConfiguration() : base()
         {
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EditionUpgradeConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EditionUpgradeConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EditionUpgradeConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EditionUpgradeConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EditionUpgradeConfiguration();
+            return new Microsoft.Graph.Beta.Models.EditionUpgradeConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,10 +87,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "license", n => { License = n.GetStringValue(); } },
-                { "licenseType", n => { LicenseType = n.GetEnumValue<EditionUpgradeLicenseType>(); } },
+                { "licenseType", n => { LicenseType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EditionUpgradeLicenseType>(); } },
                 { "productKey", n => { ProductKey = n.GetStringValue(); } },
-                { "targetEdition", n => { TargetEdition = n.GetEnumValue<Windows10EditionType>(); } },
-                { "windowsSMode", n => { WindowsSMode = n.GetEnumValue<WindowsSModeConfiguration>(); } },
+                { "targetEdition", n => { TargetEdition = n.GetEnumValue<Microsoft.Graph.Beta.Models.Windows10EditionType>(); } },
+                { "windowsSMode", n => { WindowsSMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsSModeConfiguration>(); } },
             };
         }
         /// <summary>
@@ -102,10 +102,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("license", License);
-            writer.WriteEnumValue<EditionUpgradeLicenseType>("licenseType", LicenseType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EditionUpgradeLicenseType>("licenseType", LicenseType);
             writer.WriteStringValue("productKey", ProductKey);
-            writer.WriteEnumValue<Windows10EditionType>("targetEdition", TargetEdition);
-            writer.WriteEnumValue<WindowsSModeConfiguration>("windowsSMode", WindowsSMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Windows10EditionType>("targetEdition", TargetEdition);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsSModeConfiguration>("windowsSMode", WindowsSMode);
         }
     }
 }

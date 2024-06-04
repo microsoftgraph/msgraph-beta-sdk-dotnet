@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Role Scope Tag
     /// </summary>
-    public class RoleScopeTag : Entity, IParsable
+    public class RoleScopeTag : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for this Role Scope Tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleScopeTagAutoAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<RoleScopeTagAutoAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleScopeTag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RoleScopeTag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RoleScopeTag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RoleScopeTag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RoleScopeTag();
+            return new Microsoft.Graph.Beta.Models.RoleScopeTag();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<RoleScopeTagAutoAssignment>(RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>(Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<RoleScopeTagAutoAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>("assignments", Assignments);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
         }

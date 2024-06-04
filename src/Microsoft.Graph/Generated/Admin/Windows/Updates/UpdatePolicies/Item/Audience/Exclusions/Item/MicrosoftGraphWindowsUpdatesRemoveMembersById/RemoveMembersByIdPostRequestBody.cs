@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RemoveMembersByIdPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Exclusions.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById.RemoveMembersByIdPostRequestBody"/> and sets the default values.
         /// </summary>
         public RemoveMembersByIdPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoveMembersByIdPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Exclusions.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById.RemoveMembersByIdPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemoveMembersByIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Exclusions.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById.RemoveMembersByIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoveMembersByIdPostRequestBody();
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Exclusions.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById.RemoveMembersByIdPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

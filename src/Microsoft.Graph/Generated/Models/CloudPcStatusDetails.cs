@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Any additional information about the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? AdditionalInformation
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? AdditionalInformation
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("additionalInformation"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> AdditionalInformation
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> AdditionalInformation
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcStatusDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcStatusDetails"/> and sets the default values.
         /// </summary>
         public CloudPcStatusDetails()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcStatusDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcStatusDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcStatusDetails();
+            return new Microsoft.Graph.Beta.Models.CloudPcStatusDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("additionalInformation", AdditionalInformation);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);

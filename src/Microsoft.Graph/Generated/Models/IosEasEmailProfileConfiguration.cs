@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing configurations in this profile you can instruct the native email client on iOS devices to communicate with an Exchange server and get email, contacts, calendar, reminders, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable
+    public class IosEasEmailProfileConfiguration : Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase, IParsable
     {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
-        public EasAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.EasAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EasAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Indicates whether or not to block moving messages to other email accounts.</summary>
@@ -54,23 +54,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #endif
         /// <summary>Possible values for email sync duration.</summary>
-        public EmailSyncDuration? DurationOfEmailToSync
+        public Microsoft.Graph.Beta.Models.EmailSyncDuration? DurationOfEmailToSync
         {
-            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncDuration?>("durationOfEmailToSync"); }
             set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
         /// <summary>Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.</summary>
@@ -86,15 +86,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("easServicesUserOverrideEnabled", value); }
         }
         /// <summary>Possible values for username source or email source.</summary>
-        public UserEmailSource? EmailAddressSource
+        public Microsoft.Graph.Beta.Models.UserEmailSource? EmailAddressSource
         {
-            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserEmailSource?>("emailAddressSource"); }
             set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.</summary>
-        public EmailCertificateType? EncryptionCertificateType
+        public Microsoft.Graph.Beta.Models.EmailCertificateType? EncryptionCertificateType
         {
-            get { return BackingStore?.Get<EmailCertificateType?>("encryptionCertificateType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailCertificateType?>("encryptionCertificateType"); }
             set { BackingStore?.Set("encryptionCertificateType", value); }
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
@@ -116,16 +116,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosCertificateProfileBase? IdentityCertificate
+        public Microsoft.Graph.Beta.Models.IosCertificateProfileBase? IdentityCertificate
         {
-            get { return BackingStore?.Get<IosCertificateProfileBase?>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public IosCertificateProfileBase IdentityCertificate
+        public Microsoft.Graph.Beta.Models.IosCertificateProfileBase IdentityCertificate
         {
-            get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
@@ -158,9 +158,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requireSsl", value); }
         }
         /// <summary>Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.</summary>
-        public EmailCertificateType? SigningCertificateType
+        public Microsoft.Graph.Beta.Models.EmailCertificateType? SigningCertificateType
         {
-            get { return BackingStore?.Get<EmailCertificateType?>("signingCertificateType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailCertificateType?>("signingCertificateType"); }
             set { BackingStore?.Set("signingCertificateType", value); }
         }
         /// <summary>Indicates whether or not to allow unencrypted emails.</summary>
@@ -184,16 +184,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>S/MIME encryption certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosCertificateProfile? SmimeEncryptionCertificate
+        public Microsoft.Graph.Beta.Models.IosCertificateProfile? SmimeEncryptionCertificate
         {
-            get { return BackingStore?.Get<IosCertificateProfile?>("smimeEncryptionCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosCertificateProfile?>("smimeEncryptionCertificate"); }
             set { BackingStore?.Set("smimeEncryptionCertificate", value); }
         }
 #nullable restore
 #else
-        public IosCertificateProfile SmimeEncryptionCertificate
+        public Microsoft.Graph.Beta.Models.IosCertificateProfile SmimeEncryptionCertificate
         {
-            get { return BackingStore?.Get<IosCertificateProfile>("smimeEncryptionCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosCertificateProfile>("smimeEncryptionCertificate"); }
             set { BackingStore?.Set("smimeEncryptionCertificate", value); }
         }
 #endif
@@ -206,16 +206,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>S/MIME signing certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosCertificateProfile? SmimeSigningCertificate
+        public Microsoft.Graph.Beta.Models.IosCertificateProfile? SmimeSigningCertificate
         {
-            get { return BackingStore?.Get<IosCertificateProfile?>("smimeSigningCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosCertificateProfile?>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
 #nullable restore
 #else
-        public IosCertificateProfile SmimeSigningCertificate
+        public Microsoft.Graph.Beta.Models.IosCertificateProfile SmimeSigningCertificate
         {
-            get { return BackingStore?.Get<IosCertificateProfile>("smimeSigningCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosCertificateProfile>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
 #endif
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("useOAuth", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosEasEmailProfileConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosEasEmailProfileConfiguration"/> and sets the default values.
         /// </summary>
         public IosEasEmailProfileConfiguration() : base()
         {
@@ -253,12 +253,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosEasEmailProfileConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosEasEmailProfileConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosEasEmailProfileConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosEasEmailProfileConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosEasEmailProfileConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosEasEmailProfileConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -269,28 +269,28 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<EasAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.EasAuthenticationMethod>(); } },
                 { "blockMovingMessagesToOtherEmailAccounts", n => { BlockMovingMessagesToOtherEmailAccounts = n.GetBoolValue(); } },
                 { "blockSendingEmailFromThirdPartyApps", n => { BlockSendingEmailFromThirdPartyApps = n.GetBoolValue(); } },
                 { "blockSyncingRecentlyUsedEmailAddresses", n => { BlockSyncingRecentlyUsedEmailAddresses = n.GetBoolValue(); } },
-                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
-                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<EmailSyncDuration>(); } },
-                { "easServices", n => { EasServices = n.GetEnumValue<EasServices>(); } },
+                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailSyncDuration>(); } },
+                { "easServices", n => { EasServices = n.GetEnumValue<Microsoft.Graph.Beta.Models.EasServices>(); } },
                 { "easServicesUserOverrideEnabled", n => { EasServicesUserOverrideEnabled = n.GetBoolValue(); } },
-                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<UserEmailSource>(); } },
-                { "encryptionCertificateType", n => { EncryptionCertificateType = n.GetEnumValue<EmailCertificateType>(); } },
+                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>(); } },
+                { "encryptionCertificateType", n => { EncryptionCertificateType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailCertificateType>(); } },
                 { "hostName", n => { HostName = n.GetStringValue(); } },
-                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<IosCertificateProfileBase>(IosCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosCertificateProfileBase>(Microsoft.Graph.Beta.Models.IosCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 { "perAppVPNProfileId", n => { PerAppVPNProfileId = n.GetStringValue(); } },
                 { "requireSmime", n => { RequireSmime = n.GetBoolValue(); } },
                 { "requireSsl", n => { RequireSsl = n.GetBoolValue(); } },
-                { "signingCertificateType", n => { SigningCertificateType = n.GetEnumValue<EmailCertificateType>(); } },
+                { "signingCertificateType", n => { SigningCertificateType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailCertificateType>(); } },
                 { "smimeEnablePerMessageSwitch", n => { SmimeEnablePerMessageSwitch = n.GetBoolValue(); } },
                 { "smimeEncryptByDefaultEnabled", n => { SmimeEncryptByDefaultEnabled = n.GetBoolValue(); } },
                 { "smimeEncryptByDefaultUserOverrideEnabled", n => { SmimeEncryptByDefaultUserOverrideEnabled = n.GetBoolValue(); } },
-                { "smimeEncryptionCertificate", n => { SmimeEncryptionCertificate = n.GetObjectValue<IosCertificateProfile>(IosCertificateProfile.CreateFromDiscriminatorValue); } },
+                { "smimeEncryptionCertificate", n => { SmimeEncryptionCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosCertificateProfile>(Microsoft.Graph.Beta.Models.IosCertificateProfile.CreateFromDiscriminatorValue); } },
                 { "smimeEncryptionCertificateUserOverrideEnabled", n => { SmimeEncryptionCertificateUserOverrideEnabled = n.GetBoolValue(); } },
-                { "smimeSigningCertificate", n => { SmimeSigningCertificate = n.GetObjectValue<IosCertificateProfile>(IosCertificateProfile.CreateFromDiscriminatorValue); } },
+                { "smimeSigningCertificate", n => { SmimeSigningCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosCertificateProfile>(Microsoft.Graph.Beta.Models.IosCertificateProfile.CreateFromDiscriminatorValue); } },
                 { "smimeSigningCertificateUserOverrideEnabled", n => { SmimeSigningCertificateUserOverrideEnabled = n.GetBoolValue(); } },
                 { "smimeSigningEnabled", n => { SmimeSigningEnabled = n.GetBoolValue(); } },
                 { "smimeSigningUserOverrideEnabled", n => { SmimeSigningUserOverrideEnabled = n.GetBoolValue(); } },
@@ -306,28 +306,28 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountName", AccountName);
-            writer.WriteEnumValue<EasAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EasAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteBoolValue("blockMovingMessagesToOtherEmailAccounts", BlockMovingMessagesToOtherEmailAccounts);
             writer.WriteBoolValue("blockSendingEmailFromThirdPartyApps", BlockSendingEmailFromThirdPartyApps);
             writer.WriteBoolValue("blockSyncingRecentlyUsedEmailAddresses", BlockSyncingRecentlyUsedEmailAddresses);
-            writer.WriteObjectValue<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
-            writer.WriteEnumValue<EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
-            writer.WriteEnumValue<EasServices>("easServices", EasServices);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EasServices>("easServices", EasServices);
             writer.WriteBoolValue("easServicesUserOverrideEnabled", EasServicesUserOverrideEnabled);
-            writer.WriteEnumValue<UserEmailSource>("emailAddressSource", EmailAddressSource);
-            writer.WriteEnumValue<EmailCertificateType>("encryptionCertificateType", EncryptionCertificateType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>("emailAddressSource", EmailAddressSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailCertificateType>("encryptionCertificateType", EncryptionCertificateType);
             writer.WriteStringValue("hostName", HostName);
-            writer.WriteObjectValue<IosCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosCertificateProfileBase>("identityCertificate", IdentityCertificate);
             writer.WriteStringValue("perAppVPNProfileId", PerAppVPNProfileId);
             writer.WriteBoolValue("requireSmime", RequireSmime);
             writer.WriteBoolValue("requireSsl", RequireSsl);
-            writer.WriteEnumValue<EmailCertificateType>("signingCertificateType", SigningCertificateType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailCertificateType>("signingCertificateType", SigningCertificateType);
             writer.WriteBoolValue("smimeEnablePerMessageSwitch", SmimeEnablePerMessageSwitch);
             writer.WriteBoolValue("smimeEncryptByDefaultEnabled", SmimeEncryptByDefaultEnabled);
             writer.WriteBoolValue("smimeEncryptByDefaultUserOverrideEnabled", SmimeEncryptByDefaultUserOverrideEnabled);
-            writer.WriteObjectValue<IosCertificateProfile>("smimeEncryptionCertificate", SmimeEncryptionCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosCertificateProfile>("smimeEncryptionCertificate", SmimeEncryptionCertificate);
             writer.WriteBoolValue("smimeEncryptionCertificateUserOverrideEnabled", SmimeEncryptionCertificateUserOverrideEnabled);
-            writer.WriteObjectValue<IosCertificateProfile>("smimeSigningCertificate", SmimeSigningCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosCertificateProfile>("smimeSigningCertificate", SmimeSigningCertificate);
             writer.WriteBoolValue("smimeSigningCertificateUserOverrideEnabled", SmimeSigningCertificateUserOverrideEnabled);
             writer.WriteBoolValue("smimeSigningEnabled", SmimeSigningEnabled);
             writer.WriteBoolValue("smimeSigningUserOverrideEnabled", SmimeSigningUserOverrideEnabled);

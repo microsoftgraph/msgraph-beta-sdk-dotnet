@@ -7,75 +7,75 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventSession : OnlineMeetingBase, IParsable
+    public class VirtualEventSession : Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The virtual event session end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone EndDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
         /// <summary>The presenters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventPresenter>? Presenters
+        public List<Microsoft.Graph.Beta.Models.VirtualEventPresenter>? Presenters
         {
-            get { return BackingStore?.Get<List<VirtualEventPresenter>?>("presenters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventPresenter>?>("presenters"); }
             set { BackingStore?.Set("presenters", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventPresenter> Presenters
+        public List<Microsoft.Graph.Beta.Models.VirtualEventPresenter> Presenters
         {
-            get { return BackingStore?.Get<List<VirtualEventPresenter>>("presenters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventPresenter>>("presenters"); }
             set { BackingStore?.Set("presenters", value); }
         }
 #endif
         /// <summary>The registrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistration>? Registrations
+        public List<Microsoft.Graph.Beta.Models.VirtualEventRegistration>? Registrations
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistration>?>("registrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventRegistration>?>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistration> Registrations
+        public List<Microsoft.Graph.Beta.Models.VirtualEventRegistration> Registrations
         {
-            get { return BackingStore?.Get<List<VirtualEventRegistration>>("registrations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventRegistration>>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #endif
         /// <summary>The virtual event session start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEventSession"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VirtualEventSession"/> and sets the default values.
         /// </summary>
         public VirtualEventSession() : base()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventSession"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventSession"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventSession CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventSession();
+            return new Microsoft.Graph.Beta.Models.VirtualEventSession();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<VirtualEventPresenter>(VirtualEventPresenter.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventPresenter>(Microsoft.Graph.Beta.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventRegistration>(Microsoft.Graph.Beta.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
-            writer.WriteCollectionOfObjectValues<VirtualEventPresenter>("presenters", Presenters);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistration>("registrations", Registrations);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventPresenter>("presenters", Presenters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventRegistration>("registrations", Registrations);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
         }
     }
 }

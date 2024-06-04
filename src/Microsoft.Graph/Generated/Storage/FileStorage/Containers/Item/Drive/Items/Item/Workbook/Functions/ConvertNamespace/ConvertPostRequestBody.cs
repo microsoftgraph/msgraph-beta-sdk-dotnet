@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The fromUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FromUnit
+        public Microsoft.Graph.Beta.Models.Json? FromUnit
         {
-            get { return BackingStore?.Get<Json?>("fromUnit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("fromUnit"); }
             set { BackingStore?.Set("fromUnit", value); }
         }
 #nullable restore
 #else
-        public Json FromUnit
+        public Microsoft.Graph.Beta.Models.Json FromUnit
         {
-            get { return BackingStore?.Get<Json>("fromUnit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("fromUnit"); }
             set { BackingStore?.Set("fromUnit", value); }
         }
 #endif
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number
+        public Microsoft.Graph.Beta.Models.Json? Number
         {
-            get { return BackingStore?.Get<Json?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number
+        public Microsoft.Graph.Beta.Models.Json Number
         {
-            get { return BackingStore?.Get<Json>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>The toUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ToUnit
+        public Microsoft.Graph.Beta.Models.Json? ToUnit
         {
-            get { return BackingStore?.Get<Json?>("toUnit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("toUnit"); }
             set { BackingStore?.Set("toUnit", value); }
         }
 #nullable restore
 #else
-        public Json ToUnit
+        public Microsoft.Graph.Beta.Models.Json ToUnit
         {
-            get { return BackingStore?.Get<Json>("toUnit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("toUnit"); }
             set { BackingStore?.Set("toUnit", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConvertPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ConvertNamespace.ConvertPostRequestBody"/> and sets the default values.
         /// </summary>
         public ConvertPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConvertPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ConvertNamespace.ConvertPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConvertPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ConvertNamespace.ConvertPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConvertPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.ConvertNamespace.ConvertPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fromUnit", n => { FromUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "toUnit", n => { ToUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fromUnit", n => { FromUnit = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "toUnit", n => { ToUnit = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("fromUnit", FromUnit);
-            writer.WriteObjectValue<Json>("number", Number);
-            writer.WriteObjectValue<Json>("toUnit", ToUnit);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("fromUnit", FromUnit);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("toUnit", ToUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

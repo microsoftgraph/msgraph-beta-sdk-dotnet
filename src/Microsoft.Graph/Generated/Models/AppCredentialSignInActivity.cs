@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AppCredentialSignInActivity : Entity, IParsable
+    public class AppCredentialSignInActivity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.</summary>
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The credentialOrigin property</summary>
-        public ApplicationKeyOrigin? CredentialOrigin
+        public Microsoft.Graph.Beta.Models.ApplicationKeyOrigin? CredentialOrigin
         {
-            get { return BackingStore?.Get<ApplicationKeyOrigin?>("credentialOrigin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationKeyOrigin?>("credentialOrigin"); }
             set { BackingStore?.Set("credentialOrigin", value); }
         }
         /// <summary>The date and time when the credential is set to expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -77,15 +77,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specifies the key type. The possible values are: clientSecret, certificate, unknownFutureValue.</summary>
-        public ApplicationKeyType? KeyType
+        public Microsoft.Graph.Beta.Models.ApplicationKeyType? KeyType
         {
-            get { return BackingStore?.Get<ApplicationKeyType?>("keyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationKeyType?>("keyType"); }
             set { BackingStore?.Set("keyType", value); }
         }
         /// <summary>Specifies what the key was used for. The possible values are: sign, verify, unknownFutureValue.</summary>
-        public ApplicationKeyUsage? KeyUsage
+        public Microsoft.Graph.Beta.Models.ApplicationKeyUsage? KeyUsage
         {
-            get { return BackingStore?.Get<ApplicationKeyUsage?>("keyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationKeyUsage?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>The ID of the accessed resource.</summary>
@@ -139,12 +139,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppCredentialSignInActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppCredentialSignInActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppCredentialSignInActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AppCredentialSignInActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppCredentialSignInActivity();
+            return new Microsoft.Graph.Beta.Models.AppCredentialSignInActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,11 +157,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appObjectId", n => { AppObjectId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "credentialOrigin", n => { CredentialOrigin = n.GetEnumValue<ApplicationKeyOrigin>(); } },
+                { "credentialOrigin", n => { CredentialOrigin = n.GetEnumValue<Microsoft.Graph.Beta.Models.ApplicationKeyOrigin>(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "keyId", n => { KeyId = n.GetStringValue(); } },
-                { "keyType", n => { KeyType = n.GetEnumValue<ApplicationKeyType>(); } },
-                { "keyUsage", n => { KeyUsage = n.GetEnumValue<ApplicationKeyUsage>(); } },
+                { "keyType", n => { KeyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ApplicationKeyType>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ApplicationKeyUsage>(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "servicePrincipalObjectId", n => { ServicePrincipalObjectId = n.GetStringValue(); } },
                 { "signInActivity", n => { SignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
@@ -178,11 +178,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appObjectId", AppObjectId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<ApplicationKeyOrigin>("credentialOrigin", CredentialOrigin);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ApplicationKeyOrigin>("credentialOrigin", CredentialOrigin);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("keyId", KeyId);
-            writer.WriteEnumValue<ApplicationKeyType>("keyType", KeyType);
-            writer.WriteEnumValue<ApplicationKeyUsage>("keyUsage", KeyUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ApplicationKeyType>("keyType", KeyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ApplicationKeyUsage>("keyUsage", KeyUsage);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("servicePrincipalObjectId", ServicePrincipalObjectId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("signInActivity", SignInActivity);

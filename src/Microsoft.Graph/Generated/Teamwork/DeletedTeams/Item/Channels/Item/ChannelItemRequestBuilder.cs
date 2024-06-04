@@ -28,62 +28,62 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
     public class ChannelItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the archive method.</summary>
-        public ArchiveRequestBuilder Archive
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Archive.ArchiveRequestBuilder Archive
         {
-            get => new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the completeMigration method.</summary>
-        public CompleteMigrationRequestBuilder CompleteMigration
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.CompleteMigration.CompleteMigrationRequestBuilder CompleteMigration
         {
-            get => new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.CompleteMigration.CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the doesUserHaveAccess method.</summary>
-        public DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
-            get => new DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
-        public FilesFolderRequestBuilder FilesFolder
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
-            get => new FilesFolderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
-        public MembersRequestBuilder Members
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.MembersRequestBuilder Members
         {
-            get => new MembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
-        public MessagesRequestBuilder Messages
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages.MessagesRequestBuilder Messages
         {
-            get => new MessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
-        public ProvisionEmailRequestBuilder ProvisionEmail
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ProvisionEmail.ProvisionEmailRequestBuilder ProvisionEmail
         {
-            get => new ProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ProvisionEmail.ProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeEmail method.</summary>
-        public RemoveEmailRequestBuilder RemoveEmail
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.RemoveEmail.RemoveEmailRequestBuilder RemoveEmail
         {
-            get => new RemoveEmailRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.RemoveEmail.RemoveEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
-        public SharedWithTeamsRequestBuilder SharedWithTeams
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder SharedWithTeams
         {
-            get => new SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
-        public TabsRequestBuilder Tabs
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Tabs.TabsRequestBuilder Tabs
         {
-            get => new TabsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Tabs.TabsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        public UnarchiveRequestBuilder Unarchive
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Unarchive.UnarchiveRequestBuilder Unarchive
         {
-            get => new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChannelItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChannelItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -116,57 +116,57 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The channels those are either shared with this deleted team or created in this deleted team.
         /// </summary>
-        /// <returns>A <see cref="Channel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Channel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Channel?> GetAsync(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Channel?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Channel> GetAsync(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Channel> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Channel>(requestInfo, Microsoft.Graph.Beta.Models.Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property channels in teamwork
         /// </summary>
-        /// <returns>A <see cref="Channel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Channel"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Channel?> PatchAsync(Channel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Channel?> PatchAsync(Microsoft.Graph.Beta.Models.Channel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Channel> PatchAsync(Channel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Channel> PatchAsync(Microsoft.Graph.Beta.Models.Channel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Channel>(requestInfo, Microsoft.Graph.Beta.Models.Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property channels for teamwork
@@ -194,11 +194,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -214,11 +214,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Channel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Channel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Channel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Channel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -231,11 +231,11 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ChannelItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChannelItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ChannelItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -274,7 +274,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChannelItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ChannelItemRequestBuilderGetQueryParameters>
+        public class ChannelItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ChannelItemRequestBuilder.ChannelItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

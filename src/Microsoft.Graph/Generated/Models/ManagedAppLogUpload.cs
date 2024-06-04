@@ -85,13 +85,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Represents the current status of the associated `managedAppLogCollectionRequest`.</summary>
-        public ManagedAppLogUploadState? Status
+        public Microsoft.Graph.Beta.Models.ManagedAppLogUploadState? Status
         {
-            get { return BackingStore?.Get<ManagedAppLogUploadState?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppLogUploadState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppLogUpload"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedAppLogUpload"/> and sets the default values.
         /// </summary>
         public ManagedAppLogUpload()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppLogUpload"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAppLogUpload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagedAppLogUpload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedAppLogUpload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAppLogUpload();
+            return new Microsoft.Graph.Beta.Models.ManagedAppLogUpload();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "managedAppComponentDescription", n => { ManagedAppComponentDescription = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "referenceId", n => { ReferenceId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ManagedAppLogUploadState>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppLogUploadState>(); } },
             };
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("managedAppComponentDescription", ManagedAppComponentDescription);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("referenceId", ReferenceId);
-            writer.WriteEnumValue<ManagedAppLogUploadState>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppLogUploadState>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

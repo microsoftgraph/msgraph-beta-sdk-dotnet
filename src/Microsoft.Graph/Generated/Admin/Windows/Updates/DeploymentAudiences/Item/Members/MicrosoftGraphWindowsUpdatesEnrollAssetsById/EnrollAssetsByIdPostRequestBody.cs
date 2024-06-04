@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Me
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EnrollAssetsByIdPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.MicrosoftGraphWindowsUpdatesEnrollAssetsById.EnrollAssetsByIdPostRequestBody"/> and sets the default values.
         /// </summary>
         public EnrollAssetsByIdPostRequestBody()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Me
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnrollAssetsByIdPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.MicrosoftGraphWindowsUpdatesEnrollAssetsById.EnrollAssetsByIdPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EnrollAssetsByIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.MicrosoftGraphWindowsUpdatesEnrollAssetsById.EnrollAssetsByIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnrollAssetsByIdPostRequestBody();
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.MicrosoftGraphWindowsUpdatesEnrollAssetsById.EnrollAssetsByIdPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Me
             {
                 { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
-                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<UpdateCategory>(); } },
+                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory>(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Me
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteStringValue("memberEntityType", MemberEntityType);
-            writer.WriteEnumValue<UpdateCategory>("updateCategory", UpdateCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory>("updateCategory", UpdateCategory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

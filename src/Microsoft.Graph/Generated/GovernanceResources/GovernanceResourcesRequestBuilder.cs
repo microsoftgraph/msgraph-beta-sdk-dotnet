@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.GovernanceResources
     public class GovernanceResourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.GovernanceResources.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceResources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the register method.</summary>
-        public RegisterRequestBuilder Register
+        public Microsoft.Graph.Beta.GovernanceResources.Register.RegisterRequestBuilder Register
         {
-            get => new RegisterRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceResources.Register.RegisterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
         /// <param name="position">The unique identifier of governanceResource</param>
-        /// <returns>A <see cref="GovernanceResourceItemRequestBuilder"/></returns>
-        public GovernanceResourceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceResources.Item.GovernanceResourceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.GovernanceResources.Item.GovernanceResourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("governanceResource%2Did", position);
-                return new GovernanceResourceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.GovernanceResources.Item.GovernanceResourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +60,50 @@ namespace Microsoft.Graph.Beta.GovernanceResources
         /// <summary>
         /// Get entities from governanceResources
         /// </summary>
-        /// <returns>A <see cref="GovernanceResourceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<GovernanceResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder.GovernanceResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernanceResourceCollectionResponse> GetAsync(Action<RequestConfiguration<GovernanceResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceResourceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder.GovernanceResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernanceResourceCollectionResponse>(requestInfo, GovernanceResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernanceResourceCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GovernanceResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to governanceResources
         /// </summary>
-        /// <returns>A <see cref="GovernanceResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceResource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceResource?> PostAsync(GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceResource?> PostAsync(Microsoft.Graph.Beta.Models.GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernanceResource> PostAsync(GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceResource> PostAsync(Microsoft.Graph.Beta.Models.GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernanceResource>(requestInfo, Microsoft.Graph.Beta.Models.GovernanceResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from governanceResources
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.GovernanceResources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GovernanceResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder.GovernanceResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GovernanceResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder.GovernanceResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.GovernanceResources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernanceResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Beta.GovernanceResources
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GovernanceResourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GovernanceResourcesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GovernanceResourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from governanceResources
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GovernanceResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<GovernanceResourcesRequestBuilderGetQueryParameters>
+        public class GovernanceResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder.GovernanceResourcesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

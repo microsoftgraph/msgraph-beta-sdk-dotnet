@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryHoldPolicy : PolicyBase, IParsable
+    public class EdiscoveryHoldPolicy : Microsoft.Graph.Beta.Models.Security.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
@@ -51,37 +51,37 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Data sources that represent SharePoint sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SiteSource>? SiteSources
+        public List<Microsoft.Graph.Beta.Models.Security.SiteSource>? SiteSources
         {
-            get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #nullable restore
 #else
-        public List<SiteSource> SiteSources
+        public List<Microsoft.Graph.Beta.Models.Security.SiteSource> SiteSources
         {
-            get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #endif
         /// <summary>Data sources that represent Exchange mailboxes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSource>? UserSources
+        public List<Microsoft.Graph.Beta.Models.Security.UserSource>? UserSources
         {
-            get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #nullable restore
 #else
-        public List<UserSource> UserSources
+        public List<Microsoft.Graph.Beta.Models.Security.UserSource> UserSources
         {
-            get { return BackingStore?.Get<List<UserSource>>("userSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EdiscoveryHoldPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy"/> and sets the default values.
         /// </summary>
         public EdiscoveryHoldPolicy() : base()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryHoldPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryHoldPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryHoldPolicy();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "contentQuery", n => { ContentQuery = n.GetStringValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.SiteSource>(Microsoft.Graph.Beta.Models.Security.SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.UserSource>(Microsoft.Graph.Beta.Models.Security.UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -123,8 +123,8 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("contentQuery", ContentQuery);
             writer.WriteCollectionOfPrimitiveValues<string>("errors", Errors);
             writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteCollectionOfObjectValues<SiteSource>("siteSources", SiteSources);
-            writer.WriteCollectionOfObjectValues<UserSource>("userSources", UserSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.SiteSource>("siteSources", SiteSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.UserSource>("userSources", UserSources);
         }
     }
 }

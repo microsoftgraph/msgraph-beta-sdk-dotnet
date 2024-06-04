@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The teamsApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamsApp>? TeamsApps
+        public List<Microsoft.Graph.Beta.Models.TeamsApp>? TeamsApps
         {
-            get { return BackingStore?.Get<List<TeamsApp>?>("teamsApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamsApp>?>("teamsApps"); }
             set { BackingStore?.Set("teamsApps", value); }
         }
 #nullable restore
 #else
-        public List<TeamsApp> TeamsApps
+        public List<Microsoft.Graph.Beta.Models.TeamsApp> TeamsApps
         {
-            get { return BackingStore?.Get<List<TeamsApp>>("teamsApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamsApp>>("teamsApps"); }
             set { BackingStore?.Set("teamsApps", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppCatalogs"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppCatalogs"/> and sets the default values.
         /// </summary>
         public AppCatalogs()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppCatalogs"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppCatalogs"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppCatalogs CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AppCatalogs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppCatalogs();
+            return new Microsoft.Graph.Beta.Models.AppCatalogs();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "teamsApps", n => { TeamsApps = n.GetCollectionOfObjectValues<TeamsApp>(TeamsApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "teamsApps", n => { TeamsApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<TeamsApp>("teamsApps", TeamsApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApps", TeamsApps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

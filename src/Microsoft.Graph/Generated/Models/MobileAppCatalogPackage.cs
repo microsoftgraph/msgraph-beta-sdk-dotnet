@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// mobileAppCatalogPackage is an abstract type that application catalog package entities derive from. A mobileAppCatalogPackage entity contains information about an application catalog package that can be deployed to Intune-managed devices.
     /// </summary>
-    public class MobileAppCatalogPackage : Entity, IParsable
+    public class MobileAppCatalogPackage : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The name of the product (example: &quot;Fabrikam for Business&quot;). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,16 +78,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppCatalogPackage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppCatalogPackage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppCatalogPackage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppCatalogPackage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.win32MobileAppCatalogPackage" => new Win32MobileAppCatalogPackage(),
-                _ => new MobileAppCatalogPackage(),
+                "#microsoft.graph.win32MobileAppCatalogPackage" => new Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage(),
+                _ => new Microsoft.Graph.Beta.Models.MobileAppCatalogPackage(),
             };
         }
         /// <summary>

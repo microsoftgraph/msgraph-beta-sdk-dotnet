@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewInstanceDecisionItemTarget"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget"/> and sets the default values.
         /// </summary>
         public AccessReviewInstanceDecisionItemTarget()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewInstanceDecisionItemTarget"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessReviewInstanceDecisionItemTarget CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalTarget" => new AccessReviewInstanceDecisionItemServicePrincipalTarget(),
-                "#microsoft.graph.accessReviewInstanceDecisionItemUserTarget" => new AccessReviewInstanceDecisionItemUserTarget(),
-                _ => new AccessReviewInstanceDecisionItemTarget(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalTarget" => new Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemServicePrincipalTarget(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemUserTarget" => new Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemUserTarget(),
+                _ => new Microsoft.Graph.Beta.Models.AccessReviewInstanceDecisionItemTarget(),
             };
         }
         /// <summary>

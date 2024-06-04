@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
     /// </summary>
-    public class RoleAssignment : Entity, IParsable
+    public class RoleAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Description of the Role Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,24 +92,24 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specifies the type of scope for a Role Assignment.</summary>
-        public RoleAssignmentScopeType? ScopeType
+        public Microsoft.Graph.Beta.Models.RoleAssignmentScopeType? ScopeType
         {
-            get { return BackingStore?.Get<RoleAssignmentScopeType?>("scopeType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleAssignmentScopeType?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceAndAppManagementRoleAssignment" => new DeviceAndAppManagementRoleAssignment(),
-                _ => new RoleAssignment(),
+                "#microsoft.graph.deviceAndAppManagementRoleAssignment" => new Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment(),
+                _ => new Microsoft.Graph.Beta.Models.RoleAssignment(),
             };
         }
         /// <summary>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.RoleDefinition>(Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue); } },
                 { "scopeMembers", n => { ScopeMembers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "scopeType", n => { ScopeType = n.GetEnumValue<RoleAssignmentScopeType>(); } },
+                { "scopeType", n => { ScopeType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RoleAssignmentScopeType>(); } },
             };
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeMembers", ScopeMembers);
-            writer.WriteEnumValue<RoleAssignmentScopeType>("scopeType", ScopeType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RoleAssignmentScopeType>("scopeType", ScopeType);
         }
     }
 }

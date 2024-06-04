@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
     /// </summary>
-    public class DefaultManagedAppProtection : ManagedAppProtection, IParsable
+    public class DefaultManagedAppProtection : Microsoft.Graph.Beta.Models.ManagedAppProtection, IParsable
     {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,84 +66,84 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowWidgetContentSync", value); }
         }
         /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
             set { BackingStore?.Set("appActionIfAccountIsClockedOut", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidDeviceManufacturerNotAllowed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAndroidDeviceManufacturerNotAllowed"); }
             set { BackingStore?.Set("appActionIfAndroidDeviceManufacturerNotAllowed", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAndroidDeviceModelNotAllowed
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidDeviceModelNotAllowed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAndroidDeviceModelNotAllowed"); }
             set { BackingStore?.Set("appActionIfAndroidDeviceModelNotAllowed", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAndroidSafetyNetAppsVerificationFailed
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetAppsVerificationFailed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetAppsVerificationFailed"); }
             set { BackingStore?.Set("appActionIfAndroidSafetyNetAppsVerificationFailed", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetDeviceAttestationFailed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAndroidSafetyNetDeviceAttestationFailed"); }
             set { BackingStore?.Set("appActionIfAndroidSafetyNetDeviceAttestationFailed", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDeviceLockNotSet
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDeviceLockNotSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDeviceLockNotSet"); }
             set { BackingStore?.Set("appActionIfDeviceLockNotSet", value); }
         }
         /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanHigh"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanHigh"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanHigh", value); }
         }
         /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanLow"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanLow"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanLow", value); }
         }
         /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanMedium"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanMedium"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanMedium", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfIosDeviceModelNotAllowed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfIosDeviceModelNotAllowed"); }
             set { BackingStore?.Set("appActionIfIosDeviceModelNotAllowed", value); }
         }
         /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
-        public ManagedAppDataEncryptionType? AppDataEncryptionType
+        public Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType? AppDataEncryptionType
         {
-            get { return BackingStore?.Get<ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
             set { BackingStore?.Set("appDataEncryptionType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp>? Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp> Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #endif
@@ -264,16 +264,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A set of string key and string value pairs to be sent to the affected users, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #endif
@@ -286,16 +286,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary? DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
@@ -326,32 +326,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? ExemptedAppPackages
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? ExemptedAppPackages
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("exemptedAppPackages"); }
             set { BackingStore?.Set("exemptedAppPackages", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> ExemptedAppPackages
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> ExemptedAppPackages
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("exemptedAppPackages"); }
             set { BackingStore?.Set("exemptedAppPackages", value); }
         }
 #endif
         /// <summary>iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? ExemptedAppProtocols
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? ExemptedAppProtocols
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppProtocols"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> ExemptedAppProtocols
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> ExemptedAppProtocols
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppProtocols"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
 #endif
@@ -578,21 +578,21 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requireClass3Biometrics", value); }
         }
         /// <summary>An admin enforced Android SafetyNet Device Attestation requirement on a managed app.</summary>
-        public AndroidManagedAppSafetyNetAppsVerificationType? RequiredAndroidSafetyNetAppsVerificationType
+        public Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetAppsVerificationType? RequiredAndroidSafetyNetAppsVerificationType
         {
-            get { return BackingStore?.Get<AndroidManagedAppSafetyNetAppsVerificationType?>("requiredAndroidSafetyNetAppsVerificationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetAppsVerificationType?>("requiredAndroidSafetyNetAppsVerificationType"); }
             set { BackingStore?.Set("requiredAndroidSafetyNetAppsVerificationType", value); }
         }
         /// <summary>An admin enforced Android SafetyNet Device Attestation requirement on a managed app.</summary>
-        public AndroidManagedAppSafetyNetDeviceAttestationType? RequiredAndroidSafetyNetDeviceAttestationType
+        public Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetDeviceAttestationType? RequiredAndroidSafetyNetDeviceAttestationType
         {
-            get { return BackingStore?.Get<AndroidManagedAppSafetyNetDeviceAttestationType?>("requiredAndroidSafetyNetDeviceAttestationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetDeviceAttestationType?>("requiredAndroidSafetyNetDeviceAttestationType"); }
             set { BackingStore?.Set("requiredAndroidSafetyNetDeviceAttestationType", value); }
         }
         /// <summary>An admin enforced Android SafetyNet evaluation type requirement on a managed app.</summary>
-        public AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType
+        public Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetEvaluationType? RequiredAndroidSafetyNetEvaluationType
         {
-            get { return BackingStore?.Get<AndroidManagedAppSafetyNetEvaluationType?>("requiredAndroidSafetyNetEvaluationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetEvaluationType?>("requiredAndroidSafetyNetEvaluationType"); }
             set { BackingStore?.Set("requiredAndroidSafetyNetEvaluationType", value); }
         }
         /// <summary>A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.</summary>
@@ -626,7 +626,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wipeAfterCompanyPortalUpdateDeferralInDays", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DefaultManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DefaultManagedAppProtection"/> and sets the default values.
         /// </summary>
         public DefaultManagedAppProtection() : base()
         {
@@ -635,12 +635,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DefaultManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DefaultManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DefaultManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DefaultManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DefaultManagedAppProtection();
+            return new Microsoft.Graph.Beta.Models.DefaultManagedAppProtection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -654,18 +654,18 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowedAndroidDeviceManufacturers", n => { AllowedAndroidDeviceManufacturers = n.GetStringValue(); } },
                 { "allowedAndroidDeviceModels", n => { AllowedAndroidDeviceModels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "allowedIosDeviceModels", n => { AllowedIosDeviceModels = n.GetStringValue(); } },
-                { "appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfAndroidDeviceManufacturerNotAllowed", n => { AppActionIfAndroidDeviceManufacturerNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfAndroidDeviceModelNotAllowed", n => { AppActionIfAndroidDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfAndroidSafetyNetAppsVerificationFailed", n => { AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfAndroidSafetyNetDeviceAttestationFailed", n => { AppActionIfAndroidSafetyNetDeviceAttestationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfDeviceLockNotSet", n => { AppActionIfDeviceLockNotSet = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfDevicePasscodeComplexityLessThanHigh", n => { AppActionIfDevicePasscodeComplexityLessThanHigh = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfDevicePasscodeComplexityLessThanLow", n => { AppActionIfDevicePasscodeComplexityLessThanLow = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfDevicePasscodeComplexityLessThanMedium", n => { AppActionIfDevicePasscodeComplexityLessThanMedium = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfAndroidDeviceManufacturerNotAllowed", n => { AppActionIfAndroidDeviceManufacturerNotAllowed = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfAndroidDeviceModelNotAllowed", n => { AppActionIfAndroidDeviceModelNotAllowed = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfAndroidSafetyNetAppsVerificationFailed", n => { AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfAndroidSafetyNetDeviceAttestationFailed", n => { AppActionIfAndroidSafetyNetDeviceAttestationFailed = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfDeviceLockNotSet", n => { AppActionIfDeviceLockNotSet = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfDevicePasscodeComplexityLessThanHigh", n => { AppActionIfDevicePasscodeComplexityLessThanHigh = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfDevicePasscodeComplexityLessThanLow", n => { AppActionIfDevicePasscodeComplexityLessThanLow = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfDevicePasscodeComplexityLessThanMedium", n => { AppActionIfDevicePasscodeComplexityLessThanMedium = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>(Microsoft.Graph.Beta.Models.ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "biometricAuthenticationBlocked", n => { BiometricAuthenticationBlocked = n.GetBoolValue(); } },
                 { "blockAfterCompanyPortalUpdateDeferralInDays", n => { BlockAfterCompanyPortalUpdateDeferralInDays = n.GetIntValue(); } },
                 { "connectToVpnOnLaunch", n => { ConnectToVpnOnLaunch = n.GetBoolValue(); } },
@@ -675,15 +675,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "customDialerAppDisplayName", n => { CustomDialerAppDisplayName = n.GetStringValue(); } },
                 { "customDialerAppPackageId", n => { CustomDialerAppPackageId = n.GetStringValue(); } },
                 { "customDialerAppProtocol", n => { CustomDialerAppProtocol = n.GetStringValue(); } },
-                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>(Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 { "deviceLockRequired", n => { DeviceLockRequired = n.GetBoolValue(); } },
                 { "disableAppEncryptionIfDeviceEncryptionIsEnabled", n => { DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
                 { "disableProtectionOfManagedOutboundOpenInData", n => { DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
                 { "encryptAppData", n => { EncryptAppData = n.GetBoolValue(); } },
-                { "exemptedAppPackages", n => { ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "exemptedAppProtocols", n => { ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exemptedAppPackages", n => { ExemptedAppPackages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exemptedAppProtocols", n => { ExemptedAppProtocols = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
                 { "filterOpenInToOnlyManagedApps", n => { FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
                 { "fingerprintAndBiometricEnabled", n => { FingerprintAndBiometricEnabled = n.GetBoolValue(); } },
@@ -702,9 +702,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "protectInboundDataFromUnknownSources", n => { ProtectInboundDataFromUnknownSources = n.GetBoolValue(); } },
                 { "requireClass3Biometrics", n => { RequireClass3Biometrics = n.GetBoolValue(); } },
                 { "requirePinAfterBiometricChange", n => { RequirePinAfterBiometricChange = n.GetBoolValue(); } },
-                { "requiredAndroidSafetyNetAppsVerificationType", n => { RequiredAndroidSafetyNetAppsVerificationType = n.GetEnumValue<AndroidManagedAppSafetyNetAppsVerificationType>(); } },
-                { "requiredAndroidSafetyNetDeviceAttestationType", n => { RequiredAndroidSafetyNetDeviceAttestationType = n.GetEnumValue<AndroidManagedAppSafetyNetDeviceAttestationType>(); } },
-                { "requiredAndroidSafetyNetEvaluationType", n => { RequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidManagedAppSafetyNetEvaluationType>(); } },
+                { "requiredAndroidSafetyNetAppsVerificationType", n => { RequiredAndroidSafetyNetAppsVerificationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetAppsVerificationType>(); } },
+                { "requiredAndroidSafetyNetDeviceAttestationType", n => { RequiredAndroidSafetyNetDeviceAttestationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetDeviceAttestationType>(); } },
+                { "requiredAndroidSafetyNetEvaluationType", n => { RequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetEvaluationType>(); } },
                 { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
                 { "thirdPartyKeyboardsBlocked", n => { ThirdPartyKeyboardsBlocked = n.GetBoolValue(); } },
                 { "warnAfterCompanyPortalUpdateDeferralInDays", n => { WarnAfterCompanyPortalUpdateDeferralInDays = n.GetIntValue(); } },
@@ -723,18 +723,18 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedAndroidDeviceModels", AllowedAndroidDeviceModels);
             writer.WriteStringValue("allowedIosDeviceModels", AllowedIosDeviceModels);
             writer.WriteBoolValue("allowWidgetContentSync", AllowWidgetContentSync);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAccountIsClockedOut", AppActionIfAccountIsClockedOut);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidDeviceManufacturerNotAllowed", AppActionIfAndroidDeviceManufacturerNotAllowed);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidDeviceModelNotAllowed", AppActionIfAndroidDeviceModelNotAllowed);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetAppsVerificationFailed", AppActionIfAndroidSafetyNetAppsVerificationFailed);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetDeviceAttestationFailed", AppActionIfAndroidSafetyNetDeviceAttestationFailed);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDeviceLockNotSet", AppActionIfDeviceLockNotSet);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanHigh", AppActionIfDevicePasscodeComplexityLessThanHigh);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanLow", AppActionIfDevicePasscodeComplexityLessThanLow);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanMedium", AppActionIfDevicePasscodeComplexityLessThanMedium);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfIosDeviceModelNotAllowed", AppActionIfIosDeviceModelNotAllowed);
-            writer.WriteEnumValue<ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
-            writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAccountIsClockedOut", AppActionIfAccountIsClockedOut);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidDeviceManufacturerNotAllowed", AppActionIfAndroidDeviceManufacturerNotAllowed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidDeviceModelNotAllowed", AppActionIfAndroidDeviceModelNotAllowed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidSafetyNetAppsVerificationFailed", AppActionIfAndroidSafetyNetAppsVerificationFailed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAndroidSafetyNetDeviceAttestationFailed", AppActionIfAndroidSafetyNetDeviceAttestationFailed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDeviceLockNotSet", AppActionIfDeviceLockNotSet);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanHigh", AppActionIfDevicePasscodeComplexityLessThanHigh);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanLow", AppActionIfDevicePasscodeComplexityLessThanLow);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanMedium", AppActionIfDevicePasscodeComplexityLessThanMedium);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfIosDeviceModelNotAllowed", AppActionIfIosDeviceModelNotAllowed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>("apps", Apps);
             writer.WriteBoolValue("biometricAuthenticationBlocked", BiometricAuthenticationBlocked);
             writer.WriteIntValue("blockAfterCompanyPortalUpdateDeferralInDays", BlockAfterCompanyPortalUpdateDeferralInDays);
             writer.WriteBoolValue("connectToVpnOnLaunch", ConnectToVpnOnLaunch);
@@ -744,15 +744,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("customDialerAppDisplayName", CustomDialerAppDisplayName);
             writer.WriteStringValue("customDialerAppPackageId", CustomDialerAppPackageId);
             writer.WriteStringValue("customDialerAppProtocol", CustomDialerAppProtocol);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("customSettings", CustomSettings);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
-            writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("deviceLockRequired", DeviceLockRequired);
             writer.WriteBoolValue("disableAppEncryptionIfDeviceEncryptionIsEnabled", DisableAppEncryptionIfDeviceEncryptionIsEnabled);
             writer.WriteBoolValue("disableProtectionOfManagedOutboundOpenInData", DisableProtectionOfManagedOutboundOpenInData);
             writer.WriteBoolValue("encryptAppData", EncryptAppData);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);
             writer.WriteBoolValue("fingerprintAndBiometricEnabled", FingerprintAndBiometricEnabled);
@@ -770,9 +770,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("minimumWipeSdkVersion", MinimumWipeSdkVersion);
             writer.WriteBoolValue("protectInboundDataFromUnknownSources", ProtectInboundDataFromUnknownSources);
             writer.WriteBoolValue("requireClass3Biometrics", RequireClass3Biometrics);
-            writer.WriteEnumValue<AndroidManagedAppSafetyNetAppsVerificationType>("requiredAndroidSafetyNetAppsVerificationType", RequiredAndroidSafetyNetAppsVerificationType);
-            writer.WriteEnumValue<AndroidManagedAppSafetyNetDeviceAttestationType>("requiredAndroidSafetyNetDeviceAttestationType", RequiredAndroidSafetyNetDeviceAttestationType);
-            writer.WriteEnumValue<AndroidManagedAppSafetyNetEvaluationType>("requiredAndroidSafetyNetEvaluationType", RequiredAndroidSafetyNetEvaluationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetAppsVerificationType>("requiredAndroidSafetyNetAppsVerificationType", RequiredAndroidSafetyNetAppsVerificationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetDeviceAttestationType>("requiredAndroidSafetyNetDeviceAttestationType", RequiredAndroidSafetyNetDeviceAttestationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedAppSafetyNetEvaluationType>("requiredAndroidSafetyNetEvaluationType", RequiredAndroidSafetyNetEvaluationType);
             writer.WriteBoolValue("requirePinAfterBiometricChange", RequirePinAfterBiometricChange);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
             writer.WriteBoolValue("thirdPartyKeyboardsBlocked", ThirdPartyKeyboardsBlocked);

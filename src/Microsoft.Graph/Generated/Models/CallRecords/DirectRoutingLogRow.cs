@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class DirectRoutingLogRow : CallLogRow, IParsable
+    public class DirectRoutingLogRow : Microsoft.Graph.Beta.Models.CallRecords.CallLogRow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of the user or bot who received the call (E.164 format, but might include more data).</summary>
@@ -227,12 +227,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectRoutingLogRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.DirectRoutingLogRow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectRoutingLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.DirectRoutingLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectRoutingLogRow();
+            return new Microsoft.Graph.Beta.Models.CallRecords.DirectRoutingLogRow();
         }
         /// <summary>
         /// The deserialization information for the current model

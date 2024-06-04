@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationIdentitySynchronizationConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration"/> and sets the default values.
         /// </summary>
         public EducationIdentitySynchronizationConfiguration()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationIdentitySynchronizationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EducationIdentitySynchronizationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.educationIdentityCreationConfiguration" => new EducationIdentityCreationConfiguration(),
-                "#microsoft.graph.educationIdentityMatchingConfiguration" => new EducationIdentityMatchingConfiguration(),
-                _ => new EducationIdentitySynchronizationConfiguration(),
+                "#microsoft.graph.educationIdentityCreationConfiguration" => new Microsoft.Graph.Beta.Models.EducationIdentityCreationConfiguration(),
+                "#microsoft.graph.educationIdentityMatchingConfiguration" => new Microsoft.Graph.Beta.Models.EducationIdentityMatchingConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration(),
             };
         }
         /// <summary>

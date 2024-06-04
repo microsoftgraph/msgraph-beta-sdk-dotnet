@@ -65,13 +65,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Connector health state for connector status</summary>
-        public ConnectorHealthState? Status
+        public Microsoft.Graph.Beta.Models.ConnectorHealthState? Status
         {
-            get { return BackingStore?.Get<ConnectorHealthState?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorHealthState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConnectorStatusDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConnectorStatusDetails"/> and sets the default values.
         /// </summary>
         public ConnectorStatusDetails()
         {
@@ -81,12 +81,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConnectorStatusDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConnectorStatusDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConnectorStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConnectorStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConnectorStatusDetails();
+            return new Microsoft.Graph.Beta.Models.ConnectorStatusDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,10 +97,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "connectorInstanceId", n => { ConnectorInstanceId = n.GetStringValue(); } },
-                { "connectorName", n => { ConnectorName = n.GetEnumValue<ConnectorName>(); } },
+                { "connectorName", n => { ConnectorName = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConnectorName>(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ConnectorHealthState>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConnectorHealthState>(); } },
             };
         }
         /// <summary>
@@ -111,10 +111,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connectorInstanceId", ConnectorInstanceId);
-            writer.WriteEnumValue<ConnectorName>("connectorName", ConnectorName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConnectorName>("connectorName", ConnectorName);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ConnectorHealthState>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConnectorHealthState>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -24,42 +24,42 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
     public class LifecycleWorkflowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public CustomTaskExtensionsRequestBuilder CustomTaskExtensions
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder CustomTaskExtensions
         {
-            get => new CustomTaskExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.CustomTaskExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public DeletedItemsRequestBuilder DeletedItems
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.DeletedItemsRequestBuilder DeletedItems
         {
-            get => new DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public InsightsRequestBuilder Insights
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder Insights
         {
-            get => new InsightsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public SettingsRequestBuilder Settings
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings.SettingsRequestBuilder Settings
         {
-            get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public TaskDefinitionsRequestBuilder TaskDefinitions
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinitions.TaskDefinitionsRequestBuilder TaskDefinitions
         {
-            get => new TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinitions.TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public WorkflowsRequestBuilder Workflows
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.WorkflowsRequestBuilder Workflows
         {
-            get => new WorkflowsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.WorkflowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
-        public WorkflowTemplatesRequestBuilder WorkflowTemplates
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.WorkflowTemplatesRequestBuilder WorkflowTemplates
         {
-            get => new WorkflowTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTemplates.WorkflowTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LifecycleWorkflowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LifecycleWorkflowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,57 +92,57 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get lifecycleWorkflows from identityGovernance
         /// </summary>
-        /// <returns>A <see cref="LifecycleWorkflowsContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LifecycleWorkflowsContainer?> GetAsync(Action<RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LifecycleWorkflowsContainer> GetAsync(Action<RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LifecycleWorkflowsContainer>(requestInfo, LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property lifecycleWorkflows in identityGovernance
         /// </summary>
-        /// <returns>A <see cref="LifecycleWorkflowsContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LifecycleWorkflowsContainer?> PatchAsync(LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer?> PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LifecycleWorkflowsContainer> PatchAsync(LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer> PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LifecycleWorkflowsContainer>(requestInfo, LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property lifecycleWorkflows for identityGovernance
@@ -170,11 +170,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowsContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -207,11 +207,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LifecycleWorkflowsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LifecycleWorkflowsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder WithUrl(string rawUrl)
         {
-            return new LifecycleWorkflowsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LifecycleWorkflowsRequestBuilderGetRequestConfiguration : RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters>
+        public class LifecycleWorkflowsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.LifecycleWorkflowsRequestBuilder.LifecycleWorkflowsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The sharingAbilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharePointSharingAbilities? SharingAbilities
+        public Microsoft.Graph.Beta.Models.SharePointSharingAbilities? SharingAbilities
         {
-            get { return BackingStore?.Get<SharePointSharingAbilities?>("sharingAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharePointSharingAbilities?>("sharingAbilities"); }
             set { BackingStore?.Set("sharingAbilities", value); }
         }
 #nullable restore
 #else
-        public SharePointSharingAbilities SharingAbilities
+        public Microsoft.Graph.Beta.Models.SharePointSharingAbilities SharingAbilities
         {
-            get { return BackingStore?.Get<SharePointSharingAbilities>("sharingAbilities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharePointSharingAbilities>("sharingAbilities"); }
             set { BackingStore?.Set("sharingAbilities", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SharingViewpoint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SharingViewpoint"/> and sets the default values.
         /// </summary>
         public SharingViewpoint()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharingViewpoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SharingViewpoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharingViewpoint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SharingViewpoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharingViewpoint();
+            return new Microsoft.Graph.Beta.Models.SharingViewpoint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "defaultSharingLink", n => { DefaultSharingLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultSharingLink>(Microsoft.Graph.Beta.Models.DefaultSharingLink.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sharingAbilities", n => { SharingAbilities = n.GetObjectValue<SharePointSharingAbilities>(SharePointSharingAbilities.CreateFromDiscriminatorValue); } },
+                { "sharingAbilities", n => { SharingAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharePointSharingAbilities>(Microsoft.Graph.Beta.Models.SharePointSharingAbilities.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DefaultSharingLink>("defaultSharingLink", DefaultSharingLink);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SharePointSharingAbilities>("sharingAbilities", SharingAbilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharePointSharingAbilities>("sharingAbilities", SharingAbilities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

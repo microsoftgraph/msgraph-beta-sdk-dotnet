@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PersonInterest : ItemFacet, IParsable
+    public class PersonInterest : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains categories a user has associated with the interest (for example, personal, recipies).</summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PersonInterest"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PersonInterest"/> and sets the default values.
         /// </summary>
         public PersonInterest() : base()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PersonInterest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonInterest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PersonInterest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PersonInterest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PersonInterest();
+            return new Microsoft.Graph.Beta.Models.PersonInterest();
         }
         /// <summary>
         /// The deserialization information for the current model

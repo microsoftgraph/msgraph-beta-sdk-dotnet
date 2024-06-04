@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
     public class BusinessScenariosRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.</summary>
         /// <param name="position">The unique identifier of businessScenario</param>
-        /// <returns>A <see cref="BusinessScenarioItemRequestBuilder"/></returns>
-        public BusinessScenarioItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.BusinessScenarioItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.BusinessScenarioItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("businessScenario%2Did", position);
-                return new BusinessScenarioItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.BusinessScenarioItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BusinessScenariosRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BusinessScenariosRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
         /// Get a list of all businessScenario objects in an organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessScenarioCollectionResponse?> GetAsync(Action<RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenarioCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder.BusinessScenariosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BusinessScenarioCollectionResponse> GetAsync(Action<RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenarioCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder.BusinessScenariosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BusinessScenarioCollectionResponse>(requestInfo, BusinessScenarioCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BusinessScenarioCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.BusinessScenarioCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new businessScenario object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="BusinessScenario"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenario"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessScenario?> PostAsync(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenario?> PostAsync(Microsoft.Graph.Beta.Models.BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BusinessScenario> PostAsync(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenario> PostAsync(Microsoft.Graph.Beta.Models.BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BusinessScenario>(requestInfo, Microsoft.Graph.Beta.Models.BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of all businessScenario objects in an organization.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder.BusinessScenariosRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder.BusinessScenariosRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BusinessScenariosRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BusinessScenariosRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder WithUrl(string rawUrl)
         {
-            return new BusinessScenariosRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of all businessScenario objects in an organization.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessScenariosRequestBuilderGetRequestConfiguration : RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters>
+        public class BusinessScenariosRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.BusinessScenariosRequestBuilder.BusinessScenariosRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

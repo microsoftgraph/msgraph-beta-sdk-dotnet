@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The number1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number1
+        public Microsoft.Graph.Beta.Models.Json? Number1
         {
-            get { return BackingStore?.Get<Json?>("number1"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number1"); }
             set { BackingStore?.Set("number1", value); }
         }
 #nullable restore
 #else
-        public Json Number1
+        public Microsoft.Graph.Beta.Models.Json Number1
         {
-            get { return BackingStore?.Get<Json>("number1"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number1"); }
             set { BackingStore?.Set("number1", value); }
         }
 #endif
         /// <summary>The number2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number2
+        public Microsoft.Graph.Beta.Models.Json? Number2
         {
-            get { return BackingStore?.Get<Json?>("number2"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number2"); }
             set { BackingStore?.Set("number2", value); }
         }
 #nullable restore
 #else
-        public Json Number2
+        public Microsoft.Graph.Beta.Models.Json Number2
         {
-            get { return BackingStore?.Get<Json>("number2"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number2"); }
             set { BackingStore?.Set("number2", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BitorPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Bitor.BitorPostRequestBody"/> and sets the default values.
         /// </summary>
         public BitorPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitorPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Bitor.BitorPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BitorPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Bitor.BitorPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitorPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Bitor.BitorPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "number1", n => { Number1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "number2", n => { Number2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number1", n => { Number1 = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "number2", n => { Number2 = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("number1", Number1);
-            writer.WriteObjectValue<Json>("number2", Number2);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number1", Number1);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number2", Number2);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

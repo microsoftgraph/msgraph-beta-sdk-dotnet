@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey
     public class GetActiveKeyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetActiveKeyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetActiveKeyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,25 +36,25 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey
         /// Get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-getactivekey?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="TrustFrameworkKey"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustFrameworkKey"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TrustFrameworkKey?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TrustFrameworkKey?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TrustFrameworkKey> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TrustFrameworkKey> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TrustFrameworkKey>(requestInfo, TrustFrameworkKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFrameworkKey>(requestInfo, Microsoft.Graph.Beta.Models.TrustFrameworkKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetActiveKeyRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetActiveKeyRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetActiveKeyRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

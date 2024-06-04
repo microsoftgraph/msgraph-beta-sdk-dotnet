@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("workloadCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EntitiesSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.EntitiesSummary"/> and sets the default values.
         /// </summary>
         public EntitiesSummary()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EntitiesSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.EntitiesSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EntitiesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.EntitiesSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EntitiesSummary();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.EntitiesSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 { "deviceCount", n => { DeviceCount = n.GetLongValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>(); } },
                 { "userCount", n => { UserCount = n.GetLongValue(); } },
                 { "workloadCount", n => { WorkloadCount = n.GetLongValue(); } },
             };
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>("trafficType", TrafficType);
             writer.WriteLongValue("userCount", UserCount);
             writer.WriteLongValue("workloadCount", WorkloadCount);
             writer.WriteAdditionalData(AdditionalData);

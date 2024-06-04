@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class DisableUserResponseAction : ResponseAction, IParsable
+    public class DisableUserResponseAction : Microsoft.Graph.Beta.Models.Security.ResponseAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier property</summary>
-        public DisableUserEntityIdentifier? Identifier
+        public Microsoft.Graph.Beta.Models.Security.DisableUserEntityIdentifier? Identifier
         {
-            get { return BackingStore?.Get<DisableUserEntityIdentifier?>("identifier"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DisableUserEntityIdentifier?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DisableUserResponseAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.DisableUserResponseAction"/> and sets the default values.
         /// </summary>
         public DisableUserResponseAction() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DisableUserResponseAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.DisableUserResponseAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DisableUserResponseAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.DisableUserResponseAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DisableUserResponseAction();
+            return new Microsoft.Graph.Beta.Models.Security.DisableUserResponseAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "identifier", n => { Identifier = n.GetEnumValue<DisableUserEntityIdentifier>(); } },
+                { "identifier", n => { Identifier = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.DisableUserEntityIdentifier>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DisableUserEntityIdentifier>("identifier", Identifier);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.DisableUserEntityIdentifier>("identifier", Identifier);
         }
     }
 }

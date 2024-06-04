@@ -27,60 +27,60 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
     {
         /// <summary>Provides operations to manage the lastIndexOperation property of the microsoft.graph.ediscovery.dataSourceContainer entity.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public LastIndexOperationRequestBuilder LastIndexOperation
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.LastIndexOperation.LastIndexOperationRequestBuilder LastIndexOperation
         {
-            get => new LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.LastIndexOperation.LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the activate method.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public MicrosoftGraphEdiscoveryActivateRequestBuilder MicrosoftGraphEdiscoveryActivate
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryActivate.MicrosoftGraphEdiscoveryActivateRequestBuilder MicrosoftGraphEdiscoveryActivate
         {
-            get => new MicrosoftGraphEdiscoveryActivateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryActivate.MicrosoftGraphEdiscoveryActivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyHold method.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public MicrosoftGraphEdiscoveryApplyHoldRequestBuilder MicrosoftGraphEdiscoveryApplyHold
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryApplyHold.MicrosoftGraphEdiscoveryApplyHoldRequestBuilder MicrosoftGraphEdiscoveryApplyHold
         {
-            get => new MicrosoftGraphEdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryApplyHold.MicrosoftGraphEdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the release method.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public MicrosoftGraphEdiscoveryReleaseRequestBuilder MicrosoftGraphEdiscoveryRelease
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryRelease.MicrosoftGraphEdiscoveryReleaseRequestBuilder MicrosoftGraphEdiscoveryRelease
         {
-            get => new MicrosoftGraphEdiscoveryReleaseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryRelease.MicrosoftGraphEdiscoveryReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder MicrosoftGraphEdiscoveryRemoveHold
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryRemoveHold.MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder MicrosoftGraphEdiscoveryRemoveHold
         {
-            get => new MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryRemoveHold.MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateIndex method.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder MicrosoftGraphEdiscoveryUpdateIndex
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryUpdateIndex.MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder MicrosoftGraphEdiscoveryUpdateIndex
         {
-            get => new MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryUpdateIndex.MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteSources property of the microsoft.graph.ediscovery.custodian entity.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public SiteSourcesRequestBuilder SiteSources
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSources.SiteSourcesRequestBuilder SiteSources
         {
-            get => new SiteSourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSources.SiteSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public UnifiedGroupSourcesRequestBuilder UnifiedGroupSources
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder UnifiedGroupSources
         {
-            get => new UnifiedGroupSourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources.UnifiedGroupSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSources property of the microsoft.graph.ediscovery.custodian entity.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public UserSourcesRequestBuilder UserSources
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSources.UserSourcesRequestBuilder UserSources
         {
-            get => new UserSourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSources.UserSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustodianItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustodianItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -125,21 +125,21 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.Custodian"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Ediscovery.Custodian?> GetAsync(Action<RequestConfiguration<CustodianItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Ediscovery.Custodian?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder.CustodianItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Ediscovery.Custodian> GetAsync(Action<RequestConfiguration<CustodianItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Ediscovery.Custodian> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder.CustodianItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.Custodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.Custodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -198,11 +198,11 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustodianItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder.CustodianItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CustodianItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder.CustodianItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -236,12 +236,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CustodianItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public CustodianItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new CustodianItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -280,7 +280,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CustodianItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CustodianItemRequestBuilderGetQueryParameters>
+        public class CustodianItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.CustodianItemRequestBuilder.CustodianItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

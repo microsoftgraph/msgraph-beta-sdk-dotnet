@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.</summary>
-        public AuthenticationContextDetail? Detail
+        public Microsoft.Graph.Beta.Models.AuthenticationContextDetail? Detail
         {
-            get { return BackingStore?.Get<AuthenticationContextDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationContextDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The identifier of an authentication context in your tenant.</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationContext"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationContext"/> and sets the default values.
         /// </summary>
         public AuthenticationContext()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationContext"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationContext"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationContext();
+            return new Microsoft.Graph.Beta.Models.AuthenticationContext();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "detail", n => { Detail = n.GetEnumValue<AuthenticationContextDetail>(); } },
+                { "detail", n => { Detail = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationContextDetail>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AuthenticationContextDetail>("detail", Detail);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationContextDetail>("detail", Detail);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export
     public class ExportRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ExportRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExportRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export
         /// <summary>
         /// Invoke function export
         /// </summary>
-        /// <returns>A <see cref="ExportGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExportGetResponse?> GetAsExportGetResponseAsync(Action<RequestConfiguration<ExportRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportGetResponse?> GetAsExportGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExportGetResponse> GetAsExportGetResponseAsync(Action<RequestConfiguration<ExportRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportGetResponse> GetAsExportGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExportGetResponse>(requestInfo, ExportGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportGetResponse>(requestInfo, Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function export
         /// </summary>
-        /// <returns>A <see cref="ExportResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsExportGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExportResponse?> GetAsync(Action<RequestConfiguration<ExportRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExportResponse> GetAsync(Action<RequestConfiguration<ExportRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExportResponse>(requestInfo, ExportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportResponse>(requestInfo, Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function export
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExportRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExportRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ExportRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExportRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder WithUrl(string rawUrl)
         {
-            return new ExportRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function export
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExportRequestBuilderGetRequestConfiguration : RequestConfiguration<ExportRequestBuilderGetQueryParameters>
+        public class ExportRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>
         {
         }
     }

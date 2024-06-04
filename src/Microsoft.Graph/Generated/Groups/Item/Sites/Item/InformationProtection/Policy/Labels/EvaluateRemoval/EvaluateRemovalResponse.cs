@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Poli
 {
     [Obsolete("This class is obsolete. Use EvaluateRemovalPostResponse instead.")]
     #pragma warning disable CS1591
-    public class EvaluateRemovalResponse : EvaluateRemovalPostResponse, IParsable
+    public class EvaluateRemovalResponse : Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluateRemovalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EvaluateRemovalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluateRemovalResponse();
+            return new Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalResponse();
         }
     }
 }

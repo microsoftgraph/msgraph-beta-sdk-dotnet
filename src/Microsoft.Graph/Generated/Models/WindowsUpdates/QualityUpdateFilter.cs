@@ -7,23 +7,23 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class QualityUpdateFilter : WindowsUpdateFilter, IParsable
+    public class QualityUpdateFilter : Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsUpdateFilter, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The cadence property</summary>
-        public QualityUpdateCadence? Cadence
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? Cadence
         {
-            get { return BackingStore?.Get<QualityUpdateCadence?>("cadence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("cadence"); }
             set { BackingStore?.Set("cadence", value); }
         }
         /// <summary>The classification property</summary>
-        public QualityUpdateClassification? Classification
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? Classification
         {
-            get { return BackingStore?.Get<QualityUpdateClassification?>("classification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="QualityUpdateFilter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter"/> and sets the default values.
         /// </summary>
         public QualityUpdateFilter() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QualityUpdateFilter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new QualityUpdateFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QualityUpdateFilter();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateFilter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cadence", n => { Cadence = n.GetEnumValue<QualityUpdateCadence>(); } },
-                { "classification", n => { Classification = n.GetEnumValue<QualityUpdateClassification>(); } },
+                { "cadence", n => { Cadence = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification>(); } },
             };
         }
         /// <summary>
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<QualityUpdateCadence>("cadence", Cadence);
-            writer.WriteEnumValue<QualityUpdateClassification>("classification", Classification);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence>("cadence", Cadence);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification>("classification", Classification);
         }
     }
 }

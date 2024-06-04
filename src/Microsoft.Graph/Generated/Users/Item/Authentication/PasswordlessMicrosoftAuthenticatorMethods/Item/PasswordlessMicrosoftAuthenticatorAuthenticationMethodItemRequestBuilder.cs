@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
     public class PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the device property of the microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod entity.</summary>
-        public DeviceRequestBuilder Device
+        public Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.DeviceRequestBuilder Device
         {
-            get => new DeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.DeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -57,32 +57,32 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// </summary>
-        /// <returns>A <see cref="PasswordlessMicrosoftAuthenticatorAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PasswordlessMicrosoftAuthenticatorAuthenticationMethod?> GetAsync(Action<RequestConfiguration<PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> GetAsync(Action<RequestConfiguration<PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(requestInfo, Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method object.
@@ -110,11 +110,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>
+        public class PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters>
         {
         }
     }

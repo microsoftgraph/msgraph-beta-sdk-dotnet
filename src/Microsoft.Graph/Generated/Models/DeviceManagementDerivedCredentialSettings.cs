@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that describes tenant level settings for derived credentials
     /// </summary>
-    public class DeviceManagementDerivedCredentialSettings : Entity, IParsable
+    public class DeviceManagementDerivedCredentialSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The display name for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,15 +44,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported values for the derived credential issuer.</summary>
-        public DeviceManagementDerivedCredentialIssuer? Issuer
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer? Issuer
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialIssuer?>("issuer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
         /// <summary>Supported values for the notification type to use.</summary>
-        public DeviceManagementDerivedCredentialNotificationType? NotificationType
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType? NotificationType
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialNotificationType?>("notificationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
         /// <summary>The nominal percentage of time before certificate renewal is initiated by the client.</summary>
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementDerivedCredentialSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementDerivedCredentialSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementDerivedCredentialSettings();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "helpUrl", n => { HelpUrl = n.GetStringValue(); } },
-                { "issuer", n => { Issuer = n.GetEnumValue<DeviceManagementDerivedCredentialIssuer>(); } },
-                { "notificationType", n => { NotificationType = n.GetEnumValue<DeviceManagementDerivedCredentialNotificationType>(); } },
+                { "issuer", n => { Issuer = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer>(); } },
+                { "notificationType", n => { NotificationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType>(); } },
                 { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
             };
         }
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("helpUrl", HelpUrl);
-            writer.WriteEnumValue<DeviceManagementDerivedCredentialIssuer>("issuer", Issuer);
-            writer.WriteEnumValue<DeviceManagementDerivedCredentialNotificationType>("notificationType", NotificationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialIssuer>("issuer", Issuer);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialNotificationType>("notificationType", NotificationType);
             writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
         }
     }

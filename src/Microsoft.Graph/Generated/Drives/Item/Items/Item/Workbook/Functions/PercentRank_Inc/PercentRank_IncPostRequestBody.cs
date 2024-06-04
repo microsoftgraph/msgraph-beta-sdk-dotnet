@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Percent
         /// <summary>The array property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Array
+        public Microsoft.Graph.Beta.Models.Json? Array
         {
-            get { return BackingStore?.Get<Json?>("array"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #nullable restore
 #else
-        public Json Array
+        public Microsoft.Graph.Beta.Models.Json Array
         {
-            get { return BackingStore?.Get<Json>("array"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #endif
@@ -39,37 +39,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Percent
         /// <summary>The significance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Significance
+        public Microsoft.Graph.Beta.Models.Json? Significance
         {
-            get { return BackingStore?.Get<Json?>("significance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("significance"); }
             set { BackingStore?.Set("significance", value); }
         }
 #nullable restore
 #else
-        public Json Significance
+        public Microsoft.Graph.Beta.Models.Json Significance
         {
-            get { return BackingStore?.Get<Json>("significance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("significance"); }
             set { BackingStore?.Set("significance", value); }
         }
 #endif
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X
+        public Microsoft.Graph.Beta.Models.Json? X
         {
-            get { return BackingStore?.Get<Json?>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X
+        public Microsoft.Graph.Beta.Models.Json X
         {
-            get { return BackingStore?.Get<Json>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PercentRank_IncPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Inc.PercentRank_IncPostRequestBody"/> and sets the default values.
         /// </summary>
         public PercentRank_IncPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Percent
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PercentRank_IncPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Inc.PercentRank_IncPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PercentRank_IncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Inc.PercentRank_IncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PercentRank_IncPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.PercentRank_Inc.PercentRank_IncPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Percent
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "significance", n => { Significance = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "array", n => { Array = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "significance", n => { Significance = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Percent
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("array", Array);
-            writer.WriteObjectValue<Json>("significance", Significance);
-            writer.WriteObjectValue<Json>("x", X);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("array", Array);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("significance", Significance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("x", X);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

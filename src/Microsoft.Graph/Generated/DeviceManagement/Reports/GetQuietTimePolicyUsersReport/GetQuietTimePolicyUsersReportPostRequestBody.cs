@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersR
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetQuietTimePolicyUsersReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetQuietTimePolicyUsersReportPostRequestBody()
         {
@@ -170,12 +170,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersR
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetQuietTimePolicyUsersReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetQuietTimePolicyUsersReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetQuietTimePolicyUsersReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

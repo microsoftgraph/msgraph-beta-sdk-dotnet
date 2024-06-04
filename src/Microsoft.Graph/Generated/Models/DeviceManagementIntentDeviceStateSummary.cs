@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents device state summary for an intent
     /// </summary>
-    public class DeviceManagementIntentDeviceStateSummary : Entity, IParsable
+    public class DeviceManagementIntentDeviceStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of devices in conflict</summary>
         public int? ConflictCount
@@ -50,12 +50,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntentDeviceStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementIntentDeviceStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementIntentDeviceStateSummary();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

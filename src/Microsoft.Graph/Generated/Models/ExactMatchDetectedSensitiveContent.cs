@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable
+    public class ExactMatchDetectedSensitiveContent : Microsoft.Graph.Beta.Models.DetectedSensitiveContentBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitiveContentLocation>? Matches
+        public List<Microsoft.Graph.Beta.Models.SensitiveContentLocation>? Matches
         {
-            get { return BackingStore?.Get<List<SensitiveContentLocation>?>("matches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveContentLocation>?>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #nullable restore
 #else
-        public List<SensitiveContentLocation> Matches
+        public List<Microsoft.Graph.Beta.Models.SensitiveContentLocation> Matches
         {
-            get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveContentLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExactMatchDetectedSensitiveContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchDetectedSensitiveContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExactMatchDetectedSensitiveContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExactMatchDetectedSensitiveContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExactMatchDetectedSensitiveContent();
+            return new Microsoft.Graph.Beta.Models.ExactMatchDetectedSensitiveContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "matches", n => { Matches = n.GetCollectionOfObjectValues<SensitiveContentLocation>(SensitiveContentLocation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matches", n => { Matches = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveContentLocation>(Microsoft.Graph.Beta.Models.SensitiveContentLocation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SensitiveContentLocation>("matches", Matches);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveContentLocation>("matches", Matches);
         }
     }
 }

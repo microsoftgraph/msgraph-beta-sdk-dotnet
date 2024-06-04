@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
     public class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.External.IndustryData.Runs.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.External.IndustryData.Runs.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getStatistics method.</summary>
-        public MicrosoftGraphIndustryDataGetStatisticsRequestBuilder MicrosoftGraphIndustryDataGetStatistics
+        public Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataGetStatistics.MicrosoftGraphIndustryDataGetStatisticsRequestBuilder MicrosoftGraphIndustryDataGetStatistics
         {
-            get => new MicrosoftGraphIndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataGetStatistics.MicrosoftGraphIndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
         /// <param name="position">The unique identifier of industryDataRun</param>
-        /// <returns>A <see cref="IndustryDataRunItemRequestBuilder"/></returns>
-        public IndustryDataRunItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.Item.IndustryDataRunItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.External.IndustryData.Runs.Item.IndustryDataRunItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("industryDataRun%2Did", position);
-                return new IndustryDataRunItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.External.IndustryData.Runs.Item.IndustryDataRunItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +61,25 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
         /// Get a list of the industryDataRun objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="IndustryDataRunCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IndustryDataRunCollectionResponse?> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IndustryDataRunCollectionResponse> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IndustryDataRunCollectionResponse>(requestInfo, IndustryDataRunCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the industryDataRun objects and their properties.
@@ -88,11 +88,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RunsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RunsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RunsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the industryDataRun objects and their properties.
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RunsRequestBuilderGetRequestConfiguration : RequestConfiguration<RunsRequestBuilderGetQueryParameters>
+        public class RunsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>
         {
         }
     }

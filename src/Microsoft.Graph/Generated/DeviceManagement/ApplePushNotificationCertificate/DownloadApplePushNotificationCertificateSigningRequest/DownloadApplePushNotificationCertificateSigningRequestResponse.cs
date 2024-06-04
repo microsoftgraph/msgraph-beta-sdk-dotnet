@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
 {
     [Obsolete("This class is obsolete. Use DownloadApplePushNotificationCertificateSigningRequestGetResponse instead.")]
     #pragma warning disable CS1591
-    public class DownloadApplePushNotificationCertificateSigningRequestResponse : DownloadApplePushNotificationCertificateSigningRequestGetResponse, IParsable
+    public class DownloadApplePushNotificationCertificateSigningRequestResponse : Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DownloadApplePushNotificationCertificateSigningRequestResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DownloadApplePushNotificationCertificateSigningRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DownloadApplePushNotificationCertificateSigningRequestResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestResponse();
         }
     }
 }

@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionsRequestChange : Entity, IParsable
+    public class PermissionsRequestChange : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.</summary>
-        public PermissionsRequestOccurrenceStatus? ActiveOccurrenceStatus
+        public Microsoft.Graph.Beta.Models.PermissionsRequestOccurrenceStatus? ActiveOccurrenceStatus
         {
-            get { return BackingStore?.Get<PermissionsRequestOccurrenceStatus?>("activeOccurrenceStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsRequestOccurrenceStatus?>("activeOccurrenceStatus"); }
             set { BackingStore?.Set("activeOccurrenceStatus", value); }
         }
         /// <summary>Time when the change occurred.</summary>
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsRequestChange"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsRequestChange"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionsRequestChange CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionsRequestChange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionsRequestChange();
+            return new Microsoft.Graph.Beta.Models.PermissionsRequestChange();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activeOccurrenceStatus", n => { ActiveOccurrenceStatus = n.GetEnumValue<PermissionsRequestOccurrenceStatus>(); } },
+                { "activeOccurrenceStatus", n => { ActiveOccurrenceStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.PermissionsRequestOccurrenceStatus>(); } },
                 { "modificationDateTime", n => { ModificationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "permissionsRequestId", n => { PermissionsRequestId = n.GetStringValue(); } },
-                { "statusDetail", n => { StatusDetail = n.GetEnumValue<StatusDetail>(); } },
+                { "statusDetail", n => { StatusDetail = n.GetEnumValue<Microsoft.Graph.Beta.Models.StatusDetail>(); } },
                 { "ticketId", n => { TicketId = n.GetStringValue(); } },
             };
         }
@@ -93,10 +93,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PermissionsRequestOccurrenceStatus>("activeOccurrenceStatus", ActiveOccurrenceStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PermissionsRequestOccurrenceStatus>("activeOccurrenceStatus", ActiveOccurrenceStatus);
             writer.WriteDateTimeOffsetValue("modificationDateTime", ModificationDateTime);
             writer.WriteStringValue("permissionsRequestId", PermissionsRequestId);
-            writer.WriteEnumValue<StatusDetail>("statusDetail", StatusDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StatusDetail>("statusDetail", StatusDetail);
             writer.WriteStringValue("ticketId", TicketId);
         }
     }

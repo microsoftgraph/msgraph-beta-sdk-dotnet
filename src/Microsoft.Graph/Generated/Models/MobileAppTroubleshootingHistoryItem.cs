@@ -45,21 +45,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails
+        public Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails
         {
-            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails
+        public Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails
         {
-            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MobileAppTroubleshootingHistoryItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem"/> and sets the default values.
         /// </summary>
         public MobileAppTroubleshootingHistoryItem()
         {
@@ -69,20 +69,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppTroubleshootingHistoryItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MobileAppTroubleshootingHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory" => new MobileAppTroubleshootingAppPolicyCreationHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingAppStateHistory" => new MobileAppTroubleshootingAppStateHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingAppTargetHistory" => new MobileAppTroubleshootingAppTargetHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory" => new MobileAppTroubleshootingAppUpdateHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory" => new MobileAppTroubleshootingDeviceCheckinHistory(),
-                _ => new MobileAppTroubleshootingHistoryItem(),
+                "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory" => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppPolicyCreationHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingAppStateHistory" => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppStateHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingAppTargetHistory" => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppTargetHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory" => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppUpdateHistory(),
+                "#microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory" => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingDeviceCheckinHistory(),
+                _ => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem(),
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "occurrenceDateTime", n => { OccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
+                { "troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails>(Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("occurrenceDateTime", OccurrenceDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails", TroubleshootingErrorDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails", TroubleshootingErrorDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

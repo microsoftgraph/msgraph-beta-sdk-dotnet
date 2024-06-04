@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OutlookTaskFolder : Entity, IParsable
+    public class OutlookTaskFolder : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The version of the task folder.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -73,44 +73,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of single-value extended properties defined for the task folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
         /// <summary>The tasks in this task folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTask>? Tasks
+        public List<Microsoft.Graph.Beta.Models.OutlookTask>? Tasks
         {
-            get { return BackingStore?.Get<List<OutlookTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTask> Tasks
+        public List<Microsoft.Graph.Beta.Models.OutlookTask> Tasks
         {
-            get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookTaskFolder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutlookTaskFolder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookTaskFolder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OutlookTaskFolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutlookTaskFolder();
+            return new Microsoft.Graph.Beta.Models.OutlookTaskFolder();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,11 +122,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
                 { "isDefaultFolder", n => { IsDefaultFolder = n.GetBoolValue(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentGroupKey", n => { ParentGroupKey = n.GetGuidValue(); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTask>(Microsoft.Graph.Beta.Models.OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("changeKey", ChangeKey);
             writer.WriteBoolValue("isDefaultFolder", IsDefaultFolder);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("parentGroupKey", ParentGroupKey);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
-            writer.WriteCollectionOfObjectValues<OutlookTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTask>("tasks", Tasks);
         }
     }
 }

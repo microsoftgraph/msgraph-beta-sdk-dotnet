@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
     public class WindowsInformationProtectionDeviceRegistrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of windowsInformationProtectionDeviceRegistration</param>
-        /// <returns>A <see cref="WindowsInformationProtectionDeviceRegistrationItemRequestBuilder"/></returns>
-        public WindowsInformationProtectionDeviceRegistrationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.Item.WindowsInformationProtectionDeviceRegistrationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.Item.WindowsInformationProtectionDeviceRegistrationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("windowsInformationProtectionDeviceRegistration%2Did", position);
-                return new WindowsInformationProtectionDeviceRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.Item.WindowsInformationProtectionDeviceRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionDeviceRegistrationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionDeviceRegistrationCollectionResponse?> GetAsync(Action<RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistrationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder.WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionDeviceRegistrationCollectionResponse> GetAsync(Action<RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistrationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder.WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder.WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder.WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new WindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration : RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>
+        public class WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder.WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>
         {
         }
     }

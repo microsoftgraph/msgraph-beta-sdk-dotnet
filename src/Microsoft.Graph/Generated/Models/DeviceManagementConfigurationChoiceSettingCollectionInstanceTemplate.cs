@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Choice Setting Collection Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable
+    public class DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate, IParsable
     {
         /// <summary>Linked policy may append values which are not present in the template.</summary>
         public bool? AllowUnmanagedValues
@@ -20,21 +20,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Choice Setting Collection Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationChoiceSettingValueTemplate>? ChoiceSettingCollectionValueTemplate
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate>? ChoiceSettingCollectionValueTemplate
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>?>("choiceSettingCollectionValueTemplate"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate>?>("choiceSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>>("choiceSettingCollectionValueTemplate"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate>>("choiceSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate() : base()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowUnmanagedValues", n => { AllowUnmanagedValues = n.GetBoolValue(); } },
-                { "choiceSettingCollectionValueTemplate", n => { ChoiceSettingCollectionValueTemplate = n.GetCollectionOfObjectValues<DeviceManagementConfigurationChoiceSettingValueTemplate>(DeviceManagementConfigurationChoiceSettingValueTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "choiceSettingCollectionValueTemplate", n => { ChoiceSettingCollectionValueTemplate = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowUnmanagedValues", AllowUnmanagedValues);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationChoiceSettingValueTemplate>("choiceSettingCollectionValueTemplate", ChoiceSettingCollectionValueTemplate);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate>("choiceSettingCollectionValueTemplate", ChoiceSettingCollectionValueTemplate);
         }
     }
 }

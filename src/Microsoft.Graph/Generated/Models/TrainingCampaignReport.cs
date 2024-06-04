@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The overview of the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSimulationDetails>? CampaignUsers
+        public List<Microsoft.Graph.Beta.Models.UserSimulationDetails>? CampaignUsers
         {
-            get { return BackingStore?.Get<List<UserSimulationDetails>?>("campaignUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSimulationDetails>?>("campaignUsers"); }
             set { BackingStore?.Set("campaignUsers", value); }
         }
 #nullable restore
 #else
-        public List<UserSimulationDetails> CampaignUsers
+        public List<Microsoft.Graph.Beta.Models.UserSimulationDetails> CampaignUsers
         {
-            get { return BackingStore?.Get<List<UserSimulationDetails>>("campaignUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSimulationDetails>>("campaignUsers"); }
             set { BackingStore?.Set("campaignUsers", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The overview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingCampaignReportOverview? Overview
+        public Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview? Overview
         {
-            get { return BackingStore?.Get<TrainingCampaignReportOverview?>("overview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview?>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
 #nullable restore
 #else
-        public TrainingCampaignReportOverview Overview
+        public Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview Overview
         {
-            get { return BackingStore?.Get<TrainingCampaignReportOverview>("overview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TrainingCampaignReport"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TrainingCampaignReport"/> and sets the default values.
         /// </summary>
         public TrainingCampaignReport()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrainingCampaignReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrainingCampaignReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrainingCampaignReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TrainingCampaignReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrainingCampaignReport();
+            return new Microsoft.Graph.Beta.Models.TrainingCampaignReport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "campaignUsers", n => { CampaignUsers = n.GetCollectionOfObjectValues<UserSimulationDetails>(UserSimulationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "campaignUsers", n => { CampaignUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSimulationDetails>(Microsoft.Graph.Beta.Models.UserSimulationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "overview", n => { Overview = n.GetObjectValue<TrainingCampaignReportOverview>(TrainingCampaignReportOverview.CreateFromDiscriminatorValue); } },
+                { "overview", n => { Overview = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview>(Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<UserSimulationDetails>("campaignUsers", CampaignUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSimulationDetails>("campaignUsers", CampaignUsers);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TrainingCampaignReportOverview>("overview", Overview);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TrainingCampaignReportOverview>("overview", Overview);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

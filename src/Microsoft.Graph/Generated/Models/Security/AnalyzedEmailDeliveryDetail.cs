@@ -12,9 +12,9 @@ namespace Microsoft.Graph.Beta.Models.Security
     #pragma warning restore CS1591
     {
         /// <summary>The delivery action of the email. The possible values are: unknown, deliveredToJunk, delivered, blocked, replaced, unknownFutureValue.</summary>
-        public DeliveryAction? Action
+        public Microsoft.Graph.Beta.Models.Security.DeliveryAction? Action
         {
-            get { return BackingStore?.Get<DeliveryAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DeliveryAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.</summary>
-        public DeliveryLocation? Location
+        public Microsoft.Graph.Beta.Models.Security.DeliveryLocation? Location
         {
-            get { return BackingStore?.Get<DeliveryLocation?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DeliveryLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AnalyzedEmailDeliveryDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail"/> and sets the default values.
         /// </summary>
         public AnalyzedEmailDeliveryDetail()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AnalyzedEmailDeliveryDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AnalyzedEmailDeliveryDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AnalyzedEmailDeliveryDetail();
+            return new Microsoft.Graph.Beta.Models.Security.AnalyzedEmailDeliveryDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<DeliveryAction>(); } },
-                { "location", n => { Location = n.GetEnumValue<DeliveryLocation>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.DeliveryAction>(); } },
+                { "location", n => { Location = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.DeliveryLocation>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DeliveryAction>("action", Action);
-            writer.WriteEnumValue<DeliveryLocation>("location", Location);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.DeliveryAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.DeliveryLocation>("location", Location);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

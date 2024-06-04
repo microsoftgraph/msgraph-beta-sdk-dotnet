@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RecommendedAction>? RecommendedActions
+        public List<Microsoft.Graph.Beta.Models.RecommendedAction>? RecommendedActions
         {
-            get { return BackingStore?.Get<List<RecommendedAction>?>("recommendedActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RecommendedAction>?>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #nullable restore
 #else
-        public List<RecommendedAction> RecommendedActions
+        public List<Microsoft.Graph.Beta.Models.RecommendedAction> RecommendedActions
         {
-            get { return BackingStore?.Get<List<RecommendedAction>>("recommendedActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RecommendedAction>>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #endif
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SimulationReportOverview"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SimulationReportOverview"/> and sets the default values.
         /// </summary>
         public SimulationReportOverview()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SimulationReportOverview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SimulationReportOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SimulationReportOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SimulationReportOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SimulationReportOverview();
+            return new Microsoft.Graph.Beta.Models.SimulationReportOverview();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recommendedActions", n => { RecommendedActions = n.GetCollectionOfObjectValues<RecommendedAction>(RecommendedAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendedActions", n => { RecommendedActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RecommendedAction>(Microsoft.Graph.Beta.Models.RecommendedAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "resolvedTargetsCount", n => { ResolvedTargetsCount = n.GetIntValue(); } },
                 { "simulationEventsContent", n => { SimulationEventsContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.SimulationEventsContent>(Microsoft.Graph.Beta.Models.SimulationEventsContent.CreateFromDiscriminatorValue); } },
                 { "trainingEventsContent", n => { TrainingEventsContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingEventsContent>(Microsoft.Graph.Beta.Models.TrainingEventsContent.CreateFromDiscriminatorValue); } },
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<RecommendedAction>("recommendedActions", RecommendedActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RecommendedAction>("recommendedActions", RecommendedActions);
             writer.WriteIntValue("resolvedTargetsCount", ResolvedTargetsCount);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SimulationEventsContent>("simulationEventsContent", SimulationEventsContent);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TrainingEventsContent>("trainingEventsContent", TrainingEventsContent);

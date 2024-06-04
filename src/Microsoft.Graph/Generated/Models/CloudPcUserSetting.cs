@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcUserSetting : Entity, IParsable
+    public class CloudPcUserSetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserSettingAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserSettingAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The crossRegionDisasterRecoverySetting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcCrossRegionDisasterRecoverySetting? CrossRegionDisasterRecoverySetting
+        public Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting? CrossRegionDisasterRecoverySetting
         {
-            get { return BackingStore?.Get<CloudPcCrossRegionDisasterRecoverySetting?>("crossRegionDisasterRecoverySetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting?>("crossRegionDisasterRecoverySetting"); }
             set { BackingStore?.Set("crossRegionDisasterRecoverySetting", value); }
         }
 #nullable restore
 #else
-        public CloudPcCrossRegionDisasterRecoverySetting CrossRegionDisasterRecoverySetting
+        public Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting CrossRegionDisasterRecoverySetting
         {
-            get { return BackingStore?.Get<CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting"); }
             set { BackingStore?.Set("crossRegionDisasterRecoverySetting", value); }
         }
 #endif
@@ -85,16 +85,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Defines how frequently a restore point is created that is, a snapshot is taken) for users&apos; provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcRestorePointSetting? RestorePointSetting
+        public Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting? RestorePointSetting
         {
-            get { return BackingStore?.Get<CloudPcRestorePointSetting?>("restorePointSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting?>("restorePointSetting"); }
             set { BackingStore?.Set("restorePointSetting", value); }
         }
 #nullable restore
 #else
-        public CloudPcRestorePointSetting RestorePointSetting
+        public Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting RestorePointSetting
         {
-            get { return BackingStore?.Get<CloudPcRestorePointSetting>("restorePointSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting>("restorePointSetting"); }
             set { BackingStore?.Set("restorePointSetting", value); }
         }
 #endif
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcUserSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcUserSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcUserSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcUserSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcUserSetting();
+            return new Microsoft.Graph.Beta.Models.CloudPcUserSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,14 +122,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>(CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment>(Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "crossRegionDisasterRecoverySetting", n => { CrossRegionDisasterRecoverySetting = n.GetObjectValue<CloudPcCrossRegionDisasterRecoverySetting>(CloudPcCrossRegionDisasterRecoverySetting.CreateFromDiscriminatorValue); } },
+                { "crossRegionDisasterRecoverySetting", n => { CrossRegionDisasterRecoverySetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting>(Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
                 { "resetEnabled", n => { ResetEnabled = n.GetBoolValue(); } },
-                { "restorePointSetting", n => { RestorePointSetting = n.GetObjectValue<CloudPcRestorePointSetting>(CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
+                { "restorePointSetting", n => { RestorePointSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting>(Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
                 { "selfServiceEnabled", n => { SelfServiceEnabled = n.GetBoolValue(); } },
             };
         }
@@ -141,14 +141,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CloudPcUserSettingAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcUserSettingAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting", CrossRegionDisasterRecoverySetting);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting", CrossRegionDisasterRecoverySetting);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
             writer.WriteBoolValue("resetEnabled", ResetEnabled);
-            writer.WriteObjectValue<CloudPcRestorePointSetting>("restorePointSetting", RestorePointSetting);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcRestorePointSetting>("restorePointSetting", RestorePointSetting);
             writer.WriteBoolValue("selfServiceEnabled", SelfServiceEnabled);
         }
     }

@@ -87,24 +87,24 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public PolicyStatus? Status
+        public Microsoft.Graph.Beta.Models.Security.PolicyStatus? Status
         {
-            get { return BackingStore?.Get<PolicyStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.PolicyStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.PolicyBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryHoldPolicy" => new EdiscoveryHoldPolicy(),
-                _ => new PolicyBase(),
+                "#microsoft.graph.security.ediscoveryHoldPolicy" => new Microsoft.Graph.Beta.Models.Security.EdiscoveryHoldPolicy(),
+                _ => new Microsoft.Graph.Beta.Models.Security.PolicyBase(),
             };
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<PolicyStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.PolicyStatus>(); } },
             };
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<PolicyStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.PolicyStatus>("status", Status);
         }
     }
 }

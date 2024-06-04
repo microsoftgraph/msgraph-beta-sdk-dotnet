@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values for App update on Windows10 recurrence.</summary>
-        public Windows10AppsUpdateRecurrence? Recurrence
+        public Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<Windows10AppsUpdateRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
         /// <summary>If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.</summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10AppsForceUpdateSchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule"/> and sets the default values.
         /// </summary>
         public Windows10AppsForceUpdateSchedule()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10AppsForceUpdateSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Windows10AppsForceUpdateSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10AppsForceUpdateSchedule();
+            return new Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recurrence", n => { Recurrence = n.GetEnumValue<Windows10AppsUpdateRecurrence>(); } },
+                { "recurrence", n => { Recurrence = n.GetEnumValue<Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence>(); } },
                 { "runImmediatelyIfAfterStartDateTime", n => { RunImmediatelyIfAfterStartDateTime = n.GetBoolValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<Windows10AppsUpdateRecurrence>("recurrence", Recurrence);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Windows10AppsUpdateRecurrence>("recurrence", Recurrence);
             writer.WriteBoolValue("runImmediatelyIfAfterStartDateTime", RunImmediatelyIfAfterStartDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);

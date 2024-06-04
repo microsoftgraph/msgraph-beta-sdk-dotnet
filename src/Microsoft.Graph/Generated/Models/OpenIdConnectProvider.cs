@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OpenIdConnectProvider : IdentityProvider, IParsable
+    public class OpenIdConnectProvider : Microsoft.Graph.Beta.Models.IdentityProvider, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. It&apos;s a required property.</summary>
@@ -59,15 +59,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The responseMode property</summary>
-        public OpenIdConnectResponseMode? ResponseMode
+        public Microsoft.Graph.Beta.Models.OpenIdConnectResponseMode? ResponseMode
         {
-            get { return BackingStore?.Get<OpenIdConnectResponseMode?>("responseMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenIdConnectResponseMode?>("responseMode"); }
             set { BackingStore?.Set("responseMode", value); }
         }
         /// <summary>The responseType property</summary>
-        public OpenIdConnectResponseTypes? ResponseType
+        public Microsoft.Graph.Beta.Models.OpenIdConnectResponseTypes? ResponseType
         {
-            get { return BackingStore?.Get<OpenIdConnectResponseTypes?>("responseType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenIdConnectResponseTypes?>("responseType"); }
             set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>Scope defines the information and permissions you&apos;re looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren&apos;t able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more information about the scope limitations, see RFC6749 Section 3.3. It&apos;s a required property.</summary>
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenIdConnectProvider"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OpenIdConnectProvider"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenIdConnectProvider CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OpenIdConnectProvider CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenIdConnectProvider();
+            return new Microsoft.Graph.Beta.Models.OpenIdConnectProvider();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,8 +107,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "claimsMapping", n => { ClaimsMapping = n.GetObjectValue<Microsoft.Graph.Beta.Models.ClaimsMapping>(Microsoft.Graph.Beta.Models.ClaimsMapping.CreateFromDiscriminatorValue); } },
                 { "domainHint", n => { DomainHint = n.GetStringValue(); } },
                 { "metadataUrl", n => { MetadataUrl = n.GetStringValue(); } },
-                { "responseMode", n => { ResponseMode = n.GetEnumValue<OpenIdConnectResponseMode>(); } },
-                { "responseType", n => { ResponseType = n.GetEnumValue<OpenIdConnectResponseTypes>(); } },
+                { "responseMode", n => { ResponseMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.OpenIdConnectResponseMode>(); } },
+                { "responseType", n => { ResponseType = n.GetEnumValue<Microsoft.Graph.Beta.Models.OpenIdConnectResponseTypes>(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
             };
         }
@@ -123,8 +123,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ClaimsMapping>("claimsMapping", ClaimsMapping);
             writer.WriteStringValue("domainHint", DomainHint);
             writer.WriteStringValue("metadataUrl", MetadataUrl);
-            writer.WriteEnumValue<OpenIdConnectResponseMode>("responseMode", ResponseMode);
-            writer.WriteEnumValue<OpenIdConnectResponseTypes>("responseType", ResponseType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OpenIdConnectResponseMode>("responseMode", ResponseMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OpenIdConnectResponseTypes>("responseType", ResponseType);
             writer.WriteStringValue("scope", Scope);
         }
     }

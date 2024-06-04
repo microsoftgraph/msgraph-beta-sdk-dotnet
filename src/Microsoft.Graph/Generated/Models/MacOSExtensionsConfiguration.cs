@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS extensions configuration profile.
     /// </summary>
-    public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable
+    public class MacOSExtensionsConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>All kernel extensions validly signed by the team identifiers in this list will be allowed to load.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,32 +36,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSKernelExtension>? KernelExtensionsAllowed
+        public List<Microsoft.Graph.Beta.Models.MacOSKernelExtension>? KernelExtensionsAllowed
         {
-            get { return BackingStore?.Get<List<MacOSKernelExtension>?>("kernelExtensionsAllowed"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSKernelExtension>?>("kernelExtensionsAllowed"); }
             set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
 #nullable restore
 #else
-        public List<MacOSKernelExtension> KernelExtensionsAllowed
+        public List<Microsoft.Graph.Beta.Models.MacOSKernelExtension> KernelExtensionsAllowed
         {
-            get { return BackingStore?.Get<List<MacOSKernelExtension>>("kernelExtensionsAllowed"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSKernelExtension>>("kernelExtensionsAllowed"); }
             set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
 #endif
         /// <summary>Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSystemExtension>? SystemExtensionsAllowed
+        public List<Microsoft.Graph.Beta.Models.MacOSSystemExtension>? SystemExtensionsAllowed
         {
-            get { return BackingStore?.Get<List<MacOSSystemExtension>?>("systemExtensionsAllowed"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSystemExtension>?>("systemExtensionsAllowed"); }
             set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSystemExtension> SystemExtensionsAllowed
+        public List<Microsoft.Graph.Beta.Models.MacOSSystemExtension> SystemExtensionsAllowed
         {
-            get { return BackingStore?.Get<List<MacOSSystemExtension>>("systemExtensionsAllowed"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSystemExtension>>("systemExtensionsAllowed"); }
             set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
 #endif
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSystemExtensionTypeMapping>? SystemExtensionsAllowedTypes
+        public List<Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping>? SystemExtensionsAllowedTypes
         {
-            get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>?>("systemExtensionsAllowedTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping>?>("systemExtensionsAllowedTypes"); }
             set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes
+        public List<Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes
         {
-            get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>>("systemExtensionsAllowedTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping>>("systemExtensionsAllowedTypes"); }
             set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
 #endif
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("systemExtensionsBlockOverride", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSExtensionsConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSExtensionsConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSExtensionsConfiguration() : base()
         {
@@ -113,12 +113,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSExtensionsConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSExtensionsConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSExtensionsConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSExtensionsConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSExtensionsConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSExtensionsConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,10 +130,10 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "kernelExtensionAllowedTeamIdentifiers", n => { KernelExtensionAllowedTeamIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "kernelExtensionOverridesAllowed", n => { KernelExtensionOverridesAllowed = n.GetBoolValue(); } },
-                { "kernelExtensionsAllowed", n => { KernelExtensionsAllowed = n.GetCollectionOfObjectValues<MacOSKernelExtension>(MacOSKernelExtension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "systemExtensionsAllowed", n => { SystemExtensionsAllowed = n.GetCollectionOfObjectValues<MacOSSystemExtension>(MacOSSystemExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kernelExtensionsAllowed", n => { KernelExtensionsAllowed = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSKernelExtension>(Microsoft.Graph.Beta.Models.MacOSKernelExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemExtensionsAllowed", n => { SystemExtensionsAllowed = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSystemExtension>(Microsoft.Graph.Beta.Models.MacOSSystemExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "systemExtensionsAllowedTeamIdentifiers", n => { SystemExtensionsAllowedTeamIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "systemExtensionsAllowedTypes", n => { SystemExtensionsAllowedTypes = n.GetCollectionOfObjectValues<MacOSSystemExtensionTypeMapping>(MacOSSystemExtensionTypeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemExtensionsAllowedTypes", n => { SystemExtensionsAllowedTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping>(Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "systemExtensionsBlockOverride", n => { SystemExtensionsBlockOverride = n.GetBoolValue(); } },
             };
         }
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("kernelExtensionAllowedTeamIdentifiers", KernelExtensionAllowedTeamIdentifiers);
             writer.WriteBoolValue("kernelExtensionOverridesAllowed", KernelExtensionOverridesAllowed);
-            writer.WriteCollectionOfObjectValues<MacOSKernelExtension>("kernelExtensionsAllowed", KernelExtensionsAllowed);
-            writer.WriteCollectionOfObjectValues<MacOSSystemExtension>("systemExtensionsAllowed", SystemExtensionsAllowed);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSKernelExtension>("kernelExtensionsAllowed", KernelExtensionsAllowed);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSystemExtension>("systemExtensionsAllowed", SystemExtensionsAllowed);
             writer.WriteCollectionOfPrimitiveValues<string>("systemExtensionsAllowedTeamIdentifiers", SystemExtensionsAllowedTeamIdentifiers);
-            writer.WriteCollectionOfObjectValues<MacOSSystemExtensionTypeMapping>("systemExtensionsAllowedTypes", SystemExtensionsAllowedTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping>("systemExtensionsAllowedTypes", SystemExtensionsAllowedTypes);
             writer.WriteBoolValue("systemExtensionsBlockOverride", SystemExtensionsBlockOverride);
         }
     }

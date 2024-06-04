@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EmbeddedSIMActivationCode"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCode"/> and sets the default values.
         /// </summary>
         public EmbeddedSIMActivationCode()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EmbeddedSIMActivationCode"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCode"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EmbeddedSIMActivationCode CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCode CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EmbeddedSIMActivationCode();
+            return new Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCode();
         }
         /// <summary>
         /// The deserialization information for the current model

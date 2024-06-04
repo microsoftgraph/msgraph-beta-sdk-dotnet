@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
     public class RunSummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RunSummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RunSummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>
         /// Run summary for device management script.
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementScriptRunSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementScriptRunSummary?> GetAsync(Action<RequestConfiguration<RunSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder.RunSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceManagementScriptRunSummary> GetAsync(Action<RequestConfiguration<RunSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder.RunSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceManagementScriptRunSummary>(requestInfo, DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Run summary for device management script.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder.RunSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder.RunSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RunSummaryRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RunSummaryRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder WithUrl(string rawUrl)
         {
-            return new RunSummaryRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Run summary for device management script.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RunSummaryRequestBuilderGetRequestConfiguration : RequestConfiguration<RunSummaryRequestBuilderGetQueryParameters>
+        public class RunSummaryRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary.RunSummaryRequestBuilder.RunSummaryRequestBuilderGetQueryParameters>
         {
         }
     }

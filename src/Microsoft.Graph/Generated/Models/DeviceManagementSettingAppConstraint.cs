@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint enforcing the setting contains only vaild app types.
     /// </summary>
-    public class DeviceManagementSettingAppConstraint : DeviceManagementConstraint, IParsable
+    public class DeviceManagementSettingAppConstraint : Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>Acceptable app types to allow for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementSettingAppConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingAppConstraint"/> and sets the default values.
         /// </summary>
         public DeviceManagementSettingAppConstraint() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingAppConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingAppConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingAppConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementSettingAppConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingAppConstraint();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementSettingAppConstraint();
         }
         /// <summary>
         /// The deserialization information for the current model

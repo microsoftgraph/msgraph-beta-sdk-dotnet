@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The Azure Active Directory (Azure AD) we are deploying firmware updates to (e.g.: d93c8f48-bd42-4514-ba40-bc6b84780930). NOTE: Use this property moving forward because the existing property, target, is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? AssignmentTarget
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget? AssignmentTarget
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("assignmentTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget?>("assignmentTarget"); }
             set { BackingStore?.Set("assignmentTarget", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget AssignmentTarget
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget AssignmentTarget
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("assignmentTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("assignmentTarget"); }
             set { BackingStore?.Set("assignmentTarget", value); }
         }
 #endif
@@ -87,21 +87,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The AAD Group we are deploying firmware updates to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidFotaDeploymentAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<AndroidFotaDeploymentAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public AndroidFotaDeploymentAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget Target
         {
-            get { return BackingStore?.Get<AndroidFotaDeploymentAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidFotaDeploymentAssignment"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment"/> and sets the default values.
         /// </summary>
         public AndroidFotaDeploymentAssignment()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidFotaDeploymentAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidFotaDeploymentAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidFotaDeploymentAssignment();
+            return new Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignmentTarget", n => { AssignmentTarget = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "assignmentTarget", n => { AssignmentTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetObjectValue<AndroidFotaDeploymentAssignmentTarget>(AndroidFotaDeploymentAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget>(Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("assignmentTarget", AssignmentTarget);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("assignmentTarget", AssignmentTarget);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<AndroidFotaDeploymentAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidFotaDeploymentAssignmentTarget>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

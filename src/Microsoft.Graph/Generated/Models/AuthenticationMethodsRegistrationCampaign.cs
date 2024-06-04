@@ -28,32 +28,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Users and groups of users that are excluded from being prompted to set up the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExcludeTarget>? ExcludeTargets
+        public List<Microsoft.Graph.Beta.Models.ExcludeTarget>? ExcludeTargets
         {
-            get { return BackingStore?.Get<List<ExcludeTarget>?>("excludeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExcludeTarget>?>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #nullable restore
 #else
-        public List<ExcludeTarget> ExcludeTargets
+        public List<Microsoft.Graph.Beta.Models.ExcludeTarget> ExcludeTargets
         {
-            get { return BackingStore?.Get<List<ExcludeTarget>>("excludeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExcludeTarget>>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
         /// <summary>Users and groups of users that are prompted to set up the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodsRegistrationCampaignIncludeTarget>? IncludeTargets
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget>? IncludeTargets
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>?>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
@@ -80,13 +80,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("snoozeDurationInDays", value); }
         }
         /// <summary>The state property</summary>
-        public AdvancedConfigState? State
+        public Microsoft.Graph.Beta.Models.AdvancedConfigState? State
         {
-            get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationMethodsRegistrationCampaign"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign"/> and sets the default values.
         /// </summary>
         public AuthenticationMethodsRegistrationCampaign()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationMethodsRegistrationCampaign"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationMethodsRegistrationCampaign CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationMethodsRegistrationCampaign();
+            return new Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enforceRegistrationAfterAllowedSnoozes", n => { EnforceRegistrationAfterAllowedSnoozes = n.GetBoolValue(); } },
-                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodsRegistrationCampaignIncludeTarget>(AuthenticationMethodsRegistrationCampaignIncludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExcludeTarget>(Microsoft.Graph.Beta.Models.ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget>(Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "snoozeDurationInDays", n => { SnoozeDurationInDays = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.AdvancedConfigState>(); } },
             };
         }
         /// <summary>
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enforceRegistrationAfterAllowedSnoozes", EnforceRegistrationAfterAllowedSnoozes);
-            writer.WriteCollectionOfObjectValues<ExcludeTarget>("excludeTargets", ExcludeTargets);
-            writer.WriteCollectionOfObjectValues<AuthenticationMethodsRegistrationCampaignIncludeTarget>("includeTargets", IncludeTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExcludeTarget>("excludeTargets", ExcludeTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaignIncludeTarget>("includeTargets", IncludeTargets);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("snoozeDurationInDays", SnoozeDurationInDays);
-            writer.WriteEnumValue<AdvancedConfigState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AdvancedConfigState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class BlockAccessAction : DlpActionInfo, IParsable
+    public class BlockAccessAction : Microsoft.Graph.Beta.Models.DlpActionInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BlockAccessAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BlockAccessAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BlockAccessAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BlockAccessAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BlockAccessAction();
+            return new Microsoft.Graph.Beta.Models.BlockAccessAction();
         }
         /// <summary>
         /// The deserialization information for the current model

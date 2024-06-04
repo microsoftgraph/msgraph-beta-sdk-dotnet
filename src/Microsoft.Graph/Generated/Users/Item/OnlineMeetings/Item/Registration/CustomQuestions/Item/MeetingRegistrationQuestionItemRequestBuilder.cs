@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
     public class MeetingRegistrationQuestionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MeetingRegistrationQuestionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MeetingRegistrationQuestionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,57 +50,57 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Custom registration questions.
         /// </summary>
-        /// <returns>A <see cref="MeetingRegistrationQuestion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MeetingRegistrationQuestion?> GetAsync(Action<RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder.MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MeetingRegistrationQuestion> GetAsync(Action<RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder.MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion>(requestInfo, Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property customQuestions in users
         /// </summary>
-        /// <returns>A <see cref="MeetingRegistrationQuestion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MeetingRegistrationQuestion?> PatchAsync(MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion?> PatchAsync(Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MeetingRegistrationQuestion> PatchAsync(MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion> PatchAsync(Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion>(requestInfo, Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property customQuestions for users
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder.MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder.MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MeetingRegistrationQuestion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MeetingRegistrationQuestionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MeetingRegistrationQuestionItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new MeetingRegistrationQuestionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>
+        public class MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item.MeetingRegistrationQuestionItemRequestBuilder.MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

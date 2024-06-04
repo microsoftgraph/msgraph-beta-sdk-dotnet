@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>List of connectivity configurations for deviceLink objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectivityConfigurationLink>? Links
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>? Links
         {
-            get { return BackingStore?.Get<List<ConnectivityConfigurationLink>?>("links"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public List<ConnectivityConfigurationLink> Links
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink> Links
         {
-            get { return BackingStore?.Get<List<ConnectivityConfigurationLink>>("links"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BranchConnectivityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.BranchConnectivityConfiguration"/> and sets the default values.
         /// </summary>
         public BranchConnectivityConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BranchConnectivityConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.BranchConnectivityConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BranchConnectivityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.BranchConnectivityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BranchConnectivityConfiguration();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.BranchConnectivityConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 { "branchId", n => { BranchId = n.GetStringValue(); } },
                 { "branchName", n => { BranchName = n.GetStringValue(); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<ConnectivityConfigurationLink>(ConnectivityConfigurationLink.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>(Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branchId", BranchId);
             writer.WriteStringValue("branchName", BranchName);
-            writer.WriteCollectionOfObjectValues<ConnectivityConfigurationLink>("links", Links);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityConfigurationLink>("links", Links);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ValidateFilterPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter.ValidateFilterPostRequestBody"/> and sets the default values.
         /// </summary>
         public ValidateFilterPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ValidateFilterPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter.ValidateFilterPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ValidateFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter.ValidateFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ValidateFilterPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter.ValidateFilterPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AdminWindows : Entity, IParsable
+    public class AdminWindows : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminWindowsUpdates? Updates
+        public Microsoft.Graph.Beta.Models.AdminWindowsUpdates? Updates
         {
-            get { return BackingStore?.Get<AdminWindowsUpdates?>("updates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminWindowsUpdates?>("updates"); }
             set { BackingStore?.Set("updates", value); }
         }
 #nullable restore
 #else
-        public AdminWindowsUpdates Updates
+        public Microsoft.Graph.Beta.Models.AdminWindowsUpdates Updates
         {
-            get { return BackingStore?.Get<AdminWindowsUpdates>("updates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminWindowsUpdates>("updates"); }
             set { BackingStore?.Set("updates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdminWindows"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdminWindows"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdminWindows CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AdminWindows CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdminWindows();
+            return new Microsoft.Graph.Beta.Models.AdminWindows();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "updates", n => { Updates = n.GetObjectValue<AdminWindowsUpdates>(AdminWindowsUpdates.CreateFromDiscriminatorValue); } },
+                { "updates", n => { Updates = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminWindowsUpdates>(Microsoft.Graph.Beta.Models.AdminWindowsUpdates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AdminWindowsUpdates>("updates", Updates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AdminWindowsUpdates>("updates", Updates);
         }
     }
 }

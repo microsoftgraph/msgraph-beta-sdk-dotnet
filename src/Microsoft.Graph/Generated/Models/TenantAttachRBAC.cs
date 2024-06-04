@@ -9,17 +9,17 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity that acts as a container for tenant attach enablement functionality.
     /// </summary>
-    public class TenantAttachRBAC : Entity, IParsable
+    public class TenantAttachRBAC : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantAttachRBAC"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TenantAttachRBAC"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TenantAttachRBAC CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TenantAttachRBAC CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantAttachRBAC();
+            return new Microsoft.Graph.Beta.Models.TenantAttachRBAC();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing configurations in this profile you can instruct the Nine Work email client on Android For Work devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class AndroidForWorkNineWorkEasConfiguration : AndroidForWorkEasEmailProfileBase, IParsable
+    public class AndroidForWorkNineWorkEasConfiguration : Microsoft.Graph.Beta.Models.AndroidForWorkEasEmailProfileBase, IParsable
     {
         /// <summary>Toggles syncing the calendar. If set to false the calendar is turned off on the device.</summary>
         public bool? SyncCalendar
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkNineWorkEasConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkNineWorkEasConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidForWorkNineWorkEasConfiguration() : base()
         {
@@ -39,12 +39,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkNineWorkEasConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkNineWorkEasConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkNineWorkEasConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkNineWorkEasConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkNineWorkEasConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidForWorkNineWorkEasConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

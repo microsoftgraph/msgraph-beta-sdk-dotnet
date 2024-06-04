@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Describes the TemplateFamily for the Template entity</summary>
-        public DeviceManagementConfigurationTemplateFamily? TemplateFamily
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily? TemplateFamily
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
             set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template id</summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationPolicyTemplateReference"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationPolicyTemplateReference()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationPolicyTemplateReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationPolicyTemplateReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationPolicyTemplateReference();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplateReference();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "templateDisplayName", n => { TemplateDisplayName = n.GetStringValue(); } },
                 { "templateDisplayVersion", n => { TemplateDisplayVersion = n.GetStringValue(); } },
-                { "templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
+                { "templateFamily", n => { TemplateFamily = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily>(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
             writer.WriteStringValue("templateId", TemplateId);
             writer.WriteAdditionalData(AdditionalData);
         }

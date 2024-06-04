@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class PstnCallLogRow : CallLogRow, IParsable
+    public class PstnCallLogRow : Microsoft.Graph.Beta.Models.CallRecords.CallLogRow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.</summary>
-        public PstnCallDurationSource? CallDurationSource
+        public Microsoft.Graph.Beta.Models.CallRecords.PstnCallDurationSource? CallDurationSource
         {
-            get { return BackingStore?.Get<PstnCallDurationSource?>("callDurationSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.PstnCallDurationSource?>("callDurationSource"); }
             set { BackingStore?.Set("callDurationSource", value); }
         }
         /// <summary>Number of the user or bot who received the call (E.164).</summary>
@@ -321,12 +321,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PstnCallLogRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.PstnCallLogRow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PstnCallLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.PstnCallLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PstnCallLogRow();
+            return new Microsoft.Graph.Beta.Models.CallRecords.PstnCallLogRow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -336,7 +336,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "callDurationSource", n => { CallDurationSource = n.GetEnumValue<PstnCallDurationSource>(); } },
+                { "callDurationSource", n => { CallDurationSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.CallRecords.PstnCallDurationSource>(); } },
                 { "callId", n => { CallId = n.GetStringValue(); } },
                 { "callType", n => { CallType = n.GetStringValue(); } },
                 { "calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
@@ -369,7 +369,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PstnCallDurationSource>("callDurationSource", CallDurationSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CallRecords.PstnCallDurationSource>("callDurationSource", CallDurationSource);
             writer.WriteStringValue("calleeNumber", CalleeNumber);
             writer.WriteStringValue("callerNumber", CallerNumber);
             writer.WriteStringValue("callId", CallId);

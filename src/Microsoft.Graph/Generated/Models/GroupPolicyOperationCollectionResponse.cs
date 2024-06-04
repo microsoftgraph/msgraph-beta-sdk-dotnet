@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GroupPolicyOperationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GroupPolicyOperationCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyOperation>? Value
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyOperation>? Value
         {
-            get { return BackingStore?.Get<List<GroupPolicyOperation>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyOperation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyOperation> Value
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyOperation> Value
         {
-            get { return BackingStore?.Get<List<GroupPolicyOperation>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyOperation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyOperationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyOperationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyOperationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyOperationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyOperationCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyOperationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyOperation>(Microsoft.Graph.Beta.Models.GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<GroupPolicyOperation>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyOperation>("value", Value);
         }
     }
 }

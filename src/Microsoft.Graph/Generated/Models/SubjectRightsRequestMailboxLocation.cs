@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SubjectRightsRequestMailboxLocation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation"/> and sets the default values.
         /// </summary>
         public SubjectRightsRequestMailboxLocation()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubjectRightsRequestMailboxLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubjectRightsRequestMailboxLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.subjectRightsRequestAllMailboxLocation" => new SubjectRightsRequestAllMailboxLocation(),
-                "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation" => new SubjectRightsRequestEnumeratedMailboxLocation(),
-                _ => new SubjectRightsRequestMailboxLocation(),
+                "#microsoft.graph.subjectRightsRequestAllMailboxLocation" => new Microsoft.Graph.Beta.Models.SubjectRightsRequestAllMailboxLocation(),
+                "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation" => new Microsoft.Graph.Beta.Models.SubjectRightsRequestEnumeratedMailboxLocation(),
+                _ => new Microsoft.Graph.Beta.Models.SubjectRightsRequestMailboxLocation(),
             };
         }
         /// <summary>

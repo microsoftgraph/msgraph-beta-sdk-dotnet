@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Base Class of Device Enrollment Configuration
     /// </summary>
-    public class DeviceEnrollmentConfiguration : Entity, IParsable
+    public class DeviceEnrollmentConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the device configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EnrollmentConfigurationAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<EnrollmentConfigurationAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -108,22 +108,22 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceEnrollmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceComanagementAuthorityConfiguration" => new DeviceComanagementAuthorityConfiguration(),
-                "#microsoft.graph.deviceEnrollmentLimitConfiguration" => new DeviceEnrollmentLimitConfiguration(),
-                "#microsoft.graph.deviceEnrollmentNotificationConfiguration" => new DeviceEnrollmentNotificationConfiguration(),
-                "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration" => new DeviceEnrollmentPlatformRestrictionConfiguration(),
-                "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration" => new DeviceEnrollmentPlatformRestrictionsConfiguration(),
-                "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration" => new DeviceEnrollmentWindowsHelloForBusinessConfiguration(),
-                "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration" => new Windows10EnrollmentCompletionPageConfiguration(),
-                _ => new DeviceEnrollmentConfiguration(),
+                "#microsoft.graph.deviceComanagementAuthorityConfiguration" => new Microsoft.Graph.Beta.Models.DeviceComanagementAuthorityConfiguration(),
+                "#microsoft.graph.deviceEnrollmentLimitConfiguration" => new Microsoft.Graph.Beta.Models.DeviceEnrollmentLimitConfiguration(),
+                "#microsoft.graph.deviceEnrollmentNotificationConfiguration" => new Microsoft.Graph.Beta.Models.DeviceEnrollmentNotificationConfiguration(),
+                "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration" => new Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration(),
+                "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration" => new Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionsConfiguration(),
+                "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration" => new Microsoft.Graph.Beta.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration(),
+                "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration" => new Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration(),
             };
         }
         /// <summary>
@@ -134,10 +134,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment>(Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceEnrollmentConfigurationType", n => { DeviceEnrollmentConfigurationType = n.GetEnumValue<DeviceEnrollmentConfigurationType>(); } },
+                { "deviceEnrollmentConfigurationType", n => { DeviceEnrollmentConfigurationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
@@ -153,10 +153,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EnrollmentConfigurationAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EnrollmentConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<DeviceEnrollmentConfigurationType>("deviceEnrollmentConfigurationType", DeviceEnrollmentConfigurationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType>("deviceEnrollmentConfigurationType", DeviceEnrollmentConfigurationType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("priority", Priority);

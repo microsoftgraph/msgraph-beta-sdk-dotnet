@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics Device not windows autopilot ready.
     /// </summary>
-    public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable
+    public class UserExperienceAnalyticsNotAutopilotReadyDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsNotAutopilotReadyDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsNotAutopilotReadyDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsNotAutopilotReadyDevice();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice();
         }
         /// <summary>
         /// The deserialization information for the current model

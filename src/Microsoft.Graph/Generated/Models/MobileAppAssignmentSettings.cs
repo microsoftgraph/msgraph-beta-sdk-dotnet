@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MobileAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public MobileAppAssignmentSettings()
         {
@@ -47,27 +47,27 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MobileAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidManagedStoreAppAssignmentSettings" => new AndroidManagedStoreAppAssignmentSettings(),
-                "#microsoft.graph.iosLobAppAssignmentSettings" => new IosLobAppAssignmentSettings(),
-                "#microsoft.graph.iosStoreAppAssignmentSettings" => new IosStoreAppAssignmentSettings(),
-                "#microsoft.graph.iosVppAppAssignmentSettings" => new IosVppAppAssignmentSettings(),
-                "#microsoft.graph.macOsLobAppAssignmentSettings" => new MacOsLobAppAssignmentSettings(),
-                "#microsoft.graph.macOsVppAppAssignmentSettings" => new MacOsVppAppAssignmentSettings(),
-                "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new MicrosoftStoreForBusinessAppAssignmentSettings(),
-                "#microsoft.graph.win32CatalogAppAssignmentSettings" => new Win32CatalogAppAssignmentSettings(),
-                "#microsoft.graph.win32LobAppAssignmentSettings" => new Win32LobAppAssignmentSettings(),
-                "#microsoft.graph.windowsAppXAppAssignmentSettings" => new WindowsAppXAppAssignmentSettings(),
-                "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new WindowsUniversalAppXAppAssignmentSettings(),
-                "#microsoft.graph.winGetAppAssignmentSettings" => new WinGetAppAssignmentSettings(),
-                _ => new MobileAppAssignmentSettings(),
+                "#microsoft.graph.androidManagedStoreAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.AndroidManagedStoreAppAssignmentSettings(),
+                "#microsoft.graph.iosLobAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.IosLobAppAssignmentSettings(),
+                "#microsoft.graph.iosStoreAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.IosStoreAppAssignmentSettings(),
+                "#microsoft.graph.iosVppAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.IosVppAppAssignmentSettings(),
+                "#microsoft.graph.macOsLobAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.MacOsLobAppAssignmentSettings(),
+                "#microsoft.graph.macOsVppAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.MacOsVppAppAssignmentSettings(),
+                "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessAppAssignmentSettings(),
+                "#microsoft.graph.win32CatalogAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.Win32CatalogAppAssignmentSettings(),
+                "#microsoft.graph.win32LobAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.Win32LobAppAssignmentSettings(),
+                "#microsoft.graph.windowsAppXAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.WindowsAppXAppAssignmentSettings(),
+                "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.WindowsUniversalAppXAppAssignmentSettings(),
+                "#microsoft.graph.winGetAppAssignmentSettings" => new Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings(),
+                _ => new Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings(),
             };
         }
         /// <summary>

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OpenShift : ChangeTrackedEntity, IParsable
+    public class OpenShift : Microsoft.Graph.Beta.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Draft changes in the openShift are only visible to managers until they&apos;re shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OpenShiftItem? DraftOpenShift
+        public Microsoft.Graph.Beta.Models.OpenShiftItem? DraftOpenShift
         {
-            get { return BackingStore?.Get<OpenShiftItem?>("draftOpenShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenShiftItem?>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #nullable restore
 #else
-        public OpenShiftItem DraftOpenShift
+        public Microsoft.Graph.Beta.Models.OpenShiftItem DraftOpenShift
         {
-            get { return BackingStore?.Get<OpenShiftItem>("draftOpenShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenShiftItem>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #endif
@@ -67,37 +67,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The shared version of this openShift that is viewable by both employees and managers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OpenShiftItem? SharedOpenShift
+        public Microsoft.Graph.Beta.Models.OpenShiftItem? SharedOpenShift
         {
-            get { return BackingStore?.Get<OpenShiftItem?>("sharedOpenShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenShiftItem?>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
 #nullable restore
 #else
-        public OpenShiftItem SharedOpenShift
+        public Microsoft.Graph.Beta.Models.OpenShiftItem SharedOpenShift
         {
-            get { return BackingStore?.Get<OpenShiftItem>("sharedOpenShift"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenShiftItem>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
 #endif
         /// <summary>Information of the team that the openShift is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftsTeamInfo? TeamInfo
+        public Microsoft.Graph.Beta.Models.ShiftsTeamInfo? TeamInfo
         {
-            get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShiftsTeamInfo?>("teamInfo"); }
             set { BackingStore?.Set("teamInfo", value); }
         }
 #nullable restore
 #else
-        public ShiftsTeamInfo TeamInfo
+        public Microsoft.Graph.Beta.Models.ShiftsTeamInfo TeamInfo
         {
-            get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShiftsTeamInfo>("teamInfo"); }
             set { BackingStore?.Set("teamInfo", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OpenShift"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OpenShift"/> and sets the default values.
         /// </summary>
         public OpenShift() : base()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenShift"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OpenShift"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenShift CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OpenShift CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenShift();
+            return new Microsoft.Graph.Beta.Models.OpenShift();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -121,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<Microsoft.Graph.Beta.Models.OpenShiftItem>(Microsoft.Graph.Beta.Models.OpenShiftItem.CreateFromDiscriminatorValue); } },
                 { "isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 { "schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
                 { "schedulingGroupInfo", n => { SchedulingGroupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>(Microsoft.Graph.Beta.Models.SchedulingGroupInfo.CreateFromDiscriminatorValue); } },
-                { "sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
-                { "teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
+                { "sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<Microsoft.Graph.Beta.Models.OpenShiftItem>(Microsoft.Graph.Beta.Models.OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "teamInfo", n => { TeamInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShiftsTeamInfo>(Microsoft.Graph.Beta.Models.ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OpenShiftItem>("draftOpenShift", DraftOpenShift);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OpenShiftItem>("draftOpenShift", DraftOpenShift);
             writer.WriteBoolValue("isStagedForDeletion", IsStagedForDeletion);
             writer.WriteStringValue("schedulingGroupId", SchedulingGroupId);
-            writer.WriteObjectValue<OpenShiftItem>("sharedOpenShift", SharedOpenShift);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OpenShiftItem>("sharedOpenShift", SharedOpenShift);
         }
     }
 }

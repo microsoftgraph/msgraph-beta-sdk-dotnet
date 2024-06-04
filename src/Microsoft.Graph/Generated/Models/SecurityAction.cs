@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SecurityAction : Entity, IParsable
+    public class SecurityAction : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reason for invoking this action.</summary>
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Error info when the action fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResultInfo? ErrorInfo
+        public Microsoft.Graph.Beta.Models.ResultInfo? ErrorInfo
         {
-            get { return BackingStore?.Get<ResultInfo?>("errorInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo?>("errorInfo"); }
             set { BackingStore?.Set("errorInfo", value); }
         }
 #nullable restore
 #else
-        public ResultInfo ErrorInfo
+        public Microsoft.Graph.Beta.Models.ResultInfo ErrorInfo
         {
-            get { return BackingStore?.Get<ResultInfo>("errorInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo>("errorInfo"); }
             set { BackingStore?.Set("errorInfo", value); }
         }
 #endif
@@ -127,39 +127,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Parameters
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? Parameters
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Parameters
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> Parameters
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
         /// <summary>Collection of securityActionState to keep the history of an action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityActionState>? States
+        public List<Microsoft.Graph.Beta.Models.SecurityActionState>? States
         {
-            get { return BackingStore?.Get<List<SecurityActionState>?>("states"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityActionState>?>("states"); }
             set { BackingStore?.Set("states", value); }
         }
 #nullable restore
 #else
-        public List<SecurityActionState> States
+        public List<Microsoft.Graph.Beta.Models.SecurityActionState> States
         {
-            get { return BackingStore?.Get<List<SecurityActionState>>("states"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityActionState>>("states"); }
             set { BackingStore?.Set("states", value); }
         }
 #endif
         /// <summary>Status of the action. Possible values are: NotStarted, Running, Completed, Failed.</summary>
-        public OperationStatus? Status
+        public Microsoft.Graph.Beta.Models.OperationStatus? Status
         {
-            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
@@ -181,28 +181,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SecurityAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityAction();
+            return new Microsoft.Graph.Beta.Models.SecurityAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -218,14 +218,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "clientContext", n => { ClientContext = n.GetStringValue(); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "errorInfo", n => { ErrorInfo = n.GetObjectValue<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue); } },
+                { "errorInfo", n => { ErrorInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "states", n => { States = n.GetCollectionOfObjectValues<SecurityActionState>(SecurityActionState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "states", n => { States = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityActionState>(Microsoft.Graph.Beta.Models.SecurityActionState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>(); } },
                 { "user", n => { User = n.GetStringValue(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>(Microsoft.Graph.Beta.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -242,14 +242,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("clientContext", ClientContext);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<ResultInfo>("errorInfo", ErrorInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>("errorInfo", ErrorInfo);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("parameters", Parameters);
-            writer.WriteCollectionOfObjectValues<SecurityActionState>("states", States);
-            writer.WriteEnumValue<OperationStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("parameters", Parameters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityActionState>("states", States);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>("status", Status);
             writer.WriteStringValue("user", User);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

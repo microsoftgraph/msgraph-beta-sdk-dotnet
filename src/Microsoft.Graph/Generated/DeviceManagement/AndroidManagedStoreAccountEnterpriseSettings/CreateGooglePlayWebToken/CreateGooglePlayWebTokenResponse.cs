@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
 {
     [Obsolete("This class is obsolete. Use CreateGooglePlayWebTokenPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CreateGooglePlayWebTokenResponse : CreateGooglePlayWebTokenPostResponse, IParsable
+    public class CreateGooglePlayWebTokenResponse : Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateGooglePlayWebTokenResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CreateGooglePlayWebTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateGooglePlayWebTokenResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken.CreateGooglePlayWebTokenResponse();
         }
     }
 }

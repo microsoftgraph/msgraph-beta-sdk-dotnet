@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AzureADAuthentication : Entity, IParsable
+    public class AzureADAuthentication : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of monthly serviceLevelAgreementAttainment objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceLevelAgreementAttainment>? Attainments
+        public List<Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment>? Attainments
         {
-            get { return BackingStore?.Get<List<ServiceLevelAgreementAttainment>?>("attainments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment>?>("attainments"); }
             set { BackingStore?.Set("attainments", value); }
         }
 #nullable restore
 #else
-        public List<ServiceLevelAgreementAttainment> Attainments
+        public List<Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment> Attainments
         {
-            get { return BackingStore?.Get<List<ServiceLevelAgreementAttainment>>("attainments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment>>("attainments"); }
             set { BackingStore?.Set("attainments", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureADAuthentication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureADAuthentication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureADAuthentication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AzureADAuthentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureADAuthentication();
+            return new Microsoft.Graph.Beta.Models.AzureADAuthentication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attainments", n => { Attainments = n.GetCollectionOfObjectValues<ServiceLevelAgreementAttainment>(ServiceLevelAgreementAttainment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attainments", n => { Attainments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment>(Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ServiceLevelAgreementAttainment>("attainments", Attainments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceLevelAgreementAttainment>("attainments", Attainments);
         }
     }
 }

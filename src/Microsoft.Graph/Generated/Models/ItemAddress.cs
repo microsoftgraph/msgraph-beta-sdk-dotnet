@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ItemAddress : ItemFacet, IParsable
+    public class ItemAddress : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Detail
+        public Microsoft.Graph.Beta.Models.PhysicalAddress? Detail
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddress?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Detail
+        public Microsoft.Graph.Beta.Models.PhysicalAddress Detail
         {
-            get { return BackingStore?.Get<PhysicalAddress>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddress>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ItemAddress"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ItemAddress"/> and sets the default values.
         /// </summary>
         public ItemAddress() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemAddress"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemAddress"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemAddress CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ItemAddress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemAddress();
+            return new Microsoft.Graph.Beta.Models.ItemAddress();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "detail", n => { Detail = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "detail", n => { Detail = n.GetObjectValue<Microsoft.Graph.Beta.Models.PhysicalAddress>(Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PhysicalAddress>("detail", Detail);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PhysicalAddress>("detail", Detail);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>("geoCoordinates", GeoCoordinates);
         }

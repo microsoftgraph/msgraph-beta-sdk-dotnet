@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
     /// </summary>
-    public class RemoteAssistancePartner : Entity, IParsable
+    public class RemoteAssistancePartner : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Display name of the partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,9 +40,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onboardingRequestExpiryDateTime", value); }
         }
         /// <summary>The current TeamViewer connector status</summary>
-        public RemoteAssistanceOnboardingStatus? OnboardingStatus
+        public Microsoft.Graph.Beta.Models.RemoteAssistanceOnboardingStatus? OnboardingStatus
         {
-            get { return BackingStore?.Get<RemoteAssistanceOnboardingStatus?>("onboardingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteAssistancePartner"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RemoteAssistancePartner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RemoteAssistancePartner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RemoteAssistancePartner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteAssistancePartner();
+            return new Microsoft.Graph.Beta.Models.RemoteAssistancePartner();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onboardingRequestExpiryDateTime", n => { OnboardingRequestExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<RemoteAssistanceOnboardingStatus>(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.RemoteAssistanceOnboardingStatus>(); } },
                 { "onboardingUrl", n => { OnboardingUrl = n.GetStringValue(); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastConnectionDateTime", LastConnectionDateTime);
             writer.WriteDateTimeOffsetValue("onboardingRequestExpiryDateTime", OnboardingRequestExpiryDateTime);
-            writer.WriteEnumValue<RemoteAssistanceOnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RemoteAssistanceOnboardingStatus>("onboardingStatus", OnboardingStatus);
             writer.WriteStringValue("onboardingUrl", OnboardingUrl);
         }
     }

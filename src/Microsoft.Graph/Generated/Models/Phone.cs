@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.</summary>
-        public PhoneType? Type
+        public Microsoft.Graph.Beta.Models.PhoneType? Type
         {
-            get { return BackingStore?.Get<PhoneType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhoneType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Phone"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Phone"/> and sets the default values.
         /// </summary>
         public Phone()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Phone"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Phone"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Phone CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Phone CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Phone();
+            return new Microsoft.Graph.Beta.Models.Phone();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<PhoneType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.PhoneType>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PhoneType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PhoneType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

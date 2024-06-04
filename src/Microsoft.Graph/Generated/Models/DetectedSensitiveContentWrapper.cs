@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The classification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DetectedSensitiveContent>? Classification
+        public List<Microsoft.Graph.Beta.Models.DetectedSensitiveContent>? Classification
         {
-            get { return BackingStore?.Get<List<DetectedSensitiveContent>?>("classification"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedSensitiveContent>?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
 #nullable restore
 #else
-        public List<DetectedSensitiveContent> Classification
+        public List<Microsoft.Graph.Beta.Models.DetectedSensitiveContent> Classification
         {
-            get { return BackingStore?.Get<List<DetectedSensitiveContent>>("classification"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedSensitiveContent>>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DetectedSensitiveContentWrapper"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DetectedSensitiveContentWrapper"/> and sets the default values.
         /// </summary>
         public DetectedSensitiveContentWrapper()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DetectedSensitiveContentWrapper"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DetectedSensitiveContentWrapper"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DetectedSensitiveContentWrapper CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DetectedSensitiveContentWrapper CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DetectedSensitiveContentWrapper();
+            return new Microsoft.Graph.Beta.Models.DetectedSensitiveContentWrapper();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classification", n => { Classification = n.GetCollectionOfObjectValues<DetectedSensitiveContent>(DetectedSensitiveContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classification", n => { Classification = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DetectedSensitiveContent>(Microsoft.Graph.Beta.Models.DetectedSensitiveContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DetectedSensitiveContent>("classification", Classification);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DetectedSensitiveContent>("classification", Classification);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

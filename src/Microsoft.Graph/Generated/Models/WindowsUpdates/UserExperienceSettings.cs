@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("offerAsOptional", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings"/> and sets the default values.
         /// </summary>
         public UserExperienceSettings()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceSettings();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

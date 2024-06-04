@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageResourceRequest : Entity, IParsable
+    public class AccessPackageResourceRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessPackageResource property</summary>
@@ -79,16 +79,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageSubject? Requestor
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject? Requestor
         {
-            get { return BackingStore?.Get<AccessPackageSubject?>("requestor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject?>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #nullable restore
 #else
-        public AccessPackageSubject Requestor
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject Requestor
         {
-            get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #endif
@@ -143,12 +143,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageResourceRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageResourceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageResourceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResourceRequest();
+            return new Microsoft.Graph.Beta.Models.AccessPackageResourceRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "requestState", n => { RequestState = n.GetStringValue(); } },
                 { "requestStatus", n => { RequestStatus = n.GetStringValue(); } },
                 { "requestType", n => { RequestType = n.GetStringValue(); } },
-                { "requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                { "requestor", n => { Requestor = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>(Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<AccessPackageSubject>("requestor", Requestor);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>("requestor", Requestor);
             writer.WriteStringValue("requestState", RequestState);
             writer.WriteStringValue("requestStatus", RequestStatus);
             writer.WriteStringValue("requestType", RequestType);

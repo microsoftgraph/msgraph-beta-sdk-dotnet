@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userNewMessageRestriction", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChannelModerationSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ChannelModerationSettings"/> and sets the default values.
         /// </summary>
         public ChannelModerationSettings()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChannelModerationSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ChannelModerationSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChannelModerationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ChannelModerationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChannelModerationSettings();
+            return new Microsoft.Graph.Beta.Models.ChannelModerationSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowNewMessageFromBots", n => { AllowNewMessageFromBots = n.GetBoolValue(); } },
                 { "allowNewMessageFromConnectors", n => { AllowNewMessageFromConnectors = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "replyRestriction", n => { ReplyRestriction = n.GetEnumValue<ReplyRestriction>(); } },
-                { "userNewMessageRestriction", n => { UserNewMessageRestriction = n.GetEnumValue<UserNewMessageRestriction>(); } },
+                { "replyRestriction", n => { ReplyRestriction = n.GetEnumValue<Microsoft.Graph.Beta.Models.ReplyRestriction>(); } },
+                { "userNewMessageRestriction", n => { UserNewMessageRestriction = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserNewMessageRestriction>(); } },
             };
         }
         /// <summary>
@@ -102,8 +102,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allowNewMessageFromBots", AllowNewMessageFromBots);
             writer.WriteBoolValue("allowNewMessageFromConnectors", AllowNewMessageFromConnectors);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ReplyRestriction>("replyRestriction", ReplyRestriction);
-            writer.WriteEnumValue<UserNewMessageRestriction>("userNewMessageRestriction", UserNewMessageRestriction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ReplyRestriction>("replyRestriction", ReplyRestriction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserNewMessageRestriction>("userNewMessageRestriction", UserNewMessageRestriction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

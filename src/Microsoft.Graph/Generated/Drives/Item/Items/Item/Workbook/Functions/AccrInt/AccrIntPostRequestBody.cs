@@ -23,133 +23,133 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis
+        public Microsoft.Graph.Beta.Models.Json? Basis
         {
-            get { return BackingStore?.Get<Json?>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis
+        public Microsoft.Graph.Beta.Models.Json Basis
         {
-            get { return BackingStore?.Get<Json>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #endif
         /// <summary>The calcMethod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? CalcMethod
+        public Microsoft.Graph.Beta.Models.Json? CalcMethod
         {
-            get { return BackingStore?.Get<Json?>("calcMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("calcMethod"); }
             set { BackingStore?.Set("calcMethod", value); }
         }
 #nullable restore
 #else
-        public Json CalcMethod
+        public Microsoft.Graph.Beta.Models.Json CalcMethod
         {
-            get { return BackingStore?.Get<Json>("calcMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("calcMethod"); }
             set { BackingStore?.Set("calcMethod", value); }
         }
 #endif
         /// <summary>The firstInterest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FirstInterest
+        public Microsoft.Graph.Beta.Models.Json? FirstInterest
         {
-            get { return BackingStore?.Get<Json?>("firstInterest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("firstInterest"); }
             set { BackingStore?.Set("firstInterest", value); }
         }
 #nullable restore
 #else
-        public Json FirstInterest
+        public Microsoft.Graph.Beta.Models.Json FirstInterest
         {
-            get { return BackingStore?.Get<Json>("firstInterest"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("firstInterest"); }
             set { BackingStore?.Set("firstInterest", value); }
         }
 #endif
         /// <summary>The frequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Frequency
+        public Microsoft.Graph.Beta.Models.Json? Frequency
         {
-            get { return BackingStore?.Get<Json?>("frequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #nullable restore
 #else
-        public Json Frequency
+        public Microsoft.Graph.Beta.Models.Json Frequency
         {
-            get { return BackingStore?.Get<Json>("frequency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #endif
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Issue
+        public Microsoft.Graph.Beta.Models.Json? Issue
         {
-            get { return BackingStore?.Get<Json?>("issue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #nullable restore
 #else
-        public Json Issue
+        public Microsoft.Graph.Beta.Models.Json Issue
         {
-            get { return BackingStore?.Get<Json>("issue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #endif
         /// <summary>The par property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Par
+        public Microsoft.Graph.Beta.Models.Json? Par
         {
-            get { return BackingStore?.Get<Json?>("par"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("par"); }
             set { BackingStore?.Set("par", value); }
         }
 #nullable restore
 #else
-        public Json Par
+        public Microsoft.Graph.Beta.Models.Json Par
         {
-            get { return BackingStore?.Get<Json>("par"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("par"); }
             set { BackingStore?.Set("par", value); }
         }
 #endif
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate
+        public Microsoft.Graph.Beta.Models.Json? Rate
         {
-            get { return BackingStore?.Get<Json?>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate
+        public Microsoft.Graph.Beta.Models.Json Rate
         {
-            get { return BackingStore?.Get<Json>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #endif
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement
+        public Microsoft.Graph.Beta.Models.Json? Settlement
         {
-            get { return BackingStore?.Get<Json?>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement
+        public Microsoft.Graph.Beta.Models.Json Settlement
         {
-            get { return BackingStore?.Get<Json>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccrIntPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt.AccrIntPostRequestBody"/> and sets the default values.
         /// </summary>
         public AccrIntPostRequestBody()
         {
@@ -159,12 +159,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccrIntPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt.AccrIntPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccrIntPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt.AccrIntPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccrIntPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt.AccrIntPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -174,14 +174,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "calcMethod", n => { CalcMethod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "firstInterest", n => { FirstInterest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "frequency", n => { Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "par", n => { Par = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "calcMethod", n => { CalcMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "firstInterest", n => { FirstInterest = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "frequency", n => { Frequency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "par", n => { Par = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -191,14 +191,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AccrInt
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("basis", Basis);
-            writer.WriteObjectValue<Json>("calcMethod", CalcMethod);
-            writer.WriteObjectValue<Json>("firstInterest", FirstInterest);
-            writer.WriteObjectValue<Json>("frequency", Frequency);
-            writer.WriteObjectValue<Json>("issue", Issue);
-            writer.WriteObjectValue<Json>("par", Par);
-            writer.WriteObjectValue<Json>("rate", Rate);
-            writer.WriteObjectValue<Json>("settlement", Settlement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("basis", Basis);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("calcMethod", CalcMethod);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("firstInterest", FirstInterest);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("frequency", Frequency);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("issue", Issue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("par", Par);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rate", Rate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("settlement", Settlement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

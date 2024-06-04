@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The financeRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FinanceRate
+        public Microsoft.Graph.Beta.Models.Json? FinanceRate
         {
-            get { return BackingStore?.Get<Json?>("financeRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("financeRate"); }
             set { BackingStore?.Set("financeRate", value); }
         }
 #nullable restore
 #else
-        public Json FinanceRate
+        public Microsoft.Graph.Beta.Models.Json FinanceRate
         {
-            get { return BackingStore?.Get<Json>("financeRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("financeRate"); }
             set { BackingStore?.Set("financeRate", value); }
         }
 #endif
         /// <summary>The reinvestRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ReinvestRate
+        public Microsoft.Graph.Beta.Models.Json? ReinvestRate
         {
-            get { return BackingStore?.Get<Json?>("reinvestRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("reinvestRate"); }
             set { BackingStore?.Set("reinvestRate", value); }
         }
 #nullable restore
 #else
-        public Json ReinvestRate
+        public Microsoft.Graph.Beta.Models.Json ReinvestRate
         {
-            get { return BackingStore?.Get<Json>("reinvestRate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("reinvestRate"); }
             set { BackingStore?.Set("reinvestRate", value); }
         }
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values
+        public Microsoft.Graph.Beta.Models.Json? Values
         {
-            get { return BackingStore?.Get<Json?>("values"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values
+        public Microsoft.Graph.Beta.Models.Json Values
         {
-            get { return BackingStore?.Get<Json>("values"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MirrPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Mirr.MirrPostRequestBody"/> and sets the default values.
         /// </summary>
         public MirrPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MirrPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Mirr.MirrPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MirrPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Mirr.MirrPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MirrPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Mirr.MirrPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "financeRate", n => { FinanceRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "reinvestRate", n => { ReinvestRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "financeRate", n => { FinanceRate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "reinvestRate", n => { ReinvestRate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("financeRate", FinanceRate);
-            writer.WriteObjectValue<Json>("reinvestRate", ReinvestRate);
-            writer.WriteObjectValue<Json>("values", Values);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("financeRate", FinanceRate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("reinvestRate", ReinvestRate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

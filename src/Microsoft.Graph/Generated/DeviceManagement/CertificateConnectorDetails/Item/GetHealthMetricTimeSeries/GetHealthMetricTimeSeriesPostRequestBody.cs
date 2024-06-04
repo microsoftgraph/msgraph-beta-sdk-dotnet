@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         /// <summary>The timeSeries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSeriesParameter? TimeSeries
+        public Microsoft.Graph.Beta.Models.TimeSeriesParameter? TimeSeries
         {
-            get { return BackingStore?.Get<TimeSeriesParameter?>("timeSeries"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeSeriesParameter?>("timeSeries"); }
             set { BackingStore?.Set("timeSeries", value); }
         }
 #nullable restore
 #else
-        public TimeSeriesParameter TimeSeries
+        public Microsoft.Graph.Beta.Models.TimeSeriesParameter TimeSeries
         {
-            get { return BackingStore?.Get<TimeSeriesParameter>("timeSeries"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeSeriesParameter>("timeSeries"); }
             set { BackingStore?.Set("timeSeries", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetHealthMetricTimeSeriesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetHealthMetricTimeSeriesPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetHealthMetricTimeSeriesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetHealthMetricTimeSeriesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetHealthMetricTimeSeriesPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "timeSeries", n => { TimeSeries = n.GetObjectValue<TimeSeriesParameter>(TimeSeriesParameter.CreateFromDiscriminatorValue); } },
+                { "timeSeries", n => { TimeSeries = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeSeriesParameter>(Microsoft.Graph.Beta.Models.TimeSeriesParameter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TimeSeriesParameter>("timeSeries", TimeSeries);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeSeriesParameter>("timeSeries", TimeSeries);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

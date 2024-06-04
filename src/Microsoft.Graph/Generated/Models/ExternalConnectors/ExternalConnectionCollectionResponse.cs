@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalConnection>? Value
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>? Value
         {
-            get { return BackingStore?.Get<List<ExternalConnection>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ExternalConnection> Value
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection> Value
         {
-            get { return BackingStore?.Get<List<ExternalConnection>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalConnectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnectionCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalConnectionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnectionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalConnectionCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnectionCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ExternalConnection>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection>("value", Value);
         }
     }
 }

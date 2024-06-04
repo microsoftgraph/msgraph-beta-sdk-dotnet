@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Conflict summary for a set of device configuration policies.
     /// </summary>
-    public class DeviceConfigurationConflictSummary : Entity, IParsable
+    public class DeviceConfigurationConflictSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The set of policies in conflict with the given setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingSource>? ConflictingDeviceConfigurations
+        public List<Microsoft.Graph.Beta.Models.SettingSource>? ConflictingDeviceConfigurations
         {
-            get { return BackingStore?.Get<List<SettingSource>?>("conflictingDeviceConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingSource>?>("conflictingDeviceConfigurations"); }
             set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<SettingSource> ConflictingDeviceConfigurations
+        public List<Microsoft.Graph.Beta.Models.SettingSource> ConflictingDeviceConfigurations
         {
-            get { return BackingStore?.Get<List<SettingSource>>("conflictingDeviceConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingSource>>("conflictingDeviceConfigurations"); }
             set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
 #endif
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationConflictSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfigurationConflictSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationConflictSummary();
+            return new Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingSource>(Microsoft.Graph.Beta.Models.SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contributingSettings", n => { ContributingSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "deviceCheckinsImpacted", n => { DeviceCheckinsImpacted = n.GetIntValue(); } },
             };
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SettingSource>("conflictingDeviceConfigurations", ConflictingDeviceConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingSource>("conflictingDeviceConfigurations", ConflictingDeviceConfigurations);
             writer.WriteCollectionOfPrimitiveValues<string>("contributingSettings", ContributingSettings);
             writer.WriteIntValue("deviceCheckinsImpacted", DeviceCheckinsImpacted);
         }

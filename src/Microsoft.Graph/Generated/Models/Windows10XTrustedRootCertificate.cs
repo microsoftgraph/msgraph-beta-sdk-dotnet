@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows X Trusted Root Certificate configuration profile
     /// </summary>
-    public class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase, IParsable
+    public class Windows10XTrustedRootCertificate : Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values for the Certificate Destination Store.</summary>
-        public CertificateDestinationStore? DestinationStore
+        public Microsoft.Graph.Beta.Models.CertificateDestinationStore? DestinationStore
         {
-            get { return BackingStore?.Get<CertificateDestinationStore?>("destinationStore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateDestinationStore?>("destinationStore"); }
             set { BackingStore?.Set("destinationStore", value); }
         }
         /// <summary>Trusted Root Certificate</summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows10XTrustedRootCertificate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10XTrustedRootCertificate"/> and sets the default values.
         /// </summary>
         public Windows10XTrustedRootCertificate() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10XTrustedRootCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10XTrustedRootCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10XTrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10XTrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10XTrustedRootCertificate();
+            return new Microsoft.Graph.Beta.Models.Windows10XTrustedRootCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "certFileName", n => { CertFileName = n.GetStringValue(); } },
-                { "destinationStore", n => { DestinationStore = n.GetEnumValue<CertificateDestinationStore>(); } },
+                { "destinationStore", n => { DestinationStore = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateDestinationStore>(); } },
                 { "trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("certFileName", CertFileName);
-            writer.WriteEnumValue<CertificateDestinationStore>("destinationStore", DestinationStore);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateDestinationStore>("destinationStore", DestinationStore);
             writer.WriteByteArrayValue("trustedRootCertificate", TrustedRootCertificate);
         }
     }

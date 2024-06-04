@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeliveryOptimizationBandwidth"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth"/> and sets the default values.
         /// </summary>
         public DeliveryOptimizationBandwidth()
         {
@@ -47,18 +47,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeliveryOptimizationBandwidth"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeliveryOptimizationBandwidth CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deliveryOptimizationBandwidthAbsolute" => new DeliveryOptimizationBandwidthAbsolute(),
-                "#microsoft.graph.deliveryOptimizationBandwidthHoursWithPercentage" => new DeliveryOptimizationBandwidthHoursWithPercentage(),
-                "#microsoft.graph.deliveryOptimizationBandwidthPercentage" => new DeliveryOptimizationBandwidthPercentage(),
-                _ => new DeliveryOptimizationBandwidth(),
+                "#microsoft.graph.deliveryOptimizationBandwidthAbsolute" => new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthAbsolute(),
+                "#microsoft.graph.deliveryOptimizationBandwidthHoursWithPercentage" => new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthHoursWithPercentage(),
+                "#microsoft.graph.deliveryOptimizationBandwidthPercentage" => new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidthPercentage(),
+                _ => new Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth(),
             };
         }
         /// <summary>

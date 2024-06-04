@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
     /// </summary>
-    public class IntuneBrandingProfile : Entity, IParsable
+    public class IntuneBrandingProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the branding profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntuneBrandingProfileAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<IntuneBrandingProfileAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<IntuneBrandingProfileAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<IntuneBrandingProfileAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Collection of blocked actions on the company portal as per platform and device ownership types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CompanyPortalBlockedAction>? CompanyPortalBlockedActions
+        public List<Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction>? CompanyPortalBlockedActions
         {
-            get { return BackingStore?.Get<List<CompanyPortalBlockedAction>?>("companyPortalBlockedActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction>?>("companyPortalBlockedActions"); }
             set { BackingStore?.Set("companyPortalBlockedActions", value); }
         }
 #nullable restore
 #else
-        public List<CompanyPortalBlockedAction> CompanyPortalBlockedActions
+        public List<Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction> CompanyPortalBlockedActions
         {
-            get { return BackingStore?.Get<List<CompanyPortalBlockedAction>>("companyPortalBlockedActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction>>("companyPortalBlockedActions"); }
             set { BackingStore?.Set("companyPortalBlockedActions", value); }
         }
 #endif
@@ -190,9 +190,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Options available for enrollment flow customization</summary>
-        public EnrollmentAvailabilityOptions? EnrollmentAvailability
+        public Microsoft.Graph.Beta.Models.EnrollmentAvailabilityOptions? EnrollmentAvailability
         {
-            get { return BackingStore?.Get<EnrollmentAvailabilityOptions?>("enrollmentAvailability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentAvailabilityOptions?>("enrollmentAvailability"); }
             set { BackingStore?.Set("enrollmentAvailability", value); }
         }
         /// <summary>Boolean that represents whether the profile is used as default or not</summary>
@@ -216,16 +216,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Customized image displayed in Company Portal apps landing page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LandingPageCustomizedImage
+        public Microsoft.Graph.Beta.Models.MimeContent? LandingPageCustomizedImage
         {
-            get { return BackingStore?.Get<MimeContent?>("landingPageCustomizedImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("landingPageCustomizedImage"); }
             set { BackingStore?.Set("landingPageCustomizedImage", value); }
         }
 #nullable restore
 #else
-        public MimeContent LandingPageCustomizedImage
+        public Microsoft.Graph.Beta.Models.MimeContent LandingPageCustomizedImage
         {
-            get { return BackingStore?.Get<MimeContent>("landingPageCustomizedImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("landingPageCustomizedImage"); }
             set { BackingStore?.Set("landingPageCustomizedImage", value); }
         }
 #endif
@@ -238,16 +238,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Logo image displayed in Company Portal apps which have a light background behind the logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LightBackgroundLogo
+        public Microsoft.Graph.Beta.Models.MimeContent? LightBackgroundLogo
         {
-            get { return BackingStore?.Get<MimeContent?>("lightBackgroundLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
 #nullable restore
 #else
-        public MimeContent LightBackgroundLogo
+        public Microsoft.Graph.Beta.Models.MimeContent LightBackgroundLogo
         {
-            get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
 #endif
@@ -386,44 +386,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Primary theme color used in the Company Portal applications and web portal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RgbColor? ThemeColor
+        public Microsoft.Graph.Beta.Models.RgbColor? ThemeColor
         {
-            get { return BackingStore?.Get<RgbColor?>("themeColor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RgbColor?>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
 #nullable restore
 #else
-        public RgbColor ThemeColor
+        public Microsoft.Graph.Beta.Models.RgbColor ThemeColor
         {
-            get { return BackingStore?.Get<RgbColor>("themeColor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RgbColor>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
 #endif
         /// <summary>Logo image displayed in Company Portal apps which have a theme color background behind the logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? ThemeColorLogo
+        public Microsoft.Graph.Beta.Models.MimeContent? ThemeColorLogo
         {
-            get { return BackingStore?.Get<MimeContent?>("themeColorLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("themeColorLogo"); }
             set { BackingStore?.Set("themeColorLogo", value); }
         }
 #nullable restore
 #else
-        public MimeContent ThemeColorLogo
+        public Microsoft.Graph.Beta.Models.MimeContent ThemeColorLogo
         {
-            get { return BackingStore?.Get<MimeContent>("themeColorLogo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("themeColorLogo"); }
             set { BackingStore?.Set("themeColorLogo", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IntuneBrandingProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IntuneBrandingProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IntuneBrandingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IntuneBrandingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IntuneBrandingProfile();
+            return new Microsoft.Graph.Beta.Models.IntuneBrandingProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -433,8 +433,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<IntuneBrandingProfileAssignment>(IntuneBrandingProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "companyPortalBlockedActions", n => { CompanyPortalBlockedActions = n.GetCollectionOfObjectValues<CompanyPortalBlockedAction>(CompanyPortalBlockedAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment>(Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "companyPortalBlockedActions", n => { CompanyPortalBlockedActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction>(Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contactITEmailAddress", n => { ContactITEmailAddress = n.GetStringValue(); } },
                 { "contactITName", n => { ContactITName = n.GetStringValue(); } },
                 { "contactITNotes", n => { ContactITNotes = n.GetStringValue(); } },
@@ -446,13 +446,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "disableClientTelemetry", n => { DisableClientTelemetry = n.GetBoolValue(); } },
                 { "disableDeviceCategorySelection", n => { DisableDeviceCategorySelection = n.GetBoolValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "enrollmentAvailability", n => { EnrollmentAvailability = n.GetEnumValue<EnrollmentAvailabilityOptions>(); } },
+                { "enrollmentAvailability", n => { EnrollmentAvailability = n.GetEnumValue<Microsoft.Graph.Beta.Models.EnrollmentAvailabilityOptions>(); } },
                 { "isDefaultProfile", n => { IsDefaultProfile = n.GetBoolValue(); } },
                 { "isFactoryResetDisabled", n => { IsFactoryResetDisabled = n.GetBoolValue(); } },
                 { "isRemoveDeviceDisabled", n => { IsRemoveDeviceDisabled = n.GetBoolValue(); } },
-                { "landingPageCustomizedImage", n => { LandingPageCustomizedImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "landingPageCustomizedImage", n => { LandingPageCustomizedImage = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "onlineSupportSiteName", n => { OnlineSupportSiteName = n.GetStringValue(); } },
                 { "onlineSupportSiteUrl", n => { OnlineSupportSiteUrl = n.GetStringValue(); } },
                 { "privacyUrl", n => { PrivacyUrl = n.GetStringValue(); } },
@@ -465,8 +465,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
                 { "showLogo", n => { ShowLogo = n.GetBoolValue(); } },
                 { "showOfficeWebApps", n => { ShowOfficeWebApps = n.GetBoolValue(); } },
-                { "themeColor", n => { ThemeColor = n.GetObjectValue<RgbColor>(RgbColor.CreateFromDiscriminatorValue); } },
-                { "themeColorLogo", n => { ThemeColorLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "themeColor", n => { ThemeColor = n.GetObjectValue<Microsoft.Graph.Beta.Models.RgbColor>(Microsoft.Graph.Beta.Models.RgbColor.CreateFromDiscriminatorValue); } },
+                { "themeColorLogo", n => { ThemeColorLogo = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -477,8 +477,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IntuneBrandingProfileAssignment>("assignments", Assignments);
-            writer.WriteCollectionOfObjectValues<CompanyPortalBlockedAction>("companyPortalBlockedActions", CompanyPortalBlockedActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntuneBrandingProfileAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction>("companyPortalBlockedActions", CompanyPortalBlockedActions);
             writer.WriteStringValue("contactITEmailAddress", ContactITEmailAddress);
             writer.WriteStringValue("contactITName", ContactITName);
             writer.WriteStringValue("contactITNotes", ContactITNotes);
@@ -490,13 +490,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("disableClientTelemetry", DisableClientTelemetry);
             writer.WriteBoolValue("disableDeviceCategorySelection", DisableDeviceCategorySelection);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<EnrollmentAvailabilityOptions>("enrollmentAvailability", EnrollmentAvailability);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EnrollmentAvailabilityOptions>("enrollmentAvailability", EnrollmentAvailability);
             writer.WriteBoolValue("isDefaultProfile", IsDefaultProfile);
             writer.WriteBoolValue("isFactoryResetDisabled", IsFactoryResetDisabled);
             writer.WriteBoolValue("isRemoveDeviceDisabled", IsRemoveDeviceDisabled);
-            writer.WriteObjectValue<MimeContent>("landingPageCustomizedImage", LandingPageCustomizedImage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("landingPageCustomizedImage", LandingPageCustomizedImage);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<MimeContent>("lightBackgroundLogo", LightBackgroundLogo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("lightBackgroundLogo", LightBackgroundLogo);
             writer.WriteStringValue("onlineSupportSiteName", OnlineSupportSiteName);
             writer.WriteStringValue("onlineSupportSiteUrl", OnlineSupportSiteUrl);
             writer.WriteStringValue("privacyUrl", PrivacyUrl);
@@ -509,8 +509,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("showDisplayNameNextToLogo", ShowDisplayNameNextToLogo);
             writer.WriteBoolValue("showLogo", ShowLogo);
             writer.WriteBoolValue("showOfficeWebApps", ShowOfficeWebApps);
-            writer.WriteObjectValue<RgbColor>("themeColor", ThemeColor);
-            writer.WriteObjectValue<MimeContent>("themeColorLogo", ThemeColorLogo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RgbColor>("themeColor", ThemeColor);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("themeColorLogo", ThemeColorLogo);
         }
     }
 }

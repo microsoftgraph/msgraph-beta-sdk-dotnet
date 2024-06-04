@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Windows Phone 8.1 to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration, IParsable
+    public class WindowsPhone81VpnConfiguration : Microsoft.Graph.Beta.Models.Windows81VpnConfiguration, IParsable
     {
         /// <summary>VPN Authentication Method.</summary>
-        public VpnAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.VpnAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Bypass VPN on company Wi-Fi.</summary>
@@ -48,16 +48,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsPhone81CertificateProfileBase? IdentityCertificate
+        public Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase? IdentityCertificate
         {
-            get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase?>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public WindowsPhone81CertificateProfileBase IdentityCertificate
+        public Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase IdentityCertificate
         {
-            get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rememberUserCredentials", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhone81VpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81VpnConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsPhone81VpnConfiguration() : base()
         {
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhone81VpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81VpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPhone81VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81VpnConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsPhone81VpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,11 +92,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>(); } },
                 { "bypassVpnOnCompanyWifi", n => { BypassVpnOnCompanyWifi = n.GetBoolValue(); } },
                 { "bypassVpnOnHomeWifi", n => { BypassVpnOnHomeWifi = n.GetBoolValue(); } },
                 { "dnsSuffixSearchList", n => { DnsSuffixSearchList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<WindowsPhone81CertificateProfileBase>(WindowsPhone81CertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase>(Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase.CreateFromDiscriminatorValue); } },
                 { "rememberUserCredentials", n => { RememberUserCredentials = n.GetBoolValue(); } },
             };
         }
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteBoolValue("bypassVpnOnCompanyWifi", BypassVpnOnCompanyWifi);
             writer.WriteBoolValue("bypassVpnOnHomeWifi", BypassVpnOnHomeWifi);
             writer.WriteCollectionOfPrimitiveValues<string>("dnsSuffixSearchList", DnsSuffixSearchList);
-            writer.WriteObjectValue<WindowsPhone81CertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsPhone81CertificateProfileBase>("identityCertificate", IdentityCertificate);
             writer.WriteBoolValue("rememberUserCredentials", RememberUserCredentials);
         }
     }

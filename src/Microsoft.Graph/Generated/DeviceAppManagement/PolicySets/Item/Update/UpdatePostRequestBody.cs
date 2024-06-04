@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
         /// <summary>The addedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySetItem>? AddedPolicySetItems
+        public List<Microsoft.Graph.Beta.Models.PolicySetItem>? AddedPolicySetItems
         {
-            get { return BackingStore?.Get<List<PolicySetItem>?>("addedPolicySetItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySetItem>?>("addedPolicySetItems"); }
             set { BackingStore?.Set("addedPolicySetItems", value); }
         }
 #nullable restore
 #else
-        public List<PolicySetItem> AddedPolicySetItems
+        public List<Microsoft.Graph.Beta.Models.PolicySetItem> AddedPolicySetItems
         {
-            get { return BackingStore?.Get<List<PolicySetItem>>("addedPolicySetItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySetItem>>("addedPolicySetItems"); }
             set { BackingStore?.Set("addedPolicySetItems", value); }
         }
 #endif
@@ -37,16 +37,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySetAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.PolicySetAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<PolicySetAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySetAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<PolicySetAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.PolicySetAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySetAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -71,21 +71,21 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
         /// <summary>The updatedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySetItem>? UpdatedPolicySetItems
+        public List<Microsoft.Graph.Beta.Models.PolicySetItem>? UpdatedPolicySetItems
         {
-            get { return BackingStore?.Get<List<PolicySetItem>?>("updatedPolicySetItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySetItem>?>("updatedPolicySetItems"); }
             set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
 #nullable restore
 #else
-        public List<PolicySetItem> UpdatedPolicySetItems
+        public List<Microsoft.Graph.Beta.Models.PolicySetItem> UpdatedPolicySetItems
         {
-            get { return BackingStore?.Get<List<PolicySetItem>>("updatedPolicySetItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PolicySetItem>>("updatedPolicySetItems"); }
             set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update.UpdatePostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdatePostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update.UpdatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update.UpdatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update.UpdatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,10 +110,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addedPolicySetItems", n => { AddedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addedPolicySetItems", n => { AddedPolicySetItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySetItem>(Microsoft.Graph.Beta.Models.PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySetAssignment>(Microsoft.Graph.Beta.Models.PolicySetAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deletedPolicySetItems", n => { DeletedPolicySetItems = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "updatedPolicySetItems", n => { UpdatedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "updatedPolicySetItems", n => { UpdatedPolicySetItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySetItem>(Microsoft.Graph.Beta.Models.PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<PolicySetItem>("addedPolicySetItems", AddedPolicySetItems);
-            writer.WriteCollectionOfObjectValues<PolicySetAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySetItem>("addedPolicySetItems", AddedPolicySetItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySetAssignment>("assignments", Assignments);
             writer.WriteCollectionOfPrimitiveValues<string>("deletedPolicySetItems", DeletedPolicySetItems);
-            writer.WriteCollectionOfObjectValues<PolicySetItem>("updatedPolicySetItems", UpdatedPolicySetItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PolicySetItem>("updatedPolicySetItems", UpdatedPolicySetItems);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

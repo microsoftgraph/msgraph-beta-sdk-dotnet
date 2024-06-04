@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
     public class ForwardingPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
         /// <param name="position">The unique identifier of forwardingPolicy</param>
-        /// <returns>A <see cref="ForwardingPolicyItemRequestBuilder"/></returns>
-        public ForwardingPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.ForwardingPolicyItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.ForwardingPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("forwardingPolicy%2Did", position);
-                return new ForwardingPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.ForwardingPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ForwardingPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ForwardingPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
         /// Retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingpolicies?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ForwardingPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ForwardingPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<ForwardingPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder.ForwardingPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ForwardingPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<ForwardingPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder.ForwardingPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ForwardingPolicyCollectionResponse>(requestInfo, ForwardingPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to forwardingPolicies for networkAccess
         /// </summary>
-        /// <returns>A <see cref="ForwardingPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ForwardingPolicy?> PostAsync(ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy?> PostAsync(Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ForwardingPolicy> PostAsync(ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy> PostAsync(Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ForwardingPolicy>(requestInfo, ForwardingPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ForwardingPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder.ForwardingPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ForwardingPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder.ForwardingPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.ForwardingPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ForwardingPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ForwardingPoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ForwardingPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ForwardingPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<ForwardingPoliciesRequestBuilderGetQueryParameters>
+        public class ForwardingPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder.ForwardingPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

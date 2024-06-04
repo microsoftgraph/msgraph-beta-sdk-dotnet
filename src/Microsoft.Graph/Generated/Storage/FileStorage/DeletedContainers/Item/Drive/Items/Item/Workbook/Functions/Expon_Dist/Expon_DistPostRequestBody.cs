@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>The cumulative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cumulative
+        public Microsoft.Graph.Beta.Models.Json? Cumulative
         {
-            get { return BackingStore?.Get<Json?>("cumulative"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
 #nullable restore
 #else
-        public Json Cumulative
+        public Microsoft.Graph.Beta.Models.Json Cumulative
         {
-            get { return BackingStore?.Get<Json>("cumulative"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
 #endif
         /// <summary>The lambda property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Lambda
+        public Microsoft.Graph.Beta.Models.Json? Lambda
         {
-            get { return BackingStore?.Get<Json?>("lambda"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lambda"); }
             set { BackingStore?.Set("lambda", value); }
         }
 #nullable restore
 #else
-        public Json Lambda
+        public Microsoft.Graph.Beta.Models.Json Lambda
         {
-            get { return BackingStore?.Get<Json>("lambda"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lambda"); }
             set { BackingStore?.Set("lambda", value); }
         }
 #endif
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X
+        public Microsoft.Graph.Beta.Models.Json? X
         {
-            get { return BackingStore?.Get<Json?>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X
+        public Microsoft.Graph.Beta.Models.Json X
         {
-            get { return BackingStore?.Get<Json>("x"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Expon_DistPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Expon_Dist.Expon_DistPostRequestBody"/> and sets the default values.
         /// </summary>
         public Expon_DistPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Expon_DistPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Expon_Dist.Expon_DistPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Expon_DistPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Expon_Dist.Expon_DistPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Expon_DistPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.Items.Item.Workbook.Functions.Expon_Dist.Expon_DistPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "lambda", n => { Lambda = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cumulative", n => { Cumulative = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "lambda", n => { Lambda = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Drive.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("cumulative", Cumulative);
-            writer.WriteObjectValue<Json>("lambda", Lambda);
-            writer.WriteObjectValue<Json>("x", X);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("cumulative", Cumulative);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lambda", Lambda);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("x", X);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

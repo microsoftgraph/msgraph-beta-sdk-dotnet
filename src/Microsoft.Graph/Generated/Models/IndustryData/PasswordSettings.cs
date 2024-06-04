@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PasswordSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings"/> and sets the default values.
         /// </summary>
         public PasswordSettings()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PasswordSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PasswordSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.simplePasswordSettings" => new SimplePasswordSettings(),
-                _ => new PasswordSettings(),
+                "#microsoft.graph.industryData.simplePasswordSettings" => new Microsoft.Graph.Beta.Models.IndustryData.SimplePasswordSettings(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.PasswordSettings(),
             };
         }
         /// <summary>

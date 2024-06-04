@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint enforcing a given string length range
     /// </summary>
-    public class DeviceManagementSettingStringLengthConstraint : DeviceManagementConstraint, IParsable
+    public class DeviceManagementSettingStringLengthConstraint : Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>The maximum permitted string length</summary>
         public int? MaximumLength
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("minimumLength", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementSettingStringLengthConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingStringLengthConstraint"/> and sets the default values.
         /// </summary>
         public DeviceManagementSettingStringLengthConstraint() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingStringLengthConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingStringLengthConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingStringLengthConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementSettingStringLengthConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingStringLengthConstraint();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementSettingStringLengthConstraint();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
     public class DeviceConfigurationUserStateSummariesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationUserStateSummariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationUserStateSummariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,57 +50,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The device configuration user state summary for this account.
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationUserStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfigurationUserStateSummary?> GetAsync(Action<RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder.DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceConfigurationUserStateSummary> GetAsync(Action<RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder.DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceConfigurationUserStateSummary>(requestInfo, DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>(requestInfo, Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationUserStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfigurationUserStateSummary?> PatchAsync(DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceConfigurationUserStateSummary> PatchAsync(DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary> PatchAsync(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceConfigurationUserStateSummary>(requestInfo, DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>(requestInfo, Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder.DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder.DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationUserStateSummariesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceConfigurationUserStateSummariesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceConfigurationUserStateSummariesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSumm
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>
+        public class DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder.DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, and user. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project, driveItem, and user. Optional.</summary>
-        public PlannerContainerType? Type
+        public Microsoft.Graph.Beta.Models.PlannerContainerType? Type
         {
-            get { return BackingStore?.Get<PlannerContainerType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerContainerType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The full canonical URL of the container. Optional.</summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerPlanContainer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerPlanContainer"/> and sets the default values.
         /// </summary>
         public PlannerPlanContainer()
         {
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerPlanContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlanContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerPlanContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerPlanContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.plannerSharedWithContainer" => new PlannerSharedWithContainer(),
-                _ => new PlannerPlanContainer(),
+                "#microsoft.graph.plannerSharedWithContainer" => new Microsoft.Graph.Beta.Models.PlannerSharedWithContainer(),
+                _ => new Microsoft.Graph.Beta.Models.PlannerPlanContainer(),
             };
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "containerId", n => { ContainerId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<PlannerContainerType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerContainerType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("containerId", ContainerId);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PlannerContainerType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerContainerType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

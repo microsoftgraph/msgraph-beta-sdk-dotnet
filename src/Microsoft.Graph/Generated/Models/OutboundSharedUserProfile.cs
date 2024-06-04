@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantReference>? Tenants
+        public List<Microsoft.Graph.Beta.Models.TenantReference>? Tenants
         {
-            get { return BackingStore?.Get<List<TenantReference>?>("tenants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TenantReference>?>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #nullable restore
 #else
-        public List<TenantReference> Tenants
+        public List<Microsoft.Graph.Beta.Models.TenantReference> Tenants
         {
-            get { return BackingStore?.Get<List<TenantReference>>("tenants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TenantReference>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OutboundSharedUserProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OutboundSharedUserProfile"/> and sets the default values.
         /// </summary>
         public OutboundSharedUserProfile()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutboundSharedUserProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutboundSharedUserProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OutboundSharedUserProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OutboundSharedUserProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutboundSharedUserProfile();
+            return new Microsoft.Graph.Beta.Models.OutboundSharedUserProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantReference>(TenantReference.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TenantReference>(Microsoft.Graph.Beta.Models.TenantReference.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<TenantReference>("tenants", Tenants);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TenantReference>("tenants", Tenants);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

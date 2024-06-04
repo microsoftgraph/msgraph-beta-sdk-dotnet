@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExternallyAccessibleAwsStorageBucketFinding : Finding, IParsable
+    public class ExternallyAccessibleAwsStorageBucketFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessibility property</summary>
-        public AwsAccessType? Accessibility
+        public Microsoft.Graph.Beta.Models.AwsAccessType? Accessibility
         {
-            get { return BackingStore?.Get<AwsAccessType?>("accessibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAccessType?>("accessibility"); }
             set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>The accountsWithAccess property</summary>
@@ -35,28 +35,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The storageBucket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? StorageBucket
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource? StorageBucket
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource?>("storageBucket"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource?>("storageBucket"); }
             set { BackingStore?.Set("storageBucket", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource StorageBucket
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource StorageBucket
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource>("storageBucket"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("storageBucket"); }
             set { BackingStore?.Set("storageBucket", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternallyAccessibleAwsStorageBucketFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternallyAccessibleAwsStorageBucketFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternallyAccessibleAwsStorageBucketFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternallyAccessibleAwsStorageBucketFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternallyAccessibleAwsStorageBucketFinding();
+            return new Microsoft.Graph.Beta.Models.ExternallyAccessibleAwsStorageBucketFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessibility", n => { Accessibility = n.GetEnumValue<AwsAccessType>(); } },
+                { "accessibility", n => { Accessibility = n.GetEnumValue<Microsoft.Graph.Beta.Models.AwsAccessType>(); } },
                 { "accountsWithAccess", n => { AccountsWithAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccountsWithAccess>(Microsoft.Graph.Beta.Models.AccountsWithAccess.CreateFromDiscriminatorValue); } },
-                { "storageBucket", n => { StorageBucket = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "storageBucket", n => { StorageBucket = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AwsAccessType>("accessibility", Accessibility);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AwsAccessType>("accessibility", Accessibility);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccountsWithAccess>("accountsWithAccess", AccountsWithAccess);
-            writer.WriteObjectValue<AuthorizationSystemResource>("storageBucket", StorageBucket);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("storageBucket", StorageBucket);
         }
     }
 }

@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
     public class TeamTemplateDefinitionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TeamTemplateDefinition.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamTemplateDefinition entities.</summary>
         /// <param name="position">The unique identifier of teamTemplateDefinition</param>
-        /// <returns>A <see cref="TeamTemplateDefinitionItemRequestBuilder"/></returns>
-        public TeamTemplateDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamTemplateDefinitionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamTemplateDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("teamTemplateDefinition%2Did", position);
-                return new TeamTemplateDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamTemplateDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamTemplateDefinitionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamTemplateDefinitionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
         /// <summary>
         /// Get entities from teamTemplateDefinition
         /// </summary>
-        /// <returns>A <see cref="TeamTemplateDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamTemplateDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamTemplateDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<TeamTemplateDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder.TeamTemplateDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamTemplateDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<TeamTemplateDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder.TeamTemplateDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamTemplateDefinitionCollectionResponse>(requestInfo, TeamTemplateDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamTemplateDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.TeamTemplateDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to teamTemplateDefinition
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinition?> PostAsync(Microsoft.Graph.Beta.Models.TeamTemplateDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamTemplateDefinition>(requestInfo, Microsoft.Graph.Beta.Models.TeamTemplateDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamTemplateDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder.TeamTemplateDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamTemplateDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder.TeamTemplateDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TeamTemplateDefinitionRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TeamTemplateDefinitionRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder WithUrl(string rawUrl)
         {
-            return new TeamTemplateDefinitionRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from teamTemplateDefinition
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamTemplateDefinitionRequestBuilderGetRequestConfiguration : RequestConfiguration<TeamTemplateDefinitionRequestBuilderGetQueryParameters>
+        public class TeamTemplateDefinitionRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder.TeamTemplateDefinitionRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

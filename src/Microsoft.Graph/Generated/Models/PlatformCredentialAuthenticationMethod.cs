@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlatformCredentialAuthenticationMethod : AuthenticationMethod, IParsable
+    public class PlatformCredentialAuthenticationMethod : Microsoft.Graph.Beta.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time that this Platform Credential Key was registered.</summary>
@@ -49,19 +49,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.</summary>
-        public AuthenticationMethodKeyStrength? KeyStrength
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodKeyStrength? KeyStrength
         {
-            get { return BackingStore?.Get<AuthenticationMethodKeyStrength?>("keyStrength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodKeyStrength?>("keyStrength"); }
             set { BackingStore?.Set("keyStrength", value); }
         }
         /// <summary>Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.</summary>
-        public AuthenticationMethodPlatform? Platform
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodPlatform? Platform
         {
-            get { return BackingStore?.Get<AuthenticationMethodPlatform?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodPlatform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlatformCredentialAuthenticationMethod"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod"/> and sets the default values.
         /// </summary>
         public PlatformCredentialAuthenticationMethod() : base()
         {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlatformCredentialAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlatformCredentialAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlatformCredentialAuthenticationMethod();
+            return new Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "keyStrength", n => { KeyStrength = n.GetEnumValue<AuthenticationMethodKeyStrength>(); } },
-                { "platform", n => { Platform = n.GetEnumValue<AuthenticationMethodPlatform>(); } },
+                { "keyStrength", n => { KeyStrength = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationMethodKeyStrength>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationMethodPlatform>(); } },
             };
         }
         /// <summary>
@@ -103,8 +103,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Device>("device", Device);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<AuthenticationMethodKeyStrength>("keyStrength", KeyStrength);
-            writer.WriteEnumValue<AuthenticationMethodPlatform>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationMethodKeyStrength>("keyStrength", KeyStrength);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationMethodPlatform>("platform", Platform);
         }
     }
 }

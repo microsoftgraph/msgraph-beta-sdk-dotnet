@@ -64,242 +64,242 @@ namespace Microsoft.Graph.Beta.Groups.Item
     public class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the acceptedSenders property of the microsoft.graph.group entity.</summary>
-        public AcceptedSendersRequestBuilder AcceptedSenders
+        public Microsoft.Graph.Beta.Groups.Item.AcceptedSenders.AcceptedSendersRequestBuilder AcceptedSenders
         {
-            get => new AcceptedSendersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.AcceptedSenders.AcceptedSendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addFavorite method.</summary>
-        public AddFavoriteRequestBuilder AddFavorite
+        public Microsoft.Graph.Beta.Groups.Item.AddFavorite.AddFavoriteRequestBuilder AddFavorite
         {
-            get => new AddFavoriteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.AddFavorite.AddFavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.group entity.</summary>
-        public AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        public Microsoft.Graph.Beta.Groups.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
         {
-            get => new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignLicense method.</summary>
-        public AssignLicenseRequestBuilder AssignLicense
+        public Microsoft.Graph.Beta.Groups.Item.AssignLicense.AssignLicenseRequestBuilder AssignLicense
         {
-            get => new AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.group entity.</summary>
-        public CalendarRequestBuilder Calendar
+        public Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarRequestBuilder Calendar
         {
-            get => new CalendarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.group entity.</summary>
-        public CalendarViewRequestBuilder CalendarView
+        public Microsoft.Graph.Beta.Groups.Item.CalendarView.CalendarViewRequestBuilder CalendarView
         {
-            get => new CalendarViewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkGrantedPermissionsForApp method.</summary>
-        public CheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp
+        public Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp
         {
-            get => new CheckGrantedPermissionsForAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public Microsoft.Graph.Beta.Groups.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public Microsoft.Graph.Beta.Groups.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the conversations property of the microsoft.graph.group entity.</summary>
-        public ConversationsRequestBuilder Conversations
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.ConversationsRequestBuilder Conversations
         {
-            get => new ConversationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdOnBehalfOf property of the microsoft.graph.group entity.</summary>
-        public CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf
+        public Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf
         {
-            get => new CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
-        public DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
+        public Microsoft.Graph.Beta.Groups.Item.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
         {
-            get => new DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.group entity.</summary>
-        public DriveRequestBuilder Drive
+        public Microsoft.Graph.Beta.Groups.Item.Drive.DriveRequestBuilder Drive
         {
-            get => new DriveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.group entity.</summary>
-        public DrivesRequestBuilder Drives
+        public Microsoft.Graph.Beta.Groups.Item.Drives.DrivesRequestBuilder Drives
         {
-            get => new DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.group entity.</summary>
-        public EndpointsRequestBuilder Endpoints
+        public Microsoft.Graph.Beta.Groups.Item.Endpoints.EndpointsRequestBuilder Endpoints
         {
-            get => new EndpointsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Endpoints.EndpointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
-        public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership
+        public Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership.EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership
         {
-            get => new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership.EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.group entity.</summary>
-        public EventsRequestBuilder Events
+        public Microsoft.Graph.Beta.Groups.Item.Events.EventsRequestBuilder Events
         {
-            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.group entity.</summary>
-        public ExtensionsRequestBuilder Extensions
+        public Microsoft.Graph.Beta.Groups.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups
+        public Microsoft.Graph.Beta.Groups.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects
+        public Microsoft.Graph.Beta.Groups.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
-        public GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
+        public Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
         {
-            get => new GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
-        public GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
+        public Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
         {
-            get => new GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.group entity.</summary>
-        public MemberOfRequestBuilder MemberOf
+        public Microsoft.Graph.Beta.Groups.Item.MemberOf.MemberOfRequestBuilder MemberOf
         {
-            get => new MemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.group entity.</summary>
-        public MembersRequestBuilder Members
+        public Microsoft.Graph.Beta.Groups.Item.Members.MembersRequestBuilder Members
         {
-            get => new MembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.</summary>
-        public MembersWithLicenseErrorsRequestBuilder MembersWithLicenseErrors
+        public Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors.MembersWithLicenseErrorsRequestBuilder MembersWithLicenseErrors
         {
-            get => new MembersWithLicenseErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors.MembersWithLicenseErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.group entity.</summary>
-        public OnenoteRequestBuilder Onenote
+        public Microsoft.Graph.Beta.Groups.Item.Onenote.OnenoteRequestBuilder Onenote
         {
-            get => new OnenoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.group entity.</summary>
-        public OwnersRequestBuilder Owners
+        public Microsoft.Graph.Beta.Groups.Item.Owners.OwnersRequestBuilder Owners
         {
-            get => new OwnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Owners.OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.group entity.</summary>
-        public PermissionGrantsRequestBuilder PermissionGrants
+        public Microsoft.Graph.Beta.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.group entity.</summary>
-        public PhotoRequestBuilder Photo
+        public Microsoft.Graph.Beta.Groups.Item.Photo.PhotoRequestBuilder Photo
         {
-            get => new PhotoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.group entity.</summary>
-        public PhotosRequestBuilder Photos
+        public Microsoft.Graph.Beta.Groups.Item.Photos.PhotosRequestBuilder Photos
         {
-            get => new PhotosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner property of the microsoft.graph.group entity.</summary>
-        public PlannerRequestBuilder Planner
+        public Microsoft.Graph.Beta.Groups.Item.Planner.PlannerRequestBuilder Planner
         {
-            get => new PlannerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rejectedSenders property of the microsoft.graph.group entity.</summary>
-        public RejectedSendersRequestBuilder RejectedSenders
+        public Microsoft.Graph.Beta.Groups.Item.RejectedSenders.RejectedSendersRequestBuilder RejectedSenders
         {
-            get => new RejectedSendersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.RejectedSenders.RejectedSendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeFavorite method.</summary>
-        public RemoveFavoriteRequestBuilder RemoveFavorite
+        public Microsoft.Graph.Beta.Groups.Item.RemoveFavorite.RemoveFavoriteRequestBuilder RemoveFavorite
         {
-            get => new RemoveFavoriteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.RemoveFavorite.RemoveFavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the renew method.</summary>
-        public RenewRequestBuilder Renew
+        public Microsoft.Graph.Beta.Groups.Item.Renew.RenewRequestBuilder Renew
         {
-            get => new RenewRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Renew.RenewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetUnseenCount method.</summary>
-        public ResetUnseenCountRequestBuilder ResetUnseenCount
+        public Microsoft.Graph.Beta.Groups.Item.ResetUnseenCount.ResetUnseenCountRequestBuilder ResetUnseenCount
         {
-            get => new ResetUnseenCountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.ResetUnseenCount.ResetUnseenCountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore
+        public Microsoft.Graph.Beta.Groups.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
-        public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
+        public Microsoft.Graph.Beta.Groups.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
         {
-            get => new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public Microsoft.Graph.Beta.Groups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.group entity.</summary>
-        public SettingsRequestBuilder Settings
+        public Microsoft.Graph.Beta.Groups.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sites property of the microsoft.graph.group entity.</summary>
-        public SitesRequestBuilder Sites
+        public Microsoft.Graph.Beta.Groups.Item.Sites.SitesRequestBuilder Sites
         {
-            get => new SitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeByMail method.</summary>
-        public SubscribeByMailRequestBuilder SubscribeByMail
+        public Microsoft.Graph.Beta.Groups.Item.SubscribeByMail.SubscribeByMailRequestBuilder SubscribeByMail
         {
-            get => new SubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.SubscribeByMail.SubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the team property of the microsoft.graph.group entity.</summary>
-        public TeamRequestBuilder Team
+        public Microsoft.Graph.Beta.Groups.Item.Team.TeamRequestBuilder Team
         {
-            get => new TeamRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threads property of the microsoft.graph.group entity.</summary>
-        public ThreadsRequestBuilder Threads
+        public Microsoft.Graph.Beta.Groups.Item.Threads.ThreadsRequestBuilder Threads
         {
-            get => new ThreadsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Threads.ThreadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.group entity.</summary>
-        public TransitiveMemberOfRequestBuilder TransitiveMemberOf
+        public Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
         {
-            get => new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.</summary>
-        public TransitiveMembersRequestBuilder TransitiveMembers
+        public Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.TransitiveMembersRequestBuilder TransitiveMembers
         {
-            get => new TransitiveMembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.TransitiveMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unsubscribeByMail method.</summary>
-        public UnsubscribeByMailRequestBuilder UnsubscribeByMail
+        public Microsoft.Graph.Beta.Groups.Item.UnsubscribeByMail.UnsubscribeByMailRequestBuilder UnsubscribeByMail
         {
-            get => new UnsubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.UnsubscribeByMail.UnsubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties
+        public Microsoft.Graph.Beta.Groups.Item.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -307,7 +307,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -320,7 +320,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -333,7 +333,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -344,20 +344,20 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Group?> GetAsync(Action<RequestConfiguration<GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Group?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Group> GetAsync(Action<RequestConfiguration<GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Group> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -369,7 +369,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Group?> PatchAsync(Microsoft.Graph.Beta.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -383,7 +383,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -413,11 +413,11 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -450,11 +450,11 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GroupItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new GroupItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -493,7 +493,7 @@ namespace Microsoft.Graph.Beta.Groups.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupItemRequestBuilderGetQueryParameters>
+        public class GroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UsageRight : Entity, IParsable
+    public class UsageRight : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Product id corresponding to the usage right.</summary>
@@ -43,20 +43,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public UsageRightState? State
+        public Microsoft.Graph.Beta.Models.UsageRightState? State
         {
-            get { return BackingStore?.Get<UsageRightState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UsageRightState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UsageRight"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UsageRight"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UsageRight CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UsageRight CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UsageRight();
+            return new Microsoft.Graph.Beta.Models.UsageRight();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "catalogId", n => { CatalogId = n.GetStringValue(); } },
                 { "serviceIdentifier", n => { ServiceIdentifier = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<UsageRightState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.UsageRightState>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("catalogId", CatalogId);
             writer.WriteStringValue("serviceIdentifier", ServiceIdentifier);
-            writer.WriteEnumValue<UsageRightState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UsageRightState>("state", State);
         }
     }
 }

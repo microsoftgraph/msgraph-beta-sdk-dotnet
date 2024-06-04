@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enrollment Profile used to enroll COSU devices using Google&apos;s Cloud Management.
     /// </summary>
-    public class AndroidForWorkEnrollmentProfile : Entity, IParsable
+    public class AndroidForWorkEnrollmentProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,16 +96,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>String used to generate a QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? QrCodeImage
+        public Microsoft.Graph.Beta.Models.MimeContent? QrCodeImage
         {
-            get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #nullable restore
 #else
-        public MimeContent QrCodeImage
+        public Microsoft.Graph.Beta.Models.MimeContent QrCodeImage
         {
-            get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #endif
@@ -134,12 +134,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkEnrollmentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkEnrollmentProfile();
+            return new Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "enrolledDeviceCount", n => { EnrolledDeviceCount = n.GetIntValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
-                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "tokenExpirationDateTime", n => { TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "tokenValue", n => { TokenValue = n.GetStringValue(); } },
             };
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("enrolledDeviceCount", EnrolledDeviceCount);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("qrCodeContent", QrCodeContent);
-            writer.WriteObjectValue<MimeContent>("qrCodeImage", QrCodeImage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("qrCodeImage", QrCodeImage);
             writer.WriteDateTimeOffsetValue("tokenExpirationDateTime", TokenExpirationDateTime);
             writer.WriteStringValue("tokenValue", TokenValue);
         }

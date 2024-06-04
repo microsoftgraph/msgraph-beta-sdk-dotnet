@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// KioskModeApp v4 for Win32 app support
     /// </summary>
-    public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable
+    public class WindowsKioskWin32App : Microsoft.Graph.Beta.Models.WindowsKioskAppBase, IParsable
     {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("edgeKioskIdleTimeoutMinutes", value); }
         }
         /// <summary>Edge kiosk type</summary>
-        public WindowsEdgeKioskType? EdgeKioskType
+        public Microsoft.Graph.Beta.Models.WindowsEdgeKioskType? EdgeKioskType
         {
-            get { return BackingStore?.Get<WindowsEdgeKioskType?>("edgeKioskType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsEdgeKioskType?>("edgeKioskType"); }
             set { BackingStore?.Set("edgeKioskType", value); }
         }
         /// <summary>Edge first run flag for Edge kiosk mode</summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("edgeNoFirstRun", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskWin32App"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskWin32App"/> and sets the default values.
         /// </summary>
         public WindowsKioskWin32App() : base()
         {
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskWin32App"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskWin32App"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskWin32App CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskWin32App CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskWin32App();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskWin32App();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "classicAppPath", n => { ClassicAppPath = n.GetStringValue(); } },
                 { "edgeKiosk", n => { EdgeKiosk = n.GetStringValue(); } },
                 { "edgeKioskIdleTimeoutMinutes", n => { EdgeKioskIdleTimeoutMinutes = n.GetIntValue(); } },
-                { "edgeKioskType", n => { EdgeKioskType = n.GetEnumValue<WindowsEdgeKioskType>(); } },
+                { "edgeKioskType", n => { EdgeKioskType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsEdgeKioskType>(); } },
                 { "edgeNoFirstRun", n => { EdgeNoFirstRun = n.GetBoolValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("classicAppPath", ClassicAppPath);
             writer.WriteStringValue("edgeKiosk", EdgeKiosk);
             writer.WriteIntValue("edgeKioskIdleTimeoutMinutes", EdgeKioskIdleTimeoutMinutes);
-            writer.WriteEnumValue<WindowsEdgeKioskType>("edgeKioskType", EdgeKioskType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsEdgeKioskType>("edgeKioskType", EdgeKioskType);
             writer.WriteBoolValue("edgeNoFirstRun", EdgeNoFirstRun);
         }
     }

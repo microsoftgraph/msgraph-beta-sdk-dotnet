@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
     public class AwsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the findings property of the microsoft.graph.permissionsAnalytics entity.</summary>
-        public FindingsRequestBuilder Findings
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.Findings.FindingsRequestBuilder Findings
         {
-            get => new FindingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.Findings.FindingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionsCreepIndexDistributions property of the microsoft.graph.permissionsAnalytics entity.</summary>
-        public PermissionsCreepIndexDistributionsRequestBuilder PermissionsCreepIndexDistributions
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder PermissionsCreepIndexDistributions
         {
-            get => new PermissionsCreepIndexDistributionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AwsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AwsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,20 +72,20 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsAnalytics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.PermissionsAnalytics?> GetAsync(Action<RequestConfiguration<AwsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsAnalytics?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder.AwsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.PermissionsAnalytics> GetAsync(Action<RequestConfiguration<AwsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsAnalytics> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder.AwsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PermissionsAnalytics>(requestInfo, Microsoft.Graph.Beta.Models.PermissionsAnalytics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.PermissionsAnalytics?> PatchAsync(Microsoft.Graph.Beta.Models.PermissionsAnalytics body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PermissionsAnalytics>(requestInfo, Microsoft.Graph.Beta.Models.PermissionsAnalytics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -140,11 +140,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AwsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder.AwsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AwsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder.AwsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -177,11 +177,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AwsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AwsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AwsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AwsRequestBuilderGetRequestConfiguration : RequestConfiguration<AwsRequestBuilderGetQueryParameters>
+        public class AwsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.AwsRequestBuilder.AwsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

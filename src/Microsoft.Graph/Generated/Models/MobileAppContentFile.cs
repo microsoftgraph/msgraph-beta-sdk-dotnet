@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for a single installer file that is associated with a given mobileAppContent version.
     /// </summary>
-    public class MobileAppContentFile : Entity, IParsable
+    public class MobileAppContentFile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,20 +114,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sizeInBytes", value); }
         }
         /// <summary>Contains properties for upload request states.</summary>
-        public MobileAppContentFileUploadState? UploadState
+        public Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState? UploadState
         {
-            get { return BackingStore?.Get<MobileAppContentFileUploadState?>("uploadState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState?>("uploadState"); }
             set { BackingStore?.Set("uploadState", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppContentFile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppContentFile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppContentFile();
+            return new Microsoft.Graph.Beta.Models.MobileAppContentFile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
                 { "sizeEncryptedInBytes", n => { SizeEncryptedInBytes = n.GetLongValue(); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
-                { "uploadState", n => { UploadState = n.GetEnumValue<MobileAppContentFileUploadState>(); } },
+                { "uploadState", n => { UploadState = n.GetEnumValue<Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>(); } },
             };
         }
         /// <summary>
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteLongValue("sizeEncrypted", SizeEncrypted);
             writer.WriteLongValue("sizeEncryptedInBytes", SizeEncryptedInBytes);
             writer.WriteLongValue("sizeInBytes", SizeInBytes);
-            writer.WriteEnumValue<MobileAppContentFileUploadState>("uploadState", UploadState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MobileAppContentFileUploadState>("uploadState", UploadState);
         }
     }
 }

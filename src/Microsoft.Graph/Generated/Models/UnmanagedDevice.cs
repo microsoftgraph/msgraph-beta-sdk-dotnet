@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnmanagedDevice"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UnmanagedDevice"/> and sets the default values.
         /// </summary>
         public UnmanagedDevice()
         {
@@ -213,12 +213,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnmanagedDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnmanagedDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UnmanagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UnmanagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnmanagedDevice();
+            return new Microsoft.Graph.Beta.Models.UnmanagedDevice();
         }
         /// <summary>
         /// The deserialization information for the current model

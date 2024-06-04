@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SignIn : Entity, IParsable
+    public class SignIn : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).</summary>
@@ -45,39 +45,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies
+        public List<Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>?>("appliedConditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>?>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies
+        public List<Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>>("appliedConditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #endif
         /// <summary>Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-in event triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppliedAuthenticationEventListener>? AppliedEventListeners
+        public List<Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>? AppliedEventListeners
         {
-            get { return BackingStore?.Get<List<AppliedAuthenticationEventListener>?>("appliedEventListeners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>?>("appliedEventListeners"); }
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
 #nullable restore
 #else
-        public List<AppliedAuthenticationEventListener> AppliedEventListeners
+        public List<Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener> AppliedEventListeners
         {
-            get { return BackingStore?.Get<List<AppliedAuthenticationEventListener>>("appliedEventListeners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>>("appliedEventListeners"); }
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
 #endif
         /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the app token was bound to the device.</summary>
-        public TokenProtectionStatus? AppTokenProtectionStatus
+        public Microsoft.Graph.Beta.Models.TokenProtectionStatus? AppTokenProtectionStatus
         {
-            get { return BackingStore?.Get<TokenProtectionStatus?>("appTokenProtectionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenProtectionStatus?>("appTokenProtectionStatus"); }
             set { BackingStore?.Set("appTokenProtectionStatus", value); }
         }
         /// <summary>Provides details about the app and device used during a Microsoft Entra authentication step.</summary>
@@ -99,48 +99,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Provides details of the Microsoft Entra policies applied to a user and client authentication app during an authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationAppPolicyDetails>? AuthenticationAppPolicyEvaluationDetails
+        public List<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails>? AuthenticationAppPolicyEvaluationDetails
         {
-            get { return BackingStore?.Get<List<AuthenticationAppPolicyDetails>?>("authenticationAppPolicyEvaluationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails>?>("authenticationAppPolicyEvaluationDetails"); }
             set { BackingStore?.Set("authenticationAppPolicyEvaluationDetails", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails
+        public List<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails
         {
-            get { return BackingStore?.Get<List<AuthenticationAppPolicyDetails>>("authenticationAppPolicyEvaluationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails>>("authenticationAppPolicyEvaluationDetails"); }
             set { BackingStore?.Set("authenticationAppPolicyEvaluationDetails", value); }
         }
 #endif
         /// <summary>Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationContext>? AuthenticationContextClassReferences
+        public List<Microsoft.Graph.Beta.Models.AuthenticationContext>? AuthenticationContextClassReferences
         {
-            get { return BackingStore?.Get<List<AuthenticationContext>?>("authenticationContextClassReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationContext>?>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationContext> AuthenticationContextClassReferences
+        public List<Microsoft.Graph.Beta.Models.AuthenticationContext> AuthenticationContextClassReferences
         {
-            get { return BackingStore?.Get<List<AuthenticationContext>>("authenticationContextClassReferences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationContext>>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #endif
         /// <summary>The result of the authentication attempt and more details on the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationDetail>? AuthenticationDetails
+        public List<Microsoft.Graph.Beta.Models.AuthenticationDetail>? AuthenticationDetails
         {
-            get { return BackingStore?.Get<List<AuthenticationDetail>?>("authenticationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationDetail>?>("authenticationDetails"); }
             set { BackingStore?.Set("authenticationDetails", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationDetail> AuthenticationDetails
+        public List<Microsoft.Graph.Beta.Models.AuthenticationDetail> AuthenticationDetails
         {
-            get { return BackingStore?.Get<List<AuthenticationDetail>>("authenticationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationDetail>>("authenticationDetails"); }
             set { BackingStore?.Set("authenticationDetails", value); }
         }
 #endif
@@ -163,23 +163,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AuthenticationProcessingDetails
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? AuthenticationProcessingDetails
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("authenticationProcessingDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("authenticationProcessingDetails"); }
             set { BackingStore?.Set("authenticationProcessingDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AuthenticationProcessingDetails
+        public List<Microsoft.Graph.Beta.Models.KeyValue> AuthenticationProcessingDetails
         {
-            get { return BackingStore?.Get<List<KeyValue>>("authenticationProcessingDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("authenticationProcessingDetails"); }
             set { BackingStore?.Set("authenticationProcessingDetails", value); }
         }
 #endif
         /// <summary>Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, nativeAuth. Use none for all authentications that don&apos;t have a specific value in that list. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: authenticationTransfer, nativeAuth.</summary>
-        public ProtocolType? AuthenticationProtocol
+        public Microsoft.Graph.Beta.Models.ProtocolType? AuthenticationProtocol
         {
-            get { return BackingStore?.Get<ProtocolType?>("authenticationProtocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProtocolType?>("authenticationProtocol"); }
             set { BackingStore?.Set("authenticationProtocol", value); }
         }
         /// <summary>This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).</summary>
@@ -201,16 +201,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationRequirementPolicy>? AuthenticationRequirementPolicies
+        public List<Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy>? AuthenticationRequirementPolicies
         {
-            get { return BackingStore?.Get<List<AuthenticationRequirementPolicy>?>("authenticationRequirementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy>?>("authenticationRequirementPolicies"); }
             set { BackingStore?.Set("authenticationRequirementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationRequirementPolicy> AuthenticationRequirementPolicies
+        public List<Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy> AuthenticationRequirementPolicies
         {
-            get { return BackingStore?.Get<List<AuthenticationRequirementPolicy>>("authenticationRequirementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy>>("authenticationRequirementPolicies"); }
             set { BackingStore?.Set("authenticationRequirementPolicies", value); }
         }
 #endif
@@ -261,16 +261,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessAudience>? ConditionalAccessAudiences
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessAudience>? ConditionalAccessAudiences
         {
-            get { return BackingStore?.Get<List<ConditionalAccessAudience>?>("conditionalAccessAudiences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessAudience>?>("conditionalAccessAudiences"); }
             set { BackingStore?.Set("conditionalAccessAudiences", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessAudience> ConditionalAccessAudiences
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessAudience> ConditionalAccessAudiences
         {
-            get { return BackingStore?.Get<List<ConditionalAccessAudience>>("conditionalAccessAudiences"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessAudience>>("conditionalAccessAudiences"); }
             set { BackingStore?.Set("conditionalAccessAudiences", value); }
         }
 #endif
@@ -303,9 +303,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Also, you must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn&apos;t cross tenant boundaries, the value is none.</summary>
-        public SignInAccessType? CrossTenantAccessType
+        public Microsoft.Graph.Beta.Models.SignInAccessType? CrossTenantAccessType
         {
-            get { return BackingStore?.Get<SignInAccessType?>("crossTenantAccessType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInAccessType?>("crossTenantAccessType"); }
             set { BackingStore?.Set("crossTenantAccessType", value); }
         }
         /// <summary>The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser.  Supports $filter (eq, startsWith) on browser and operatingSystem properties.</summary>
@@ -453,32 +453,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInLocation? Location
+        public Microsoft.Graph.Beta.Models.SignInLocation? Location
         {
-            get { return BackingStore?.Get<SignInLocation?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public SignInLocation Location
+        public Microsoft.Graph.Beta.Models.SignInLocation Location
         {
-            get { return BackingStore?.Get<SignInLocation>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
         /// <summary>Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedIdentity? ManagedServiceIdentity
+        public Microsoft.Graph.Beta.Models.ManagedIdentity? ManagedServiceIdentity
         {
-            get { return BackingStore?.Get<ManagedIdentity?>("managedServiceIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedIdentity?>("managedServiceIdentity"); }
             set { BackingStore?.Set("managedServiceIdentity", value); }
         }
 #nullable restore
 #else
-        public ManagedIdentity ManagedServiceIdentity
+        public Microsoft.Graph.Beta.Models.ManagedIdentity ManagedServiceIdentity
         {
-            get { return BackingStore?.Get<ManagedIdentity>("managedServiceIdentity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedIdentity>("managedServiceIdentity"); }
             set { BackingStore?.Set("managedServiceIdentity", value); }
         }
 #endif
@@ -501,16 +501,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The network location details including the type of network used and its names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkLocationDetail>? NetworkLocationDetails
+        public List<Microsoft.Graph.Beta.Models.NetworkLocationDetail>? NetworkLocationDetails
         {
-            get { return BackingStore?.Get<List<NetworkLocationDetail>?>("networkLocationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NetworkLocationDetail>?>("networkLocationDetails"); }
             set { BackingStore?.Set("networkLocationDetails", value); }
         }
 #nullable restore
 #else
-        public List<NetworkLocationDetail> NetworkLocationDetails
+        public List<Microsoft.Graph.Beta.Models.NetworkLocationDetail> NetworkLocationDetails
         {
-            get { return BackingStore?.Get<List<NetworkLocationDetail>>("networkLocationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NetworkLocationDetail>>("networkLocationDetails"); }
             set { BackingStore?.Set("networkLocationDetails", value); }
         }
 #endif
@@ -531,9 +531,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.</summary>
-        public OriginalTransferMethods? OriginalTransferMethod
+        public Microsoft.Graph.Beta.Models.OriginalTransferMethods? OriginalTransferMethod
         {
-            get { return BackingStore?.Get<OriginalTransferMethods?>("originalTransferMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OriginalTransferMethods?>("originalTransferMethod"); }
             set { BackingStore?.Set("originalTransferMethod", value); }
         }
         /// <summary>Contains information about the Microsoft Entra Private Link policy that is associated with the sign in event.</summary>
@@ -645,15 +645,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public RiskLevel? RiskLevelAggregated
+        public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevelAggregated
         {
-            get { return BackingStore?.Get<RiskLevel?>("riskLevelAggregated"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevelAggregated"); }
             set { BackingStore?.Set("riskLevelAggregated", value); }
         }
         /// <summary>The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public RiskLevel? RiskLevelDuringSignIn
+        public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevelDuringSignIn
         {
-            get { return BackingStore?.Get<RiskLevel?>("riskLevelDuringSignIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevelDuringSignIn"); }
             set { BackingStore?.Set("riskLevelDuringSignIn", value); }
         }
         /// <summary>The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).</summary>
@@ -729,16 +729,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Any conditional access session management policies that were applied during the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SessionLifetimePolicy>? SessionLifetimePolicies
+        public List<Microsoft.Graph.Beta.Models.SessionLifetimePolicy>? SessionLifetimePolicies
         {
-            get { return BackingStore?.Get<List<SessionLifetimePolicy>?>("sessionLifetimePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SessionLifetimePolicy>?>("sessionLifetimePolicies"); }
             set { BackingStore?.Set("sessionLifetimePolicies", value); }
         }
 #nullable restore
 #else
-        public List<SessionLifetimePolicy> SessionLifetimePolicies
+        public List<Microsoft.Graph.Beta.Models.SessionLifetimePolicy> SessionLifetimePolicies
         {
-            get { return BackingStore?.Get<List<SessionLifetimePolicy>>("sessionLifetimePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SessionLifetimePolicy>>("sessionLifetimePolicies"); }
             set { BackingStore?.Set("sessionLifetimePolicies", value); }
         }
 #endif
@@ -781,24 +781,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("signInIdentifierType", value); }
         }
         /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
-        public TokenProtectionStatus? SignInTokenProtectionStatus
+        public Microsoft.Graph.Beta.Models.TokenProtectionStatus? SignInTokenProtectionStatus
         {
-            get { return BackingStore?.Get<TokenProtectionStatus?>("signInTokenProtectionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenProtectionStatus?>("signInTokenProtectionStatus"); }
             set { BackingStore?.Set("signInTokenProtectionStatus", value); }
         }
         /// <summary>The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInStatus? Status
+        public Microsoft.Graph.Beta.Models.SignInStatus? Status
         {
-            get { return BackingStore?.Get<SignInStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public SignInStatus Status
+        public Microsoft.Graph.Beta.Models.SignInStatus Status
         {
-            get { return BackingStore?.Get<SignInStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
@@ -905,20 +905,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.</summary>
-        public SignInUserType? UserType
+        public Microsoft.Graph.Beta.Models.SignInUserType? UserType
         {
-            get { return BackingStore?.Get<SignInUserType?>("userType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SignIn"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SignIn"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SignIn CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SignIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SignIn();
+            return new Microsoft.Graph.Beta.Models.SignIn();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -930,74 +930,74 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "appTokenProtectionStatus", n => { AppTokenProtectionStatus = n.GetEnumValue<TokenProtectionStatus>(); } },
-                { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<AppliedAuthenticationEventListener>(AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appTokenProtectionStatus", n => { AppTokenProtectionStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.TokenProtectionStatus>(); } },
+                { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>(Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>(Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authenticationAppDeviceDetails", n => { AuthenticationAppDeviceDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>(Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails.CreateFromDiscriminatorValue); } },
-                { "authenticationAppPolicyEvaluationDetails", n => { AuthenticationAppPolicyEvaluationDetails = n.GetCollectionOfObjectValues<AuthenticationAppPolicyDetails>(AuthenticationAppPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationDetails", n => { AuthenticationDetails = n.GetCollectionOfObjectValues<AuthenticationDetail>(AuthenticationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationAppPolicyEvaluationDetails", n => { AuthenticationAppPolicyEvaluationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails>(Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationContext>(Microsoft.Graph.Beta.Models.AuthenticationContext.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationDetails", n => { AuthenticationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationDetail>(Microsoft.Graph.Beta.Models.AuthenticationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authenticationMethodsUsed", n => { AuthenticationMethodsUsed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "authenticationProcessingDetails", n => { AuthenticationProcessingDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "authenticationProtocol", n => { AuthenticationProtocol = n.GetEnumValue<ProtocolType>(); } },
+                { "authenticationProcessingDetails", n => { AuthenticationProcessingDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationProtocol", n => { AuthenticationProtocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.ProtocolType>(); } },
                 { "authenticationRequirement", n => { AuthenticationRequirement = n.GetStringValue(); } },
-                { "authenticationRequirementPolicies", n => { AuthenticationRequirementPolicies = n.GetCollectionOfObjectValues<AuthenticationRequirementPolicy>(AuthenticationRequirementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationRequirementPolicies", n => { AuthenticationRequirementPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy>(Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "autonomousSystemNumber", n => { AutonomousSystemNumber = n.GetIntValue(); } },
                 { "azureResourceId", n => { AzureResourceId = n.GetStringValue(); } },
                 { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
-                { "clientCredentialType", n => { ClientCredentialType = n.GetEnumValue<ClientCredentialType>(); } },
-                { "conditionalAccessAudiences", n => { ConditionalAccessAudiences = n.GetCollectionOfObjectValues<ConditionalAccessAudience>(ConditionalAccessAudience.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<ConditionalAccessStatus>(); } },
+                { "clientCredentialType", n => { ClientCredentialType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ClientCredentialType>(); } },
+                { "conditionalAccessAudiences", n => { ConditionalAccessAudiences = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessAudience>(Microsoft.Graph.Beta.Models.ConditionalAccessAudience.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessStatus>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "crossTenantAccessType", n => { CrossTenantAccessType = n.GetEnumValue<SignInAccessType>(); } },
+                { "crossTenantAccessType", n => { CrossTenantAccessType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SignInAccessType>(); } },
                 { "deviceDetail", n => { DeviceDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceDetail>(Microsoft.Graph.Beta.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
                 { "federatedCredentialId", n => { FederatedCredentialId = n.GetStringValue(); } },
                 { "flaggedForReview", n => { FlaggedForReview = n.GetBoolValue(); } },
                 { "globalSecureAccessIpAddress", n => { GlobalSecureAccessIpAddress = n.GetStringValue(); } },
                 { "homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
                 { "homeTenantName", n => { HomeTenantName = n.GetStringValue(); } },
-                { "incomingTokenType", n => { IncomingTokenType = n.GetEnumValue<IncomingTokenType>(); } },
+                { "incomingTokenType", n => { IncomingTokenType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IncomingTokenType>(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "ipAddressFromResourceProvider", n => { IpAddressFromResourceProvider = n.GetStringValue(); } },
                 { "isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
                 { "isTenantRestricted", n => { IsTenantRestricted = n.GetBoolValue(); } },
                 { "isThroughGlobalSecureAccess", n => { IsThroughGlobalSecureAccess = n.GetBoolValue(); } },
-                { "location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
-                { "managedServiceIdentity", n => { ManagedServiceIdentity = n.GetObjectValue<ManagedIdentity>(ManagedIdentity.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInLocation>(Microsoft.Graph.Beta.Models.SignInLocation.CreateFromDiscriminatorValue); } },
+                { "managedServiceIdentity", n => { ManagedServiceIdentity = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedIdentity>(Microsoft.Graph.Beta.Models.ManagedIdentity.CreateFromDiscriminatorValue); } },
                 { "mfaDetail", n => { MfaDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>(Microsoft.Graph.Beta.Models.MfaDetail.CreateFromDiscriminatorValue); } },
-                { "networkLocationDetails", n => { NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>(NetworkLocationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkLocationDetails", n => { NetworkLocationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NetworkLocationDetail>(Microsoft.Graph.Beta.Models.NetworkLocationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "originalRequestId", n => { OriginalRequestId = n.GetStringValue(); } },
-                { "originalTransferMethod", n => { OriginalTransferMethod = n.GetEnumValue<OriginalTransferMethods>(); } },
+                { "originalTransferMethod", n => { OriginalTransferMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.OriginalTransferMethods>(); } },
                 { "privateLinkDetails", n => { PrivateLinkDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivateLinkDetails>(Microsoft.Graph.Beta.Models.PrivateLinkDetails.CreateFromDiscriminatorValue); } },
                 { "processingTimeInMilliseconds", n => { ProcessingTimeInMilliseconds = n.GetIntValue(); } },
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "resourceServicePrincipalId", n => { ResourceServicePrincipalId = n.GetStringValue(); } },
                 { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
-                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskDetail>(); } },
                 { "riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<RiskLevel>(); } },
-                { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<RiskLevel>(); } },
-                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>(); } },
+                { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskState>(); } },
                 { "servicePrincipalCredentialKeyId", n => { ServicePrincipalCredentialKeyId = n.GetStringValue(); } },
                 { "servicePrincipalCredentialThumbprint", n => { ServicePrincipalCredentialThumbprint = n.GetStringValue(); } },
                 { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
                 { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
-                { "sessionLifetimePolicies", n => { SessionLifetimePolicies = n.GetCollectionOfObjectValues<SessionLifetimePolicy>(SessionLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sessionLifetimePolicies", n => { SessionLifetimePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SessionLifetimePolicy>(Microsoft.Graph.Beta.Models.SessionLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "signInEventTypes", n => { SignInEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "signInIdentifier", n => { SignInIdentifier = n.GetStringValue(); } },
-                { "signInIdentifierType", n => { SignInIdentifierType = n.GetEnumValue<SignInIdentifierType>(); } },
-                { "signInTokenProtectionStatus", n => { SignInTokenProtectionStatus = n.GetEnumValue<TokenProtectionStatus>(); } },
-                { "status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
+                { "signInIdentifierType", n => { SignInIdentifierType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SignInIdentifierType>(); } },
+                { "signInTokenProtectionStatus", n => { SignInTokenProtectionStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.TokenProtectionStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInStatus>(Microsoft.Graph.Beta.Models.SignInStatus.CreateFromDiscriminatorValue); } },
                 { "tokenIssuerName", n => { TokenIssuerName = n.GetStringValue(); } },
-                { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
+                { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TokenIssuerType>(); } },
                 { "uniqueTokenIdentifier", n => { UniqueTokenIdentifier = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userType", n => { UserType = n.GetEnumValue<SignInUserType>(); } },
+                { "userType", n => { UserType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SignInUserType>(); } },
             };
         }
         /// <summary>
@@ -1010,74 +1010,74 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appId", AppId);
-            writer.WriteCollectionOfObjectValues<AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
-            writer.WriteCollectionOfObjectValues<AppliedAuthenticationEventListener>("appliedEventListeners", AppliedEventListeners);
-            writer.WriteEnumValue<TokenProtectionStatus>("appTokenProtectionStatus", AppTokenProtectionStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppliedAuthenticationEventListener>("appliedEventListeners", AppliedEventListeners);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TokenProtectionStatus>("appTokenProtectionStatus", AppTokenProtectionStatus);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails", AuthenticationAppDeviceDetails);
-            writer.WriteCollectionOfObjectValues<AuthenticationAppPolicyDetails>("authenticationAppPolicyEvaluationDetails", AuthenticationAppPolicyEvaluationDetails);
-            writer.WriteCollectionOfObjectValues<AuthenticationContext>("authenticationContextClassReferences", AuthenticationContextClassReferences);
-            writer.WriteCollectionOfObjectValues<AuthenticationDetail>("authenticationDetails", AuthenticationDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationAppPolicyDetails>("authenticationAppPolicyEvaluationDetails", AuthenticationAppPolicyEvaluationDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationContext>("authenticationContextClassReferences", AuthenticationContextClassReferences);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationDetail>("authenticationDetails", AuthenticationDetails);
             writer.WriteCollectionOfPrimitiveValues<string>("authenticationMethodsUsed", AuthenticationMethodsUsed);
-            writer.WriteCollectionOfObjectValues<KeyValue>("authenticationProcessingDetails", AuthenticationProcessingDetails);
-            writer.WriteEnumValue<ProtocolType>("authenticationProtocol", AuthenticationProtocol);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("authenticationProcessingDetails", AuthenticationProcessingDetails);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ProtocolType>("authenticationProtocol", AuthenticationProtocol);
             writer.WriteStringValue("authenticationRequirement", AuthenticationRequirement);
-            writer.WriteCollectionOfObjectValues<AuthenticationRequirementPolicy>("authenticationRequirementPolicies", AuthenticationRequirementPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy>("authenticationRequirementPolicies", AuthenticationRequirementPolicies);
             writer.WriteIntValue("autonomousSystemNumber", AutonomousSystemNumber);
             writer.WriteStringValue("azureResourceId", AzureResourceId);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
-            writer.WriteEnumValue<ClientCredentialType>("clientCredentialType", ClientCredentialType);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessAudience>("conditionalAccessAudiences", ConditionalAccessAudiences);
-            writer.WriteEnumValue<ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ClientCredentialType>("clientCredentialType", ClientCredentialType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessAudience>("conditionalAccessAudiences", ConditionalAccessAudiences);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<SignInAccessType>("crossTenantAccessType", CrossTenantAccessType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SignInAccessType>("crossTenantAccessType", CrossTenantAccessType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceDetail>("deviceDetail", DeviceDetail);
             writer.WriteStringValue("federatedCredentialId", FederatedCredentialId);
             writer.WriteBoolValue("flaggedForReview", FlaggedForReview);
             writer.WriteStringValue("globalSecureAccessIpAddress", GlobalSecureAccessIpAddress);
             writer.WriteStringValue("homeTenantId", HomeTenantId);
             writer.WriteStringValue("homeTenantName", HomeTenantName);
-            writer.WriteEnumValue<IncomingTokenType>("incomingTokenType", IncomingTokenType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IncomingTokenType>("incomingTokenType", IncomingTokenType);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("ipAddressFromResourceProvider", IpAddressFromResourceProvider);
             writer.WriteBoolValue("isInteractive", IsInteractive);
             writer.WriteBoolValue("isTenantRestricted", IsTenantRestricted);
             writer.WriteBoolValue("isThroughGlobalSecureAccess", IsThroughGlobalSecureAccess);
-            writer.WriteObjectValue<SignInLocation>("location", Location);
-            writer.WriteObjectValue<ManagedIdentity>("managedServiceIdentity", ManagedServiceIdentity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInLocation>("location", Location);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedIdentity>("managedServiceIdentity", ManagedServiceIdentity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>("mfaDetail", MfaDetail);
-            writer.WriteCollectionOfObjectValues<NetworkLocationDetail>("networkLocationDetails", NetworkLocationDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NetworkLocationDetail>("networkLocationDetails", NetworkLocationDetails);
             writer.WriteStringValue("originalRequestId", OriginalRequestId);
-            writer.WriteEnumValue<OriginalTransferMethods>("originalTransferMethod", OriginalTransferMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OriginalTransferMethods>("originalTransferMethod", OriginalTransferMethod);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivateLinkDetails>("privateLinkDetails", PrivateLinkDetails);
             writer.WriteIntValue("processingTimeInMilliseconds", ProcessingTimeInMilliseconds);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("resourceServicePrincipalId", ResourceServicePrincipalId);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
-            writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypesV2);
-            writer.WriteEnumValue<RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
-            writer.WriteEnumValue<RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
-            writer.WriteEnumValue<RiskState>("riskState", RiskState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskState>("riskState", RiskState);
             writer.WriteStringValue("servicePrincipalCredentialKeyId", ServicePrincipalCredentialKeyId);
             writer.WriteStringValue("servicePrincipalCredentialThumbprint", ServicePrincipalCredentialThumbprint);
             writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);
             writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);
-            writer.WriteCollectionOfObjectValues<SessionLifetimePolicy>("sessionLifetimePolicies", SessionLifetimePolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SessionLifetimePolicy>("sessionLifetimePolicies", SessionLifetimePolicies);
             writer.WriteCollectionOfPrimitiveValues<string>("signInEventTypes", SignInEventTypes);
             writer.WriteStringValue("signInIdentifier", SignInIdentifier);
-            writer.WriteEnumValue<SignInIdentifierType>("signInIdentifierType", SignInIdentifierType);
-            writer.WriteEnumValue<TokenProtectionStatus>("signInTokenProtectionStatus", SignInTokenProtectionStatus);
-            writer.WriteObjectValue<SignInStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SignInIdentifierType>("signInIdentifierType", SignInIdentifierType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TokenProtectionStatus>("signInTokenProtectionStatus", SignInTokenProtectionStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInStatus>("status", Status);
             writer.WriteStringValue("tokenIssuerName", TokenIssuerName);
-            writer.WriteEnumValue<TokenIssuerType>("tokenIssuerType", TokenIssuerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TokenIssuerType>("tokenIssuerType", TokenIssuerType);
             writer.WriteStringValue("uniqueTokenIdentifier", UniqueTokenIdentifier);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteEnumValue<SignInUserType>("userType", UserType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SignInUserType>("userType", UserType);
         }
     }
 }

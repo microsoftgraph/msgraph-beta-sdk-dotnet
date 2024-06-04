@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedRoleAssignment : Entity, IParsable
+    public class PrivilegedRoleAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The expirationDateTime property</summary>
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRole? RoleInfo
+        public Microsoft.Graph.Beta.Models.PrivilegedRole? RoleInfo
         {
-            get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRole RoleInfo
+        public Microsoft.Graph.Beta.Models.PrivilegedRole RoleInfo
         {
-            get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedRoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegedRoleAssignment();
+            return new Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isElevated", n => { IsElevated = n.GetBoolValue(); } },
                 { "resultMessage", n => { ResultMessage = n.GetStringValue(); } },
                 { "roleId", n => { RoleId = n.GetStringValue(); } },
-                { "roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                { "roleInfo", n => { RoleInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRole>(Microsoft.Graph.Beta.Models.PrivilegedRole.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isElevated", IsElevated);
             writer.WriteStringValue("resultMessage", ResultMessage);
             writer.WriteStringValue("roleId", RoleId);
-            writer.WriteObjectValue<PrivilegedRole>("roleInfo", RoleInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRole>("roleInfo", RoleInfo);
             writer.WriteStringValue("userId", UserId);
         }
     }

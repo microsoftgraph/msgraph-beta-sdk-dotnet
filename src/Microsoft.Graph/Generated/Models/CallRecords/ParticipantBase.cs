@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>List of administrativeUnitInfo of the call participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdministrativeUnitInfo>? AdministrativeUnitInfos
+        public List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>? AdministrativeUnitInfos
         {
-            get { return BackingStore?.Get<List<AdministrativeUnitInfo>?>("administrativeUnitInfos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>?>("administrativeUnitInfos"); }
             set { BackingStore?.Set("administrativeUnitInfos", value); }
         }
 #nullable restore
 #else
-        public List<AdministrativeUnitInfo> AdministrativeUnitInfos
+        public List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo> AdministrativeUnitInfos
         {
-            get { return BackingStore?.Get<List<AdministrativeUnitInfo>>("administrativeUnitInfos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>>("administrativeUnitInfos"); }
             set { BackingStore?.Set("administrativeUnitInfos", value); }
         }
 #endif
@@ -45,17 +45,17 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParticipantBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.ParticipantBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ParticipantBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.ParticipantBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.callRecords.organizer" => new Organizer(),
-                "#microsoft.graph.callRecords.participant" => new Participant(),
-                _ => new ParticipantBase(),
+                "#microsoft.graph.callRecords.organizer" => new Microsoft.Graph.Beta.Models.CallRecords.Organizer(),
+                "#microsoft.graph.callRecords.participant" => new Microsoft.Graph.Beta.Models.CallRecords.Participant(),
+                _ => new Microsoft.Graph.Beta.Models.CallRecords.ParticipantBase(),
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<AdministrativeUnitInfo>(AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>(Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>(Microsoft.Graph.Beta.Models.CommunicationsIdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", AdministrativeUnitInfos);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>("administrativeUnitInfos", AdministrativeUnitInfos);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>("identity", Identity);
         }
     }

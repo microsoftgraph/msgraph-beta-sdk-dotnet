@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TiIndicator>? Value
+        public List<Microsoft.Graph.Beta.Models.TiIndicator>? Value
         {
-            get { return BackingStore?.Get<List<TiIndicator>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TiIndicator>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<TiIndicator> Value
+        public List<Microsoft.Graph.Beta.Models.TiIndicator> Value
         {
-            get { return BackingStore?.Get<List<TiIndicator>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TiIndicator>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SubmitTiIndicatorsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody"/> and sets the default values.
         /// </summary>
         public SubmitTiIndicatorsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubmitTiIndicatorsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubmitTiIndicatorsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubmitTiIndicatorsPostRequestBody();
+            return new Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<TiIndicator>(TiIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TiIndicator>(Microsoft.Graph.Beta.Models.TiIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<TiIndicator>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TiIndicator>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

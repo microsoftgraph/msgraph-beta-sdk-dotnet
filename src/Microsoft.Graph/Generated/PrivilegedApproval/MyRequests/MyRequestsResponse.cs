@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.MyRequests
 {
     [Obsolete("This class is obsolete. Use MyRequestsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class MyRequestsResponse : MyRequestsGetResponse, IParsable
+    public class MyRequestsResponse : Microsoft.Graph.Beta.PrivilegedApproval.MyRequests.MyRequestsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MyRequestsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedApproval.MyRequests.MyRequestsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MyRequestsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.PrivilegedApproval.MyRequests.MyRequestsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MyRequestsResponse();
+            return new Microsoft.Graph.Beta.PrivilegedApproval.MyRequests.MyRequestsResponse();
         }
     }
 }

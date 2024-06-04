@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class BookingsAvailabilityWindow : BookingsAvailability, IParsable
+    public class BookingsAvailabilityWindow : Microsoft.Graph.Beta.Models.BookingsAvailability, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>End date of the availability window.</summary>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BookingsAvailabilityWindow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow"/> and sets the default values.
         /// </summary>
         public BookingsAvailabilityWindow() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingsAvailabilityWindow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingsAvailabilityWindow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingsAvailabilityWindow();
+            return new Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow();
         }
         /// <summary>
         /// The deserialization information for the current model

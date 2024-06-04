@@ -11,20 +11,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     #pragma warning restore CS1591
     {
         /// <summary>The signalingStatus property</summary>
-        public Status? SignalingStatus
+        public Microsoft.Graph.Beta.Models.Networkaccess.Status? SignalingStatus
         {
-            get { return BackingStore?.Get<Status?>("signalingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Status?>("signalingStatus"); }
             set { BackingStore?.Set("signalingStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessSettings();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "signalingStatus", n => { SignalingStatus = n.GetEnumValue<Status>(); } },
+                { "signalingStatus", n => { SignalingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>(); } },
             };
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Status>("signalingStatus", SignalingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>("signalingStatus", SignalingStatus);
         }
     }
 }

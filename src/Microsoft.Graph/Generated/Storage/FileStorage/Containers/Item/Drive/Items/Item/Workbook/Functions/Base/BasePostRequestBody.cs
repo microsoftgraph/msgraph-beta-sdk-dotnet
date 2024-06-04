@@ -23,53 +23,53 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The minLength property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? MinLength
+        public Microsoft.Graph.Beta.Models.Json? MinLength
         {
-            get { return BackingStore?.Get<Json?>("minLength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("minLength"); }
             set { BackingStore?.Set("minLength", value); }
         }
 #nullable restore
 #else
-        public Json MinLength
+        public Microsoft.Graph.Beta.Models.Json MinLength
         {
-            get { return BackingStore?.Get<Json>("minLength"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("minLength"); }
             set { BackingStore?.Set("minLength", value); }
         }
 #endif
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number
+        public Microsoft.Graph.Beta.Models.Json? Number
         {
-            get { return BackingStore?.Get<Json?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number
+        public Microsoft.Graph.Beta.Models.Json Number
         {
-            get { return BackingStore?.Get<Json>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>The radix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Radix
+        public Microsoft.Graph.Beta.Models.Json? Radix
         {
-            get { return BackingStore?.Get<Json?>("radix"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("radix"); }
             set { BackingStore?.Set("radix", value); }
         }
 #nullable restore
 #else
-        public Json Radix
+        public Microsoft.Graph.Beta.Models.Json Radix
         {
-            get { return BackingStore?.Get<Json>("radix"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("radix"); }
             set { BackingStore?.Set("radix", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BasePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Base.BasePostRequestBody"/> and sets the default values.
         /// </summary>
         public BasePostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BasePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Base.BasePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BasePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Base.BasePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BasePostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.Base.BasePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "minLength", n => { MinLength = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "radix", n => { Radix = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "minLength", n => { MinLength = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "radix", n => { Radix = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("minLength", MinLength);
-            writer.WriteObjectValue<Json>("number", Number);
-            writer.WriteObjectValue<Json>("radix", Radix);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("minLength", MinLength);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("radix", Radix);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

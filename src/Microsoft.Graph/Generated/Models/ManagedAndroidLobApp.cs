@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Managed Android Line Of Business apps.
     /// </summary>
-    public class ManagedAndroidLobApp : ManagedMobileLobApp, IParsable
+    public class ManagedAndroidLobApp : Microsoft.Graph.Beta.Models.ManagedMobileLobApp, IParsable
     {
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem
+        public Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem
         {
-            get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.</summary>
-        public AndroidTargetedPlatforms? TargetedPlatforms
+        public Microsoft.Graph.Beta.Models.AndroidTargetedPlatforms? TargetedPlatforms
         {
-            get { return BackingStore?.Get<AndroidTargetedPlatforms?>("targetedPlatforms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidTargetedPlatforms?>("targetedPlatforms"); }
             set { BackingStore?.Set("targetedPlatforms", value); }
         }
         /// <summary>The version code of managed Android Line of Business (LoB) app.</summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAndroidLobApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedAndroidLobApp"/> and sets the default values.
         /// </summary>
         public ManagedAndroidLobApp() : base()
         {
@@ -91,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAndroidLobApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAndroidLobApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAndroidLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedAndroidLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAndroidLobApp();
+            return new Microsoft.Graph.Beta.Models.ManagedAndroidLobApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem>(Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 { "packageId", n => { PackageId = n.GetStringValue(); } },
-                { "targetedPlatforms", n => { TargetedPlatforms = n.GetEnumValue<AndroidTargetedPlatforms>(); } },
+                { "targetedPlatforms", n => { TargetedPlatforms = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidTargetedPlatforms>(); } },
                 { "versionCode", n => { VersionCode = n.GetStringValue(); } },
                 { "versionName", n => { VersionName = n.GetStringValue(); } },
             };
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
             writer.WriteStringValue("packageId", PackageId);
-            writer.WriteEnumValue<AndroidTargetedPlatforms>("targetedPlatforms", TargetedPlatforms);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidTargetedPlatforms>("targetedPlatforms", TargetedPlatforms);
             writer.WriteStringValue("versionCode", VersionCode);
             writer.WriteStringValue("versionName", VersionName);
         }

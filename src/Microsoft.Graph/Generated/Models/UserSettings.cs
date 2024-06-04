@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserSettings : Entity, IParsable
+    public class UserSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user&apos;s settings for the visibility of merge suggestion for the duplicate contacts in the user&apos;s contact list.</summary>
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserInsightsSettings? ItemInsights
+        public Microsoft.Graph.Beta.Models.UserInsightsSettings? ItemInsights
         {
-            get { return BackingStore?.Get<UserInsightsSettings?>("itemInsights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserInsightsSettings?>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
 #nullable restore
 #else
-        public UserInsightsSettings ItemInsights
+        public Microsoft.Graph.Beta.Models.UserInsightsSettings ItemInsights
         {
-            get { return BackingStore?.Get<UserInsightsSettings>("itemInsights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserInsightsSettings>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
 #endif
@@ -89,44 +89,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserStorage? Storage
+        public Microsoft.Graph.Beta.Models.UserStorage? Storage
         {
-            get { return BackingStore?.Get<UserStorage?>("storage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserStorage?>("storage"); }
             set { BackingStore?.Set("storage", value); }
         }
 #nullable restore
 #else
-        public UserStorage Storage
+        public Microsoft.Graph.Beta.Models.UserStorage Storage
         {
-            get { return BackingStore?.Get<UserStorage>("storage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserStorage>("storage"); }
             set { BackingStore?.Set("storage", value); }
         }
 #endif
         /// <summary>The Windows settings of the user stored in the cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsSetting>? Windows
+        public List<Microsoft.Graph.Beta.Models.WindowsSetting>? Windows
         {
-            get { return BackingStore?.Get<List<WindowsSetting>?>("windows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsSetting>?>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #nullable restore
 #else
-        public List<WindowsSetting> Windows
+        public List<Microsoft.Graph.Beta.Models.WindowsSetting> Windows
         {
-            get { return BackingStore?.Get<List<WindowsSetting>>("windows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsSetting>>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSettings();
+            return new Microsoft.Graph.Beta.Models.UserSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "contactMergeSuggestions", n => { ContactMergeSuggestions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue); } },
                 { "contributionToContentDiscoveryAsOrganizationDisabled", n => { ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
                 { "contributionToContentDiscoveryDisabled", n => { ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
-                { "itemInsights", n => { ItemInsights = n.GetObjectValue<UserInsightsSettings>(UserInsightsSettings.CreateFromDiscriminatorValue); } },
+                { "itemInsights", n => { ItemInsights = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserInsightsSettings>(Microsoft.Graph.Beta.Models.UserInsightsSettings.CreateFromDiscriminatorValue); } },
                 { "regionalAndLanguageSettings", n => { RegionalAndLanguageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue); } },
                 { "shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>(Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
-                { "storage", n => { Storage = n.GetObjectValue<UserStorage>(UserStorage.CreateFromDiscriminatorValue); } },
-                { "windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "storage", n => { Storage = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserStorage>(Microsoft.Graph.Beta.Models.UserStorage.CreateFromDiscriminatorValue); } },
+                { "windows", n => { Windows = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsSetting>(Microsoft.Graph.Beta.Models.WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -157,11 +157,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>("contactMergeSuggestions", ContactMergeSuggestions);
             writer.WriteBoolValue("contributionToContentDiscoveryAsOrganizationDisabled", ContributionToContentDiscoveryAsOrganizationDisabled);
             writer.WriteBoolValue("contributionToContentDiscoveryDisabled", ContributionToContentDiscoveryDisabled);
-            writer.WriteObjectValue<UserInsightsSettings>("itemInsights", ItemInsights);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserInsightsSettings>("itemInsights", ItemInsights);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>("regionalAndLanguageSettings", RegionalAndLanguageSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>("shiftPreferences", ShiftPreferences);
-            writer.WriteObjectValue<UserStorage>("storage", Storage);
-            writer.WriteCollectionOfObjectValues<WindowsSetting>("windows", Windows);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserStorage>("storage", Storage);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsSetting>("windows", Windows);
         }
     }
 }

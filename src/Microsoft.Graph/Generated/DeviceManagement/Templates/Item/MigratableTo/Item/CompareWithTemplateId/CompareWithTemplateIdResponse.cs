@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
 {
     [Obsolete("This class is obsolete. Use CompareWithTemplateIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class CompareWithTemplateIdResponse : CompareWithTemplateIdGetResponse, IParsable
+    public class CompareWithTemplateIdResponse : Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId.CompareWithTemplateIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CompareWithTemplateIdResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId.CompareWithTemplateIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CompareWithTemplateIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId.CompareWithTemplateIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CompareWithTemplateIdResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId.CompareWithTemplateIdResponse();
         }
     }
 }

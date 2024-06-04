@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The authority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanAuthority? Authority
+        public Microsoft.Graph.Beta.Models.Security.FilePlanAuthority? Authority
         {
-            get { return BackingStore?.Get<FilePlanAuthority?>("authority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanAuthority?>("authority"); }
             set { BackingStore?.Set("authority", value); }
         }
 #nullable restore
 #else
-        public FilePlanAuthority Authority
+        public Microsoft.Graph.Beta.Models.Security.FilePlanAuthority Authority
         {
-            get { return BackingStore?.Get<FilePlanAuthority>("authority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanAuthority>("authority"); }
             set { BackingStore?.Set("authority", value); }
         }
 #endif
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanAppliedCategory? Category
+        public Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory? Category
         {
-            get { return BackingStore?.Get<FilePlanAppliedCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public FilePlanAppliedCategory Category
+        public Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory Category
         {
-            get { return BackingStore?.Get<FilePlanAppliedCategory>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The citation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanCitation? Citation
+        public Microsoft.Graph.Beta.Models.Security.FilePlanCitation? Citation
         {
-            get { return BackingStore?.Get<FilePlanCitation?>("citation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanCitation?>("citation"); }
             set { BackingStore?.Set("citation", value); }
         }
 #nullable restore
 #else
-        public FilePlanCitation Citation
+        public Microsoft.Graph.Beta.Models.Security.FilePlanCitation Citation
         {
-            get { return BackingStore?.Get<FilePlanCitation>("citation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanCitation>("citation"); }
             set { BackingStore?.Set("citation", value); }
         }
 #endif
@@ -109,16 +109,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The department property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanDepartment? Department
+        public Microsoft.Graph.Beta.Models.Security.FilePlanDepartment? Department
         {
-            get { return BackingStore?.Get<FilePlanDepartment?>("department"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanDepartment?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
 #nullable restore
 #else
-        public FilePlanDepartment Department
+        public Microsoft.Graph.Beta.Models.Security.FilePlanDepartment Department
         {
-            get { return BackingStore?.Get<FilePlanDepartment>("department"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FilePlanDepartment>("department"); }
             set { BackingStore?.Set("department", value); }
         }
 #endif
@@ -173,12 +173,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilePlanDescriptor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.FilePlanDescriptor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilePlanDescriptor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.FilePlanDescriptor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilePlanDescriptor();
+            return new Microsoft.Graph.Beta.Models.Security.FilePlanDescriptor();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -188,13 +188,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authority", n => { Authority = n.GetObjectValue<FilePlanAuthority>(FilePlanAuthority.CreateFromDiscriminatorValue); } },
+                { "authority", n => { Authority = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanAuthority>(Microsoft.Graph.Beta.Models.Security.FilePlanAuthority.CreateFromDiscriminatorValue); } },
                 { "authorityTemplate", n => { AuthorityTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue); } },
-                { "category", n => { Category = n.GetObjectValue<FilePlanAppliedCategory>(FilePlanAppliedCategory.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory>(Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory.CreateFromDiscriminatorValue); } },
                 { "categoryTemplate", n => { CategoryTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.CategoryTemplate>(Microsoft.Graph.Beta.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue); } },
-                { "citation", n => { Citation = n.GetObjectValue<FilePlanCitation>(FilePlanCitation.CreateFromDiscriminatorValue); } },
+                { "citation", n => { Citation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanCitation>(Microsoft.Graph.Beta.Models.Security.FilePlanCitation.CreateFromDiscriminatorValue); } },
                 { "citationTemplate", n => { CitationTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue); } },
-                { "department", n => { Department = n.GetObjectValue<FilePlanDepartment>(FilePlanDepartment.CreateFromDiscriminatorValue); } },
+                { "department", n => { Department = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanDepartment>(Microsoft.Graph.Beta.Models.Security.FilePlanDepartment.CreateFromDiscriminatorValue); } },
                 { "departmentTemplate", n => { DepartmentTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DepartmentTemplate>(Microsoft.Graph.Beta.Models.Security.DepartmentTemplate.CreateFromDiscriminatorValue); } },
                 { "filePlanReference", n => { FilePlanReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanReference>(Microsoft.Graph.Beta.Models.Security.FilePlanReference.CreateFromDiscriminatorValue); } },
                 { "filePlanReferenceTemplate", n => { FilePlanReferenceTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate>(Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate.CreateFromDiscriminatorValue); } },
@@ -208,13 +208,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<FilePlanAuthority>("authority", Authority);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanAuthority>("authority", Authority);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>("authorityTemplate", AuthorityTemplate);
-            writer.WriteObjectValue<FilePlanAppliedCategory>("category", Category);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory>("category", Category);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.CategoryTemplate>("categoryTemplate", CategoryTemplate);
-            writer.WriteObjectValue<FilePlanCitation>("citation", Citation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanCitation>("citation", Citation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.CitationTemplate>("citationTemplate", CitationTemplate);
-            writer.WriteObjectValue<FilePlanDepartment>("department", Department);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanDepartment>("department", Department);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.DepartmentTemplate>("departmentTemplate", DepartmentTemplate);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanReference>("filePlanReference", FilePlanReference);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate>("filePlanReferenceTemplate", FilePlanReferenceTemplate);

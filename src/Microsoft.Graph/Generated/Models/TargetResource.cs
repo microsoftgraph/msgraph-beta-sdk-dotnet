@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ModifiedProperty>? ModifiedProperties
+        public List<Microsoft.Graph.Beta.Models.ModifiedProperty>? ModifiedProperties
         {
-            get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ModifiedProperty>?>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #nullable restore
 #else
-        public List<ModifiedProperty> ModifiedProperties
+        public List<Microsoft.Graph.Beta.Models.ModifiedProperty> ModifiedProperties
         {
-            get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ModifiedProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #endif
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TargetResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TargetResource"/> and sets the default values.
         /// </summary>
         public TargetResource()
         {
@@ -132,12 +132,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TargetResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TargetResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TargetResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TargetResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TargetResource();
+            return new Microsoft.Graph.Beta.Models.TargetResource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,9 +148,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "groupType", n => { GroupType = n.GetEnumValue<GroupType>(); } },
+                { "groupType", n => { GroupType = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ModifiedProperty>(Microsoft.Graph.Beta.Models.ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -164,9 +164,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<GroupType>("groupType", GroupType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupType>("groupType", GroupType);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<ModifiedProperty>("modifiedProperties", ModifiedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ModifiedProperty>("modifiedProperties", ModifiedProperties);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

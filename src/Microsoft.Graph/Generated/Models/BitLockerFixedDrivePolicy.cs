@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
-        public BitLockerEncryptionMethod? EncryptionMethod
+        public Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod? EncryptionMethod
         {
-            get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BitLockerRecoveryOptions? RecoveryOptions
+        public Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions? RecoveryOptions
         {
-            get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions?>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
 #nullable restore
 #else
-        public BitLockerRecoveryOptions RecoveryOptions
+        public Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions RecoveryOptions
         {
-            get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
 #endif
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requireEncryptionForWriteAccess", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BitLockerFixedDrivePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy"/> and sets the default values.
         /// </summary>
         public BitLockerFixedDrivePolicy()
         {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitLockerFixedDrivePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BitLockerFixedDrivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitLockerFixedDrivePolicy();
+            return new Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
+                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<BitLockerRecoveryOptions>(BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
+                { "recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions>(Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
                 { "requireEncryptionForWriteAccess", n => { RequireEncryptionForWriteAccess = n.GetBoolValue(); } },
             };
         }
@@ -103,9 +103,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<BitLockerRecoveryOptions>("recoveryOptions", RecoveryOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions>("recoveryOptions", RecoveryOptions);
             writer.WriteBoolValue("requireEncryptionForWriteAccess", RequireEncryptionForWriteAccess);
             writer.WriteAdditionalData(AdditionalData);
         }

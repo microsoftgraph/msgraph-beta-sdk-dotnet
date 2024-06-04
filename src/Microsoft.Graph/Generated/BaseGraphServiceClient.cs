@@ -142,607 +142,607 @@ namespace Microsoft.Graph.Beta
     public class BaseGraphServiceClient : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
-        public AccessReviewDecisionsRequestBuilder AccessReviewDecisions
+        public Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder AccessReviewDecisions
         {
-            get => new AccessReviewDecisionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
-        public AccessReviewsRequestBuilder AccessReviews
+        public Microsoft.Graph.Beta.AccessReviews.AccessReviewsRequestBuilder AccessReviews
         {
-            get => new AccessReviewsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AccessReviews.AccessReviewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
-        public ActivitystatisticsRequestBuilder Activitystatistics
+        public Microsoft.Graph.Beta.Activitystatistics.ActivitystatisticsRequestBuilder Activitystatistics
         {
-            get => new ActivitystatisticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Activitystatistics.ActivitystatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the admin singleton.</summary>
-        public AdminRequestBuilder Admin
+        public Microsoft.Graph.Beta.Admin.AdminRequestBuilder Admin
         {
-            get => new AdminRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Admin.AdminRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
-        public AdministrativeUnitsRequestBuilder AdministrativeUnits
+        public Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder AdministrativeUnits
         {
-            get => new AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AdministrativeUnits.AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
-        public AgreementAcceptancesRequestBuilder AgreementAcceptances
+        public Microsoft.Graph.Beta.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
         {
-            get => new AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AgreementAcceptances.AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agreement entities.</summary>
-        public AgreementsRequestBuilder Agreements
+        public Microsoft.Graph.Beta.Agreements.AgreementsRequestBuilder Agreements
         {
-            get => new AgreementsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Agreements.AgreementsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of allowedDataLocation entities.</summary>
-        public AllowedDataLocationsRequestBuilder AllowedDataLocations
+        public Microsoft.Graph.Beta.AllowedDataLocations.AllowedDataLocationsRequestBuilder AllowedDataLocations
         {
-            get => new AllowedDataLocationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AllowedDataLocations.AllowedDataLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the commsApplication singleton.</summary>
-        public AppRequestBuilder App
+        public Microsoft.Graph.Beta.App.AppRequestBuilder App
         {
-            get => new AppRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.App.AppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
-        public AppCatalogsRequestBuilder AppCatalogs
+        public Microsoft.Graph.Beta.AppCatalogs.AppCatalogsRequestBuilder AppCatalogs
         {
-            get => new AppCatalogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AppCatalogs.AppCatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of application entities.</summary>
-        public ApplicationsRequestBuilder Applications
+        public Microsoft.Graph.Beta.Applications.ApplicationsRequestBuilder Applications
         {
-            get => new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Applications.ApplicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
-        public ApplicationTemplatesRequestBuilder ApplicationTemplates
+        public Microsoft.Graph.Beta.ApplicationTemplates.ApplicationTemplatesRequestBuilder ApplicationTemplates
         {
-            get => new ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ApplicationTemplates.ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of appRoleAssignment entities.</summary>
-        public AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        public Microsoft.Graph.Beta.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
         {
-            get => new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
-        public ApprovalWorkflowProvidersRequestBuilder ApprovalWorkflowProviders
+        public Microsoft.Graph.Beta.ApprovalWorkflowProviders.ApprovalWorkflowProvidersRequestBuilder ApprovalWorkflowProviders
         {
-            get => new ApprovalWorkflowProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ApprovalWorkflowProviders.ApprovalWorkflowProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
-        public AuditLogsRequestBuilder AuditLogs
+        public Microsoft.Graph.Beta.AuditLogs.AuditLogsRequestBuilder AuditLogs
         {
-            get => new AuditLogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AuditLogs.AuditLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
-        public AuthenticationMethodConfigurationsRequestBuilder AuthenticationMethodConfigurations
+        public Microsoft.Graph.Beta.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder AuthenticationMethodConfigurations
         {
-            get => new AuthenticationMethodConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
-        public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        public Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
         {
-            get => new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
-        public BookingBusinessesRequestBuilder BookingBusinesses
+        public Microsoft.Graph.Beta.BookingBusinesses.BookingBusinessesRequestBuilder BookingBusinesses
         {
-            get => new BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.BookingBusinesses.BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of bookingCurrency entities.</summary>
-        public BookingCurrenciesRequestBuilder BookingCurrencies
+        public Microsoft.Graph.Beta.BookingCurrencies.BookingCurrenciesRequestBuilder BookingCurrencies
         {
-            get => new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.BookingCurrencies.BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of businessFlowTemplate entities.</summary>
-        public BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates
+        public Microsoft.Graph.Beta.BusinessFlowTemplates.BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates
         {
-            get => new BusinessFlowTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.BusinessFlowTemplates.BusinessFlowTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
-        public CertificateBasedAuthConfigurationRequestBuilder CertificateBasedAuthConfiguration
+        public Microsoft.Graph.Beta.CertificateBasedAuthConfiguration.CertificateBasedAuthConfigurationRequestBuilder CertificateBasedAuthConfiguration
         {
-            get => new CertificateBasedAuthConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.CertificateBasedAuthConfiguration.CertificateBasedAuthConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of chat entities.</summary>
-        public ChatsRequestBuilder Chats
+        public Microsoft.Graph.Beta.Chats.ChatsRequestBuilder Chats
         {
-            get => new ChatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Chats.ChatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of command entities.</summary>
-        public CommandsRequestBuilder Commands
+        public Microsoft.Graph.Beta.Commands.CommandsRequestBuilder Commands
         {
-            get => new CommandsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Commands.CommandsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
-        public CommunicationsRequestBuilder Communications
+        public Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder Communications
         {
-            get => new CommunicationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the compliance singleton.</summary>
-        public ComplianceRequestBuilder Compliance
+        public Microsoft.Graph.Beta.Compliance.ComplianceRequestBuilder Compliance
         {
-            get => new ComplianceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Compliance.ComplianceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
-        public ConnectionsRequestBuilder Connections
+        public Microsoft.Graph.Beta.Connections.ConnectionsRequestBuilder Connections
         {
-            get => new ConnectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Connections.ConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
-        public ContactsRequestBuilder Contacts
+        public Microsoft.Graph.Beta.Contacts.ContactsRequestBuilder Contacts
         {
-            get => new ContactsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of contract entities.</summary>
-        public ContractsRequestBuilder Contracts
+        public Microsoft.Graph.Beta.Contracts.ContractsRequestBuilder Contracts
         {
-            get => new ContractsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Contracts.ContractsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
-        public DataClassificationRequestBuilder DataClassification
+        public Microsoft.Graph.Beta.DataClassification.DataClassificationRequestBuilder DataClassification
         {
-            get => new DataClassificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataClassification.DataClassificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of dataPolicyOperation entities.</summary>
-        public DataPolicyOperationsRequestBuilder DataPolicyOperations
+        public Microsoft.Graph.Beta.DataPolicyOperations.DataPolicyOperationsRequestBuilder DataPolicyOperations
         {
-            get => new DataPolicyOperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DataPolicyOperations.DataPolicyOperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
-        public DeviceAppManagementRequestBuilder DeviceAppManagement
+        public Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder DeviceAppManagement
         {
-            get => new DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
-        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials
+        public Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials
         {
-            get => new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
-        public DeviceManagementRequestBuilder DeviceManagement
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder DeviceManagement
         {
-            get => new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of device entities.</summary>
-        public DevicesRequestBuilder Devices
+        public Microsoft.Graph.Beta.Devices.DevicesRequestBuilder Devices
         {
-            get => new DevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directory singleton.</summary>
-        public DirectoryRequestBuilder Directory
+        public Microsoft.Graph.Beta.DirectoryNamespace.DirectoryRequestBuilder Directory
         {
-            get => new DirectoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectoryNamespace.DirectoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryObject entities.</summary>
-        public DirectoryObjectsRequestBuilder DirectoryObjects
+        public Microsoft.Graph.Beta.DirectoryObjects.DirectoryObjectsRequestBuilder DirectoryObjects
         {
-            get => new DirectoryObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectoryObjects.DirectoryObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
-        public DirectoryRolesRequestBuilder DirectoryRoles
+        public Microsoft.Graph.Beta.DirectoryRoles.DirectoryRolesRequestBuilder DirectoryRoles
         {
-            get => new DirectoryRolesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectoryRoles.DirectoryRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRoleTemplate entities.</summary>
-        public DirectoryRoleTemplatesRequestBuilder DirectoryRoleTemplates
+        public Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder DirectoryRoleTemplates
         {
-            get => new DirectoryRoleTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
-        public DirectorySettingTemplatesRequestBuilder DirectorySettingTemplates
+        public Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder DirectorySettingTemplates
         {
-            get => new DirectorySettingTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectorySettingTemplates.DirectorySettingTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of domainDnsRecord entities.</summary>
-        public DomainDnsRecordsRequestBuilder DomainDnsRecords
+        public Microsoft.Graph.Beta.DomainDnsRecords.DomainDnsRecordsRequestBuilder DomainDnsRecords
         {
-            get => new DomainDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DomainDnsRecords.DomainDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of domain entities.</summary>
-        public DomainsRequestBuilder Domains
+        public Microsoft.Graph.Beta.Domains.DomainsRequestBuilder Domains
         {
-            get => new DomainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of drive entities.</summary>
-        public DrivesRequestBuilder Drives
+        public Microsoft.Graph.Beta.Drives.DrivesRequestBuilder Drives
         {
-            get => new DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the educationRoot singleton.</summary>
-        public EducationRequestBuilder Education
+        public Microsoft.Graph.Beta.Education.EducationRequestBuilder Education
         {
-            get => new EducationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.EducationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employeeExperience singleton.</summary>
-        public EmployeeExperienceRequestBuilder EmployeeExperience
+        public Microsoft.Graph.Beta.EmployeeExperience.EmployeeExperienceRequestBuilder EmployeeExperience
         {
-            get => new EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.EmployeeExperience.EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the external singleton.</summary>
-        public ExternalRequestBuilder External
+        public Microsoft.Graph.Beta.External.ExternalRequestBuilder External
         {
-            get => new ExternalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.External.ExternalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of filteringPolicy entities.</summary>
-        public FilteringPoliciesRequestBuilder FilteringPolicies
+        public Microsoft.Graph.Beta.FilteringPolicies.FilteringPoliciesRequestBuilder FilteringPolicies
         {
-            get => new FilteringPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.FilteringPolicies.FilteringPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of filterOperatorSchema entities.</summary>
-        public FilterOperatorsRequestBuilder FilterOperators
+        public Microsoft.Graph.Beta.FilterOperators.FilterOperatorsRequestBuilder FilterOperators
         {
-            get => new FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.FilterOperators.FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the financials singleton.</summary>
-        public FinancialsRequestBuilder Financials
+        public Microsoft.Graph.Beta.Financials.FinancialsRequestBuilder Financials
         {
-            get => new FinancialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.FinancialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of attributeMappingFunctionSchema entities.</summary>
-        public FunctionsRequestBuilder Functions
+        public Microsoft.Graph.Beta.Functions.FunctionsRequestBuilder Functions
         {
-            get => new FunctionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Functions.FunctionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
-        public GovernanceResourcesRequestBuilder GovernanceResources
+        public Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder GovernanceResources
         {
-            get => new GovernanceResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceResources.GovernanceResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleAssignmentRequest entities.</summary>
-        public GovernanceRoleAssignmentRequestsRequestBuilder GovernanceRoleAssignmentRequests
+        public Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.GovernanceRoleAssignmentRequestsRequestBuilder GovernanceRoleAssignmentRequests
         {
-            get => new GovernanceRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.GovernanceRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleAssignment entities.</summary>
-        public GovernanceRoleAssignmentsRequestBuilder GovernanceRoleAssignments
+        public Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder GovernanceRoleAssignments
         {
-            get => new GovernanceRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleDefinition entities.</summary>
-        public GovernanceRoleDefinitionsRequestBuilder GovernanceRoleDefinitions
+        public Microsoft.Graph.Beta.GovernanceRoleDefinitions.GovernanceRoleDefinitionsRequestBuilder GovernanceRoleDefinitions
         {
-            get => new GovernanceRoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceRoleDefinitions.GovernanceRoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleSetting entities.</summary>
-        public GovernanceRoleSettingsRequestBuilder GovernanceRoleSettings
+        public Microsoft.Graph.Beta.GovernanceRoleSettings.GovernanceRoleSettingsRequestBuilder GovernanceRoleSettings
         {
-            get => new GovernanceRoleSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceRoleSettings.GovernanceRoleSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceSubject entities.</summary>
-        public GovernanceSubjectsRequestBuilder GovernanceSubjects
+        public Microsoft.Graph.Beta.GovernanceSubjects.GovernanceSubjectsRequestBuilder GovernanceSubjects
         {
-            get => new GovernanceSubjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceSubjects.GovernanceSubjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
-        public GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
+        public Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
         {
-            get => new GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
-        public GroupsRequestBuilder Groups
+        public Microsoft.Graph.Beta.Groups.GroupsRequestBuilder Groups
         {
-            get => new GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityContainer singleton.</summary>
-        public IdentityRequestBuilder Identity
+        public Microsoft.Graph.Beta.Identity.IdentityRequestBuilder Identity
         {
-            get => new IdentityRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.IdentityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
-        public IdentityGovernanceRequestBuilder IdentityGovernance
+        public Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder IdentityGovernance
         {
-            get => new IdentityGovernanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.IdentityGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityProtectionRoot singleton.</summary>
-        public IdentityProtectionRequestBuilder IdentityProtection
+        public Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder IdentityProtection
         {
-            get => new IdentityProtectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
-        public IdentityProvidersRequestBuilder IdentityProviders
+        public Microsoft.Graph.Beta.IdentityProviders.IdentityProvidersRequestBuilder IdentityProviders
         {
-            get => new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the informationProtection singleton.</summary>
-        public InformationProtectionRequestBuilder InformationProtection
+        public Microsoft.Graph.Beta.InformationProtection.InformationProtectionRequestBuilder InformationProtection
         {
-            get => new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.InformationProtection.InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of invitation entities.</summary>
-        public InvitationsRequestBuilder Invitations
+        public Microsoft.Graph.Beta.Invitations.InvitationsRequestBuilder Invitations
         {
-            get => new InvitationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the user singleton.</summary>
-        public MeRequestBuilder Me
+        public Microsoft.Graph.Beta.Me.MeRequestBuilder Me
         {
-            get => new MeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
-        public MessageEventsRequestBuilder MessageEvents
+        public Microsoft.Graph.Beta.MessageEvents.MessageEventsRequestBuilder MessageEvents
         {
-            get => new MessageEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.MessageEvents.MessageEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageRecipient entities.</summary>
-        public MessageRecipientsRequestBuilder MessageRecipients
+        public Microsoft.Graph.Beta.MessageRecipients.MessageRecipientsRequestBuilder MessageRecipients
         {
-            get => new MessageRecipientsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.MessageRecipients.MessageRecipientsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
-        public MessageTracesRequestBuilder MessageTraces
+        public Microsoft.Graph.Beta.MessageTraces.MessageTracesRequestBuilder MessageTraces
         {
-            get => new MessageTracesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.MessageTraces.MessageTracesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of mobilityManagementPolicy entities.</summary>
-        public MobilityManagementPoliciesRequestBuilder MobilityManagementPolicies
+        public Microsoft.Graph.Beta.MobilityManagementPolicies.MobilityManagementPoliciesRequestBuilder MobilityManagementPolicies
         {
-            get => new MobilityManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.MobilityManagementPolicies.MobilityManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monitoring singleton.</summary>
-        public MonitoringRequestBuilder Monitoring
+        public Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder Monitoring
         {
-            get => new MonitoringRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Monitoring.MonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the networkAccessRoot singleton.</summary>
-        public NetworkAccessRequestBuilder NetworkAccess
+        public Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder NetworkAccess
         {
-            get => new NetworkAccessRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
-        public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
+        public Microsoft.Graph.Beta.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
         {
-            get => new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
-        public OnPremisesPublishingProfilesRequestBuilder OnPremisesPublishingProfiles
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.OnPremisesPublishingProfilesRequestBuilder OnPremisesPublishingProfiles
         {
-            get => new OnPremisesPublishingProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.OnPremisesPublishingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of organization entities.</summary>
-        public OrganizationRequestBuilder Organization
+        public Microsoft.Graph.Beta.Organization.OrganizationRequestBuilder Organization
         {
-            get => new OrganizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Organization.OrganizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of payloadResponse entities.</summary>
-        public PayloadResponseRequestBuilder PayloadResponse
+        public Microsoft.Graph.Beta.PayloadResponse.PayloadResponseRequestBuilder PayloadResponse
         {
-            get => new PayloadResponseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PayloadResponse.PayloadResponseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of resourceSpecificPermissionGrant entities.</summary>
-        public PermissionGrantsRequestBuilder PermissionGrants
+        public Microsoft.Graph.Beta.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The places property</summary>
-        public PlacesRequestBuilder Places
+        public Microsoft.Graph.Beta.Places.PlacesRequestBuilder Places
         {
-            get => new PlacesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Places.PlacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner singleton.</summary>
-        public PlannerRequestBuilder Planner
+        public Microsoft.Graph.Beta.Planner.PlannerRequestBuilder Planner
         {
-            get => new PlannerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policyRoot singleton.</summary>
-        public PoliciesRequestBuilder Policies
+        public Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder Policies
         {
-            get => new PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the print singleton.</summary>
-        public PrintRequestBuilder Print
+        public Microsoft.Graph.Beta.Print.PrintRequestBuilder Print
         {
-            get => new PrintRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrintRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the privacy singleton.</summary>
-        public PrivacyRequestBuilder Privacy
+        public Microsoft.Graph.Beta.Privacy.PrivacyRequestBuilder Privacy
         {
-            get => new PrivacyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Privacy.PrivacyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedAccess entities.</summary>
-        public PrivilegedAccessRequestBuilder PrivilegedAccess
+        public Microsoft.Graph.Beta.PrivilegedAccess.PrivilegedAccessRequestBuilder PrivilegedAccess
         {
-            get => new PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedAccess.PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
-        public PrivilegedApprovalRequestBuilder PrivilegedApproval
+        public Microsoft.Graph.Beta.PrivilegedApproval.PrivilegedApprovalRequestBuilder PrivilegedApproval
         {
-            get => new PrivilegedApprovalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedApproval.PrivilegedApprovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedOperationEvent entities.</summary>
-        public PrivilegedOperationEventsRequestBuilder PrivilegedOperationEvents
+        public Microsoft.Graph.Beta.PrivilegedOperationEvents.PrivilegedOperationEventsRequestBuilder PrivilegedOperationEvents
         {
-            get => new PrivilegedOperationEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedOperationEvents.PrivilegedOperationEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
-        public PrivilegedRoleAssignmentRequestsRequestBuilder PrivilegedRoleAssignmentRequests
+        public Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.PrivilegedRoleAssignmentRequestsRequestBuilder PrivilegedRoleAssignmentRequests
         {
-            get => new PrivilegedRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.PrivilegedRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
-        public PrivilegedRoleAssignmentsRequestBuilder PrivilegedRoleAssignments
+        public Microsoft.Graph.Beta.PrivilegedRoleAssignments.PrivilegedRoleAssignmentsRequestBuilder PrivilegedRoleAssignments
         {
-            get => new PrivilegedRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedRoleAssignments.PrivilegedRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRole entities.</summary>
-        public PrivilegedRolesRequestBuilder PrivilegedRoles
+        public Microsoft.Graph.Beta.PrivilegedRoles.PrivilegedRolesRequestBuilder PrivilegedRoles
         {
-            get => new PrivilegedRolesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedRoles.PrivilegedRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
-        public PrivilegedSignupStatusRequestBuilder PrivilegedSignupStatus
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder PrivilegedSignupStatus
         {
-            get => new PrivilegedSignupStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of programControl entities.</summary>
-        public ProgramControlsRequestBuilder ProgramControls
+        public Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder ProgramControls
         {
-            get => new ProgramControlsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ProgramControls.ProgramControlsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of programControlType entities.</summary>
-        public ProgramControlTypesRequestBuilder ProgramControlTypes
+        public Microsoft.Graph.Beta.ProgramControlTypes.ProgramControlTypesRequestBuilder ProgramControlTypes
         {
-            get => new ProgramControlTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ProgramControlTypes.ProgramControlTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of program entities.</summary>
-        public ProgramsRequestBuilder Programs
+        public Microsoft.Graph.Beta.Programs.ProgramsRequestBuilder Programs
         {
-            get => new ProgramsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Programs.ProgramsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reportRoot singleton.</summary>
-        public ReportsRequestBuilder Reports
+        public Microsoft.Graph.Beta.Reports.ReportsRequestBuilder Reports
         {
-            get => new ReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of riskDetection entities.</summary>
-        public RiskDetectionsRequestBuilder RiskDetections
+        public Microsoft.Graph.Beta.RiskDetections.RiskDetectionsRequestBuilder RiskDetections
         {
-            get => new RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RiskDetections.RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
-        public RiskyUsersRequestBuilder RiskyUsers
+        public Microsoft.Graph.Beta.RiskyUsers.RiskyUsersRequestBuilder RiskyUsers
         {
-            get => new RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RiskyUsers.RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleManagement singleton.</summary>
-        public RoleManagementRequestBuilder RoleManagement
+        public Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder RoleManagement
         {
-            get => new RoleManagementRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.RoleManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of schemaExtension entities.</summary>
-        public SchemaExtensionsRequestBuilder SchemaExtensions
+        public Microsoft.Graph.Beta.SchemaExtensions.SchemaExtensionsRequestBuilder SchemaExtensions
         {
-            get => new SchemaExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.SchemaExtensions.SchemaExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of scopedRoleMembership entities.</summary>
-        public ScopedRoleMembershipsRequestBuilder ScopedRoleMemberships
+        public Microsoft.Graph.Beta.ScopedRoleMemberships.ScopedRoleMembershipsRequestBuilder ScopedRoleMemberships
         {
-            get => new ScopedRoleMembershipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ScopedRoleMemberships.ScopedRoleMembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the searchEntity singleton.</summary>
-        public SearchRequestBuilder Search
+        public Microsoft.Graph.Beta.Search.SearchRequestBuilder Search
         {
-            get => new SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the security singleton.</summary>
-        public SecurityRequestBuilder Security
+        public Microsoft.Graph.Beta.Security.SecurityRequestBuilder Security
         {
-            get => new SecurityRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
-        public ServicePrincipalsRequestBuilder ServicePrincipals
+        public Microsoft.Graph.Beta.ServicePrincipals.ServicePrincipalsRequestBuilder ServicePrincipals
         {
-            get => new ServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ServicePrincipals.ServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySetting entities.</summary>
-        public SettingsRequestBuilder Settings
+        public Microsoft.Graph.Beta.Settings.SettingsRequestBuilder Settings
         {
-            get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
-        public SharesRequestBuilder Shares
+        public Microsoft.Graph.Beta.Shares.SharesRequestBuilder Shares
         {
-            get => new SharesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Shares.SharesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of site entities.</summary>
-        public SitesRequestBuilder Sites
+        public Microsoft.Graph.Beta.Sites.SitesRequestBuilder Sites
         {
-            get => new SitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the solutionsRoot singleton.</summary>
-        public SolutionsRequestBuilder Solutions
+        public Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder Solutions
         {
-            get => new SolutionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.SolutionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the storage singleton.</summary>
-        public StorageRequestBuilder Storage
+        public Microsoft.Graph.Beta.Storage.StorageRequestBuilder Storage
         {
-            get => new StorageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Storage.StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
-        public SubscribedSkusRequestBuilder SubscribedSkus
+        public Microsoft.Graph.Beta.SubscribedSkus.SubscribedSkusRequestBuilder SubscribedSkus
         {
-            get => new SubscribedSkusRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.SubscribedSkus.SubscribedSkusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscription entities.</summary>
-        public SubscriptionsRequestBuilder Subscriptions
+        public Microsoft.Graph.Beta.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
-            get => new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of team entities.</summary>
-        public TeamsRequestBuilder Teams
+        public Microsoft.Graph.Beta.Teams.TeamsRequestBuilder Teams
         {
-            get => new TeamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamsTemplate entities.</summary>
-        public TeamsTemplatesRequestBuilder TeamsTemplates
+        public Microsoft.Graph.Beta.TeamsTemplates.TeamsTemplatesRequestBuilder TeamsTemplates
         {
-            get => new TeamsTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TeamsTemplates.TeamsTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamTemplateDefinition entities.</summary>
-        public TeamTemplateDefinitionRequestBuilder TeamTemplateDefinition
+        public Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder TeamTemplateDefinition
         {
-            get => new TeamTemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TeamTemplateDefinition.TeamTemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork singleton.</summary>
-        public TeamworkRequestBuilder Teamwork
+        public Microsoft.Graph.Beta.Teamwork.TeamworkRequestBuilder Teamwork
         {
-            get => new TeamworkRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
-        public TenantRelationshipsRequestBuilder TenantRelationships
+        public Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder TenantRelationships
         {
-            get => new TenantRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the store singleton.</summary>
-        public TermStoreRequestBuilder TermStore
+        public Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder TermStore
         {
-            get => new TermStoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threatSubmissionRoot singleton.</summary>
-        public ThreatSubmissionRequestBuilder ThreatSubmission
+        public Microsoft.Graph.Beta.ThreatSubmission.ThreatSubmissionRequestBuilder ThreatSubmission
         {
-            get => new ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ThreatSubmission.ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trustFramework singleton.</summary>
-        public TrustFrameworkRequestBuilder TrustFramework
+        public Microsoft.Graph.Beta.TrustFramework.TrustFrameworkRequestBuilder TrustFramework
         {
-            get => new TrustFrameworkRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.TrustFrameworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
-        public UsersRequestBuilder Users
+        public Microsoft.Graph.Beta.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workplace singleton.</summary>
-        public WorkplaceRequestBuilder Workplace
+        public Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder Workplace
         {
-            get => new WorkplaceRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to manage the collection of application entities.
         /// </summary>
-        /// <returns>A <see cref="ApplicationsWithAppIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ApplicationsWithAppId.ApplicationsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of application</param>
-        public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId)
+        public Microsoft.Graph.Beta.ApplicationsWithAppId.ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId)
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
-            return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+            return new Microsoft.Graph.Beta.ApplicationsWithAppId.ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
         /// <summary>
         /// Provides operations to manage the collection of application entities.
         /// </summary>
-        /// <returns>A <see cref="ApplicationsWithUniqueNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ApplicationsWithUniqueName.ApplicationsWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of application</param>
-        public ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName)
+        public Microsoft.Graph.Beta.ApplicationsWithUniqueName.ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName)
         {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
-            return new ApplicationsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
+            return new Microsoft.Graph.Beta.ApplicationsWithUniqueName.ApplicationsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
-        /// Instantiates a new <see cref="BaseGraphServiceClient"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.BaseGraphServiceClient"/> and sets the default values.
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -765,52 +765,52 @@ namespace Microsoft.Graph.Beta
         /// <summary>
         /// Provides operations to manage the collection of device entities.
         /// </summary>
-        /// <returns>A <see cref="DevicesWithDeviceIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of device</param>
-        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId)
+        public Microsoft.Graph.Beta.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId)
         {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
-            return new DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
+            return new Microsoft.Graph.Beta.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
         /// Provides operations to manage the collection of directoryRole entities.
         /// </summary>
-        /// <returns>A <see cref="DirectoryRolesWithRoleTemplateIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryRolesWithRoleTemplateId.DirectoryRolesWithRoleTemplateIdRequestBuilder"/></returns>
         /// <param name="roleTemplateId">Alternate key of directoryRole</param>
-        public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId)
+        public Microsoft.Graph.Beta.DirectoryRolesWithRoleTemplateId.DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId)
         {
             if(string.IsNullOrEmpty(roleTemplateId)) throw new ArgumentNullException(nameof(roleTemplateId));
-            return new DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
+            return new Microsoft.Graph.Beta.DirectoryRolesWithRoleTemplateId.DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
         }
         /// <summary>
         /// Provides operations to manage the collection of group entities.
         /// </summary>
-        /// <returns>A <see cref="GroupsWithUniqueNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GroupsWithUniqueName.GroupsWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of group</param>
-        public GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName)
+        public Microsoft.Graph.Beta.GroupsWithUniqueName.GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName)
         {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
-            return new GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
+            return new Microsoft.Graph.Beta.GroupsWithUniqueName.GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
         /// Provides operations to manage the collection of place entities.
         /// </summary>
-        /// <returns>A <see cref="PlacesWithPlaceIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder"/></returns>
         /// <param name="placeId">Alternate key of place</param>
-        public PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId)
+        public Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId)
         {
             if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new PlacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
+            return new Microsoft.Graph.Beta.PlacesWithPlaceId.PlacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
         /// <summary>
         /// Provides operations to manage the collection of servicePrincipal entities.
         /// </summary>
-        /// <returns>A <see cref="ServicePrincipalsWithAppIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
-        public ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId)
+        public Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId)
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
-            return new ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+            return new Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppsAndServicesSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppsAndServicesSettings"/> and sets the default values.
         /// </summary>
         public AppsAndServicesSettings()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppsAndServicesSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppsAndServicesSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppsAndServicesSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AppsAndServicesSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppsAndServicesSettings();
+            return new Microsoft.Graph.Beta.Models.AppsAndServicesSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

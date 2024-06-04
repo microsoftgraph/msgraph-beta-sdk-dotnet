@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The type of Windows kiosk app.</summary>
-        public WindowsKioskAppType? AppType
+        public Microsoft.Graph.Beta.Models.WindowsKioskAppType? AppType
         {
-            get { return BackingStore?.Get<WindowsKioskAppType?>("appType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskAppType?>("appType"); }
             set { BackingStore?.Set("appType", value); }
         }
         /// <summary>Allow the app to be auto-launched in multi-app kiosk mode</summary>
@@ -65,13 +65,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The tile size of Windows app in the start layout.</summary>
-        public WindowsAppStartLayoutTileSize? StartLayoutTileSize
+        public Microsoft.Graph.Beta.Models.WindowsAppStartLayoutTileSize? StartLayoutTileSize
         {
-            get { return BackingStore?.Get<WindowsAppStartLayoutTileSize?>("startLayoutTileSize"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAppStartLayoutTileSize?>("startLayoutTileSize"); }
             set { BackingStore?.Set("startLayoutTileSize", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskAppBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskAppBase"/> and sets the default values.
         /// </summary>
         public WindowsKioskAppBase()
         {
@@ -81,18 +81,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskAppBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskAppBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsKioskAppBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsKioskAppBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsKioskDesktopApp" => new WindowsKioskDesktopApp(),
-                "#microsoft.graph.windowsKioskUWPApp" => new WindowsKioskUWPApp(),
-                "#microsoft.graph.windowsKioskWin32App" => new WindowsKioskWin32App(),
-                _ => new WindowsKioskAppBase(),
+                "#microsoft.graph.windowsKioskDesktopApp" => new Microsoft.Graph.Beta.Models.WindowsKioskDesktopApp(),
+                "#microsoft.graph.windowsKioskUWPApp" => new Microsoft.Graph.Beta.Models.WindowsKioskUWPApp(),
+                "#microsoft.graph.windowsKioskWin32App" => new Microsoft.Graph.Beta.Models.WindowsKioskWin32App(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsKioskAppBase(),
             };
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appType", n => { AppType = n.GetEnumValue<WindowsKioskAppType>(); } },
+                { "appType", n => { AppType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsKioskAppType>(); } },
                 { "autoLaunch", n => { AutoLaunch = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "startLayoutTileSize", n => { StartLayoutTileSize = n.GetEnumValue<WindowsAppStartLayoutTileSize>(); } },
+                { "startLayoutTileSize", n => { StartLayoutTileSize = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsAppStartLayoutTileSize>(); } },
             };
         }
         /// <summary>
@@ -117,11 +117,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<WindowsKioskAppType>("appType", AppType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsKioskAppType>("appType", AppType);
             writer.WriteBoolValue("autoLaunch", AutoLaunch);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<WindowsAppStartLayoutTileSize>("startLayoutTileSize", StartLayoutTileSize);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsAppStartLayoutTileSize>("startLayoutTileSize", StartLayoutTileSize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

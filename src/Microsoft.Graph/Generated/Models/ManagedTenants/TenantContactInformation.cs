@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TenantContactInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation"/> and sets the default values.
         /// </summary>
         public TenantContactInformation()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantContactInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TenantContactInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantContactInformation();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.TenantContactInformation();
         }
         /// <summary>
         /// The deserialization information for the current model

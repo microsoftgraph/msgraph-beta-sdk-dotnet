@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Adds an additional source to the sourceCollection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataSource>? AdditionalSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>? AdditionalSources
         {
-            get { return BackingStore?.Get<List<DataSource>?>("additionalSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>?>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
 #nullable restore
 #else
-        public List<DataSource> AdditionalSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource> AdditionalSources
         {
-            get { return BackingStore?.Get<List<DataSource>>("additionalSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Custodian sources that are included in the sourceCollection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataSource>? CustodianSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>? CustodianSources
         {
-            get { return BackingStore?.Get<List<DataSource>?>("custodianSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>?>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
 #nullable restore
 #else
-        public List<DataSource> CustodianSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource> CustodianSources
         {
-            get { return BackingStore?.Get<List<DataSource>>("custodianSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
 #endif
@@ -137,16 +137,16 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>The last estimate operation associated with the sourceCollection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EstimateStatisticsOperation? LastEstimateStatisticsOperation
+        public Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation? LastEstimateStatisticsOperation
         {
-            get { return BackingStore?.Get<EstimateStatisticsOperation?>("lastEstimateStatisticsOperation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation?>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
 #nullable restore
 #else
-        public EstimateStatisticsOperation LastEstimateStatisticsOperation
+        public Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation LastEstimateStatisticsOperation
         {
-            get { return BackingStore?.Get<EstimateStatisticsOperation>("lastEstimateStatisticsOperation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
 #endif
@@ -175,28 +175,28 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>noncustodialDataSource sources that are included in the sourceCollection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NoncustodialDataSource>? NoncustodialSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>? NoncustodialSources
         {
-            get { return BackingStore?.Get<List<NoncustodialDataSource>?>("noncustodialSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>?>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
 #nullable restore
 #else
-        public List<NoncustodialDataSource> NoncustodialSources
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource> NoncustodialSources
         {
-            get { return BackingStore?.Get<List<NoncustodialDataSource>>("noncustodialSources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SourceCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SourceCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SourceCollection();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -207,18 +207,18 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "addToReviewSetOperation", n => { AddToReviewSetOperation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation>(Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation.CreateFromDiscriminatorValue); } },
-                { "additionalSources", n => { AdditionalSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalSources", n => { AdditionalSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contentQuery", n => { ContentQuery = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "custodianSources", n => { CustodianSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dataSourceScopes", n => { DataSourceScopes = n.GetEnumValue<DataSourceScopes>(); } },
+                { "custodianSources", n => { CustodianSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dataSourceScopes", n => { DataSourceScopes = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceScopes>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "lastEstimateStatisticsOperation", n => { LastEstimateStatisticsOperation = n.GetObjectValue<EstimateStatisticsOperation>(EstimateStatisticsOperation.CreateFromDiscriminatorValue); } },
+                { "lastEstimateStatisticsOperation", n => { LastEstimateStatisticsOperation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation>(Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "noncustodialSources", n => { NoncustodialSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "noncustodialSources", n => { NoncustodialSources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>(Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -229,19 +229,19 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DataSource>("additionalSources", AdditionalSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("additionalSources", AdditionalSources);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation>("addToReviewSetOperation", AddToReviewSetOperation);
             writer.WriteStringValue("contentQuery", ContentQuery);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<DataSource>("custodianSources", CustodianSources);
-            writer.WriteEnumValue<DataSourceScopes>("dataSourceScopes", DataSourceScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("custodianSources", CustodianSources);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceScopes>("dataSourceScopes", DataSourceScopes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<EstimateStatisticsOperation>("lastEstimateStatisticsOperation", LastEstimateStatisticsOperation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation>("lastEstimateStatisticsOperation", LastEstimateStatisticsOperation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<NoncustodialDataSource>("noncustodialSources", NoncustodialSources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource>("noncustodialSources", NoncustodialSources);
         }
     }
 }

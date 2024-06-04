@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Filter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.Filter"/> and sets the default values.
         /// </summary>
         public Filter()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Filter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.Filter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Filter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.Filter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.basicFilter" => new BasicFilter(),
-                _ => new Filter(),
+                "#microsoft.graph.industryData.basicFilter" => new Microsoft.Graph.Beta.Models.IndustryData.BasicFilter(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.Filter(),
             };
         }
         /// <summary>

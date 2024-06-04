@@ -121,32 +121,32 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>An individual audit log record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditLogRecord>? Records
+        public List<Microsoft.Graph.Beta.Models.Security.AuditLogRecord>? Records
         {
-            get { return BackingStore?.Get<List<AuditLogRecord>?>("records"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AuditLogRecord>?>("records"); }
             set { BackingStore?.Set("records", value); }
         }
 #nullable restore
 #else
-        public List<AuditLogRecord> Records
+        public List<Microsoft.Graph.Beta.Models.Security.AuditLogRecord> Records
         {
-            get { return BackingStore?.Get<List<AuditLogRecord>>("records"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AuditLogRecord>>("records"); }
             set { BackingStore?.Set("records", value); }
         }
 #endif
         /// <summary>The type of operation indicated by the record. The possible values are: exchangeAdmin, exchangeItem, exchangeItemGroup, sharePoint, syntheticProbe, sharePointFileOperation, oneDrive, azureActiveDirectory, azureActiveDirectoryAccountLogon, dataCenterSecurityCmdlet, complianceDLPSharePoint, sway, complianceDLPExchange, sharePointSharingOperation, azureActiveDirectoryStsLogon, skypeForBusinessPSTNUsage, skypeForBusinessUsersBlocked, securityComplianceCenterEOPCmdlet, exchangeAggregatedOperation, powerBIAudit, crm, yammer, skypeForBusinessCmdlets, discovery, microsoftTeams, threatIntelligence, mailSubmission, microsoftFlow, aeD, microsoftStream, complianceDLPSharePointClassification, threatFinder, project, sharePointListOperation, sharePointCommentOperation, dataGovernance, kaizala, securityComplianceAlerts, threatIntelligenceUrl, securityComplianceInsights, mipLabel, workplaceAnalytics, powerAppsApp, powerAppsPlan, threatIntelligenceAtpContent, labelContentExplorer, teamsHealthcare, exchangeItemAggregated, hygieneEvent, dataInsightsRestApiAudit, informationBarrierPolicyApplication, sharePointListItemOperation, sharePointContentTypeOperation, sharePointFieldOperation, microsoftTeamsAdmin, hrSignal, microsoftTeamsDevice, microsoftTeamsAnalytics, informationWorkerProtection, campaign, dlpEndpoint, airInvestigation, quarantine, microsoftForms, applicationAudit, complianceSupervisionExchange, customerKeyServiceEncryption, officeNative, mipAutoLabelSharePointItem, mipAutoLabelSharePointPolicyLocation, microsoftTeamsShifts, secureScore, mipAutoLabelExchangeItem, cortanaBriefing, search, wdatpAlerts, powerPlatformAdminDlp, powerPlatformAdminEnvironment, mdatpAudit, sensitivityLabelPolicyMatch, sensitivityLabelAction, sensitivityLabeledFileAction, attackSim, airManualInvestigation, securityComplianceRBAC, userTraining, airAdminActionInvestigation, mstic, physicalBadgingSignal, teamsEasyApprovals, aipDiscover, aipSensitivityLabelAction, aipProtectionAction, aipFileDeleted, aipHeartBeat, mcasAlerts, onPremisesFileShareScannerDlp, onPremisesSharePointScannerDlp, exchangeSearch, sharePointSearch, privacyDataMinimization, labelAnalyticsAggregate, myAnalyticsSettings, securityComplianceUserChange, complianceDLPExchangeClassification, complianceDLPEndpoint, mipExactDataMatch, msdeResponseActions, msdeGeneralSettings, msdeIndicatorsSettings, ms365DCustomDetection, msdeRolesSettings, mapgAlerts, mapgPolicy, mapgRemediation, privacyRemediationAction, privacyDigestEmail, mipAutoLabelSimulationProgress, mipAutoLabelSimulationCompletion, mipAutoLabelProgressFeedback, dlpSensitiveInformationType, mipAutoLabelSimulationStatistics, largeContentMetadata, microsoft365Group, cdpMlInferencingResult, filteringMailMetadata, cdpClassificationMailItem, cdpClassificationDocument, officeScriptsRunAction, filteringPostMailDeliveryAction, cdpUnifiedFeedback, tenantAllowBlockList, consumptionResource, healthcareSignal, dlpImportResult, cdpCompliancePolicyExecution, multiStageDisposition, privacyDataMatch, filteringDocMetadata, filteringEmailFeatures, powerBIDlp, filteringUrlInfo, filteringAttachmentInfo, coreReportingSettings, complianceConnector, powerPlatformLockboxResourceAccessRequest, powerPlatformLockboxResourceCommand, cdpPredictiveCodingLabel, cdpCompliancePolicyUserFeedback, webpageActivityEndpoint, omePortal, cmImprovementActionChange, filteringUrlClick, mipLabelAnalyticsAuditRecord, filteringEntityEvent, filteringRuleHits, filteringMailSubmission, labelExplorer, microsoftManagedServicePlatform, powerPlatformServiceActivity, scorePlatformGenericAuditRecord, filteringTimeTravelDocMetadata, alert, alertStatus, alertIncident, incidentStatus, case, caseInvestigation, recordsManagement, privacyRemediation, dataShareOperation, cdpDlpSensitive, ehrConnector, filteringMailGradingResult, publicFolder, privacyTenantAuditHistoryRecord, aipScannerDiscoverEvent, eduDataLakeDownloadOperation, m365ComplianceConnector, microsoftGraphDataConnectOperation, microsoftPurview, filteringEmailContentFeatures, powerPagesSite, powerAppsResource, plannerPlan, plannerCopyPlan, plannerTask, plannerRoster, plannerPlanList, plannerTaskList, plannerTenantSettings, projectForTheWebProject, projectForTheWebTask, projectForTheWebRoadmap, projectForTheWebRoadmapItem, projectForTheWebProjectSettings, projectForTheWebRoadmapSettings, quarantineMetadata, microsoftTodoAudit, timeTravelFilteringDocMetadata, teamsQuarantineMetadata, sharePointAppPermissionOperation, microsoftTeamsSensitivityLabelAction, filteringTeamsMetadata, filteringTeamsUrlInfo, filteringTeamsPostDeliveryAction, mdcAssessments, mdcRegulatoryComplianceStandards, mdcRegulatoryComplianceControls, mdcRegulatoryComplianceAssessments, mdcSecurityConnectors, mdaDataSecuritySignal, vivaGoals, filteringRuntimeInfo, attackSimAdmin, microsoftGraphDataConnectConsent, filteringAtpDetonationInfo, privacyPortal, managedTenants, unifiedSimulationMatchedItem, unifiedSimulationSummary, updateQuarantineMetadata, ms365DSuppressionRule, purviewDataMapOperation, filteringUrlPostClickAction, irmUserDefinedDetectionSignal, teamsUpdates, plannerRosterSensitivityLabel, ms365DIncident, filteringDelistingMetadata, complianceDLPSharePointClassificationExtended, microsoftDefenderForIdentityAudit, supervisoryReviewDayXInsight, defenderExpertsforXDRAdmin, cdpEdgeBlockedMessage, hostedRpa, cdpContentExplorerAggregateRecord, cdpHygieneAttachmentInfo, cdpHygieneSummary, cdpPostMailDeliveryAction, cdpEmailFeatures, cdpHygieneUrlInfo, cdpUrlClick, cdpPackageManagerHygieneEvent, filteringDocScan, timeTravelFilteringDocScan, mapgOnboard, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditLogRecordType?>? RecordTypeFilters
+        public List<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType?>? RecordTypeFilters
         {
-            get { return BackingStore?.Get<List<AuditLogRecordType?>?>("recordTypeFilters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType?>?>("recordTypeFilters"); }
             set { BackingStore?.Set("recordTypeFilters", value); }
         }
 #nullable restore
 #else
-        public List<AuditLogRecordType?> RecordTypeFilters
+        public List<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType?> RecordTypeFilters
         {
-            get { return BackingStore?.Get<List<AuditLogRecordType?>>("recordTypeFilters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType?>>("recordTypeFilters"); }
             set { BackingStore?.Set("recordTypeFilters", value); }
         }
 #endif
@@ -167,9 +167,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.</summary>
-        public AuditLogQueryStatus? Status
+        public Microsoft.Graph.Beta.Models.Security.AuditLogQueryStatus? Status
         {
-            get { return BackingStore?.Get<AuditLogQueryStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AuditLogQueryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.</summary>
@@ -191,12 +191,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditLogQuery"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AuditLogQuery"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuditLogQuery CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.AuditLogQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditLogQuery();
+            return new Microsoft.Graph.Beta.Models.Security.AuditLogQuery();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -214,10 +214,10 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "keywordFilter", n => { KeywordFilter = n.GetStringValue(); } },
                 { "objectIdFilters", n => { ObjectIdFilters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "operationFilters", n => { OperationFilters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "recordTypeFilters", n => { RecordTypeFilters = n.GetCollectionOfEnumValues<AuditLogRecordType>()?.ToList(); } },
-                { "records", n => { Records = n.GetCollectionOfObjectValues<AuditLogRecord>(AuditLogRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recordTypeFilters", n => { RecordTypeFilters = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType>()?.ToList(); } },
+                { "records", n => { Records = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AuditLogRecord>(Microsoft.Graph.Beta.Models.Security.AuditLogRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "serviceFilters", n => { ServiceFilters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<AuditLogQueryStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AuditLogQueryStatus>(); } },
                 { "userPrincipalNameFilters", n => { UserPrincipalNameFilters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -237,10 +237,10 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("keywordFilter", KeywordFilter);
             writer.WriteCollectionOfPrimitiveValues<string>("objectIdFilters", ObjectIdFilters);
             writer.WriteCollectionOfPrimitiveValues<string>("operationFilters", OperationFilters);
-            writer.WriteCollectionOfObjectValues<AuditLogRecord>("records", Records);
-            writer.WriteCollectionOfEnumValues<AuditLogRecordType>("recordTypeFilters", RecordTypeFilters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AuditLogRecord>("records", Records);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.Security.AuditLogRecordType>("recordTypeFilters", RecordTypeFilters);
             writer.WriteCollectionOfPrimitiveValues<string>("serviceFilters", ServiceFilters);
-            writer.WriteEnumValue<AuditLogQueryStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AuditLogQueryStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("userPrincipalNameFilters", UserPrincipalNameFilters);
         }
     }

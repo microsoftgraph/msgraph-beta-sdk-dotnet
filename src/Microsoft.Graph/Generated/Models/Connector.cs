@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Connector : Entity, IParsable
+    public class Connector : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The external IP address as detected by the connector server. Read-only.</summary>
@@ -45,23 +45,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The connectorGroup that the connector is a member of. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectorGroup>? MemberOf
+        public List<Microsoft.Graph.Beta.Models.ConnectorGroup>? MemberOf
         {
-            get { return BackingStore?.Get<List<ConnectorGroup>?>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConnectorGroup>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<ConnectorGroup> MemberOf
+        public List<Microsoft.Graph.Beta.Models.ConnectorGroup> MemberOf
         {
-            get { return BackingStore?.Get<List<ConnectorGroup>>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConnectorGroup>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ConnectorStatus? Status
+        public Microsoft.Graph.Beta.Models.ConnectorStatus? Status
         {
-            get { return BackingStore?.Get<ConnectorStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The version of the connector.</summary>
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Connector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Connector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Connector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Connector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Connector();
+            return new Microsoft.Graph.Beta.Models.Connector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,8 +100,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "externalIp", n => { ExternalIp = n.GetStringValue(); } },
                 { "machineName", n => { MachineName = n.GetStringValue(); } },
-                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<ConnectorStatus>(); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConnectorGroup>(Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConnectorStatus>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("externalIp", ExternalIp);
             writer.WriteStringValue("machineName", MachineName);
-            writer.WriteCollectionOfObjectValues<ConnectorGroup>("memberOf", MemberOf);
-            writer.WriteEnumValue<ConnectorStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConnectorGroup>("memberOf", MemberOf);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConnectorStatus>("status", Status);
             writer.WriteStringValue("version", Version);
         }
     }

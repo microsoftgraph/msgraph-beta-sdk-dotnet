@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>All of the phone numbers associated with this conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones
+        public List<Microsoft.Graph.Beta.Models.Phone>? Phones
         {
-            get { return BackingStore?.Get<List<Phone>?>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones
+        public List<Microsoft.Graph.Beta.Models.Phone> Phones
         {
-            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #endif
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnlineMeetingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnlineMeetingInfo"/> and sets the default values.
         /// </summary>
         public OnlineMeetingInfo()
         {
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnlineMeetingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnlineMeetingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnlineMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OnlineMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnlineMeetingInfo();
+            return new Microsoft.Graph.Beta.Models.OnlineMeetingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "conferenceId", n => { ConferenceId = n.GetStringValue(); } },
                 { "joinUrl", n => { JoinUrl = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Phone>(Microsoft.Graph.Beta.Models.Phone.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "quickDial", n => { QuickDial = n.GetStringValue(); } },
                 { "tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tollNumber", n => { TollNumber = n.GetStringValue(); } },
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("conferenceId", ConferenceId);
             writer.WriteStringValue("joinUrl", JoinUrl);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<Phone>("phones", Phones);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Phone>("phones", Phones);
             writer.WriteStringValue("quickDial", QuickDial);
             writer.WriteCollectionOfPrimitiveValues<string>("tollFreeNumbers", TollFreeNumbers);
             writer.WriteStringValue("tollNumber", TollNumber);

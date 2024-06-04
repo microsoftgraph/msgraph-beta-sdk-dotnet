@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessReviewDecision : Entity, IParsable
+    public class AccessReviewDecision : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? AppliedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? AppliedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity AppliedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity AppliedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #endif
@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? ReviewedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? ReviewedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity ReviewedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity ReviewedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReviewDecision"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewDecision"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReviewDecision CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessReviewDecision CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReviewDecision();
+            return new Microsoft.Graph.Beta.Models.AccessReviewDecision();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accessRecommendation", n => { AccessRecommendation = n.GetStringValue(); } },
                 { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
-                { "appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "appliedBy", n => { AppliedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "reviewResult", n => { ReviewResult = n.GetStringValue(); } },
-                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("accessRecommendation", AccessRecommendation);
             writer.WriteStringValue("accessReviewId", AccessReviewId);
-            writer.WriteObjectValue<UserIdentity>("appliedBy", AppliedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("appliedBy", AppliedBy);
             writer.WriteDateTimeOffsetValue("appliedDateTime", AppliedDateTime);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<UserIdentity>("reviewedBy", ReviewedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("reviewedBy", ReviewedBy);
             writer.WriteDateTimeOffsetValue("reviewedDateTime", ReviewedDateTime);
             writer.WriteStringValue("reviewResult", ReviewResult);
         }

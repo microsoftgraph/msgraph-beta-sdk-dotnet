@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Call>? Calls
+        public List<Microsoft.Graph.Beta.Models.Call>? Calls
         {
-            get { return BackingStore?.Get<List<Call>?>("calls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Call>?>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
 #nullable restore
 #else
-        public List<Call> Calls
+        public List<Microsoft.Graph.Beta.Models.Call> Calls
         {
-            get { return BackingStore?.Get<List<Call>>("calls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Call>>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The onlineMeetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnlineMeeting>? OnlineMeetings
+        public List<Microsoft.Graph.Beta.Models.OnlineMeeting>? OnlineMeetings
         {
-            get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnlineMeeting>?>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #nullable restore
 #else
-        public List<OnlineMeeting> OnlineMeetings
+        public List<Microsoft.Graph.Beta.Models.OnlineMeeting> OnlineMeetings
         {
-            get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CommsApplication"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CommsApplication"/> and sets the default values.
         /// </summary>
         public CommsApplication()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CommsApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CommsApplication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CommsApplication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CommsApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CommsApplication();
+            return new Microsoft.Graph.Beta.Models.CommsApplication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "calls", n => { Calls = n.GetCollectionOfObjectValues<Call>(Call.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calls", n => { Calls = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Call>(Microsoft.Graph.Beta.Models.Call.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnlineMeeting>(Microsoft.Graph.Beta.Models.OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Call>("calls", Calls);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Call>("calls", Calls);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<OnlineMeeting>("onlineMeetings", OnlineMeetings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnlineMeeting>("onlineMeetings", OnlineMeetings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

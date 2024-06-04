@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ConditionalAccessWhatIfPolicy : ConditionalAccessPolicy, IParsable
+    public class ConditionalAccessWhatIfPolicy : Microsoft.Graph.Beta.Models.ConditionalAccessPolicy, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The policyApplies property</summary>
@@ -19,28 +19,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessWhatIfReasons?>? Reasons
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?>? Reasons
         {
-            get { return BackingStore?.Get<List<ConditionalAccessWhatIfReasons?>?>("reasons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?>?>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessWhatIfReasons?> Reasons
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?> Reasons
         {
-            get { return BackingStore?.Get<List<ConditionalAccessWhatIfReasons?>>("reasons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons?>>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessWhatIfPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ConditionalAccessWhatIfPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessWhatIfPolicy();
+            return new Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "policyApplies", n => { PolicyApplies = n.GetBoolValue(); } },
-                { "reasons", n => { Reasons = n.GetCollectionOfEnumValues<ConditionalAccessWhatIfReasons>()?.ToList(); } },
+                { "reasons", n => { Reasons = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("policyApplies", PolicyApplies);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessWhatIfReasons>("reasons", Reasons);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfReasons>("reasons", Reasons);
         }
     }
 }

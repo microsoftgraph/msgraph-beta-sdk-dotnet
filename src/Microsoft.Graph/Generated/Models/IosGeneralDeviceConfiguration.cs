@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
     /// </summary>
-    public class IosGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class IosGeneralDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to allow account modification when the device is in supervised mode.</summary>
         public bool? AccountBlockModification
@@ -104,16 +104,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsSingleAppModeList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? AppsSingleAppModeList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsSingleAppModeList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("appsSingleAppModeList"); }
             set { BackingStore?.Set("appsSingleAppModeList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsSingleAppModeList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> AppsSingleAppModeList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsSingleAppModeList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("appsSingleAppModeList"); }
             set { BackingStore?.Set("appsSingleAppModeList", value); }
         }
 #endif
@@ -150,23 +150,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsVisibilityList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? AppsVisibilityList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsVisibilityList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("appsVisibilityList"); }
             set { BackingStore?.Set("appsVisibilityList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsVisibilityList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> AppsVisibilityList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsVisibilityList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("appsVisibilityList"); }
             set { BackingStore?.Set("appsVisibilityList", value); }
         }
 #endif
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? AppsVisibilityListType
+        public Microsoft.Graph.Beta.Models.AppListType? AppsVisibilityListType
         {
-            get { return BackingStore?.Get<AppListType?>("appsVisibilityListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppListType?>("appsVisibilityListType"); }
             set { BackingStore?.Set("appsVisibilityListType", value); }
         }
         /// <summary>Indicates whether or not to force user authentication before autofilling passwords and credit card information in Safari and other apps on supervised devices.</summary>
@@ -278,24 +278,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("classroomForceUnpromptedAppAndDeviceLock", value); }
         }
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? CompliantAppListType
+        public Microsoft.Graph.Beta.Models.AppListType? CompliantAppListType
         {
-            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppListType?>("compliantAppListType"); }
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? CompliantAppsList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> CompliantAppsList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #endif
@@ -698,9 +698,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>App source options for iOS kiosk mode.</summary>
-        public IosKioskModeAppType? KioskModeAppType
+        public Microsoft.Graph.Beta.Models.IosKioskModeAppType? KioskModeAppType
         {
-            get { return BackingStore?.Get<IosKioskModeAppType?>("kioskModeAppType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosKioskModeAppType?>("kioskModeAppType"); }
             set { BackingStore?.Set("kioskModeAppType", value); }
         }
         /// <summary>Indicates whether or not to block device auto lock while in kiosk mode.</summary>
@@ -838,9 +838,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("managedPasteboardRequired", value); }
         }
         /// <summary>Apps rating as in media content</summary>
-        public RatingAppsType? MediaContentRatingApps
+        public Microsoft.Graph.Beta.Models.RatingAppsType? MediaContentRatingApps
         {
-            get { return BackingStore?.Get<RatingAppsType?>("mediaContentRatingApps"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RatingAppsType?>("mediaContentRatingApps"); }
             set { BackingStore?.Set("mediaContentRatingApps", value); }
         }
         /// <summary>Media content rating settings for Australia</summary>
@@ -996,16 +996,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosNetworkUsageRule>? NetworkUsageRules
+        public List<Microsoft.Graph.Beta.Models.IosNetworkUsageRule>? NetworkUsageRules
         {
-            get { return BackingStore?.Get<List<IosNetworkUsageRule>?>("networkUsageRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosNetworkUsageRule>?>("networkUsageRules"); }
             set { BackingStore?.Set("networkUsageRules", value); }
         }
 #nullable restore
 #else
-        public List<IosNetworkUsageRule> NetworkUsageRules
+        public List<Microsoft.Graph.Beta.Models.IosNetworkUsageRule> NetworkUsageRules
         {
-            get { return BackingStore?.Get<List<IosNetworkUsageRule>>("networkUsageRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosNetworkUsageRule>>("networkUsageRules"); }
             set { BackingStore?.Set("networkUsageRules", value); }
         }
 #endif
@@ -1100,9 +1100,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passcodeRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasscodeRequiredType
+        public Microsoft.Graph.Beta.Models.RequiredPasswordType? PasscodeRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passcodeRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequiredPasswordType?>("passcodeRequiredType"); }
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before wiping the device. Valid values 2 to 11</summary>
@@ -1178,9 +1178,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("safariBlockPopups", value); }
         }
         /// <summary>Web Browser Cookie Settings.</summary>
-        public WebBrowserCookieSettings? SafariCookieSettings
+        public Microsoft.Graph.Beta.Models.WebBrowserCookieSettings? SafariCookieSettings
         {
-            get { return BackingStore?.Get<WebBrowserCookieSettings?>("safariCookieSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WebBrowserCookieSettings?>("safariCookieSettings"); }
             set { BackingStore?.Set("safariCookieSettings", value); }
         }
         /// <summary>URLs matching the patterns listed here will be considered managed.</summary>
@@ -1324,7 +1324,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wifiPowerOnForced", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public IosGeneralDeviceConfiguration() : base()
         {
@@ -1333,12 +1333,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -1368,9 +1368,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "applePersonalizedAdsBlocked", n => { ApplePersonalizedAdsBlocked = n.GetBoolValue(); } },
                 { "appleWatchBlockPairing", n => { AppleWatchBlockPairing = n.GetBoolValue(); } },
                 { "appleWatchForceWristDetection", n => { AppleWatchForceWristDetection = n.GetBoolValue(); } },
-                { "appsSingleAppModeList", n => { AppsSingleAppModeList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appsVisibilityList", n => { AppsVisibilityList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appsVisibilityListType", n => { AppsVisibilityListType = n.GetEnumValue<AppListType>(); } },
+                { "appsSingleAppModeList", n => { AppsSingleAppModeList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsVisibilityList", n => { AppsVisibilityList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsVisibilityListType", n => { AppsVisibilityListType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppListType>(); } },
                 { "autoFillForceAuthentication", n => { AutoFillForceAuthentication = n.GetBoolValue(); } },
                 { "autoUnlockBlocked", n => { AutoUnlockBlocked = n.GetBoolValue(); } },
                 { "blockSystemAppRemoval", n => { BlockSystemAppRemoval = n.GetBoolValue(); } },
@@ -1389,8 +1389,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "classroomForceAutomaticallyJoinClasses", n => { ClassroomForceAutomaticallyJoinClasses = n.GetBoolValue(); } },
                 { "classroomForceRequestPermissionToLeaveClasses", n => { ClassroomForceRequestPermissionToLeaveClasses = n.GetBoolValue(); } },
                 { "classroomForceUnpromptedAppAndDeviceLock", n => { ClassroomForceUnpromptedAppAndDeviceLock = n.GetBoolValue(); } },
-                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppListType>(); } },
+                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "configurationProfileBlockChanges", n => { ConfigurationProfileBlockChanges = n.GetBoolValue(); } },
                 { "contactsAllowManagedToUnmanagedWrite", n => { ContactsAllowManagedToUnmanagedWrite = n.GetBoolValue(); } },
                 { "contactsAllowUnmanagedToManagedRead", n => { ContactsAllowUnmanagedToManagedRead = n.GetBoolValue(); } },
@@ -1454,7 +1454,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "kioskModeAllowVolumeButtons", n => { KioskModeAllowVolumeButtons = n.GetBoolValue(); } },
                 { "kioskModeAllowZoomSettings", n => { KioskModeAllowZoomSettings = n.GetBoolValue(); } },
                 { "kioskModeAppStoreUrl", n => { KioskModeAppStoreUrl = n.GetStringValue(); } },
-                { "kioskModeAppType", n => { KioskModeAppType = n.GetEnumValue<IosKioskModeAppType>(); } },
+                { "kioskModeAppType", n => { KioskModeAppType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IosKioskModeAppType>(); } },
                 { "kioskModeBlockAutoLock", n => { KioskModeBlockAutoLock = n.GetBoolValue(); } },
                 { "kioskModeBlockRingerSwitch", n => { KioskModeBlockRingerSwitch = n.GetBoolValue(); } },
                 { "kioskModeBlockScreenRotation", n => { KioskModeBlockScreenRotation = n.GetBoolValue(); } },
@@ -1474,7 +1474,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lockScreenBlockPassbook", n => { LockScreenBlockPassbook = n.GetBoolValue(); } },
                 { "lockScreenBlockTodayView", n => { LockScreenBlockTodayView = n.GetBoolValue(); } },
                 { "managedPasteboardRequired", n => { ManagedPasteboardRequired = n.GetBoolValue(); } },
-                { "mediaContentRatingApps", n => { MediaContentRatingApps = n.GetEnumValue<RatingAppsType>(); } },
+                { "mediaContentRatingApps", n => { MediaContentRatingApps = n.GetEnumValue<Microsoft.Graph.Beta.Models.RatingAppsType>(); } },
                 { "mediaContentRatingAustralia", n => { MediaContentRatingAustralia = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingAustralia>(Microsoft.Graph.Beta.Models.MediaContentRatingAustralia.CreateFromDiscriminatorValue); } },
                 { "mediaContentRatingCanada", n => { MediaContentRatingCanada = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingCanada>(Microsoft.Graph.Beta.Models.MediaContentRatingCanada.CreateFromDiscriminatorValue); } },
                 { "mediaContentRatingFrance", n => { MediaContentRatingFrance = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingFrance>(Microsoft.Graph.Beta.Models.MediaContentRatingFrance.CreateFromDiscriminatorValue); } },
@@ -1485,7 +1485,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "mediaContentRatingUnitedKingdom", n => { MediaContentRatingUnitedKingdom = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom>(Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom.CreateFromDiscriminatorValue); } },
                 { "mediaContentRatingUnitedStates", n => { MediaContentRatingUnitedStates = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates>(Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates.CreateFromDiscriminatorValue); } },
                 { "messagesBlocked", n => { MessagesBlocked = n.GetBoolValue(); } },
-                { "networkUsageRules", n => { NetworkUsageRules = n.GetCollectionOfObjectValues<IosNetworkUsageRule>(IosNetworkUsageRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkUsageRules", n => { NetworkUsageRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosNetworkUsageRule>(Microsoft.Graph.Beta.Models.IosNetworkUsageRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "nfcBlocked", n => { NfcBlocked = n.GetBoolValue(); } },
                 { "notificationsBlockSettingsModification", n => { NotificationsBlockSettingsModification = n.GetBoolValue(); } },
                 { "onDeviceOnlyDictationForced", n => { OnDeviceOnlyDictationForced = n.GetBoolValue(); } },
@@ -1501,7 +1501,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "passcodeMinutesOfInactivityBeforeScreenTimeout", n => { PasscodeMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passcodePreviousPasscodeBlockCount", n => { PasscodePreviousPasscodeBlockCount = n.GetIntValue(); } },
                 { "passcodeRequired", n => { PasscodeRequired = n.GetBoolValue(); } },
-                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passcodeRequiredType", n => { PasscodeRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>(); } },
                 { "passcodeSignInFailureCountBeforeWipe", n => { PasscodeSignInFailureCountBeforeWipe = n.GetIntValue(); } },
                 { "passwordBlockAirDropSharing", n => { PasswordBlockAirDropSharing = n.GetBoolValue(); } },
                 { "passwordBlockAutoFill", n => { PasswordBlockAutoFill = n.GetBoolValue(); } },
@@ -1514,7 +1514,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "safariBlockJavaScript", n => { SafariBlockJavaScript = n.GetBoolValue(); } },
                 { "safariBlockPopups", n => { SafariBlockPopups = n.GetBoolValue(); } },
                 { "safariBlocked", n => { SafariBlocked = n.GetBoolValue(); } },
-                { "safariCookieSettings", n => { SafariCookieSettings = n.GetEnumValue<WebBrowserCookieSettings>(); } },
+                { "safariCookieSettings", n => { SafariCookieSettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.WebBrowserCookieSettings>(); } },
                 { "safariManagedDomains", n => { SafariManagedDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "safariPasswordAutoFillDomains", n => { SafariPasswordAutoFillDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "safariRequireFraudWarning", n => { SafariRequireFraudWarning = n.GetBoolValue(); } },
@@ -1560,14 +1560,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("appleWatchBlockPairing", AppleWatchBlockPairing);
             writer.WriteBoolValue("appleWatchForceWristDetection", AppleWatchForceWristDetection);
             writer.WriteBoolValue("appRemovalBlocked", AppRemovalBlocked);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsSingleAppModeList", AppsSingleAppModeList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("appsSingleAppModeList", AppsSingleAppModeList);
             writer.WriteBoolValue("appStoreBlockAutomaticDownloads", AppStoreBlockAutomaticDownloads);
             writer.WriteBoolValue("appStoreBlocked", AppStoreBlocked);
             writer.WriteBoolValue("appStoreBlockInAppPurchases", AppStoreBlockInAppPurchases);
             writer.WriteBoolValue("appStoreBlockUIAppInstallation", AppStoreBlockUIAppInstallation);
             writer.WriteBoolValue("appStoreRequirePassword", AppStoreRequirePassword);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsVisibilityList", AppsVisibilityList);
-            writer.WriteEnumValue<AppListType>("appsVisibilityListType", AppsVisibilityListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("appsVisibilityList", AppsVisibilityList);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppListType>("appsVisibilityListType", AppsVisibilityListType);
             writer.WriteBoolValue("autoFillForceAuthentication", AutoFillForceAuthentication);
             writer.WriteBoolValue("autoUnlockBlocked", AutoUnlockBlocked);
             writer.WriteBoolValue("blockSystemAppRemoval", BlockSystemAppRemoval);
@@ -1586,8 +1586,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("classroomForceAutomaticallyJoinClasses", ClassroomForceAutomaticallyJoinClasses);
             writer.WriteBoolValue("classroomForceRequestPermissionToLeaveClasses", ClassroomForceRequestPermissionToLeaveClasses);
             writer.WriteBoolValue("classroomForceUnpromptedAppAndDeviceLock", ClassroomForceUnpromptedAppAndDeviceLock);
-            writer.WriteEnumValue<AppListType>("compliantAppListType", CompliantAppListType);
-            writer.WriteCollectionOfObjectValues<AppListItem>("compliantAppsList", CompliantAppsList);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppListType>("compliantAppListType", CompliantAppListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("compliantAppsList", CompliantAppsList);
             writer.WriteBoolValue("configurationProfileBlockChanges", ConfigurationProfileBlockChanges);
             writer.WriteBoolValue("contactsAllowManagedToUnmanagedWrite", ContactsAllowManagedToUnmanagedWrite);
             writer.WriteBoolValue("contactsAllowUnmanagedToManagedRead", ContactsAllowUnmanagedToManagedRead);
@@ -1651,7 +1651,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("kioskModeAllowVolumeButtons", KioskModeAllowVolumeButtons);
             writer.WriteBoolValue("kioskModeAllowZoomSettings", KioskModeAllowZoomSettings);
             writer.WriteStringValue("kioskModeAppStoreUrl", KioskModeAppStoreUrl);
-            writer.WriteEnumValue<IosKioskModeAppType>("kioskModeAppType", KioskModeAppType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IosKioskModeAppType>("kioskModeAppType", KioskModeAppType);
             writer.WriteBoolValue("kioskModeBlockAutoLock", KioskModeBlockAutoLock);
             writer.WriteBoolValue("kioskModeBlockRingerSwitch", KioskModeBlockRingerSwitch);
             writer.WriteBoolValue("kioskModeBlockScreenRotation", KioskModeBlockScreenRotation);
@@ -1671,7 +1671,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("lockScreenBlockPassbook", LockScreenBlockPassbook);
             writer.WriteBoolValue("lockScreenBlockTodayView", LockScreenBlockTodayView);
             writer.WriteBoolValue("managedPasteboardRequired", ManagedPasteboardRequired);
-            writer.WriteEnumValue<RatingAppsType>("mediaContentRatingApps", MediaContentRatingApps);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RatingAppsType>("mediaContentRatingApps", MediaContentRatingApps);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingAustralia>("mediaContentRatingAustralia", MediaContentRatingAustralia);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingCanada>("mediaContentRatingCanada", MediaContentRatingCanada);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingFrance>("mediaContentRatingFrance", MediaContentRatingFrance);
@@ -1682,7 +1682,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom>("mediaContentRatingUnitedKingdom", MediaContentRatingUnitedKingdom);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates>("mediaContentRatingUnitedStates", MediaContentRatingUnitedStates);
             writer.WriteBoolValue("messagesBlocked", MessagesBlocked);
-            writer.WriteCollectionOfObjectValues<IosNetworkUsageRule>("networkUsageRules", NetworkUsageRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosNetworkUsageRule>("networkUsageRules", NetworkUsageRules);
             writer.WriteBoolValue("nfcBlocked", NfcBlocked);
             writer.WriteBoolValue("notificationsBlockSettingsModification", NotificationsBlockSettingsModification);
             writer.WriteBoolValue("onDeviceOnlyDictationForced", OnDeviceOnlyDictationForced);
@@ -1698,7 +1698,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passcodeMinutesOfInactivityBeforeScreenTimeout", PasscodeMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passcodePreviousPasscodeBlockCount", PasscodePreviousPasscodeBlockCount);
             writer.WriteBoolValue("passcodeRequired", PasscodeRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>("passcodeRequiredType", PasscodeRequiredType);
             writer.WriteIntValue("passcodeSignInFailureCountBeforeWipe", PasscodeSignInFailureCountBeforeWipe);
             writer.WriteBoolValue("passwordBlockAirDropSharing", PasswordBlockAirDropSharing);
             writer.WriteBoolValue("passwordBlockAutoFill", PasswordBlockAutoFill);
@@ -1711,7 +1711,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("safariBlocked", SafariBlocked);
             writer.WriteBoolValue("safariBlockJavaScript", SafariBlockJavaScript);
             writer.WriteBoolValue("safariBlockPopups", SafariBlockPopups);
-            writer.WriteEnumValue<WebBrowserCookieSettings>("safariCookieSettings", SafariCookieSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WebBrowserCookieSettings>("safariCookieSettings", SafariCookieSettings);
             writer.WriteCollectionOfPrimitiveValues<string>("safariManagedDomains", SafariManagedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("safariPasswordAutoFillDomains", SafariPasswordAutoFillDomains);
             writer.WriteBoolValue("safariRequireFraudWarning", SafariRequireFraudWarning);

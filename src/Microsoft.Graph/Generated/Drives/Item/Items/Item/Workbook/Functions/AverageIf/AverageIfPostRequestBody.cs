@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Average
         /// <summary>The averageRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? AverageRange
+        public Microsoft.Graph.Beta.Models.Json? AverageRange
         {
-            get { return BackingStore?.Get<Json?>("averageRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("averageRange"); }
             set { BackingStore?.Set("averageRange", value); }
         }
 #nullable restore
 #else
-        public Json AverageRange
+        public Microsoft.Graph.Beta.Models.Json AverageRange
         {
-            get { return BackingStore?.Get<Json>("averageRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("averageRange"); }
             set { BackingStore?.Set("averageRange", value); }
         }
 #endif
@@ -39,37 +39,37 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Average
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Criteria
+        public Microsoft.Graph.Beta.Models.Json? Criteria
         {
-            get { return BackingStore?.Get<Json?>("criteria"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #nullable restore
 #else
-        public Json Criteria
+        public Microsoft.Graph.Beta.Models.Json Criteria
         {
-            get { return BackingStore?.Get<Json>("criteria"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #endif
         /// <summary>The range property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Range
+        public Microsoft.Graph.Beta.Models.Json? Range
         {
-            get { return BackingStore?.Get<Json?>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #nullable restore
 #else
-        public Json Range
+        public Microsoft.Graph.Beta.Models.Json Range
         {
-            get { return BackingStore?.Get<Json>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AverageIfPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AverageIf.AverageIfPostRequestBody"/> and sets the default values.
         /// </summary>
         public AverageIfPostRequestBody()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Average
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AverageIfPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AverageIf.AverageIfPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AverageIfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AverageIf.AverageIfPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AverageIfPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.AverageIf.AverageIfPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Average
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "averageRange", n => { AverageRange = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "criteria", n => { Criteria = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "range", n => { Range = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "averageRange", n => { AverageRange = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "range", n => { Range = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Average
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("averageRange", AverageRange);
-            writer.WriteObjectValue<Json>("criteria", Criteria);
-            writer.WriteObjectValue<Json>("range", Range);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("averageRange", AverageRange);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("criteria", Criteria);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("range", Range);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform
 {
     #pragma warning disable CS1591
-    public class GetPlatformSupportedPropertiesWithPlatformGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetPlatformSupportedPropertiesWithPlatformGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignmentFilterSupportedProperty>? Value
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty>? Value
         {
-            get { return BackingStore?.Get<List<AssignmentFilterSupportedProperty>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AssignmentFilterSupportedProperty> Value
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty> Value
         {
-            get { return BackingStore?.Get<List<AssignmentFilterSupportedProperty>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPlatformSupportedPropertiesWithPlatformGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetPlatformSupportedPropertiesWithPlatformGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPlatformSupportedPropertiesWithPlatformGetResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform.GetPlatformSupportedPropertiesWithPlatformGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSup
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AssignmentFilterSupportedProperty>(AssignmentFilterSupportedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty>(Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSup
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty>("value", Value);
         }
     }
 }

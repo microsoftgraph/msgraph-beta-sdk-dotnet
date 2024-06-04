@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Describes applicability for the mode the device is in</summary>
-        public DeviceManagementConfigurationDeviceMode? DeviceMode
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDeviceMode? DeviceMode
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationDeviceMode?>("deviceMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDeviceMode?>("deviceMode"); }
             set { BackingStore?.Set("deviceMode", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,19 +58,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DeviceManagementConfigurationPlatforms? Platform
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms? Platform
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Describes which technology this setting can be deployed with</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies? Technologies
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSettingApplicability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingApplicability()
         {
@@ -80,18 +80,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSettingApplicability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability" => new DeviceManagementConfigurationApplicationSettingApplicability(),
-                "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability" => new DeviceManagementConfigurationExchangeOnlineSettingApplicability(),
-                "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability" => new DeviceManagementConfigurationWindowsSettingApplicability(),
-                _ => new DeviceManagementConfigurationSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationExchangeOnlineSettingApplicability(),
+                "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability(),
             };
         }
         /// <summary>
@@ -103,10 +103,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceMode", n => { DeviceMode = n.GetEnumValue<DeviceManagementConfigurationDeviceMode>(); } },
+                { "deviceMode", n => { DeviceMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDeviceMode>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                { "technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>(); } },
+                { "technologies", n => { Technologies = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>(); } },
             };
         }
         /// <summary>
@@ -117,10 +117,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<DeviceManagementConfigurationDeviceMode>("deviceMode", DeviceMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDeviceMode>("deviceMode", DeviceMode);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platform", Platform);
-            writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>("technologies", Technologies);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

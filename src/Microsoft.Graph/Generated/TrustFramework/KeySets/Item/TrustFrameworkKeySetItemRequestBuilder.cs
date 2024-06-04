@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
     public class TrustFrameworkKeySetItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the generateKey method.</summary>
-        public GenerateKeyRequestBuilder GenerateKey
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey.GenerateKeyRequestBuilder GenerateKey
         {
-            get => new GenerateKeyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey.GenerateKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActiveKey method.</summary>
-        public GetActiveKeyRequestBuilder GetActiveKey
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder GetActiveKey
         {
-            get => new GetActiveKeyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey.GetActiveKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the keys_v2 property of the microsoft.graph.trustFrameworkKeySet entity.</summary>
-        public Keys_v2RequestBuilder Keys_v2
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.Keys_v2.Keys_v2RequestBuilder Keys_v2
         {
-            get => new Keys_v2RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.Keys_v2.Keys_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadCertificate method.</summary>
-        public UploadCertificateRequestBuilder UploadCertificate
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate.UploadCertificateRequestBuilder UploadCertificate
         {
-            get => new UploadCertificateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate.UploadCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadPkcs12 method.</summary>
-        public UploadPkcs12RequestBuilder UploadPkcs12
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12.UploadPkcs12RequestBuilder UploadPkcs12
         {
-            get => new UploadPkcs12RequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12.UploadPkcs12RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadSecret method.</summary>
-        public UploadSecretRequestBuilder UploadSecret
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret.UploadSecretRequestBuilder UploadSecret
         {
-            get => new UploadSecretRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret.UploadSecretRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrustFrameworkKeySetItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrustFrameworkKeySetItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -95,51 +95,51 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         /// Retrieve the properties and associations for a Trustframeworkkeyset.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="TrustFrameworkKeySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustFrameworkKeySet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TrustFrameworkKeySet?> GetAsync(Action<RequestConfiguration<TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder.TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TrustFrameworkKeySet> GetAsync(Action<RequestConfiguration<TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder.TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>(requestInfo, Microsoft.Graph.Beta.Models.TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="TrustFrameworkKeySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustFrameworkKeySet"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TrustFrameworkKeySet?> PatchAsync(TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet?> PatchAsync(Microsoft.Graph.Beta.Models.TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TrustFrameworkKeySet> PatchAsync(TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet> PatchAsync(Microsoft.Graph.Beta.Models.TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFrameworkKeySet>(requestInfo, Microsoft.Graph.Beta.Models.TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a trustFrameworkKeySet.
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder.TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder.TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -187,11 +187,11 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TrustFrameworkKeySet body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -204,11 +204,11 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TrustFrameworkKeySetItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TrustFrameworkKeySetItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new TrustFrameworkKeySetItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration : RequestConfiguration<TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>
+        public class TrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TrustFramework.KeySets.Item.TrustFrameworkKeySetItemRequestBuilder.TrustFrameworkKeySetItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

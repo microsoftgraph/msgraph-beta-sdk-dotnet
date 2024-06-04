@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
 {
     [Obsolete("This class is obsolete. Use InvalidateAllRefreshTokensPostResponse instead.")]
     #pragma warning disable CS1591
-    public class InvalidateAllRefreshTokensResponse : InvalidateAllRefreshTokensPostResponse, IParsable
+    public class InvalidateAllRefreshTokensResponse : Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InvalidateAllRefreshTokensResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InvalidateAllRefreshTokensResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InvalidateAllRefreshTokensResponse();
+            return new Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensResponse();
         }
     }
 }

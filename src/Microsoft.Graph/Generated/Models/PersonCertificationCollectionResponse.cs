@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PersonCertificationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class PersonCertificationCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonCertification>? Value
+        public List<Microsoft.Graph.Beta.Models.PersonCertification>? Value
         {
-            get { return BackingStore?.Get<List<PersonCertification>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonCertification>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PersonCertification> Value
+        public List<Microsoft.Graph.Beta.Models.PersonCertification> Value
         {
-            get { return BackingStore?.Get<List<PersonCertification>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonCertification>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PersonCertificationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonCertificationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PersonCertificationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PersonCertificationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PersonCertificationCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.PersonCertificationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<PersonCertification>(PersonCertification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonCertification>(Microsoft.Graph.Beta.Models.PersonCertification.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PersonCertification>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonCertification>("value", Value);
         }
     }
 }

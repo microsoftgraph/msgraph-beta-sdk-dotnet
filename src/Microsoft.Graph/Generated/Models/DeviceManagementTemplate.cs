@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a defined collection of device settings
     /// </summary>
-    public class DeviceManagementTemplate : Entity, IParsable
+    public class DeviceManagementTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Collection of setting categories within the template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementTemplateSettingCategory>? Categories
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory>? Categories
         {
-            get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>?>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementTemplateSettingCategory> Categories
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory> Categories
         {
-            get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #endif
@@ -74,23 +74,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of templates this template can migrate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementTemplate>? MigratableTo
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>? MigratableTo
         {
-            get { return BackingStore?.Get<List<DeviceManagementTemplate>?>("migratableTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>?>("migratableTo"); }
             set { BackingStore?.Set("migratableTo", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementTemplate> MigratableTo
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate> MigratableTo
         {
-            get { return BackingStore?.Get<List<DeviceManagementTemplate>>("migratableTo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>>("migratableTo"); }
             set { BackingStore?.Set("migratableTo", value); }
         }
 #endif
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType
+        public Microsoft.Graph.Beta.Models.PolicyPlatformType? PlatformType
         {
-            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>When the template was published</summary>
@@ -102,29 +102,29 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of all settings this template has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>? Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance> Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Template subtype</summary>
-        public DeviceManagementTemplateSubtype? TemplateSubtype
+        public Microsoft.Graph.Beta.Models.DeviceManagementTemplateSubtype? TemplateSubtype
         {
-            get { return BackingStore?.Get<DeviceManagementTemplateSubtype?>("templateSubtype"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSubtype?>("templateSubtype"); }
             set { BackingStore?.Set("templateSubtype", value); }
         }
         /// <summary>Template type</summary>
-        public DeviceManagementTemplateType? TemplateType
+        public Microsoft.Graph.Beta.Models.DeviceManagementTemplateType? TemplateType
         {
-            get { return BackingStore?.Get<DeviceManagementTemplateType?>("templateType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTemplateType?>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>The template&apos;s version information</summary>
@@ -146,16 +146,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.securityBaselineTemplate" => new SecurityBaselineTemplate(),
-                _ => new DeviceManagementTemplate(),
+                "#microsoft.graph.securityBaselineTemplate" => new Microsoft.Graph.Beta.Models.SecurityBaselineTemplate(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementTemplate(),
             };
         }
         /// <summary>
@@ -166,17 +166,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>(DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory>(Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "intentCount", n => { IntentCount = n.GetIntValue(); } },
                 { "isDeprecated", n => { IsDeprecated = n.GetBoolValue(); } },
-                { "migratableTo", n => { MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "migratableTo", n => { MigratableTo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PolicyPlatformType>(); } },
                 { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "templateSubtype", n => { TemplateSubtype = n.GetEnumValue<DeviceManagementTemplateSubtype>(); } },
-                { "templateType", n => { TemplateType = n.GetEnumValue<DeviceManagementTemplateType>(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templateSubtype", n => { TemplateSubtype = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSubtype>(); } },
+                { "templateType", n => { TemplateType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementTemplateType>(); } },
                 { "versionInfo", n => { VersionInfo = n.GetStringValue(); } },
             };
         }
@@ -188,17 +188,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>("categories", Categories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory>("categories", Categories);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("intentCount", IntentCount);
             writer.WriteBoolValue("isDeprecated", IsDeprecated);
-            writer.WriteCollectionOfObjectValues<DeviceManagementTemplate>("migratableTo", MigratableTo);
-            writer.WriteEnumValue<PolicyPlatformType>("platformType", PlatformType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>("migratableTo", MigratableTo);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PolicyPlatformType>("platformType", PlatformType);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", Settings);
-            writer.WriteEnumValue<DeviceManagementTemplateSubtype>("templateSubtype", TemplateSubtype);
-            writer.WriteEnumValue<DeviceManagementTemplateType>("templateType", TemplateType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>("settings", Settings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementTemplateSubtype>("templateSubtype", TemplateSubtype);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementTemplateType>("templateType", TemplateType);
             writer.WriteStringValue("versionInfo", VersionInfo);
         }
     }

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("successfulCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcBulkActionSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary"/> and sets the default values.
         /// </summary>
         public CloudPcBulkActionSummary()
         {
@@ -76,12 +76,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcBulkActionSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcBulkActionSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcBulkActionSummary();
+            return new Microsoft.Graph.Beta.Models.CloudPcBulkActionSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

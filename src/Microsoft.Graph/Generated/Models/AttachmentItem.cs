@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AttachmentItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AttachmentItem"/> and sets the default values.
         /// </summary>
         public AttachmentItem()
         {
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttachmentItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AttachmentItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttachmentItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AttachmentItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttachmentItem();
+            return new Microsoft.Graph.Beta.Models.AttachmentItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachmentType", n => { AttachmentType = n.GetEnumValue<AttachmentType>(); } },
+                { "attachmentType", n => { AttachmentType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AttachmentType>(); } },
                 { "contentId", n => { ContentId = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "isInline", n => { IsInline = n.GetBoolValue(); } },
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AttachmentType>("attachmentType", AttachmentType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AttachmentType>("attachmentType", AttachmentType);
             writer.WriteStringValue("contentId", ContentId);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteBoolValue("isInline", IsInline);

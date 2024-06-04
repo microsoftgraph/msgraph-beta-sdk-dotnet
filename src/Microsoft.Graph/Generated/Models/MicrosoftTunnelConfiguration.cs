@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a collection of Microsoft Tunnel settings
     /// </summary>
-    public class MicrosoftTunnelConfiguration : Entity, IParsable
+    public class MicrosoftTunnelConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Additional settings that may be applied to the server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? AdvancedSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? AdvancedSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("advancedSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("advancedSettings"); }
             set { BackingStore?.Set("advancedSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> AdvancedSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> AdvancedSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("advancedSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("advancedSettings"); }
             set { BackingStore?.Set("advancedSettings", value); }
         }
 #endif
@@ -224,12 +224,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftTunnelConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftTunnelConfiguration();
+            return new Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -239,7 +239,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "advancedSettings", n => { AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "advancedSettings", n => { AdvancedSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "defaultDomainSuffix", n => { DefaultDomainSuffix = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableUdpConnections", n => { DisableUdpConnections = n.GetBoolValue(); } },
@@ -264,7 +264,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("advancedSettings", AdvancedSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("advancedSettings", AdvancedSettings);
             writer.WriteStringValue("defaultDomainSuffix", DefaultDomainSuffix);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disableUdpConnections", DisableUdpConnections);

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExtractContentLabelPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.ExtractContentLabelPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExtractContentLabelPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExtractContentLabelPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.ExtractContentLabelPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExtractContentLabelPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.ExtractContentLabelPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExtractContentLabelPostRequestBody();
+            return new Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.ExtractContentLabelPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

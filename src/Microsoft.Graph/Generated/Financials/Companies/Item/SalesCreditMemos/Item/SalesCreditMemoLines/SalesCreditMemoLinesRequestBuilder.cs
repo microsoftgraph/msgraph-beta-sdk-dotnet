@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
     public class SalesCreditMemoLinesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.</summary>
         /// <param name="position">The unique identifier of salesCreditMemoLine</param>
-        /// <returns>A <see cref="SalesCreditMemoLineItemRequestBuilder"/></returns>
-        public SalesCreditMemoLineItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("salesCreditMemoLine%2Did", position);
-                return new SalesCreditMemoLineItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.SalesCreditMemoLineItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesCreditMemoLinesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesCreditMemoLinesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
         /// <summary>
         /// Get salesCreditMemoLines from financials
         /// </summary>
-        /// <returns>A <see cref="SalesCreditMemoLineCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SalesCreditMemoLineCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesCreditMemoLineCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesCreditMemoLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesCreditMemoLineCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder.SalesCreditMemoLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SalesCreditMemoLineCollectionResponse> GetAsync(Action<RequestConfiguration<SalesCreditMemoLinesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesCreditMemoLineCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder.SalesCreditMemoLinesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SalesCreditMemoLineCollectionResponse>(requestInfo, SalesCreditMemoLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SalesCreditMemoLineCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.SalesCreditMemoLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesCreditMemoLines from financials
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesCreditMemoLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder.SalesCreditMemoLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesCreditMemoLinesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder.SalesCreditMemoLinesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SalesCreditMemoLinesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesCreditMemoLinesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SalesCreditMemoLinesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesCreditMemoLines from financials
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesCreditMemoLinesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesCreditMemoLinesRequestBuilderGetQueryParameters>
+        public class SalesCreditMemoLinesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder.SalesCreditMemoLinesRequestBuilderGetQueryParameters>
         {
         }
     }

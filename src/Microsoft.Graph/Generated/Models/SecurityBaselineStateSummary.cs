@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline compliance state summary for the security baseline of the account.
     /// </summary>
-    public class SecurityBaselineStateSummary : Entity, IParsable
+    public class SecurityBaselineStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of conflict devices</summary>
         public int? ConflictCount
@@ -50,16 +50,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityBaselineStateSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineStateSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityBaselineStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SecurityBaselineStateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.securityBaselineCategoryStateSummary" => new SecurityBaselineCategoryStateSummary(),
-                _ => new SecurityBaselineStateSummary(),
+                "#microsoft.graph.securityBaselineCategoryStateSummary" => new Microsoft.Graph.Beta.Models.SecurityBaselineCategoryStateSummary(),
+                _ => new Microsoft.Graph.Beta.Models.SecurityBaselineStateSummary(),
             };
         }
         /// <summary>

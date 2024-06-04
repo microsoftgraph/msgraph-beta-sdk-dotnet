@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MicrosoftCustomTrainingSetting : TrainingSetting, IParsable
+    public class MicrosoftCustomTrainingSetting : Microsoft.Graph.Beta.Models.TrainingSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The completion date and time of the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The mapping details of the associated training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MicrosoftTrainingAssignmentMapping>? TrainingAssignmentMappings
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping>? TrainingAssignmentMappings
         {
-            get { return BackingStore?.Get<List<MicrosoftTrainingAssignmentMapping>?>("trainingAssignmentMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping>?>("trainingAssignmentMappings"); }
             set { BackingStore?.Set("trainingAssignmentMappings", value); }
         }
 #nullable restore
 #else
-        public List<MicrosoftTrainingAssignmentMapping> TrainingAssignmentMappings
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping> TrainingAssignmentMappings
         {
-            get { return BackingStore?.Get<List<MicrosoftTrainingAssignmentMapping>>("trainingAssignmentMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping>>("trainingAssignmentMappings"); }
             set { BackingStore?.Set("trainingAssignmentMappings", value); }
         }
 #endif
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("trainingCompletionDuration", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftCustomTrainingSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MicrosoftCustomTrainingSetting"/> and sets the default values.
         /// </summary>
         public MicrosoftCustomTrainingSetting() : base()
         {
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftCustomTrainingSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftCustomTrainingSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftCustomTrainingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftCustomTrainingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftCustomTrainingSetting();
+            return new Microsoft.Graph.Beta.Models.MicrosoftCustomTrainingSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "trainingAssignmentMappings", n => { TrainingAssignmentMappings = n.GetCollectionOfObjectValues<MicrosoftTrainingAssignmentMapping>(MicrosoftTrainingAssignmentMapping.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "trainingCompletionDuration", n => { TrainingCompletionDuration = n.GetEnumValue<TrainingCompletionDuration>(); } },
+                { "trainingAssignmentMappings", n => { TrainingAssignmentMappings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping>(Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trainingCompletionDuration", n => { TrainingCompletionDuration = n.GetEnumValue<Microsoft.Graph.Beta.Models.TrainingCompletionDuration>(); } },
             };
         }
         /// <summary>
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
-            writer.WriteCollectionOfObjectValues<MicrosoftTrainingAssignmentMapping>("trainingAssignmentMappings", TrainingAssignmentMappings);
-            writer.WriteEnumValue<TrainingCompletionDuration>("trainingCompletionDuration", TrainingCompletionDuration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping>("trainingAssignmentMappings", TrainingAssignmentMappings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TrainingCompletionDuration>("trainingCompletionDuration", TrainingCompletionDuration);
         }
     }
 }

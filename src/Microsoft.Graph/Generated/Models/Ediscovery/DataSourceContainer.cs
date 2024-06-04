@@ -33,24 +33,24 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         }
 #endif
         /// <summary>The holdStatus property</summary>
-        public DataSourceHoldStatus? HoldStatus
+        public Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus? HoldStatus
         {
-            get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>The lastIndexOperation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CaseIndexOperation? LastIndexOperation
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation? LastIndexOperation
         {
-            get { return BackingStore?.Get<CaseIndexOperation?>("lastIndexOperation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation?>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
         }
 #nullable restore
 #else
-        public CaseIndexOperation LastIndexOperation
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation LastIndexOperation
         {
-            get { return BackingStore?.Get<CaseIndexOperation>("lastIndexOperation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
         }
 #endif
@@ -67,25 +67,25 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             set { BackingStore?.Set("releasedDateTime", value); }
         }
         /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
-        public DataSourceContainerStatus? Status
+        public Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainerStatus? Status
         {
-            get { return BackingStore?.Get<DataSourceContainerStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataSourceContainer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DataSourceContainer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.ediscovery.custodian" => new Custodian(),
-                "#microsoft.graph.ediscovery.noncustodialDataSource" => new NoncustodialDataSource(),
-                _ => new DataSourceContainer(),
+                "#microsoft.graph.ediscovery.custodian" => new Microsoft.Graph.Beta.Models.Ediscovery.Custodian(),
+                "#microsoft.graph.ediscovery.noncustodialDataSource" => new Microsoft.Graph.Beta.Models.Ediscovery.NoncustodialDataSource(),
+                _ => new Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainer(),
             };
         }
         /// <summary>
@@ -98,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
-                { "lastIndexOperation", n => { LastIndexOperation = n.GetObjectValue<CaseIndexOperation>(CaseIndexOperation.CreateFromDiscriminatorValue); } },
+                { "holdStatus", n => { HoldStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus>(); } },
+                { "lastIndexOperation", n => { LastIndexOperation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation>(Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "releasedDateTime", n => { ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<DataSourceContainerStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainerStatus>(); } },
             };
         }
         /// <summary>
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<DataSourceHoldStatus>("holdStatus", HoldStatus);
-            writer.WriteObjectValue<CaseIndexOperation>("lastIndexOperation", LastIndexOperation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus>("holdStatus", HoldStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation>("lastIndexOperation", LastIndexOperation);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("releasedDateTime", ReleasedDateTime);
-            writer.WriteEnumValue<DataSourceContainerStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceContainerStatus>("status", Status);
         }
     }
 }

@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class ContentApproval : ComplianceChange, IParsable
+    public class ContentApproval : Microsoft.Graph.Beta.Models.WindowsUpdates.ComplianceChange, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeployableContent? Content
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent? Content
         {
-            get { return BackingStore?.Get<DeployableContent?>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public DeployableContent Content
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent Content
         {
-            get { return BackingStore?.Get<DeployableContent>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>Deployments created as a result of applying the approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Deployment>? Deployments
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>? Deployments
         {
-            get { return BackingStore?.Get<List<Deployment>?>("deployments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>?>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
 #nullable restore
 #else
-        public List<Deployment> Deployments
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment> Deployments
         {
-            get { return BackingStore?.Get<List<Deployment>>("deployments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ContentApproval"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApproval"/> and sets the default values.
         /// </summary>
         public ContentApproval() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentApproval"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApproval"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ContentApproval CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApproval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentApproval();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApproval();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent.CreateFromDiscriminatorValue); } },
                 { "deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings.CreateFromDiscriminatorValue); } },
-                { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<Deployment>(Deployment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>(Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeployableContent>("content", Content);
-            writer.WriteCollectionOfObjectValues<Deployment>("deployments", Deployments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent>("content", Content);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>("deployments", Deployments);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>("deploymentSettings", DeploymentSettings);
         }
     }

@@ -7,39 +7,39 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class ForwardingRule : PolicyRule, IParsable
+    public class ForwardingRule : Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public ForwardingRuleAction? Action
+        public Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction? Action
         {
-            get { return BackingStore?.Get<ForwardingRuleAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RuleDestination>? Destinations
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>? Destinations
         {
-            get { return BackingStore?.Get<List<RuleDestination>?>("destinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>?>("destinations"); }
             set { BackingStore?.Set("destinations", value); }
         }
 #nullable restore
 #else
-        public List<RuleDestination> Destinations
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination> Destinations
         {
-            get { return BackingStore?.Get<List<RuleDestination>>("destinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>>("destinations"); }
             set { BackingStore?.Set("destinations", value); }
         }
 #endif
         /// <summary>The ruleType property</summary>
-        public NetworkDestinationType? RuleType
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType? RuleType
         {
-            get { return BackingStore?.Get<NetworkDestinationType?>("ruleType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType?>("ruleType"); }
             set { BackingStore?.Set("ruleType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ForwardingRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule"/> and sets the default values.
         /// </summary>
         public ForwardingRule() : base()
         {
@@ -48,18 +48,18 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForwardingRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ForwardingRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.internetAccessForwardingRule" => new InternetAccessForwardingRule(),
-                "#microsoft.graph.networkaccess.m365ForwardingRule" => new M365ForwardingRule(),
-                "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new PrivateAccessForwardingRule(),
-                _ => new ForwardingRule(),
+                "#microsoft.graph.networkaccess.internetAccessForwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.InternetAccessForwardingRule(),
+                "#microsoft.graph.networkaccess.m365ForwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.M365ForwardingRule(),
+                "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessForwardingRule(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule(),
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<ForwardingRuleAction>(); } },
-                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<RuleDestination>(RuleDestination.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "ruleType", n => { RuleType = n.GetEnumValue<NetworkDestinationType>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction>(); } },
+                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>(Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ruleType", n => { RuleType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>(); } },
             };
         }
         /// <summary>
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ForwardingRuleAction>("action", Action);
-            writer.WriteCollectionOfObjectValues<RuleDestination>("destinations", Destinations);
-            writer.WriteEnumValue<NetworkDestinationType>("ruleType", RuleType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRuleAction>("action", Action);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination>("destinations", Destinations);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkDestinationType>("ruleType", RuleType);
         }
     }
 }

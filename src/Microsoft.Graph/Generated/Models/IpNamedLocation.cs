@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IpNamedLocation : NamedLocation, IParsable
+    public class IpNamedLocation : Microsoft.Graph.Beta.Models.NamedLocation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of IP address ranges in IPv4 CIDR format (for example, 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpRange>? IpRanges
+        public List<Microsoft.Graph.Beta.Models.IpRange>? IpRanges
         {
-            get { return BackingStore?.Get<List<IpRange>?>("ipRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpRange>?>("ipRanges"); }
             set { BackingStore?.Set("ipRanges", value); }
         }
 #nullable restore
 #else
-        public List<IpRange> IpRanges
+        public List<Microsoft.Graph.Beta.Models.IpRange> IpRanges
         {
-            get { return BackingStore?.Get<List<IpRange>>("ipRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpRange>>("ipRanges"); }
             set { BackingStore?.Set("ipRanges", value); }
         }
 #endif
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IpNamedLocation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IpNamedLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IpNamedLocation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IpNamedLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IpNamedLocation();
+            return new Microsoft.Graph.Beta.Models.IpNamedLocation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "ipRanges", n => { IpRanges = n.GetCollectionOfObjectValues<IpRange>(IpRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ipRanges", n => { IpRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpRange>(Microsoft.Graph.Beta.Models.IpRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isTrusted", n => { IsTrusted = n.GetBoolValue(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IpRange>("ipRanges", IpRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpRange>("ipRanges", IpRanges);
             writer.WriteBoolValue("isTrusted", IsTrusted);
         }
     }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The OperationApprovalRequest entity encompasses the operation an admin wishes to perform and is requesting approval to complete. It contains the detail of the operation one wishes to perform, user metadata of the requestor, and a justification for the change. It allows for several operations for both the requestor and the potential approver to either approve, deny, or cancel the request and a response justification to provide information for the decision.
     /// </summary>
-    public class OperationApprovalRequest : Entity, IParsable
+    public class OperationApprovalRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the justification for approving or rejecting the request. Maximum length of justification is 1024 characters. For example: &apos;Approved per Change 23423 - needed for Feb 2023 application baseline updates.&apos; Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the approver as an Identity Set. Optionally contains the application ID, the device ID and the User ID. See information about this type here: https://learn.microsoft.com/graph/api/resources/identityset?view=graph-rest-1.0. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Approver
+        public Microsoft.Graph.Beta.Models.IdentitySet? Approver
         {
-            get { return BackingStore?.Get<IdentitySet?>("approver"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("approver"); }
             set { BackingStore?.Set("approver", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Approver
+        public Microsoft.Graph.Beta.Models.IdentitySet Approver
         {
-            get { return BackingStore?.Get<IdentitySet>("approver"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("approver"); }
             set { BackingStore?.Set("approver", value); }
         }
 #endif
@@ -80,50 +80,50 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the requestor as an Identity Set. Optionally contains the application ID, the device ID and the User ID. See information about this type here: https://learn.microsoft.com/graph/api/resources/identityset?view=graph-rest-1.0. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Requestor
+        public Microsoft.Graph.Beta.Models.IdentitySet? Requestor
         {
-            get { return BackingStore?.Get<IdentitySet?>("requestor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Requestor
+        public Microsoft.Graph.Beta.Models.IdentitySet Requestor
         {
-            get { return BackingStore?.Get<IdentitySet>("requestor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #endif
         /// <summary>Indicates the approval policy types required by the request in order for the request to be approved or rejected. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OperationApprovalPolicyType?>? RequiredOperationApprovalPolicyTypes
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType?>? RequiredOperationApprovalPolicyTypes
         {
-            get { return BackingStore?.Get<List<OperationApprovalPolicyType?>?>("requiredOperationApprovalPolicyTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType?>?>("requiredOperationApprovalPolicyTypes"); }
             set { BackingStore?.Set("requiredOperationApprovalPolicyTypes", value); }
         }
 #nullable restore
 #else
-        public List<OperationApprovalPolicyType?> RequiredOperationApprovalPolicyTypes
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType?> RequiredOperationApprovalPolicyTypes
         {
-            get { return BackingStore?.Get<List<OperationApprovalPolicyType?>>("requiredOperationApprovalPolicyTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType?>>("requiredOperationApprovalPolicyTypes"); }
             set { BackingStore?.Set("requiredOperationApprovalPolicyTypes", value); }
         }
 #endif
         /// <summary>Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request&apos;s expiration DateTime passes and the result is `expired`.</summary>
-        public OperationApprovalRequestStatus? Status
+        public Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus? Status
         {
-            get { return BackingStore?.Get<OperationApprovalRequestStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OperationApprovalRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OperationApprovalRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OperationApprovalRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OperationApprovalRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OperationApprovalRequest();
+            return new Microsoft.Graph.Beta.Models.OperationApprovalRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,14 +134,14 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "approvalJustification", n => { ApprovalJustification = n.GetStringValue(); } },
-                { "approver", n => { Approver = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "approver", n => { Approver = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
                 { "requestJustification", n => { RequestJustification = n.GetStringValue(); } },
-                { "requestor", n => { Requestor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "requiredOperationApprovalPolicyTypes", n => { RequiredOperationApprovalPolicyTypes = n.GetCollectionOfEnumValues<OperationApprovalPolicyType>()?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<OperationApprovalRequestStatus>(); } },
+                { "requestor", n => { Requestor = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "requiredOperationApprovalPolicyTypes", n => { RequiredOperationApprovalPolicyTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.OperationApprovalPolicyType>()?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus>(); } },
             };
         }
         /// <summary>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<OperationApprovalRequestStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus>("status", Status);
         }
     }
 }

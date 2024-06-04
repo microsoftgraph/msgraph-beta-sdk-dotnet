@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnAttributeCollectionStartListener : AuthenticationEventListener, IParsable
+    public class OnAttributeCollectionStartListener : Microsoft.Graph.Beta.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Configuration for what to invoke if the event resolves to this listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionStartHandler? Handler
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler? Handler
         {
-            get { return BackingStore?.Get<OnAttributeCollectionStartHandler?>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionStartHandler Handler
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler Handler
         {
-            get { return BackingStore?.Get<OnAttributeCollectionStartHandler>("handler"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnAttributeCollectionStartListener"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnAttributeCollectionStartListener"/> and sets the default values.
         /// </summary>
         public OnAttributeCollectionStartListener() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnAttributeCollectionStartListener"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnAttributeCollectionStartListener"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnAttributeCollectionStartListener CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnAttributeCollectionStartListener CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnAttributeCollectionStartListener();
+            return new Microsoft.Graph.Beta.Models.OnAttributeCollectionStartListener();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "handler", n => { Handler = n.GetObjectValue<OnAttributeCollectionStartHandler>(OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler>(Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnAttributeCollectionStartHandler>("handler", Handler);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler>("handler", Handler);
         }
     }
 }

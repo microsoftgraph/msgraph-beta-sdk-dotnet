@@ -24,27 +24,27 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
     public class VirtualEventWebinarItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.</summary>
-        public PresentersRequestBuilder Presenters
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Presenters.PresentersRequestBuilder Presenters
         {
-            get => new PresentersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Presenters.PresentersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registrationConfiguration property of the microsoft.graph.virtualEventWebinar entity.</summary>
-        public RegistrationConfigurationRequestBuilder RegistrationConfiguration
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationConfiguration.RegistrationConfigurationRequestBuilder RegistrationConfiguration
         {
-            get => new RegistrationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationConfiguration.RegistrationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.</summary>
-        public RegistrationsRequestBuilder Registrations
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder Registrations
         {
-            get => new RegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.</summary>
-        public SessionsRequestBuilder Sessions
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder Sessions
         {
-            get => new SessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEventWebinarItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEventWebinarItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -85,81 +85,81 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         /// Read the properties and relationships of a virtualEventWebinar object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="VirtualEventWebinar"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventWebinar"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventWebinar?> GetAsync(Action<RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventWebinar?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder.VirtualEventWebinarItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VirtualEventWebinar> GetAsync(Action<RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventWebinar> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder.VirtualEventWebinarItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VirtualEventWebinar>(requestInfo, VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEventWebinar>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a virtualEventWebinar object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="VirtualEventWebinar"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventWebinar"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventWebinar?> PatchAsync(VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventWebinar?> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VirtualEventWebinar> PatchAsync(VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventWebinar> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VirtualEventWebinar>(requestInfo, VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEventWebinar>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
         /// </summary>
-        /// <returns>A <see cref="RegistrationsWithEmailRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder"/></returns>
         /// <param name="email">Alternate key of virtualEventRegistration</param>
-        public RegistrationsWithEmailRequestBuilder RegistrationsWithEmail(string email)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder RegistrationsWithEmail(string email)
         {
             if(string.IsNullOrEmpty(email)) throw new ArgumentNullException(nameof(email));
-            return new RegistrationsWithEmailRequestBuilder(PathParameters, RequestAdapter, email);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder(PathParameters, RequestAdapter, email);
         }
         /// <summary>
         /// Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
         /// </summary>
-        /// <returns>A <see cref="RegistrationsWithUserIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder"/></returns>
         /// <param name="userId">Alternate key of virtualEventRegistration</param>
-        public RegistrationsWithUserIdRequestBuilder RegistrationsWithUserId(string userId)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder RegistrationsWithUserId(string userId)
         {
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
-            return new RegistrationsWithUserIdRequestBuilder(PathParameters, RequestAdapter, userId);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder(PathParameters, RequestAdapter, userId);
         }
         /// <summary>
         /// Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
         /// </summary>
-        /// <returns>A <see cref="SessionsWithJoinWebUrlRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="joinWebUrl">Alternate key of virtualEventSession</param>
-        public SessionsWithJoinWebUrlRequestBuilder SessionsWithJoinWebUrl(string joinWebUrl)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder SessionsWithJoinWebUrl(string joinWebUrl)
         {
             if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
-            return new SessionsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.SessionsWithJoinWebUrl.SessionsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Delete navigation property webinars for solutions
@@ -187,11 +187,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder.VirtualEventWebinarItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder.VirtualEventWebinarItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -207,11 +207,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -224,11 +224,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="VirtualEventWebinarItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public VirtualEventWebinarItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new VirtualEventWebinarItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -267,7 +267,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VirtualEventWebinarItemRequestBuilderGetRequestConfiguration : RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters>
+        public class VirtualEventWebinarItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder.VirtualEventWebinarItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

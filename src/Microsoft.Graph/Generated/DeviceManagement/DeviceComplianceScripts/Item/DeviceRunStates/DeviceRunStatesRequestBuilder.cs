@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
     public class DeviceRunStatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.</summary>
         /// <param name="position">The unique identifier of deviceComplianceScriptDeviceState</param>
-        /// <returns>A <see cref="DeviceComplianceScriptDeviceStateItemRequestBuilder"/></returns>
-        public DeviceComplianceScriptDeviceStateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.DeviceComplianceScriptDeviceStateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.DeviceComplianceScriptDeviceStateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceComplianceScriptDeviceState%2Did", position);
-                return new DeviceComplianceScriptDeviceStateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.DeviceComplianceScriptDeviceStateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceRunStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceRunStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
         /// <summary>
         /// List of run states for the device compliance script across all devices
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceScriptDeviceStateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceComplianceScriptDeviceStateCollectionResponse?> GetAsync(Action<RequestConfiguration<DeviceRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceStateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder.DeviceRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceComplianceScriptDeviceStateCollectionResponse> GetAsync(Action<RequestConfiguration<DeviceRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceStateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder.DeviceRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceComplianceScriptDeviceStateCollectionResponse>(requestInfo, DeviceComplianceScriptDeviceStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceStateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceRunStates for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceScriptDeviceState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceComplianceScriptDeviceState?> PostAsync(DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState?> PostAsync(Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceComplianceScriptDeviceState> PostAsync(DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState> PostAsync(Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceComplianceScriptDeviceState>(requestInfo, DeviceComplianceScriptDeviceState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState>(requestInfo, Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of run states for the device compliance script across all devices
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder.DeviceRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder.DeviceRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DeviceComplianceScriptDeviceState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceRunStatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceRunStatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceRunStatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of run states for the device compliance script across all devices
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceRunStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceRunStatesRequestBuilderGetQueryParameters>
+        public class DeviceRunStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.DeviceRunStatesRequestBuilder.DeviceRunStatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

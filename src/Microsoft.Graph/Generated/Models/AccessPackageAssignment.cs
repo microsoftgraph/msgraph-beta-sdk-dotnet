@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageAssignment : Entity, IParsable
+    public class AccessPackageAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The accessPackageAssignmentRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignmentRequest>? AccessPackageAssignmentRequests
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest>? AccessPackageAssignmentRequests
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>?>("accessPackageAssignmentRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest>?>("accessPackageAssignmentRequests"); }
             set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest> AccessPackageAssignmentRequests
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("accessPackageAssignmentRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest>>("accessPackageAssignmentRequests"); }
             set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
         }
 #endif
         /// <summary>The resource roles delivered to the target user for this assignment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignmentResourceRole>? AccessPackageAssignmentResourceRoles
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole>? AccessPackageAssignmentResourceRoles
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>?>("accessPackageAssignmentResourceRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole>?>("accessPackageAssignmentResourceRoles"); }
             set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>("accessPackageAssignmentResourceRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole>>("accessPackageAssignmentResourceRoles"); }
             set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
         }
 #endif
@@ -157,16 +157,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about all the custom extension calls that were made during the access package assignment workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances
+        public List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances
         {
-            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
             set { BackingStore?.Set("customExtensionCalloutInstances", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances
+        public List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance> CustomExtensionCalloutInstances
         {
-            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
             set { BackingStore?.Set("customExtensionCalloutInstances", value); }
         }
 #endif
@@ -185,32 +185,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>When the access assignment is to be in place. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.RequestSchedule? Schedule
         {
-            get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule Schedule
+        public Microsoft.Graph.Beta.Models.RequestSchedule Schedule
         {
-            get { return BackingStore?.Get<RequestSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageSubject? Target
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject? Target
         {
-            get { return BackingStore?.Get<AccessPackageSubject?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public AccessPackageSubject Target
+        public Microsoft.Graph.Beta.Models.AccessPackageSubject Target
         {
-            get { return BackingStore?.Get<AccessPackageSubject>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
@@ -233,12 +233,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignment();
+            return new Microsoft.Graph.Beta.Models.AccessPackageAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -250,18 +250,18 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
                 { "accessPackageAssignmentPolicy", n => { AccessPackageAssignmentPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>(Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
-                { "accessPackageAssignmentRequests", n => { AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>(AccessPackageAssignmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackageAssignmentResourceRoles", n => { AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<AccessPackageAssignmentResourceRole>(AccessPackageAssignmentResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageAssignmentRequests", n => { AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest>(Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageAssignmentResourceRoles", n => { AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole>(Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "accessPackageId", n => { AccessPackageId = n.GetStringValue(); } },
                 { "assignmentPolicyId", n => { AssignmentPolicyId = n.GetStringValue(); } },
                 { "assignmentState", n => { AssignmentState = n.GetStringValue(); } },
                 { "assignmentStatus", n => { AssignmentStatus = n.GetStringValue(); } },
                 { "catalogId", n => { CatalogId = n.GetStringValue(); } },
-                { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>(Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "expiredDateTime", n => { ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isExtended", n => { IsExtended = n.GetBoolValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>(Microsoft.Graph.Beta.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>(Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 { "targetId", n => { TargetId = n.GetStringValue(); } },
             };
         }
@@ -275,18 +275,18 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage", AccessPackage);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicy", AccessPackageAssignmentPolicy);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentRequest>("accessPackageAssignmentRequests", AccessPackageAssignmentRequests);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("accessPackageAssignmentResourceRoles", AccessPackageAssignmentResourceRoles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignmentRequest>("accessPackageAssignmentRequests", AccessPackageAssignmentRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole>("accessPackageAssignmentResourceRoles", AccessPackageAssignmentResourceRoles);
             writer.WriteStringValue("accessPackageId", AccessPackageId);
             writer.WriteStringValue("assignmentPolicyId", AssignmentPolicyId);
             writer.WriteStringValue("assignmentState", AssignmentState);
             writer.WriteStringValue("assignmentStatus", AssignmentStatus);
             writer.WriteStringValue("catalogId", CatalogId);
-            writer.WriteCollectionOfObjectValues<CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteDateTimeOffsetValue("expiredDateTime", ExpiredDateTime);
             writer.WriteBoolValue("isExtended", IsExtended);
-            writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);
-            writer.WriteObjectValue<AccessPackageSubject>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>("target", Target);
             writer.WriteStringValue("targetId", TargetId);
         }
     }

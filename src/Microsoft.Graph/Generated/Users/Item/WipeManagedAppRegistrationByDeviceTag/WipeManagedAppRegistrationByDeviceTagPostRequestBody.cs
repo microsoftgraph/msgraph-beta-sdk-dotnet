@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WipeManagedAppRegistrationByDeviceTagPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagPostRequestBody"/> and sets the default values.
         /// </summary>
         public WipeManagedAppRegistrationByDeviceTagPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WipeManagedAppRegistrationByDeviceTagPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WipeManagedAppRegistrationByDeviceTagPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WipeManagedAppRegistrationByDeviceTagPostRequestBody();
+            return new Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android Device Owner PKCS certificate profile
     /// </summary>
-    public class AndroidDeviceOwnerPkcsCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable
+    public class AndroidDeviceOwnerPkcsCertificateProfile : Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase, IParsable
     {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
-        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateAccessType? CertificateAccessType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
             set { BackingStore?.Set("certificateAccessType", value); }
         }
         /// <summary>CertificateStore types</summary>
@@ -72,56 +72,56 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device Management Certification Authority Types.</summary>
-        public DeviceManagementCertificationAuthority? CertificationAuthorityType
+        public Microsoft.Graph.Beta.Models.DeviceManagementCertificationAuthority? CertificationAuthorityType
         {
-            get { return BackingStore?.Get<DeviceManagementCertificationAuthority?>("certificationAuthorityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementCertificationAuthority?>("certificationAuthorityType"); }
             set { BackingStore?.Set("certificationAuthorityType", value); }
         }
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
+        public List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
         {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #nullable restore
 #else
-        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames
+        public List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName> CustomSubjectAlternativeNames
         {
-            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #endif
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState> ManagedDeviceCertificateStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #endif
         /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>?>("silentCertificateAccessDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess>?>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
 #endif
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerPkcsCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPkcsCertificateProfile"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerPkcsCertificateProfile() : base()
         {
@@ -167,12 +167,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerPkcsCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPkcsCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerPkcsCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPkcsCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerPkcsCertificateProfile();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPkcsCertificateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,15 +182,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
-                { "certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
+                { "certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateAccessType>(); } },
+                { "certificateStore", n => { CertificateStore = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateStore>(); } },
                 { "certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
                 { "certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
                 { "certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
-                { "certificationAuthorityType", n => { CertificationAuthorityType = n.GetEnumValue<DeviceManagementCertificationAuthority>(); } },
-                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificationAuthorityType", n => { CertificationAuthorityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementCertificationAuthority>(); } },
+                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>(Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>(Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
                 { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
@@ -203,15 +203,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AndroidDeviceOwnerCertificateAccessType>("certificateAccessType", CertificateAccessType);
-            writer.WriteEnumValue<CertificateStore>("certificateStore", CertificateStore);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateAccessType>("certificateAccessType", CertificateAccessType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateStore>("certificateStore", CertificateStore);
             writer.WriteStringValue("certificateTemplateName", CertificateTemplateName);
             writer.WriteStringValue("certificationAuthority", CertificationAuthority);
             writer.WriteStringValue("certificationAuthorityName", CertificationAuthorityName);
-            writer.WriteEnumValue<DeviceManagementCertificationAuthority>("certificationAuthorityType", CertificationAuthorityType);
-            writer.WriteCollectionOfObjectValues<CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
-            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>("silentCertificateAccessDetails", SilentCertificateAccessDetails);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementCertificationAuthority>("certificationAuthorityType", CertificationAuthorityType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess>("silentCertificateAccessDetails", SilentCertificateAccessDetails);
             writer.WriteStringValue("subjectAlternativeNameFormatString", SubjectAlternativeNameFormatString);
             writer.WriteStringValue("subjectNameFormatString", SubjectNameFormatString);
         }

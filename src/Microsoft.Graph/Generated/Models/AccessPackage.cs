@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackage : Entity, IParsable
+    public class AccessPackage : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignmentPolicy>? AccessPackageAssignmentPolicies
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>? AccessPackageAssignmentPolicies
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>?>("accessPackageAssignmentPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>?>("accessPackageAssignmentPolicies"); }
             set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>("accessPackageAssignmentPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>>("accessPackageAssignmentPolicies"); }
             set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The accessPackageResourceRoleScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRoleScope>? AccessPackageResourceRoleScopes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope>? AccessPackageResourceRoleScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>?>("accessPackageResourceRoleScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope>?>("accessPackageResourceRoleScopes"); }
             set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("accessPackageResourceRoleScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope>>("accessPackageResourceRoleScopes"); }
             set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
         }
 #endif
         /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackage>? AccessPackagesIncompatibleWith
+        public List<Microsoft.Graph.Beta.Models.AccessPackage>? AccessPackagesIncompatibleWith
         {
-            get { return BackingStore?.Get<List<AccessPackage>?>("accessPackagesIncompatibleWith"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackage>?>("accessPackagesIncompatibleWith"); }
             set { BackingStore?.Set("accessPackagesIncompatibleWith", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackage> AccessPackagesIncompatibleWith
+        public List<Microsoft.Graph.Beta.Models.AccessPackage> AccessPackagesIncompatibleWith
         {
-            get { return BackingStore?.Get<List<AccessPackage>>("accessPackagesIncompatibleWith"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackage>>("accessPackagesIncompatibleWith"); }
             set { BackingStore?.Set("accessPackagesIncompatibleWith", value); }
         }
 #endif
@@ -147,32 +147,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The  access packages whose assigned users are ineligible to be assigned this access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackage>? IncompatibleAccessPackages
+        public List<Microsoft.Graph.Beta.Models.AccessPackage>? IncompatibleAccessPackages
         {
-            get { return BackingStore?.Get<List<AccessPackage>?>("incompatibleAccessPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackage>?>("incompatibleAccessPackages"); }
             set { BackingStore?.Set("incompatibleAccessPackages", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackage> IncompatibleAccessPackages
+        public List<Microsoft.Graph.Beta.Models.AccessPackage> IncompatibleAccessPackages
         {
-            get { return BackingStore?.Get<List<AccessPackage>>("incompatibleAccessPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackage>>("incompatibleAccessPackages"); }
             set { BackingStore?.Set("incompatibleAccessPackages", value); }
         }
 #endif
         /// <summary>The groups whose members are ineligible to be assigned this access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? IncompatibleGroups
+        public List<Microsoft.Graph.Beta.Models.Group>? IncompatibleGroups
         {
-            get { return BackingStore?.Get<List<Group>?>("incompatibleGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Group>?>("incompatibleGroups"); }
             set { BackingStore?.Set("incompatibleGroups", value); }
         }
 #nullable restore
 #else
-        public List<Group> IncompatibleGroups
+        public List<Microsoft.Graph.Beta.Models.Group> IncompatibleGroups
         {
-            get { return BackingStore?.Get<List<Group>>("incompatibleGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Group>>("incompatibleGroups"); }
             set { BackingStore?.Set("incompatibleGroups", value); }
         }
 #endif
@@ -213,12 +213,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackage();
+            return new Microsoft.Graph.Beta.Models.AccessPackage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -228,17 +228,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessPackageAssignmentPolicies", n => { AccessPackageAssignmentPolicies = n.GetCollectionOfObjectValues<AccessPackageAssignmentPolicy>(AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageAssignmentPolicies", n => { AccessPackageAssignmentPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>(Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "accessPackageCatalog", n => { AccessPackageCatalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
-                { "accessPackageResourceRoleScopes", n => { AccessPackageResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>(AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackagesIncompatibleWith", n => { AccessPackagesIncompatibleWith = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResourceRoleScopes", n => { AccessPackageResourceRoleScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope>(Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackagesIncompatibleWith", n => { AccessPackagesIncompatibleWith = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "catalogId", n => { CatalogId = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "incompatibleAccessPackages", n => { IncompatibleAccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "incompatibleGroups", n => { IncompatibleGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "incompatibleAccessPackages", n => { IncompatibleAccessPackages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "incompatibleGroups", n => { IncompatibleGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isHidden", n => { IsHidden = n.GetBoolValue(); } },
                 { "isRoleScopesVisible", n => { IsRoleScopesVisible = n.GetBoolValue(); } },
                 { "modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
@@ -253,17 +253,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicies", AccessPackageAssignmentPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicies", AccessPackageAssignmentPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceRoleScope>("accessPackageResourceRoleScopes", AccessPackageResourceRoleScopes);
-            writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackagesIncompatibleWith", AccessPackagesIncompatibleWith);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceRoleScope>("accessPackageResourceRoleScopes", AccessPackageResourceRoleScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackagesIncompatibleWith", AccessPackagesIncompatibleWith);
             writer.WriteStringValue("catalogId", CatalogId);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<AccessPackage>("incompatibleAccessPackages", IncompatibleAccessPackages);
-            writer.WriteCollectionOfObjectValues<Group>("incompatibleGroups", IncompatibleGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackage>("incompatibleAccessPackages", IncompatibleAccessPackages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Group>("incompatibleGroups", IncompatibleGroups);
             writer.WriteBoolValue("isHidden", IsHidden);
             writer.WriteBoolValue("isRoleScopesVisible", IsRoleScopesVisible);
             writer.WriteStringValue("modifiedBy", ModifiedBy);

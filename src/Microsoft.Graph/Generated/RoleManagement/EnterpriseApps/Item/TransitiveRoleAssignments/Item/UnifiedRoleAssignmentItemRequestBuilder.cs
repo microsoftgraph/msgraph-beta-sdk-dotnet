@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
     public class UnifiedRoleAssignmentItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleAssignment entity.</summary>
-        public AppScopeRequestBuilder AppScope
+        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.AppScope.AppScopeRequestBuilder AppScope
         {
-            get => new AppScopeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.AppScope.AppScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.</summary>
-        public DirectoryScopeRequestBuilder DirectoryScope
+        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.DirectoryScope.DirectoryScopeRequestBuilder DirectoryScope
         {
-            get => new DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.DirectoryScope.DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.</summary>
-        public PrincipalRequestBuilder Principal
+        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.Principal.PrincipalRequestBuilder Principal
         {
-            get => new PrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.Principal.PrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleAssignment entity.</summary>
-        public RoleDefinitionRequestBuilder RoleDefinition
+        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.RoleDefinition.RoleDefinitionRequestBuilder RoleDefinition
         {
-            get => new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.RoleDefinition.RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleAssignmentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnifiedRoleAssignmentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,57 +74,57 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get transitiveRoleAssignments from roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignment?> GetAsync(Action<RequestConfiguration<UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder.UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignment> GetAsync(Action<RequestConfiguration<UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder.UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignment>(requestInfo, UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property transitiveRoleAssignments in roleManagement
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignment?> PatchAsync(UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment?> PatchAsync(Microsoft.Graph.Beta.Models.UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignment> PatchAsync(UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment> PatchAsync(Microsoft.Graph.Beta.Models.UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignment>(requestInfo, UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>(requestInfo, Microsoft.Graph.Beta.Models.UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property transitiveRoleAssignments for roleManagement
@@ -152,11 +152,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder.UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder.UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.UnifiedRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -189,11 +189,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UnifiedRoleAssignmentItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new UnifiedRoleAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRole
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>
+        public class UnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.Item.UnifiedRoleAssignmentItemRequestBuilder.UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

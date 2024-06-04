@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
     #pragma warning disable CS1591
-    public class UserProvisioningFlow : ProvisioningFlow, IParsable
+    public class UserProvisioningFlow : Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A boolean choice indicating whether unmatched users should be created or ignored.</summary>
@@ -19,37 +19,37 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The different management choices for the new users to be provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserCreationOptions? CreationOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions? CreationOptions
         {
-            get { return BackingStore?.Get<UserCreationOptions?>("creationOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions?>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
 #nullable restore
 #else
-        public UserCreationOptions CreationOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions CreationOptions
         {
-            get { return BackingStore?.Get<UserCreationOptions>("creationOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
 #endif
         /// <summary>The managementOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserManagementOptions? ManagementOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions? ManagementOptions
         {
-            get { return BackingStore?.Get<UserManagementOptions?>("managementOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions?>("managementOptions"); }
             set { BackingStore?.Set("managementOptions", value); }
         }
 #nullable restore
 #else
-        public UserManagementOptions ManagementOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions ManagementOptions
         {
-            get { return BackingStore?.Get<UserManagementOptions>("managementOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions>("managementOptions"); }
             set { BackingStore?.Set("managementOptions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserProvisioningFlow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserProvisioningFlow"/> and sets the default values.
         /// </summary>
         public UserProvisioningFlow() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserProvisioningFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserProvisioningFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserProvisioningFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.UserProvisioningFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserProvisioningFlow();
+            return new Microsoft.Graph.Beta.Models.IndustryData.UserProvisioningFlow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "createUnmatchedUsers", n => { CreateUnmatchedUsers = n.GetBoolValue(); } },
-                { "creationOptions", n => { CreationOptions = n.GetObjectValue<UserCreationOptions>(UserCreationOptions.CreateFromDiscriminatorValue); } },
-                { "managementOptions", n => { ManagementOptions = n.GetObjectValue<UserManagementOptions>(UserManagementOptions.CreateFromDiscriminatorValue); } },
+                { "creationOptions", n => { CreationOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions>(Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions.CreateFromDiscriminatorValue); } },
+                { "managementOptions", n => { ManagementOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions>(Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("createUnmatchedUsers", CreateUnmatchedUsers);
-            writer.WriteObjectValue<UserCreationOptions>("creationOptions", CreationOptions);
-            writer.WriteObjectValue<UserManagementOptions>("managementOptions", ManagementOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.UserCreationOptions>("creationOptions", CreationOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions>("managementOptions", ManagementOptions);
         }
     }
 }

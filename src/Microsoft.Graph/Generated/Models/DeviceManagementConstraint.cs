@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConstraint"/> and sets the default values.
         /// </summary>
         public DeviceManagementConstraint()
         {
@@ -47,30 +47,30 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementEnumConstraint" => new DeviceManagementEnumConstraint(),
-                "#microsoft.graph.deviceManagementIntentSettingSecretConstraint" => new DeviceManagementIntentSettingSecretConstraint(),
-                "#microsoft.graph.deviceManagementSettingAbstractImplementationConstraint" => new DeviceManagementSettingAbstractImplementationConstraint(),
-                "#microsoft.graph.deviceManagementSettingAppConstraint" => new DeviceManagementSettingAppConstraint(),
-                "#microsoft.graph.deviceManagementSettingBooleanConstraint" => new DeviceManagementSettingBooleanConstraint(),
-                "#microsoft.graph.deviceManagementSettingCollectionConstraint" => new DeviceManagementSettingCollectionConstraint(),
-                "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint" => new DeviceManagementSettingEnrollmentTypeConstraint(),
-                "#microsoft.graph.deviceManagementSettingFileConstraint" => new DeviceManagementSettingFileConstraint(),
-                "#microsoft.graph.deviceManagementSettingIntegerConstraint" => new DeviceManagementSettingIntegerConstraint(),
-                "#microsoft.graph.deviceManagementSettingProfileConstraint" => new DeviceManagementSettingProfileConstraint(),
-                "#microsoft.graph.deviceManagementSettingRegexConstraint" => new DeviceManagementSettingRegexConstraint(),
-                "#microsoft.graph.deviceManagementSettingRequiredConstraint" => new DeviceManagementSettingRequiredConstraint(),
-                "#microsoft.graph.deviceManagementSettingSddlConstraint" => new DeviceManagementSettingSddlConstraint(),
-                "#microsoft.graph.deviceManagementSettingStringLengthConstraint" => new DeviceManagementSettingStringLengthConstraint(),
-                "#microsoft.graph.deviceManagementSettingXmlConstraint" => new DeviceManagementSettingXmlConstraint(),
-                _ => new DeviceManagementConstraint(),
+                "#microsoft.graph.deviceManagementEnumConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementEnumConstraint(),
+                "#microsoft.graph.deviceManagementIntentSettingSecretConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingSecretConstraint(),
+                "#microsoft.graph.deviceManagementSettingAbstractImplementationConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingAbstractImplementationConstraint(),
+                "#microsoft.graph.deviceManagementSettingAppConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingAppConstraint(),
+                "#microsoft.graph.deviceManagementSettingBooleanConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingBooleanConstraint(),
+                "#microsoft.graph.deviceManagementSettingCollectionConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingCollectionConstraint(),
+                "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingEnrollmentTypeConstraint(),
+                "#microsoft.graph.deviceManagementSettingFileConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingFileConstraint(),
+                "#microsoft.graph.deviceManagementSettingIntegerConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingIntegerConstraint(),
+                "#microsoft.graph.deviceManagementSettingProfileConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingProfileConstraint(),
+                "#microsoft.graph.deviceManagementSettingRegexConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingRegexConstraint(),
+                "#microsoft.graph.deviceManagementSettingRequiredConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingRequiredConstraint(),
+                "#microsoft.graph.deviceManagementSettingSddlConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingSddlConstraint(),
+                "#microsoft.graph.deviceManagementSettingStringLengthConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingStringLengthConstraint(),
+                "#microsoft.graph.deviceManagementSettingXmlConstraint" => new Microsoft.Graph.Beta.Models.DeviceManagementSettingXmlConstraint(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementConstraint(),
             };
         }
         /// <summary>

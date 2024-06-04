@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationMana
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetMobileApplicationManagementAppConfigurationReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetMobileApplicationManagementAppConfigurationReportPostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationMana
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetMobileApplicationManagementAppConfigurationReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetMobileApplicationManagementAppConfigurationReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetMobileApplicationManagementAppConfigurationReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

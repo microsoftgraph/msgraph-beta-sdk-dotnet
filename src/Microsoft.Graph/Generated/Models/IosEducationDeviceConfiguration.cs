@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Education configuration profile
     /// </summary>
-    public class IosEducationDeviceConfiguration : DeviceConfiguration, IParsable
+    public class IosEducationDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="IosEducationDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosEducationDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public IosEducationDeviceConfiguration() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosEducationDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosEducationDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosEducationDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosEducationDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosEducationDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosEducationDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

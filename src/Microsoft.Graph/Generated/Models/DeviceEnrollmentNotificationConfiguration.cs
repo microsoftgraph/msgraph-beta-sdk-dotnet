@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enrollment Notification Configuration which is used to send notification
     /// </summary>
-    public class DeviceEnrollmentNotificationConfiguration : DeviceEnrollmentConfiguration, IParsable
+    public class DeviceEnrollmentNotificationConfiguration : Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
-        public EnrollmentNotificationBrandingOptions? BrandingOptions
+        public Microsoft.Graph.Beta.Models.EnrollmentNotificationBrandingOptions? BrandingOptions
         {
-            get { return BackingStore?.Get<EnrollmentNotificationBrandingOptions?>("brandingOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentNotificationBrandingOptions?>("brandingOptions"); }
             set { BackingStore?.Set("brandingOptions", value); }
         }
         /// <summary>DefaultLocale for the Enrollment Notification</summary>
@@ -56,19 +56,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
-        public EnrollmentRestrictionPlatformType? PlatformType
+        public Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType? PlatformType
         {
-            get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>This enum indicates the Template type for which the enrollment notification applies.</summary>
-        public EnrollmentNotificationTemplateType? TemplateType
+        public Microsoft.Graph.Beta.Models.EnrollmentNotificationTemplateType? TemplateType
         {
-            get { return BackingStore?.Get<EnrollmentNotificationTemplateType?>("templateType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentNotificationTemplateType?>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceEnrollmentNotificationConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentNotificationConfiguration"/> and sets the default values.
         /// </summary>
         public DeviceEnrollmentNotificationConfiguration() : base()
         {
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentNotificationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentNotificationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceEnrollmentNotificationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceEnrollmentNotificationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceEnrollmentNotificationConfiguration();
+            return new Microsoft.Graph.Beta.Models.DeviceEnrollmentNotificationConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,12 +92,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "brandingOptions", n => { BrandingOptions = n.GetEnumValue<EnrollmentNotificationBrandingOptions>(); } },
+                { "brandingOptions", n => { BrandingOptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.EnrollmentNotificationBrandingOptions>(); } },
                 { "defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
                 { "notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetGuidValue(); } },
                 { "notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
-                { "templateType", n => { TemplateType = n.GetEnumValue<EnrollmentNotificationTemplateType>(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType>(); } },
+                { "templateType", n => { TemplateType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EnrollmentNotificationTemplateType>(); } },
             };
         }
         /// <summary>
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<EnrollmentNotificationBrandingOptions>("brandingOptions", BrandingOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EnrollmentNotificationBrandingOptions>("brandingOptions", BrandingOptions);
             writer.WriteStringValue("defaultLocale", DefaultLocale);
             writer.WriteGuidValue("notificationMessageTemplateId", NotificationMessageTemplateId);
             writer.WriteCollectionOfPrimitiveValues<string>("notificationTemplates", NotificationTemplates);
-            writer.WriteEnumValue<EnrollmentRestrictionPlatformType>("platformType", PlatformType);
-            writer.WriteEnumValue<EnrollmentNotificationTemplateType>("templateType", TemplateType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType>("platformType", PlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EnrollmentNotificationTemplateType>("templateType", TemplateType);
         }
     }
 }

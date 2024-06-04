@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The details of the status of the role assignment request. It represents the evaluation results of different rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? StatusDetails
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? StatusDetails
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("statusDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> StatusDetails
+        public List<Microsoft.Graph.Beta.Models.KeyValue> StatusDetails
         {
-            get { return BackingStore?.Get<List<KeyValue>>("statusDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceRoleAssignmentRequestStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus"/> and sets the default values.
         /// </summary>
         public GovernanceRoleAssignmentRequestStatus()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleAssignmentRequestStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GovernanceRoleAssignmentRequestStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceRoleAssignmentRequestStatus();
+            return new Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "statusDetails", n => { StatusDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "statusDetails", n => { StatusDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "subStatus", n => { SubStatus = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfObjectValues<KeyValue>("statusDetails", StatusDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("statusDetails", StatusDetails);
             writer.WriteStringValue("subStatus", SubStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

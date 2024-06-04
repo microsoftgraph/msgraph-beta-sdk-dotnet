@@ -7,107 +7,107 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExternalUsersSelfServiceSignUpEventsFlow : AuthenticationEventsFlow, IParsable
+    public class ExternalUsersSelfServiceSignUpEventsFlow : Microsoft.Graph.Beta.Models.AuthenticationEventsFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration for what to invoke when attributes are ready to be collected from the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionHandler? OnAttributeCollection
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler? OnAttributeCollection
         {
-            get { return BackingStore?.Get<OnAttributeCollectionHandler?>("onAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler?>("onAttributeCollection"); }
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionHandler OnAttributeCollection
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler OnAttributeCollection
         {
-            get { return BackingStore?.Get<OnAttributeCollectionHandler>("onAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler>("onAttributeCollection"); }
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #endif
         /// <summary>The configuration for what to invoke when attribution collection has started.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionStartHandler? OnAttributeCollectionStart
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler? OnAttributeCollectionStart
         {
-            get { return BackingStore?.Get<OnAttributeCollectionStartHandler?>("onAttributeCollectionStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler?>("onAttributeCollectionStart"); }
             set { BackingStore?.Set("onAttributeCollectionStart", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionStartHandler OnAttributeCollectionStart
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler OnAttributeCollectionStart
         {
-            get { return BackingStore?.Get<OnAttributeCollectionStartHandler>("onAttributeCollectionStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler>("onAttributeCollectionStart"); }
             set { BackingStore?.Set("onAttributeCollectionStart", value); }
         }
 #endif
         /// <summary>The configuration for what to invoke when attributes have been submitted at the end of attribution collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionSubmitHandler? OnAttributeCollectionSubmit
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler? OnAttributeCollectionSubmit
         {
-            get { return BackingStore?.Get<OnAttributeCollectionSubmitHandler?>("onAttributeCollectionSubmit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler?>("onAttributeCollectionSubmit"); }
             set { BackingStore?.Set("onAttributeCollectionSubmit", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionSubmitHandler OnAttributeCollectionSubmit
+        public Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler OnAttributeCollectionSubmit
         {
-            get { return BackingStore?.Get<OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit"); }
             set { BackingStore?.Set("onAttributeCollectionSubmit", value); }
         }
 #endif
         /// <summary>Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAuthenticationMethodLoadStartHandler? OnAuthenticationMethodLoadStart
+        public Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler? OnAuthenticationMethodLoadStart
         {
-            get { return BackingStore?.Get<OnAuthenticationMethodLoadStartHandler?>("onAuthenticationMethodLoadStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler?>("onAuthenticationMethodLoadStart"); }
             set { BackingStore?.Set("onAuthenticationMethodLoadStart", value); }
         }
 #nullable restore
 #else
-        public OnAuthenticationMethodLoadStartHandler OnAuthenticationMethodLoadStart
+        public Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler OnAuthenticationMethodLoadStart
         {
-            get { return BackingStore?.Get<OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart"); }
             set { BackingStore?.Set("onAuthenticationMethodLoadStart", value); }
         }
 #endif
         /// <summary>Required. The configuration for what to invoke when an authentication flow is ready to be initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnInteractiveAuthFlowStartHandler? OnInteractiveAuthFlowStart
+        public Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler? OnInteractiveAuthFlowStart
         {
-            get { return BackingStore?.Get<OnInteractiveAuthFlowStartHandler?>("onInteractiveAuthFlowStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler?>("onInteractiveAuthFlowStart"); }
             set { BackingStore?.Set("onInteractiveAuthFlowStart", value); }
         }
 #nullable restore
 #else
-        public OnInteractiveAuthFlowStartHandler OnInteractiveAuthFlowStart
+        public Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler OnInteractiveAuthFlowStart
         {
-            get { return BackingStore?.Get<OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart"); }
             set { BackingStore?.Set("onInteractiveAuthFlowStart", value); }
         }
 #endif
         /// <summary>The configuration for what to invoke during user creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnUserCreateStartHandler? OnUserCreateStart
+        public Microsoft.Graph.Beta.Models.OnUserCreateStartHandler? OnUserCreateStart
         {
-            get { return BackingStore?.Get<OnUserCreateStartHandler?>("onUserCreateStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnUserCreateStartHandler?>("onUserCreateStart"); }
             set { BackingStore?.Set("onUserCreateStart", value); }
         }
 #nullable restore
 #else
-        public OnUserCreateStartHandler OnUserCreateStart
+        public Microsoft.Graph.Beta.Models.OnUserCreateStartHandler OnUserCreateStart
         {
-            get { return BackingStore?.Get<OnUserCreateStartHandler>("onUserCreateStart"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnUserCreateStartHandler>("onUserCreateStart"); }
             set { BackingStore?.Set("onUserCreateStart", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExternalUsersSelfServiceSignUpEventsFlow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalUsersSelfServiceSignUpEventsFlow"/> and sets the default values.
         /// </summary>
         public ExternalUsersSelfServiceSignUpEventsFlow() : base()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalUsersSelfServiceSignUpEventsFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalUsersSelfServiceSignUpEventsFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalUsersSelfServiceSignUpEventsFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalUsersSelfServiceSignUpEventsFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalUsersSelfServiceSignUpEventsFlow();
+            return new Microsoft.Graph.Beta.Models.ExternalUsersSelfServiceSignUpEventsFlow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "onAttributeCollection", n => { OnAttributeCollection = n.GetObjectValue<OnAttributeCollectionHandler>(OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
-                { "onAttributeCollectionStart", n => { OnAttributeCollectionStart = n.GetObjectValue<OnAttributeCollectionStartHandler>(OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
-                { "onAttributeCollectionSubmit", n => { OnAttributeCollectionSubmit = n.GetObjectValue<OnAttributeCollectionSubmitHandler>(OnAttributeCollectionSubmitHandler.CreateFromDiscriminatorValue); } },
-                { "onAuthenticationMethodLoadStart", n => { OnAuthenticationMethodLoadStart = n.GetObjectValue<OnAuthenticationMethodLoadStartHandler>(OnAuthenticationMethodLoadStartHandler.CreateFromDiscriminatorValue); } },
-                { "onInteractiveAuthFlowStart", n => { OnInteractiveAuthFlowStart = n.GetObjectValue<OnInteractiveAuthFlowStartHandler>(OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
-                { "onUserCreateStart", n => { OnUserCreateStart = n.GetObjectValue<OnUserCreateStartHandler>(OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
+                { "onAttributeCollection", n => { OnAttributeCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler>(Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
+                { "onAttributeCollectionStart", n => { OnAttributeCollectionStart = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler>(Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
+                { "onAttributeCollectionSubmit", n => { OnAttributeCollectionSubmit = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler>(Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler.CreateFromDiscriminatorValue); } },
+                { "onAuthenticationMethodLoadStart", n => { OnAuthenticationMethodLoadStart = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler>(Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler.CreateFromDiscriminatorValue); } },
+                { "onInteractiveAuthFlowStart", n => { OnInteractiveAuthFlowStart = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler>(Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
+                { "onUserCreateStart", n => { OnUserCreateStart = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnUserCreateStartHandler>(Microsoft.Graph.Beta.Models.OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,12 +147,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnAttributeCollectionHandler>("onAttributeCollection", OnAttributeCollection);
-            writer.WriteObjectValue<OnAttributeCollectionStartHandler>("onAttributeCollectionStart", OnAttributeCollectionStart);
-            writer.WriteObjectValue<OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit", OnAttributeCollectionSubmit);
-            writer.WriteObjectValue<OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart", OnAuthenticationMethodLoadStart);
-            writer.WriteObjectValue<OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart", OnInteractiveAuthFlowStart);
-            writer.WriteObjectValue<OnUserCreateStartHandler>("onUserCreateStart", OnUserCreateStart);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler>("onAttributeCollection", OnAttributeCollection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionStartHandler>("onAttributeCollectionStart", OnAttributeCollectionStart);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit", OnAttributeCollectionSubmit);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart", OnAuthenticationMethodLoadStart);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart", OnInteractiveAuthFlowStart);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnUserCreateStartHandler>("onUserCreateStart", OnUserCreateStart);
         }
     }
 }

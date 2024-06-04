@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
 {
     [Obsolete("This class is obsolete. Use GenerateApplePushNotificationCertificateSigningRequestPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GenerateApplePushNotificationCertificateSigningRequestResponse : GenerateApplePushNotificationCertificateSigningRequestPostResponse, IParsable
+    public class GenerateApplePushNotificationCertificateSigningRequestResponse : Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest.GenerateApplePushNotificationCertificateSigningRequestPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GenerateApplePushNotificationCertificateSigningRequestResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest.GenerateApplePushNotificationCertificateSigningRequestResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GenerateApplePushNotificationCertificateSigningRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest.GenerateApplePushNotificationCertificateSigningRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GenerateApplePushNotificationCertificateSigningRequestResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest.GenerateApplePushNotificationCertificateSigningRequestResponse();
         }
     }
 }

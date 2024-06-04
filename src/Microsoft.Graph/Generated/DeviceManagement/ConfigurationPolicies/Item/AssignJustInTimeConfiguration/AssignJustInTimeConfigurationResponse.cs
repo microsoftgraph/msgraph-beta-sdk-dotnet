@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assig
 {
     [Obsolete("This class is obsolete. Use AssignJustInTimeConfigurationPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AssignJustInTimeConfigurationResponse : AssignJustInTimeConfigurationPostResponse, IParsable
+    public class AssignJustInTimeConfigurationResponse : Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignJustInTimeConfigurationResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AssignJustInTimeConfigurationResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignJustInTimeConfigurationResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration.AssignJustInTimeConfigurationResponse();
         }
     }
 }

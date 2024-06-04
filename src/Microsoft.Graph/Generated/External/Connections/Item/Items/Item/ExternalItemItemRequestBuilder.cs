@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
     public class ExternalItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.</summary>
-        public ActivitiesRequestBuilder Activities
+        public Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.ActivitiesRequestBuilder Activities
         {
-            get => new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addActivities method.</summary>
-        public MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder MicrosoftGraphExternalConnectorsAddActivities
+        public Microsoft.Graph.Beta.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder MicrosoftGraphExternalConnectorsAddActivities
         {
-            get => new MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExternalItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExternalItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,51 +71,51 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         /// Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn&apos;t intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ExternalItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalItem?> GetAsync(Action<RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder.ExternalItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExternalItem> GetAsync(Action<RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder.ExternalItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExternalItem>(requestInfo, ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ExternalItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalItem?> PutAsync(ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem?> PutAsync(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ExternalItem> PutAsync(ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem> PutAsync(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ExternalItem>(requestInfo, ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an externalitem.
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder.ExternalItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder.ExternalItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -163,11 +163,11 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -180,11 +180,11 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ExternalItemItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExternalItemItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ExternalItemItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExternalItemItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters>
+        public class ExternalItemItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalItemItemRequestBuilder.ExternalItemItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

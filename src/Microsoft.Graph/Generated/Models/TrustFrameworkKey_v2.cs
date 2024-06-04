@@ -224,9 +224,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Status of the key. The possible values are: enabled, disabled, unknownFutureValue.</summary>
-        public TrustFrameworkKeyStatus? Status
+        public Microsoft.Graph.Beta.Models.TrustFrameworkKeyStatus? Status
         {
-            get { return BackingStore?.Get<TrustFrameworkKeyStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrustFrameworkKeyStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).</summary>
@@ -278,7 +278,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TrustFrameworkKey_v2"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2"/> and sets the default values.
         /// </summary>
         public TrustFrameworkKey_v2()
         {
@@ -288,12 +288,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrustFrameworkKey_v2"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrustFrameworkKey_v2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrustFrameworkKey_v2();
+            return new Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -317,7 +317,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "p", n => { P = n.GetStringValue(); } },
                 { "q", n => { Q = n.GetStringValue(); } },
                 { "qi", n => { Qi = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<TrustFrameworkKeyStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.TrustFrameworkKeyStatus>(); } },
                 { "use", n => { Use = n.GetStringValue(); } },
                 { "x5c", n => { X5c = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "x5t", n => { X5t = n.GetStringValue(); } },
@@ -344,7 +344,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("p", P);
             writer.WriteStringValue("q", Q);
             writer.WriteStringValue("qi", Qi);
-            writer.WriteEnumValue<TrustFrameworkKeyStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TrustFrameworkKeyStatus>("status", Status);
             writer.WriteStringValue("use", Use);
             writer.WriteCollectionOfPrimitiveValues<string>("x5c", X5c);
             writer.WriteStringValue("x5t", X5t);

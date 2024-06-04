@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class BusinessScenarioTask : PlannerTask, IParsable
+    public class BusinessScenarioTask : Microsoft.Graph.Beta.Models.PlannerTask, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.</summary>
@@ -29,28 +29,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Target of the task that specifies where the task should be placed. Must be specified when creating a task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BusinessScenarioTaskTargetBase? Target
+        public Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase? Target
         {
-            get { return BackingStore?.Get<BusinessScenarioTaskTargetBase?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public BusinessScenarioTaskTargetBase Target
+        public Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase Target
         {
-            get { return BackingStore?.Get<BusinessScenarioTaskTargetBase>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BusinessScenarioTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BusinessScenarioTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BusinessScenarioTask();
+            return new Microsoft.Graph.Beta.Models.BusinessScenarioTask();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "businessScenarioProperties", n => { BusinessScenarioProperties = n.GetObjectValue<Microsoft.Graph.Beta.Models.BusinessScenarioProperties>(Microsoft.Graph.Beta.Models.BusinessScenarioProperties.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetObjectValue<BusinessScenarioTaskTargetBase>(BusinessScenarioTaskTargetBase.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase>(Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BusinessScenarioProperties>("businessScenarioProperties", BusinessScenarioProperties);
-            writer.WriteObjectValue<BusinessScenarioTaskTargetBase>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase>("target", Target);
         }
     }
 }

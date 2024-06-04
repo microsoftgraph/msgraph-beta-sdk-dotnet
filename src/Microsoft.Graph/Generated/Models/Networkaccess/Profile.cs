@@ -51,23 +51,23 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>Traffic forwarding policies associated with this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicyLink>? Policies
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>? Policies
         {
-            get { return BackingStore?.Get<List<PolicyLink>?>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<PolicyLink> Policies
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink> Policies
         {
-            get { return BackingStore?.Get<List<PolicyLink>>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public Status? State
+        public Microsoft.Graph.Beta.Models.Networkaccess.Status? State
         {
-            get { return BackingStore?.Get<Status?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Status?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Profile version.</summary>
@@ -89,17 +89,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Profile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.Profile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Profile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.Profile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.filteringProfile" => new FilteringProfile(),
-                "#microsoft.graph.networkaccess.forwardingProfile" => new ForwardingProfile(),
-                _ => new Profile(),
+                "#microsoft.graph.networkaccess.filteringProfile" => new Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile(),
+                "#microsoft.graph.networkaccess.forwardingProfile" => new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.Profile(),
             };
         }
         /// <summary>
@@ -113,8 +113,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<PolicyLink>(PolicyLink.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<Status>(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -129,8 +129,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<PolicyLink>("policies", Policies);
-            writer.WriteEnumValue<Status>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>("policies", Policies);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Status>("state", State);
             writer.WriteStringValue("version", Version);
         }
     }

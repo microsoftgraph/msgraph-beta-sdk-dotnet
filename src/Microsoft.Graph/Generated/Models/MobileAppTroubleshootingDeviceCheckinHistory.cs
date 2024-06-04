@@ -9,17 +9,17 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// History Item contained in the Mobile App Troubleshooting Event.
     /// </summary>
-    public class MobileAppTroubleshootingDeviceCheckinHistory : MobileAppTroubleshootingHistoryItem, IParsable
+    public class MobileAppTroubleshootingDeviceCheckinHistory : Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppTroubleshootingDeviceCheckinHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppTroubleshootingDeviceCheckinHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppTroubleshootingDeviceCheckinHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingDeviceCheckinHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppTroubleshootingDeviceCheckinHistory();
+            return new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingDeviceCheckinHistory();
         }
         /// <summary>
         /// The deserialization information for the current model

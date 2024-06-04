@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
     /// </summary>
-    public class ManagedDeviceMobileAppConfigurationUserStatus : Entity, IParsable
+    public class ManagedDeviceMobileAppConfigurationUserStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Devices count for that user.</summary>
         public int? DevicesCount
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public ComplianceStatus? Status
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? Status
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>User name of the DevicePolicyStatus.</summary>
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationUserStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceMobileAppConfigurationUserStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceMobileAppConfigurationUserStatus();
+            return new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "devicesCount", n => { DevicesCount = n.GetIntValue(); } },
                 { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ComplianceStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteIntValue("devicesCount", DevicesCount);
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
-            writer.WriteEnumValue<ComplianceStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("status", Status);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }

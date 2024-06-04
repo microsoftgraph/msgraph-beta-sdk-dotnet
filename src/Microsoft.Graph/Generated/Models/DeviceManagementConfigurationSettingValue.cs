@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Setting value template reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingValueTemplateReference? SettingValueTemplateReference
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference? SettingValueTemplateReference
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueTemplateReference?>("settingValueTemplateReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference?>("settingValueTemplateReference"); }
             set { BackingStore?.Set("settingValueTemplateReference", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingValueTemplateReference SettingValueTemplateReference
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference SettingValueTemplateReference
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference"); }
             set { BackingStore?.Set("settingValueTemplateReference", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSettingValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingValue()
         {
@@ -63,22 +63,22 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSettingValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue" => new DeviceManagementConfigurationChoiceSettingValue(),
-                "#microsoft.graph.deviceManagementConfigurationGroupSettingValue" => new DeviceManagementConfigurationGroupSettingValue(),
-                "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue" => new DeviceManagementConfigurationIntegerSettingValue(),
-                "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue" => new DeviceManagementConfigurationReferenceSettingValue(),
-                "#microsoft.graph.deviceManagementConfigurationSecretSettingValue" => new DeviceManagementConfigurationSecretSettingValue(),
-                "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue" => new DeviceManagementConfigurationSimpleSettingValue(),
-                "#microsoft.graph.deviceManagementConfigurationStringSettingValue" => new DeviceManagementConfigurationStringSettingValue(),
-                _ => new DeviceManagementConfigurationSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationGroupSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferenceSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationSecretSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationStringSettingValue" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValue(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue(),
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "settingValueTemplateReference", n => { SettingValueTemplateReference = n.GetObjectValue<DeviceManagementConfigurationSettingValueTemplateReference>(DeviceManagementConfigurationSettingValueTemplateReference.CreateFromDiscriminatorValue); } },
+                { "settingValueTemplateReference", n => { SettingValueTemplateReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference", SettingValueTemplateReference);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference", SettingValueTemplateReference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

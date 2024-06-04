@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBl
         /// <summary>The range property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Range
+        public Microsoft.Graph.Beta.Models.Json? Range
         {
-            get { return BackingStore?.Get<Json?>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #nullable restore
 #else
-        public Json Range
+        public Microsoft.Graph.Beta.Models.Json Range
         {
-            get { return BackingStore?.Get<Json>("range"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("range"); }
             set { BackingStore?.Set("range", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CountBlankPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBlank.CountBlankPostRequestBody"/> and sets the default values.
         /// </summary>
         public CountBlankPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBl
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CountBlankPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBlank.CountBlankPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CountBlankPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBlank.CountBlankPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CountBlankPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBlank.CountBlankPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBl
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "range", n => { Range = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "range", n => { Range = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.CountBl
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("range", Range);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("range", Range);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

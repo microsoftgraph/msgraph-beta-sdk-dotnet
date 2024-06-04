@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Event representing an general failure.
     /// </summary>
-    public class DeviceManagementTroubleshootingEvent : Entity, IParsable
+    public class DeviceManagementTroubleshootingEvent : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? AdditionalInformation
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? AdditionalInformation
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("additionalInformation"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> AdditionalInformation
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> AdditionalInformation
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
@@ -68,34 +68,34 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails
+        public Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails
         {
-            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails
+        public Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails
         {
-            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementTroubleshootingEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.appleVppTokenTroubleshootingEvent" => new AppleVppTokenTroubleshootingEvent(),
-                "#microsoft.graph.enrollmentTroubleshootingEvent" => new EnrollmentTroubleshootingEvent(),
-                "#microsoft.graph.mobileAppTroubleshootingEvent" => new MobileAppTroubleshootingEvent(),
-                _ => new DeviceManagementTroubleshootingEvent(),
+                "#microsoft.graph.appleVppTokenTroubleshootingEvent" => new Microsoft.Graph.Beta.Models.AppleVppTokenTroubleshootingEvent(),
+                "#microsoft.graph.enrollmentTroubleshootingEvent" => new Microsoft.Graph.Beta.Models.EnrollmentTroubleshootingEvent(),
+                "#microsoft.graph.mobileAppTroubleshootingEvent" => new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent(),
             };
         }
         /// <summary>
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
+                { "troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails>(Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,11 +121,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("additionalInformation", AdditionalInformation);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("eventName", EventName);
-            writer.WriteObjectValue<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails", TroubleshootingErrorDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails", TroubleshootingErrorDetails);
         }
     }
 }

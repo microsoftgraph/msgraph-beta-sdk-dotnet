@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base type for a setting instance
     /// </summary>
-    public class DeviceManagementSettingInstance : Entity, IParsable
+    public class DeviceManagementSettingInstance : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The ID of the setting definition for this instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,21 +46,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementAbstractComplexSettingInstance" => new DeviceManagementAbstractComplexSettingInstance(),
-                "#microsoft.graph.deviceManagementBooleanSettingInstance" => new DeviceManagementBooleanSettingInstance(),
-                "#microsoft.graph.deviceManagementCollectionSettingInstance" => new DeviceManagementCollectionSettingInstance(),
-                "#microsoft.graph.deviceManagementComplexSettingInstance" => new DeviceManagementComplexSettingInstance(),
-                "#microsoft.graph.deviceManagementIntegerSettingInstance" => new DeviceManagementIntegerSettingInstance(),
-                "#microsoft.graph.deviceManagementStringSettingInstance" => new DeviceManagementStringSettingInstance(),
-                _ => new DeviceManagementSettingInstance(),
+                "#microsoft.graph.deviceManagementAbstractComplexSettingInstance" => new Microsoft.Graph.Beta.Models.DeviceManagementAbstractComplexSettingInstance(),
+                "#microsoft.graph.deviceManagementBooleanSettingInstance" => new Microsoft.Graph.Beta.Models.DeviceManagementBooleanSettingInstance(),
+                "#microsoft.graph.deviceManagementCollectionSettingInstance" => new Microsoft.Graph.Beta.Models.DeviceManagementCollectionSettingInstance(),
+                "#microsoft.graph.deviceManagementComplexSettingInstance" => new Microsoft.Graph.Beta.Models.DeviceManagementComplexSettingInstance(),
+                "#microsoft.graph.deviceManagementIntegerSettingInstance" => new Microsoft.Graph.Beta.Models.DeviceManagementIntegerSettingInstance(),
+                "#microsoft.graph.deviceManagementStringSettingInstance" => new Microsoft.Graph.Beta.Models.DeviceManagementStringSettingInstance(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance(),
             };
         }
         /// <summary>

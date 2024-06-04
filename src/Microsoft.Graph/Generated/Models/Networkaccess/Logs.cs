@@ -13,44 +13,44 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>A collection of remote network health events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RemoteNetworkHealthEvent>? RemoteNetworks
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>? RemoteNetworks
         {
-            get { return BackingStore?.Get<List<RemoteNetworkHealthEvent>?>("remoteNetworks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>?>("remoteNetworks"); }
             set { BackingStore?.Set("remoteNetworks", value); }
         }
 #nullable restore
 #else
-        public List<RemoteNetworkHealthEvent> RemoteNetworks
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent> RemoteNetworks
         {
-            get { return BackingStore?.Get<List<RemoteNetworkHealthEvent>>("remoteNetworks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>>("remoteNetworks"); }
             set { BackingStore?.Set("remoteNetworks", value); }
         }
 #endif
         /// <summary>A network access traffic log entry that contains comprehensive information about network traffic events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkAccessTraffic>? Traffic
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>? Traffic
         {
-            get { return BackingStore?.Get<List<NetworkAccessTraffic>?>("traffic"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>?>("traffic"); }
             set { BackingStore?.Set("traffic", value); }
         }
 #nullable restore
 #else
-        public List<NetworkAccessTraffic> Traffic
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic> Traffic
         {
-            get { return BackingStore?.Get<List<NetworkAccessTraffic>>("traffic"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>>("traffic"); }
             set { BackingStore?.Set("traffic", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Logs"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.Logs"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Logs CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.Logs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Logs();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.Logs();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetworkHealthEvent>(RemoteNetworkHealthEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "traffic", n => { Traffic = n.GetCollectionOfObjectValues<NetworkAccessTraffic>(NetworkAccessTraffic.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>(Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "traffic", n => { Traffic = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>(Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", RemoteNetworks);
-            writer.WriteCollectionOfObjectValues<NetworkAccessTraffic>("traffic", Traffic);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkHealthEvent>("remoteNetworks", RemoteNetworks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessTraffic>("traffic", Traffic);
         }
     }
 }

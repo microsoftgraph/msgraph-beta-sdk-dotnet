@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("collate", value); }
         }
         /// <summary>The colorMode property</summary>
-        public PrintColorMode? ColorMode
+        public Microsoft.Graph.Beta.Models.PrintColorMode? ColorMode
         {
-            get { return BackingStore?.Get<PrintColorMode?>("colorMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintColorMode?>("colorMode"); }
             set { BackingStore?.Set("colorMode", value); }
         }
         /// <summary>The copies property</summary>
@@ -44,36 +44,36 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dpi", value); }
         }
         /// <summary>The duplexMode property</summary>
-        public PrintDuplexMode? DuplexMode
+        public Microsoft.Graph.Beta.Models.PrintDuplexMode? DuplexMode
         {
-            get { return BackingStore?.Get<PrintDuplexMode?>("duplexMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintDuplexMode?>("duplexMode"); }
             set { BackingStore?.Set("duplexMode", value); }
         }
         /// <summary>The feedDirection property</summary>
-        public PrinterFeedDirection? FeedDirection
+        public Microsoft.Graph.Beta.Models.PrinterFeedDirection? FeedDirection
         {
-            get { return BackingStore?.Get<PrinterFeedDirection?>("feedDirection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterFeedDirection?>("feedDirection"); }
             set { BackingStore?.Set("feedDirection", value); }
         }
         /// <summary>The feedOrientation property</summary>
-        public PrinterFeedOrientation? FeedOrientation
+        public Microsoft.Graph.Beta.Models.PrinterFeedOrientation? FeedOrientation
         {
-            get { return BackingStore?.Get<PrinterFeedOrientation?>("feedOrientation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterFeedOrientation?>("feedOrientation"); }
             set { BackingStore?.Set("feedOrientation", value); }
         }
         /// <summary>The finishings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintFinishing?>? Finishings
+        public List<Microsoft.Graph.Beta.Models.PrintFinishing?>? Finishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintFinishing?>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #nullable restore
 #else
-        public List<PrintFinishing?> Finishings
+        public List<Microsoft.Graph.Beta.Models.PrintFinishing?> Finishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintFinishing?>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
@@ -102,16 +102,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The margin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintMargin? Margin
+        public Microsoft.Graph.Beta.Models.PrintMargin? Margin
         {
-            get { return BackingStore?.Get<PrintMargin?>("margin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintMargin?>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
 #nullable restore
 #else
-        public PrintMargin Margin
+        public Microsoft.Graph.Beta.Models.PrintMargin Margin
         {
-            get { return BackingStore?.Get<PrintMargin>("margin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintMargin>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
 #endif
@@ -148,9 +148,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The multipageLayout property</summary>
-        public PrintMultipageLayout? MultipageLayout
+        public Microsoft.Graph.Beta.Models.PrintMultipageLayout? MultipageLayout
         {
-            get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintMultipageLayout?>("multipageLayout"); }
             set { BackingStore?.Set("multipageLayout", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -170,9 +170,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The orientation property</summary>
-        public PrintOrientation? Orientation
+        public Microsoft.Graph.Beta.Models.PrintOrientation? Orientation
         {
-            get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintOrientation?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The outputBin property</summary>
@@ -194,16 +194,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The pageRanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IntegerRange>? PageRanges
+        public List<Microsoft.Graph.Beta.Models.IntegerRange>? PageRanges
         {
-            get { return BackingStore?.Get<List<IntegerRange>?>("pageRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntegerRange>?>("pageRanges"); }
             set { BackingStore?.Set("pageRanges", value); }
         }
 #nullable restore
 #else
-        public List<IntegerRange> PageRanges
+        public List<Microsoft.Graph.Beta.Models.IntegerRange> PageRanges
         {
-            get { return BackingStore?.Get<List<IntegerRange>>("pageRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntegerRange>>("pageRanges"); }
             set { BackingStore?.Set("pageRanges", value); }
         }
 #endif
@@ -214,19 +214,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pagesPerSheet", value); }
         }
         /// <summary>The quality property</summary>
-        public PrintQuality? Quality
+        public Microsoft.Graph.Beta.Models.PrintQuality? Quality
         {
-            get { return BackingStore?.Get<PrintQuality?>("quality"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintQuality?>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
         /// <summary>The scaling property</summary>
-        public PrintScaling? Scaling
+        public Microsoft.Graph.Beta.Models.PrintScaling? Scaling
         {
-            get { return BackingStore?.Get<PrintScaling?>("scaling"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintScaling?>("scaling"); }
             set { BackingStore?.Set("scaling", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrinterDocumentConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration"/> and sets the default values.
         /// </summary>
         public PrinterDocumentConfiguration()
         {
@@ -236,12 +236,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrinterDocumentConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrinterDocumentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrinterDocumentConfiguration();
+            return new Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -252,26 +252,26 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "collate", n => { Collate = n.GetBoolValue(); } },
-                { "colorMode", n => { ColorMode = n.GetEnumValue<PrintColorMode>(); } },
+                { "colorMode", n => { ColorMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintColorMode>(); } },
                 { "copies", n => { Copies = n.GetIntValue(); } },
                 { "dpi", n => { Dpi = n.GetIntValue(); } },
-                { "duplexMode", n => { DuplexMode = n.GetEnumValue<PrintDuplexMode>(); } },
-                { "feedDirection", n => { FeedDirection = n.GetEnumValue<PrinterFeedDirection>(); } },
-                { "feedOrientation", n => { FeedOrientation = n.GetEnumValue<PrinterFeedOrientation>(); } },
-                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<PrintFinishing>()?.ToList(); } },
+                { "duplexMode", n => { DuplexMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintDuplexMode>(); } },
+                { "feedDirection", n => { FeedDirection = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrinterFeedDirection>(); } },
+                { "feedOrientation", n => { FeedOrientation = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrinterFeedOrientation>(); } },
+                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintFinishing>()?.ToList(); } },
                 { "fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 { "inputBin", n => { InputBin = n.GetStringValue(); } },
-                { "margin", n => { Margin = n.GetObjectValue<PrintMargin>(PrintMargin.CreateFromDiscriminatorValue); } },
+                { "margin", n => { Margin = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrintMargin>(Microsoft.Graph.Beta.Models.PrintMargin.CreateFromDiscriminatorValue); } },
                 { "mediaSize", n => { MediaSize = n.GetStringValue(); } },
                 { "mediaType", n => { MediaType = n.GetStringValue(); } },
-                { "multipageLayout", n => { MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
+                { "multipageLayout", n => { MultipageLayout = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintMultipageLayout>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "orientation", n => { Orientation = n.GetEnumValue<PrintOrientation>(); } },
+                { "orientation", n => { Orientation = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintOrientation>(); } },
                 { "outputBin", n => { OutputBin = n.GetStringValue(); } },
-                { "pageRanges", n => { PageRanges = n.GetCollectionOfObjectValues<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pageRanges", n => { PageRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntegerRange>(Microsoft.Graph.Beta.Models.IntegerRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "pagesPerSheet", n => { PagesPerSheet = n.GetIntValue(); } },
-                { "quality", n => { Quality = n.GetEnumValue<PrintQuality>(); } },
-                { "scaling", n => { Scaling = n.GetEnumValue<PrintScaling>(); } },
+                { "quality", n => { Quality = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintQuality>(); } },
+                { "scaling", n => { Scaling = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintScaling>(); } },
             };
         }
         /// <summary>
@@ -282,26 +282,26 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("collate", Collate);
-            writer.WriteEnumValue<PrintColorMode>("colorMode", ColorMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintColorMode>("colorMode", ColorMode);
             writer.WriteIntValue("copies", Copies);
             writer.WriteIntValue("dpi", Dpi);
-            writer.WriteEnumValue<PrintDuplexMode>("duplexMode", DuplexMode);
-            writer.WriteEnumValue<PrinterFeedDirection>("feedDirection", FeedDirection);
-            writer.WriteEnumValue<PrinterFeedOrientation>("feedOrientation", FeedOrientation);
-            writer.WriteCollectionOfEnumValues<PrintFinishing>("finishings", Finishings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintDuplexMode>("duplexMode", DuplexMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrinterFeedDirection>("feedDirection", FeedDirection);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrinterFeedOrientation>("feedOrientation", FeedOrientation);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintFinishing>("finishings", Finishings);
             writer.WriteBoolValue("fitPdfToPage", FitPdfToPage);
             writer.WriteStringValue("inputBin", InputBin);
-            writer.WriteObjectValue<PrintMargin>("margin", Margin);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrintMargin>("margin", Margin);
             writer.WriteStringValue("mediaSize", MediaSize);
             writer.WriteStringValue("mediaType", MediaType);
-            writer.WriteEnumValue<PrintMultipageLayout>("multipageLayout", MultipageLayout);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintMultipageLayout>("multipageLayout", MultipageLayout);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PrintOrientation>("orientation", Orientation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintOrientation>("orientation", Orientation);
             writer.WriteStringValue("outputBin", OutputBin);
-            writer.WriteCollectionOfObjectValues<IntegerRange>("pageRanges", PageRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntegerRange>("pageRanges", PageRanges);
             writer.WriteIntValue("pagesPerSheet", PagesPerSheet);
-            writer.WriteEnumValue<PrintQuality>("quality", Quality);
-            writer.WriteEnumValue<PrintScaling>("scaling", Scaling);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintQuality>("quality", Quality);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintScaling>("scaling", Scaling);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

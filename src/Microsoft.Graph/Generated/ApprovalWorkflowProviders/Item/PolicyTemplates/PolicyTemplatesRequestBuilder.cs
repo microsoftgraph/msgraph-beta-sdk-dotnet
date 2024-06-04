@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
     public class PolicyTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
         /// <param name="position">The unique identifier of governancePolicyTemplate</param>
-        /// <returns>A <see cref="GovernancePolicyTemplateItemRequestBuilder"/></returns>
-        public GovernancePolicyTemplateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.Item.GovernancePolicyTemplateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.Item.GovernancePolicyTemplateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("governancePolicyTemplate%2Did", position);
-                return new GovernancePolicyTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.Item.GovernancePolicyTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PolicyTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PolicyTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
         /// <summary>
         /// Get policyTemplates from approvalWorkflowProviders
         /// </summary>
-        /// <returns>A <see cref="GovernancePolicyTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernancePolicyTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernancePolicyTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<PolicyTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernancePolicyTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder.PolicyTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernancePolicyTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<PolicyTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernancePolicyTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder.PolicyTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernancePolicyTemplateCollectionResponse>(requestInfo, GovernancePolicyTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernancePolicyTemplateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GovernancePolicyTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to policyTemplates for approvalWorkflowProviders
         /// </summary>
-        /// <returns>A <see cref="GovernancePolicyTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernancePolicyTemplate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernancePolicyTemplate?> PostAsync(GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernancePolicyTemplate?> PostAsync(Microsoft.Graph.Beta.Models.GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernancePolicyTemplate> PostAsync(GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernancePolicyTemplate> PostAsync(Microsoft.Graph.Beta.Models.GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernancePolicyTemplate>(requestInfo, GovernancePolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernancePolicyTemplate>(requestInfo, Microsoft.Graph.Beta.Models.GovernancePolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get policyTemplates from approvalWorkflowProviders
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PolicyTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder.PolicyTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PolicyTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder.PolicyTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernancePolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PolicyTemplatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PolicyTemplatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new PolicyTemplatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get policyTemplates from approvalWorkflowProviders
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PolicyTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<PolicyTemplatesRequestBuilderGetQueryParameters>
+        public class PolicyTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.PolicyTemplatesRequestBuilder.PolicyTemplatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

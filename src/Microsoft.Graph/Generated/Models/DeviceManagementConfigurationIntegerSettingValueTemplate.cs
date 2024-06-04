@@ -9,58 +9,58 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Integer Setting Value Template
     /// </summary>
-    public class DeviceManagementConfigurationIntegerSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
+    public class DeviceManagementConfigurationIntegerSettingValueTemplate : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
     {
         /// <summary>Integer Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate? DefaultValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate? DefaultValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate?>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
         /// <summary>Recommended value definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RecommendedValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RecommendedValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
 #endif
         /// <summary>Required value definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RequiredValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RequiredValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationIntegerSettingValueTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationIntegerSettingValueTemplate() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationIntegerSettingValueTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationIntegerSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationIntegerSettingValueTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>(DeviceManagementConfigurationIntegerSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
-                { "recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
-                { "requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
+                { "recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
+                { "requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue", DefaultValue);
-            writer.WriteObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition", RecommendedValueDefinition);
-            writer.WriteObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition", RequiredValueDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue", DefaultValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition", RecommendedValueDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition", RequiredValueDefinition);
         }
     }
 }

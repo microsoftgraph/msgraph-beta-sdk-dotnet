@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnlineMeeting : OnlineMeetingBase, IParsable
+    public class OnlineMeeting : Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
@@ -61,32 +61,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Settings related to a live event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BroadcastMeetingSettings? BroadcastSettings
+        public Microsoft.Graph.Beta.Models.BroadcastMeetingSettings? BroadcastSettings
         {
-            get { return BackingStore?.Get<BroadcastMeetingSettings?>("broadcastSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BroadcastMeetingSettings?>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #nullable restore
 #else
-        public BroadcastMeetingSettings BroadcastSettings
+        public Microsoft.Graph.Beta.Models.BroadcastMeetingSettings BroadcastSettings
         {
-            get { return BackingStore?.Get<BroadcastMeetingSettings>("broadcastSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BroadcastMeetingSettings>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #endif
         /// <summary>The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingCapabilities?>? Capabilities
+        public List<Microsoft.Graph.Beta.Models.MeetingCapabilities?>? Capabilities
         {
-            get { return BackingStore?.Get<List<MeetingCapabilities?>?>("capabilities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingCapabilities?>?>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #nullable restore
 #else
-        public List<MeetingCapabilities?> Capabilities
+        public List<Microsoft.Graph.Beta.Models.MeetingCapabilities?> Capabilities
         {
-            get { return BackingStore?.Get<List<MeetingCapabilities?>>("capabilities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingCapabilities?>>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
 #endif
@@ -175,16 +175,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The participants associated with the online meeting, including the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingParticipants? Participants
+        public Microsoft.Graph.Beta.Models.MeetingParticipants? Participants
         {
-            get { return BackingStore?.Get<MeetingParticipants?>("participants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingParticipants?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public MeetingParticipants Participants
+        public Microsoft.Graph.Beta.Models.MeetingParticipants Participants
         {
-            get { return BackingStore?.Get<MeetingParticipants>("participants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingParticipants>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
@@ -207,32 +207,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The recordings of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRecording>? Recordings
+        public List<Microsoft.Graph.Beta.Models.CallRecording>? Recordings
         {
-            get { return BackingStore?.Get<List<CallRecording>?>("recordings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecording>?>("recordings"); }
             set { BackingStore?.Set("recordings", value); }
         }
 #nullable restore
 #else
-        public List<CallRecording> Recordings
+        public List<Microsoft.Graph.Beta.Models.CallRecording> Recordings
         {
-            get { return BackingStore?.Get<List<CallRecording>>("recordings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecording>>("recordings"); }
             set { BackingStore?.Set("recordings", value); }
         }
 #endif
         /// <summary>The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingRegistration? Registration
+        public Microsoft.Graph.Beta.Models.MeetingRegistration? Registration
         {
-            get { return BackingStore?.Get<MeetingRegistration?>("registration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingRegistration?>("registration"); }
             set { BackingStore?.Set("registration", value); }
         }
 #nullable restore
 #else
-        public MeetingRegistration Registration
+        public Microsoft.Graph.Beta.Models.MeetingRegistration Registration
         {
-            get { return BackingStore?.Get<MeetingRegistration>("registration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingRegistration>("registration"); }
             set { BackingStore?.Set("registration", value); }
         }
 #endif
@@ -245,21 +245,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The transcripts of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallTranscript>? Transcripts
+        public List<Microsoft.Graph.Beta.Models.CallTranscript>? Transcripts
         {
-            get { return BackingStore?.Get<List<CallTranscript>?>("transcripts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallTranscript>?>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
 #nullable restore
 #else
-        public List<CallTranscript> Transcripts
+        public List<Microsoft.Graph.Beta.Models.CallTranscript> Transcripts
         {
-            get { return BackingStore?.Get<List<CallTranscript>>("transcripts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallTranscript>>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnlineMeeting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnlineMeeting"/> and sets the default values.
         /// </summary>
         public OnlineMeeting() : base()
         {
@@ -268,12 +268,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnlineMeeting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnlineMeeting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnlineMeeting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnlineMeeting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnlineMeeting();
+            return new Microsoft.Graph.Beta.Models.OnlineMeeting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -286,8 +286,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 { "attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 { "broadcastRecording", n => { BroadcastRecording = n.GetByteArrayValue(); } },
-                { "broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
-                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<MeetingCapabilities>()?.ToList(); } },
+                { "broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.BroadcastMeetingSettings>(Microsoft.Graph.Beta.Models.BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.MeetingCapabilities>()?.ToList(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
@@ -295,12 +295,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "joinUrl", n => { JoinUrl = n.GetStringValue(); } },
                 { "meetingAttendanceReport", n => { MeetingAttendanceReport = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue); } },
                 { "meetingTemplateId", n => { MeetingTemplateId = n.GetStringValue(); } },
-                { "participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
+                { "participants", n => { Participants = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingParticipants>(Microsoft.Graph.Beta.Models.MeetingParticipants.CreateFromDiscriminatorValue); } },
                 { "recording", n => { Recording = n.GetByteArrayValue(); } },
-                { "recordings", n => { Recordings = n.GetCollectionOfObjectValues<CallRecording>(CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "registration", n => { Registration = n.GetObjectValue<MeetingRegistration>(MeetingRegistration.CreateFromDiscriminatorValue); } },
+                { "recordings", n => { Recordings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecording>(Microsoft.Graph.Beta.Models.CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registration", n => { Registration = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingRegistration>(Microsoft.Graph.Beta.Models.MeetingRegistration.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallTranscript>(Microsoft.Graph.Beta.Models.CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -314,8 +314,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteByteArrayValue("broadcastRecording", BroadcastRecording);
-            writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
-            writer.WriteCollectionOfEnumValues<MeetingCapabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.MeetingCapabilities>("capabilities", Capabilities);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
@@ -323,12 +323,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("joinUrl", JoinUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("meetingAttendanceReport", MeetingAttendanceReport);
             writer.WriteStringValue("meetingTemplateId", MeetingTemplateId);
-            writer.WriteObjectValue<MeetingParticipants>("participants", Participants);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MeetingParticipants>("participants", Participants);
             writer.WriteByteArrayValue("recording", Recording);
-            writer.WriteCollectionOfObjectValues<CallRecording>("recordings", Recordings);
-            writer.WriteObjectValue<MeetingRegistration>("registration", Registration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecording>("recordings", Recordings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MeetingRegistration>("registration", Registration);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallTranscript>("transcripts", Transcripts);
         }
     }
 }

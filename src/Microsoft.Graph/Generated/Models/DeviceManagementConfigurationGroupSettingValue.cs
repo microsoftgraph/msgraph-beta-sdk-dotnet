@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Value of the GroupSetting
     /// </summary>
-    public class DeviceManagementConfigurationGroupSettingValue : DeviceManagementConfigurationSettingValue, IParsable
+    public class DeviceManagementConfigurationGroupSettingValue : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue, IParsable
     {
         /// <summary>Collection of child setting instances contained within this GroupSetting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingInstance>? Children
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>? Children
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>?>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingInstance> Children
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance> Children
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationGroupSettingValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingValue() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationGroupSettingValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationGroupSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationGroupSettingValue();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingInstance>("children", Children);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>("children", Children);
         }
     }
 }

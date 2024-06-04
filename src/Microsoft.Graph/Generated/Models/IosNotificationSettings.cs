@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Notification Settings Alert Type.</summary>
-        public IosNotificationAlertType? AlertType
+        public Microsoft.Graph.Beta.Models.IosNotificationAlertType? AlertType
         {
-            get { return BackingStore?.Get<IosNotificationAlertType?>("alertType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosNotificationAlertType?>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
         /// <summary>Application name to be associated with the bundleID.</summary>
@@ -87,9 +87,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user&apos;s defined preview settings.</summary>
-        public IosNotificationPreviewVisibility? PreviewVisibility
+        public Microsoft.Graph.Beta.Models.IosNotificationPreviewVisibility? PreviewVisibility
         {
-            get { return BackingStore?.Get<IosNotificationPreviewVisibility?>("previewVisibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosNotificationPreviewVisibility?>("previewVisibility"); }
             set { BackingStore?.Set("previewVisibility", value); }
         }
         /// <summary>Publisher to be associated with the bundleID.</summary>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("soundsEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosNotificationSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosNotificationSettings"/> and sets the default values.
         /// </summary>
         public IosNotificationSettings()
         {
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosNotificationSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosNotificationSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosNotificationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IosNotificationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosNotificationSettings();
+            return new Microsoft.Graph.Beta.Models.IosNotificationSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,13 +152,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alertType", n => { AlertType = n.GetEnumValue<IosNotificationAlertType>(); } },
+                { "alertType", n => { AlertType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IosNotificationAlertType>(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
                 { "badgesEnabled", n => { BadgesEnabled = n.GetBoolValue(); } },
                 { "bundleID", n => { BundleID = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "previewVisibility", n => { PreviewVisibility = n.GetEnumValue<IosNotificationPreviewVisibility>(); } },
+                { "previewVisibility", n => { PreviewVisibility = n.GetEnumValue<Microsoft.Graph.Beta.Models.IosNotificationPreviewVisibility>(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "showInNotificationCenter", n => { ShowInNotificationCenter = n.GetBoolValue(); } },
                 { "showOnLockScreen", n => { ShowOnLockScreen = n.GetBoolValue(); } },
@@ -172,13 +172,13 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<IosNotificationAlertType>("alertType", AlertType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IosNotificationAlertType>("alertType", AlertType);
             writer.WriteStringValue("appName", AppName);
             writer.WriteBoolValue("badgesEnabled", BadgesEnabled);
             writer.WriteStringValue("bundleID", BundleID);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<IosNotificationPreviewVisibility>("previewVisibility", PreviewVisibility);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IosNotificationPreviewVisibility>("previewVisibility", PreviewVisibility);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteBoolValue("showInNotificationCenter", ShowInNotificationCenter);
             writer.WriteBoolValue("showOnLockScreen", ShowOnLockScreen);

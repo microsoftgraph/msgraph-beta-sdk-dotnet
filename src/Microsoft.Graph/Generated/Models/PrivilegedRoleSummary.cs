@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedRoleSummary : Entity, IParsable
+    public class PrivilegedRoleSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The elevatedCount property</summary>
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mfaEnabled", value); }
         }
         /// <summary>The status property</summary>
-        public RoleSummaryStatus? Status
+        public Microsoft.Graph.Beta.Models.RoleSummaryStatus? Status
         {
-            get { return BackingStore?.Get<RoleSummaryStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleSummaryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The usersCount property</summary>
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedRoleSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedRoleSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedRoleSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegedRoleSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegedRoleSummary();
+            return new Microsoft.Graph.Beta.Models.PrivilegedRoleSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "elevatedCount", n => { ElevatedCount = n.GetIntValue(); } },
                 { "managedCount", n => { ManagedCount = n.GetIntValue(); } },
                 { "mfaEnabled", n => { MfaEnabled = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetEnumValue<RoleSummaryStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.RoleSummaryStatus>(); } },
                 { "usersCount", n => { UsersCount = n.GetIntValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("elevatedCount", ElevatedCount);
             writer.WriteIntValue("managedCount", ManagedCount);
             writer.WriteBoolValue("mfaEnabled", MfaEnabled);
-            writer.WriteEnumValue<RoleSummaryStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RoleSummaryStatus>("status", Status);
             writer.WriteIntValue("usersCount", UsersCount);
         }
     }

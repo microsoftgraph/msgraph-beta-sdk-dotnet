@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CustomAuthenticationExtension : CustomCalloutExtension, IParsable
+    public class CustomAuthenticationExtension : Microsoft.Graph.Beta.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="CustomAuthenticationExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomAuthenticationExtension"/> and sets the default values.
         /// </summary>
         public CustomAuthenticationExtension() : base()
         {
@@ -20,18 +20,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomAuthenticationExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomAuthenticationExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CustomAuthenticationExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new OnAttributeCollectionStartCustomExtension(),
-                "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new OnAttributeCollectionSubmitCustomExtension(),
-                "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
-                _ => new CustomAuthenticationExtension(),
+                "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new Microsoft.Graph.Beta.Models.OnAttributeCollectionStartCustomExtension(),
+                "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new Microsoft.Graph.Beta.Models.OnAttributeCollectionSubmitCustomExtension(),
+                "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new Microsoft.Graph.Beta.Models.OnTokenIssuanceStartCustomExtension(),
+                _ => new Microsoft.Graph.Beta.Models.CustomAuthenticationExtension(),
             };
         }
         /// <summary>

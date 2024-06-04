@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.Mi
 {
     [Obsolete("This class is obsolete. Use TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse : TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse, IParsable
+    public class TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse : Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse();
+            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse();
         }
     }
 }

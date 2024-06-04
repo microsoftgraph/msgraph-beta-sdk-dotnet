@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
     public class GovernanceRoleAssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.GovernanceRoleAssignments.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceRoleAssignments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public ExportRequestBuilder Export
+        public Microsoft.Graph.Beta.GovernanceRoleAssignments.Export.ExportRequestBuilder Export
         {
-            get => new ExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.GovernanceRoleAssignments.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleAssignment entities.</summary>
         /// <param name="position">The unique identifier of governanceRoleAssignment</param>
-        /// <returns>A <see cref="GovernanceRoleAssignmentItemRequestBuilder"/></returns>
-        public GovernanceRoleAssignmentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceRoleAssignments.Item.GovernanceRoleAssignmentItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.GovernanceRoleAssignments.Item.GovernanceRoleAssignmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("governanceRoleAssignment%2Did", position);
-                return new GovernanceRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.GovernanceRoleAssignments.Item.GovernanceRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceRoleAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceRoleAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +60,50 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
         /// <summary>
         /// Get entities from governanceRoleAssignments
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleAssignmentCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder.GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernanceRoleAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder.GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentCollectionResponse>(requestInfo, GovernanceRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to governanceRoleAssignments
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleAssignment?> PostAsync(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment?> PostAsync(Microsoft.Graph.Beta.Models.GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GovernanceRoleAssignment> PostAsync(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment> PostAsync(Microsoft.Graph.Beta.Models.GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GovernanceRoleAssignment>(requestInfo, GovernanceRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>(requestInfo, Microsoft.Graph.Beta.Models.GovernanceRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from governanceRoleAssignments
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder.GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder.GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleAssignmentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GovernanceRoleAssignmentsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new GovernanceRoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from governanceRoleAssignments
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GovernanceRoleAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>
+        public class GovernanceRoleAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.GovernanceRoleAssignments.GovernanceRoleAssignmentsRequestBuilder.GovernanceRoleAssignmentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue</summary>
-        public UserDefaultAuthenticationMethodType? UserPreferredMethodForSecondaryAuthentication
+        public Microsoft.Graph.Beta.Models.UserDefaultAuthenticationMethodType? UserPreferredMethodForSecondaryAuthentication
         {
-            get { return BackingStore?.Get<UserDefaultAuthenticationMethodType?>("userPreferredMethodForSecondaryAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserDefaultAuthenticationMethodType?>("userPreferredMethodForSecondaryAuthentication"); }
             set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SignInPreferences"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SignInPreferences"/> and sets the default values.
         /// </summary>
         public SignInPreferences()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SignInPreferences"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SignInPreferences"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SignInPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SignInPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SignInPreferences();
+            return new Microsoft.Graph.Beta.Models.SignInPreferences();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "isSystemPreferredAuthenticationMethodEnabled", n => { IsSystemPreferredAuthenticationMethodEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "userPreferredMethodForSecondaryAuthentication", n => { UserPreferredMethodForSecondaryAuthentication = n.GetEnumValue<UserDefaultAuthenticationMethodType>(); } },
+                { "userPreferredMethodForSecondaryAuthentication", n => { UserPreferredMethodForSecondaryAuthentication = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserDefaultAuthenticationMethodType>(); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isSystemPreferredAuthenticationMethodEnabled", IsSystemPreferredAuthenticationMethodEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<UserDefaultAuthenticationMethodType>("userPreferredMethodForSecondaryAuthentication", UserPreferredMethodForSecondaryAuthentication);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserDefaultAuthenticationMethodType>("userPreferredMethodForSecondaryAuthentication", UserPreferredMethodForSecondaryAuthentication);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

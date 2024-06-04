@@ -23,69 +23,69 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup
         /// <summary>The lookupValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LookupValue
+        public Microsoft.Graph.Beta.Models.Json? LookupValue
         {
-            get { return BackingStore?.Get<Json?>("lookupValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #nullable restore
 #else
-        public Json LookupValue
+        public Microsoft.Graph.Beta.Models.Json LookupValue
         {
-            get { return BackingStore?.Get<Json>("lookupValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("lookupValue"); }
             set { BackingStore?.Set("lookupValue", value); }
         }
 #endif
         /// <summary>The rangeLookup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? RangeLookup
+        public Microsoft.Graph.Beta.Models.Json? RangeLookup
         {
-            get { return BackingStore?.Get<Json?>("rangeLookup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rangeLookup"); }
             set { BackingStore?.Set("rangeLookup", value); }
         }
 #nullable restore
 #else
-        public Json RangeLookup
+        public Microsoft.Graph.Beta.Models.Json RangeLookup
         {
-            get { return BackingStore?.Get<Json>("rangeLookup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rangeLookup"); }
             set { BackingStore?.Set("rangeLookup", value); }
         }
 #endif
         /// <summary>The rowIndexNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? RowIndexNum
+        public Microsoft.Graph.Beta.Models.Json? RowIndexNum
         {
-            get { return BackingStore?.Get<Json?>("rowIndexNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rowIndexNum"); }
             set { BackingStore?.Set("rowIndexNum", value); }
         }
 #nullable restore
 #else
-        public Json RowIndexNum
+        public Microsoft.Graph.Beta.Models.Json RowIndexNum
         {
-            get { return BackingStore?.Get<Json>("rowIndexNum"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rowIndexNum"); }
             set { BackingStore?.Set("rowIndexNum", value); }
         }
 #endif
         /// <summary>The tableArray property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? TableArray
+        public Microsoft.Graph.Beta.Models.Json? TableArray
         {
-            get { return BackingStore?.Get<Json?>("tableArray"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("tableArray"); }
             set { BackingStore?.Set("tableArray", value); }
         }
 #nullable restore
 #else
-        public Json TableArray
+        public Microsoft.Graph.Beta.Models.Json TableArray
         {
-            get { return BackingStore?.Get<Json>("tableArray"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("tableArray"); }
             set { BackingStore?.Set("tableArray", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="HlookupPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup.HlookupPostRequestBody"/> and sets the default values.
         /// </summary>
         public HlookupPostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HlookupPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup.HlookupPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static HlookupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup.HlookupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HlookupPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup.HlookupPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,10 +110,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lookupValue", n => { LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rangeLookup", n => { RangeLookup = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rowIndexNum", n => { RowIndexNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "tableArray", n => { TableArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "lookupValue", n => { LookupValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rangeLookup", n => { RangeLookup = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rowIndexNum", n => { RowIndexNum = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "tableArray", n => { TableArray = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Hlookup
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("lookupValue", LookupValue);
-            writer.WriteObjectValue<Json>("rangeLookup", RangeLookup);
-            writer.WriteObjectValue<Json>("rowIndexNum", RowIndexNum);
-            writer.WriteObjectValue<Json>("tableArray", TableArray);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("lookupValue", LookupValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rangeLookup", RangeLookup);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rowIndexNum", RowIndexNum);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("tableArray", TableArray);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

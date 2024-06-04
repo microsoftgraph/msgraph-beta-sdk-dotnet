@@ -23,101 +23,101 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis
+        public Microsoft.Graph.Beta.Models.Json? Basis
         {
-            get { return BackingStore?.Get<Json?>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis
+        public Microsoft.Graph.Beta.Models.Json Basis
         {
-            get { return BackingStore?.Get<Json>("basis"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #endif
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Issue
+        public Microsoft.Graph.Beta.Models.Json? Issue
         {
-            get { return BackingStore?.Get<Json?>("issue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #nullable restore
 #else
-        public Json Issue
+        public Microsoft.Graph.Beta.Models.Json Issue
         {
-            get { return BackingStore?.Get<Json>("issue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #endif
         /// <summary>The maturity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Maturity
+        public Microsoft.Graph.Beta.Models.Json? Maturity
         {
-            get { return BackingStore?.Get<Json?>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #nullable restore
 #else
-        public Json Maturity
+        public Microsoft.Graph.Beta.Models.Json Maturity
         {
-            get { return BackingStore?.Get<Json>("maturity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("maturity"); }
             set { BackingStore?.Set("maturity", value); }
         }
 #endif
         /// <summary>The pr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Pr
+        public Microsoft.Graph.Beta.Models.Json? Pr
         {
-            get { return BackingStore?.Get<Json?>("pr"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("pr"); }
             set { BackingStore?.Set("pr", value); }
         }
 #nullable restore
 #else
-        public Json Pr
+        public Microsoft.Graph.Beta.Models.Json Pr
         {
-            get { return BackingStore?.Get<Json>("pr"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("pr"); }
             set { BackingStore?.Set("pr", value); }
         }
 #endif
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate
+        public Microsoft.Graph.Beta.Models.Json? Rate
         {
-            get { return BackingStore?.Get<Json?>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate
+        public Microsoft.Graph.Beta.Models.Json Rate
         {
-            get { return BackingStore?.Get<Json>("rate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #endif
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement
+        public Microsoft.Graph.Beta.Models.Json? Settlement
         {
-            get { return BackingStore?.Get<Json?>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement
+        public Microsoft.Graph.Beta.Models.Json Settlement
         {
-            get { return BackingStore?.Get<Json>("settlement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="YieldMatPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.YieldMat.YieldMatPostRequestBody"/> and sets the default values.
         /// </summary>
         public YieldMatPostRequestBody()
         {
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="YieldMatPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.YieldMat.YieldMatPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static YieldMatPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.YieldMat.YieldMatPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new YieldMatPostRequestBody();
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Workbook.Functions.YieldMat.YieldMatPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "maturity", n => { Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "pr", n => { Pr = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "maturity", n => { Maturity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "pr", n => { Pr = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -157,12 +157,12 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("basis", Basis);
-            writer.WriteObjectValue<Json>("issue", Issue);
-            writer.WriteObjectValue<Json>("maturity", Maturity);
-            writer.WriteObjectValue<Json>("pr", Pr);
-            writer.WriteObjectValue<Json>("rate", Rate);
-            writer.WriteObjectValue<Json>("settlement", Settlement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("basis", Basis);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("issue", Issue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("maturity", Maturity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("pr", Pr);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("rate", Rate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Json>("settlement", Settlement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

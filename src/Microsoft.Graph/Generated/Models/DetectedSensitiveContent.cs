@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable
+    public class DetectedSensitiveContent : Microsoft.Graph.Beta.Models.DetectedSensitiveContentBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classificationAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClassificationAttribute>? ClassificationAttributes
+        public List<Microsoft.Graph.Beta.Models.ClassificationAttribute>? ClassificationAttributes
         {
-            get { return BackingStore?.Get<List<ClassificationAttribute>?>("classificationAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ClassificationAttribute>?>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
 #nullable restore
 #else
-        public List<ClassificationAttribute> ClassificationAttributes
+        public List<Microsoft.Graph.Beta.Models.ClassificationAttribute> ClassificationAttributes
         {
-            get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ClassificationAttribute>>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
 #endif
@@ -35,23 +35,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitiveContentLocation>? Matches
+        public List<Microsoft.Graph.Beta.Models.SensitiveContentLocation>? Matches
         {
-            get { return BackingStore?.Get<List<SensitiveContentLocation>?>("matches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveContentLocation>?>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #nullable restore
 #else
-        public List<SensitiveContentLocation> Matches
+        public List<Microsoft.Graph.Beta.Models.SensitiveContentLocation> Matches
         {
-            get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitiveContentLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #endif
         /// <summary>The scope property</summary>
-        public SensitiveTypeScope? Scope
+        public Microsoft.Graph.Beta.Models.SensitiveTypeScope? Scope
         {
-            get { return BackingStore?.Get<SensitiveTypeScope?>("scope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
         /// <summary>The sensitiveTypeSource property</summary>
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DetectedSensitiveContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DetectedSensitiveContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DetectedSensitiveContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DetectedSensitiveContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.machineLearningDetectedSensitiveContent" => new MachineLearningDetectedSensitiveContent(),
-                _ => new DetectedSensitiveContent(),
+                "#microsoft.graph.machineLearningDetectedSensitiveContent" => new Microsoft.Graph.Beta.Models.MachineLearningDetectedSensitiveContent(),
+                _ => new Microsoft.Graph.Beta.Models.DetectedSensitiveContent(),
             };
         }
         /// <summary>
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classificationAttributes", n => { ClassificationAttributes = n.GetCollectionOfObjectValues<ClassificationAttribute>(ClassificationAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "classificationMethod", n => { ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
-                { "matches", n => { Matches = n.GetCollectionOfObjectValues<SensitiveContentLocation>(SensitiveContentLocation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "scope", n => { Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
-                { "sensitiveTypeSource", n => { SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
+                { "classificationAttributes", n => { ClassificationAttributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ClassificationAttribute>(Microsoft.Graph.Beta.Models.ClassificationAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classificationMethod", n => { ClassificationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.ClassificationMethod>(); } },
+                { "matches", n => { Matches = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveContentLocation>(Microsoft.Graph.Beta.Models.SensitiveContentLocation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scope", n => { Scope = n.GetEnumValue<Microsoft.Graph.Beta.Models.SensitiveTypeScope>(); } },
+                { "sensitiveTypeSource", n => { SensitiveTypeSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.SensitiveTypeSource>(); } },
             };
         }
         /// <summary>
@@ -98,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ClassificationAttribute>("classificationAttributes", ClassificationAttributes);
-            writer.WriteEnumValue<ClassificationMethod>("classificationMethod", ClassificationMethod);
-            writer.WriteCollectionOfObjectValues<SensitiveContentLocation>("matches", Matches);
-            writer.WriteEnumValue<SensitiveTypeScope>("scope", Scope);
-            writer.WriteEnumValue<SensitiveTypeSource>("sensitiveTypeSource", SensitiveTypeSource);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ClassificationAttribute>("classificationAttributes", ClassificationAttributes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ClassificationMethod>("classificationMethod", ClassificationMethod);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitiveContentLocation>("matches", Matches);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SensitiveTypeScope>("scope", Scope);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SensitiveTypeSource>("sensitiveTypeSource", SensitiveTypeSource);
         }
     }
 }

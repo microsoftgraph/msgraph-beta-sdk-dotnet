@@ -20,29 +20,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
     public class ImportedAppleDeviceIdentitiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the importAppleDeviceIdentityList method.</summary>
-        public ImportAppleDeviceIdentityListRequestBuilder ImportAppleDeviceIdentityList
+        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList.ImportAppleDeviceIdentityListRequestBuilder ImportAppleDeviceIdentityList
         {
-            get => new ImportAppleDeviceIdentityListRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList.ImportAppleDeviceIdentityListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.</summary>
         /// <param name="position">The unique identifier of importedAppleDeviceIdentity</param>
-        /// <returns>A <see cref="ImportedAppleDeviceIdentityItemRequestBuilder"/></returns>
-        public ImportedAppleDeviceIdentityItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Item.ImportedAppleDeviceIdentityItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Item.ImportedAppleDeviceIdentityItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("importedAppleDeviceIdentity%2Did", position);
-                return new ImportedAppleDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Item.ImportedAppleDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ImportedAppleDeviceIdentitiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ImportedAppleDeviceIdentitiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +60,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         /// <summary>
         /// The imported Apple device identities.
         /// </summary>
-        /// <returns>A <see cref="ImportedAppleDeviceIdentityCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ImportedAppleDeviceIdentityCollectionResponse?> GetAsync(Action<RequestConfiguration<ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder.ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ImportedAppleDeviceIdentityCollectionResponse> GetAsync(Action<RequestConfiguration<ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder.ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ImportedAppleDeviceIdentityCollectionResponse>(requestInfo, ImportedAppleDeviceIdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to importedAppleDeviceIdentities for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="ImportedAppleDeviceIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ImportedAppleDeviceIdentity?> PostAsync(ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity?> PostAsync(Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ImportedAppleDeviceIdentity> PostAsync(ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity> PostAsync(Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ImportedAppleDeviceIdentity>(requestInfo, ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity>(requestInfo, Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The imported Apple device identities.
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder.ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder.ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ImportedAppleDeviceIdentity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,11 +149,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ImportedAppleDeviceIdentitiesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ImportedAppleDeviceIdentitiesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ImportedAppleDeviceIdentitiesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The imported Apple device identities.
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ImportedAppleDeviceIdentitiesRequestBuilderGetRequestConfiguration : RequestConfiguration<ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>
+        public class ImportedAppleDeviceIdentitiesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder.ImportedAppleDeviceIdentitiesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

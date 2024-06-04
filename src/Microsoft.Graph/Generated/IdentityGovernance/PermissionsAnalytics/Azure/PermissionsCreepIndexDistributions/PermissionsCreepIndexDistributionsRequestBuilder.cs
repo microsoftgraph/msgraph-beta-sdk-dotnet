@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
     public class PermissionsCreepIndexDistributionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionsCreepIndexDistributions property of the microsoft.graph.permissionsAnalytics entity.</summary>
         /// <param name="position">The unique identifier of permissionsCreepIndexDistribution</param>
-        /// <returns>A <see cref="PermissionsCreepIndexDistributionItemRequestBuilder"/></returns>
-        public PermissionsCreepIndexDistributionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.Item.PermissionsCreepIndexDistributionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.Item.PermissionsCreepIndexDistributionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("permissionsCreepIndexDistribution%2Did", position);
-                return new PermissionsCreepIndexDistributionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.Item.PermissionsCreepIndexDistributionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsCreepIndexDistributionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionsCreepIndexDistributionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         /// <summary>
         /// Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
         /// </summary>
-        /// <returns>A <see cref="PermissionsCreepIndexDistributionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistributionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionsCreepIndexDistributionCollectionResponse?> GetAsync(Action<RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistributionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder.PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PermissionsCreepIndexDistributionCollectionResponse> GetAsync(Action<RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistributionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder.PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PermissionsCreepIndexDistributionCollectionResponse>(requestInfo, PermissionsCreepIndexDistributionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistributionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistributionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to permissionsCreepIndexDistributions for identityGovernance
         /// </summary>
-        /// <returns>A <see cref="PermissionsCreepIndexDistribution"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionsCreepIndexDistribution?> PostAsync(PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution?> PostAsync(Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PermissionsCreepIndexDistribution> PostAsync(PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution> PostAsync(Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PermissionsCreepIndexDistribution>(requestInfo, PermissionsCreepIndexDistribution.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution>(requestInfo, Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder.PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder.PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PermissionsCreepIndexDistributionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PermissionsCreepIndexDistributionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new PermissionsCreepIndexDistributionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PermissionsCreepIndexDistributionsRequestBuilderGetRequestConfiguration : RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>
+        public class PermissionsCreepIndexDistributionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.PermissionsCreepIndexDistributions.PermissionsCreepIndexDistributionsRequestBuilder.PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

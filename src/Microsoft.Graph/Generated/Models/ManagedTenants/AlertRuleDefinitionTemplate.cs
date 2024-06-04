@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultSeverity property</summary>
-        public AlertSeverity? DefaultSeverity
+        public Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity? DefaultSeverity
         {
-            get { return BackingStore?.Get<AlertSeverity?>("defaultSeverity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity?>("defaultSeverity"); }
             set { BackingStore?.Set("defaultSeverity", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AlertRuleDefinitionTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate"/> and sets the default values.
         /// </summary>
         public AlertRuleDefinitionTemplate()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertRuleDefinitionTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AlertRuleDefinitionTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertRuleDefinitionTemplate();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.AlertRuleDefinitionTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "defaultSeverity", n => { DefaultSeverity = n.GetEnumValue<AlertSeverity>(); } },
+                { "defaultSeverity", n => { DefaultSeverity = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AlertSeverity>("defaultSeverity", DefaultSeverity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.AlertSeverity>("defaultSeverity", DefaultSeverity);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

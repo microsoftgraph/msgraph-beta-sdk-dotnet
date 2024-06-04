@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AudioRoutingGroup : Entity, IParsable
+    public class AudioRoutingGroup : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of receiving participant ids.</summary>
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AudioRoutingGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AudioRoutingGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AudioRoutingGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AudioRoutingGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AudioRoutingGroup();
+            return new Microsoft.Graph.Beta.Models.AudioRoutingGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "routingMode", n => { RoutingMode = n.GetEnumValue<RoutingMode>(); } },
+                { "routingMode", n => { RoutingMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.RoutingMode>(); } },
                 { "sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("receivers", Receivers);
-            writer.WriteEnumValue<RoutingMode>("routingMode", RoutingMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RoutingMode>("routingMode", RoutingMode);
             writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
         }
     }

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The enrollmentMappings member for the class group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionRoleReferenceValue>? MemberEnrollmentMappings
+        public List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>? MemberEnrollmentMappings
         {
-            get { return BackingStore?.Get<List<SectionRoleReferenceValue>?>("memberEnrollmentMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>?>("memberEnrollmentMappings"); }
             set { BackingStore?.Set("memberEnrollmentMappings", value); }
         }
 #nullable restore
 #else
-        public List<SectionRoleReferenceValue> MemberEnrollmentMappings
+        public List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue> MemberEnrollmentMappings
         {
-            get { return BackingStore?.Get<List<SectionRoleReferenceValue>>("memberEnrollmentMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>>("memberEnrollmentMappings"); }
             set { BackingStore?.Set("memberEnrollmentMappings", value); }
         }
 #endif
@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The enrollmentMappings owner for the class group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionRoleReferenceValue>? OwnerEnrollmentMappings
+        public List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>? OwnerEnrollmentMappings
         {
-            get { return BackingStore?.Get<List<SectionRoleReferenceValue>?>("ownerEnrollmentMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>?>("ownerEnrollmentMappings"); }
             set { BackingStore?.Set("ownerEnrollmentMappings", value); }
         }
 #nullable restore
 #else
-        public List<SectionRoleReferenceValue> OwnerEnrollmentMappings
+        public List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue> OwnerEnrollmentMappings
         {
-            get { return BackingStore?.Get<List<SectionRoleReferenceValue>>("ownerEnrollmentMappings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>>("ownerEnrollmentMappings"); }
             set { BackingStore?.Set("ownerEnrollmentMappings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EnrollmentMappings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings"/> and sets the default values.
         /// </summary>
         public EnrollmentMappings()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnrollmentMappings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EnrollmentMappings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnrollmentMappings();
+            return new Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "memberEnrollmentMappings", n => { MemberEnrollmentMappings = n.GetCollectionOfObjectValues<SectionRoleReferenceValue>(SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "memberEnrollmentMappings", n => { MemberEnrollmentMappings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "ownerEnrollmentMappings", n => { OwnerEnrollmentMappings = n.GetCollectionOfObjectValues<SectionRoleReferenceValue>(SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ownerEnrollmentMappings", n => { OwnerEnrollmentMappings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SectionRoleReferenceValue>("memberEnrollmentMappings", MemberEnrollmentMappings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>("memberEnrollmentMappings", MemberEnrollmentMappings);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<SectionRoleReferenceValue>("ownerEnrollmentMappings", OwnerEnrollmentMappings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue>("ownerEnrollmentMappings", OwnerEnrollmentMappings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

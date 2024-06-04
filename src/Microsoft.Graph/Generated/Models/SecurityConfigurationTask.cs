@@ -9,24 +9,24 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A security configuration task.
     /// </summary>
-    public class SecurityConfigurationTask : DeviceAppManagementTask, IParsable
+    public class SecurityConfigurationTask : Microsoft.Graph.Beta.Models.DeviceAppManagementTask, IParsable
     {
         /// <summary>The endpoint security configuration applicable platform.</summary>
-        public EndpointSecurityConfigurationApplicablePlatform? ApplicablePlatform
+        public Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationApplicablePlatform? ApplicablePlatform
         {
-            get { return BackingStore?.Get<EndpointSecurityConfigurationApplicablePlatform?>("applicablePlatform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationApplicablePlatform?>("applicablePlatform"); }
             set { BackingStore?.Set("applicablePlatform", value); }
         }
         /// <summary>The endpoint security policy type.</summary>
-        public EndpointSecurityConfigurationType? EndpointSecurityPolicy
+        public Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationType? EndpointSecurityPolicy
         {
-            get { return BackingStore?.Get<EndpointSecurityConfigurationType?>("endpointSecurityPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationType?>("endpointSecurityPolicy"); }
             set { BackingStore?.Set("endpointSecurityPolicy", value); }
         }
         /// <summary>The endpoint security policy profile type.</summary>
-        public EndpointSecurityConfigurationProfileType? EndpointSecurityPolicyProfile
+        public Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationProfileType? EndpointSecurityPolicyProfile
         {
-            get { return BackingStore?.Get<EndpointSecurityConfigurationProfileType?>("endpointSecurityPolicyProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationProfileType?>("endpointSecurityPolicyProfile"); }
             set { BackingStore?.Set("endpointSecurityPolicyProfile", value); }
         }
         /// <summary>Information about the mitigation.</summary>
@@ -48,16 +48,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The intended settings and their values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? IntendedSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? IntendedSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("intendedSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> IntendedSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> IntendedSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("intendedSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The vulnerable managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VulnerableManagedDevice>? ManagedDevices
+        public List<Microsoft.Graph.Beta.Models.VulnerableManagedDevice>? ManagedDevices
         {
-            get { return BackingStore?.Get<List<VulnerableManagedDevice>?>("managedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VulnerableManagedDevice>?>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #nullable restore
 #else
-        public List<VulnerableManagedDevice> ManagedDevices
+        public List<Microsoft.Graph.Beta.Models.VulnerableManagedDevice> ManagedDevices
         {
-            get { return BackingStore?.Get<List<VulnerableManagedDevice>>("managedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VulnerableManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SecurityConfigurationTask"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SecurityConfigurationTask"/> and sets the default values.
         /// </summary>
         public SecurityConfigurationTask() : base()
         {
@@ -93,12 +93,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityConfigurationTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityConfigurationTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityConfigurationTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SecurityConfigurationTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityConfigurationTask();
+            return new Microsoft.Graph.Beta.Models.SecurityConfigurationTask();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,13 +108,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicablePlatform", n => { ApplicablePlatform = n.GetEnumValue<EndpointSecurityConfigurationApplicablePlatform>(); } },
-                { "endpointSecurityPolicy", n => { EndpointSecurityPolicy = n.GetEnumValue<EndpointSecurityConfigurationType>(); } },
-                { "endpointSecurityPolicyProfile", n => { EndpointSecurityPolicyProfile = n.GetEnumValue<EndpointSecurityConfigurationProfileType>(); } },
+                { "applicablePlatform", n => { ApplicablePlatform = n.GetEnumValue<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationApplicablePlatform>(); } },
+                { "endpointSecurityPolicy", n => { EndpointSecurityPolicy = n.GetEnumValue<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationType>(); } },
+                { "endpointSecurityPolicyProfile", n => { EndpointSecurityPolicyProfile = n.GetEnumValue<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationProfileType>(); } },
                 { "insights", n => { Insights = n.GetStringValue(); } },
-                { "intendedSettings", n => { IntendedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "intendedSettings", n => { IntendedSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "managedDeviceCount", n => { ManagedDeviceCount = n.GetIntValue(); } },
-                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<VulnerableManagedDevice>(VulnerableManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VulnerableManagedDevice>(Microsoft.Graph.Beta.Models.VulnerableManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -125,13 +125,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<EndpointSecurityConfigurationApplicablePlatform>("applicablePlatform", ApplicablePlatform);
-            writer.WriteEnumValue<EndpointSecurityConfigurationType>("endpointSecurityPolicy", EndpointSecurityPolicy);
-            writer.WriteEnumValue<EndpointSecurityConfigurationProfileType>("endpointSecurityPolicyProfile", EndpointSecurityPolicyProfile);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationApplicablePlatform>("applicablePlatform", ApplicablePlatform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationType>("endpointSecurityPolicy", EndpointSecurityPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EndpointSecurityConfigurationProfileType>("endpointSecurityPolicyProfile", EndpointSecurityPolicyProfile);
             writer.WriteStringValue("insights", Insights);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("intendedSettings", IntendedSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("intendedSettings", IntendedSettings);
             writer.WriteIntValue("managedDeviceCount", ManagedDeviceCount);
-            writer.WriteCollectionOfObjectValues<VulnerableManagedDevice>("managedDevices", ManagedDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VulnerableManagedDevice>("managedDevices", ManagedDevices);
         }
     }
 }

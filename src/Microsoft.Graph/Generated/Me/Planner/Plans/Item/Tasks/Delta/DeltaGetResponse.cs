@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Delta
 {
     #pragma warning disable CS1591
-    public class DeltaGetResponse : BaseDeltaFunctionResponse, IParsable
+    public class DeltaGetResponse : Microsoft.Graph.Beta.Models.BaseDeltaFunctionResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerTask>? Value
+        public List<Microsoft.Graph.Beta.Models.PlannerTask>? Value
         {
-            get { return BackingStore?.Get<List<PlannerTask>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerTask>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PlannerTask> Value
+        public List<Microsoft.Graph.Beta.Models.PlannerTask> Value
         {
-            get { return BackingStore?.Get<List<PlannerTask>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerTask>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Delta.DeltaGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeltaGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Delta.DeltaGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeltaGetResponse();
+            return new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Delta.DeltaGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Delta
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerTask>(Microsoft.Graph.Beta.Models.PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Delta
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PlannerTask>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerTask>("value", Value);
         }
     }
 }

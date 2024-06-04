@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn&apos;t assigned, clients may terminate the series by assigning null to this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerRecurrenceSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule? Schedule
         {
-            get { return BackingStore?.Get<PlannerRecurrenceSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public PlannerRecurrenceSchedule Schedule
+        public Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule Schedule
         {
-            get { return BackingStore?.Get<PlannerRecurrenceSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskRecurrence"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTaskRecurrence"/> and sets the default values.
         /// </summary>
         public PlannerTaskRecurrence()
         {
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskRecurrence"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskRecurrence"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerTaskRecurrence CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerTaskRecurrence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTaskRecurrence();
+            return new Microsoft.Graph.Beta.Models.PlannerTaskRecurrence();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "previousInSeriesTaskId", n => { PreviousInSeriesTaskId = n.GetStringValue(); } },
                 { "recurrenceStartDateTime", n => { RecurrenceStartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<PlannerRecurrenceSchedule>(PlannerRecurrenceSchedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule>(Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule.CreateFromDiscriminatorValue); } },
                 { "seriesId", n => { SeriesId = n.GetStringValue(); } },
             };
         }
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("previousInSeriesTaskId", PreviousInSeriesTaskId);
             writer.WriteDateTimeOffsetValue("recurrenceStartDateTime", RecurrenceStartDateTime);
-            writer.WriteObjectValue<PlannerRecurrenceSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerRecurrenceSchedule>("schedule", Schedule);
             writer.WriteStringValue("seriesId", SeriesId);
             writer.WriteAdditionalData(AdditionalData);
         }

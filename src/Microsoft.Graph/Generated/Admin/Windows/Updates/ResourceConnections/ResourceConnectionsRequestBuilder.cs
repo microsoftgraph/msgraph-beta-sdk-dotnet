@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
     public class ResourceConnectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         /// <param name="position">The unique identifier of resourceConnection</param>
-        /// <returns>A <see cref="ResourceConnectionItemRequestBuilder"/></returns>
-        public ResourceConnectionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item.ResourceConnectionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item.ResourceConnectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("resourceConnection%2Did", position);
-                return new ResourceConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item.ResourceConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceConnectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResourceConnectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
         /// Get a list of the resourceConnection objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ResourceConnectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceConnectionCollectionResponse?> GetAsync(Action<RequestConfiguration<ResourceConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder.ResourceConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ResourceConnectionCollectionResponse> GetAsync(Action<RequestConfiguration<ResourceConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder.ResourceConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ResourceConnectionCollectionResponse>(requestInfo, ResourceConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new operationalInsightsConnection object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="ResourceConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceConnection?> PostAsync(ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection?> PostAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ResourceConnection> PostAsync(ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection> PostAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ResourceConnection>(requestInfo, ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the resourceConnection objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder.ResourceConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder.ResourceConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResourceConnectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourceConnectionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResourceConnectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the resourceConnection objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResourceConnectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourceConnectionsRequestBuilderGetQueryParameters>
+        public class ResourceConnectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.ResourceConnectionsRequestBuilder.ResourceConnectionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Subject Alternative Name Options.</summary>
-        public SubjectAlternativeNameType? SanType
+        public Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SanType
         {
-            get { return BackingStore?.Get<SubjectAlternativeNameType?>("sanType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("sanType"); }
             set { BackingStore?.Set("sanType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10XCustomSubjectAlternativeName"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName"/> and sets the default values.
         /// </summary>
         public Windows10XCustomSubjectAlternativeName()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10XCustomSubjectAlternativeName"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Windows10XCustomSubjectAlternativeName CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10XCustomSubjectAlternativeName();
+            return new Microsoft.Graph.Beta.Models.Windows10XCustomSubjectAlternativeName();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sanType", n => { SanType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
+                { "sanType", n => { SanType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SubjectAlternativeNameType>("sanType", SanType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>("sanType", SanType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

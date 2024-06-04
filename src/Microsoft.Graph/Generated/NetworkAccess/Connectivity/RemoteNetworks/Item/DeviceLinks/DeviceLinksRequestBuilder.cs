@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
     public class DeviceLinksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.remoteNetwork entity.</summary>
         /// <param name="position">The unique identifier of deviceLink</param>
-        /// <returns>A <see cref="DeviceLinkItemRequestBuilder"/></returns>
-        public DeviceLinkItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.Item.DeviceLinkItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.Item.DeviceLinkItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("deviceLink%2Did", position);
-                return new DeviceLinkItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.Item.DeviceLinkItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceLinksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceLinksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         /// <summary>
         /// Retrieves a specific device link associated with a remote network.
         /// </summary>
-        /// <returns>A <see cref="DeviceLinkCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.DeviceLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceLinkCollectionResponse?> GetAsync(Action<RequestConfiguration<DeviceLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLinkCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder.DeviceLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceLinkCollectionResponse> GetAsync(Action<RequestConfiguration<DeviceLinksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLinkCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder.DeviceLinksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceLinkCollectionResponse>(requestInfo, DeviceLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLinkCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.DeviceLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceLinks for networkAccess
         /// </summary>
-        /// <returns>A <see cref="DeviceLink"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceLink?> PostAsync(DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink?> PostAsync(Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceLink> PostAsync(DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink> PostAsync(Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a specific device link associated with a remote network.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder.DeviceLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceLinksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder.DeviceLinksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceLinksRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceLinksRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceLinksRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieves a specific device link associated with a remote network.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceLinksRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceLinksRequestBuilderGetQueryParameters>
+        public class DeviceLinksRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.DeviceLinks.DeviceLinksRequestBuilder.DeviceLinksRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

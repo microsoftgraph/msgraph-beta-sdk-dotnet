@@ -8,22 +8,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationSynchronizationProfile : Entity, IParsable
+    public class EducationSynchronizationProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dataProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationDataProvider? DataProvider
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider? DataProvider
         {
-            get { return BackingStore?.Get<EducationSynchronizationDataProvider?>("dataProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider?>("dataProvider"); }
             set { BackingStore?.Set("dataProvider", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationDataProvider DataProvider
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider DataProvider
         {
-            get { return BackingStore?.Get<EducationSynchronizationDataProvider>("dataProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider>("dataProvider"); }
             set { BackingStore?.Set("dataProvider", value); }
         }
 #endif
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>All errors associated with this synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSynchronizationError>? Errors
+        public List<Microsoft.Graph.Beta.Models.EducationSynchronizationError>? Errors
         {
-            get { return BackingStore?.Get<List<EducationSynchronizationError>?>("errors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationSynchronizationError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<EducationSynchronizationError> Errors
+        public List<Microsoft.Graph.Beta.Models.EducationSynchronizationError> Errors
         {
-            get { return BackingStore?.Get<List<EducationSynchronizationError>>("errors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationSynchronizationError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #endif
@@ -74,66 +74,66 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identitySynchronizationConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationIdentitySynchronizationConfiguration? IdentitySynchronizationConfiguration
+        public Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration? IdentitySynchronizationConfiguration
         {
-            get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration?>("identitySynchronizationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration?>("identitySynchronizationConfiguration"); }
             set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
 #nullable restore
 #else
-        public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration
+        public Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration
         {
-            get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration"); }
             set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
 #endif
         /// <summary>License setup configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSynchronizationLicenseAssignment>? LicensesToAssign
+        public List<Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment>? LicensesToAssign
         {
-            get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>?>("licensesToAssign"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment>?>("licensesToAssign"); }
             set { BackingStore?.Set("licensesToAssign", value); }
         }
 #nullable restore
 #else
-        public List<EducationSynchronizationLicenseAssignment> LicensesToAssign
+        public List<Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment> LicensesToAssign
         {
-            get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>>("licensesToAssign"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment>>("licensesToAssign"); }
             set { BackingStore?.Set("licensesToAssign", value); }
         }
 #endif
         /// <summary>The synchronization status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationProfileStatus? ProfileStatus
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus? ProfileStatus
         {
-            get { return BackingStore?.Get<EducationSynchronizationProfileStatus?>("profileStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus?>("profileStatus"); }
             set { BackingStore?.Set("profileStatus", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationProfileStatus ProfileStatus
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus ProfileStatus
         {
-            get { return BackingStore?.Get<EducationSynchronizationProfileStatus>("profileStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus>("profileStatus"); }
             set { BackingStore?.Set("profileStatus", value); }
         }
 #endif
         /// <summary>The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.</summary>
-        public EducationSynchronizationProfileState? State
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationProfileState? State
         {
-            get { return BackingStore?.Get<EducationSynchronizationProfileState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationSynchronizationProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationSynchronizationProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationSynchronizationProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationSynchronizationProfile();
+            return new Microsoft.Graph.Beta.Models.EducationSynchronizationProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,15 +143,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dataProvider", n => { DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
+                { "dataProvider", n => { DataProvider = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider>(Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>(EducationSynchronizationError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationSynchronizationError>(Microsoft.Graph.Beta.Models.EducationSynchronizationError.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
                 { "handleSpecialCharacterConstraint", n => { HandleSpecialCharacterConstraint = n.GetBoolValue(); } },
-                { "identitySynchronizationConfiguration", n => { IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
-                { "licensesToAssign", n => { LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>(EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "profileStatus", n => { ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<EducationSynchronizationProfileState>(); } },
+                { "identitySynchronizationConfiguration", n => { IdentitySynchronizationConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration>(Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
+                { "licensesToAssign", n => { LicensesToAssign = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment>(Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "profileStatus", n => { ProfileStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus>(Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileState>(); } },
             };
         }
         /// <summary>
@@ -162,15 +162,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EducationSynchronizationDataProvider>("dataProvider", DataProvider);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationDataProvider>("dataProvider", DataProvider);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<EducationSynchronizationError>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationSynchronizationError>("errors", Errors);
             writer.WriteDateValue("expirationDate", ExpirationDate);
             writer.WriteBoolValue("handleSpecialCharacterConstraint", HandleSpecialCharacterConstraint);
-            writer.WriteObjectValue<EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration", IdentitySynchronizationConfiguration);
-            writer.WriteCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>("licensesToAssign", LicensesToAssign);
-            writer.WriteObjectValue<EducationSynchronizationProfileStatus>("profileStatus", ProfileStatus);
-            writer.WriteEnumValue<EducationSynchronizationProfileState>("state", State);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration", IdentitySynchronizationConfiguration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationSynchronizationLicenseAssignment>("licensesToAssign", LicensesToAssign);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileStatus>("profileStatus", ProfileStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EducationSynchronizationProfileState>("state", State);
         }
     }
 }
