@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>The operation property</summary>
-        public RuleOperation? Operation
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.RuleOperation? Operation
         {
-            get { return BackingStore?.Get<RuleOperation?>("operation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.RuleOperation?>("operation"); }
             set { BackingStore?.Set("operation", value); }
         }
         /// <summary>The property from the externalItem schema. Required.</summary>
@@ -74,13 +74,13 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>The valuesJoinedBy property</summary>
-        public BinaryOperator? ValuesJoinedBy
+        public Microsoft.Graph.Beta.Models.BinaryOperator? ValuesJoinedBy
         {
-            get { return BackingStore?.Get<BinaryOperator?>("valuesJoinedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BinaryOperator?>("valuesJoinedBy"); }
             set { BackingStore?.Set("valuesJoinedBy", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PropertyRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyRule"/> and sets the default values.
         /// </summary>
         public PropertyRule()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PropertyRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PropertyRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PropertyRule();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.PropertyRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<RuleOperation>(); } },
+                { "operation", n => { Operation = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RuleOperation>(); } },
                 { "property", n => { Property = n.GetStringValue(); } },
                 { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "valuesJoinedBy", n => { ValuesJoinedBy = n.GetEnumValue<BinaryOperator>(); } },
+                { "valuesJoinedBy", n => { ValuesJoinedBy = n.GetEnumValue<Microsoft.Graph.Beta.Models.BinaryOperator>(); } },
             };
         }
         /// <summary>
@@ -120,10 +120,10 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RuleOperation>("operation", Operation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RuleOperation>("operation", Operation);
             writer.WriteStringValue("property", Property);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
-            writer.WriteEnumValue<BinaryOperator>("valuesJoinedBy", ValuesJoinedBy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BinaryOperator>("valuesJoinedBy", ValuesJoinedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

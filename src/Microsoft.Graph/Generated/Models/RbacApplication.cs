@@ -7,194 +7,194 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RbacApplication : Entity, IParsable
+    public class RbacApplication : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The resourceNamespaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRbacResourceNamespace>? ResourceNamespaces
+        public List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>? ResourceNamespaces
         {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRbacResourceNamespace> ResourceNamespaces
+        public List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace> ResourceNamespaces
         {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
 #endif
         /// <summary>The roleAssignmentApprovals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Approval>? RoleAssignmentApprovals
+        public List<Microsoft.Graph.Beta.Models.Approval>? RoleAssignmentApprovals
         {
-            get { return BackingStore?.Get<List<Approval>?>("roleAssignmentApprovals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Approval>?>("roleAssignmentApprovals"); }
             set { BackingStore?.Set("roleAssignmentApprovals", value); }
         }
 #nullable restore
 #else
-        public List<Approval> RoleAssignmentApprovals
+        public List<Microsoft.Graph.Beta.Models.Approval> RoleAssignmentApprovals
         {
-            get { return BackingStore?.Get<List<Approval>>("roleAssignmentApprovals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Approval>>("roleAssignmentApprovals"); }
             set { BackingStore?.Set("roleAssignmentApprovals", value); }
         }
 #endif
         /// <summary>The roleAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignment>? RoleAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>? RoleAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignment>?>("roleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>?>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignment> RoleAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment> RoleAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignment>>("roleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #endif
         /// <summary>The roleAssignmentScheduleInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignmentScheduleInstance>? RoleAssignmentScheduleInstances
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance>? RoleAssignmentScheduleInstances
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentScheduleInstance>?>("roleAssignmentScheduleInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance>?>("roleAssignmentScheduleInstances"); }
             set { BackingStore?.Set("roleAssignmentScheduleInstances", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignmentScheduleInstance> RoleAssignmentScheduleInstances
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance> RoleAssignmentScheduleInstances
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentScheduleInstance>>("roleAssignmentScheduleInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance>>("roleAssignmentScheduleInstances"); }
             set { BackingStore?.Set("roleAssignmentScheduleInstances", value); }
         }
 #endif
         /// <summary>The roleAssignmentScheduleRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignmentScheduleRequest>? RoleAssignmentScheduleRequests
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest>? RoleAssignmentScheduleRequests
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentScheduleRequest>?>("roleAssignmentScheduleRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest>?>("roleAssignmentScheduleRequests"); }
             set { BackingStore?.Set("roleAssignmentScheduleRequests", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignmentScheduleRequest> RoleAssignmentScheduleRequests
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest> RoleAssignmentScheduleRequests
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentScheduleRequest>>("roleAssignmentScheduleRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest>>("roleAssignmentScheduleRequests"); }
             set { BackingStore?.Set("roleAssignmentScheduleRequests", value); }
         }
 #endif
         /// <summary>The roleAssignmentSchedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignmentSchedule>? RoleAssignmentSchedules
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule>? RoleAssignmentSchedules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentSchedule>?>("roleAssignmentSchedules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule>?>("roleAssignmentSchedules"); }
             set { BackingStore?.Set("roleAssignmentSchedules", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignmentSchedule> RoleAssignmentSchedules
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule> RoleAssignmentSchedules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentSchedule>>("roleAssignmentSchedules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule>>("roleAssignmentSchedules"); }
             set { BackingStore?.Set("roleAssignmentSchedules", value); }
         }
 #endif
         /// <summary>The roleDefinitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleDefinition>? RoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>? RoleDefinitions
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("roleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleDefinition> RoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition> RoleDefinitions
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #endif
         /// <summary>The roleEligibilityScheduleInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleEligibilityScheduleInstance>? RoleEligibilityScheduleInstances
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance>? RoleEligibilityScheduleInstances
         {
-            get { return BackingStore?.Get<List<UnifiedRoleEligibilityScheduleInstance>?>("roleEligibilityScheduleInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance>?>("roleEligibilityScheduleInstances"); }
             set { BackingStore?.Set("roleEligibilityScheduleInstances", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleEligibilityScheduleInstance> RoleEligibilityScheduleInstances
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance> RoleEligibilityScheduleInstances
         {
-            get { return BackingStore?.Get<List<UnifiedRoleEligibilityScheduleInstance>>("roleEligibilityScheduleInstances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance>>("roleEligibilityScheduleInstances"); }
             set { BackingStore?.Set("roleEligibilityScheduleInstances", value); }
         }
 #endif
         /// <summary>The roleEligibilityScheduleRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleEligibilityScheduleRequest>? RoleEligibilityScheduleRequests
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest>? RoleEligibilityScheduleRequests
         {
-            get { return BackingStore?.Get<List<UnifiedRoleEligibilityScheduleRequest>?>("roleEligibilityScheduleRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest>?>("roleEligibilityScheduleRequests"); }
             set { BackingStore?.Set("roleEligibilityScheduleRequests", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleEligibilityScheduleRequest> RoleEligibilityScheduleRequests
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest> RoleEligibilityScheduleRequests
         {
-            get { return BackingStore?.Get<List<UnifiedRoleEligibilityScheduleRequest>>("roleEligibilityScheduleRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest>>("roleEligibilityScheduleRequests"); }
             set { BackingStore?.Set("roleEligibilityScheduleRequests", value); }
         }
 #endif
         /// <summary>The roleEligibilitySchedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleEligibilitySchedule>? RoleEligibilitySchedules
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>? RoleEligibilitySchedules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleEligibilitySchedule>?>("roleEligibilitySchedules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>?>("roleEligibilitySchedules"); }
             set { BackingStore?.Set("roleEligibilitySchedules", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleEligibilitySchedule> RoleEligibilitySchedules
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule> RoleEligibilitySchedules
         {
-            get { return BackingStore?.Get<List<UnifiedRoleEligibilitySchedule>>("roleEligibilitySchedules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>>("roleEligibilitySchedules"); }
             set { BackingStore?.Set("roleEligibilitySchedules", value); }
         }
 #endif
         /// <summary>The transitiveRoleAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignment>? TransitiveRoleAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>? TransitiveRoleAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignment>?>("transitiveRoleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>?>("transitiveRoleAssignments"); }
             set { BackingStore?.Set("transitiveRoleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignment> TransitiveRoleAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment> TransitiveRoleAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignment>>("transitiveRoleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>>("transitiveRoleAssignments"); }
             set { BackingStore?.Set("transitiveRoleAssignments", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RbacApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RbacApplication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RbacApplication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RbacApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RbacApplication();
+            return new Microsoft.Graph.Beta.Models.RbacApplication();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -204,17 +204,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>(UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleAssignmentApprovals", n => { RoleAssignmentApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleAssignmentScheduleInstances", n => { RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleInstance>(UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleAssignmentScheduleRequests", n => { RoleAssignmentScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleRequest>(UnifiedRoleAssignmentScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleAssignmentSchedules", n => { RoleAssignmentSchedules = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentSchedule>(UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleEligibilityScheduleInstances", n => { RoleEligibilityScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleEligibilityScheduleRequests", n => { RoleEligibilityScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleRequest>(UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleEligibilitySchedules", n => { RoleEligibilitySchedules = n.GetCollectionOfObjectValues<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "transitiveRoleAssignments", n => { TransitiveRoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>(Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignmentApprovals", n => { RoleAssignmentApprovals = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Approval>(Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignmentScheduleInstances", n => { RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance>(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignmentScheduleRequests", n => { RoleAssignmentScheduleRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest>(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignmentSchedules", n => { RoleAssignmentSchedules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule>(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>(Microsoft.Graph.Beta.Models.UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleEligibilityScheduleInstances", n => { RoleEligibilityScheduleInstances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance>(Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleEligibilityScheduleRequests", n => { RoleEligibilityScheduleRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest>(Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleEligibilitySchedules", n => { RoleEligibilitySchedules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>(Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveRoleAssignments", n => { TransitiveRoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>(Microsoft.Graph.Beta.Models.UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -225,17 +225,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
-            writer.WriteCollectionOfObjectValues<Approval>("roleAssignmentApprovals", RoleAssignmentApprovals);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignment>("roleAssignments", RoleAssignments);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignmentScheduleInstance>("roleAssignmentScheduleInstances", RoleAssignmentScheduleInstances);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignmentScheduleRequest>("roleAssignmentScheduleRequests", RoleAssignmentScheduleRequests);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignmentSchedule>("roleAssignmentSchedules", RoleAssignmentSchedules);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleDefinition>("roleDefinitions", RoleDefinitions);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleEligibilityScheduleInstance>("roleEligibilityScheduleInstances", RoleEligibilityScheduleInstances);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleEligibilityScheduleRequest>("roleEligibilityScheduleRequests", RoleEligibilityScheduleRequests);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleEligibilitySchedule>("roleEligibilitySchedules", RoleEligibilitySchedules);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignment>("transitiveRoleAssignments", TransitiveRoleAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Approval>("roleAssignmentApprovals", RoleAssignmentApprovals);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>("roleAssignments", RoleAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleInstance>("roleAssignmentScheduleInstances", RoleAssignmentScheduleInstances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentScheduleRequest>("roleAssignmentScheduleRequests", RoleAssignmentScheduleRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule>("roleAssignmentSchedules", RoleAssignmentSchedules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>("roleDefinitions", RoleDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleInstance>("roleEligibilityScheduleInstances", RoleEligibilityScheduleInstances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilityScheduleRequest>("roleEligibilityScheduleRequests", RoleEligibilityScheduleRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>("roleEligibilitySchedules", RoleEligibilitySchedules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignment>("transitiveRoleAssignments", TransitiveRoleAssignments);
         }
     }
 }

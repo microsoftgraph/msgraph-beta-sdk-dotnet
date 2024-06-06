@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventPresenter : Entity, IParsable
+    public class VirtualEventPresenter : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Email address of the presenter.</summary>
@@ -45,44 +45,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Other detail information of the presenter. This property returns null when the virtual event type is virtualEventTownhall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventPresenterDetails? PresenterDetails
+        public Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails? PresenterDetails
         {
-            get { return BackingStore?.Get<VirtualEventPresenterDetails?>("presenterDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails?>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #nullable restore
 #else
-        public VirtualEventPresenterDetails PresenterDetails
+        public Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails PresenterDetails
         {
-            get { return BackingStore?.Get<VirtualEventPresenterDetails>("presenterDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #endif
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventSession>? Sessions
+        public List<Microsoft.Graph.Beta.Models.VirtualEventSession>? Sessions
         {
-            get { return BackingStore?.Get<List<VirtualEventSession>?>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventSession>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventSession> Sessions
+        public List<Microsoft.Graph.Beta.Models.VirtualEventSession> Sessions
         {
-            get { return BackingStore?.Get<List<VirtualEventSession>>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventSession>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventPresenter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventPresenter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventPresenter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventPresenter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventPresenter();
+            return new Microsoft.Graph.Beta.Models.VirtualEventPresenter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
-                { "presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
-                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "presenterDetails", n => { PresenterDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails>(Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventSession>(Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
-            writer.WriteObjectValue<VirtualEventPresenterDetails>("presenterDetails", PresenterDetails);
-            writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails>("presenterDetails", PresenterDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventSession>("sessions", Sessions);
         }
     }
 }

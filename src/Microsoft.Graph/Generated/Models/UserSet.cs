@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserSet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserSet"/> and sets the default values.
         /// </summary>
         public UserSet()
         {
@@ -52,22 +52,22 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UserSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.connectedOrganizationMembers" => new ConnectedOrganizationMembers(),
-                "#microsoft.graph.externalSponsors" => new ExternalSponsors(),
-                "#microsoft.graph.groupMembers" => new GroupMembers(),
-                "#microsoft.graph.internalSponsors" => new InternalSponsors(),
-                "#microsoft.graph.requestorManager" => new RequestorManager(),
-                "#microsoft.graph.singleUser" => new SingleUser(),
-                "#microsoft.graph.targetUserSponsors" => new TargetUserSponsors(),
-                _ => new UserSet(),
+                "#microsoft.graph.connectedOrganizationMembers" => new Microsoft.Graph.Beta.Models.ConnectedOrganizationMembers(),
+                "#microsoft.graph.externalSponsors" => new Microsoft.Graph.Beta.Models.ExternalSponsors(),
+                "#microsoft.graph.groupMembers" => new Microsoft.Graph.Beta.Models.GroupMembers(),
+                "#microsoft.graph.internalSponsors" => new Microsoft.Graph.Beta.Models.InternalSponsors(),
+                "#microsoft.graph.requestorManager" => new Microsoft.Graph.Beta.Models.RequestorManager(),
+                "#microsoft.graph.singleUser" => new Microsoft.Graph.Beta.Models.SingleUser(),
+                "#microsoft.graph.targetUserSponsors" => new Microsoft.Graph.Beta.Models.TargetUserSponsors(),
+                _ => new Microsoft.Graph.Beta.Models.UserSet(),
             };
         }
         /// <summary>

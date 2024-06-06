@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PeopleAdminSettings : Entity, IParsable
+    public class PeopleAdminSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents administrator settings that manage the support for item insights in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InsightsSettings? ItemInsights
+        public Microsoft.Graph.Beta.Models.InsightsSettings? ItemInsights
         {
-            get { return BackingStore?.Get<InsightsSettings?>("itemInsights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InsightsSettings?>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
 #nullable restore
 #else
-        public InsightsSettings ItemInsights
+        public Microsoft.Graph.Beta.Models.InsightsSettings ItemInsights
         {
-            get { return BackingStore?.Get<InsightsSettings>("itemInsights"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InsightsSettings>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
 #endif
         /// <summary>Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCardProperty>? ProfileCardProperties
+        public List<Microsoft.Graph.Beta.Models.ProfileCardProperty>? ProfileCardProperties
         {
-            get { return BackingStore?.Get<List<ProfileCardProperty>?>("profileCardProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProfileCardProperty>?>("profileCardProperties"); }
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #nullable restore
 #else
-        public List<ProfileCardProperty> ProfileCardProperties
+        public List<Microsoft.Graph.Beta.Models.ProfileCardProperty> ProfileCardProperties
         {
-            get { return BackingStore?.Get<List<ProfileCardProperty>>("profileCardProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProfileCardProperty>>("profileCardProperties"); }
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #endif
         /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PronounsSettings? Pronouns
+        public Microsoft.Graph.Beta.Models.PronounsSettings? Pronouns
         {
-            get { return BackingStore?.Get<PronounsSettings?>("pronouns"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PronounsSettings?>("pronouns"); }
             set { BackingStore?.Set("pronouns", value); }
         }
 #nullable restore
 #else
-        public PronounsSettings Pronouns
+        public Microsoft.Graph.Beta.Models.PronounsSettings Pronouns
         {
-            get { return BackingStore?.Get<PronounsSettings>("pronouns"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PronounsSettings>("pronouns"); }
             set { BackingStore?.Set("pronouns", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PeopleAdminSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PeopleAdminSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PeopleAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PeopleAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PeopleAdminSettings();
+            return new Microsoft.Graph.Beta.Models.PeopleAdminSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "itemInsights", n => { ItemInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
-                { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "pronouns", n => { Pronouns = n.GetObjectValue<PronounsSettings>(PronounsSettings.CreateFromDiscriminatorValue); } },
+                { "itemInsights", n => { ItemInsights = n.GetObjectValue<Microsoft.Graph.Beta.Models.InsightsSettings>(Microsoft.Graph.Beta.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
+                { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProfileCardProperty>(Microsoft.Graph.Beta.Models.ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pronouns", n => { Pronouns = n.GetObjectValue<Microsoft.Graph.Beta.Models.PronounsSettings>(Microsoft.Graph.Beta.Models.PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<InsightsSettings>("itemInsights", ItemInsights);
-            writer.WriteCollectionOfObjectValues<ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
-            writer.WriteObjectValue<PronounsSettings>("pronouns", Pronouns);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InsightsSettings>("itemInsights", ItemInsights);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PronounsSettings>("pronouns", Pronouns);
         }
     }
 }

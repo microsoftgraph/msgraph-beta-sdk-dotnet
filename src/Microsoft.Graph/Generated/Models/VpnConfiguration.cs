@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base VPN Configuration profile.
     /// </summary>
-    public class VpnConfiguration : DeviceConfiguration, IParsable
+    public class VpnConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>VPN Authentication Method.</summary>
-        public VpnAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.VpnAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
@@ -68,21 +68,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnServer>? Servers
+        public List<Microsoft.Graph.Beta.Models.VpnServer>? Servers
         {
-            get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #nullable restore
 #else
-        public List<VpnServer> Servers
+        public List<Microsoft.Graph.Beta.Models.VpnServer> Servers
         {
-            get { return BackingStore?.Get<List<VpnServer>>("servers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnServer>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VpnConfiguration"/> and sets the default values.
         /// </summary>
         public VpnConfiguration() : base()
         {
@@ -91,16 +91,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidDeviceOwnerVpnConfiguration" => new AndroidDeviceOwnerVpnConfiguration(),
-                _ => new VpnConfiguration(),
+                "#microsoft.graph.androidDeviceOwnerVpnConfiguration" => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.VpnConfiguration(),
             };
         }
         /// <summary>
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>(); } },
                 { "connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 { "realm", n => { Realm = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
-                { "servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servers", n => { Servers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnServer>(Microsoft.Graph.Beta.Models.VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteStringValue("connectionName", ConnectionName);
             writer.WriteStringValue("realm", Realm);
             writer.WriteStringValue("role", Role);
-            writer.WriteCollectionOfObjectValues<VpnServer>("servers", Servers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnServer>("servers", Servers);
         }
     }
 }

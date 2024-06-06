@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The discoveredSensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DiscoveredSensitiveType>? DiscoveredSensitiveTypes
+        public List<Microsoft.Graph.Beta.Models.DiscoveredSensitiveType>? DiscoveredSensitiveTypes
         {
-            get { return BackingStore?.Get<List<DiscoveredSensitiveType>?>("discoveredSensitiveTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DiscoveredSensitiveType>?>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
 #nullable restore
 #else
-        public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes
+        public List<Microsoft.Graph.Beta.Models.DiscoveredSensitiveType> DiscoveredSensitiveTypes
         {
-            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DlpEvaluationInput"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DlpEvaluationInput"/> and sets the default values.
         /// </summary>
         public DlpEvaluationInput()
         {
@@ -78,16 +78,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DlpEvaluationInput"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DlpEvaluationInput"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DlpEvaluationInput CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DlpEvaluationInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.dlpEvaluationWindowsDevicesInput" => new DlpEvaluationWindowsDevicesInput(),
-                _ => new DlpEvaluationInput(),
+                "#microsoft.graph.dlpEvaluationWindowsDevicesInput" => new Microsoft.Graph.Beta.Models.DlpEvaluationWindowsDevicesInput(),
+                _ => new Microsoft.Graph.Beta.Models.DlpEvaluationInput(),
             };
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "currentLabel", n => { CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
-                { "discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DiscoveredSensitiveType>(Microsoft.Graph.Beta.Models.DiscoveredSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel", CurrentLabel);
-            writer.WriteCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

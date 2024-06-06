@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessContext"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessContext"/> and sets the default values.
         /// </summary>
         public ConditionalAccessContext()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessContext"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessContext"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConditionalAccessContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.whatIfApplicationContext" => new WhatIfApplicationContext(),
-                "#microsoft.graph.whatIfAuthenticationContext" => new WhatIfAuthenticationContext(),
-                "#microsoft.graph.whatIfUserActionContext" => new WhatIfUserActionContext(),
-                _ => new ConditionalAccessContext(),
+                "#microsoft.graph.whatIfApplicationContext" => new Microsoft.Graph.Beta.Models.WhatIfApplicationContext(),
+                "#microsoft.graph.whatIfAuthenticationContext" => new Microsoft.Graph.Beta.Models.WhatIfAuthenticationContext(),
+                "#microsoft.graph.whatIfUserActionContext" => new Microsoft.Graph.Beta.Models.WhatIfUserActionContext(),
+                _ => new Microsoft.Graph.Beta.Models.ConditionalAccessContext(),
             };
         }
         /// <summary>

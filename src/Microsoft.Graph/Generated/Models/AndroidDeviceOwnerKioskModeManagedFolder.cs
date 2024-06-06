@@ -55,16 +55,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Items to be added to managed folder. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerKioskModeFolderItem>? Items
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem>? Items
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerKioskModeFolderItem> Items
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem> Items
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerKioskModeManagedFolder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeManagedFolder()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerKioskModeManagedFolder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidDeviceOwnerKioskModeManagedFolder CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerKioskModeManagedFolder();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "folderIdentifier", n => { FolderIdentifier = n.GetStringValue(); } },
                 { "folderName", n => { FolderName = n.GetStringValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<AndroidDeviceOwnerKioskModeFolderItem>(AndroidDeviceOwnerKioskModeFolderItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("folderIdentifier", FolderIdentifier);
             writer.WriteStringValue("folderName", FolderName);
-            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerKioskModeFolderItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem>("items", Items);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

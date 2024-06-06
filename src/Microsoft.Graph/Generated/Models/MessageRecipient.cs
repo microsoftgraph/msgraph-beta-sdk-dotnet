@@ -7,28 +7,28 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MessageRecipient : Entity, IParsable
+    public class MessageRecipient : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The deliveryStatus property</summary>
-        public MessageStatus? DeliveryStatus
+        public Microsoft.Graph.Beta.Models.MessageStatus? DeliveryStatus
         {
-            get { return BackingStore?.Get<MessageStatus?>("deliveryStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MessageStatus?>("deliveryStatus"); }
             set { BackingStore?.Set("deliveryStatus", value); }
         }
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageEvent>? Events
+        public List<Microsoft.Graph.Beta.Models.MessageEvent>? Events
         {
-            get { return BackingStore?.Get<List<MessageEvent>?>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MessageEvent>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<MessageEvent> Events
+        public List<Microsoft.Graph.Beta.Models.MessageEvent> Events
         {
-            get { return BackingStore?.Get<List<MessageEvent>>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MessageEvent>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #endif
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MessageRecipient"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MessageRecipient"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MessageRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MessageRecipient CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MessageRecipient();
+            return new Microsoft.Graph.Beta.Models.MessageRecipient();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deliveryStatus", n => { DeliveryStatus = n.GetEnumValue<MessageStatus>(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<MessageEvent>(MessageEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deliveryStatus", n => { DeliveryStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.MessageStatus>(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MessageEvent>(Microsoft.Graph.Beta.Models.MessageEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
             };
         }
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MessageStatus>("deliveryStatus", DeliveryStatus);
-            writer.WriteCollectionOfObjectValues<MessageEvent>("events", Events);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MessageStatus>("deliveryStatus", DeliveryStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MessageEvent>("events", Events);
             writer.WriteStringValue("recipientEmail", RecipientEmail);
         }
     }

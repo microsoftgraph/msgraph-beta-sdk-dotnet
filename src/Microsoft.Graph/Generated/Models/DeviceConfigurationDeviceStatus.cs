@@ -6,9 +6,10 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    #pragma warning disable CS1591
-    public class DeviceConfigurationDeviceStatus : Entity, IParsable
-    #pragma warning restore CS1591
+    /// <summary>
+    /// Support for this Entity is being deprecated starting May 2026 &amp; will no longer be supported.
+    /// </summary>
+    public class DeviceConfigurationDeviceStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime
@@ -61,9 +62,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The status property</summary>
-        public ComplianceStatus? Status
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? Status
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The User Name that is being reported</summary>
@@ -101,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationDeviceStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfigurationDeviceStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationDeviceStatus();
+            return new Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
                 { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "platform", n => { Platform = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ComplianceStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceModel", DeviceModel);
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
             writer.WriteIntValue("platform", Platform);
-            writer.WriteEnumValue<ComplianceStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("status", Status);
             writer.WriteStringValue("userName", UserName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }

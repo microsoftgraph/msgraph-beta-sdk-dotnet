@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("translationBehavior", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TranslationLanguageOverride"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TranslationLanguageOverride"/> and sets the default values.
         /// </summary>
         public TranslationLanguageOverride()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TranslationLanguageOverride"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TranslationLanguageOverride"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TranslationLanguageOverride CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TranslationLanguageOverride CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TranslationLanguageOverride();
+            return new Microsoft.Graph.Beta.Models.TranslationLanguageOverride();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "translationBehavior", n => { TranslationBehavior = n.GetEnumValue<TranslationBehavior>(); } },
+                { "translationBehavior", n => { TranslationBehavior = n.GetEnumValue<Microsoft.Graph.Beta.Models.TranslationBehavior>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TranslationBehavior>("translationBehavior", TranslationBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TranslationBehavior>("translationBehavior", TranslationBehavior);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

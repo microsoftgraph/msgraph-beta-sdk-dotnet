@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserConfigurationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class UserConfigurationCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserConfiguration>? Value
+        public List<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration>? Value
         {
-            get { return BackingStore?.Get<List<UserConfiguration>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserConfiguration> Value
+        public List<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration> Value
         {
-            get { return BackingStore?.Get<List<UserConfiguration>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserConfigurationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserConfigurationCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserConfigurationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserConfigurationCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserConfigurationCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.UserConfigurationCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration>(Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserConfiguration>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration>("value", Value);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceCriteria"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GovernanceCriteria"/> and sets the default values.
         /// </summary>
         public GovernanceCriteria()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceCriteria"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceCriteria"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GovernanceCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GovernanceCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.groupMembershipGovernanceCriteria" => new GroupMembershipGovernanceCriteria(),
-                "#microsoft.graph.roleMembershipGovernanceCriteria" => new RoleMembershipGovernanceCriteria(),
-                "#microsoft.graph.userGovernanceCriteria" => new UserGovernanceCriteria(),
-                _ => new GovernanceCriteria(),
+                "#microsoft.graph.groupMembershipGovernanceCriteria" => new Microsoft.Graph.Beta.Models.GroupMembershipGovernanceCriteria(),
+                "#microsoft.graph.roleMembershipGovernanceCriteria" => new Microsoft.Graph.Beta.Models.RoleMembershipGovernanceCriteria(),
+                "#microsoft.graph.userGovernanceCriteria" => new Microsoft.Graph.Beta.Models.UserGovernanceCriteria(),
+                _ => new Microsoft.Graph.Beta.Models.GovernanceCriteria(),
             };
         }
         /// <summary>

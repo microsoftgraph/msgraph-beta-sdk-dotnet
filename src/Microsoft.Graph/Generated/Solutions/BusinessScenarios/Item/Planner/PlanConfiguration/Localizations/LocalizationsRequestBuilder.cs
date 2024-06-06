@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
     public class LocalizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.</summary>
         /// <param name="position">The unique identifier of plannerPlanConfigurationLocalization</param>
-        /// <returns>A <see cref="PlannerPlanConfigurationLocalizationItemRequestBuilder"/></returns>
-        public PlannerPlanConfigurationLocalizationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.Item.PlannerPlanConfigurationLocalizationItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.Item.PlannerPlanConfigurationLocalizationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("plannerPlanConfigurationLocalization%2Did", position);
-                return new PlannerPlanConfigurationLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.Item.PlannerPlanConfigurationLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,65 +52,67 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         {
         }
         /// <summary>
-        /// Localized names for the plan configuration.
+        /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PlannerPlanConfigurationLocalizationCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerPlanConfigurationLocalizationCollectionResponse?> GetAsync(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalizationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerPlanConfigurationLocalizationCollectionResponse> GetAsync(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalizationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerPlanConfigurationLocalizationCollectionResponse>(requestInfo, PlannerPlanConfigurationLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalizationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to localizations for solutions
+        /// Create a new plannerPlanConfigurationLocalization object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PlannerPlanConfigurationLocalization"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerPlanConfigurationLocalization?> PostAsync(PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization?> PostAsync(Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerPlanConfigurationLocalization> PostAsync(PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization> PostAsync(Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerPlanConfigurationLocalization>(requestInfo, PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization>(requestInfo, Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Localized names for the plan configuration.
+        /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -119,18 +121,18 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to localizations for solutions
+        /// Create a new plannerPlanConfigurationLocalization object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,14 +145,14 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LocalizationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LocalizationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Localized names for the plan configuration.
+        /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters 
         {
@@ -218,7 +220,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LocalizationsRequestBuilderGetRequestConfiguration : RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters>
+        public class LocalizationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration.Localizations.LocalizationsRequestBuilder.LocalizationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

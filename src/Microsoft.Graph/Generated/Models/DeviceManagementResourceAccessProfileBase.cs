@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base Profile Type for Resource Access
     /// </summary>
-    public class DeviceManagementResourceAccessProfileBase : Entity, IParsable
+    public class DeviceManagementResourceAccessProfileBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for the device configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementResourceAccessProfileAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementResourceAccessProfileAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -96,20 +96,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementResourceAccessProfileBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementResourceAccessProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windows10XCertificateProfile" => new Windows10XCertificateProfile(),
-                "#microsoft.graph.windows10XSCEPCertificateProfile" => new Windows10XSCEPCertificateProfile(),
-                "#microsoft.graph.windows10XTrustedRootCertificate" => new Windows10XTrustedRootCertificate(),
-                "#microsoft.graph.windows10XVpnConfiguration" => new Windows10XVpnConfiguration(),
-                "#microsoft.graph.windows10XWifiConfiguration" => new Windows10XWifiConfiguration(),
-                _ => new DeviceManagementResourceAccessProfileBase(),
+                "#microsoft.graph.windows10XCertificateProfile" => new Microsoft.Graph.Beta.Models.Windows10XCertificateProfile(),
+                "#microsoft.graph.windows10XSCEPCertificateProfile" => new Microsoft.Graph.Beta.Models.Windows10XSCEPCertificateProfile(),
+                "#microsoft.graph.windows10XTrustedRootCertificate" => new Microsoft.Graph.Beta.Models.Windows10XTrustedRootCertificate(),
+                "#microsoft.graph.windows10XVpnConfiguration" => new Microsoft.Graph.Beta.Models.Windows10XVpnConfiguration(),
+                "#microsoft.graph.windows10XWifiConfiguration" => new Microsoft.Graph.Beta.Models.Windows10XWifiConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase(),
             };
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileAssignment>(DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementResourceAccessProfileAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

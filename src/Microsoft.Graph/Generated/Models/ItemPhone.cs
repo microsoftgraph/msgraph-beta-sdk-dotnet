@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ItemPhone : ItemFacet, IParsable
+    public class ItemPhone : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Friendly name the user has assigned this phone number.</summary>
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type property</summary>
-        public PhoneType? Type
+        public Microsoft.Graph.Beta.Models.PhoneType? Type
         {
-            get { return BackingStore?.Get<PhoneType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhoneType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemPhone"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ItemPhone"/> and sets the default values.
         /// </summary>
         public ItemPhone() : base()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemPhone"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemPhone"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemPhone CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ItemPhone CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemPhone();
+            return new Microsoft.Graph.Beta.Models.ItemPhone();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<PhoneType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.PhoneType>(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("number", Number);
-            writer.WriteEnumValue<PhoneType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PhoneType>("type", Type);
         }
     }
 }

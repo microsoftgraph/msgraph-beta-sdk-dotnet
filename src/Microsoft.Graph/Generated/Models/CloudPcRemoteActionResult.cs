@@ -104,21 +104,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The details of the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcStatusDetails? StatusDetails
+        public Microsoft.Graph.Beta.Models.CloudPcStatusDetails? StatusDetails
         {
-            get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcStatusDetails?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public CloudPcStatusDetails StatusDetails
+        public Microsoft.Graph.Beta.Models.CloudPcStatusDetails StatusDetails
         {
-            get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcRemoteActionResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult"/> and sets the default values.
         /// </summary>
         public CloudPcRemoteActionResult()
         {
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcRemoteActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcRemoteActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcRemoteActionResult();
+            return new Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -144,13 +144,13 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionName", n => { ActionName = n.GetStringValue(); } },
-                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ActionState>(); } },
                 { "cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
+                { "statusDetails", n => { StatusDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcStatusDetails>(Microsoft.Graph.Beta.Models.CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -161,13 +161,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionName", ActionName);
-            writer.WriteEnumValue<ActionState>("actionState", ActionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ActionState>("actionState", ActionState);
             writer.WriteStringValue("cloudPcId", CloudPcId);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteObjectValue<CloudPcStatusDetails>("statusDetails", StatusDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcStatusDetails>("statusDetails", StatusDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

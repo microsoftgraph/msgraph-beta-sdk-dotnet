@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SymantecCodeSigningCertificate : Entity, IParsable
+    public class SymantecCodeSigningCertificate : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Windows Symantec Code-Signing Certificate in the raw data format.</summary>
@@ -81,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public CertificateStatus? Status
+        public Microsoft.Graph.Beta.Models.CertificateStatus? Status
         {
-            get { return BackingStore?.Get<CertificateStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The Subject value for the cert.</summary>
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SymantecCodeSigningCertificate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SymantecCodeSigningCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SymantecCodeSigningCertificate();
+            return new Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "issuerName", n => { IssuerName = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CertificateStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "subjectName", n => { SubjectName = n.GetStringValue(); } },
                 { "uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("issuerName", IssuerName);
             writer.WriteStringValue("password", Password);
-            writer.WriteEnumValue<CertificateStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("subjectName", SubjectName);
             writer.WriteDateTimeOffsetValue("uploadDateTime", UploadDateTime);

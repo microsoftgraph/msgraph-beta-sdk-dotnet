@@ -49,26 +49,26 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         }
 #endif
         /// <summary>The holdStatus property</summary>
-        public DataSourceHoldStatus? HoldStatus
+        public Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus? HoldStatus
         {
-            get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.DataSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DataSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.DataSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.ediscovery.siteSource" => new SiteSource(),
-                "#microsoft.graph.ediscovery.unifiedGroupSource" => new UnifiedGroupSource(),
-                "#microsoft.graph.ediscovery.userSource" => new UserSource(),
-                _ => new DataSource(),
+                "#microsoft.graph.ediscovery.siteSource" => new Microsoft.Graph.Beta.Models.Ediscovery.SiteSource(),
+                "#microsoft.graph.ediscovery.unifiedGroupSource" => new Microsoft.Graph.Beta.Models.Ediscovery.UnifiedGroupSource(),
+                "#microsoft.graph.ediscovery.userSource" => new Microsoft.Graph.Beta.Models.Ediscovery.UserSource(),
+                _ => new Microsoft.Graph.Beta.Models.Ediscovery.DataSource(),
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
+                { "holdStatus", n => { HoldStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus>(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<DataSourceHoldStatus>("holdStatus", HoldStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceHoldStatus>("holdStatus", HoldStatus);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerSilentCertificateAccess"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerSilentCertificateAccess()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerSilentCertificateAccess"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidDeviceOwnerSilentCertificateAccess CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerSilentCertificateAccess();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSilentCertificateAccess();
         }
         /// <summary>
         /// The deserialization information for the current model

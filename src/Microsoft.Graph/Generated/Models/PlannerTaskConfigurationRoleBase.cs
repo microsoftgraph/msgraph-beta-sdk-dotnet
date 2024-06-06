@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The roleKind property</summary>
-        public PlannerUserRoleKind? RoleKind
+        public Microsoft.Graph.Beta.Models.PlannerUserRoleKind? RoleKind
         {
-            get { return BackingStore?.Get<PlannerUserRoleKind?>("roleKind"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerUserRoleKind?>("roleKind"); }
             set { BackingStore?.Set("roleKind", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskConfigurationRoleBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase"/> and sets the default values.
         /// </summary>
         public PlannerTaskConfigurationRoleBase()
         {
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskConfigurationRoleBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerTaskConfigurationRoleBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.plannerRelationshipBasedUserType" => new PlannerRelationshipBasedUserType(),
-                _ => new PlannerTaskConfigurationRoleBase(),
+                "#microsoft.graph.plannerRelationshipBasedUserType" => new Microsoft.Graph.Beta.Models.PlannerRelationshipBasedUserType(),
+                _ => new Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase(),
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "roleKind", n => { RoleKind = n.GetEnumValue<PlannerUserRoleKind>(); } },
+                { "roleKind", n => { RoleKind = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerUserRoleKind>(); } },
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PlannerUserRoleKind>("roleKind", RoleKind);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerUserRoleKind>("roleKind", RoleKind);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

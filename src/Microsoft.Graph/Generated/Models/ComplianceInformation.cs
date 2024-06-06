@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of the certification controls associated with the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificationControl>? CertificationControls
+        public List<Microsoft.Graph.Beta.Models.CertificationControl>? CertificationControls
         {
-            get { return BackingStore?.Get<List<CertificationControl>?>("certificationControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificationControl>?>("certificationControls"); }
             set { BackingStore?.Set("certificationControls", value); }
         }
 #nullable restore
 #else
-        public List<CertificationControl> CertificationControls
+        public List<Microsoft.Graph.Beta.Models.CertificationControl> CertificationControls
         {
-            get { return BackingStore?.Get<List<CertificationControl>>("certificationControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificationControl>>("certificationControls"); }
             set { BackingStore?.Set("certificationControls", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ComplianceInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ComplianceInformation"/> and sets the default values.
         /// </summary>
         public ComplianceInformation()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ComplianceInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ComplianceInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ComplianceInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ComplianceInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ComplianceInformation();
+            return new Microsoft.Graph.Beta.Models.ComplianceInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificationControls", n => { CertificationControls = n.GetCollectionOfObjectValues<CertificationControl>(CertificationControl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificationControls", n => { CertificationControls = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificationControl>(Microsoft.Graph.Beta.Models.CertificationControl.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "certificationName", n => { CertificationName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<CertificationControl>("certificationControls", CertificationControls);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificationControl>("certificationControls", CertificationControls);
             writer.WriteStringValue("certificationName", CertificationName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

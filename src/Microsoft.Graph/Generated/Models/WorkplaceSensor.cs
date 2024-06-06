@@ -84,13 +84,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The sensorType property</summary>
-        public WorkplaceSensorType? SensorType
+        public Microsoft.Graph.Beta.Models.WorkplaceSensorType? SensorType
         {
-            get { return BackingStore?.Get<WorkplaceSensorType?>("sensorType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkplaceSensorType?>("sensorType"); }
             set { BackingStore?.Set("sensorType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkplaceSensor"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WorkplaceSensor"/> and sets the default values.
         /// </summary>
         public WorkplaceSensor()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkplaceSensor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkplaceSensor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkplaceSensor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WorkplaceSensor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkplaceSensor();
+            return new Microsoft.Graph.Beta.Models.WorkplaceSensor();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "placeId", n => { PlaceId = n.GetStringValue(); } },
                 { "sensorId", n => { SensorId = n.GetStringValue(); } },
-                { "sensorType", n => { SensorType = n.GetEnumValue<WorkplaceSensorType>(); } },
+                { "sensorType", n => { SensorType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WorkplaceSensorType>(); } },
             };
         }
         /// <summary>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("placeId", PlaceId);
             writer.WriteStringValue("sensorId", SensorId);
-            writer.WriteEnumValue<WorkplaceSensorType>("sensorType", SensorType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WorkplaceSensorType>("sensorType", SensorType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TrustFrameworkKeySet : Entity, IParsable
+    public class TrustFrameworkKeySet : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of the keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrustFrameworkKey>? Keys
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkKey>? Keys
         {
-            get { return BackingStore?.Get<List<TrustFrameworkKey>?>("keys"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkKey>?>("keys"); }
             set { BackingStore?.Set("keys", value); }
         }
 #nullable restore
 #else
-        public List<TrustFrameworkKey> Keys
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkKey> Keys
         {
-            get { return BackingStore?.Get<List<TrustFrameworkKey>>("keys"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkKey>>("keys"); }
             set { BackingStore?.Set("keys", value); }
         }
 #endif
         /// <summary>A collection of the keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrustFrameworkKey_v2>? KeysV2
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2>? KeysV2
         {
-            get { return BackingStore?.Get<List<TrustFrameworkKey_v2>?>("keys_v2"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2>?>("keys_v2"); }
             set { BackingStore?.Set("keys_v2", value); }
         }
 #nullable restore
 #else
-        public List<TrustFrameworkKey_v2> KeysV2
+        public List<Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2> KeysV2
         {
-            get { return BackingStore?.Get<List<TrustFrameworkKey_v2>>("keys_v2"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2>>("keys_v2"); }
             set { BackingStore?.Set("keys_v2", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrustFrameworkKeySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrustFrameworkKeySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TrustFrameworkKeySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TrustFrameworkKeySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrustFrameworkKeySet();
+            return new Microsoft.Graph.Beta.Models.TrustFrameworkKeySet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "keys", n => { Keys = n.GetCollectionOfObjectValues<TrustFrameworkKey>(TrustFrameworkKey.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "keys_v2", n => { KeysV2 = n.GetCollectionOfObjectValues<TrustFrameworkKey_v2>(TrustFrameworkKey_v2.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keys", n => { Keys = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkKey>(Microsoft.Graph.Beta.Models.TrustFrameworkKey.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keys_v2", n => { KeysV2 = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2>(Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<TrustFrameworkKey>("keys", Keys);
-            writer.WriteCollectionOfObjectValues<TrustFrameworkKey_v2>("keys_v2", KeysV2);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkKey>("keys", Keys);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TrustFrameworkKey_v2>("keys_v2", KeysV2);
         }
     }
 }

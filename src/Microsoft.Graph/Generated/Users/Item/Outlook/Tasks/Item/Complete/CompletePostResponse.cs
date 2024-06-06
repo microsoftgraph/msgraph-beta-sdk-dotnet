@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete
 {
     #pragma warning disable CS1591
-    public class CompletePostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class CompletePostResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTask>? Value
+        public List<Microsoft.Graph.Beta.Models.OutlookTask>? Value
         {
-            get { return BackingStore?.Get<List<OutlookTask>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTask>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTask> Value
+        public List<Microsoft.Graph.Beta.Models.OutlookTask> Value
         {
-            get { return BackingStore?.Get<List<OutlookTask>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTask>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CompletePostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete.CompletePostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CompletePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete.CompletePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CompletePostResponse();
+            return new Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete.CompletePostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTask>(Microsoft.Graph.Beta.Models.OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OutlookTask>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTask>("value", Value);
         }
     }
 }

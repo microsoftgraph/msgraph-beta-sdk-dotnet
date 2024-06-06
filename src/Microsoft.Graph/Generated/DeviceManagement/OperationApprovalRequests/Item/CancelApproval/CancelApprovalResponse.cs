@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
 {
     [Obsolete("This class is obsolete. Use CancelApprovalPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CancelApprovalResponse : CancelApprovalPostResponse, IParsable
+    public class CancelApprovalResponse : Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CancelApprovalResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CancelApprovalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CancelApprovalResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval.CancelApprovalResponse();
         }
     }
 }

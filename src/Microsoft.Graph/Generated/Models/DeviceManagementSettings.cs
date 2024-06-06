@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provider type for Derived Credentials.</summary>
-        public DerivedCredentialProviderType? DerivedCredentialProvider
+        public Microsoft.Graph.Beta.Models.DerivedCredentialProviderType? DerivedCredentialProvider
         {
-            get { return BackingStore?.Get<DerivedCredentialProviderType?>("derivedCredentialProvider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DerivedCredentialProviderType?>("derivedCredentialProvider"); }
             set { BackingStore?.Set("derivedCredentialProvider", value); }
         }
         /// <summary>The Derived Credential Provider self-service URI.</summary>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("secureByDefault", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettings"/> and sets the default values.
         /// </summary>
         public DeviceManagementSettings()
         {
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettings();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "androidDeviceAdministratorEnrollmentEnabled", n => { AndroidDeviceAdministratorEnrollmentEnabled = n.GetBoolValue(); } },
-                { "derivedCredentialProvider", n => { DerivedCredentialProvider = n.GetEnumValue<DerivedCredentialProviderType>(); } },
+                { "derivedCredentialProvider", n => { DerivedCredentialProvider = n.GetEnumValue<Microsoft.Graph.Beta.Models.DerivedCredentialProviderType>(); } },
                 { "derivedCredentialUrl", n => { DerivedCredentialUrl = n.GetStringValue(); } },
                 { "deviceComplianceCheckinThresholdDays", n => { DeviceComplianceCheckinThresholdDays = n.GetIntValue(); } },
                 { "deviceInactivityBeforeRetirementInDay", n => { DeviceInactivityBeforeRetirementInDay = n.GetIntValue(); } },
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("androidDeviceAdministratorEnrollmentEnabled", AndroidDeviceAdministratorEnrollmentEnabled);
-            writer.WriteEnumValue<DerivedCredentialProviderType>("derivedCredentialProvider", DerivedCredentialProvider);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DerivedCredentialProviderType>("derivedCredentialProvider", DerivedCredentialProvider);
             writer.WriteStringValue("derivedCredentialUrl", DerivedCredentialUrl);
             writer.WriteIntValue("deviceComplianceCheckinThresholdDays", DeviceComplianceCheckinThresholdDays);
             writer.WriteIntValue("deviceInactivityBeforeRetirementInDay", DeviceInactivityBeforeRetirementInDay);

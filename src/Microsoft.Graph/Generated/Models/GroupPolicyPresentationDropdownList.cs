@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an ADMX dropdownList element and an ADMX enum element.
     /// </summary>
-    public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable
+    public class GroupPolicyPresentationDropdownList : Microsoft.Graph.Beta.Models.GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyPresentationDropdownListItem? DefaultItem
+        public Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem? DefaultItem
         {
-            get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem?>("defaultItem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem?>("defaultItem"); }
             set { BackingStore?.Set("defaultItem", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyPresentationDropdownListItem DefaultItem
+        public Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem DefaultItem
         {
-            get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>("defaultItem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>("defaultItem"); }
             set { BackingStore?.Set("defaultItem", value); }
         }
 #endif
         /// <summary>Represents a set of localized display names and their associated values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyPresentationDropdownListItem>? Items
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>? Items
         {
-            get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyPresentationDropdownListItem> Items
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem> Items
         {
-            get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyPresentationDropdownList"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownList"/> and sets the default values.
         /// </summary>
         public GroupPolicyPresentationDropdownList() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyPresentationDropdownList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownList"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyPresentationDropdownList CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyPresentationDropdownList();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownList();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultItem", n => { DefaultItem = n.GetObjectValue<GroupPolicyPresentationDropdownListItem>(GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<GroupPolicyPresentationDropdownListItem>(GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultItem", n => { DefaultItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>(Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>(Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
             };
         }
@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<GroupPolicyPresentationDropdownListItem>("defaultItem", DefaultItem);
-            writer.WriteCollectionOfObjectValues<GroupPolicyPresentationDropdownListItem>("items", Items);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>("defaultItem", DefaultItem);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyPresentationDropdownListItem>("items", Items);
             writer.WriteBoolValue("required", Required);
         }
     }

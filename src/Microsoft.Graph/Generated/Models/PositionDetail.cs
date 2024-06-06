@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Detail about the company or employer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CompanyDetail? Company
+        public Microsoft.Graph.Beta.Models.CompanyDetail? Company
         {
-            get { return BackingStore?.Get<CompanyDetail?>("company"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CompanyDetail?>("company"); }
             set { BackingStore?.Set("company", value); }
         }
 #nullable restore
 #else
-        public CompanyDetail Company
+        public Microsoft.Graph.Beta.Models.CompanyDetail Company
         {
-            get { return BackingStore?.Get<CompanyDetail>("company"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CompanyDetail>("company"); }
             set { BackingStore?.Set("company", value); }
         }
 #endif
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PositionDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PositionDetail"/> and sets the default values.
         /// </summary>
         public PositionDetail()
         {
@@ -161,12 +161,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PositionDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PositionDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PositionDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PositionDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PositionDetail();
+            return new Microsoft.Graph.Beta.Models.PositionDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "company", n => { Company = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
+                { "company", n => { Company = n.GetObjectValue<Microsoft.Graph.Beta.Models.CompanyDetail>(Microsoft.Graph.Beta.Models.CompanyDetail.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<CompanyDetail>("company", Company);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CompanyDetail>("company", Company);
             writer.WriteStringValue("description", Description);
             writer.WriteDateValue("endMonthYear", EndMonthYear);
             writer.WriteStringValue("jobTitle", JobTitle);

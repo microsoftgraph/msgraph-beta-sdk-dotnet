@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
 {
     #pragma warning disable CS1591
-    public class GetOffice365ServicesUserCountsWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetOffice365ServicesUserCountsWithPeriodGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Office365ServicesUserCounts>? Value
+        public List<Microsoft.Graph.Beta.Models.Office365ServicesUserCounts>? Value
         {
-            get { return BackingStore?.Get<List<Office365ServicesUserCounts>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Office365ServicesUserCounts>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Office365ServicesUserCounts> Value
+        public List<Microsoft.Graph.Beta.Models.Office365ServicesUserCounts> Value
         {
-            get { return BackingStore?.Get<List<Office365ServicesUserCounts>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Office365ServicesUserCounts>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetOffice365ServicesUserCountsWithPeriodGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOffice365ServicesUserCountsWithPeriodGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetOffice365ServicesUserCountsWithPeriodGetResponse();
+            return new Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod.GetOffice365ServicesUserCountsWithPeriodGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<Office365ServicesUserCounts>(Office365ServicesUserCounts.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Office365ServicesUserCounts>(Microsoft.Graph.Beta.Models.Office365ServicesUserCounts.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Office365ServicesUserCounts>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Office365ServicesUserCounts>("value", Value);
         }
     }
 }

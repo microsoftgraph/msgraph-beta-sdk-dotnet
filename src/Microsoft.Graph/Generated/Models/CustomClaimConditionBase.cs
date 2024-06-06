@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomClaimConditionBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomClaimConditionBase"/> and sets the default values.
         /// </summary>
         public CustomClaimConditionBase()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomClaimConditionBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomClaimConditionBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomClaimConditionBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomClaimConditionBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.customClaimCondition" => new CustomClaimCondition(),
-                _ => new CustomClaimConditionBase(),
+                "#microsoft.graph.customClaimCondition" => new Microsoft.Graph.Beta.Models.CustomClaimCondition(),
+                _ => new Microsoft.Graph.Beta.Models.CustomClaimConditionBase(),
             };
         }
         /// <summary>

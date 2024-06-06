@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base Profile Type for Authentication Certificates (SCEP or PFX Create)
     /// </summary>
-    public class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase, IParsable
+    public class Windows10XCertificateProfile : Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="Windows10XCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10XCertificateProfile"/> and sets the default values.
         /// </summary>
         public Windows10XCertificateProfile() : base()
         {
@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10XCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10XCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10XCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10XCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windows10XSCEPCertificateProfile" => new Windows10XSCEPCertificateProfile(),
-                _ => new Windows10XCertificateProfile(),
+                "#microsoft.graph.windows10XSCEPCertificateProfile" => new Microsoft.Graph.Beta.Models.Windows10XSCEPCertificateProfile(),
+                _ => new Microsoft.Graph.Beta.Models.Windows10XCertificateProfile(),
             };
         }
         /// <summary>

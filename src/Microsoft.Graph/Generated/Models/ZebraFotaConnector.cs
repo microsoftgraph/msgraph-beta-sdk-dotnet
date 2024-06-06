@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Zebra FOTA connector entity that represents the tenant&apos;s authorization status for Intune to call Zebra Update Services.
     /// </summary>
-    public class ZebraFotaConnector : Entity, IParsable
+    public class ZebraFotaConnector : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,20 +56,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Represents various states for Zebra FOTA connector.</summary>
-        public ZebraFotaConnectorState? State
+        public Microsoft.Graph.Beta.Models.ZebraFotaConnectorState? State
         {
-            get { return BackingStore?.Get<ZebraFotaConnectorState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnectorState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ZebraFotaConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ZebraFotaConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ZebraFotaConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ZebraFotaConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ZebraFotaConnector();
+            return new Microsoft.Graph.Beta.Models.ZebraFotaConnector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
                 { "fotaAppsApproved", n => { FotaAppsApproved = n.GetBoolValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<ZebraFotaConnectorState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaConnectorState>(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("enrollmentToken", EnrollmentToken);
             writer.WriteBoolValue("fotaAppsApproved", FotaAppsApproved);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteEnumValue<ZebraFotaConnectorState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaConnectorState>("state", State);
         }
     }
 }

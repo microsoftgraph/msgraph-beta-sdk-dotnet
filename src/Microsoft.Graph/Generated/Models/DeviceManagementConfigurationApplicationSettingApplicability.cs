@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Applicability for a setting that can be targeted on managed Applications by Intune
     /// </summary>
-    public class DeviceManagementConfigurationApplicationSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable
+    public class DeviceManagementConfigurationApplicationSettingApplicability : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationApplicationSettingApplicability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationApplicationSettingApplicability() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationApplicationSettingApplicability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationApplicationSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationApplicationSettingApplicability();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationApplicationSettingApplicability();
         }
         /// <summary>
         /// The deserialization information for the current model

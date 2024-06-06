@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information of the meeting attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingParticipantInfo>? Attendees
+        public List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>? Attendees
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<MeetingParticipantInfo> Attendees
+        public List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo> Attendees
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>For broadcast meeting only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingParticipantInfo>? Contributors
+        public List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>? Contributors
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("contributors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>?>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
 #nullable restore
 #else
-        public List<MeetingParticipantInfo> Contributors
+        public List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo> Contributors
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("contributors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
 #endif
@@ -70,37 +70,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information of the meeting organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingParticipantInfo? Organizer
+        public Microsoft.Graph.Beta.Models.MeetingParticipantInfo? Organizer
         {
-            get { return BackingStore?.Get<MeetingParticipantInfo?>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingParticipantInfo?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public MeetingParticipantInfo Organizer
+        public Microsoft.Graph.Beta.Models.MeetingParticipantInfo Organizer
         {
-            get { return BackingStore?.Get<MeetingParticipantInfo>("organizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #endif
         /// <summary>For broadcast meeting only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingParticipantInfo>? Producers
+        public List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>? Producers
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("producers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>?>("producers"); }
             set { BackingStore?.Set("producers", value); }
         }
 #nullable restore
 #else
-        public List<MeetingParticipantInfo> Producers
+        public List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo> Producers
         {
-            get { return BackingStore?.Get<List<MeetingParticipantInfo>>("producers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>>("producers"); }
             set { BackingStore?.Set("producers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingParticipants"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MeetingParticipants"/> and sets the default values.
         /// </summary>
         public MeetingParticipants()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingParticipants"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingParticipants"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingParticipants CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MeetingParticipants CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingParticipants();
+            return new Microsoft.Graph.Beta.Models.MeetingParticipants();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "contributors", n => { Contributors = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>(Microsoft.Graph.Beta.Models.MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contributors", n => { Contributors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>(Microsoft.Graph.Beta.Models.MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "organizer", n => { Organizer = n.GetObjectValue<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue); } },
-                { "producers", n => { Producers = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>(Microsoft.Graph.Beta.Models.MeetingParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "producers", n => { Producers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>(Microsoft.Graph.Beta.Models.MeetingParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("attendees", Attendees);
-            writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("contributors", Contributors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>("attendees", Attendees);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>("contributors", Contributors);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<MeetingParticipantInfo>("organizer", Organizer);
-            writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("producers", Producers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>("organizer", Organizer);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingParticipantInfo>("producers", Producers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

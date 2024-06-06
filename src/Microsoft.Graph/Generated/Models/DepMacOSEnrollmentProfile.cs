@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The DepMacOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to macOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
     /// </summary>
-    public class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable
+    public class DepMacOSEnrollmentProfile : Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile, IParsable
     {
         /// <summary>Indicates if Accessibility screen is disabled</summary>
         public bool? AccessibilityScreenDisabled
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DepMacOSEnrollmentProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile"/> and sets the default values.
         /// </summary>
         public DepMacOSEnrollmentProfile() : base()
         {
@@ -197,12 +197,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DepMacOSEnrollmentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DepMacOSEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DepMacOSEnrollmentProfile();
+            return new Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Co-Management eligibility state
     /// </summary>
-    public class ComanagementEligibleDevice : Entity, IParsable
+    public class ComanagementEligibleDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Device registration status.</summary>
-        public DeviceRegistrationState? ClientRegistrationStatus
+        public Microsoft.Graph.Beta.Models.DeviceRegistrationState? ClientRegistrationStatus
         {
-            get { return BackingStore?.Get<DeviceRegistrationState?>("clientRegistrationStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationState?>("clientRegistrationStatus"); }
             set { BackingStore?.Set("clientRegistrationStatus", value); }
         }
         /// <summary>DeviceName</summary>
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("entitySource", value); }
         }
         /// <summary>Management agent type.</summary>
-        public ManagementAgentType? ManagementAgents
+        public Microsoft.Graph.Beta.Models.ManagementAgentType? ManagementAgents
         {
-            get { return BackingStore?.Get<ManagementAgentType?>("managementAgents"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagementAgentType?>("managementAgents"); }
             set { BackingStore?.Set("managementAgents", value); }
         }
         /// <summary>Management state of device in Microsoft Intune.</summary>
@@ -176,9 +176,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public ComanagementEligibleType? Status
+        public Microsoft.Graph.Beta.Models.ComanagementEligibleType? Status
         {
-            get { return BackingStore?.Get<ComanagementEligibleType?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComanagementEligibleType?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>UPN</summary>
@@ -248,12 +248,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ComanagementEligibleDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ComanagementEligibleDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ComanagementEligibleDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ComanagementEligibleDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ComanagementEligibleDevice();
+            return new Microsoft.Graph.Beta.Models.ComanagementEligibleDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -263,21 +263,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "clientRegistrationStatus", n => { ClientRegistrationStatus = n.GetEnumValue<DeviceRegistrationState>(); } },
+                { "clientRegistrationStatus", n => { ClientRegistrationStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceRegistrationState>(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceType>(); } },
                 { "entitySource", n => { EntitySource = n.GetIntValue(); } },
-                { "managementAgents", n => { ManagementAgents = n.GetEnumValue<ManagementAgentType>(); } },
-                { "managementState", n => { ManagementState = n.GetEnumValue<ManagementState>(); } },
+                { "managementAgents", n => { ManagementAgents = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagementAgentType>(); } },
+                { "managementState", n => { ManagementState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagementState>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "mdmStatus", n => { MdmStatus = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "osDescription", n => { OsDescription = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.OwnerType>(); } },
                 { "referenceId", n => { ReferenceId = n.GetStringValue(); } },
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ComanagementEligibleType>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComanagementEligibleType>(); } },
                 { "upn", n => { Upn = n.GetStringValue(); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -292,21 +292,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DeviceRegistrationState>("clientRegistrationStatus", ClientRegistrationStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceRegistrationState>("clientRegistrationStatus", ClientRegistrationStatus);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceType>("deviceType", DeviceType);
             writer.WriteIntValue("entitySource", EntitySource);
-            writer.WriteEnumValue<ManagementAgentType>("managementAgents", ManagementAgents);
-            writer.WriteEnumValue<ManagementState>("managementState", ManagementState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagementAgentType>("managementAgents", ManagementAgents);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagementState>("managementState", ManagementState);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("mdmStatus", MdmStatus);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("osDescription", OsDescription);
             writer.WriteStringValue("osVersion", OsVersion);
-            writer.WriteEnumValue<OwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OwnerType>("ownerType", OwnerType);
             writer.WriteStringValue("referenceId", ReferenceId);
             writer.WriteStringValue("serialNumber", SerialNumber);
-            writer.WriteEnumValue<ComanagementEligibleType>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComanagementEligibleType>("status", Status);
             writer.WriteStringValue("upn", Upn);
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);

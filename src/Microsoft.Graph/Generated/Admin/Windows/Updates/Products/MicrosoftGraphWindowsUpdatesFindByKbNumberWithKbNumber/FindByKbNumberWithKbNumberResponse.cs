@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
 {
     [Obsolete("This class is obsolete. Use FindByKbNumberWithKbNumberGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindByKbNumberWithKbNumberResponse : FindByKbNumberWithKbNumberGetResponse, IParsable
+    public class FindByKbNumberWithKbNumberResponse : Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindByKbNumberWithKbNumberResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FindByKbNumberWithKbNumberResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindByKbNumberWithKbNumberResponse();
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse();
         }
     }
 }

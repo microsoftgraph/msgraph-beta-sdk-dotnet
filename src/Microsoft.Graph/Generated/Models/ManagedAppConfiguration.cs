@@ -9,42 +9,42 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
     /// </summary>
-    public class ManagedAppConfiguration : ManagedAppPolicy, IParsable
+    public class ManagedAppConfiguration : Microsoft.Graph.Beta.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> CustomSettings
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #endif
         /// <summary>List of settings contained in this App Configuration policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSetting>? Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>? Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSetting> Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting> Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedAppConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedAppConfiguration"/> and sets the default values.
         /// </summary>
         public ManagedAppConfiguration() : base()
         {
@@ -53,16 +53,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAppConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.targetedManagedAppConfiguration" => new TargetedManagedAppConfiguration(),
-                _ => new ManagedAppConfiguration(),
+                "#microsoft.graph.targetedManagedAppConfiguration" => new Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.ManagedAppConfiguration(),
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting>("settings", Settings);
         }
     }
 }

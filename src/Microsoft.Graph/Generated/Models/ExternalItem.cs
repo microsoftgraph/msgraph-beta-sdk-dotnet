@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExternalItem : Entity, IParsable
+    public class ExternalItem : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acl property</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalItemContent? Content
+        public Microsoft.Graph.Beta.Models.ExternalItemContent? Content
         {
-            get { return BackingStore?.Get<ExternalItemContent?>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalItemContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public ExternalItemContent Content
+        public Microsoft.Graph.Beta.Models.ExternalItemContent Content
         {
-            get { return BackingStore?.Get<ExternalItemContent>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalItemContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalItem();
+            return new Microsoft.Graph.Beta.Models.ExternalItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Acl>(Microsoft.Graph.Beta.Models.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalItemContent>(Microsoft.Graph.Beta.Models.ExternalItemContent.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.Properties>(Microsoft.Graph.Beta.Models.Properties.CreateFromDiscriminatorValue); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Acl>("acl", Acl);
-            writer.WriteObjectValue<ExternalItemContent>("content", Content);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalItemContent>("content", Content);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Properties>("properties", Properties);
         }
     }

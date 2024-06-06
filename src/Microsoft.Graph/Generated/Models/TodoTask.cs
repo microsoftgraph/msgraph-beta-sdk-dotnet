@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TodoTask : Entity, IParsable
+    public class TodoTask : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of file attachments for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttachmentBase>? Attachments
+        public List<Microsoft.Graph.Beta.Models.AttachmentBase>? Attachments
         {
-            get { return BackingStore?.Get<List<AttachmentBase>?>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttachmentBase>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<AttachmentBase> Attachments
+        public List<Microsoft.Graph.Beta.Models.AttachmentBase> Attachments
         {
-            get { return BackingStore?.Get<List<AttachmentBase>>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttachmentBase>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
         /// <summary>The attachmentSessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttachmentSession>? AttachmentSessions
+        public List<Microsoft.Graph.Beta.Models.AttachmentSession>? AttachmentSessions
         {
-            get { return BackingStore?.Get<List<AttachmentSession>?>("attachmentSessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttachmentSession>?>("attachmentSessions"); }
             set { BackingStore?.Set("attachmentSessions", value); }
         }
 #nullable restore
 #else
-        public List<AttachmentSession> AttachmentSessions
+        public List<Microsoft.Graph.Beta.Models.AttachmentSession> AttachmentSessions
         {
-            get { return BackingStore?.Get<List<AttachmentSession>>("attachmentSessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttachmentSession>>("attachmentSessions"); }
             set { BackingStore?.Set("attachmentSessions", value); }
         }
 #endif
         /// <summary>The task body that typically contains information about the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body
+        public Microsoft.Graph.Beta.Models.ItemBody? Body
         {
-            get { return BackingStore?.Get<ItemBody?>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body
+        public Microsoft.Graph.Beta.Models.ItemBody Body
         {
-            get { return BackingStore?.Get<ItemBody>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -83,32 +83,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of smaller subtasks linked to the more complex parent task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChecklistItem>? ChecklistItems
+        public List<Microsoft.Graph.Beta.Models.ChecklistItem>? ChecklistItems
         {
-            get { return BackingStore?.Get<List<ChecklistItem>?>("checklistItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChecklistItem>?>("checklistItems"); }
             set { BackingStore?.Set("checklistItems", value); }
         }
 #nullable restore
 #else
-        public List<ChecklistItem> ChecklistItems
+        public List<Microsoft.Graph.Beta.Models.ChecklistItem> ChecklistItems
         {
-            get { return BackingStore?.Get<List<ChecklistItem>>("checklistItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChecklistItem>>("checklistItems"); }
             set { BackingStore?.Set("checklistItems", value); }
         }
 #endif
         /// <summary>The date and time in the specified time zone that the task was finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? CompletedDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? CompletedDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone CompletedDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone CompletedDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
 #endif
@@ -121,32 +121,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The date and time in the specified time zone that the task is to be finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? DueDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? DueDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone DueDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone DueDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
 #endif
         /// <summary>The collection of open extensions defined for the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -177,71 +177,71 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of resources linked to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LinkedResource>? LinkedResources
+        public List<Microsoft.Graph.Beta.Models.LinkedResource>? LinkedResources
         {
-            get { return BackingStore?.Get<List<LinkedResource>?>("linkedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LinkedResource>?>("linkedResources"); }
             set { BackingStore?.Set("linkedResources", value); }
         }
 #nullable restore
 #else
-        public List<LinkedResource> LinkedResources
+        public List<Microsoft.Graph.Beta.Models.LinkedResource> LinkedResources
         {
-            get { return BackingStore?.Get<List<LinkedResource>>("linkedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LinkedResource>>("linkedResources"); }
             set { BackingStore?.Set("linkedResources", value); }
         }
 #endif
         /// <summary>The recurrence pattern for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence
+        public Microsoft.Graph.Beta.Models.PatternedRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence
+        public Microsoft.Graph.Beta.Models.PatternedRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
         /// <summary>The date and time in the specified time zone for a reminder alert of the task to occur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ReminderDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? ReminderDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("reminderDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ReminderDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone ReminderDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
         /// <summary>The date and time in the specified time zone at which the task is scheduled to start.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone StartDateTime
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public TaskStatus? Status
+        public Microsoft.Graph.Beta.Models.TaskStatus? Status
         {
-            get { return BackingStore?.Get<TaskStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>A brief description of the task.</summary>
@@ -263,12 +263,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TodoTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TodoTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TodoTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TodoTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TodoTask();
+            return new Microsoft.Graph.Beta.Models.TodoTask();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -278,25 +278,25 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attachmentSessions", n => { AttachmentSessions = n.GetCollectionOfObjectValues<AttachmentSession>(AttachmentSession.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<AttachmentBase>(AttachmentBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "attachmentSessions", n => { AttachmentSessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttachmentSession>(Microsoft.Graph.Beta.Models.AttachmentSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttachmentBase>(Microsoft.Graph.Beta.Models.AttachmentBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "bodyLastModifiedDateTime", n => { BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "checklistItems", n => { ChecklistItems = n.GetCollectionOfObjectValues<ChecklistItem>(ChecklistItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "checklistItems", n => { ChecklistItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChecklistItem>(Microsoft.Graph.Beta.Models.ChecklistItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dueDateTime", n => { DueDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Beta.Models.Importance>(); } },
                 { "isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "linkedResources", n => { LinkedResources = n.GetCollectionOfObjectValues<LinkedResource>(LinkedResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                { "reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<TaskStatus>(); } },
+                { "linkedResources", n => { LinkedResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LinkedResource>(Microsoft.Graph.Beta.Models.LinkedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Beta.Models.PatternedRecurrence>(Microsoft.Graph.Beta.Models.PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.TaskStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -308,25 +308,25 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AttachmentBase>("attachments", Attachments);
-            writer.WriteCollectionOfObjectValues<AttachmentSession>("attachmentSessions", AttachmentSessions);
-            writer.WriteObjectValue<ItemBody>("body", Body);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttachmentBase>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttachmentSession>("attachmentSessions", AttachmentSessions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
             writer.WriteDateTimeOffsetValue("bodyLastModifiedDateTime", BodyLastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteCollectionOfObjectValues<ChecklistItem>("checklistItems", ChecklistItems);
-            writer.WriteObjectValue<DateTimeTimeZone>("completedDateTime", CompletedDateTime);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChecklistItem>("checklistItems", ChecklistItems);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("completedDateTime", CompletedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<DateTimeTimeZone>("dueDateTime", DueDateTime);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("dueDateTime", DueDateTime);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
-            writer.WriteEnumValue<Importance>("importance", Importance);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Importance>("importance", Importance);
             writer.WriteBoolValue("isReminderOn", IsReminderOn);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<LinkedResource>("linkedResources", LinkedResources);
-            writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
-            writer.WriteObjectValue<DateTimeTimeZone>("reminderDateTime", ReminderDateTime);
-            writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
-            writer.WriteEnumValue<TaskStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LinkedResource>("linkedResources", LinkedResources);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PatternedRecurrence>("recurrence", Recurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("reminderDateTime", ReminderDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TaskStatus>("status", Status);
             writer.WriteStringValue("title", Title);
         }
     }

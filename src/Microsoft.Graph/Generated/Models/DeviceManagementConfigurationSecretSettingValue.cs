@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Graph model for a secret setting value
     /// </summary>
-    public class DeviceManagementConfigurationSecretSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable
+    public class DeviceManagementConfigurationSecretSettingValue : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValue, IParsable
     {
         /// <summary>Value of the secret setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>type tracking the encryption state of a secret setting value</summary>
-        public DeviceManagementConfigurationSecretSettingValueState? ValueState
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValueState? ValueState
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSecretSettingValueState?>("valueState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValueState?>("valueState"); }
             set { BackingStore?.Set("valueState", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSecretSettingValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValue"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSecretSettingValue() : base()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSecretSettingValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationSecretSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSecretSettingValue();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "value", n => { Value = n.GetStringValue(); } },
-                { "valueState", n => { ValueState = n.GetEnumValue<DeviceManagementConfigurationSecretSettingValueState>(); } },
+                { "valueState", n => { ValueState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValueState>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("value", Value);
-            writer.WriteEnumValue<DeviceManagementConfigurationSecretSettingValueState>("valueState", ValueState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSecretSettingValueState>("valueState", ValueState);
         }
     }
 }

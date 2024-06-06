@@ -9,58 +9,58 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Education device configuration
     /// </summary>
-    public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable
+    public class IosEduDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>The Trusted Root and PFX certificates for Device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosEduCertificateSettings? DeviceCertificateSettings
+        public Microsoft.Graph.Beta.Models.IosEduCertificateSettings? DeviceCertificateSettings
         {
-            get { return BackingStore?.Get<IosEduCertificateSettings?>("deviceCertificateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosEduCertificateSettings?>("deviceCertificateSettings"); }
             set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
 #nullable restore
 #else
-        public IosEduCertificateSettings DeviceCertificateSettings
+        public Microsoft.Graph.Beta.Models.IosEduCertificateSettings DeviceCertificateSettings
         {
-            get { return BackingStore?.Get<IosEduCertificateSettings>("deviceCertificateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>("deviceCertificateSettings"); }
             set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
 #endif
         /// <summary>The Trusted Root and PFX certificates for Student</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosEduCertificateSettings? StudentCertificateSettings
+        public Microsoft.Graph.Beta.Models.IosEduCertificateSettings? StudentCertificateSettings
         {
-            get { return BackingStore?.Get<IosEduCertificateSettings?>("studentCertificateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosEduCertificateSettings?>("studentCertificateSettings"); }
             set { BackingStore?.Set("studentCertificateSettings", value); }
         }
 #nullable restore
 #else
-        public IosEduCertificateSettings StudentCertificateSettings
+        public Microsoft.Graph.Beta.Models.IosEduCertificateSettings StudentCertificateSettings
         {
-            get { return BackingStore?.Get<IosEduCertificateSettings>("studentCertificateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>("studentCertificateSettings"); }
             set { BackingStore?.Set("studentCertificateSettings", value); }
         }
 #endif
         /// <summary>Trusted Root and PFX certificates for iOS EDU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosEduCertificateSettings? TeacherCertificateSettings
+        public Microsoft.Graph.Beta.Models.IosEduCertificateSettings? TeacherCertificateSettings
         {
-            get { return BackingStore?.Get<IosEduCertificateSettings?>("teacherCertificateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosEduCertificateSettings?>("teacherCertificateSettings"); }
             set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
 #nullable restore
 #else
-        public IosEduCertificateSettings TeacherCertificateSettings
+        public Microsoft.Graph.Beta.Models.IosEduCertificateSettings TeacherCertificateSettings
         {
-            get { return BackingStore?.Get<IosEduCertificateSettings>("teacherCertificateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>("teacherCertificateSettings"); }
             set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosEduDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosEduDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public IosEduDeviceConfiguration() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosEduDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosEduDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosEduDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosEduDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosEduDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosEduDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deviceCertificateSettings", n => { DeviceCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
-                { "studentCertificateSettings", n => { StudentCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
-                { "teacherCertificateSettings", n => { TeacherCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
+                { "deviceCertificateSettings", n => { DeviceCertificateSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>(Microsoft.Graph.Beta.Models.IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
+                { "studentCertificateSettings", n => { StudentCertificateSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>(Microsoft.Graph.Beta.Models.IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
+                { "teacherCertificateSettings", n => { TeacherCertificateSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>(Microsoft.Graph.Beta.Models.IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IosEduCertificateSettings>("deviceCertificateSettings", DeviceCertificateSettings);
-            writer.WriteObjectValue<IosEduCertificateSettings>("studentCertificateSettings", StudentCertificateSettings);
-            writer.WriteObjectValue<IosEduCertificateSettings>("teacherCertificateSettings", TeacherCertificateSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>("deviceCertificateSettings", DeviceCertificateSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>("studentCertificateSettings", StudentCertificateSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IosEduCertificateSettings>("teacherCertificateSettings", TeacherCertificateSettings);
         }
     }
 }

@@ -18,24 +18,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates the most permissive role with which an address bar link can be created. The possible values are: none, view, edit, manageList, review, restrictedView, submitOnly, unknownFutureValue.</summary>
-        public SharingRole? AddressBarLinkPermission
+        public Microsoft.Graph.Beta.Models.SharingRole? AddressBarLinkPermission
         {
-            get { return BackingStore?.Get<SharingRole?>("addressBarLinkPermission"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingRole?>("addressBarLinkPermission"); }
             set { BackingStore?.Set("addressBarLinkPermission", value); }
         }
         /// <summary>Indicates whether a link can be embedded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AllowEmbed
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? AllowEmbed
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("allowEmbed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("allowEmbed"); }
             set { BackingStore?.Set("allowEmbed", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AllowEmbed
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus AllowEmbed
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("allowEmbed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("allowEmbed"); }
             set { BackingStore?.Set("allowEmbed", value); }
         }
 #endif
@@ -60,37 +60,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates whether a link can be password protected, meaning that link users would need to enter a password to access the item for which the sharing link is produced. Creating a passwordProtected link for the first time requires providing a password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? PasswordProtected
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? PasswordProtected
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("passwordProtected"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("passwordProtected"); }
             set { BackingStore?.Set("passwordProtected", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus PasswordProtected
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus PasswordProtected
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("passwordProtected"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("passwordProtected"); }
             set { BackingStore?.Set("passwordProtected", value); }
         }
 #endif
         /// <summary>Indicates whether a link requires identity authentication for recipients. Users can be verified through either an email address or identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? RequiresAuthentication
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? RequiresAuthentication
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("requiresAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("requiresAuthentication"); }
             set { BackingStore?.Set("requiresAuthentication", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus RequiresAuthentication
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus RequiresAuthentication
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("requiresAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("requiresAuthentication"); }
             set { BackingStore?.Set("requiresAuthentication", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SharingLinkVariants"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SharingLinkVariants"/> and sets the default values.
         /// </summary>
         public SharingLinkVariants()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharingLinkVariants"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SharingLinkVariants"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharingLinkVariants CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SharingLinkVariants CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharingLinkVariants();
+            return new Microsoft.Graph.Beta.Models.SharingLinkVariants();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addressBarLinkPermission", n => { AddressBarLinkPermission = n.GetEnumValue<SharingRole>(); } },
-                { "allowEmbed", n => { AllowEmbed = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addressBarLinkPermission", n => { AddressBarLinkPermission = n.GetEnumValue<Microsoft.Graph.Beta.Models.SharingRole>(); } },
+                { "allowEmbed", n => { AllowEmbed = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "passwordProtected", n => { PasswordProtected = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "requiresAuthentication", n => { RequiresAuthentication = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "passwordProtected", n => { PasswordProtected = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "requiresAuthentication", n => { RequiresAuthentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SharingRole>("addressBarLinkPermission", AddressBarLinkPermission);
-            writer.WriteObjectValue<SharingOperationStatus>("allowEmbed", AllowEmbed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SharingRole>("addressBarLinkPermission", AddressBarLinkPermission);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("allowEmbed", AllowEmbed);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SharingOperationStatus>("passwordProtected", PasswordProtected);
-            writer.WriteObjectValue<SharingOperationStatus>("requiresAuthentication", RequiresAuthentication);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("passwordProtected", PasswordProtected);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("requiresAuthentication", RequiresAuthentication);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

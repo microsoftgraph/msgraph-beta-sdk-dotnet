@@ -21,23 +21,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleScopeTagAutoAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<RoleScopeTagAutoAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>
-        /// Instantiates a new <see cref="AssignPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign.AssignPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign.AssignPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign.AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign.AssignPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<RoleScopeTagAutoAssignment>(RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>(Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assign
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<RoleScopeTagAutoAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTagAutoAssignment>("assignments", Assignments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

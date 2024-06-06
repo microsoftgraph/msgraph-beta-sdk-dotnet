@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Post : OutlookItem, IParsable
+    public class Post : Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attachment>? Attachments
+        public List<Microsoft.Graph.Beta.Models.Attachment>? Attachments
         {
-            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<Attachment> Attachments
+        public List<Microsoft.Graph.Beta.Models.Attachment> Attachments
         {
-            get { return BackingStore?.Get<List<Attachment>>("attachments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
         /// <summary>The contents of the post. This is a default property. This property can be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body
+        public Microsoft.Graph.Beta.Models.ItemBody? Body
         {
-            get { return BackingStore?.Get<ItemBody?>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body
+        public Microsoft.Graph.Beta.Models.ItemBody Body
         {
-            get { return BackingStore?.Get<ItemBody>("body"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #endif
@@ -77,32 +77,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Recipient? From
+        public Microsoft.Graph.Beta.Models.Recipient? From
         {
-            get { return BackingStore?.Get<Recipient?>("from"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Recipient?>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #nullable restore
 #else
-        public Recipient From
+        public Microsoft.Graph.Beta.Models.Recipient From
         {
-            get { return BackingStore?.Get<Recipient>("from"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Recipient>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #endif
@@ -121,64 +121,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Post? InReplyTo
+        public Microsoft.Graph.Beta.Models.Post? InReplyTo
         {
-            get { return BackingStore?.Get<Post?>("inReplyTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("inReplyTo"); }
             set { BackingStore?.Set("inReplyTo", value); }
         }
 #nullable restore
 #else
-        public Post InReplyTo
+        public Microsoft.Graph.Beta.Models.Post InReplyTo
         {
-            get { return BackingStore?.Get<Post>("inReplyTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("inReplyTo"); }
             set { BackingStore?.Set("inReplyTo", value); }
         }
 #endif
         /// <summary>The mentions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Mention>? Mentions
+        public List<Microsoft.Graph.Beta.Models.Mention>? Mentions
         {
-            get { return BackingStore?.Get<List<Mention>?>("mentions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Mention>?>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
 #nullable restore
 #else
-        public List<Mention> Mentions
+        public List<Microsoft.Graph.Beta.Models.Mention> Mentions
         {
-            get { return BackingStore?.Get<List<Mention>>("mentions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Mention>>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
 #endif
         /// <summary>The collection of multi-value extended properties defined for the post. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
         /// <summary>Conversation participants that were added to the thread as part of this post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? NewParticipants
+        public List<Microsoft.Graph.Beta.Models.Recipient>? NewParticipants
         {
-            get { return BackingStore?.Get<List<Recipient>?>("newParticipants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Recipient>?>("newParticipants"); }
             set { BackingStore?.Set("newParticipants", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> NewParticipants
+        public List<Microsoft.Graph.Beta.Models.Recipient> NewParticipants
         {
-            get { return BackingStore?.Get<List<Recipient>>("newParticipants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Recipient>>("newParticipants"); }
             set { BackingStore?.Set("newParticipants", value); }
         }
 #endif
@@ -191,37 +191,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Recipient? Sender
+        public Microsoft.Graph.Beta.Models.Recipient? Sender
         {
-            get { return BackingStore?.Get<Recipient?>("sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Recipient?>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
 #nullable restore
 #else
-        public Recipient Sender
+        public Microsoft.Graph.Beta.Models.Recipient Sender
         {
-            get { return BackingStore?.Get<Recipient>("sender"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Recipient>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
 #endif
         /// <summary>The collection of single-value extended properties defined for the post. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Post"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Post"/> and sets the default values.
         /// </summary>
         public Post() : base()
         {
@@ -230,12 +230,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Post"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Post"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Post CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Post CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Post();
+            return new Microsoft.Graph.Beta.Models.Post();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -245,21 +245,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Attachment>(Microsoft.Graph.Beta.Models.Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "conversationThreadId", n => { ConversationThreadId = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "from", n => { From = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "from", n => { From = n.GetObjectValue<Microsoft.Graph.Beta.Models.Recipient>(Microsoft.Graph.Beta.Models.Recipient.CreateFromDiscriminatorValue); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
-                { "inReplyTo", n => { InReplyTo = n.GetObjectValue<Post>(Post.CreateFromDiscriminatorValue); } },
-                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<Mention>(Mention.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "newParticipants", n => { NewParticipants = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Microsoft.Graph.Beta.Models.Importance>(); } },
+                { "inReplyTo", n => { InReplyTo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
+                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Mention>(Microsoft.Graph.Beta.Models.Mention.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "newParticipants", n => { NewParticipants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Recipient>(Microsoft.Graph.Beta.Models.Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "sender", n => { Sender = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sender", n => { Sender = n.GetObjectValue<Microsoft.Graph.Beta.Models.Recipient>(Microsoft.Graph.Beta.Models.Recipient.CreateFromDiscriminatorValue); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -270,21 +270,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Attachment>("attachments", Attachments);
-            writer.WriteObjectValue<ItemBody>("body", Body);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Attachment>("attachments", Attachments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("body", Body);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteStringValue("conversationThreadId", ConversationThreadId);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
-            writer.WriteObjectValue<Recipient>("from", From);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Recipient>("from", From);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
-            writer.WriteEnumValue<Importance>("importance", Importance);
-            writer.WriteObjectValue<Post>("inReplyTo", InReplyTo);
-            writer.WriteCollectionOfObjectValues<Mention>("mentions", Mentions);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
-            writer.WriteCollectionOfObjectValues<Recipient>("newParticipants", NewParticipants);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Importance>("importance", Importance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("inReplyTo", InReplyTo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Mention>("mentions", Mentions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Recipient>("newParticipants", NewParticipants);
             writer.WriteDateTimeOffsetValue("receivedDateTime", ReceivedDateTime);
-            writer.WriteObjectValue<Recipient>("sender", Sender);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Recipient>("sender", Sender);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
         }
     }
 }

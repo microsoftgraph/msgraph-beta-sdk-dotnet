@@ -19,35 +19,35 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
-        public AuthenticationTransformConstant? AuthenticationTransformConstants
+        public Microsoft.Graph.Beta.Models.AuthenticationTransformConstant? AuthenticationTransformConstants
         {
-            get { return BackingStore?.Get<AuthenticationTransformConstant?>("authenticationTransformConstants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationTransformConstant?>("authenticationTransformConstants"); }
             set { BackingStore?.Set("authenticationTransformConstants", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
-        public VpnEncryptionAlgorithmType? CipherTransformConstants
+        public Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType? CipherTransformConstants
         {
-            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("cipherTransformConstants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType?>("cipherTransformConstants"); }
             set { BackingStore?.Set("cipherTransformConstants", value); }
         }
         /// <summary>Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.</summary>
-        public DiffieHellmanGroup? DhGroup
+        public Microsoft.Graph.Beta.Models.DiffieHellmanGroup? DhGroup
         {
-            get { return BackingStore?.Get<DiffieHellmanGroup?>("dhGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiffieHellmanGroup?>("dhGroup"); }
             set { BackingStore?.Set("dhGroup", value); }
         }
         /// <summary>Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
-        public VpnEncryptionAlgorithmType? EncryptionMethod
+        public Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType? EncryptionMethod
         {
-            get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("encryptionMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
-        public VpnIntegrityAlgorithmType? IntegrityCheckMethod
+        public Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType? IntegrityCheckMethod
         {
-            get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
             set { BackingStore?.Set("integrityCheckMethod", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -67,13 +67,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.</summary>
-        public PerfectForwardSecrecyGroup? PfsGroup
+        public Microsoft.Graph.Beta.Models.PerfectForwardSecrecyGroup? PfsGroup
         {
-            get { return BackingStore?.Get<PerfectForwardSecrecyGroup?>("pfsGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PerfectForwardSecrecyGroup?>("pfsGroup"); }
             set { BackingStore?.Set("pfsGroup", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CryptographySuite"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CryptographySuite"/> and sets the default values.
         /// </summary>
         public CryptographySuite()
         {
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CryptographySuite"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CryptographySuite"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CryptographySuite CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CryptographySuite CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CryptographySuite();
+            return new Microsoft.Graph.Beta.Models.CryptographySuite();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationTransformConstants", n => { AuthenticationTransformConstants = n.GetEnumValue<AuthenticationTransformConstant>(); } },
-                { "cipherTransformConstants", n => { CipherTransformConstants = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
-                { "dhGroup", n => { DhGroup = n.GetEnumValue<DiffieHellmanGroup>(); } },
-                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
-                { "integrityCheckMethod", n => { IntegrityCheckMethod = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
+                { "authenticationTransformConstants", n => { AuthenticationTransformConstants = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthenticationTransformConstant>(); } },
+                { "cipherTransformConstants", n => { CipherTransformConstants = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType>(); } },
+                { "dhGroup", n => { DhGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.DiffieHellmanGroup>(); } },
+                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType>(); } },
+                { "integrityCheckMethod", n => { IntegrityCheckMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "pfsGroup", n => { PfsGroup = n.GetEnumValue<PerfectForwardSecrecyGroup>(); } },
+                { "pfsGroup", n => { PfsGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.PerfectForwardSecrecyGroup>(); } },
             };
         }
         /// <summary>
@@ -114,13 +114,13 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AuthenticationTransformConstant>("authenticationTransformConstants", AuthenticationTransformConstants);
-            writer.WriteEnumValue<VpnEncryptionAlgorithmType>("cipherTransformConstants", CipherTransformConstants);
-            writer.WriteEnumValue<DiffieHellmanGroup>("dhGroup", DhGroup);
-            writer.WriteEnumValue<VpnEncryptionAlgorithmType>("encryptionMethod", EncryptionMethod);
-            writer.WriteEnumValue<VpnIntegrityAlgorithmType>("integrityCheckMethod", IntegrityCheckMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthenticationTransformConstant>("authenticationTransformConstants", AuthenticationTransformConstants);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType>("cipherTransformConstants", CipherTransformConstants);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DiffieHellmanGroup>("dhGroup", DhGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnEncryptionAlgorithmType>("encryptionMethod", EncryptionMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnIntegrityAlgorithmType>("integrityCheckMethod", IntegrityCheckMethod);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PerfectForwardSecrecyGroup>("pfsGroup", PfsGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PerfectForwardSecrecyGroup>("pfsGroup", PfsGroup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

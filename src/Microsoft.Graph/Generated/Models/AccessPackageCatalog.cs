@@ -7,86 +7,86 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageCatalog : Entity, IParsable
+    public class AccessPackageCatalog : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomCalloutExtension>? AccessPackageCustomWorkflowExtensions
+        public List<Microsoft.Graph.Beta.Models.CustomCalloutExtension>? AccessPackageCustomWorkflowExtensions
         {
-            get { return BackingStore?.Get<List<CustomCalloutExtension>?>("accessPackageCustomWorkflowExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomCalloutExtension>?>("accessPackageCustomWorkflowExtensions"); }
             set { BackingStore?.Set("accessPackageCustomWorkflowExtensions", value); }
         }
 #nullable restore
 #else
-        public List<CustomCalloutExtension> AccessPackageCustomWorkflowExtensions
+        public List<Microsoft.Graph.Beta.Models.CustomCalloutExtension> AccessPackageCustomWorkflowExtensions
         {
-            get { return BackingStore?.Get<List<CustomCalloutExtension>>("accessPackageCustomWorkflowExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomCalloutExtension>>("accessPackageCustomWorkflowExtensions"); }
             set { BackingStore?.Set("accessPackageCustomWorkflowExtensions", value); }
         }
 #endif
         /// <summary>The roles in each resource in a catalog. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRole>? AccessPackageResourceRoles
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>? AccessPackageResourceRoles
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRole> AccessPackageResourceRoles
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole> AccessPackageResourceRoles
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
 #endif
         /// <summary>The accessPackageResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResource>? AccessPackageResources
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResource>? AccessPackageResources
         {
-            get { return BackingStore?.Get<List<AccessPackageResource>?>("accessPackageResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResource>?>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResource> AccessPackageResources
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResource> AccessPackageResources
         {
-            get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResource>>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
 #endif
         /// <summary>The accessPackageResourceScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceScope>? AccessPackageResourceScopes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>? AccessPackageResourceScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceScope> AccessPackageResourceScopes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope> AccessPackageResourceScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
 #endif
         /// <summary>The access packages in this catalog. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackage>? AccessPackages
+        public List<Microsoft.Graph.Beta.Models.AccessPackage>? AccessPackages
         {
-            get { return BackingStore?.Get<List<AccessPackage>?>("accessPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackage>?>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackage> AccessPackages
+        public List<Microsoft.Graph.Beta.Models.AccessPackage> AccessPackages
         {
-            get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackage>>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
 #endif
@@ -147,16 +147,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The customAccessPackageWorkflowExtensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomAccessPackageWorkflowExtension>? CustomAccessPackageWorkflowExtensions
+        public List<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>? CustomAccessPackageWorkflowExtensions
         {
-            get { return BackingStore?.Get<List<CustomAccessPackageWorkflowExtension>?>("customAccessPackageWorkflowExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>?>("customAccessPackageWorkflowExtensions"); }
             set { BackingStore?.Set("customAccessPackageWorkflowExtensions", value); }
         }
 #nullable restore
 #else
-        public List<CustomAccessPackageWorkflowExtension> CustomAccessPackageWorkflowExtensions
+        public List<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension> CustomAccessPackageWorkflowExtensions
         {
-            get { return BackingStore?.Get<List<CustomAccessPackageWorkflowExtension>>("customAccessPackageWorkflowExtensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>>("customAccessPackageWorkflowExtensions"); }
             set { BackingStore?.Set("customAccessPackageWorkflowExtensions", value); }
         }
 #endif
@@ -223,12 +223,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageCatalog"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageCatalog"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageCatalog CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageCatalog CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageCatalog();
+            return new Microsoft.Graph.Beta.Models.AccessPackageCatalog();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -238,16 +238,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessPackageCustomWorkflowExtensions", n => { AccessPackageCustomWorkflowExtensions = n.GetCollectionOfObjectValues<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageCustomWorkflowExtensions", n => { AccessPackageCustomWorkflowExtensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomCalloutExtension>(Microsoft.Graph.Beta.Models.CustomCalloutExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(Microsoft.Graph.Beta.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(Microsoft.Graph.Beta.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "catalogStatus", n => { CatalogStatus = n.GetStringValue(); } },
                 { "catalogType", n => { CatalogType = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "customAccessPackageWorkflowExtensions", n => { CustomAccessPackageWorkflowExtensions = n.GetCollectionOfObjectValues<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customAccessPackageWorkflowExtensions", n => { CustomAccessPackageWorkflowExtensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>(Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isExternallyVisible", n => { IsExternallyVisible = n.GetBoolValue(); } },
@@ -263,16 +263,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CustomCalloutExtension>("accessPackageCustomWorkflowExtensions", AccessPackageCustomWorkflowExtensions);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
-            writer.WriteCollectionOfObjectValues<AccessPackageResource>("accessPackageResources", AccessPackageResources);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
-            writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomCalloutExtension>("accessPackageCustomWorkflowExtensions", AccessPackageCustomWorkflowExtensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResources", AccessPackageResources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackages", AccessPackages);
             writer.WriteStringValue("catalogStatus", CatalogStatus);
             writer.WriteStringValue("catalogType", CatalogType);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<CustomAccessPackageWorkflowExtension>("customAccessPackageWorkflowExtensions", CustomAccessPackageWorkflowExtensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomAccessPackageWorkflowExtension>("customAccessPackageWorkflowExtensions", CustomAccessPackageWorkflowExtensions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isExternallyVisible", IsExternallyVisible);

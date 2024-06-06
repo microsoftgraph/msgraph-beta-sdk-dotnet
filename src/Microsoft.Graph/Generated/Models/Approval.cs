@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Approval : Entity, IParsable
+    public class Approval : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Used to represent the decision associated with a single step in the approval process configured in approvalStage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApprovalStep>? Steps
+        public List<Microsoft.Graph.Beta.Models.ApprovalStep>? Steps
         {
-            get { return BackingStore?.Get<List<ApprovalStep>?>("steps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApprovalStep>?>("steps"); }
             set { BackingStore?.Set("steps", value); }
         }
 #nullable restore
 #else
-        public List<ApprovalStep> Steps
+        public List<Microsoft.Graph.Beta.Models.ApprovalStep> Steps
         {
-            get { return BackingStore?.Get<List<ApprovalStep>>("steps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApprovalStep>>("steps"); }
             set { BackingStore?.Set("steps", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Approval"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Approval"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Approval CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Approval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Approval();
+            return new Microsoft.Graph.Beta.Models.Approval();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "steps", n => { Steps = n.GetCollectionOfObjectValues<ApprovalStep>(ApprovalStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "steps", n => { Steps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApprovalStep>(Microsoft.Graph.Beta.Models.ApprovalStep.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ApprovalStep>("steps", Steps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApprovalStep>("steps", Steps);
         }
     }
 }

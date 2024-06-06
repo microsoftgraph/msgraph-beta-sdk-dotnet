@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RecycleBinItem : BaseItem, IParsable
+    public class RecycleBinItem : Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecycleBinItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RecycleBinItem"/> and sets the default values.
         /// </summary>
         public RecycleBinItem() : base()
         {
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecycleBinItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecycleBinItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RecycleBinItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RecycleBinItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecycleBinItem();
+            return new Microsoft.Graph.Beta.Models.RecycleBinItem();
         }
         /// <summary>
         /// The deserialization information for the current model

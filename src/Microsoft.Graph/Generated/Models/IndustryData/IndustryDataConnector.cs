@@ -29,33 +29,33 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The sourceSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SourceSystemDefinition? SourceSystem
+        public Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition? SourceSystem
         {
-            get { return BackingStore?.Get<SourceSystemDefinition?>("sourceSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition?>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #nullable restore
 #else
-        public SourceSystemDefinition SourceSystem
+        public Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition SourceSystem
         {
-            get { return BackingStore?.Get<SourceSystemDefinition>("sourceSystem"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IndustryDataConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.azureDataLakeConnector" => new AzureDataLakeConnector(),
-                "#microsoft.graph.industryData.fileDataConnector" => new FileDataConnector(),
-                _ => new IndustryDataConnector(),
+                "#microsoft.graph.industryData.azureDataLakeConnector" => new Microsoft.Graph.Beta.Models.IndustryData.AzureDataLakeConnector(),
+                "#microsoft.graph.industryData.fileDataConnector" => new Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector(),
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "sourceSystem", n => { SourceSystem = n.GetObjectValue<SourceSystemDefinition>(SourceSystemDefinition.CreateFromDiscriminatorValue); } },
+                { "sourceSystem", n => { SourceSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition>(Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<SourceSystemDefinition>("sourceSystem", SourceSystem);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition>("sourceSystem", SourceSystem);
         }
     }
 }

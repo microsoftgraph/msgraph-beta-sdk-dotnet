@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an item that can be added to Android Device Owner folder (application or weblink)
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
+    public class AndroidDeviceOwnerKioskModeFolderItem : Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerKioskModeFolderItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeFolderItem() : base()
         {
@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerKioskModeFolderItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerKioskModeFolderItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidDeviceOwnerKioskModeApp" => new AndroidDeviceOwnerKioskModeApp(),
-                "#microsoft.graph.androidDeviceOwnerKioskModeWeblink" => new AndroidDeviceOwnerKioskModeWeblink(),
-                _ => new AndroidDeviceOwnerKioskModeFolderItem(),
+                "#microsoft.graph.androidDeviceOwnerKioskModeApp" => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeApp(),
+                "#microsoft.graph.androidDeviceOwnerKioskModeWeblink" => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeWeblink(),
+                _ => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderItem(),
             };
         }
         /// <summary>

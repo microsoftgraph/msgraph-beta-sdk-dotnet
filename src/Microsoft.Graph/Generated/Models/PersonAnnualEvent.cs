@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PersonAnnualEvent : ItemFacet, IParsable
+    public class PersonAnnualEvent : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date property</summary>
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type property</summary>
-        public PersonAnnualEventType? Type
+        public Microsoft.Graph.Beta.Models.PersonAnnualEventType? Type
         {
-            get { return BackingStore?.Get<PersonAnnualEventType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonAnnualEventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PersonAnnualEvent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PersonAnnualEvent"/> and sets the default values.
         /// </summary>
         public PersonAnnualEvent() : base()
         {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PersonAnnualEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonAnnualEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PersonAnnualEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PersonAnnualEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PersonAnnualEvent();
+            return new Microsoft.Graph.Beta.Models.PersonAnnualEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "date", n => { Date = n.GetDateValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<PersonAnnualEventType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.PersonAnnualEventType>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<PersonAnnualEventType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PersonAnnualEventType>("type", Type);
         }
     }
 }

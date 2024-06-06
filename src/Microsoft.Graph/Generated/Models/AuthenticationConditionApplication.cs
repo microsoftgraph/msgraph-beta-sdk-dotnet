@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationConditionApplication"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationConditionApplication"/> and sets the default values.
         /// </summary>
         public AuthenticationConditionApplication()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationConditionApplication"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationConditionApplication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationConditionApplication CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationConditionApplication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationConditionApplication();
+            return new Microsoft.Graph.Beta.Models.AuthenticationConditionApplication();
         }
         /// <summary>
         /// The deserialization information for the current model

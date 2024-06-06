@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>The deviceManagementScriptAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptAssignment>? DeviceManagementScriptAssignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>? DeviceManagementScriptAssignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("deviceManagementScriptAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>?>("deviceManagementScriptAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment> DeviceManagementScriptAssignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("deviceManagementScriptAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>>("deviceManagementScriptAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
 #endif
         /// <summary>The deviceManagementScriptGroupAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptGroupAssignment>? DeviceManagementScriptGroupAssignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>? DeviceManagementScriptGroupAssignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("deviceManagementScriptGroupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>?>("deviceManagementScriptGroupAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("deviceManagementScriptGroupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>>("deviceManagementScriptGroupAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign.AssignPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign.AssignPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign.AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign.AssignPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceManagementScriptAssignments", n => { DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceManagementScriptGroupAssignments", n => { DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementScriptAssignments", n => { DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementScriptGroupAssignments", n => { DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("deviceManagementScriptAssignments", DeviceManagementScriptAssignments);
-            writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("deviceManagementScriptGroupAssignments", DeviceManagementScriptGroupAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptAssignment>("deviceManagementScriptAssignments", DeviceManagementScriptAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScriptGroupAssignment>("deviceManagementScriptGroupAssignments", DeviceManagementScriptGroupAssignments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

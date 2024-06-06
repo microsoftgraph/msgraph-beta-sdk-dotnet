@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EndsWithTransformation : CustomClaimTransformation, IParsable
+    public class EndsWithTransformation : Microsoft.Graph.Beta.Models.CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TransformationAttribute? Output
+        public Microsoft.Graph.Beta.Models.TransformationAttribute? Output
         {
-            get { return BackingStore?.Get<TransformationAttribute?>("output"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TransformationAttribute?>("output"); }
             set { BackingStore?.Set("output", value); }
         }
 #nullable restore
 #else
-        public TransformationAttribute Output
+        public Microsoft.Graph.Beta.Models.TransformationAttribute Output
         {
-            get { return BackingStore?.Get<TransformationAttribute>("output"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TransformationAttribute>("output"); }
             set { BackingStore?.Set("output", value); }
         }
 #endif
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EndsWithTransformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EndsWithTransformation"/> and sets the default values.
         /// </summary>
         public EndsWithTransformation() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EndsWithTransformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EndsWithTransformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EndsWithTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EndsWithTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EndsWithTransformation();
+            return new Microsoft.Graph.Beta.Models.EndsWithTransformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "output", n => { Output = n.GetObjectValue<TransformationAttribute>(TransformationAttribute.CreateFromDiscriminatorValue); } },
+                { "output", n => { Output = n.GetObjectValue<Microsoft.Graph.Beta.Models.TransformationAttribute>(Microsoft.Graph.Beta.Models.TransformationAttribute.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TransformationAttribute>("output", Output);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TransformationAttribute>("output", Output);
             writer.WriteStringValue("value", Value);
         }
     }

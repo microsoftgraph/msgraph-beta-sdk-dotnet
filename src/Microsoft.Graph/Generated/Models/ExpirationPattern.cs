@@ -48,13 +48,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The requestor&apos;s desired expiration pattern type.</summary>
-        public ExpirationPatternType? Type
+        public Microsoft.Graph.Beta.Models.ExpirationPatternType? Type
         {
-            get { return BackingStore?.Get<ExpirationPatternType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpirationPatternType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExpirationPattern"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExpirationPattern"/> and sets the default values.
         /// </summary>
         public ExpirationPattern()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExpirationPattern"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExpirationPattern"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExpirationPattern CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ExpirationPattern CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExpirationPattern();
+            return new Microsoft.Graph.Beta.Models.ExpirationPattern();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "duration", n => { Duration = n.GetTimeSpanValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<ExpirationPatternType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExpirationPatternType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteTimeSpanValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ExpirationPatternType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExpirationPatternType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

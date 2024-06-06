@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class WindowsWifiConfiguration : DeviceConfiguration, IParsable
+    public class WindowsWifiConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Specify whether the wifi connection should connect automatically when in range.</summary>
         public bool? ConnectAutomatically
@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("forceFIPSCompliance", value); }
         }
         /// <summary>Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.</summary>
-        public MeteredConnectionLimitType? MeteredConnectionLimit
+        public Microsoft.Graph.Beta.Models.MeteredConnectionLimitType? MeteredConnectionLimit
         {
-            get { return BackingStore?.Get<MeteredConnectionLimitType?>("meteredConnectionLimit"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeteredConnectionLimitType?>("meteredConnectionLimit"); }
             set { BackingStore?.Set("meteredConnectionLimit", value); }
         }
         /// <summary>Specify the network configuration name.</summary>
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.</summary>
-        public WiFiProxySetting? ProxySetting
+        public Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySetting
         {
-            get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySetting"); }
             set { BackingStore?.Set("proxySetting", value); }
         }
         /// <summary>Specify the SSID of the wifi connection.</summary>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wifiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsWifiConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsWifiConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsWifiConfiguration() : base()
         {
@@ -149,16 +149,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsWifiConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsWifiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsWifiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsWifiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration" => new WindowsWifiEnterpriseEAPConfiguration(),
-                _ => new WindowsWifiConfiguration(),
+                "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration" => new Microsoft.Graph.Beta.Models.WindowsWifiEnterpriseEAPConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsWifiConfiguration(),
             };
         }
         /// <summary>
@@ -173,15 +173,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "connectToPreferredNetwork", n => { ConnectToPreferredNetwork = n.GetBoolValue(); } },
                 { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
                 { "forceFIPSCompliance", n => { ForceFIPSCompliance = n.GetBoolValue(); } },
-                { "meteredConnectionLimit", n => { MeteredConnectionLimit = n.GetEnumValue<MeteredConnectionLimitType>(); } },
+                { "meteredConnectionLimit", n => { MeteredConnectionLimit = n.GetEnumValue<Microsoft.Graph.Beta.Models.MeteredConnectionLimitType>(); } },
                 { "networkName", n => { NetworkName = n.GetStringValue(); } },
                 { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
                 { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
                 { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
                 { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                { "proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "proxySetting", n => { ProxySetting = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
-                { "wifiSecurityType", n => { WifiSecurityType = n.GetEnumValue<WiFiSecurityType>(); } },
+                { "wifiSecurityType", n => { WifiSecurityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiSecurityType>(); } },
             };
         }
         /// <summary>
@@ -196,15 +196,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("connectToPreferredNetwork", ConnectToPreferredNetwork);
             writer.WriteBoolValue("connectWhenNetworkNameIsHidden", ConnectWhenNetworkNameIsHidden);
             writer.WriteBoolValue("forceFIPSCompliance", ForceFIPSCompliance);
-            writer.WriteEnumValue<MeteredConnectionLimitType>("meteredConnectionLimit", MeteredConnectionLimit);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MeteredConnectionLimitType>("meteredConnectionLimit", MeteredConnectionLimit);
             writer.WriteStringValue("networkName", NetworkName);
             writer.WriteStringValue("preSharedKey", PreSharedKey);
             writer.WriteStringValue("proxyAutomaticConfigurationUrl", ProxyAutomaticConfigurationUrl);
             writer.WriteStringValue("proxyManualAddress", ProxyManualAddress);
             writer.WriteIntValue("proxyManualPort", ProxyManualPort);
-            writer.WriteEnumValue<WiFiProxySetting>("proxySetting", ProxySetting);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySetting", ProxySetting);
             writer.WriteStringValue("ssid", Ssid);
-            writer.WriteEnumValue<WiFiSecurityType>("wifiSecurityType", WifiSecurityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiSecurityType>("wifiSecurityType", WifiSecurityType);
         }
     }
 }

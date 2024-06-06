@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcServicePlan : Entity, IParsable
+    public class CloudPcServicePlan : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name for the service plan. Read-only.</summary>
@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
-        public CloudPcProvisioningType? ProvisioningType
+        public Microsoft.Graph.Beta.Models.CloudPcProvisioningType? ProvisioningType
         {
-            get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
         /// <summary>The size of the RAM in GB. Read-only.</summary>
@@ -45,15 +45,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("storageInGB", value); }
         }
         /// <summary>The supportedSolution property</summary>
-        public CloudPcManagementService? SupportedSolution
+        public Microsoft.Graph.Beta.Models.CloudPcManagementService? SupportedSolution
         {
-            get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcManagementService?>("supportedSolution"); }
             set { BackingStore?.Set("supportedSolution", value); }
         }
         /// <summary>The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
-        public CloudPcServicePlanType? Type
+        public Microsoft.Graph.Beta.Models.CloudPcServicePlanType? Type
         {
-            get { return BackingStore?.Get<CloudPcServicePlanType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcServicePlanType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The size of the user profile disk in GB. Read-only.</summary>
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcServicePlan"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcServicePlan"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcServicePlan CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcServicePlan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcServicePlan();
+            return new Microsoft.Graph.Beta.Models.CloudPcServicePlan();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
+                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcProvisioningType>(); } },
                 { "ramInGB", n => { RamInGB = n.GetIntValue(); } },
                 { "storageInGB", n => { StorageInGB = n.GetIntValue(); } },
-                { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
-                { "type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
+                { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcServicePlanType>(); } },
                 { "userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
                 { "vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
             };
@@ -105,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteIntValue("ramInGB", RamInGB);
             writer.WriteIntValue("storageInGB", StorageInGB);
-            writer.WriteEnumValue<CloudPcManagementService>("supportedSolution", SupportedSolution);
-            writer.WriteEnumValue<CloudPcServicePlanType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcManagementService>("supportedSolution", SupportedSolution);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcServicePlanType>("type", Type);
             writer.WriteIntValue("userProfileInGB", UserProfileInGB);
             writer.WriteIntValue("vCpuCount", VCpuCount);
         }

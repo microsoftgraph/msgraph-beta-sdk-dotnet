@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
     #pragma warning disable CS1591
-    public class SecurityGroupProvisioningFlow : ProvisioningFlow, IParsable
+    public class SecurityGroupProvisioningFlow : Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The creationOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityGroupCreationOptions? CreationOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions? CreationOptions
         {
-            get { return BackingStore?.Get<SecurityGroupCreationOptions?>("creationOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions?>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
 #nullable restore
 #else
-        public SecurityGroupCreationOptions CreationOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions CreationOptions
         {
-            get { return BackingStore?.Get<SecurityGroupCreationOptions>("creationOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SecurityGroupProvisioningFlow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupProvisioningFlow"/> and sets the default values.
         /// </summary>
         public SecurityGroupProvisioningFlow() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SecurityGroupProvisioningFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupProvisioningFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SecurityGroupProvisioningFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupProvisioningFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SecurityGroupProvisioningFlow();
+            return new Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupProvisioningFlow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "creationOptions", n => { CreationOptions = n.GetObjectValue<SecurityGroupCreationOptions>(SecurityGroupCreationOptions.CreateFromDiscriminatorValue); } },
+                { "creationOptions", n => { CreationOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions>(Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<SecurityGroupCreationOptions>("creationOptions", CreationOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.SecurityGroupCreationOptions>("creationOptions", CreationOptions);
         }
     }
 }

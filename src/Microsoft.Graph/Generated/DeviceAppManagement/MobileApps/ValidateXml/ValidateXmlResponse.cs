@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml
 {
     [Obsolete("This class is obsolete. Use ValidateXmlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ValidateXmlResponse : ValidateXmlPostResponse, IParsable
+    public class ValidateXmlResponse : Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml.ValidateXmlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ValidateXmlResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml.ValidateXmlResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ValidateXmlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml.ValidateXmlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ValidateXmlResponse();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml.ValidateXmlResponse();
         }
     }
 }

@@ -7,13 +7,14 @@ namespace Microsoft.Graph.Beta.Models
     public enum WindowsUserType
     #pragma warning restore CS1591
     {
+        /// <summary>Indicates that the user has administrator privileges.</summary>
         [EnumMember(Value = "administrator")]
-        #pragma warning disable CS1591
         Administrator,
-        #pragma warning restore CS1591
+        /// <summary>Indicates that the user is a low-rights user without administrator privileges.</summary>
         [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
         Standard,
-        #pragma warning restore CS1591
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

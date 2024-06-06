@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
     public class AppLogCollectionRequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.</summary>
         /// <param name="position">The unique identifier of appLogCollectionRequest</param>
-        /// <returns>A <see cref="AppLogCollectionRequestItemRequestBuilder"/></returns>
-        public AppLogCollectionRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item.AppLogCollectionRequestItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item.AppLogCollectionRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("appLogCollectionRequest%2Did", position);
-                return new AppLogCollectionRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item.AppLogCollectionRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppLogCollectionRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppLogCollectionRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,65 +52,65 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         {
         }
         /// <summary>
-        /// The collection property of AppLogUploadRequest.
+        /// Indicates collection of App Log Upload Request.
         /// </summary>
-        /// <returns>A <see cref="AppLogCollectionRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppLogCollectionRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<AppLogCollectionRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder.AppLogCollectionRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AppLogCollectionRequestCollectionResponse> GetAsync(Action<RequestConfiguration<AppLogCollectionRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder.AppLogCollectionRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AppLogCollectionRequestCollectionResponse>(requestInfo, AppLogCollectionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to appLogCollectionRequests for users
         /// </summary>
-        /// <returns>A <see cref="AppLogCollectionRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppLogCollectionRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppLogCollectionRequest?> PostAsync(AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AppLogCollectionRequest?> PostAsync(Microsoft.Graph.Beta.Models.AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AppLogCollectionRequest> PostAsync(AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AppLogCollectionRequest> PostAsync(Microsoft.Graph.Beta.Models.AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AppLogCollectionRequest>(requestInfo, Microsoft.Graph.Beta.Models.AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection property of AppLogUploadRequest.
+        /// Indicates collection of App Log Upload Request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppLogCollectionRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder.AppLogCollectionRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppLogCollectionRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder.AppLogCollectionRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AppLogCollectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,14 +143,14 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AppLogCollectionRequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AppLogCollectionRequestsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AppLogCollectionRequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection property of AppLogUploadRequest.
+        /// Indicates collection of App Log Upload Request.
         /// </summary>
         public class AppLogCollectionRequestsRequestBuilderGetQueryParameters 
         {
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AppLogCollectionRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<AppLogCollectionRequestsRequestBuilderGetQueryParameters>
+        public class AppLogCollectionRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder.AppLogCollectionRequestsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

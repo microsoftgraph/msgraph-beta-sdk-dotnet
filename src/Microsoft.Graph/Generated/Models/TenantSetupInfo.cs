@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TenantSetupInfo : Entity, IParsable
+    public class TenantSetupInfo : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The defaultRolesSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRoleSettings? DefaultRolesSettings
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleSettings? DefaultRolesSettings
         {
-            get { return BackingStore?.Get<PrivilegedRoleSettings?>("defaultRolesSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings?>("defaultRolesSettings"); }
             set { BackingStore?.Set("defaultRolesSettings", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRoleSettings DefaultRolesSettings
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleSettings DefaultRolesSettings
         {
-            get { return BackingStore?.Get<PrivilegedRoleSettings>("defaultRolesSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>("defaultRolesSettings"); }
             set { BackingStore?.Set("defaultRolesSettings", value); }
         }
 #endif
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantSetupInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TenantSetupInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TenantSetupInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TenantSetupInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantSetupInfo();
+            return new Microsoft.Graph.Beta.Models.TenantSetupInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,10 +94,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultRolesSettings", n => { DefaultRolesSettings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
+                { "defaultRolesSettings", n => { DefaultRolesSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>(Microsoft.Graph.Beta.Models.PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
                 { "firstTimeSetup", n => { FirstTimeSetup = n.GetBoolValue(); } },
                 { "relevantRolesSettings", n => { RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "setupStatus", n => { SetupStatus = n.GetEnumValue<SetupStatus>(); } },
+                { "setupStatus", n => { SetupStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.SetupStatus>(); } },
                 { "skipSetup", n => { SkipSetup = n.GetBoolValue(); } },
                 { "userRolesActions", n => { UserRolesActions = n.GetStringValue(); } },
             };
@@ -110,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PrivilegedRoleSettings>("defaultRolesSettings", DefaultRolesSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>("defaultRolesSettings", DefaultRolesSettings);
             writer.WriteBoolValue("firstTimeSetup", FirstTimeSetup);
             writer.WriteCollectionOfPrimitiveValues<string>("relevantRolesSettings", RelevantRolesSettings);
-            writer.WriteEnumValue<SetupStatus>("setupStatus", SetupStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SetupStatus>("setupStatus", SetupStatus);
             writer.WriteBoolValue("skipSetup", SkipSetup);
             writer.WriteStringValue("userRolesActions", UserRolesActions);
         }

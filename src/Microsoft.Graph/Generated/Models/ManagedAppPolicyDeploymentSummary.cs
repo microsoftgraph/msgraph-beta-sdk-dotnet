@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     /// </summary>
-    public class ManagedAppPolicyDeploymentSummary : Entity, IParsable
+    public class ManagedAppPolicyDeploymentSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The configurationDeployedUserCount property</summary>
         public int? ConfigurationDeployedUserCount
@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The configurationDeploymentSummaryPerApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp
+        public List<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>?>("configurationDeploymentSummaryPerApp"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp>?>("configurationDeploymentSummaryPerApp"); }
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp
+        public List<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp
         {
-            get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>>("configurationDeploymentSummaryPerApp"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp>>("configurationDeploymentSummaryPerApp"); }
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
 #endif
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAppPolicyDeploymentSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppPolicyDeploymentSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAppPolicyDeploymentSummary();
+            return new Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "configurationDeployedUserCount", n => { ConfigurationDeployedUserCount = n.GetIntValue(); } },
-                { "configurationDeploymentSummaryPerApp", n => { ConfigurationDeploymentSummaryPerApp = n.GetCollectionOfObjectValues<ManagedAppPolicyDeploymentSummaryPerApp>(ManagedAppPolicyDeploymentSummaryPerApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationDeploymentSummaryPerApp", n => { ConfigurationDeploymentSummaryPerApp = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp>(Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastRefreshTime", n => { LastRefreshTime = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("configurationDeployedUserCount", ConfigurationDeployedUserCount);
-            writer.WriteCollectionOfObjectValues<ManagedAppPolicyDeploymentSummaryPerApp>("configurationDeploymentSummaryPerApp", ConfigurationDeploymentSummaryPerApp);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummaryPerApp>("configurationDeploymentSummaryPerApp", ConfigurationDeploymentSummaryPerApp);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastRefreshTime", LastRefreshTime);
             writer.WriteStringValue("version", Version);

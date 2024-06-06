@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             set { BackingStore?.Set("exportSingleItems", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExportResultPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult.ExportResultPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExportResultPostRequestBody()
         {
@@ -93,12 +93,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExportResultPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult.ExportResultPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExportResultPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult.ExportResultPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExportResultPostRequestBody();
+            return new Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult.ExportResultPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalOptions", n => { AdditionalOptions = n.GetEnumValue<AdditionalOptions>(); } },
+                { "additionalOptions", n => { AdditionalOptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AdditionalOptions>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "exportCriteria", n => { ExportCriteria = n.GetEnumValue<ExportCriteria>(); } },
-                { "exportFormat", n => { ExportFormat = n.GetEnumValue<ExportFormat>(); } },
-                { "exportLocation", n => { ExportLocation = n.GetEnumValue<ExportLocation>(); } },
+                { "exportCriteria", n => { ExportCriteria = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportCriteria>(); } },
+                { "exportFormat", n => { ExportFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportFormat>(); } },
+                { "exportLocation", n => { ExportLocation = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportLocation>(); } },
                 { "exportSingleItems", n => { ExportSingleItems = n.GetBoolValue(); } },
             };
         }
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AdditionalOptions>("additionalOptions", AdditionalOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AdditionalOptions>("additionalOptions", AdditionalOptions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<ExportCriteria>("exportCriteria", ExportCriteria);
-            writer.WriteEnumValue<ExportFormat>("exportFormat", ExportFormat);
-            writer.WriteEnumValue<ExportLocation>("exportLocation", ExportLocation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportCriteria>("exportCriteria", ExportCriteria);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportFormat>("exportFormat", ExportFormat);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportLocation>("exportLocation", ExportLocation);
             writer.WriteBoolValue("exportSingleItems", ExportSingleItems);
             writer.WriteAdditionalData(AdditionalData);
         }

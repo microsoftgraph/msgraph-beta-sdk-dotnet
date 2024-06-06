@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My
 {
     [Obsolete("This class is obsolete. Use MyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class MyResponse : MyGetResponse, IParsable
+    public class MyResponse : Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MyResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MyResponse();
+            return new Microsoft.Graph.Beta.PrivilegedRoleAssignments.My.MyResponse();
         }
     }
 }

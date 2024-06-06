@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class LearningContent : Entity, IParsable
+    public class LearningContent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
@@ -237,12 +237,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LearningContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LearningContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LearningContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.LearningContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LearningContent();
+            return new Microsoft.Graph.Beta.Models.LearningContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
                 { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "level", n => { Level = n.GetEnumValue<Level>(); } },
+                { "level", n => { Level = n.GetEnumValue<Microsoft.Graph.Beta.Models.Level>(); } },
                 { "numberOfPages", n => { NumberOfPages = n.GetIntValue(); } },
                 { "skillTags", n => { SkillTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "sourceName", n => { SourceName = n.GetStringValue(); } },
@@ -294,7 +294,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isSearchable", IsSearchable);
             writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<Level>("level", Level);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Level>("level", Level);
             writer.WriteIntValue("numberOfPages", NumberOfPages);
             writer.WriteCollectionOfPrimitiveValues<string>("skillTags", SkillTags);
             writer.WriteStringValue("sourceName", SourceName);

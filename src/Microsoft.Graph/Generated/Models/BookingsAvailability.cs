@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The availabilityType property</summary>
-        public BookingsServiceAvailabilityType? AvailabilityType
+        public Microsoft.Graph.Beta.Models.BookingsServiceAvailabilityType? AvailabilityType
         {
-            get { return BackingStore?.Get<BookingsServiceAvailabilityType?>("availabilityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingsServiceAvailabilityType?>("availabilityType"); }
             set { BackingStore?.Set("availabilityType", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The hours of operation in a week. The business hours value is set to null if the availability type isn&apos;t customWeeklyHours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkHours>? BusinessHours
+        public List<Microsoft.Graph.Beta.Models.BookingWorkHours>? BusinessHours
         {
-            get { return BackingStore?.Get<List<BookingWorkHours>?>("businessHours"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingWorkHours>?>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkHours> BusinessHours
+        public List<Microsoft.Graph.Beta.Models.BookingWorkHours> BusinessHours
         {
-            get { return BackingStore?.Get<List<BookingWorkHours>>("businessHours"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingWorkHours>>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BookingsAvailability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BookingsAvailability"/> and sets the default values.
         /// </summary>
         public BookingsAvailability()
         {
@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingsAvailability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BookingsAvailability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BookingsAvailability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BookingsAvailability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.bookingsAvailabilityWindow" => new BookingsAvailabilityWindow(),
-                _ => new BookingsAvailability(),
+                "#microsoft.graph.bookingsAvailabilityWindow" => new Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow(),
+                _ => new Microsoft.Graph.Beta.Models.BookingsAvailability(),
             };
         }
         /// <summary>
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "availabilityType", n => { AvailabilityType = n.GetEnumValue<BookingsServiceAvailabilityType>(); } },
-                { "businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "availabilityType", n => { AvailabilityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.BookingsServiceAvailabilityType>(); } },
+                { "businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingWorkHours>(Microsoft.Graph.Beta.Models.BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -100,8 +100,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<BookingsServiceAvailabilityType>("availabilityType", AvailabilityType);
-            writer.WriteCollectionOfObjectValues<BookingWorkHours>("businessHours", BusinessHours);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BookingsServiceAvailabilityType>("availabilityType", AvailabilityType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingWorkHours>("businessHours", BusinessHours);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

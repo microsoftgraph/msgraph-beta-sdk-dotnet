@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Key-value pair of claims retrieved from the credential that the user presented, and the service verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VerifiedCredentialClaims? Claims
+        public Microsoft.Graph.Beta.Models.VerifiedCredentialClaims? Claims
         {
-            get { return BackingStore?.Get<VerifiedCredentialClaims?>("claims"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedCredentialClaims?>("claims"); }
             set { BackingStore?.Set("claims", value); }
         }
 #nullable restore
 #else
-        public VerifiedCredentialClaims Claims
+        public Microsoft.Graph.Beta.Models.VerifiedCredentialClaims Claims
         {
-            get { return BackingStore?.Get<VerifiedCredentialClaims>("claims"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedCredentialClaims>("claims"); }
             set { BackingStore?.Set("claims", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VerifiedCredentialData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VerifiedCredentialData"/> and sets the default values.
         /// </summary>
         public VerifiedCredentialData()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifiedCredentialData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VerifiedCredentialData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VerifiedCredentialData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.VerifiedCredentialData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VerifiedCredentialData();
+            return new Microsoft.Graph.Beta.Models.VerifiedCredentialData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authority", n => { Authority = n.GetStringValue(); } },
-                { "claims", n => { Claims = n.GetObjectValue<VerifiedCredentialClaims>(VerifiedCredentialClaims.CreateFromDiscriminatorValue); } },
+                { "claims", n => { Claims = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCredentialClaims>(Microsoft.Graph.Beta.Models.VerifiedCredentialClaims.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authority", Authority);
-            writer.WriteObjectValue<VerifiedCredentialClaims>("claims", Claims);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiedCredentialClaims>("claims", Claims);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsSecretInformationAccessFinding : Finding, IParsable
+    public class AwsSecretInformationAccessFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentity? Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity? Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity?>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentity Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -59,27 +59,27 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The secretInformationWebServices property</summary>
-        public AwsSecretInformationWebServices? SecretInformationWebServices
+        public Microsoft.Graph.Beta.Models.AwsSecretInformationWebServices? SecretInformationWebServices
         {
-            get { return BackingStore?.Get<AwsSecretInformationWebServices?>("secretInformationWebServices"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsSecretInformationWebServices?>("secretInformationWebServices"); }
             set { BackingStore?.Set("secretInformationWebServices", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsSecretInformationAccessFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsSecretInformationAccessFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsSecretInformationAccessFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsSecretInformationAccessFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.secretInformationAccessAwsResourceFinding" => new SecretInformationAccessAwsResourceFinding(),
-                "#microsoft.graph.secretInformationAccessAwsRoleFinding" => new SecretInformationAccessAwsRoleFinding(),
-                "#microsoft.graph.secretInformationAccessAwsServerlessFunctionFinding" => new SecretInformationAccessAwsServerlessFunctionFinding(),
-                "#microsoft.graph.secretInformationAccessAwsUserFinding" => new SecretInformationAccessAwsUserFinding(),
-                _ => new AwsSecretInformationAccessFinding(),
+                "#microsoft.graph.secretInformationAccessAwsResourceFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsResourceFinding(),
+                "#microsoft.graph.secretInformationAccessAwsRoleFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsRoleFinding(),
+                "#microsoft.graph.secretInformationAccessAwsServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsServerlessFunctionFinding(),
+                "#microsoft.graph.secretInformationAccessAwsUserFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsUserFinding(),
+                _ => new Microsoft.Graph.Beta.Models.AwsSecretInformationAccessFinding(),
             };
         }
         /// <summary>
@@ -90,10 +90,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "identity", n => { Identity = n.GetObjectValue<AuthorizationSystemIdentity>(AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>(Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
                 { "identityDetails", n => { IdentityDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>(Microsoft.Graph.Beta.Models.IdentityDetails.CreateFromDiscriminatorValue); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                { "secretInformationWebServices", n => { SecretInformationWebServices = n.GetEnumValue<AwsSecretInformationWebServices>(); } },
+                { "secretInformationWebServices", n => { SecretInformationWebServices = n.GetEnumValue<Microsoft.Graph.Beta.Models.AwsSecretInformationWebServices>(); } },
             };
         }
         /// <summary>
@@ -104,10 +104,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AuthorizationSystemIdentity>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity", Identity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>("identityDetails", IdentityDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
-            writer.WriteEnumValue<AwsSecretInformationWebServices>("secretInformationWebServices", SecretInformationWebServices);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AwsSecretInformationWebServices>("secretInformationWebServices", SecretInformationWebServices);
         }
     }
 }

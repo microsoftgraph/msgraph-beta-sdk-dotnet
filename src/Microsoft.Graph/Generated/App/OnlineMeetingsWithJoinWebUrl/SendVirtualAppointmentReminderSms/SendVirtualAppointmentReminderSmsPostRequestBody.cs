@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppoi
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendeeNotificationInfo>? Attendees
+        public List<Microsoft.Graph.Beta.Models.AttendeeNotificationInfo>? Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeNotificationInfo>?>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendeeNotificationInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<AttendeeNotificationInfo> Attendees
+        public List<Microsoft.Graph.Beta.Models.AttendeeNotificationInfo> Attendees
         {
-            get { return BackingStore?.Get<List<AttendeeNotificationInfo>>("attendees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendeeNotificationInfo>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #endif
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppoi
             set { BackingStore?.Set("remindBeforeTimeInMinutesType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SendVirtualAppointmentReminderSmsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendVirtualAppointmentReminderSmsPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppoi
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SendVirtualAppointmentReminderSmsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SendVirtualAppointmentReminderSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SendVirtualAppointmentReminderSmsPostRequestBody();
+            return new Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppoi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "remindBeforeTimeInMinutesType", n => { RemindBeforeTimeInMinutesType = n.GetEnumValue<RemindBeforeTimeInMinutesType>(); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendeeNotificationInfo>(Microsoft.Graph.Beta.Models.AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remindBeforeTimeInMinutesType", n => { RemindBeforeTimeInMinutesType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RemindBeforeTimeInMinutesType>(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl.SendVirtualAppoi
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", Attendees);
-            writer.WriteEnumValue<RemindBeforeTimeInMinutesType>("remindBeforeTimeInMinutesType", RemindBeforeTimeInMinutesType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendeeNotificationInfo>("attendees", Attendees);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RemindBeforeTimeInMinutesType>("remindBeforeTimeInMinutesType", RemindBeforeTimeInMinutesType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings
 {
     #pragma warning disable CS1591
-    public class GetNonCompliantSettingsGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetNonCompliantSettingsGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicySettingState>? Value
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>? Value
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicySettingState> Value
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState> Value
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetNonCompliantSettingsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetNonCompliantSettingsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetNonCompliantSettingsGetResponse();
+            return new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSet
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSet
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceCompliancePolicySettingState>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingState>("value", Value);
         }
     }
 }

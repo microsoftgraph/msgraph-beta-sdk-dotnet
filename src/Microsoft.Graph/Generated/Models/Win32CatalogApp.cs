@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A mobileApp that is based on a referenced application in a Win32CatalogApp repository
     /// </summary>
-    public class Win32CatalogApp : Win32LobApp, IParsable
+    public class Win32CatalogApp : Microsoft.Graph.Beta.Models.Win32LobApp, IParsable
     {
         /// <summary>The latest available catalog package the app is upgradeable to. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppCatalogPackage? LatestUpgradeCatalogPackage
+        public Microsoft.Graph.Beta.Models.MobileAppCatalogPackage? LatestUpgradeCatalogPackage
         {
-            get { return BackingStore?.Get<MobileAppCatalogPackage?>("latestUpgradeCatalogPackage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage?>("latestUpgradeCatalogPackage"); }
             set { BackingStore?.Set("latestUpgradeCatalogPackage", value); }
         }
 #nullable restore
 #else
-        public MobileAppCatalogPackage LatestUpgradeCatalogPackage
+        public Microsoft.Graph.Beta.Models.MobileAppCatalogPackage LatestUpgradeCatalogPackage
         {
-            get { return BackingStore?.Get<MobileAppCatalogPackage>("latestUpgradeCatalogPackage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>("latestUpgradeCatalogPackage"); }
             set { BackingStore?.Set("latestUpgradeCatalogPackage", value); }
         }
 #endif
@@ -46,21 +46,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The current catalog package the app is synced from. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppCatalogPackage? ReferencedCatalogPackage
+        public Microsoft.Graph.Beta.Models.MobileAppCatalogPackage? ReferencedCatalogPackage
         {
-            get { return BackingStore?.Get<MobileAppCatalogPackage?>("referencedCatalogPackage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage?>("referencedCatalogPackage"); }
             set { BackingStore?.Set("referencedCatalogPackage", value); }
         }
 #nullable restore
 #else
-        public MobileAppCatalogPackage ReferencedCatalogPackage
+        public Microsoft.Graph.Beta.Models.MobileAppCatalogPackage ReferencedCatalogPackage
         {
-            get { return BackingStore?.Get<MobileAppCatalogPackage>("referencedCatalogPackage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>("referencedCatalogPackage"); }
             set { BackingStore?.Set("referencedCatalogPackage", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32CatalogApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32CatalogApp"/> and sets the default values.
         /// </summary>
         public Win32CatalogApp() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32CatalogApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32CatalogApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32CatalogApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Win32CatalogApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32CatalogApp();
+            return new Microsoft.Graph.Beta.Models.Win32CatalogApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "latestUpgradeCatalogPackage", n => { LatestUpgradeCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
+                { "latestUpgradeCatalogPackage", n => { LatestUpgradeCatalogPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>(Microsoft.Graph.Beta.Models.MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
                 { "mobileAppCatalogPackageId", n => { MobileAppCatalogPackageId = n.GetStringValue(); } },
-                { "referencedCatalogPackage", n => { ReferencedCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
+                { "referencedCatalogPackage", n => { ReferencedCatalogPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>(Microsoft.Graph.Beta.Models.MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MobileAppCatalogPackage>("latestUpgradeCatalogPackage", LatestUpgradeCatalogPackage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>("latestUpgradeCatalogPackage", LatestUpgradeCatalogPackage);
             writer.WriteStringValue("mobileAppCatalogPackageId", MobileAppCatalogPackageId);
-            writer.WriteObjectValue<MobileAppCatalogPackage>("referencedCatalogPackage", ReferencedCatalogPackage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>("referencedCatalogPackage", ReferencedCatalogPackage);
         }
     }
 }

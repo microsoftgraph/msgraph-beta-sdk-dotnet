@@ -71,13 +71,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The recurrence range. Possible values are: endDate, noEnd, numbered. Required.</summary>
-        public RecurrenceRangeType? Type
+        public Microsoft.Graph.Beta.Models.RecurrenceRangeType? Type
         {
-            get { return BackingStore?.Get<RecurrenceRangeType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecurrenceRangeType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecurrenceRange"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RecurrenceRange"/> and sets the default values.
         /// </summary>
         public RecurrenceRange()
         {
@@ -87,12 +87,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecurrenceRange"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecurrenceRange"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecurrenceRange CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RecurrenceRange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecurrenceRange();
+            return new Microsoft.Graph.Beta.Models.RecurrenceRange();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "recurrenceTimeZone", n => { RecurrenceTimeZone = n.GetStringValue(); } },
                 { "startDate", n => { StartDate = n.GetDateValue(); } },
-                { "type", n => { Type = n.GetEnumValue<RecurrenceRangeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecurrenceRangeType>(); } },
             };
         }
         /// <summary>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recurrenceTimeZone", RecurrenceTimeZone);
             writer.WriteDateValue("startDate", StartDate);
-            writer.WriteEnumValue<RecurrenceRangeType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecurrenceRangeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

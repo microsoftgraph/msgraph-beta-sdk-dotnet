@@ -71,21 +71,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance
         /// <summary>The settingsDelta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? SettingsDelta
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>? SettingsDelta
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settingsDelta"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>?>("settingsDelta"); }
             set { BackingStore?.Set("settingsDelta", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> SettingsDelta
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance> SettingsDelta
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settingsDelta"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>>("settingsDelta"); }
             set { BackingStore?.Set("settingsDelta", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateInstancePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance.CreateInstancePostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateInstancePostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateInstancePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance.CreateInstancePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateInstancePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance.CreateInstancePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateInstancePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance.CreateInstancePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "settingsDelta", n => { SettingsDelta = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settingsDelta", n => { SettingsDelta = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("settingsDelta", SettingsDelta);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>("settingsDelta", SettingsDelta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

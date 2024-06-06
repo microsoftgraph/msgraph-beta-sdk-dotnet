@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An abstract class containing the base properties for Managed eBook.
     /// </summary>
-    public class ManagedEBook : Entity, IParsable
+    public class ManagedEBook : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for this eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedEBookAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.ManagedEBookAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<ManagedEBookAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBookAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<ManagedEBookAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.ManagedEBookAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<ManagedEBookAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBookAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>The list of categories for this eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedEBookCategory>? Categories
+        public List<Microsoft.Graph.Beta.Models.ManagedEBookCategory>? Categories
         {
-            get { return BackingStore?.Get<List<ManagedEBookCategory>?>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBookCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<ManagedEBookCategory> Categories
+        public List<Microsoft.Graph.Beta.Models.ManagedEBookCategory> Categories
         {
-            get { return BackingStore?.Get<List<ManagedEBookCategory>>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedEBookCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #endif
@@ -68,16 +68,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of installation states for this eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceInstallState>? DeviceStates
+        public List<Microsoft.Graph.Beta.Models.DeviceInstallState>? DeviceStates
         {
-            get { return BackingStore?.Get<List<DeviceInstallState>?>("deviceStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceInstallState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceInstallState> DeviceStates
+        public List<Microsoft.Graph.Beta.Models.DeviceInstallState> DeviceStates
         {
-            get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceInstallState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
 #endif
@@ -116,32 +116,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Mobile App Install Summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EBookInstallSummary? InstallSummary
+        public Microsoft.Graph.Beta.Models.EBookInstallSummary? InstallSummary
         {
-            get { return BackingStore?.Get<EBookInstallSummary?>("installSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EBookInstallSummary?>("installSummary"); }
             set { BackingStore?.Set("installSummary", value); }
         }
 #nullable restore
 #else
-        public EBookInstallSummary InstallSummary
+        public Microsoft.Graph.Beta.Models.EBookInstallSummary InstallSummary
         {
-            get { return BackingStore?.Get<EBookInstallSummary>("installSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EBookInstallSummary>("installSummary"); }
             set { BackingStore?.Set("installSummary", value); }
         }
 #endif
         /// <summary>Book cover.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LargeCover
+        public Microsoft.Graph.Beta.Models.MimeContent? LargeCover
         {
-            get { return BackingStore?.Get<MimeContent?>("largeCover"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("largeCover"); }
             set { BackingStore?.Set("largeCover", value); }
         }
 #nullable restore
 #else
-        public MimeContent LargeCover
+        public Microsoft.Graph.Beta.Models.MimeContent LargeCover
         {
-            get { return BackingStore?.Get<MimeContent>("largeCover"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("largeCover"); }
             set { BackingStore?.Set("largeCover", value); }
         }
 #endif
@@ -192,32 +192,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of installation states for this eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserInstallStateSummary>? UserStateSummary
+        public List<Microsoft.Graph.Beta.Models.UserInstallStateSummary>? UserStateSummary
         {
-            get { return BackingStore?.Get<List<UserInstallStateSummary>?>("userStateSummary"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserInstallStateSummary>?>("userStateSummary"); }
             set { BackingStore?.Set("userStateSummary", value); }
         }
 #nullable restore
 #else
-        public List<UserInstallStateSummary> UserStateSummary
+        public List<Microsoft.Graph.Beta.Models.UserInstallStateSummary> UserStateSummary
         {
-            get { return BackingStore?.Get<List<UserInstallStateSummary>>("userStateSummary"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserInstallStateSummary>>("userStateSummary"); }
             set { BackingStore?.Set("userStateSummary", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedEBook"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedEBook"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedEBook CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedEBook CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosVppEBook" => new IosVppEBook(),
-                _ => new ManagedEBook(),
+                "#microsoft.graph.iosVppEBook" => new Microsoft.Graph.Beta.Models.IosVppEBook(),
+                _ => new Microsoft.Graph.Beta.Models.ManagedEBook(),
             };
         }
         /// <summary>
@@ -228,20 +228,20 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<ManagedEBookCategory>(ManagedEBookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBookAssignment>(Microsoft.Graph.Beta.Models.ManagedEBookAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBookCategory>(Microsoft.Graph.Beta.Models.ManagedEBookCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<DeviceInstallState>(DeviceInstallState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceInstallState>(Microsoft.Graph.Beta.Models.DeviceInstallState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "informationUrl", n => { InformationUrl = n.GetStringValue(); } },
-                { "installSummary", n => { InstallSummary = n.GetObjectValue<EBookInstallSummary>(EBookInstallSummary.CreateFromDiscriminatorValue); } },
-                { "largeCover", n => { LargeCover = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "installSummary", n => { InstallSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.EBookInstallSummary>(Microsoft.Graph.Beta.Models.EBookInstallSummary.CreateFromDiscriminatorValue); } },
+                { "largeCover", n => { LargeCover = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "privacyInformationUrl", n => { PrivacyInformationUrl = n.GetStringValue(); } },
                 { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
-                { "userStateSummary", n => { UserStateSummary = n.GetCollectionOfObjectValues<UserInstallStateSummary>(UserInstallStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userStateSummary", n => { UserStateSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserInstallStateSummary>(Microsoft.Graph.Beta.Models.UserInstallStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -252,20 +252,20 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagedEBookAssignment>("assignments", Assignments);
-            writer.WriteCollectionOfObjectValues<ManagedEBookCategory>("categories", Categories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBookAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedEBookCategory>("categories", Categories);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<DeviceInstallState>("deviceStates", DeviceStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceInstallState>("deviceStates", DeviceStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("informationUrl", InformationUrl);
-            writer.WriteObjectValue<EBookInstallSummary>("installSummary", InstallSummary);
-            writer.WriteObjectValue<MimeContent>("largeCover", LargeCover);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EBookInstallSummary>("installSummary", InstallSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("largeCover", LargeCover);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("privacyInformationUrl", PrivacyInformationUrl);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
             writer.WriteStringValue("publisher", Publisher);
-            writer.WriteCollectionOfObjectValues<UserInstallStateSummary>("userStateSummary", UserStateSummary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserInstallStateSummary>("userStateSummary", UserStateSummary);
         }
     }
 }

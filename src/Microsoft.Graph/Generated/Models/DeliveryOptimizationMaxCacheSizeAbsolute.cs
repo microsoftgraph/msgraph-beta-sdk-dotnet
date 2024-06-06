@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Delivery Optimization max cache size absolute type.
     /// </summary>
-    public class DeliveryOptimizationMaxCacheSizeAbsolute : DeliveryOptimizationMaxCacheSize, IParsable
+    public class DeliveryOptimizationMaxCacheSizeAbsolute : Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSize, IParsable
     {
         /// <summary>Specifies the maximum size in GB of Delivery Optimization cache. Valid values 0 to 4294967295</summary>
         public long? MaximumCacheSizeInGigabytes
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("maximumCacheSizeInGigabytes", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeliveryOptimizationMaxCacheSizeAbsolute"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizeAbsolute"/> and sets the default values.
         /// </summary>
         public DeliveryOptimizationMaxCacheSizeAbsolute() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeliveryOptimizationMaxCacheSizeAbsolute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizeAbsolute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeliveryOptimizationMaxCacheSizeAbsolute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizeAbsolute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeliveryOptimizationMaxCacheSizeAbsolute();
+            return new Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSizeAbsolute();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MobileApp Intent and Install State for a given device.
     /// </summary>
-    public class MobileAppIntentAndState : Entity, IParsable
+    public class MobileAppIntentAndState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Device identifier created or collected by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of payload intents and states for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppIntentAndStateDetail>? MobileAppList
+        public List<Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail>? MobileAppList
         {
-            get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>?>("mobileAppList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail>?>("mobileAppList"); }
             set { BackingStore?.Set("mobileAppList", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppIntentAndStateDetail> MobileAppList
+        public List<Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail> MobileAppList
         {
-            get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>>("mobileAppList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail>>("mobileAppList"); }
             set { BackingStore?.Set("mobileAppList", value); }
         }
 #endif
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppIntentAndState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppIntentAndState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppIntentAndState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppIntentAndState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppIntentAndState();
+            return new Microsoft.Graph.Beta.Models.MobileAppIntentAndState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },
-                { "mobileAppList", n => { MobileAppList = n.GetCollectionOfObjectValues<MobileAppIntentAndStateDetail>(MobileAppIntentAndStateDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppList", n => { MobileAppList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail>(Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("managedDeviceIdentifier", ManagedDeviceIdentifier);
-            writer.WriteCollectionOfObjectValues<MobileAppIntentAndStateDetail>("mobileAppList", MobileAppList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail>("mobileAppList", MobileAppList);
             writer.WriteStringValue("userId", UserId);
         }
     }

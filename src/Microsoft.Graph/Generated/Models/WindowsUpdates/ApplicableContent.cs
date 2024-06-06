@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Collection of devices and recommendations for applicable catalog content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApplicableContentDeviceMatch>? MatchedDevices
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch>? MatchedDevices
         {
-            get { return BackingStore?.Get<List<ApplicableContentDeviceMatch>?>("matchedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch>?>("matchedDevices"); }
             set { BackingStore?.Set("matchedDevices", value); }
         }
 #nullable restore
 #else
-        public List<ApplicableContentDeviceMatch> MatchedDevices
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch> MatchedDevices
         {
-            get { return BackingStore?.Get<List<ApplicableContentDeviceMatch>>("matchedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch>>("matchedDevices"); }
             set { BackingStore?.Set("matchedDevices", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplicableContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent"/> and sets the default values.
         /// </summary>
         public ApplicableContent()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplicableContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplicableContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplicableContent();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             {
                 { "catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
                 { "catalogEntryId", n => { CatalogEntryId = n.GetStringValue(); } },
-                { "matchedDevices", n => { MatchedDevices = n.GetCollectionOfObjectValues<ApplicableContentDeviceMatch>(ApplicableContentDeviceMatch.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchedDevices", n => { MatchedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch>(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry", CatalogEntry);
             writer.WriteStringValue("catalogEntryId", CatalogEntryId);
-            writer.WriteCollectionOfObjectValues<ApplicableContentDeviceMatch>("matchedDevices", MatchedDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch>("matchedDevices", MatchedDevices);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

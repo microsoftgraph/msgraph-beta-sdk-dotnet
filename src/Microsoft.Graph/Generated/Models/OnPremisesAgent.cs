@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnPremisesAgent : Entity, IParsable
+    public class OnPremisesAgent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesAgentGroup>? AgentGroups
+        public List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>? AgentGroups
         {
-            get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesAgentGroup> AgentGroups
+        public List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup> AgentGroups
         {
-            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
 #endif
@@ -59,36 +59,36 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public AgentStatus? Status
+        public Microsoft.Graph.Beta.Models.AgentStatus? Status
         {
-            get { return BackingStore?.Get<AgentStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AgentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesPublishingType?>? SupportedPublishingTypes
+        public List<Microsoft.Graph.Beta.Models.OnPremisesPublishingType?>? SupportedPublishingTypes
         {
-            get { return BackingStore?.Get<List<OnPremisesPublishingType?>?>("supportedPublishingTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesPublishingType?>?>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesPublishingType?> SupportedPublishingTypes
+        public List<Microsoft.Graph.Beta.Models.OnPremisesPublishingType?> SupportedPublishingTypes
         {
-            get { return BackingStore?.Get<List<OnPremisesPublishingType?>>("supportedPublishingTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesPublishingType?>>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesAgent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnPremisesAgent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnPremisesAgent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnPremisesAgent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesAgent();
+            return new Microsoft.Graph.Beta.Models.OnPremisesAgent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>(Microsoft.Graph.Beta.Models.OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "externalIp", n => { ExternalIp = n.GetStringValue(); } },
                 { "machineName", n => { MachineName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
-                { "supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>()?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.AgentStatus>(); } },
+                { "supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.OnPremisesPublishingType>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OnPremisesAgentGroup>("agentGroups", AgentGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>("agentGroups", AgentGroups);
             writer.WriteStringValue("externalIp", ExternalIp);
             writer.WriteStringValue("machineName", MachineName);
-            writer.WriteEnumValue<AgentStatus>("status", Status);
-            writer.WriteCollectionOfEnumValues<OnPremisesPublishingType>("supportedPublishingTypes", SupportedPublishingTypes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AgentStatus>("status", Status);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.OnPremisesPublishingType>("supportedPublishingTypes", SupportedPublishingTypes);
         }
     }
 }

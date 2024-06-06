@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// VPN Proxy Server.
     /// </summary>
-    public class Windows81VpnProxyServer : VpnProxyServer, IParsable
+    public class Windows81VpnProxyServer : Microsoft.Graph.Beta.Models.VpnProxyServer, IParsable
     {
         /// <summary>Automatically detect proxy settings.</summary>
         public bool? AutomaticallyDetectProxySettings
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("bypassProxyServerForLocalAddress", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows81VpnProxyServer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows81VpnProxyServer"/> and sets the default values.
         /// </summary>
         public Windows81VpnProxyServer() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows81VpnProxyServer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows81VpnProxyServer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows81VpnProxyServer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows81VpnProxyServer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows81VpnProxyServer();
+            return new Microsoft.Graph.Beta.Models.Windows81VpnProxyServer();
         }
         /// <summary>
         /// The deserialization information for the current model

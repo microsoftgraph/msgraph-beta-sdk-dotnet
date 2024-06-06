@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertAction>? Actions
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>? Actions
         {
-            get { return BackingStore?.Get<List<AlertAction>?>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<AlertAction> Actions
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.AlertAction> Actions
         {
-            get { return BackingStore?.Get<List<AlertAction>>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
@@ -89,39 +89,39 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilteringPolicy? Policy
+        public Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy? Policy
         {
-            get { return BackingStore?.Get<FilteringPolicy?>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public FilteringPolicy Policy
+        public Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy Policy
         {
-            get { return BackingStore?.Get<FilteringPolicy>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #endif
         /// <summary>The relatedResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedResource>? RelatedResources
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>? RelatedResources
         {
-            get { return BackingStore?.Get<List<RelatedResource>?>("relatedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>?>("relatedResources"); }
             set { BackingStore?.Set("relatedResources", value); }
         }
 #nullable restore
 #else
-        public List<RelatedResource> RelatedResources
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource> RelatedResources
         {
-            get { return BackingStore?.Get<List<RelatedResource>>("relatedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>>("relatedResources"); }
             set { BackingStore?.Set("relatedResources", value); }
         }
 #endif
         /// <summary>The severity property</summary>
-        public ThreatSeverity? Severity
+        public Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity? Severity
         {
-            get { return BackingStore?.Get<ThreatSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The vendorName property</summary>
@@ -143,12 +143,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Alert"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.Alert"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Alert CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.Alert CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Alert();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.Alert();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,15 +158,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<AlertAction>(AlertAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "alertType", n => { AlertType = n.GetEnumValue<AlertType>(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>(Microsoft.Graph.Beta.Models.Networkaccess.AlertAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertType", n => { AlertType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.AlertType>(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "detectionTechnology", n => { DetectionTechnology = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "policy", n => { Policy = n.GetObjectValue<FilteringPolicy>(FilteringPolicy.CreateFromDiscriminatorValue); } },
-                { "relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<RelatedResource>(RelatedResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "severity", n => { Severity = n.GetEnumValue<ThreatSeverity>(); } },
+                { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue); } },
+                { "relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>(Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity>(); } },
                 { "vendorName", n => { VendorName = n.GetStringValue(); } },
             };
         }
@@ -178,15 +178,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AlertAction>("actions", Actions);
-            writer.WriteEnumValue<AlertType>("alertType", AlertType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.AlertAction>("actions", Actions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.AlertType>("alertType", AlertType);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("detectionTechnology", DetectionTechnology);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<FilteringPolicy>("policy", Policy);
-            writer.WriteCollectionOfObjectValues<RelatedResource>("relatedResources", RelatedResources);
-            writer.WriteEnumValue<ThreatSeverity>("severity", Severity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>("policy", Policy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>("relatedResources", RelatedResources);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity>("severity", Severity);
             writer.WriteStringValue("vendorName", VendorName);
         }
     }

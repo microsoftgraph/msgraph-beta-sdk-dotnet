@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable
+    public class DeviceManagementConfigurationWindowsSettingApplicability : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Version of CSP setting is a part of</summary>
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Required AAD Trust Type</summary>
-        public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationAzureAdTrustType?>("requiredAzureAdTrustType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationAzureAdTrustType?>("requiredAzureAdTrustType"); }
             set { BackingStore?.Set("requiredAzureAdTrustType", value); }
         }
         /// <summary>AzureAD setting requirement</summary>
@@ -73,21 +73,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of Windows SKUs that the setting is applicable for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationWindowsSkus?>? WindowsSkus
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSkus?>? WindowsSkus
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>?>("windowsSkus"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSkus?>?>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationWindowsSkus?> WindowsSkus
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSkus?> WindowsSkus
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>>("windowsSkus"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSkus?>>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationWindowsSettingApplicability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationWindowsSettingApplicability() : base()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationWindowsSettingApplicability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationWindowsSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationWindowsSettingApplicability();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSettingApplicability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "configurationServiceProviderVersion", n => { ConfigurationServiceProviderVersion = n.GetStringValue(); } },
                 { "maximumSupportedVersion", n => { MaximumSupportedVersion = n.GetStringValue(); } },
                 { "minimumSupportedVersion", n => { MinimumSupportedVersion = n.GetStringValue(); } },
-                { "requiredAzureAdTrustType", n => { RequiredAzureAdTrustType = n.GetEnumValue<DeviceManagementConfigurationAzureAdTrustType>(); } },
+                { "requiredAzureAdTrustType", n => { RequiredAzureAdTrustType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationAzureAdTrustType>(); } },
                 { "requiresAzureAd", n => { RequiresAzureAd = n.GetBoolValue(); } },
-                { "windowsSkus", n => { WindowsSkus = n.GetCollectionOfEnumValues<DeviceManagementConfigurationWindowsSkus>()?.ToList(); } },
+                { "windowsSkus", n => { WindowsSkus = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSkus>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("configurationServiceProviderVersion", ConfigurationServiceProviderVersion);
             writer.WriteStringValue("maximumSupportedVersion", MaximumSupportedVersion);
             writer.WriteStringValue("minimumSupportedVersion", MinimumSupportedVersion);
-            writer.WriteEnumValue<DeviceManagementConfigurationAzureAdTrustType>("requiredAzureAdTrustType", RequiredAzureAdTrustType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationAzureAdTrustType>("requiredAzureAdTrustType", RequiredAzureAdTrustType);
             writer.WriteBoolValue("requiresAzureAd", RequiresAzureAd);
-            writer.WriteCollectionOfEnumValues<DeviceManagementConfigurationWindowsSkus>("windowsSkus", WindowsSkus);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationWindowsSkus>("windowsSkus", WindowsSkus);
         }
     }
 }

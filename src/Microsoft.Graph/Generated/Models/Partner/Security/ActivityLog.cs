@@ -36,15 +36,15 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         }
 #endif
         /// <summary>The statusFrom property</summary>
-        public SecurityAlertStatus? StatusFrom
+        public Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus? StatusFrom
         {
-            get { return BackingStore?.Get<SecurityAlertStatus?>("statusFrom"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus?>("statusFrom"); }
             set { BackingStore?.Set("statusFrom", value); }
         }
         /// <summary>The statusTo property</summary>
-        public SecurityAlertStatus? StatusTo
+        public Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus? StatusTo
         {
-            get { return BackingStore?.Get<SecurityAlertStatus?>("statusTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus?>("statusTo"); }
             set { BackingStore?.Set("statusTo", value); }
         }
         /// <summary>The UPN of the partner user who did the status update activity. This attribute is set by the system.</summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             set { BackingStore?.Set("updatedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActivityLog"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog"/> and sets the default values.
         /// </summary>
         public ActivityLog()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ActivityLog"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ActivityLog CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ActivityLog();
+            return new Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "statusFrom", n => { StatusFrom = n.GetEnumValue<SecurityAlertStatus>(); } },
-                { "statusTo", n => { StatusTo = n.GetEnumValue<SecurityAlertStatus>(); } },
+                { "statusFrom", n => { StatusFrom = n.GetEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus>(); } },
+                { "statusTo", n => { StatusTo = n.GetEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus>(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
                 { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -110,8 +110,8 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SecurityAlertStatus>("statusFrom", StatusFrom);
-            writer.WriteEnumValue<SecurityAlertStatus>("statusTo", StatusTo);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus>("statusFrom", StatusFrom);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus>("statusTo", StatusTo);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);
             writer.WriteAdditionalData(AdditionalData);

@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ChangeTrackedEntity : Entity, IParsable
+    public class ChangeTrackedEntity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user who created the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity of the user who last modified the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -57,29 +57,29 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChangeTrackedEntity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ChangeTrackedEntity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ChangeTrackedEntity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ChangeTrackedEntity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.dayNote" => new DayNote(),
-                "#microsoft.graph.offerShiftRequest" => new OfferShiftRequest(),
-                "#microsoft.graph.openShift" => new OpenShift(),
-                "#microsoft.graph.openShiftChangeRequest" => new OpenShiftChangeRequest(),
-                "#microsoft.graph.scheduleChangeRequest" => new ScheduleChangeRequest(),
-                "#microsoft.graph.schedulingGroup" => new SchedulingGroup(),
-                "#microsoft.graph.shift" => new Shift(),
-                "#microsoft.graph.shiftPreferences" => new ShiftPreferences(),
-                "#microsoft.graph.swapShiftsChangeRequest" => new SwapShiftsChangeRequest(),
-                "#microsoft.graph.timeCard" => new TimeCard(),
-                "#microsoft.graph.timeOff" => new TimeOff(),
-                "#microsoft.graph.timeOffReason" => new TimeOffReason(),
-                "#microsoft.graph.timeOffRequest" => new TimeOffRequest(),
-                "#microsoft.graph.workforceIntegration" => new WorkforceIntegration(),
-                _ => new ChangeTrackedEntity(),
+                "#microsoft.graph.dayNote" => new Microsoft.Graph.Beta.Models.DayNote(),
+                "#microsoft.graph.offerShiftRequest" => new Microsoft.Graph.Beta.Models.OfferShiftRequest(),
+                "#microsoft.graph.openShift" => new Microsoft.Graph.Beta.Models.OpenShift(),
+                "#microsoft.graph.openShiftChangeRequest" => new Microsoft.Graph.Beta.Models.OpenShiftChangeRequest(),
+                "#microsoft.graph.scheduleChangeRequest" => new Microsoft.Graph.Beta.Models.ScheduleChangeRequest(),
+                "#microsoft.graph.schedulingGroup" => new Microsoft.Graph.Beta.Models.SchedulingGroup(),
+                "#microsoft.graph.shift" => new Microsoft.Graph.Beta.Models.Shift(),
+                "#microsoft.graph.shiftPreferences" => new Microsoft.Graph.Beta.Models.ShiftPreferences(),
+                "#microsoft.graph.swapShiftsChangeRequest" => new Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest(),
+                "#microsoft.graph.timeCard" => new Microsoft.Graph.Beta.Models.TimeCard(),
+                "#microsoft.graph.timeOff" => new Microsoft.Graph.Beta.Models.TimeOff(),
+                "#microsoft.graph.timeOffReason" => new Microsoft.Graph.Beta.Models.TimeOffReason(),
+                "#microsoft.graph.timeOffRequest" => new Microsoft.Graph.Beta.Models.TimeOffRequest(),
+                "#microsoft.graph.workforceIntegration" => new Microsoft.Graph.Beta.Models.WorkforceIntegration(),
+                _ => new Microsoft.Graph.Beta.Models.ChangeTrackedEntity(),
             };
         }
         /// <summary>
@@ -90,9 +90,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
         }
     }
 }

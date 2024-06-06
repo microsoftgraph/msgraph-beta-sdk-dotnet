@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user who shared the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InsightIdentity? SharedBy
+        public Microsoft.Graph.Beta.Models.InsightIdentity? SharedBy
         {
-            get { return BackingStore?.Get<InsightIdentity?>("sharedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InsightIdentity?>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #nullable restore
 #else
-        public InsightIdentity SharedBy
+        public Microsoft.Graph.Beta.Models.InsightIdentity SharedBy
         {
-            get { return BackingStore?.Get<InsightIdentity>("sharedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InsightIdentity>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #endif
@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Reference properties of the document, such as the URL and type of the document. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResourceReference? SharingReference
+        public Microsoft.Graph.Beta.Models.ResourceReference? SharingReference
         {
-            get { return BackingStore?.Get<ResourceReference?>("sharingReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference?>("sharingReference"); }
             set { BackingStore?.Set("sharingReference", value); }
         }
 #nullable restore
 #else
-        public ResourceReference SharingReference
+        public Microsoft.Graph.Beta.Models.ResourceReference SharingReference
         {
-            get { return BackingStore?.Get<ResourceReference>("sharingReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference>("sharingReference"); }
             set { BackingStore?.Set("sharingReference", value); }
         }
 #endif
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SharingDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SharingDetail"/> and sets the default values.
         /// </summary>
         public SharingDetail()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SharingDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SharingDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SharingDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SharingDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SharingDetail();
+            return new Microsoft.Graph.Beta.Models.SharingDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,9 +132,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "sharedBy", n => { SharedBy = n.GetObjectValue<InsightIdentity>(InsightIdentity.CreateFromDiscriminatorValue); } },
+                { "sharedBy", n => { SharedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.InsightIdentity>(Microsoft.Graph.Beta.Models.InsightIdentity.CreateFromDiscriminatorValue); } },
                 { "sharedDateTime", n => { SharedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "sharingReference", n => { SharingReference = n.GetObjectValue<ResourceReference>(ResourceReference.CreateFromDiscriminatorValue); } },
+                { "sharingReference", n => { SharingReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResourceReference>(Microsoft.Graph.Beta.Models.ResourceReference.CreateFromDiscriminatorValue); } },
                 { "sharingSubject", n => { SharingSubject = n.GetStringValue(); } },
                 { "sharingType", n => { SharingType = n.GetStringValue(); } },
             };
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<InsightIdentity>("sharedBy", SharedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InsightIdentity>("sharedBy", SharedBy);
             writer.WriteDateTimeOffsetValue("sharedDateTime", SharedDateTime);
             writer.WriteStringValue("sharingSubject", SharingSubject);
             writer.WriteStringValue("sharingType", SharingType);

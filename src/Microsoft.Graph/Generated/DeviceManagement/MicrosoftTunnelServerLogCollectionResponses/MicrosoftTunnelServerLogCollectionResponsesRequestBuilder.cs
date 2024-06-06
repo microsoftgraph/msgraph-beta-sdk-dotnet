@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
     public class MicrosoftTunnelServerLogCollectionResponsesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of microsoftTunnelServerLogCollectionResponse</param>
-        /// <returns>A <see cref="MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder"/></returns>
-        public MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("microsoftTunnelServerLogCollectionResponse%2Did", position);
-                return new MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftTunnelServerLogCollectionResponsesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftTunnelServerLogCollectionResponsesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// <summary>
         /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelServerLogCollectionResponseCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftTunnelServerLogCollectionResponseCollectionResponse?> GetAsync(Action<RequestConfiguration<MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponseCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder.MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MicrosoftTunnelServerLogCollectionResponseCollectionResponse> GetAsync(Action<RequestConfiguration<MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponseCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder.MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MicrosoftTunnelServerLogCollectionResponseCollectionResponse>(requestInfo, MicrosoftTunnelServerLogCollectionResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponseCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelServerLogCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftTunnelServerLogCollectionResponse?> PostAsync(MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse?> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MicrosoftTunnelServerLogCollectionResponse> PostAsync(MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(requestInfo, MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder.MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder.MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelServerLogCollectionResponsesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftTunnelServerLogCollectionResponsesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder WithUrl(string rawUrl)
         {
-            return new MicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>
+        public class MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder.MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

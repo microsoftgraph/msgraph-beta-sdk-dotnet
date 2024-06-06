@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
     public class BusinessScenarioTaskItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
-        public AssignedToTaskBoardFormatRequestBuilder AssignedToTaskBoardFormat
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.AssignedToTaskBoardFormat.AssignedToTaskBoardFormatRequestBuilder AssignedToTaskBoardFormat
         {
-            get => new AssignedToTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.AssignedToTaskBoardFormat.AssignedToTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
-        public BucketTaskBoardFormatRequestBuilder BucketTaskBoardFormat
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BucketTaskBoardFormat.BucketTaskBoardFormatRequestBuilder BucketTaskBoardFormat
         {
-            get => new BucketTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BucketTaskBoardFormat.BucketTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerTask entity.</summary>
-        public DetailsRequestBuilder Details
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Details.DetailsRequestBuilder Details
         {
-            get => new DetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
-        public ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat
         {
-            get => new ProgressTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.ProgressTaskBoardFormat.ProgressTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="BusinessScenarioTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BusinessScenarioTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,11 +57,12 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         {
         }
         /// <summary>
-        /// Delete navigation property tasks for solutions
+        /// Delete a businessScenarioTask object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,60 +75,62 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Planner tasks for the scenario.
+        /// Read the properties and relationships of a businessScenarioTask object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessScenarioTask?> GetAsync(Action<RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenarioTask?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BusinessScenarioTask> GetAsync(Action<RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenarioTask> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BusinessScenarioTask>(requestInfo, BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BusinessScenarioTask>(requestInfo, Microsoft.Graph.Beta.Models.BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tasks in solutions
+        /// Update the properties of a businessScenarioTask object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BusinessScenarioTask"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessScenarioTask?> PatchAsync(BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenarioTask?> PatchAsync(Microsoft.Graph.Beta.Models.BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BusinessScenarioTask> PatchAsync(BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.BusinessScenarioTask> PatchAsync(Microsoft.Graph.Beta.Models.BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BusinessScenarioTask>(requestInfo, BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BusinessScenarioTask>(requestInfo, Microsoft.Graph.Beta.Models.BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tasks for solutions
+        /// Delete a businessScenarioTask object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,17 +149,17 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return requestInfo;
         }
         /// <summary>
-        /// The Planner tasks for the scenario.
+        /// Read the properties and relationships of a businessScenarioTask object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -165,18 +168,18 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tasks in solutions
+        /// Update the properties of a businessScenarioTask object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.BusinessScenarioTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -189,11 +192,11 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BusinessScenarioTaskItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BusinessScenarioTaskItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new BusinessScenarioTaskItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -203,7 +206,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         {
         }
         /// <summary>
-        /// The Planner tasks for the scenario.
+        /// Read the properties and relationships of a businessScenarioTask object.
         /// </summary>
         public class BusinessScenarioTaskItemRequestBuilderGetQueryParameters 
         {
@@ -232,7 +235,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessScenarioTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters>
+        public class BusinessScenarioTaskItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BusinessScenarioTaskItemRequestBuilder.BusinessScenarioTaskItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

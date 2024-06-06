@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
     public class ItemActivityOLDItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ItemActivityOLDItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemActivityOLDItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// The list of recent activities that took place on this item.
         /// </summary>
-        /// <returns>A <see cref="ItemActivityOLD"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemActivityOLD"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ItemActivityOLD?> GetAsync(Action<RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ItemActivityOLD?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder.ItemActivityOLDItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ItemActivityOLD> GetAsync(Action<RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ItemActivityOLD> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder.ItemActivityOLDItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ItemActivityOLD>(requestInfo, ItemActivityOLD.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemActivityOLD>(requestInfo, Microsoft.Graph.Beta.Models.ItemActivityOLD.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of recent activities that took place on this item.
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder.ItemActivityOLDItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder.ItemActivityOLDItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ItemActivityOLDItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemActivityOLDItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ItemActivityOLDItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of recent activities that took place on this item.
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ItemActivityOLDItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ItemActivityOLDItemRequestBuilderGetQueryParameters>
+        public class ItemActivityOLDItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Drive.Items.Item.Activities.Item.ItemActivityOLDItemRequestBuilder.ItemActivityOLDItemRequestBuilderGetQueryParameters>
         {
         }
     }

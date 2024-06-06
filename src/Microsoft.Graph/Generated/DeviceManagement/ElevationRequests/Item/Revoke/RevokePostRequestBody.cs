@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RevokePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke.RevokePostRequestBody"/> and sets the default values.
         /// </summary>
         public RevokePostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RevokePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke.RevokePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RevokePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke.RevokePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RevokePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke.RevokePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

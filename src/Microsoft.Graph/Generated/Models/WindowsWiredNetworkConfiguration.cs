@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the Wired Network CSP.
     /// </summary>
-    public class WindowsWiredNetworkConfiguration : DeviceConfiguration, IParsable
+    public class WindowsWiredNetworkConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Specify the duration for which automatic authentication attempts will be blocked from occuring after a failed authentication attempt.</summary>
         public int? AuthenticationBlockPeriodInMinutes
@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationBlockPeriodInMinutes", value); }
         }
         /// <summary>Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
-        public WiredNetworkAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<WiredNetworkAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.</summary>
@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationRetryDelayPeriodInSeconds", value); }
         }
         /// <summary>Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you&apos;re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.</summary>
-        public WiredNetworkAuthenticationType? AuthenticationType
+        public Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationType? AuthenticationType
         {
-            get { return BackingStore?.Get<WiredNetworkAuthenticationType?>("authenticationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationType?>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
         /// <summary>When TRUE, caches user credentials on the device so that users don&apos;t need to keep entering them each time they connect. When FALSE, do not cache credentials. Default value is FALSE.</summary>
@@ -80,23 +80,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specify identity certificate for client authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsCertificateProfileBase? IdentityCertificateForClientAuthentication
+        public Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase? IdentityCertificateForClientAuthentication
         {
-            get { return BackingStore?.Get<WindowsCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #nullable restore
 #else
-        public WindowsCertificateProfileBase IdentityCertificateForClientAuthentication
+        public Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase IdentityCertificateForClientAuthentication
         {
-            get { return BackingStore?.Get<WindowsCertificateProfileBase>("identityCertificateForClientAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
 #endif
         /// <summary>Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
-        public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS
+        public Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS
         {
-            get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEAPTTLS"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEAPTTLS"); }
             set { BackingStore?.Set("innerAuthenticationProtocolForEAPTTLS", value); }
         }
         /// <summary>Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.</summary>
@@ -142,70 +142,70 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specify root certificate for client validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Windows81TrustedRootCertificate? RootCertificateForClientValidation
+        public Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate? RootCertificateForClientValidation
         {
-            get { return BackingStore?.Get<Windows81TrustedRootCertificate?>("rootCertificateForClientValidation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate?>("rootCertificateForClientValidation"); }
             set { BackingStore?.Set("rootCertificateForClientValidation", value); }
         }
 #nullable restore
 #else
-        public Windows81TrustedRootCertificate RootCertificateForClientValidation
+        public Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate RootCertificateForClientValidation
         {
-            get { return BackingStore?.Get<Windows81TrustedRootCertificate>("rootCertificateForClientValidation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>("rootCertificateForClientValidation"); }
             set { BackingStore?.Set("rootCertificateForClientValidation", value); }
         }
 #endif
         /// <summary>Specify root certificates for server validation. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Windows81TrustedRootCertificate>? RootCertificatesForServerValidation
+        public List<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>? RootCertificatesForServerValidation
         {
-            get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
             set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
 #nullable restore
 #else
-        public List<Windows81TrustedRootCertificate> RootCertificatesForServerValidation
+        public List<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate> RootCertificatesForServerValidation
         {
-            get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>>("rootCertificatesForServerValidation"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>>("rootCertificatesForServerValidation"); }
             set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
 #endif
         /// <summary>Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
-        public WiredNetworkAuthenticationMethod? SecondaryAuthenticationMethod
+        public Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod? SecondaryAuthenticationMethod
         {
-            get { return BackingStore?.Get<WiredNetworkAuthenticationMethod?>("secondaryAuthenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod?>("secondaryAuthenticationMethod"); }
             set { BackingStore?.Set("secondaryAuthenticationMethod", value); }
         }
         /// <summary>Specify secondary identity certificate for client authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsCertificateProfileBase? SecondaryIdentityCertificateForClientAuthentication
+        public Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase? SecondaryIdentityCertificateForClientAuthentication
         {
-            get { return BackingStore?.Get<WindowsCertificateProfileBase?>("secondaryIdentityCertificateForClientAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase?>("secondaryIdentityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("secondaryIdentityCertificateForClientAuthentication", value); }
         }
 #nullable restore
 #else
-        public WindowsCertificateProfileBase SecondaryIdentityCertificateForClientAuthentication
+        public Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase SecondaryIdentityCertificateForClientAuthentication
         {
-            get { return BackingStore?.Get<WindowsCertificateProfileBase>("secondaryIdentityCertificateForClientAuthentication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase>("secondaryIdentityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("secondaryIdentityCertificateForClientAuthentication", value); }
         }
 #endif
         /// <summary>Specify secondary root certificate for client validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Windows81TrustedRootCertificate? SecondaryRootCertificateForClientValidation
+        public Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate? SecondaryRootCertificateForClientValidation
         {
-            get { return BackingStore?.Get<Windows81TrustedRootCertificate?>("secondaryRootCertificateForClientValidation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate?>("secondaryRootCertificateForClientValidation"); }
             set { BackingStore?.Set("secondaryRootCertificateForClientValidation", value); }
         }
 #nullable restore
 #else
-        public Windows81TrustedRootCertificate SecondaryRootCertificateForClientValidation
+        public Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate SecondaryRootCertificateForClientValidation
         {
-            get { return BackingStore?.Get<Windows81TrustedRootCertificate>("secondaryRootCertificateForClientValidation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>("secondaryRootCertificateForClientValidation"); }
             set { BackingStore?.Set("secondaryRootCertificateForClientValidation", value); }
         }
 #endif
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsWiredNetworkConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsWiredNetworkConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsWiredNetworkConfiguration() : base()
         {
@@ -235,12 +235,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsWiredNetworkConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsWiredNetworkConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsWiredNetworkConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsWiredNetworkConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -251,28 +251,28 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "authenticationBlockPeriodInMinutes", n => { AuthenticationBlockPeriodInMinutes = n.GetIntValue(); } },
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<WiredNetworkAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod>(); } },
                 { "authenticationPeriodInSeconds", n => { AuthenticationPeriodInSeconds = n.GetIntValue(); } },
                 { "authenticationRetryDelayPeriodInSeconds", n => { AuthenticationRetryDelayPeriodInSeconds = n.GetIntValue(); } },
-                { "authenticationType", n => { AuthenticationType = n.GetEnumValue<WiredNetworkAuthenticationType>(); } },
+                { "authenticationType", n => { AuthenticationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationType>(); } },
                 { "cacheCredentials", n => { CacheCredentials = n.GetBoolValue(); } },
                 { "disableUserPromptForServerValidation", n => { DisableUserPromptForServerValidation = n.GetBoolValue(); } },
-                { "eapType", n => { EapType = n.GetEnumValue<EapType>(); } },
+                { "eapType", n => { EapType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EapType>(); } },
                 { "eapolStartPeriodInSeconds", n => { EapolStartPeriodInSeconds = n.GetIntValue(); } },
                 { "enforce8021X", n => { Enforce8021X = n.GetBoolValue(); } },
                 { "forceFIPSCompliance", n => { ForceFIPSCompliance = n.GetBoolValue(); } },
-                { "identityCertificateForClientAuthentication", n => { IdentityCertificateForClientAuthentication = n.GetObjectValue<WindowsCertificateProfileBase>(WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
-                { "innerAuthenticationProtocolForEAPTTLS", n => { InnerAuthenticationProtocolForEAPTTLS = n.GetEnumValue<NonEapAuthenticationMethodForEapTtlsType>(); } },
+                { "identityCertificateForClientAuthentication", n => { IdentityCertificateForClientAuthentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase>(Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "innerAuthenticationProtocolForEAPTTLS", n => { InnerAuthenticationProtocolForEAPTTLS = n.GetEnumValue<Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType>(); } },
                 { "maximumAuthenticationFailures", n => { MaximumAuthenticationFailures = n.GetIntValue(); } },
                 { "maximumEAPOLStartMessages", n => { MaximumEAPOLStartMessages = n.GetIntValue(); } },
                 { "outerIdentityPrivacyTemporaryValue", n => { OuterIdentityPrivacyTemporaryValue = n.GetStringValue(); } },
                 { "performServerValidation", n => { PerformServerValidation = n.GetBoolValue(); } },
                 { "requireCryptographicBinding", n => { RequireCryptographicBinding = n.GetBoolValue(); } },
-                { "rootCertificateForClientValidation", n => { RootCertificateForClientValidation = n.GetObjectValue<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                { "rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "secondaryAuthenticationMethod", n => { SecondaryAuthenticationMethod = n.GetEnumValue<WiredNetworkAuthenticationMethod>(); } },
-                { "secondaryIdentityCertificateForClientAuthentication", n => { SecondaryIdentityCertificateForClientAuthentication = n.GetObjectValue<WindowsCertificateProfileBase>(WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
-                { "secondaryRootCertificateForClientValidation", n => { SecondaryRootCertificateForClientValidation = n.GetObjectValue<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "rootCertificateForClientValidation", n => { RootCertificateForClientValidation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>(Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>(Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "secondaryAuthenticationMethod", n => { SecondaryAuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod>(); } },
+                { "secondaryIdentityCertificateForClientAuthentication", n => { SecondaryIdentityCertificateForClientAuthentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase>(Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "secondaryRootCertificateForClientValidation", n => { SecondaryRootCertificateForClientValidation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>(Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
                 { "trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -285,28 +285,28 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("authenticationBlockPeriodInMinutes", AuthenticationBlockPeriodInMinutes);
-            writer.WriteEnumValue<WiredNetworkAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteIntValue("authenticationPeriodInSeconds", AuthenticationPeriodInSeconds);
             writer.WriteIntValue("authenticationRetryDelayPeriodInSeconds", AuthenticationRetryDelayPeriodInSeconds);
-            writer.WriteEnumValue<WiredNetworkAuthenticationType>("authenticationType", AuthenticationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationType>("authenticationType", AuthenticationType);
             writer.WriteBoolValue("cacheCredentials", CacheCredentials);
             writer.WriteBoolValue("disableUserPromptForServerValidation", DisableUserPromptForServerValidation);
             writer.WriteIntValue("eapolStartPeriodInSeconds", EapolStartPeriodInSeconds);
-            writer.WriteEnumValue<EapType>("eapType", EapType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EapType>("eapType", EapType);
             writer.WriteBoolValue("enforce8021X", Enforce8021X);
             writer.WriteBoolValue("forceFIPSCompliance", ForceFIPSCompliance);
-            writer.WriteObjectValue<WindowsCertificateProfileBase>("identityCertificateForClientAuthentication", IdentityCertificateForClientAuthentication);
-            writer.WriteEnumValue<NonEapAuthenticationMethodForEapTtlsType>("innerAuthenticationProtocolForEAPTTLS", InnerAuthenticationProtocolForEAPTTLS);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase>("identityCertificateForClientAuthentication", IdentityCertificateForClientAuthentication);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType>("innerAuthenticationProtocolForEAPTTLS", InnerAuthenticationProtocolForEAPTTLS);
             writer.WriteIntValue("maximumAuthenticationFailures", MaximumAuthenticationFailures);
             writer.WriteIntValue("maximumEAPOLStartMessages", MaximumEAPOLStartMessages);
             writer.WriteStringValue("outerIdentityPrivacyTemporaryValue", OuterIdentityPrivacyTemporaryValue);
             writer.WriteBoolValue("performServerValidation", PerformServerValidation);
             writer.WriteBoolValue("requireCryptographicBinding", RequireCryptographicBinding);
-            writer.WriteObjectValue<Windows81TrustedRootCertificate>("rootCertificateForClientValidation", RootCertificateForClientValidation);
-            writer.WriteCollectionOfObjectValues<Windows81TrustedRootCertificate>("rootCertificatesForServerValidation", RootCertificatesForServerValidation);
-            writer.WriteEnumValue<WiredNetworkAuthenticationMethod>("secondaryAuthenticationMethod", SecondaryAuthenticationMethod);
-            writer.WriteObjectValue<WindowsCertificateProfileBase>("secondaryIdentityCertificateForClientAuthentication", SecondaryIdentityCertificateForClientAuthentication);
-            writer.WriteObjectValue<Windows81TrustedRootCertificate>("secondaryRootCertificateForClientValidation", SecondaryRootCertificateForClientValidation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>("rootCertificateForClientValidation", RootCertificateForClientValidation);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>("rootCertificatesForServerValidation", RootCertificatesForServerValidation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiredNetworkAuthenticationMethod>("secondaryAuthenticationMethod", SecondaryAuthenticationMethod);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase>("secondaryIdentityCertificateForClientAuthentication", SecondaryIdentityCertificateForClientAuthentication);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Windows81TrustedRootCertificate>("secondaryRootCertificateForClientValidation", SecondaryRootCertificateForClientValidation);
             writer.WriteCollectionOfPrimitiveValues<string>("trustedServerCertificateNames", TrustedServerCertificateNames);
         }
     }

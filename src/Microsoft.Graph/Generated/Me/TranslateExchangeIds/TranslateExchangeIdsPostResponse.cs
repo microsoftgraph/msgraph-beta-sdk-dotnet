@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
 {
     #pragma warning disable CS1591
-    public class TranslateExchangeIdsPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class TranslateExchangeIdsPostResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConvertIdResult>? Value
+        public List<Microsoft.Graph.Beta.Models.ConvertIdResult>? Value
         {
-            get { return BackingStore?.Get<List<ConvertIdResult>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConvertIdResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ConvertIdResult> Value
+        public List<Microsoft.Graph.Beta.Models.ConvertIdResult> Value
         {
-            get { return BackingStore?.Get<List<ConvertIdResult>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConvertIdResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TranslateExchangeIdsPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TranslateExchangeIdsPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TranslateExchangeIdsPostResponse();
+            return new Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ConvertIdResult>(ConvertIdResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConvertIdResult>(Microsoft.Graph.Beta.Models.ConvertIdResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ConvertIdResult>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConvertIdResult>("value", Value);
         }
     }
 }

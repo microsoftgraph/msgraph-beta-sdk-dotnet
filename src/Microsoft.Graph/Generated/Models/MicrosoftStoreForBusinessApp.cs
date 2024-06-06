@@ -9,43 +9,43 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
     /// </summary>
-    public class MicrosoftStoreForBusinessApp : MobileApp, IParsable
+    public class MicrosoftStoreForBusinessApp : Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The collection of contained apps in a mobileApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileContainedApp>? ContainedApps
+        public List<Microsoft.Graph.Beta.Models.MobileContainedApp>? ContainedApps
         {
-            get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileContainedApp>?>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileContainedApp> ContainedApps
+        public List<Microsoft.Graph.Beta.Models.MobileContainedApp> ContainedApps
         {
-            get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileContainedApp>>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #endif
         /// <summary>The licenseType property</summary>
-        public MicrosoftStoreForBusinessLicenseType? LicenseType
+        public Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessLicenseType? LicenseType
         {
-            get { return BackingStore?.Get<MicrosoftStoreForBusinessLicenseType?>("licenseType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>The supported License Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VppLicensingType? LicensingType
+        public Microsoft.Graph.Beta.Models.VppLicensingType? LicensingType
         {
-            get { return BackingStore?.Get<VppLicensingType?>("licensingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppLicensingType?>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
 #nullable restore
 #else
-        public VppLicensingType LicensingType
+        public Microsoft.Graph.Beta.Models.VppLicensingType LicensingType
         {
-            get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppLicensingType>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
 #endif
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftStoreForBusinessApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessApp"/> and sets the default values.
         /// </summary>
         public MicrosoftStoreForBusinessApp() : base()
         {
@@ -103,12 +103,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftStoreForBusinessApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftStoreForBusinessApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftStoreForBusinessApp();
+            return new Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "licenseType", n => { LicenseType = n.GetEnumValue<MicrosoftStoreForBusinessLicenseType>(); } },
-                { "licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
+                { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileContainedApp>(Microsoft.Graph.Beta.Models.MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "licenseType", n => { LicenseType = n.GetEnumValue<Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessLicenseType>(); } },
+                { "licensingType", n => { LicensingType = n.GetObjectValue<Microsoft.Graph.Beta.Models.VppLicensingType>(Microsoft.Graph.Beta.Models.VppLicensingType.CreateFromDiscriminatorValue); } },
                 { "packageIdentityName", n => { PackageIdentityName = n.GetStringValue(); } },
                 { "productKey", n => { ProductKey = n.GetStringValue(); } },
                 { "totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
@@ -135,9 +135,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MobileContainedApp>("containedApps", ContainedApps);
-            writer.WriteEnumValue<MicrosoftStoreForBusinessLicenseType>("licenseType", LicenseType);
-            writer.WriteObjectValue<VppLicensingType>("licensingType", LicensingType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileContainedApp>("containedApps", ContainedApps);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessLicenseType>("licenseType", LicenseType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VppLicensingType>("licensingType", LicensingType);
             writer.WriteStringValue("packageIdentityName", PackageIdentityName);
             writer.WriteStringValue("productKey", ProductKey);
             writer.WriteIntValue("totalLicenseCount", TotalLicenseCount);

@@ -21,30 +21,30 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of print entities.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.print.printerShares.item.allowedUsers.item collection</summary>
         /// <param name="position">The unique identifier of user</param>
-        /// <returns>A <see cref="UserItemRequestBuilder"/></returns>
-        public UserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.UserItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.UserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user%2Did", position);
-                return new UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AllowedUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AllowedUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,26 +62,26 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers
         /// <summary>
         /// The users who have access to print using the printer.
         /// </summary>
-        /// <returns>A <see cref="UserCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserCollectionResponse?> GetAsync(Action<RequestConfiguration<AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserCollectionResponse> GetAsync(Action<RequestConfiguration<AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The users who have access to print using the printer.
@@ -91,11 +91,11 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AllowedUsersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public AllowedUsersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder WithUrl(string rawUrl)
         {
-            return new AllowedUsersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The users who have access to print using the printer.
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AllowedUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<AllowedUsersRequestBuilderGetQueryParameters>
+        public class AllowedUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>
         {
         }
     }

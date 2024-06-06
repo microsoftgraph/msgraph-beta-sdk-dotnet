@@ -11,24 +11,24 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     #pragma warning restore CS1591
     {
         /// <summary>The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.</summary>
-        public ResourceConnectionState? State
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionState? State
         {
-            get { return BackingStore?.Get<ResourceConnectionState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResourceConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ResourceConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.operationalInsightsConnection" => new OperationalInsightsConnection(),
-                _ => new ResourceConnection(),
+                "#microsoft.graph.windowsUpdates.operationalInsightsConnection" => new Microsoft.Graph.Beta.Models.WindowsUpdates.OperationalInsightsConnection(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection(),
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "state", n => { State = n.GetEnumValue<ResourceConnectionState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionState>(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ResourceConnectionState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnectionState>("state", State);
         }
     }
 }

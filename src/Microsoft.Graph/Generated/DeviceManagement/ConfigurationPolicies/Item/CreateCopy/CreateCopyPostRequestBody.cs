@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Creat
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateCopyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateCopyPostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Creat
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateCopyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateCopyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateCopyPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

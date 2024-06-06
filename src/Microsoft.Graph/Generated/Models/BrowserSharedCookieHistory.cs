@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -128,13 +128,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.</summary>
-        public BrowserSharedCookieSourceEnvironment? SourceEnvironment
+        public Microsoft.Graph.Beta.Models.BrowserSharedCookieSourceEnvironment? SourceEnvironment
         {
-            get { return BackingStore?.Get<BrowserSharedCookieSourceEnvironment?>("sourceEnvironment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BrowserSharedCookieSourceEnvironment?>("sourceEnvironment"); }
             set { BackingStore?.Set("sourceEnvironment", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BrowserSharedCookieHistory"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BrowserSharedCookieHistory"/> and sets the default values.
         /// </summary>
         public BrowserSharedCookieHistory()
         {
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BrowserSharedCookieHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BrowserSharedCookieHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BrowserSharedCookieHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BrowserSharedCookieHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BrowserSharedCookieHistory();
+            return new Microsoft.Graph.Beta.Models.BrowserSharedCookieHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,11 +163,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "hostOnly", n => { HostOnly = n.GetBoolValue(); } },
                 { "hostOrDomain", n => { HostOrDomain = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "sourceEnvironment", n => { SourceEnvironment = n.GetEnumValue<BrowserSharedCookieSourceEnvironment>(); } },
+                { "sourceEnvironment", n => { SourceEnvironment = n.GetEnumValue<Microsoft.Graph.Beta.Models.BrowserSharedCookieSourceEnvironment>(); } },
             };
         }
         /// <summary>
@@ -181,11 +181,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("hostOnly", HostOnly);
             writer.WriteStringValue("hostOrDomain", HostOrDomain);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("path", Path);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
-            writer.WriteEnumValue<BrowserSharedCookieSourceEnvironment>("sourceEnvironment", SourceEnvironment);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BrowserSharedCookieSourceEnvironment>("sourceEnvironment", SourceEnvironment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile&apos;s configurations at enrollment of the corresponding device.
     /// </summary>
-    public class AppleUserInitiatedEnrollmentProfile : Entity, IParsable
+    public class AppleUserInitiatedEnrollmentProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppleEnrollmentProfileAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<AppleEnrollmentProfileAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>List of available enrollment type options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppleOwnerTypeEnrollmentType>? AvailableEnrollmentTypeOptions
+        public List<Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType>? AvailableEnrollmentTypeOptions
         {
-            get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>?>("availableEnrollmentTypeOptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType>?>("availableEnrollmentTypeOptions"); }
             set { BackingStore?.Set("availableEnrollmentTypeOptions", value); }
         }
 #nullable restore
 #else
-        public List<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions
+        public List<Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions
         {
-            get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>>("availableEnrollmentTypeOptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType>>("availableEnrollmentTypeOptions"); }
             set { BackingStore?.Set("availableEnrollmentTypeOptions", value); }
         }
 #endif
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The defaultEnrollmentType property</summary>
-        public AppleUserInitiatedEnrollmentType? DefaultEnrollmentType
+        public Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType? DefaultEnrollmentType
         {
-            get { return BackingStore?.Get<AppleUserInitiatedEnrollmentType?>("defaultEnrollmentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType?>("defaultEnrollmentType"); }
             set { BackingStore?.Set("defaultEnrollmentType", value); }
         }
         /// <summary>Description of the profile</summary>
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? Platform
+        public Microsoft.Graph.Beta.Models.DevicePlatformType? Platform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Priority, 0 is highest</summary>
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppleUserInitiatedEnrollmentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppleUserInitiatedEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AppleUserInitiatedEnrollmentProfile();
+            return new Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,14 +123,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<AppleEnrollmentProfileAssignment>(AppleEnrollmentProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "availableEnrollmentTypeOptions", n => { AvailableEnrollmentTypeOptions = n.GetCollectionOfObjectValues<AppleOwnerTypeEnrollmentType>(AppleOwnerTypeEnrollmentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment>(Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "availableEnrollmentTypeOptions", n => { AvailableEnrollmentTypeOptions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType>(Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "defaultEnrollmentType", n => { DefaultEnrollmentType = n.GetEnumValue<AppleUserInitiatedEnrollmentType>(); } },
+                { "defaultEnrollmentType", n => { DefaultEnrollmentType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
@@ -142,14 +142,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AppleEnrollmentProfileAssignment>("assignments", Assignments);
-            writer.WriteCollectionOfObjectValues<AppleOwnerTypeEnrollmentType>("availableEnrollmentTypeOptions", AvailableEnrollmentTypeOptions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppleEnrollmentProfileAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppleOwnerTypeEnrollmentType>("availableEnrollmentTypeOptions", AvailableEnrollmentTypeOptions);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<AppleUserInitiatedEnrollmentType>("defaultEnrollmentType", DefaultEnrollmentType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentType>("defaultEnrollmentType", DefaultEnrollmentType);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>("platform", Platform);
             writer.WriteIntValue("priority", Priority);
         }
     }

@@ -7,28 +7,28 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable
+    public class DeviceManagementConfigurationSettingDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessTypes property</summary>
-        public DeviceManagementConfigurationSettingAccessTypes? AccessTypes
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingAccessTypes? AccessTypes
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingAccessTypes?>("accessTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingAccessTypes?>("accessTypes"); }
             set { BackingStore?.Set("accessTypes", value); }
         }
         /// <summary>Details which device setting is applicable on. Supports: $filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingApplicability? Applicability
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability? Applicability
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingApplicability?>("applicability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability?>("applicability"); }
             set { BackingStore?.Set("applicability", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingApplicability Applicability
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability Applicability
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingApplicability>("applicability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability>("applicability"); }
             set { BackingStore?.Set("applicability", value); }
         }
 #endif
@@ -163,16 +163,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates whether the setting is required or not</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingOccurrence? Occurrence
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence? Occurrence
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingOccurrence?>("occurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence?>("occurrence"); }
             set { BackingStore?.Set("occurrence", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingOccurrence Occurrence
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence Occurrence
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingOccurrence>("occurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence>("occurrence"); }
             set { BackingStore?.Set("occurrence", value); }
         }
 #endif
@@ -195,16 +195,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of referred setting information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationReferredSettingInformation>? ReferredSettingInformationList
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>? ReferredSettingInformationList
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationReferredSettingInformation>?>("referredSettingInformationList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>?>("referredSettingInformationList"); }
             set { BackingStore?.Set("referredSettingInformationList", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationReferredSettingInformation> ReferredSettingInformationList
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation> ReferredSettingInformationList
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationReferredSettingInformation>>("referredSettingInformationList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>>("referredSettingInformationList"); }
             set { BackingStore?.Set("referredSettingInformationList", value); }
         }
 #endif
@@ -225,15 +225,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported setting types</summary>
-        public DeviceManagementConfigurationSettingUsage? SettingUsage
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage? SettingUsage
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
             set { BackingStore?.Set("settingUsage", value); }
         }
         /// <summary>Setting control type representation in the UX</summary>
-        public DeviceManagementConfigurationControlType? UxBehavior
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationControlType? UxBehavior
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationControlType?>("uxBehavior"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationControlType?>("uxBehavior"); }
             set { BackingStore?.Set("uxBehavior", value); }
         }
         /// <summary>Item Version</summary>
@@ -253,30 +253,30 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported setting types</summary>
-        public DeviceManagementConfigurationSettingVisibility? Visibility
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingVisibility? Visibility
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingVisibility?>("visibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingVisibility?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSettingDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition" => new DeviceManagementConfigurationChoiceSettingCollectionDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition" => new DeviceManagementConfigurationChoiceSettingDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition" => new DeviceManagementConfigurationRedirectSettingDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition" => new DeviceManagementConfigurationSettingGroupCollectionDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition" => new DeviceManagementConfigurationSettingGroupDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition" => new DeviceManagementConfigurationSimpleSettingCollectionDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition" => new DeviceManagementConfigurationSimpleSettingDefinition(),
-                _ => new DeviceManagementConfigurationSettingDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingCollectionDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationRedirectSettingDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingGroupCollectionDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingGroupDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingCollectionDefinition(),
+                "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingDefinition(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition(),
             };
         }
         /// <summary>
@@ -287,8 +287,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessTypes", n => { AccessTypes = n.GetEnumValue<DeviceManagementConfigurationSettingAccessTypes>(); } },
-                { "applicability", n => { Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
+                { "accessTypes", n => { AccessTypes = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingAccessTypes>(); } },
+                { "applicability", n => { Applicability = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
                 { "baseUri", n => { BaseUri = n.GetStringValue(); } },
                 { "categoryId", n => { CategoryId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -297,14 +297,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "infoUrls", n => { InfoUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "occurrence", n => { Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
+                { "occurrence", n => { Occurrence = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
                 { "offsetUri", n => { OffsetUri = n.GetStringValue(); } },
-                { "referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "rootDefinitionId", n => { RootDefinitionId = n.GetStringValue(); } },
-                { "settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
-                { "uxBehavior", n => { UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },
+                { "settingUsage", n => { SettingUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage>(); } },
+                { "uxBehavior", n => { UxBehavior = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationControlType>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<DeviceManagementConfigurationSettingVisibility>(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingVisibility>(); } },
             };
         }
         /// <summary>
@@ -315,8 +315,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DeviceManagementConfigurationSettingAccessTypes>("accessTypes", AccessTypes);
-            writer.WriteObjectValue<DeviceManagementConfigurationSettingApplicability>("applicability", Applicability);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingAccessTypes>("accessTypes", AccessTypes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability>("applicability", Applicability);
             writer.WriteStringValue("baseUri", BaseUri);
             writer.WriteStringValue("categoryId", CategoryId);
             writer.WriteStringValue("description", Description);
@@ -325,14 +325,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("infoUrls", InfoUrls);
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<DeviceManagementConfigurationSettingOccurrence>("occurrence", Occurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingOccurrence>("occurrence", Occurrence);
             writer.WriteStringValue("offsetUri", OffsetUri);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>("referredSettingInformationList", ReferredSettingInformationList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferredSettingInformation>("referredSettingInformationList", ReferredSettingInformationList);
             writer.WriteStringValue("rootDefinitionId", RootDefinitionId);
-            writer.WriteEnumValue<DeviceManagementConfigurationSettingUsage>("settingUsage", SettingUsage);
-            writer.WriteEnumValue<DeviceManagementConfigurationControlType>("uxBehavior", UxBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingUsage>("settingUsage", SettingUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationControlType>("uxBehavior", UxBehavior);
             writer.WriteStringValue("version", Version);
-            writer.WriteEnumValue<DeviceManagementConfigurationSettingVisibility>("visibility", Visibility);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingVisibility>("visibility", Visibility);
         }
     }
 }

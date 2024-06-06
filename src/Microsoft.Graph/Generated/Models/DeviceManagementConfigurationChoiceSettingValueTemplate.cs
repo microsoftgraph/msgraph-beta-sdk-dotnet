@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Choice Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate? DefaultValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate? DefaultValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate?>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate DefaultValue
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate DefaultValue
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
@@ -55,32 +55,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Recommended definition override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RecommendedValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RecommendedValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RecommendedValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RecommendedValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
 #endif
         /// <summary>Required definition override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RequiredValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RequiredValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RequiredValueDefinition
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RequiredValueDefinition
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
 #endif
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationChoiceSettingValueTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationChoiceSettingValueTemplate()
         {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationChoiceSettingValueTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationChoiceSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationChoiceSettingValueTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,10 +126,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>(DeviceManagementConfigurationChoiceSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
-                { "requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
+                { "recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
+                { "requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
                 { "settingValueTemplateId", n => { SettingValueTemplateId = n.GetStringValue(); } },
             };
         }
@@ -140,10 +140,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue", DefaultValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue", DefaultValue);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition", RecommendedValueDefinition);
-            writer.WriteObjectValue<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition", RequiredValueDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition", RecommendedValueDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition", RequiredValueDefinition);
             writer.WriteStringValue("settingValueTemplateId", SettingValueTemplateId);
             writer.WriteAdditionalData(AdditionalData);
         }

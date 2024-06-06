@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EvaluatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody"/> and sets the default values.
         /// </summary>
         public EvaluatePostRequestBody()
         {
@@ -85,12 +85,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EvaluatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluatePostRequestBody();
+            return new Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

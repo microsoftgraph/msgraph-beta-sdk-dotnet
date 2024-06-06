@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ServiceProvisioningResourceErrorDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ServiceProvisioningResourceErrorDetail"/> and sets the default values.
         /// </summary>
         public ServiceProvisioningResourceErrorDetail()
         {
@@ -94,16 +94,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceProvisioningResourceErrorDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServiceProvisioningResourceErrorDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ServiceProvisioningResourceErrorDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ServiceProvisioningResourceErrorDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.serviceProvisioningLinkedResourceErrorDetail" => new ServiceProvisioningLinkedResourceErrorDetail(),
-                _ => new ServiceProvisioningResourceErrorDetail(),
+                "#microsoft.graph.serviceProvisioningLinkedResourceErrorDetail" => new Microsoft.Graph.Beta.Models.ServiceProvisioningLinkedResourceErrorDetail(),
+                _ => new Microsoft.Graph.Beta.Models.ServiceProvisioningResourceErrorDetail(),
             };
         }
         /// <summary>

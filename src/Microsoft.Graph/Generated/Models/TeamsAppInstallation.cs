@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamsAppInstallation : Entity, IParsable
+    public class TeamsAppInstallation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The set of resource-specific permissions consented to while installing or upgrading the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppPermissionSet? ConsentedPermissionSet
+        public Microsoft.Graph.Beta.Models.TeamsAppPermissionSet? ConsentedPermissionSet
         {
-            get { return BackingStore?.Get<TeamsAppPermissionSet?>("consentedPermissionSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppPermissionSet?>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #nullable restore
 #else
-        public TeamsAppPermissionSet ConsentedPermissionSet
+        public Microsoft.Graph.Beta.Models.TeamsAppPermissionSet ConsentedPermissionSet
         {
-            get { return BackingStore?.Get<TeamsAppPermissionSet>("consentedPermissionSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppPermissionSet>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #endif
         /// <summary>The scopeInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppInstallationScopeInfo? ScopeInfo
+        public Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo? ScopeInfo
         {
-            get { return BackingStore?.Get<TeamsAppInstallationScopeInfo?>("scopeInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo?>("scopeInfo"); }
             set { BackingStore?.Set("scopeInfo", value); }
         }
 #nullable restore
 #else
-        public TeamsAppInstallationScopeInfo ScopeInfo
+        public Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo ScopeInfo
         {
-            get { return BackingStore?.Get<TeamsAppInstallationScopeInfo>("scopeInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo>("scopeInfo"); }
             set { BackingStore?.Set("scopeInfo", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsAppInstallation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamsAppInstallation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamsAppInstallation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamsAppInstallation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.userScopeTeamsAppInstallation" => new UserScopeTeamsAppInstallation(),
-                _ => new TeamsAppInstallation(),
+                "#microsoft.graph.userScopeTeamsAppInstallation" => new Microsoft.Graph.Beta.Models.UserScopeTeamsAppInstallation(),
+                _ => new Microsoft.Graph.Beta.Models.TeamsAppInstallation(),
             };
         }
         /// <summary>
@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
-                { "scopeInfo", n => { ScopeInfo = n.GetObjectValue<TeamsAppInstallationScopeInfo>(TeamsAppInstallationScopeInfo.CreateFromDiscriminatorValue); } },
+                { "consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppPermissionSet>(Microsoft.Graph.Beta.Models.TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
+                { "scopeInfo", n => { ScopeInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo>(Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo.CreateFromDiscriminatorValue); } },
                 { "teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue); } },
                 { "teamsAppDefinition", n => { TeamsAppDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDefinition>(Microsoft.Graph.Beta.Models.TeamsAppDefinition.CreateFromDiscriminatorValue); } },
             };
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamsAppPermissionSet>("consentedPermissionSet", ConsentedPermissionSet);
-            writer.WriteObjectValue<TeamsAppInstallationScopeInfo>("scopeInfo", ScopeInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppPermissionSet>("consentedPermissionSet", ConsentedPermissionSet);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppInstallationScopeInfo>("scopeInfo", ScopeInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp", TeamsApp);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDefinition>("teamsAppDefinition", TeamsAppDefinition);
         }

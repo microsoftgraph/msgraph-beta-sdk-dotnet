@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics anomaly entity contains anomaly details.
     /// </summary>
-    public class UserExperienceAnalyticsAnomaly : Entity, IParsable
+    public class UserExperienceAnalyticsAnomaly : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the first occurrence date and time for the anomaly.</summary>
         public DateTimeOffset? AnomalyFirstOccurrenceDateTime
@@ -56,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.</summary>
-        public UserExperienceAnalyticsAnomalyType? AnomalyType
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyType? AnomalyType
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsAnomalyType?>("anomalyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyType?>("anomalyType"); }
             set { BackingStore?.Set("anomalyType", value); }
         }
         /// <summary>The name of the application or module that caused the anomaly.</summary>
@@ -148,26 +148,26 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.</summary>
-        public UserExperienceAnalyticsAnomalySeverity? Severity
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverity? Severity
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsAnomalySeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.</summary>
-        public UserExperienceAnalyticsAnomalyState? State
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyState? State
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsAnomalyState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAnomaly"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAnomaly CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAnomaly();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -181,15 +181,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "anomalyId", n => { AnomalyId = n.GetStringValue(); } },
                 { "anomalyLatestOccurrenceDateTime", n => { AnomalyLatestOccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
                 { "anomalyName", n => { AnomalyName = n.GetStringValue(); } },
-                { "anomalyType", n => { AnomalyType = n.GetEnumValue<UserExperienceAnalyticsAnomalyType>(); } },
+                { "anomalyType", n => { AnomalyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyType>(); } },
                 { "assetName", n => { AssetName = n.GetStringValue(); } },
                 { "assetPublisher", n => { AssetPublisher = n.GetStringValue(); } },
                 { "assetVersion", n => { AssetVersion = n.GetStringValue(); } },
                 { "detectionModelId", n => { DetectionModelId = n.GetStringValue(); } },
                 { "deviceImpactedCount", n => { DeviceImpactedCount = n.GetIntValue(); } },
                 { "issueId", n => { IssueId = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<UserExperienceAnalyticsAnomalySeverity>(); } },
-                { "state", n => { State = n.GetEnumValue<UserExperienceAnalyticsAnomalyState>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverity>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyState>(); } },
             };
         }
         /// <summary>
@@ -204,15 +204,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("anomalyId", AnomalyId);
             writer.WriteDateTimeOffsetValue("anomalyLatestOccurrenceDateTime", AnomalyLatestOccurrenceDateTime);
             writer.WriteStringValue("anomalyName", AnomalyName);
-            writer.WriteEnumValue<UserExperienceAnalyticsAnomalyType>("anomalyType", AnomalyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyType>("anomalyType", AnomalyType);
             writer.WriteStringValue("assetName", AssetName);
             writer.WriteStringValue("assetPublisher", AssetPublisher);
             writer.WriteStringValue("assetVersion", AssetVersion);
             writer.WriteStringValue("detectionModelId", DetectionModelId);
             writer.WriteIntValue("deviceImpactedCount", DeviceImpactedCount);
             writer.WriteStringValue("issueId", IssueId);
-            writer.WriteEnumValue<UserExperienceAnalyticsAnomalySeverity>("severity", Severity);
-            writer.WriteEnumValue<UserExperienceAnalyticsAnomalyState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyState>("state", State);
         }
     }
 }

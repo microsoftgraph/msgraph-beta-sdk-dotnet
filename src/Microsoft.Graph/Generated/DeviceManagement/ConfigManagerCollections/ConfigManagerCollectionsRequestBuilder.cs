@@ -20,24 +20,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
     public class ConfigManagerCollectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of configManagerCollection</param>
-        /// <returns>A <see cref="ConfigManagerCollectionItemRequestBuilder"/></returns>
-        public ConfigManagerCollectionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item.ConfigManagerCollectionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item.ConfigManagerCollectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("configManagerCollection%2Did", position);
-                return new ConfigManagerCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item.ConfigManagerCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfigManagerCollectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfigManagerCollectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,60 +55,60 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
         /// <summary>
         /// A list of ConfigManagerCollection
         /// </summary>
-        /// <returns>A <see cref="ConfigManagerCollectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConfigManagerCollectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConfigManagerCollectionCollectionResponse?> GetAsync(Action<RequestConfiguration<ConfigManagerCollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ConfigManagerCollectionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder.ConfigManagerCollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ConfigManagerCollectionCollectionResponse> GetAsync(Action<RequestConfiguration<ConfigManagerCollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ConfigManagerCollectionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder.ConfigManagerCollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ConfigManagerCollectionCollectionResponse>(requestInfo, ConfigManagerCollectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConfigManagerCollectionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ConfigManagerCollectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getPolicySummary method.
         /// </summary>
-        /// <returns>A <see cref="GetPolicySummaryWithPolicyIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId.GetPolicySummaryWithPolicyIdRequestBuilder"/></returns>
         /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder GetPolicySummaryWithPolicyId(string policyId)
+        public Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId.GetPolicySummaryWithPolicyIdRequestBuilder GetPolicySummaryWithPolicyId(string policyId)
         {
             if(string.IsNullOrEmpty(policyId)) throw new ArgumentNullException(nameof(policyId));
-            return new GetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
+            return new Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId.GetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
         }
         /// <summary>
         /// Create new navigation property to configManagerCollections for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="ConfigManagerCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConfigManagerCollection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConfigManagerCollection?> PostAsync(ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ConfigManagerCollection?> PostAsync(Microsoft.Graph.Beta.Models.ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ConfigManagerCollection> PostAsync(ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ConfigManagerCollection> PostAsync(Microsoft.Graph.Beta.Models.ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ConfigManagerCollection>(requestInfo, ConfigManagerCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConfigManagerCollection>(requestInfo, Microsoft.Graph.Beta.Models.ConfigManagerCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A list of ConfigManagerCollection
@@ -117,11 +117,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConfigManagerCollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder.ConfigManagerCollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConfigManagerCollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder.ConfigManagerCollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -137,11 +137,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ConfigManagerCollection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -154,11 +154,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ConfigManagerCollectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConfigManagerCollectionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ConfigManagerCollectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// A list of ConfigManagerCollection
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ConfigManagerCollectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ConfigManagerCollectionsRequestBuilderGetQueryParameters>
+        public class ConfigManagerCollectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder.ConfigManagerCollectionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

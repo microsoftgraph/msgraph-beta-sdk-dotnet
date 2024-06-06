@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
     #pragma warning disable CS1591
-    public class FileDataConnector : IndustryDataConnector, IParsable
+    public class FileDataConnector : Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="FileDataConnector"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector"/> and sets the default values.
         /// </summary>
         public FileDataConnector() : base()
         {
@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileDataConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileDataConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.industryData.azureDataLakeConnector" => new AzureDataLakeConnector(),
-                _ => new FileDataConnector(),
+                "#microsoft.graph.industryData.azureDataLakeConnector" => new Microsoft.Graph.Beta.Models.IndustryData.AzureDataLakeConnector(),
+                _ => new Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector(),
             };
         }
         /// <summary>

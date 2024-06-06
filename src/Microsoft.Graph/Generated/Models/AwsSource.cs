@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsSource : AuthorizationSystemIdentitySource, IParsable
+    public class AwsSource : Microsoft.Graph.Beta.Models.AuthorizationSystemIdentitySource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>AWS account ID.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsSource"/> and sets the default values.
         /// </summary>
         public AwsSource() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsSource();
+            return new Microsoft.Graph.Beta.Models.AwsSource();
         }
         /// <summary>
         /// The deserialization information for the current model

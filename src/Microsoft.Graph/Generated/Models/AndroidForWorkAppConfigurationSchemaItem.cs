@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data type for a configuration item inside an Android for Work application&apos;s custom configuration schema</summary>
-        public AndroidForWorkAppConfigurationSchemaItemDataType? DataType
+        public Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItemDataType? DataType
         {
-            get { return BackingStore?.Get<AndroidForWorkAppConfigurationSchemaItemDataType?>("dataType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItemDataType?>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
         /// <summary>Default value for boolean type items, if specified by the app developer</summary>
@@ -137,21 +137,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Selections
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? Selections
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("selections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("selections"); }
             set { BackingStore?.Set("selections", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Selections
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> Selections
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("selections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("selections"); }
             set { BackingStore?.Set("selections", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkAppConfigurationSchemaItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItem"/> and sets the default values.
         /// </summary>
         public AndroidForWorkAppConfigurationSchemaItem()
         {
@@ -161,12 +161,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkAppConfigurationSchemaItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidForWorkAppConfigurationSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkAppConfigurationSchemaItem();
+            return new Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dataType", n => { DataType = n.GetEnumValue<AndroidForWorkAppConfigurationSchemaItemDataType>(); } },
+                { "dataType", n => { DataType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItemDataType>(); } },
                 { "defaultBoolValue", n => { DefaultBoolValue = n.GetBoolValue(); } },
                 { "defaultIntValue", n => { DefaultIntValue = n.GetIntValue(); } },
                 { "defaultStringArrayValue", n => { DefaultStringArrayValue = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "schemaItemKey", n => { SchemaItemKey = n.GetStringValue(); } },
-                { "selections", n => { Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "selections", n => { Selections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AndroidForWorkAppConfigurationSchemaItemDataType>("dataType", DataType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchemaItemDataType>("dataType", DataType);
             writer.WriteBoolValue("defaultBoolValue", DefaultBoolValue);
             writer.WriteIntValue("defaultIntValue", DefaultIntValue);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultStringArrayValue", DefaultStringArrayValue);
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("schemaItemKey", SchemaItemKey);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("selections", Selections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("selections", Selections);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

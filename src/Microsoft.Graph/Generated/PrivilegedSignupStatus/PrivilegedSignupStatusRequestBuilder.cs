@@ -23,44 +23,44 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
     public class PrivilegedSignupStatusRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the canSignUp method.</summary>
-        public CanSignUpRequestBuilder CanSignUp
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpRequestBuilder CanSignUp
         {
-            get => new CanSignUpRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the completeSetup method.</summary>
-        public CompleteSetupRequestBuilder CompleteSetup
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup.CompleteSetupRequestBuilder CompleteSetup
         {
-            get => new CompleteSetupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup.CompleteSetupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedSignupStatus.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isSignedUp method.</summary>
-        public IsSignedUpRequestBuilder IsSignedUp
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder IsSignedUp
         {
-            get => new IsSignedUpRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the signUp method.</summary>
-        public SignUpRequestBuilder SignUp
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp.SignUpRequestBuilder SignUp
         {
-            get => new SignUpRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp.SignUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
         /// <param name="position">The unique identifier of privilegedSignupStatus</param>
-        /// <returns>A <see cref="PrivilegedSignupStatusItemRequestBuilder"/></returns>
-        public PrivilegedSignupStatusItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.Item.PrivilegedSignupStatusItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.Item.PrivilegedSignupStatusItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("privilegedSignupStatus%2Did", position);
-                return new PrivilegedSignupStatusItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.PrivilegedSignupStatus.Item.PrivilegedSignupStatusItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedSignupStatusRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrivilegedSignupStatusRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -78,25 +78,25 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
         /// <summary>
         /// Get entities from privilegedSignupStatus
         /// </summary>
-        /// <returns>A <see cref="PrivilegedSignupStatusCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedSignupStatusCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedSignupStatusCollectionResponse?> GetAsync(Action<RequestConfiguration<PrivilegedSignupStatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatusCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder.PrivilegedSignupStatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrivilegedSignupStatusCollectionResponse> GetAsync(Action<RequestConfiguration<PrivilegedSignupStatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatusCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder.PrivilegedSignupStatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrivilegedSignupStatusCollectionResponse>(requestInfo, PrivilegedSignupStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatusCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to privilegedSignupStatus
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus?> PostAsync(Microsoft.Graph.Beta.Models.PrivilegedSignupStatus body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedSignupStatusRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder.PrivilegedSignupStatusRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedSignupStatusRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder.PrivilegedSignupStatusRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrivilegedSignupStatusRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrivilegedSignupStatusRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrivilegedSignupStatusRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from privilegedSignupStatus
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegedSignupStatusRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegedSignupStatusRequestBuilderGetQueryParameters>
+        public class PrivilegedSignupStatusRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.PrivilegedSignupStatus.PrivilegedSignupStatusRequestBuilder.PrivilegedSignupStatusRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

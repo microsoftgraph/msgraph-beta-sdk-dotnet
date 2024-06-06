@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This task derived type represents a list of unmanaged devices discovered in the network.
     /// </summary>
-    public class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask, IParsable
+    public class UnmanagedDeviceDiscoveryTask : Microsoft.Graph.Beta.Models.DeviceAppManagementTask, IParsable
     {
         /// <summary>Unmanaged devices discovered in the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnmanagedDevice>? UnmanagedDevices
+        public List<Microsoft.Graph.Beta.Models.UnmanagedDevice>? UnmanagedDevices
         {
-            get { return BackingStore?.Get<List<UnmanagedDevice>?>("unmanagedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnmanagedDevice>?>("unmanagedDevices"); }
             set { BackingStore?.Set("unmanagedDevices", value); }
         }
 #nullable restore
 #else
-        public List<UnmanagedDevice> UnmanagedDevices
+        public List<Microsoft.Graph.Beta.Models.UnmanagedDevice> UnmanagedDevices
         {
-            get { return BackingStore?.Get<List<UnmanagedDevice>>("unmanagedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnmanagedDevice>>("unmanagedDevices"); }
             set { BackingStore?.Set("unmanagedDevices", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UnmanagedDeviceDiscoveryTask"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UnmanagedDeviceDiscoveryTask"/> and sets the default values.
         /// </summary>
         public UnmanagedDeviceDiscoveryTask() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnmanagedDeviceDiscoveryTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnmanagedDeviceDiscoveryTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnmanagedDeviceDiscoveryTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnmanagedDeviceDiscoveryTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnmanagedDeviceDiscoveryTask();
+            return new Microsoft.Graph.Beta.Models.UnmanagedDeviceDiscoveryTask();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "unmanagedDevices", n => { UnmanagedDevices = n.GetCollectionOfObjectValues<UnmanagedDevice>(UnmanagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unmanagedDevices", n => { UnmanagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnmanagedDevice>(Microsoft.Graph.Beta.Models.UnmanagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UnmanagedDevice>("unmanagedDevices", UnmanagedDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnmanagedDevice>("unmanagedDevices", UnmanagedDevices);
         }
     }
 }

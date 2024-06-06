@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
             set { BackingStore?.Set("MoveToJunk", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MarkAsJunkPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk.MarkAsJunkPostRequestBody"/> and sets the default values.
         /// </summary>
         public MarkAsJunkPostRequestBody()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MarkAsJunkPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk.MarkAsJunkPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MarkAsJunkPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk.MarkAsJunkPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MarkAsJunkPostRequestBody();
+            return new Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk.MarkAsJunkPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

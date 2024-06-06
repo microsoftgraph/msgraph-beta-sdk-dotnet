@@ -22,48 +22,48 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Settings for governing whether content is applicable to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentApplicabilitySettings? ContentApplicability
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings? ContentApplicability
         {
-            get { return BackingStore?.Get<ContentApplicabilitySettings?>("contentApplicability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings?>("contentApplicability"); }
             set { BackingStore?.Set("contentApplicability", value); }
         }
 #nullable restore
 #else
-        public ContentApplicabilitySettings ContentApplicability
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings ContentApplicability
         {
-            get { return BackingStore?.Get<ContentApplicabilitySettings>("contentApplicability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings>("contentApplicability"); }
             set { BackingStore?.Set("contentApplicability", value); }
         }
 #endif
         /// <summary>Settings for governing whether updates should be expedited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpediteSettings? Expedite
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings? Expedite
         {
-            get { return BackingStore?.Get<ExpediteSettings?>("expedite"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings?>("expedite"); }
             set { BackingStore?.Set("expedite", value); }
         }
 #nullable restore
 #else
-        public ExpediteSettings Expedite
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings Expedite
         {
-            get { return BackingStore?.Get<ExpediteSettings>("expedite"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings>("expedite"); }
             set { BackingStore?.Set("expedite", value); }
         }
 #endif
         /// <summary>Settings for governing conditions to monitor and automated actions to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MonitoringSettings? Monitoring
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings? Monitoring
         {
-            get { return BackingStore?.Get<MonitoringSettings?>("monitoring"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings?>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
 #nullable restore
 #else
-        public MonitoringSettings Monitoring
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings Monitoring
         {
-            get { return BackingStore?.Get<MonitoringSettings>("monitoring"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
 #endif
@@ -86,37 +86,37 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Settings for governing how and when the content is rolled out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ScheduleSettings? Schedule
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings? Schedule
         {
-            get { return BackingStore?.Get<ScheduleSettings?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public ScheduleSettings Schedule
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings Schedule
         {
-            get { return BackingStore?.Get<ScheduleSettings>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>Settings for governing end user update experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceSettings? UserExperience
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings? UserExperience
         {
-            get { return BackingStore?.Get<UserExperienceSettings?>("userExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings?>("userExperience"); }
             set { BackingStore?.Set("userExperience", value); }
         }
 #nullable restore
 #else
-        public UserExperienceSettings UserExperience
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings UserExperience
         {
-            get { return BackingStore?.Get<UserExperienceSettings>("userExperience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings>("userExperience"); }
             set { BackingStore?.Set("userExperience", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeploymentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings"/> and sets the default values.
         /// </summary>
         public DeploymentSettings()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeploymentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeploymentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeploymentSettings();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contentApplicability", n => { ContentApplicability = n.GetObjectValue<ContentApplicabilitySettings>(ContentApplicabilitySettings.CreateFromDiscriminatorValue); } },
-                { "expedite", n => { Expedite = n.GetObjectValue<ExpediteSettings>(ExpediteSettings.CreateFromDiscriminatorValue); } },
-                { "monitoring", n => { Monitoring = n.GetObjectValue<MonitoringSettings>(MonitoringSettings.CreateFromDiscriminatorValue); } },
+                { "contentApplicability", n => { ContentApplicability = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings.CreateFromDiscriminatorValue); } },
+                { "expedite", n => { Expedite = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings.CreateFromDiscriminatorValue); } },
+                { "monitoring", n => { Monitoring = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<ScheduleSettings>(ScheduleSettings.CreateFromDiscriminatorValue); } },
-                { "userExperience", n => { UserExperience = n.GetObjectValue<UserExperienceSettings>(UserExperienceSettings.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings.CreateFromDiscriminatorValue); } },
+                { "userExperience", n => { UserExperience = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -156,12 +156,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ContentApplicabilitySettings>("contentApplicability", ContentApplicability);
-            writer.WriteObjectValue<ExpediteSettings>("expedite", Expedite);
-            writer.WriteObjectValue<MonitoringSettings>("monitoring", Monitoring);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApplicabilitySettings>("contentApplicability", ContentApplicability);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ExpediteSettings>("expedite", Expedite);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.MonitoringSettings>("monitoring", Monitoring);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<ScheduleSettings>("schedule", Schedule);
-            writer.WriteObjectValue<UserExperienceSettings>("userExperience", UserExperience);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ScheduleSettings>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.UserExperienceSettings>("userExperience", UserExperience);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

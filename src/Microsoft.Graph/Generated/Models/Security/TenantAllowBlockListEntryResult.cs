@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenant allow-block list entry type. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.</summary>
-        public TenantAllowBlockListEntryType? EntryType
+        public Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryType? EntryType
         {
-            get { return BackingStore?.Get<TenantAllowBlockListEntryType?>("entryType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryType?>("entryType"); }
             set { BackingStore?.Set("entryType", value); }
         }
         /// <summary>Specifies the date and time when the entry expires.</summary>
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>Specifies whether the tenant allow block list entry creation operation was successful. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.</summary>
-        public LongRunningOperationStatus? Status
+        public Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus? Status
         {
-            get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Specifies the value of the created tenant allow block list entry.</summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TenantAllowBlockListEntryResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryResult"/> and sets the default values.
         /// </summary>
         public TenantAllowBlockListEntryResult()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantAllowBlockListEntryResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TenantAllowBlockListEntryResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantAllowBlockListEntryResult();
+            return new Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entryType", n => { EntryType = n.GetEnumValue<TenantAllowBlockListEntryType>(); } },
+                { "entryType", n => { EntryType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryType>(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<TenantAllowBlockListEntryType>("entryType", EntryType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.TenantAllowBlockListEntryType>("entryType", EntryType);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("identity", Identity);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<LongRunningOperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus>("status", Status);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

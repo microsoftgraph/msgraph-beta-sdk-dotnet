@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of error details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PublicErrorDetail>? Details
+        public List<Microsoft.Graph.Beta.Models.PublicErrorDetail>? Details
         {
-            get { return BackingStore?.Get<List<PublicErrorDetail>?>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicErrorDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<PublicErrorDetail> Details
+        public List<Microsoft.Graph.Beta.Models.PublicErrorDetail> Details
         {
-            get { return BackingStore?.Get<List<PublicErrorDetail>>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicErrorDetail>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PublicInnerError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PublicInnerError"/> and sets the default values.
         /// </summary>
         public PublicInnerError()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PublicInnerError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PublicInnerError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PublicInnerError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PublicInnerError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PublicInnerError();
+            return new Microsoft.Graph.Beta.Models.PublicInnerError();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetCollectionOfObjectValues<PublicErrorDetail>(PublicErrorDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicErrorDetail>(Microsoft.Graph.Beta.Models.PublicErrorDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteCollectionOfObjectValues<PublicErrorDetail>("details", Details);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicErrorDetail>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("target", Target);

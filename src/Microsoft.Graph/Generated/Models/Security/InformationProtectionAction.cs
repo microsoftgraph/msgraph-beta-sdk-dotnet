@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InformationProtectionAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.InformationProtectionAction"/> and sets the default values.
         /// </summary>
         public InformationProtectionAction()
         {
@@ -46,30 +46,30 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InformationProtectionAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.InformationProtectionAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InformationProtectionAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.InformationProtectionAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.addContentFooterAction" => new AddContentFooterAction(),
-                "#microsoft.graph.security.addContentHeaderAction" => new AddContentHeaderAction(),
-                "#microsoft.graph.security.addWatermarkAction" => new AddWatermarkAction(),
-                "#microsoft.graph.security.applyLabelAction" => new ApplyLabelAction(),
-                "#microsoft.graph.security.customAction" => new CustomAction(),
-                "#microsoft.graph.security.justifyAction" => new JustifyAction(),
-                "#microsoft.graph.security.metadataAction" => new MetadataAction(),
-                "#microsoft.graph.security.protectAdhocAction" => new ProtectAdhocAction(),
-                "#microsoft.graph.security.protectByTemplateAction" => new ProtectByTemplateAction(),
-                "#microsoft.graph.security.protectDoNotForwardAction" => new ProtectDoNotForwardAction(),
-                "#microsoft.graph.security.recommendLabelAction" => new RecommendLabelAction(),
-                "#microsoft.graph.security.removeContentFooterAction" => new RemoveContentFooterAction(),
-                "#microsoft.graph.security.removeContentHeaderAction" => new RemoveContentHeaderAction(),
-                "#microsoft.graph.security.removeProtectionAction" => new RemoveProtectionAction(),
-                "#microsoft.graph.security.removeWatermarkAction" => new RemoveWatermarkAction(),
-                _ => new InformationProtectionAction(),
+                "#microsoft.graph.security.addContentFooterAction" => new Microsoft.Graph.Beta.Models.Security.AddContentFooterAction(),
+                "#microsoft.graph.security.addContentHeaderAction" => new Microsoft.Graph.Beta.Models.Security.AddContentHeaderAction(),
+                "#microsoft.graph.security.addWatermarkAction" => new Microsoft.Graph.Beta.Models.Security.AddWatermarkAction(),
+                "#microsoft.graph.security.applyLabelAction" => new Microsoft.Graph.Beta.Models.Security.ApplyLabelAction(),
+                "#microsoft.graph.security.customAction" => new Microsoft.Graph.Beta.Models.Security.CustomAction(),
+                "#microsoft.graph.security.justifyAction" => new Microsoft.Graph.Beta.Models.Security.JustifyAction(),
+                "#microsoft.graph.security.metadataAction" => new Microsoft.Graph.Beta.Models.Security.MetadataAction(),
+                "#microsoft.graph.security.protectAdhocAction" => new Microsoft.Graph.Beta.Models.Security.ProtectAdhocAction(),
+                "#microsoft.graph.security.protectByTemplateAction" => new Microsoft.Graph.Beta.Models.Security.ProtectByTemplateAction(),
+                "#microsoft.graph.security.protectDoNotForwardAction" => new Microsoft.Graph.Beta.Models.Security.ProtectDoNotForwardAction(),
+                "#microsoft.graph.security.recommendLabelAction" => new Microsoft.Graph.Beta.Models.Security.RecommendLabelAction(),
+                "#microsoft.graph.security.removeContentFooterAction" => new Microsoft.Graph.Beta.Models.Security.RemoveContentFooterAction(),
+                "#microsoft.graph.security.removeContentHeaderAction" => new Microsoft.Graph.Beta.Models.Security.RemoveContentHeaderAction(),
+                "#microsoft.graph.security.removeProtectionAction" => new Microsoft.Graph.Beta.Models.Security.RemoveProtectionAction(),
+                "#microsoft.graph.security.removeWatermarkAction" => new Microsoft.Graph.Beta.Models.Security.RemoveWatermarkAction(),
+                _ => new Microsoft.Graph.Beta.Models.Security.InformationProtectionAction(),
             };
         }
         /// <summary>

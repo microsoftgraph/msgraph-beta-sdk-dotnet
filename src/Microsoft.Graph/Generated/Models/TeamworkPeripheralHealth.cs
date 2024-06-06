@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The connected state and time since the peripheral device was connected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? Connection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection? Connection
         {
-            get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection?>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection Connection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection Connection
         {
-            get { return BackingStore?.Get<TeamworkConnection>("connection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #endif
@@ -60,21 +60,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The peripheral property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Peripheral
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral? Peripheral
         {
-            get { return BackingStore?.Get<TeamworkPeripheral?>("peripheral"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral?>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Peripheral
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheral Peripheral
         {
-            get { return BackingStore?.Get<TeamworkPeripheral>("peripheral"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkPeripheralHealth"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth"/> and sets the default values.
         /// </summary>
         public TeamworkPeripheralHealth()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkPeripheralHealth"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkPeripheralHealth CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkPeripheralHealth();
+            return new Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "connection", n => { Connection = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>(Microsoft.Graph.Beta.Models.TeamworkConnection.CreateFromDiscriminatorValue); } },
                 { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "peripheral", n => { Peripheral = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "peripheral", n => { Peripheral = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>(Microsoft.Graph.Beta.Models.TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -112,10 +112,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkConnection>("connection", Connection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>("connection", Connection);
             writer.WriteBoolValue("isOptional", IsOptional);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<TeamworkPeripheral>("peripheral", Peripheral);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheral>("peripheral", Peripheral);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

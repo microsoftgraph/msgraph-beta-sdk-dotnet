@@ -7,29 +7,29 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamsAppDashboardCardDefinition : Entity, IParsable
+    public class TeamsAppDashboardCardDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration for the source of the card content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppDashboardCardContentSource? ContentSource
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource? ContentSource
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardContentSource?>("contentSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource?>("contentSource"); }
             set { BackingStore?.Set("contentSource", value); }
         }
 #nullable restore
 #else
-        public TeamsAppDashboardCardContentSource ContentSource
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource ContentSource
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardContentSource>("contentSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource>("contentSource"); }
             set { BackingStore?.Set("contentSource", value); }
         }
 #endif
         /// <summary>The size of the card. The possible values are: medium, large, unknownFutureValue. Required.</summary>
-        public TeamsAppDashboardCardSize? DefaultSize
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSize? DefaultSize
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardSize?>("defaultSize"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSize?>("defaultSize"); }
             set { BackingStore?.Set("defaultSize", value); }
         }
         /// <summary>The description for the card. Required.</summary>
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Configuration for the display of the icon in the card picker. If neither this nor any of its properties (iconUrl and officeUIFabricIconName) are specified, the color icon of the app is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppDashboardCardIcon? Icon
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon? Icon
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardIcon?>("icon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #nullable restore
 #else
-        public TeamsAppDashboardCardIcon Icon
+        public Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon Icon
         {
-            get { return BackingStore?.Get<TeamsAppDashboardCardIcon>("icon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #endif
@@ -99,12 +99,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamsAppDashboardCardDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamsAppDashboardCardDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamsAppDashboardCardDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamsAppDashboardCardDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamsAppDashboardCardDefinition();
+            return new Microsoft.Graph.Beta.Models.TeamsAppDashboardCardDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,11 +114,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "contentSource", n => { ContentSource = n.GetObjectValue<TeamsAppDashboardCardContentSource>(TeamsAppDashboardCardContentSource.CreateFromDiscriminatorValue); } },
-                { "defaultSize", n => { DefaultSize = n.GetEnumValue<TeamsAppDashboardCardSize>(); } },
+                { "contentSource", n => { ContentSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource>(Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource.CreateFromDiscriminatorValue); } },
+                { "defaultSize", n => { DefaultSize = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSize>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "icon", n => { Icon = n.GetObjectValue<TeamsAppDashboardCardIcon>(TeamsAppDashboardCardIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon>(Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon.CreateFromDiscriminatorValue); } },
                 { "pickerGroupId", n => { PickerGroupId = n.GetStringValue(); } },
             };
         }
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamsAppDashboardCardContentSource>("contentSource", ContentSource);
-            writer.WriteEnumValue<TeamsAppDashboardCardSize>("defaultSize", DefaultSize);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardContentSource>("contentSource", ContentSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardSize>("defaultSize", DefaultSize);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<TeamsAppDashboardCardIcon>("icon", Icon);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDashboardCardIcon>("icon", Icon);
             writer.WriteStringValue("pickerGroupId", PickerGroupId);
         }
     }

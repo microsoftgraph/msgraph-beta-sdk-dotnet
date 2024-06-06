@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ColumnDefinition : Entity, IParsable
+    public class ColumnDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>This column stores boolean values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BooleanColumn? Boolean
+        public Microsoft.Graph.Beta.Models.BooleanColumn? Boolean
         {
-            get { return BackingStore?.Get<BooleanColumn?>("boolean"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BooleanColumn?>("boolean"); }
             set { BackingStore?.Set("boolean", value); }
         }
 #nullable restore
 #else
-        public BooleanColumn Boolean
+        public Microsoft.Graph.Beta.Models.BooleanColumn Boolean
         {
-            get { return BackingStore?.Get<BooleanColumn>("boolean"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BooleanColumn>("boolean"); }
             set { BackingStore?.Set("boolean", value); }
         }
 #endif
         /// <summary>This column&apos;s data is calculated based on other columns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CalculatedColumn? Calculated
+        public Microsoft.Graph.Beta.Models.CalculatedColumn? Calculated
         {
-            get { return BackingStore?.Get<CalculatedColumn?>("calculated"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CalculatedColumn?>("calculated"); }
             set { BackingStore?.Set("calculated", value); }
         }
 #nullable restore
 #else
-        public CalculatedColumn Calculated
+        public Microsoft.Graph.Beta.Models.CalculatedColumn Calculated
         {
-            get { return BackingStore?.Get<CalculatedColumn>("calculated"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CalculatedColumn>("calculated"); }
             set { BackingStore?.Set("calculated", value); }
         }
 #endif
         /// <summary>This column stores data from a list of choices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChoiceColumn? Choice
+        public Microsoft.Graph.Beta.Models.ChoiceColumn? Choice
         {
-            get { return BackingStore?.Get<ChoiceColumn?>("choice"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChoiceColumn?>("choice"); }
             set { BackingStore?.Set("choice", value); }
         }
 #nullable restore
 #else
-        public ChoiceColumn Choice
+        public Microsoft.Graph.Beta.Models.ChoiceColumn Choice
         {
-            get { return BackingStore?.Get<ChoiceColumn>("choice"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChoiceColumn>("choice"); }
             set { BackingStore?.Set("choice", value); }
         }
 #endif
@@ -77,64 +77,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This column stores content approval status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentApprovalStatusColumn? ContentApprovalStatus
+        public Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn? ContentApprovalStatus
         {
-            get { return BackingStore?.Get<ContentApprovalStatusColumn?>("contentApprovalStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn?>("contentApprovalStatus"); }
             set { BackingStore?.Set("contentApprovalStatus", value); }
         }
 #nullable restore
 #else
-        public ContentApprovalStatusColumn ContentApprovalStatus
+        public Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn ContentApprovalStatus
         {
-            get { return BackingStore?.Get<ContentApprovalStatusColumn>("contentApprovalStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn>("contentApprovalStatus"); }
             set { BackingStore?.Set("contentApprovalStatus", value); }
         }
 #endif
         /// <summary>This column stores currency values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CurrencyColumn? Currency
+        public Microsoft.Graph.Beta.Models.CurrencyColumn? Currency
         {
-            get { return BackingStore?.Get<CurrencyColumn?>("currency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrencyColumn?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
 #nullable restore
 #else
-        public CurrencyColumn Currency
+        public Microsoft.Graph.Beta.Models.CurrencyColumn Currency
         {
-            get { return BackingStore?.Get<CurrencyColumn>("currency"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrencyColumn>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
 #endif
         /// <summary>This column stores DateTime values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeColumn? DateTime
+        public Microsoft.Graph.Beta.Models.DateTimeColumn? DateTime
         {
-            get { return BackingStore?.Get<DateTimeColumn?>("dateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeColumn?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeColumn DateTime
+        public Microsoft.Graph.Beta.Models.DateTimeColumn DateTime
         {
-            get { return BackingStore?.Get<DateTimeColumn>("dateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeColumn>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
 #endif
         /// <summary>The default value for this column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DefaultColumnValue? DefaultValue
+        public Microsoft.Graph.Beta.Models.DefaultColumnValue? DefaultValue
         {
-            get { return BackingStore?.Get<DefaultColumnValue?>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefaultColumnValue?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public DefaultColumnValue DefaultValue
+        public Microsoft.Graph.Beta.Models.DefaultColumnValue DefaultValue
         {
-            get { return BackingStore?.Get<DefaultColumnValue>("defaultValue"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefaultColumnValue>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
@@ -179,16 +179,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This column stores a geolocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GeolocationColumn? Geolocation
+        public Microsoft.Graph.Beta.Models.GeolocationColumn? Geolocation
         {
-            get { return BackingStore?.Get<GeolocationColumn?>("geolocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeolocationColumn?>("geolocation"); }
             set { BackingStore?.Set("geolocation", value); }
         }
 #nullable restore
 #else
-        public GeolocationColumn Geolocation
+        public Microsoft.Graph.Beta.Models.GeolocationColumn Geolocation
         {
-            get { return BackingStore?.Get<GeolocationColumn>("geolocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeolocationColumn>("geolocation"); }
             set { BackingStore?.Set("geolocation", value); }
         }
 #endif
@@ -201,16 +201,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This column stores hyperlink or picture values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public HyperlinkOrPictureColumn? HyperlinkOrPicture
+        public Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn? HyperlinkOrPicture
         {
-            get { return BackingStore?.Get<HyperlinkOrPictureColumn?>("hyperlinkOrPicture"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn?>("hyperlinkOrPicture"); }
             set { BackingStore?.Set("hyperlinkOrPicture", value); }
         }
 #nullable restore
 #else
-        public HyperlinkOrPictureColumn HyperlinkOrPicture
+        public Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn HyperlinkOrPicture
         {
-            get { return BackingStore?.Get<HyperlinkOrPictureColumn>("hyperlinkOrPicture"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn>("hyperlinkOrPicture"); }
             set { BackingStore?.Set("hyperlinkOrPicture", value); }
         }
 #endif
@@ -241,16 +241,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This column&apos;s data is looked up from another source in the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LookupColumn? Lookup
+        public Microsoft.Graph.Beta.Models.LookupColumn? Lookup
         {
-            get { return BackingStore?.Get<LookupColumn?>("lookup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LookupColumn?>("lookup"); }
             set { BackingStore?.Set("lookup", value); }
         }
 #nullable restore
 #else
-        public LookupColumn Lookup
+        public Microsoft.Graph.Beta.Models.LookupColumn Lookup
         {
-            get { return BackingStore?.Get<LookupColumn>("lookup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LookupColumn>("lookup"); }
             set { BackingStore?.Set("lookup", value); }
         }
 #endif
@@ -273,32 +273,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This column stores number values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NumberColumn? Number
+        public Microsoft.Graph.Beta.Models.NumberColumn? Number
         {
-            get { return BackingStore?.Get<NumberColumn?>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NumberColumn?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public NumberColumn Number
+        public Microsoft.Graph.Beta.Models.NumberColumn Number
         {
-            get { return BackingStore?.Get<NumberColumn>("number"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NumberColumn>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>This column stores Person or Group values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PersonOrGroupColumn? PersonOrGroup
+        public Microsoft.Graph.Beta.Models.PersonOrGroupColumn? PersonOrGroup
         {
-            get { return BackingStore?.Get<PersonOrGroupColumn?>("personOrGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonOrGroupColumn?>("personOrGroup"); }
             set { BackingStore?.Set("personOrGroup", value); }
         }
 #nullable restore
 #else
-        public PersonOrGroupColumn PersonOrGroup
+        public Microsoft.Graph.Beta.Models.PersonOrGroupColumn PersonOrGroup
         {
-            get { return BackingStore?.Get<PersonOrGroupColumn>("personOrGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonOrGroupColumn>("personOrGroup"); }
             set { BackingStore?.Set("personOrGroup", value); }
         }
 #endif
@@ -323,114 +323,114 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The source column for content type column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ColumnDefinition? SourceColumn
+        public Microsoft.Graph.Beta.Models.ColumnDefinition? SourceColumn
         {
-            get { return BackingStore?.Get<ColumnDefinition?>("sourceColumn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ColumnDefinition?>("sourceColumn"); }
             set { BackingStore?.Set("sourceColumn", value); }
         }
 #nullable restore
 #else
-        public ColumnDefinition SourceColumn
+        public Microsoft.Graph.Beta.Models.ColumnDefinition SourceColumn
         {
-            get { return BackingStore?.Get<ColumnDefinition>("sourceColumn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ColumnDefinition>("sourceColumn"); }
             set { BackingStore?.Set("sourceColumn", value); }
         }
 #endif
         /// <summary>ContentType from which this column is inherited from. Used only to fetch contentTypes columns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentTypeInfo? SourceContentType
+        public Microsoft.Graph.Beta.Models.ContentTypeInfo? SourceContentType
         {
-            get { return BackingStore?.Get<ContentTypeInfo?>("sourceContentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentTypeInfo?>("sourceContentType"); }
             set { BackingStore?.Set("sourceContentType", value); }
         }
 #nullable restore
 #else
-        public ContentTypeInfo SourceContentType
+        public Microsoft.Graph.Beta.Models.ContentTypeInfo SourceContentType
         {
-            get { return BackingStore?.Get<ContentTypeInfo>("sourceContentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentTypeInfo>("sourceContentType"); }
             set { BackingStore?.Set("sourceContentType", value); }
         }
 #endif
         /// <summary>This column stores taxonomy terms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TermColumn? Term
+        public Microsoft.Graph.Beta.Models.TermColumn? Term
         {
-            get { return BackingStore?.Get<TermColumn?>("term"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermColumn?>("term"); }
             set { BackingStore?.Set("term", value); }
         }
 #nullable restore
 #else
-        public TermColumn Term
+        public Microsoft.Graph.Beta.Models.TermColumn Term
         {
-            get { return BackingStore?.Get<TermColumn>("term"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermColumn>("term"); }
             set { BackingStore?.Set("term", value); }
         }
 #endif
         /// <summary>This column stores text values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TextColumn? Text
+        public Microsoft.Graph.Beta.Models.TextColumn? Text
         {
-            get { return BackingStore?.Get<TextColumn?>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TextColumn?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public TextColumn Text
+        public Microsoft.Graph.Beta.Models.TextColumn Text
         {
-            get { return BackingStore?.Get<TextColumn>("text"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TextColumn>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #endif
         /// <summary>This column stores thumbnail values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ThumbnailColumn? Thumbnail
+        public Microsoft.Graph.Beta.Models.ThumbnailColumn? Thumbnail
         {
-            get { return BackingStore?.Get<ThumbnailColumn?>("thumbnail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ThumbnailColumn?>("thumbnail"); }
             set { BackingStore?.Set("thumbnail", value); }
         }
 #nullable restore
 #else
-        public ThumbnailColumn Thumbnail
+        public Microsoft.Graph.Beta.Models.ThumbnailColumn Thumbnail
         {
-            get { return BackingStore?.Get<ThumbnailColumn>("thumbnail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ThumbnailColumn>("thumbnail"); }
             set { BackingStore?.Set("thumbnail", value); }
         }
 #endif
         /// <summary>For site columns, the type of column. Read-only.</summary>
-        public ColumnTypes? Type
+        public Microsoft.Graph.Beta.Models.ColumnTypes? Type
         {
-            get { return BackingStore?.Get<ColumnTypes?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ColumnTypes?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>This column stores validation formula and message for the column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ColumnValidation? Validation
+        public Microsoft.Graph.Beta.Models.ColumnValidation? Validation
         {
-            get { return BackingStore?.Get<ColumnValidation?>("validation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ColumnValidation?>("validation"); }
             set { BackingStore?.Set("validation", value); }
         }
 #nullable restore
 #else
-        public ColumnValidation Validation
+        public Microsoft.Graph.Beta.Models.ColumnValidation Validation
         {
-            get { return BackingStore?.Get<ColumnValidation>("validation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ColumnValidation>("validation"); }
             set { BackingStore?.Set("validation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ColumnDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ColumnDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ColumnDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ColumnDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ColumnDefinition();
+            return new Microsoft.Graph.Beta.Models.ColumnDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -440,38 +440,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "boolean", n => { Boolean = n.GetObjectValue<BooleanColumn>(BooleanColumn.CreateFromDiscriminatorValue); } },
-                { "calculated", n => { Calculated = n.GetObjectValue<CalculatedColumn>(CalculatedColumn.CreateFromDiscriminatorValue); } },
-                { "choice", n => { Choice = n.GetObjectValue<ChoiceColumn>(ChoiceColumn.CreateFromDiscriminatorValue); } },
+                { "boolean", n => { Boolean = n.GetObjectValue<Microsoft.Graph.Beta.Models.BooleanColumn>(Microsoft.Graph.Beta.Models.BooleanColumn.CreateFromDiscriminatorValue); } },
+                { "calculated", n => { Calculated = n.GetObjectValue<Microsoft.Graph.Beta.Models.CalculatedColumn>(Microsoft.Graph.Beta.Models.CalculatedColumn.CreateFromDiscriminatorValue); } },
+                { "choice", n => { Choice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChoiceColumn>(Microsoft.Graph.Beta.Models.ChoiceColumn.CreateFromDiscriminatorValue); } },
                 { "columnGroup", n => { ColumnGroup = n.GetStringValue(); } },
-                { "contentApprovalStatus", n => { ContentApprovalStatus = n.GetObjectValue<ContentApprovalStatusColumn>(ContentApprovalStatusColumn.CreateFromDiscriminatorValue); } },
-                { "currency", n => { Currency = n.GetObjectValue<CurrencyColumn>(CurrencyColumn.CreateFromDiscriminatorValue); } },
-                { "dateTime", n => { DateTime = n.GetObjectValue<DateTimeColumn>(DateTimeColumn.CreateFromDiscriminatorValue); } },
-                { "defaultValue", n => { DefaultValue = n.GetObjectValue<DefaultColumnValue>(DefaultColumnValue.CreateFromDiscriminatorValue); } },
+                { "contentApprovalStatus", n => { ContentApprovalStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn>(Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrencyColumn>(Microsoft.Graph.Beta.Models.CurrencyColumn.CreateFromDiscriminatorValue); } },
+                { "dateTime", n => { DateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeColumn>(Microsoft.Graph.Beta.Models.DateTimeColumn.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultColumnValue>(Microsoft.Graph.Beta.Models.DefaultColumnValue.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enforceUniqueValues", n => { EnforceUniqueValues = n.GetBoolValue(); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<GeolocationColumn>(GeolocationColumn.CreateFromDiscriminatorValue); } },
+                { "geolocation", n => { Geolocation = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeolocationColumn>(Microsoft.Graph.Beta.Models.GeolocationColumn.CreateFromDiscriminatorValue); } },
                 { "hidden", n => { Hidden = n.GetBoolValue(); } },
-                { "hyperlinkOrPicture", n => { HyperlinkOrPicture = n.GetObjectValue<HyperlinkOrPictureColumn>(HyperlinkOrPictureColumn.CreateFromDiscriminatorValue); } },
+                { "hyperlinkOrPicture", n => { HyperlinkOrPicture = n.GetObjectValue<Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn>(Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn.CreateFromDiscriminatorValue); } },
                 { "indexed", n => { Indexed = n.GetBoolValue(); } },
                 { "isDeletable", n => { IsDeletable = n.GetBoolValue(); } },
                 { "isReorderable", n => { IsReorderable = n.GetBoolValue(); } },
                 { "isSealed", n => { IsSealed = n.GetBoolValue(); } },
-                { "lookup", n => { Lookup = n.GetObjectValue<LookupColumn>(LookupColumn.CreateFromDiscriminatorValue); } },
+                { "lookup", n => { Lookup = n.GetObjectValue<Microsoft.Graph.Beta.Models.LookupColumn>(Microsoft.Graph.Beta.Models.LookupColumn.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetObjectValue<NumberColumn>(NumberColumn.CreateFromDiscriminatorValue); } },
-                { "personOrGroup", n => { PersonOrGroup = n.GetObjectValue<PersonOrGroupColumn>(PersonOrGroupColumn.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Microsoft.Graph.Beta.Models.NumberColumn>(Microsoft.Graph.Beta.Models.NumberColumn.CreateFromDiscriminatorValue); } },
+                { "personOrGroup", n => { PersonOrGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.PersonOrGroupColumn>(Microsoft.Graph.Beta.Models.PersonOrGroupColumn.CreateFromDiscriminatorValue); } },
                 { "propagateChanges", n => { PropagateChanges = n.GetBoolValue(); } },
                 { "readOnly", n => { ReadOnly = n.GetBoolValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "sourceColumn", n => { SourceColumn = n.GetObjectValue<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue); } },
-                { "sourceContentType", n => { SourceContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
-                { "term", n => { Term = n.GetObjectValue<TermColumn>(TermColumn.CreateFromDiscriminatorValue); } },
-                { "text", n => { Text = n.GetObjectValue<TextColumn>(TextColumn.CreateFromDiscriminatorValue); } },
-                { "thumbnail", n => { Thumbnail = n.GetObjectValue<ThumbnailColumn>(ThumbnailColumn.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<ColumnTypes>(); } },
-                { "validation", n => { Validation = n.GetObjectValue<ColumnValidation>(ColumnValidation.CreateFromDiscriminatorValue); } },
+                { "sourceColumn", n => { SourceColumn = n.GetObjectValue<Microsoft.Graph.Beta.Models.ColumnDefinition>(Microsoft.Graph.Beta.Models.ColumnDefinition.CreateFromDiscriminatorValue); } },
+                { "sourceContentType", n => { SourceContentType = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentTypeInfo>(Microsoft.Graph.Beta.Models.ContentTypeInfo.CreateFromDiscriminatorValue); } },
+                { "term", n => { Term = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermColumn>(Microsoft.Graph.Beta.Models.TermColumn.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Microsoft.Graph.Beta.Models.TextColumn>(Microsoft.Graph.Beta.Models.TextColumn.CreateFromDiscriminatorValue); } },
+                { "thumbnail", n => { Thumbnail = n.GetObjectValue<Microsoft.Graph.Beta.Models.ThumbnailColumn>(Microsoft.Graph.Beta.Models.ThumbnailColumn.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.ColumnTypes>(); } },
+                { "validation", n => { Validation = n.GetObjectValue<Microsoft.Graph.Beta.Models.ColumnValidation>(Microsoft.Graph.Beta.Models.ColumnValidation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -482,38 +482,38 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<BooleanColumn>("boolean", Boolean);
-            writer.WriteObjectValue<CalculatedColumn>("calculated", Calculated);
-            writer.WriteObjectValue<ChoiceColumn>("choice", Choice);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BooleanColumn>("boolean", Boolean);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CalculatedColumn>("calculated", Calculated);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChoiceColumn>("choice", Choice);
             writer.WriteStringValue("columnGroup", ColumnGroup);
-            writer.WriteObjectValue<ContentApprovalStatusColumn>("contentApprovalStatus", ContentApprovalStatus);
-            writer.WriteObjectValue<CurrencyColumn>("currency", Currency);
-            writer.WriteObjectValue<DateTimeColumn>("dateTime", DateTime);
-            writer.WriteObjectValue<DefaultColumnValue>("defaultValue", DefaultValue);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentApprovalStatusColumn>("contentApprovalStatus", ContentApprovalStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CurrencyColumn>("currency", Currency);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeColumn>("dateTime", DateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DefaultColumnValue>("defaultValue", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceUniqueValues", EnforceUniqueValues);
-            writer.WriteObjectValue<GeolocationColumn>("geolocation", Geolocation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GeolocationColumn>("geolocation", Geolocation);
             writer.WriteBoolValue("hidden", Hidden);
-            writer.WriteObjectValue<HyperlinkOrPictureColumn>("hyperlinkOrPicture", HyperlinkOrPicture);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.HyperlinkOrPictureColumn>("hyperlinkOrPicture", HyperlinkOrPicture);
             writer.WriteBoolValue("indexed", Indexed);
             writer.WriteBoolValue("isDeletable", IsDeletable);
             writer.WriteBoolValue("isReorderable", IsReorderable);
             writer.WriteBoolValue("isSealed", IsSealed);
-            writer.WriteObjectValue<LookupColumn>("lookup", Lookup);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LookupColumn>("lookup", Lookup);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<NumberColumn>("number", Number);
-            writer.WriteObjectValue<PersonOrGroupColumn>("personOrGroup", PersonOrGroup);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.NumberColumn>("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PersonOrGroupColumn>("personOrGroup", PersonOrGroup);
             writer.WriteBoolValue("propagateChanges", PropagateChanges);
             writer.WriteBoolValue("readOnly", ReadOnly);
             writer.WriteBoolValue("required", Required);
-            writer.WriteObjectValue<ColumnDefinition>("sourceColumn", SourceColumn);
-            writer.WriteObjectValue<ContentTypeInfo>("sourceContentType", SourceContentType);
-            writer.WriteObjectValue<TermColumn>("term", Term);
-            writer.WriteObjectValue<TextColumn>("text", Text);
-            writer.WriteObjectValue<ThumbnailColumn>("thumbnail", Thumbnail);
-            writer.WriteEnumValue<ColumnTypes>("type", Type);
-            writer.WriteObjectValue<ColumnValidation>("validation", Validation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ColumnDefinition>("sourceColumn", SourceColumn);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentTypeInfo>("sourceContentType", SourceContentType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TermColumn>("term", Term);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TextColumn>("text", Text);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ThumbnailColumn>("thumbnail", Thumbnail);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ColumnTypes>("type", Type);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ColumnValidation>("validation", Validation);
         }
     }
 }

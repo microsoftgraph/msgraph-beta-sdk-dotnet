@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IdentityUserFlowAttributeAssignment : Entity, IParsable
+    public class IdentityUserFlowAttributeAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the identityUserFlowAttribute within a user flow.</summary>
@@ -41,50 +41,50 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user attribute that you want to add to your user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityUserFlowAttribute? UserAttribute
+        public Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute? UserAttribute
         {
-            get { return BackingStore?.Get<IdentityUserFlowAttribute?>("userAttribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute?>("userAttribute"); }
             set { BackingStore?.Set("userAttribute", value); }
         }
 #nullable restore
 #else
-        public IdentityUserFlowAttribute UserAttribute
+        public Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute UserAttribute
         {
-            get { return BackingStore?.Get<IdentityUserFlowAttribute>("userAttribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>("userAttribute"); }
             set { BackingStore?.Set("userAttribute", value); }
         }
 #endif
         /// <summary>The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserAttributeValuesItem>? UserAttributeValues
+        public List<Microsoft.Graph.Beta.Models.UserAttributeValuesItem>? UserAttributeValues
         {
-            get { return BackingStore?.Get<List<UserAttributeValuesItem>?>("userAttributeValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserAttributeValuesItem>?>("userAttributeValues"); }
             set { BackingStore?.Set("userAttributeValues", value); }
         }
 #nullable restore
 #else
-        public List<UserAttributeValuesItem> UserAttributeValues
+        public List<Microsoft.Graph.Beta.Models.UserAttributeValuesItem> UserAttributeValues
         {
-            get { return BackingStore?.Get<List<UserAttributeValuesItem>>("userAttributeValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserAttributeValuesItem>>("userAttributeValues"); }
             set { BackingStore?.Set("userAttributeValues", value); }
         }
 #endif
         /// <summary>The userInputType property</summary>
-        public IdentityUserFlowAttributeInputType? UserInputType
+        public Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeInputType? UserInputType
         {
-            get { return BackingStore?.Get<IdentityUserFlowAttributeInputType?>("userInputType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeInputType?>("userInputType"); }
             set { BackingStore?.Set("userInputType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityUserFlowAttributeAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityUserFlowAttributeAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityUserFlowAttributeAssignment();
+            return new Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
                 { "requiresVerification", n => { RequiresVerification = n.GetBoolValue(); } },
-                { "userAttribute", n => { UserAttribute = n.GetObjectValue<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue); } },
-                { "userAttributeValues", n => { UserAttributeValues = n.GetCollectionOfObjectValues<UserAttributeValuesItem>(UserAttributeValuesItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userInputType", n => { UserInputType = n.GetEnumValue<IdentityUserFlowAttributeInputType>(); } },
+                { "userAttribute", n => { UserAttribute = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>(Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue); } },
+                { "userAttributeValues", n => { UserAttributeValues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserAttributeValuesItem>(Microsoft.Graph.Beta.Models.UserAttributeValuesItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userInputType", n => { UserInputType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeInputType>(); } },
             };
         }
         /// <summary>
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isOptional", IsOptional);
             writer.WriteBoolValue("requiresVerification", RequiresVerification);
-            writer.WriteObjectValue<IdentityUserFlowAttribute>("userAttribute", UserAttribute);
-            writer.WriteCollectionOfObjectValues<UserAttributeValuesItem>("userAttributeValues", UserAttributeValues);
-            writer.WriteEnumValue<IdentityUserFlowAttributeInputType>("userInputType", UserInputType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttribute>("userAttribute", UserAttribute);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserAttributeValuesItem>("userAttributeValues", UserAttributeValues);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeInputType>("userInputType", UserInputType);
         }
     }
 }

@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IpSegmentConfiguration : SegmentConfiguration, IParsable
+    public class IpSegmentConfiguration : Microsoft.Graph.Beta.Models.SegmentConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The applicationSegments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpApplicationSegment>? ApplicationSegments
+        public List<Microsoft.Graph.Beta.Models.IpApplicationSegment>? ApplicationSegments
         {
-            get { return BackingStore?.Get<List<IpApplicationSegment>?>("applicationSegments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpApplicationSegment>?>("applicationSegments"); }
             set { BackingStore?.Set("applicationSegments", value); }
         }
 #nullable restore
 #else
-        public List<IpApplicationSegment> ApplicationSegments
+        public List<Microsoft.Graph.Beta.Models.IpApplicationSegment> ApplicationSegments
         {
-            get { return BackingStore?.Get<List<IpApplicationSegment>>("applicationSegments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpApplicationSegment>>("applicationSegments"); }
             set { BackingStore?.Set("applicationSegments", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IpSegmentConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IpSegmentConfiguration"/> and sets the default values.
         /// </summary>
         public IpSegmentConfiguration() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IpSegmentConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IpSegmentConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IpSegmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IpSegmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IpSegmentConfiguration();
+            return new Microsoft.Graph.Beta.Models.IpSegmentConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicationSegments", n => { ApplicationSegments = n.GetCollectionOfObjectValues<IpApplicationSegment>(IpApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicationSegments", n => { ApplicationSegments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpApplicationSegment>(Microsoft.Graph.Beta.Models.IpApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IpApplicationSegment>("applicationSegments", ApplicationSegments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpApplicationSegment>("applicationSegments", ApplicationSegments);
         }
     }
 }

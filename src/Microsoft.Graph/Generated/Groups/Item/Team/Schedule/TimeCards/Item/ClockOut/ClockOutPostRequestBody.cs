@@ -29,21 +29,21 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Notes
+        public Microsoft.Graph.Beta.Models.ItemBody? Notes
         {
-            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public ItemBody Notes
+        public Microsoft.Graph.Beta.Models.ItemBody Notes
         {
-            get { return BackingStore?.Get<ItemBody>("notes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClockOutPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut.ClockOutPostRequestBody"/> and sets the default values.
         /// </summary>
         public ClockOutPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClockOutPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut.ClockOutPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClockOutPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut.ClockOutPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClockOutPostRequestBody();
+            return new Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut.ClockOutPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
-                { "notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "notes", n => { Notes = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("atApprovedLocation", AtApprovedLocation);
-            writer.WriteObjectValue<ItemBody>("notes", Notes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

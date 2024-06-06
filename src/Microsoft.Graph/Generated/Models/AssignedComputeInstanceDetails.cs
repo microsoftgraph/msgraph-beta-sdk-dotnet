@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AssignedComputeInstanceDetails : Entity, IParsable
+    public class AssignedComputeInstanceDetails : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a set of S3 buckets accessed by this EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemResource>? AccessedStorageBuckets
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>? AccessedStorageBuckets
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemResource>?>("accessedStorageBuckets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>?>("accessedStorageBuckets"); }
             set { BackingStore?.Set("accessedStorageBuckets", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemResource> AccessedStorageBuckets
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemResource> AccessedStorageBuckets
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemResource>>("accessedStorageBuckets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>>("accessedStorageBuckets"); }
             set { BackingStore?.Set("accessedStorageBuckets", value); }
         }
 #endif
         /// <summary>assigned EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? AssignedComputeInstance
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource? AssignedComputeInstance
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource?>("assignedComputeInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource?>("assignedComputeInstance"); }
             set { BackingStore?.Set("assignedComputeInstance", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource AssignedComputeInstance
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource AssignedComputeInstance
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource>("assignedComputeInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("assignedComputeInstance"); }
             set { BackingStore?.Set("assignedComputeInstance", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignedComputeInstanceDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AssignedComputeInstanceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignedComputeInstanceDetails();
+            return new Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessedStorageBuckets", n => { AccessedStorageBuckets = n.GetCollectionOfObjectValues<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignedComputeInstance", n => { AssignedComputeInstance = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "accessedStorageBuckets", n => { AccessedStorageBuckets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedComputeInstance", n => { AssignedComputeInstance = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthorizationSystemResource>("accessedStorageBuckets", AccessedStorageBuckets);
-            writer.WriteObjectValue<AuthorizationSystemResource>("assignedComputeInstance", AssignedComputeInstance);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("accessedStorageBuckets", AccessedStorageBuckets);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("assignedComputeInstance", AssignedComputeInstance);
         }
     }
 }

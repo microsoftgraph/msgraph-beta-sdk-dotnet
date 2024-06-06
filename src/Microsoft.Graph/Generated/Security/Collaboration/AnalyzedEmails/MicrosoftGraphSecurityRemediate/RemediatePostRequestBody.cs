@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public RemediationAction? Action
+        public Microsoft.Graph.Beta.Models.Security.RemediationAction? Action
         {
-            get { return BackingStore?.Get<RemediationAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RemediationAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,16 +27,16 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// <summary>The analyzedEmails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnalyzedEmail>? AnalyzedEmails
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail>? AnalyzedEmails
         {
-            get { return BackingStore?.Get<List<AnalyzedEmail>?>("analyzedEmails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail>?>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
         }
 #nullable restore
 #else
-        public List<AnalyzedEmail> AnalyzedEmails
+        public List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail> AnalyzedEmails
         {
-            get { return BackingStore?.Get<List<AnalyzedEmail>>("analyzedEmails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail>>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
         }
 #endif
@@ -81,13 +81,13 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
             set { BackingStore?.Set("remediateSendersCopy", value); }
         }
         /// <summary>The severity property</summary>
-        public RemediationSeverity? Severity
+        public Microsoft.Graph.Beta.Models.Security.RemediationSeverity? Severity
         {
-            get { return BackingStore?.Get<RemediationSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RemediationSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemediatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate.RemediatePostRequestBody"/> and sets the default values.
         /// </summary>
         public RemediatePostRequestBody()
         {
@@ -97,12 +97,12 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemediatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate.RemediatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemediatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate.RemediatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemediatePostRequestBody();
+            return new Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate.RemediatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<RemediationAction>(); } },
-                { "analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.RemediationAction>(); } },
+                { "analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail>(Microsoft.Graph.Beta.Models.Security.AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "remediateSendersCopy", n => { RemediateSendersCopy = n.GetBoolValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<RemediationSeverity>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.RemediationSeverity>(); } },
             };
         }
         /// <summary>
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<RemediationAction>("action", Action);
-            writer.WriteCollectionOfObjectValues<AnalyzedEmail>("analyzedEmails", AnalyzedEmails);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.RemediationAction>("action", Action);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.AnalyzedEmail>("analyzedEmails", AnalyzedEmails);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("remediateSendersCopy", RemediateSendersCopy);
-            writer.WriteEnumValue<RemediationSeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.RemediationSeverity>("severity", Severity);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

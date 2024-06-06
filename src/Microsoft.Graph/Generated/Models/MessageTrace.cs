@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MessageTrace : Entity, IParsable
+    public class MessageTrace : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The destinationIPAddress property</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageRecipient>? Recipients
+        public List<Microsoft.Graph.Beta.Models.MessageRecipient>? Recipients
         {
-            get { return BackingStore?.Get<List<MessageRecipient>?>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MessageRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<MessageRecipient> Recipients
+        public List<Microsoft.Graph.Beta.Models.MessageRecipient> Recipients
         {
-            get { return BackingStore?.Get<List<MessageRecipient>>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MessageRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #endif
@@ -121,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MessageTrace"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MessageTrace"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MessageTrace CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MessageTrace CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MessageTrace();
+            return new Microsoft.Graph.Beta.Models.MessageTrace();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "destinationIPAddress", n => { DestinationIPAddress = n.GetStringValue(); } },
                 { "messageId", n => { MessageId = n.GetStringValue(); } },
                 { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MessageRecipient>(Microsoft.Graph.Beta.Models.MessageRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "senderEmail", n => { SenderEmail = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "sourceIPAddress", n => { SourceIPAddress = n.GetStringValue(); } },
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("destinationIPAddress", DestinationIPAddress);
             writer.WriteStringValue("messageId", MessageId);
             writer.WriteDateTimeOffsetValue("receivedDateTime", ReceivedDateTime);
-            writer.WriteCollectionOfObjectValues<MessageRecipient>("recipients", Recipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MessageRecipient>("recipients", Recipients);
             writer.WriteStringValue("senderEmail", SenderEmail);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("sourceIPAddress", SourceIPAddress);

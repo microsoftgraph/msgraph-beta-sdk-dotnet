@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsExternalSystemAccessRoleFinding : Finding, IParsable
+    public class AwsExternalSystemAccessRoleFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The IDs of the accounts that this role is able to access.</summary>
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsRole? Role
+        public Microsoft.Graph.Beta.Models.AwsRole? Role
         {
-            get { return BackingStore?.Get<AwsRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public AwsRole Role
+        public Microsoft.Graph.Beta.Models.AwsRole Role
         {
-            get { return BackingStore?.Get<AwsRole>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsRole>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsExternalSystemAccessRoleFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsExternalSystemAccessRoleFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsExternalSystemAccessRoleFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsExternalSystemAccessRoleFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsExternalSystemAccessRoleFinding();
+            return new Microsoft.Graph.Beta.Models.AwsExternalSystemAccessRoleFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "accessibleSystemIds", n => { AccessibleSystemIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetObjectValue<AwsRole>(AwsRole.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsRole>(Microsoft.Graph.Beta.Models.AwsRole.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("accessibleSystemIds", AccessibleSystemIds);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
-            writer.WriteObjectValue<AwsRole>("role", Role);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsRole>("role", Role);
         }
     }
 }

@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration, IParsable
+    public class EducationIdentityCreationConfiguration : Microsoft.Graph.Beta.Models.EducationIdentitySynchronizationConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationIdentityDomain>? UserDomains
+        public List<Microsoft.Graph.Beta.Models.EducationIdentityDomain>? UserDomains
         {
-            get { return BackingStore?.Get<List<EducationIdentityDomain>?>("userDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationIdentityDomain>?>("userDomains"); }
             set { BackingStore?.Set("userDomains", value); }
         }
 #nullable restore
 #else
-        public List<EducationIdentityDomain> UserDomains
+        public List<Microsoft.Graph.Beta.Models.EducationIdentityDomain> UserDomains
         {
-            get { return BackingStore?.Get<List<EducationIdentityDomain>>("userDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationIdentityDomain>>("userDomains"); }
             set { BackingStore?.Set("userDomains", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationIdentityCreationConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EducationIdentityCreationConfiguration"/> and sets the default values.
         /// </summary>
         public EducationIdentityCreationConfiguration() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationIdentityCreationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationIdentityCreationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationIdentityCreationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationIdentityCreationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationIdentityCreationConfiguration();
+            return new Microsoft.Graph.Beta.Models.EducationIdentityCreationConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userDomains", n => { UserDomains = n.GetCollectionOfObjectValues<EducationIdentityDomain>(EducationIdentityDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userDomains", n => { UserDomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationIdentityDomain>(Microsoft.Graph.Beta.Models.EducationIdentityDomain.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EducationIdentityDomain>("userDomains", UserDomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationIdentityDomain>("userDomains", UserDomains);
         }
     }
 }

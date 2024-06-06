@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.GetAllMessages
 {
     #pragma warning disable CS1591
-    public class GetAllMessagesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetAllMessagesGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Value
+        public List<Microsoft.Graph.Beta.Models.ChatMessage>? Value
         {
-            get { return BackingStore?.Get<List<ChatMessage>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChatMessage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Value
+        public List<Microsoft.Graph.Beta.Models.ChatMessage> Value
         {
-            get { return BackingStore?.Get<List<ChatMessage>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChatMessage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAllMessagesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.GetAllMessages.GetAllMessagesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAllMessagesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.GetAllMessages.GetAllMessagesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAllMessagesGetResponse();
+            return new Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.GetAllMessages.GetAllMessagesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChatMessage>(Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ChatMessage>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChatMessage>("value", Value);
         }
     }
 }

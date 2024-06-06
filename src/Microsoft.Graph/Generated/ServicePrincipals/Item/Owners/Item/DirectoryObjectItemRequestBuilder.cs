@@ -17,27 +17,27 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item
     public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public GraphEndpointRequestBuilder GraphEndpoint
+        public Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
-            get => new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public GraphUserRequestBuilder GraphUser
+        public Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
-        public RefRequestBuilder Ref
+        public Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

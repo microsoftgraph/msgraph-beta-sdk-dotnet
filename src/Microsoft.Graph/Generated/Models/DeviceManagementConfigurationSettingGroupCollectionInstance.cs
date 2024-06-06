@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Setting instance within policy
     /// </summary>
-    public class DeviceManagementConfigurationSettingGroupCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable
+    public class DeviceManagementConfigurationSettingGroupCollectionInstance : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSettingGroupCollectionInstance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingGroupCollectionInstance"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingGroupCollectionInstance() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSettingGroupCollectionInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingGroupCollectionInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationSettingGroupCollectionInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingGroupCollectionInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSettingGroupCollectionInstance();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingGroupCollectionInstance();
         }
         /// <summary>
         /// The deserialization information for the current model

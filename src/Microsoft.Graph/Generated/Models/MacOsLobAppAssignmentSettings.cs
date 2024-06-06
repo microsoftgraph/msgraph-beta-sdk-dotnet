@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a macOS LOB app to a group.
     /// </summary>
-    public class MacOsLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
+    public class MacOsLobAppAssignmentSettings : Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOsLobAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOsLobAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public MacOsLobAppAssignmentSettings() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOsLobAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOsLobAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOsLobAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOsLobAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOsLobAppAssignmentSettings();
+            return new Microsoft.Graph.Beta.Models.MacOsLobAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

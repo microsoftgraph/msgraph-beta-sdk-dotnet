@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    public class WindowsAutopilotDeploymentProfile : Entity, IParsable
+    public class WindowsAutopilotDeploymentProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of assigned devices for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsAutopilotDeviceIdentity>? AssignedDevices
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>? AssignedDevices
         {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeviceIdentity>?>("assignedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>?>("assignedDevices"); }
             set { BackingStore?.Set("assignedDevices", value); }
         }
 #nullable restore
 #else
-        public List<WindowsAutopilotDeviceIdentity> AssignedDevices
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity> AssignedDevices
         {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeviceIdentity>>("assignedDevices"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>>("assignedDevices"); }
             set { BackingStore?.Set("assignedDevices", value); }
         }
 #endif
         /// <summary>The list of group assignments for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsAutopilotDeploymentProfileAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeploymentProfileAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<WindowsAutopilotDeploymentProfileAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<WindowsAutopilotDeploymentProfileAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The deviceType property</summary>
-        public WindowsAutopilotDeviceType? DeviceType
+        public Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceType? DeviceType
         {
-            get { return BackingStore?.Get<WindowsAutopilotDeviceType?>("deviceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>Name of the profile</summary>
@@ -112,16 +112,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Enrollment status screen setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsEnrollmentStatusScreenSettings? EnrollmentStatusScreenSettings
+        public Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings? EnrollmentStatusScreenSettings
         {
-            get { return BackingStore?.Get<WindowsEnrollmentStatusScreenSettings?>("enrollmentStatusScreenSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings?>("enrollmentStatusScreenSettings"); }
             set { BackingStore?.Set("enrollmentStatusScreenSettings", value); }
         }
 #nullable restore
 #else
-        public WindowsEnrollmentStatusScreenSettings EnrollmentStatusScreenSettings
+        public Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings EnrollmentStatusScreenSettings
         {
-            get { return BackingStore?.Get<WindowsEnrollmentStatusScreenSettings>("enrollmentStatusScreenSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings>("enrollmentStatusScreenSettings"); }
             set { BackingStore?.Set("enrollmentStatusScreenSettings", value); }
         }
 #endif
@@ -248,17 +248,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsAutopilotDeploymentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile" => new ActiveDirectoryWindowsAutopilotDeploymentProfile(),
-                "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile" => new AzureADWindowsAutopilotDeploymentProfile(),
-                _ => new WindowsAutopilotDeploymentProfile(),
+                "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile" => new Microsoft.Graph.Beta.Models.ActiveDirectoryWindowsAutopilotDeploymentProfile(),
+                "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile" => new Microsoft.Graph.Beta.Models.AzureADWindowsAutopilotDeploymentProfile(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile(),
             };
         }
         /// <summary>
@@ -269,15 +269,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedDevices", n => { AssignedDevices = n.GetCollectionOfObjectValues<WindowsAutopilotDeviceIdentity>(WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsAutopilotDeploymentProfileAssignment>(WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedDevices", n => { AssignedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment>(Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "deviceNameTemplate", n => { DeviceNameTemplate = n.GetStringValue(); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<WindowsAutopilotDeviceType>(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enableWhiteGlove", n => { EnableWhiteGlove = n.GetBoolValue(); } },
-                { "enrollmentStatusScreenSettings", n => { EnrollmentStatusScreenSettings = n.GetObjectValue<WindowsEnrollmentStatusScreenSettings>(WindowsEnrollmentStatusScreenSettings.CreateFromDiscriminatorValue); } },
+                { "enrollmentStatusScreenSettings", n => { EnrollmentStatusScreenSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings>(Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings.CreateFromDiscriminatorValue); } },
                 { "extractHardwareHash", n => { ExtractHardwareHash = n.GetBoolValue(); } },
                 { "hardwareHashExtractionEnabled", n => { HardwareHashExtractionEnabled = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -298,15 +298,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WindowsAutopilotDeviceIdentity>("assignedDevices", AssignedDevices);
-            writer.WriteCollectionOfObjectValues<WindowsAutopilotDeploymentProfileAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>("assignedDevices", AssignedDevices);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfileAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("deviceNameTemplate", DeviceNameTemplate);
-            writer.WriteEnumValue<WindowsAutopilotDeviceType>("deviceType", DeviceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceType>("deviceType", DeviceType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enableWhiteGlove", EnableWhiteGlove);
-            writer.WriteObjectValue<WindowsEnrollmentStatusScreenSettings>("enrollmentStatusScreenSettings", EnrollmentStatusScreenSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsEnrollmentStatusScreenSettings>("enrollmentStatusScreenSettings", EnrollmentStatusScreenSettings);
             writer.WriteBoolValue("extractHardwareHash", ExtractHardwareHash);
             writer.WriteBoolValue("hardwareHashExtractionEnabled", HardwareHashExtractionEnabled);
             writer.WriteStringValue("language", Language);

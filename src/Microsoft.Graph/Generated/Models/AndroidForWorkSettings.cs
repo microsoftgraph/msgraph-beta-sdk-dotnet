@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Settings for Android For Work.
     /// </summary>
-    public class AndroidForWorkSettings : Entity, IParsable
+    public class AndroidForWorkSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Bind status of the tenant with the Google EMM API</summary>
-        public AndroidForWorkBindStatus? BindStatus
+        public Microsoft.Graph.Beta.Models.AndroidForWorkBindStatus? BindStatus
         {
-            get { return BackingStore?.Get<AndroidForWorkBindStatus?>("bindStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkBindStatus?>("bindStatus"); }
             set { BackingStore?.Set("bindStatus", value); }
         }
         /// <summary>Indicates if this account is flighting for Android Device Owner Management with CloudDPC.</summary>
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceOwnerManagementEnabled", value); }
         }
         /// <summary>Android for Work device management targeting type for the account</summary>
-        public AndroidForWorkEnrollmentTarget? EnrollmentTarget
+        public Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentTarget? EnrollmentTarget
         {
-            get { return BackingStore?.Get<AndroidForWorkEnrollmentTarget?>("enrollmentTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentTarget?>("enrollmentTarget"); }
             set { BackingStore?.Set("enrollmentTarget", value); }
         }
         /// <summary>Last completion time for app sync</summary>
@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastAppSyncDateTime", value); }
         }
         /// <summary>Sync status of the tenant with the Google EMM API</summary>
-        public AndroidForWorkSyncStatus? LastAppSyncStatus
+        public Microsoft.Graph.Beta.Models.AndroidForWorkSyncStatus? LastAppSyncStatus
         {
-            get { return BackingStore?.Get<AndroidForWorkSyncStatus?>("lastAppSyncStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSyncStatus?>("lastAppSyncStatus"); }
             set { BackingStore?.Set("lastAppSyncStatus", value); }
         }
         /// <summary>Last modification time for Android for Work settings</summary>
@@ -98,12 +98,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkSettings();
+            return new Microsoft.Graph.Beta.Models.AndroidForWorkSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,11 +113,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "bindStatus", n => { BindStatus = n.GetEnumValue<AndroidForWorkBindStatus>(); } },
+                { "bindStatus", n => { BindStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkBindStatus>(); } },
                 { "deviceOwnerManagementEnabled", n => { DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
-                { "enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<AndroidForWorkEnrollmentTarget>(); } },
+                { "enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentTarget>(); } },
                 { "lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<AndroidForWorkSyncStatus>(); } },
+                { "lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkSyncStatus>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
                 { "ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AndroidForWorkBindStatus>("bindStatus", BindStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkBindStatus>("bindStatus", BindStatus);
             writer.WriteBoolValue("deviceOwnerManagementEnabled", DeviceOwnerManagementEnabled);
-            writer.WriteEnumValue<AndroidForWorkEnrollmentTarget>("enrollmentTarget", EnrollmentTarget);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentTarget>("enrollmentTarget", EnrollmentTarget);
             writer.WriteDateTimeOffsetValue("lastAppSyncDateTime", LastAppSyncDateTime);
-            writer.WriteEnumValue<AndroidForWorkSyncStatus>("lastAppSyncStatus", LastAppSyncStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkSyncStatus>("lastAppSyncStatus", LastAppSyncStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("ownerOrganizationName", OwnerOrganizationName);
             writer.WriteStringValue("ownerUserPrincipalName", OwnerUserPrincipalName);

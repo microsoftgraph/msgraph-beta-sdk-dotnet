@@ -54,37 +54,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Rules for specific properties and actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskPropertyRule? PropertyRule
+        public Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule? PropertyRule
         {
-            get { return BackingStore?.Get<PlannerTaskPropertyRule?>("propertyRule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule?>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskPropertyRule PropertyRule
+        public Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule PropertyRule
         {
-            get { return BackingStore?.Get<PlannerTaskPropertyRule>("propertyRule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
 #endif
         /// <summary>The role these rules apply to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskConfigurationRoleBase? Role
+        public Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase? Role
         {
-            get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskConfigurationRoleBase Role
+        public Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase Role
         {
-            get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskRoleBasedRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTaskRoleBasedRule"/> and sets the default values.
         /// </summary>
         public PlannerTaskRoleBasedRule()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskRoleBasedRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskRoleBasedRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerTaskRoleBasedRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerTaskRoleBasedRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTaskRoleBasedRule();
+            return new Microsoft.Graph.Beta.Models.PlannerTaskRoleBasedRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "defaultRule", n => { DefaultRule = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "propertyRule", n => { PropertyRule = n.GetObjectValue<PlannerTaskPropertyRule>(PlannerTaskPropertyRule.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetObjectValue<PlannerTaskConfigurationRoleBase>(PlannerTaskConfigurationRoleBase.CreateFromDiscriminatorValue); } },
+                { "propertyRule", n => { PropertyRule = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule>(Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase>(Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -124,8 +124,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultRule", DefaultRule);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<PlannerTaskPropertyRule>("propertyRule", PropertyRule);
-            writer.WriteObjectValue<PlannerTaskConfigurationRoleBase>("role", Role);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule>("propertyRule", PropertyRule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

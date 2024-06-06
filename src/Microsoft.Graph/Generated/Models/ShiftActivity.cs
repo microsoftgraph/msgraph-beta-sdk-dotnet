@@ -86,13 +86,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The theme property</summary>
-        public ScheduleEntityTheme? Theme
+        public Microsoft.Graph.Beta.Models.ScheduleEntityTheme? Theme
         {
-            get { return BackingStore?.Get<ScheduleEntityTheme?>("theme"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ScheduleEntityTheme?>("theme"); }
             set { BackingStore?.Set("theme", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ShiftActivity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ShiftActivity"/> and sets the default values.
         /// </summary>
         public ShiftActivity()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ShiftActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ShiftActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ShiftActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ShiftActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ShiftActivity();
+            return new Microsoft.Graph.Beta.Models.ShiftActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isPaid", n => { IsPaid = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "theme", n => { Theme = n.GetEnumValue<ScheduleEntityTheme>(); } },
+                { "theme", n => { Theme = n.GetEnumValue<Microsoft.Graph.Beta.Models.ScheduleEntityTheme>(); } },
             };
         }
         /// <summary>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isPaid", IsPaid);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<ScheduleEntityTheme>("theme", Theme);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ScheduleEntityTheme>("theme", Theme);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

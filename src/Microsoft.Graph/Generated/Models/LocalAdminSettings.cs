@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The enableGlobalAdmins property</summary>
+        /// <summary>Indicates whether global administrators are local administrators on all Microsoft Entra-joined devices. This setting only applies to future registrations. Default is true.</summary>
         public bool? EnableGlobalAdmins
         {
             get { return BackingStore?.Get<bool?>("enableGlobalAdmins"); }
@@ -41,24 +41,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The registeringUsers property</summary>
+        /// <summary>Determines the users and groups that become local administrators on Microsoft Entra joined devices that they register.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceRegistrationMembership? RegisteringUsers
+        public Microsoft.Graph.Beta.Models.DeviceRegistrationMembership? RegisteringUsers
         {
-            get { return BackingStore?.Get<DeviceRegistrationMembership?>("registeringUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership?>("registeringUsers"); }
             set { BackingStore?.Set("registeringUsers", value); }
         }
 #nullable restore
 #else
-        public DeviceRegistrationMembership RegisteringUsers
+        public Microsoft.Graph.Beta.Models.DeviceRegistrationMembership RegisteringUsers
         {
-            get { return BackingStore?.Get<DeviceRegistrationMembership>("registeringUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership>("registeringUsers"); }
             set { BackingStore?.Set("registeringUsers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LocalAdminSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.LocalAdminSettings"/> and sets the default values.
         /// </summary>
         public LocalAdminSettings()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LocalAdminSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LocalAdminSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LocalAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.LocalAdminSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LocalAdminSettings();
+            return new Microsoft.Graph.Beta.Models.LocalAdminSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "enableGlobalAdmins", n => { EnableGlobalAdmins = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "registeringUsers", n => { RegisteringUsers = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
+                { "registeringUsers", n => { RegisteringUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership>(Microsoft.Graph.Beta.Models.DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enableGlobalAdmins", EnableGlobalAdmins);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<DeviceRegistrationMembership>("registeringUsers", RegisteringUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership>("registeringUsers", RegisteringUsers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

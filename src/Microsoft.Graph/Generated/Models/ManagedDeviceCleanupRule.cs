@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Define the rule when the admin wants the devices to be cleaned up.
     /// </summary>
-    public class ManagedDeviceCleanupRule : Entity, IParsable
+    public class ManagedDeviceCleanupRule : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the description for the device clean up rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceCleanupRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceCleanupRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceCleanupRule();
+            return new Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceCleanupRulePlatformType", n => { DeviceCleanupRulePlatformType = n.GetEnumValue<DeviceCleanupRulePlatformType>(); } },
+                { "deviceCleanupRulePlatformType", n => { DeviceCleanupRulePlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceCleanupRulePlatformType>(); } },
                 { "deviceInactivityBeforeRetirementInDays", n => { DeviceInactivityBeforeRetirementInDays = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<DeviceCleanupRulePlatformType>("deviceCleanupRulePlatformType", DeviceCleanupRulePlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceCleanupRulePlatformType>("deviceCleanupRulePlatformType", DeviceCleanupRulePlatformType);
             writer.WriteIntValue("deviceInactivityBeforeRetirementInDays", DeviceInactivityBeforeRetirementInDays);
             writer.WriteStringValue("displayName", DisplayName);
         }

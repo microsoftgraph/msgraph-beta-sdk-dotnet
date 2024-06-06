@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CustomClaimCondition : CustomClaimConditionBase, IParsable
+    public class CustomClaimCondition : Microsoft.Graph.Beta.Models.CustomClaimConditionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of groups (GUIDs) to which the user/application must be a member for this condition to be applied.</summary>
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of user this condition applies to. The possible values are: any, members, allGuests, aadGuests, externalGuests, unknownFutureValue.</summary>
-        public ClaimConditionUserType? UserType
+        public Microsoft.Graph.Beta.Models.ClaimConditionUserType? UserType
         {
-            get { return BackingStore?.Get<ClaimConditionUserType?>("userType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimConditionUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomClaimCondition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomClaimCondition"/> and sets the default values.
         /// </summary>
         public CustomClaimCondition() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomClaimCondition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomClaimCondition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomClaimCondition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CustomClaimCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomClaimCondition();
+            return new Microsoft.Graph.Beta.Models.CustomClaimCondition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "memberOf", n => { MemberOf = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "userType", n => { UserType = n.GetEnumValue<ClaimConditionUserType>(); } },
+                { "userType", n => { UserType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ClaimConditionUserType>(); } },
             };
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("memberOf", MemberOf);
-            writer.WriteEnumValue<ClaimConditionUserType>("userType", UserType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ClaimConditionUserType>("userType", UserType);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AdministrativeUnit : DirectoryObject, IParsable
+    public class AdministrativeUnit : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description property</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of open extensions defined for this administrative unit. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Users and groups that are members of this administrative unit. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Members
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? Members
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Members
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> Members
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
@@ -131,16 +131,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Scoped-role members of this administrative unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScopedRoleMembership>? ScopedRoleMembers
+        public List<Microsoft.Graph.Beta.Models.ScopedRoleMembership>? ScopedRoleMembers
         {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>?>("scopedRoleMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ScopedRoleMembership>?>("scopedRoleMembers"); }
             set { BackingStore?.Set("scopedRoleMembers", value); }
         }
 #nullable restore
 #else
-        public List<ScopedRoleMembership> ScopedRoleMembers
+        public List<Microsoft.Graph.Beta.Models.ScopedRoleMembership> ScopedRoleMembers
         {
-            get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedRoleMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ScopedRoleMembership>>("scopedRoleMembers"); }
             set { BackingStore?.Set("scopedRoleMembers", value); }
         }
 #endif
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnit"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AdministrativeUnit"/> and sets the default values.
         /// </summary>
         public AdministrativeUnit() : base()
         {
@@ -170,12 +170,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnit"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdministrativeUnit"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AdministrativeUnit CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AdministrativeUnit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdministrativeUnit();
+            return new Microsoft.Graph.Beta.Models.AdministrativeUnit();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -187,13 +187,13 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isMemberManagementRestricted", n => { IsMemberManagementRestricted = n.GetBoolValue(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "membershipRule", n => { MembershipRule = n.GetStringValue(); } },
                 { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
                 { "membershipType", n => { MembershipType = n.GetStringValue(); } },
-                { "scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ScopedRoleMembership>(Microsoft.Graph.Beta.Models.ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
@@ -207,13 +207,13 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isMemberManagementRestricted", IsMemberManagementRestricted);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("members", Members);
             writer.WriteStringValue("membershipRule", MembershipRule);
             writer.WriteStringValue("membershipRuleProcessingState", MembershipRuleProcessingState);
             writer.WriteStringValue("membershipType", MembershipType);
-            writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
             writer.WriteStringValue("visibility", Visibility);
         }
     }

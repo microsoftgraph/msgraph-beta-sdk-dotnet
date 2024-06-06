@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
 {
     [Obsolete("This class is obsolete. Use GetCustomizedSettingsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCustomizedSettingsResponse : GetCustomizedSettingsGetResponse, IParsable
+    public class GetCustomizedSettingsResponse : Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetCustomizedSettingsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetCustomizedSettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetCustomizedSettingsResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse();
         }
     }
 }

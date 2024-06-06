@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The description of this criterion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationItemBody? Description
+        public Microsoft.Graph.Beta.Models.EducationItemBody? Description
         {
-            get { return BackingStore?.Get<EducationItemBody?>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public EducationItemBody Description
+        public Microsoft.Graph.Beta.Models.EducationItemBody Description
         {
-            get { return BackingStore?.Get<EducationItemBody>("description"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RubricCriterion"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RubricCriterion"/> and sets the default values.
         /// </summary>
         public RubricCriterion()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RubricCriterion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RubricCriterion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RubricCriterion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RubricCriterion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RubricCriterion();
+            return new Microsoft.Graph.Beta.Models.RubricCriterion();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationItemBody>(Microsoft.Graph.Beta.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<EducationItemBody>("description", Description);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationItemBody>("description", Description);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

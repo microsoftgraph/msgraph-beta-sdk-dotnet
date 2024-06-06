@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.</summary>
-        public TrainingSettingType? SettingType
+        public Microsoft.Graph.Beta.Models.TrainingSettingType? SettingType
         {
-            get { return BackingStore?.Get<TrainingSettingType?>("settingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingSettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrainingSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TrainingSetting"/> and sets the default values.
         /// </summary>
         public TrainingSetting()
         {
@@ -52,20 +52,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrainingSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TrainingSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrainingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TrainingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.customTrainingSetting" => new CustomTrainingSetting(),
-                "#microsoft.graph.microsoftCustomTrainingSetting" => new MicrosoftCustomTrainingSetting(),
-                "#microsoft.graph.microsoftManagedTrainingSetting" => new MicrosoftManagedTrainingSetting(),
-                "#microsoft.graph.microsoftTrainingAssignmentMapping" => new MicrosoftTrainingAssignmentMapping(),
-                "#microsoft.graph.noTrainingSetting" => new NoTrainingSetting(),
-                _ => new TrainingSetting(),
+                "#microsoft.graph.customTrainingSetting" => new Microsoft.Graph.Beta.Models.CustomTrainingSetting(),
+                "#microsoft.graph.microsoftCustomTrainingSetting" => new Microsoft.Graph.Beta.Models.MicrosoftCustomTrainingSetting(),
+                "#microsoft.graph.microsoftManagedTrainingSetting" => new Microsoft.Graph.Beta.Models.MicrosoftManagedTrainingSetting(),
+                "#microsoft.graph.microsoftTrainingAssignmentMapping" => new Microsoft.Graph.Beta.Models.MicrosoftTrainingAssignmentMapping(),
+                "#microsoft.graph.noTrainingSetting" => new Microsoft.Graph.Beta.Models.NoTrainingSetting(),
+                _ => new Microsoft.Graph.Beta.Models.TrainingSetting(),
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "settingType", n => { SettingType = n.GetEnumValue<TrainingSettingType>(); } },
+                { "settingType", n => { SettingType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TrainingSettingType>(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TrainingSettingType>("settingType", SettingType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TrainingSettingType>("settingType", SettingType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the androidGeneralDeviceConfiguration resource.
     /// </summary>
-    public class AndroidGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class AndroidGeneralDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to block clipboard sharing to copy and paste between applications.</summary>
         public bool? AppsBlockClipboardSharing
@@ -32,48 +32,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsHideList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? AppsHideList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsHideList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("appsHideList"); }
             set { BackingStore?.Set("appsHideList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsHideList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> AppsHideList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsHideList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("appsHideList"); }
             set { BackingStore?.Set("appsHideList", value); }
         }
 #endif
         /// <summary>List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsInstallAllowList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? AppsInstallAllowList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsInstallAllowList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("appsInstallAllowList"); }
             set { BackingStore?.Set("appsInstallAllowList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsInstallAllowList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> AppsInstallAllowList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsInstallAllowList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("appsInstallAllowList"); }
             set { BackingStore?.Set("appsInstallAllowList", value); }
         }
 #endif
         /// <summary>List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AppsLaunchBlockList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? AppsLaunchBlockList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("appsLaunchBlockList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("appsLaunchBlockList"); }
             set { BackingStore?.Set("appsLaunchBlockList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AppsLaunchBlockList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> AppsLaunchBlockList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("appsLaunchBlockList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("appsLaunchBlockList"); }
             set { BackingStore?.Set("appsLaunchBlockList", value); }
         }
 #endif
@@ -114,24 +114,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cellularBlockWiFiTethering", value); }
         }
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? CompliantAppListType
+        public Microsoft.Graph.Beta.Models.AppListType? CompliantAppListType
         {
-            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppListType?>("compliantAppListType"); }
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? CompliantAppsList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> CompliantAppsList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #endif
@@ -174,16 +174,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? KioskModeApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? KioskModeApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("kioskModeApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> KioskModeApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem> KioskModeApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
 #endif
@@ -254,9 +254,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Android required password type.</summary>
-        public AndroidRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before factory reset. Valid values 1 to 16</summary>
@@ -272,9 +272,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("powerOffBlocked", value); }
         }
         /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
             set { BackingStore?.Set("requiredPasswordComplexity", value); }
         }
         /// <summary>Indicates whether or not to block screenshots.</summary>
@@ -362,7 +362,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wiFiBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidGeneralDeviceConfiguration() : base()
         {
@@ -371,12 +371,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -389,24 +389,24 @@ namespace Microsoft.Graph.Beta.Models
                 { "appsBlockClipboardSharing", n => { AppsBlockClipboardSharing = n.GetBoolValue(); } },
                 { "appsBlockCopyPaste", n => { AppsBlockCopyPaste = n.GetBoolValue(); } },
                 { "appsBlockYouTube", n => { AppsBlockYouTube = n.GetBoolValue(); } },
-                { "appsHideList", n => { AppsHideList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appsInstallAllowList", n => { AppsInstallAllowList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appsLaunchBlockList", n => { AppsLaunchBlockList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsHideList", n => { AppsHideList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsInstallAllowList", n => { AppsInstallAllowList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appsLaunchBlockList", n => { AppsLaunchBlockList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "bluetoothBlocked", n => { BluetoothBlocked = n.GetBoolValue(); } },
                 { "cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
                 { "cellularBlockDataRoaming", n => { CellularBlockDataRoaming = n.GetBoolValue(); } },
                 { "cellularBlockMessaging", n => { CellularBlockMessaging = n.GetBoolValue(); } },
                 { "cellularBlockVoiceRoaming", n => { CellularBlockVoiceRoaming = n.GetBoolValue(); } },
                 { "cellularBlockWiFiTethering", n => { CellularBlockWiFiTethering = n.GetBoolValue(); } },
-                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppListType>(); } },
+                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "dateAndTimeBlockChanges", n => { DateAndTimeBlockChanges = n.GetBoolValue(); } },
                 { "deviceSharingAllowed", n => { DeviceSharingAllowed = n.GetBoolValue(); } },
                 { "diagnosticDataBlockSubmission", n => { DiagnosticDataBlockSubmission = n.GetBoolValue(); } },
                 { "factoryResetBlocked", n => { FactoryResetBlocked = n.GetBoolValue(); } },
                 { "googleAccountBlockAutoSync", n => { GoogleAccountBlockAutoSync = n.GetBoolValue(); } },
                 { "googlePlayStoreBlocked", n => { GooglePlayStoreBlocked = n.GetBoolValue(); } },
-                { "kioskModeApps", n => { KioskModeApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kioskModeApps", n => { KioskModeApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "kioskModeBlockSleepButton", n => { KioskModeBlockSleepButton = n.GetBoolValue(); } },
                 { "kioskModeBlockVolumeButtons", n => { KioskModeBlockVolumeButtons = n.GetBoolValue(); } },
                 { "locationServicesBlocked", n => { LocationServicesBlocked = n.GetBoolValue(); } },
@@ -418,10 +418,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "powerOffBlocked", n => { PowerOffBlocked = n.GetBoolValue(); } },
-                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
+                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>(); } },
                 { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
                 { "securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 { "storageBlockGoogleBackup", n => { StorageBlockGoogleBackup = n.GetBoolValue(); } },
@@ -434,7 +434,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "webBrowserBlockJavaScript", n => { WebBrowserBlockJavaScript = n.GetBoolValue(); } },
                 { "webBrowserBlockPopups", n => { WebBrowserBlockPopups = n.GetBoolValue(); } },
                 { "webBrowserBlocked", n => { WebBrowserBlocked = n.GetBoolValue(); } },
-                { "webBrowserCookieSettings", n => { WebBrowserCookieSettings = n.GetEnumValue<WebBrowserCookieSettings>(); } },
+                { "webBrowserCookieSettings", n => { WebBrowserCookieSettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.WebBrowserCookieSettings>(); } },
                 { "wiFiBlocked", n => { WiFiBlocked = n.GetBoolValue(); } },
             };
         }
@@ -449,24 +449,24 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("appsBlockClipboardSharing", AppsBlockClipboardSharing);
             writer.WriteBoolValue("appsBlockCopyPaste", AppsBlockCopyPaste);
             writer.WriteBoolValue("appsBlockYouTube", AppsBlockYouTube);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsHideList", AppsHideList);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsInstallAllowList", AppsInstallAllowList);
-            writer.WriteCollectionOfObjectValues<AppListItem>("appsLaunchBlockList", AppsLaunchBlockList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("appsHideList", AppsHideList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("appsInstallAllowList", AppsInstallAllowList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("appsLaunchBlockList", AppsLaunchBlockList);
             writer.WriteBoolValue("bluetoothBlocked", BluetoothBlocked);
             writer.WriteBoolValue("cameraBlocked", CameraBlocked);
             writer.WriteBoolValue("cellularBlockDataRoaming", CellularBlockDataRoaming);
             writer.WriteBoolValue("cellularBlockMessaging", CellularBlockMessaging);
             writer.WriteBoolValue("cellularBlockVoiceRoaming", CellularBlockVoiceRoaming);
             writer.WriteBoolValue("cellularBlockWiFiTethering", CellularBlockWiFiTethering);
-            writer.WriteEnumValue<AppListType>("compliantAppListType", CompliantAppListType);
-            writer.WriteCollectionOfObjectValues<AppListItem>("compliantAppsList", CompliantAppsList);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppListType>("compliantAppListType", CompliantAppListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("compliantAppsList", CompliantAppsList);
             writer.WriteBoolValue("dateAndTimeBlockChanges", DateAndTimeBlockChanges);
             writer.WriteBoolValue("deviceSharingAllowed", DeviceSharingAllowed);
             writer.WriteBoolValue("diagnosticDataBlockSubmission", DiagnosticDataBlockSubmission);
             writer.WriteBoolValue("factoryResetBlocked", FactoryResetBlocked);
             writer.WriteBoolValue("googleAccountBlockAutoSync", GoogleAccountBlockAutoSync);
             writer.WriteBoolValue("googlePlayStoreBlocked", GooglePlayStoreBlocked);
-            writer.WriteCollectionOfObjectValues<AppListItem>("kioskModeApps", KioskModeApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("kioskModeApps", KioskModeApps);
             writer.WriteBoolValue("kioskModeBlockSleepButton", KioskModeBlockSleepButton);
             writer.WriteBoolValue("kioskModeBlockVolumeButtons", KioskModeBlockVolumeButtons);
             writer.WriteBoolValue("locationServicesBlocked", LocationServicesBlocked);
@@ -478,10 +478,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
             writer.WriteBoolValue("powerOffBlocked", PowerOffBlocked);
-            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteBoolValue("storageBlockGoogleBackup", StorageBlockGoogleBackup);
@@ -494,7 +494,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("webBrowserBlocked", WebBrowserBlocked);
             writer.WriteBoolValue("webBrowserBlockJavaScript", WebBrowserBlockJavaScript);
             writer.WriteBoolValue("webBrowserBlockPopups", WebBrowserBlockPopups);
-            writer.WriteEnumValue<WebBrowserCookieSettings>("webBrowserCookieSettings", WebBrowserCookieSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WebBrowserCookieSettings>("webBrowserCookieSettings", WebBrowserCookieSettings);
             writer.WriteBoolValue("wiFiBlocked", WiFiBlocked);
         }
     }

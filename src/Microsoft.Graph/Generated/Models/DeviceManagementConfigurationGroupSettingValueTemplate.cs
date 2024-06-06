@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Group setting value children</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingInstanceTemplate>? Children
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>? Children
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingInstanceTemplate> Children
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate> Children
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #endif
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationGroupSettingValueTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValueTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingValueTemplate()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationGroupSettingValueTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValueTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationGroupSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValueTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationGroupSettingValueTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValueTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "settingValueTemplateId", n => { SettingValueTemplateId = n.GetStringValue(); } },
             };
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingInstanceTemplate>("children", Children);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate>("children", Children);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("settingValueTemplateId", SettingValueTemplateId);
             writer.WriteAdditionalData(AdditionalData);

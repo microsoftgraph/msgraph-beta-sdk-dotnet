@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegeEscalationFinding : Finding, IParsable
+    public class PrivilegeEscalationFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentity? Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity? Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity?>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentity Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -61,35 +61,35 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of escalations that the identity is capable of performing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegeEscalation>? PrivilegeEscalationDetails
+        public List<Microsoft.Graph.Beta.Models.PrivilegeEscalation>? PrivilegeEscalationDetails
         {
-            get { return BackingStore?.Get<List<PrivilegeEscalation>?>("privilegeEscalationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeEscalation>?>("privilegeEscalationDetails"); }
             set { BackingStore?.Set("privilegeEscalationDetails", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegeEscalation> PrivilegeEscalationDetails
+        public List<Microsoft.Graph.Beta.Models.PrivilegeEscalation> PrivilegeEscalationDetails
         {
-            get { return BackingStore?.Get<List<PrivilegeEscalation>>("privilegeEscalationDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeEscalation>>("privilegeEscalationDetails"); }
             set { BackingStore?.Set("privilegeEscalationDetails", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegeEscalationFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegeEscalationFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegeEscalationFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegeEscalationFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.privilegeEscalationAwsResourceFinding" => new PrivilegeEscalationAwsResourceFinding(),
-                "#microsoft.graph.privilegeEscalationAwsRoleFinding" => new PrivilegeEscalationAwsRoleFinding(),
-                "#microsoft.graph.privilegeEscalationGcpServiceAccountFinding" => new PrivilegeEscalationGcpServiceAccountFinding(),
-                "#microsoft.graph.privilegeEscalationUserFinding" => new PrivilegeEscalationUserFinding(),
-                _ => new PrivilegeEscalationFinding(),
+                "#microsoft.graph.privilegeEscalationAwsResourceFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationAwsResourceFinding(),
+                "#microsoft.graph.privilegeEscalationAwsRoleFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationAwsRoleFinding(),
+                "#microsoft.graph.privilegeEscalationGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationGcpServiceAccountFinding(),
+                "#microsoft.graph.privilegeEscalationUserFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationUserFinding(),
+                _ => new Microsoft.Graph.Beta.Models.PrivilegeEscalationFinding(),
             };
         }
         /// <summary>
@@ -100,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "identity", n => { Identity = n.GetObjectValue<AuthorizationSystemIdentity>(AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>(Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
                 { "identityDetails", n => { IdentityDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>(Microsoft.Graph.Beta.Models.IdentityDetails.CreateFromDiscriminatorValue); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                { "privilegeEscalationDetails", n => { PrivilegeEscalationDetails = n.GetCollectionOfObjectValues<PrivilegeEscalation>(PrivilegeEscalation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "privilegeEscalationDetails", n => { PrivilegeEscalationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeEscalation>(Microsoft.Graph.Beta.Models.PrivilegeEscalation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -114,10 +114,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AuthorizationSystemIdentity>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity", Identity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>("identityDetails", IdentityDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
-            writer.WriteCollectionOfObjectValues<PrivilegeEscalation>("privilegeEscalationDetails", PrivilegeEscalationDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeEscalation>("privilegeEscalationDetails", PrivilegeEscalationDetails);
         }
     }
 }

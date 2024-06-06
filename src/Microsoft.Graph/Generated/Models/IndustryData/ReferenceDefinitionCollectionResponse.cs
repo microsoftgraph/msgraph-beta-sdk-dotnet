@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReferenceDefinition>? Value
+        public List<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>? Value
         {
-            get { return BackingStore?.Get<List<ReferenceDefinition>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ReferenceDefinition> Value
+        public List<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition> Value
         {
-            get { return BackingStore?.Get<List<ReferenceDefinition>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReferenceDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinitionCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ReferenceDefinitionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinitionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReferenceDefinitionCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinitionCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ReferenceDefinition>(ReferenceDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>(Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ReferenceDefinition>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition>("value", Value);
         }
     }
 }

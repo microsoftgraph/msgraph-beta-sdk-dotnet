@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrinterShare : PrinterBase, IParsable
+    public class PrinterShare : Microsoft.Graph.Beta.Models.PrinterBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.</summary>
@@ -19,32 +19,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The groups whose users have access to print using the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? AllowedGroups
+        public List<Microsoft.Graph.Beta.Models.Group>? AllowedGroups
         {
-            get { return BackingStore?.Get<List<Group>?>("allowedGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Group>?>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
 #nullable restore
 #else
-        public List<Group> AllowedGroups
+        public List<Microsoft.Graph.Beta.Models.Group> AllowedGroups
         {
-            get { return BackingStore?.Get<List<Group>>("allowedGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Group>>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
 #endif
         /// <summary>The users who have access to print using the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? AllowedUsers
+        public List<Microsoft.Graph.Beta.Models.User>? AllowedUsers
         {
-            get { return BackingStore?.Get<List<User>?>("allowedUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
 #nullable restore
 #else
-        public List<User> AllowedUsers
+        public List<Microsoft.Graph.Beta.Models.User> AllowedUsers
         {
-            get { return BackingStore?.Get<List<User>>("allowedUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
 #endif
@@ -73,21 +73,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Additional data for a printer share as viewed by the signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterShareViewpoint? ViewPoint
+        public Microsoft.Graph.Beta.Models.PrinterShareViewpoint? ViewPoint
         {
-            get { return BackingStore?.Get<PrinterShareViewpoint?>("viewPoint"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterShareViewpoint?>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
 #nullable restore
 #else
-        public PrinterShareViewpoint ViewPoint
+        public Microsoft.Graph.Beta.Models.PrinterShareViewpoint ViewPoint
         {
-            get { return BackingStore?.Get<PrinterShareViewpoint>("viewPoint"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterShareViewpoint>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PrinterShare"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PrinterShare"/> and sets the default values.
         /// </summary>
         public PrinterShare() : base()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrinterShare"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrinterShare"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrinterShare CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrinterShare CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrinterShare();
+            return new Microsoft.Graph.Beta.Models.PrinterShare();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,11 +112,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowAllUsers", n => { AllowAllUsers = n.GetBoolValue(); } },
-                { "allowedGroups", n => { AllowedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "allowedUsers", n => { AllowedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedGroups", n => { AllowedGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedUsers", n => { AllowedUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "printer", n => { Printer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Printer>(Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue); } },
-                { "viewPoint", n => { ViewPoint = n.GetObjectValue<PrinterShareViewpoint>(PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
+                { "viewPoint", n => { ViewPoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrinterShareViewpoint>(Microsoft.Graph.Beta.Models.PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowAllUsers", AllowAllUsers);
-            writer.WriteCollectionOfObjectValues<Group>("allowedGroups", AllowedGroups);
-            writer.WriteCollectionOfObjectValues<User>("allowedUsers", AllowedUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Group>("allowedGroups", AllowedGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("allowedUsers", AllowedUsers);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Printer>("printer", Printer);
-            writer.WriteObjectValue<PrinterShareViewpoint>("viewPoint", ViewPoint);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrinterShareViewpoint>("viewPoint", ViewPoint);
         }
     }
 }

@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("connectionSecurityRulesFromGroupPolicyNotMerged", value); }
         }
         /// <summary>State Management Setting.</summary>
-        public StateManagementSetting? FirewallEnabled
+        public Microsoft.Graph.Beta.Models.StateManagementSetting? FirewallEnabled
         {
-            get { return BackingStore?.Get<StateManagementSetting?>("firewallEnabled"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StateManagementSetting?>("firewallEnabled"); }
             set { BackingStore?.Set("firewallEnabled", value); }
         }
         /// <summary>Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.</summary>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("unicastResponsesToMulticastBroadcastsRequired", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsFirewallNetworkProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsFirewallNetworkProfile"/> and sets the default values.
         /// </summary>
         public WindowsFirewallNetworkProfile()
         {
@@ -185,12 +185,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsFirewallNetworkProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsFirewallNetworkProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsFirewallNetworkProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsFirewallNetworkProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsFirewallNetworkProfile();
+            return new Microsoft.Graph.Beta.Models.WindowsFirewallNetworkProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "authorizedApplicationRulesFromGroupPolicyNotMerged", n => { AuthorizedApplicationRulesFromGroupPolicyNotMerged = n.GetBoolValue(); } },
                 { "connectionSecurityRulesFromGroupPolicyMerged", n => { ConnectionSecurityRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
                 { "connectionSecurityRulesFromGroupPolicyNotMerged", n => { ConnectionSecurityRulesFromGroupPolicyNotMerged = n.GetBoolValue(); } },
-                { "firewallEnabled", n => { FirewallEnabled = n.GetEnumValue<StateManagementSetting>(); } },
+                { "firewallEnabled", n => { FirewallEnabled = n.GetEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>(); } },
                 { "globalPortRulesFromGroupPolicyMerged", n => { GlobalPortRulesFromGroupPolicyMerged = n.GetBoolValue(); } },
                 { "globalPortRulesFromGroupPolicyNotMerged", n => { GlobalPortRulesFromGroupPolicyNotMerged = n.GetBoolValue(); } },
                 { "inboundConnectionsBlocked", n => { InboundConnectionsBlocked = n.GetBoolValue(); } },
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("authorizedApplicationRulesFromGroupPolicyNotMerged", AuthorizedApplicationRulesFromGroupPolicyNotMerged);
             writer.WriteBoolValue("connectionSecurityRulesFromGroupPolicyMerged", ConnectionSecurityRulesFromGroupPolicyMerged);
             writer.WriteBoolValue("connectionSecurityRulesFromGroupPolicyNotMerged", ConnectionSecurityRulesFromGroupPolicyNotMerged);
-            writer.WriteEnumValue<StateManagementSetting>("firewallEnabled", FirewallEnabled);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>("firewallEnabled", FirewallEnabled);
             writer.WriteBoolValue("globalPortRulesFromGroupPolicyMerged", GlobalPortRulesFromGroupPolicyMerged);
             writer.WriteBoolValue("globalPortRulesFromGroupPolicyNotMerged", GlobalPortRulesFromGroupPolicyNotMerged);
             writer.WriteBoolValue("inboundConnectionsBlocked", InboundConnectionsBlocked);

@@ -7,10 +7,10 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserIdentity : Identity, IParsable
+    public class UserIdentity : Microsoft.Graph.Beta.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the client IP address used by user performing the activity (audit log only).</summary>
+        /// <summary>Indicates the client IP address associated with the user performing the activity (audit log only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserIdentity"/> and sets the default values.
         /// </summary>
         public UserIdentity() : base()
         {
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.auditUserIdentity" => new AuditUserIdentity(),
-                _ => new UserIdentity(),
+                "#microsoft.graph.auditUserIdentity" => new Microsoft.Graph.Beta.Models.AuditUserIdentity(),
+                _ => new Microsoft.Graph.Beta.Models.UserIdentity(),
             };
         }
         /// <summary>

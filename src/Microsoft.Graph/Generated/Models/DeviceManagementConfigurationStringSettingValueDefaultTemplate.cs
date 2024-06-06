@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationStringSettingValueDefaultTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationStringSettingValueDefaultTemplate()
         {
@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationStringSettingValueDefaultTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementConfigurationStringSettingValueDefaultTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate" => new DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate(),
-                _ => new DeviceManagementConfigurationStringSettingValueDefaultTemplate(),
+                "#microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate(),
             };
         }
         /// <summary>

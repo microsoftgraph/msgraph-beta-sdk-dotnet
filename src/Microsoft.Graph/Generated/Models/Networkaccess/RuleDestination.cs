@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RuleDestination"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination"/> and sets the default values.
         /// </summary>
         public RuleDestination()
         {
@@ -46,21 +46,21 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RuleDestination"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RuleDestination CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.fqdn" => new Fqdn(),
-                "#microsoft.graph.networkaccess.ipAddress" => new IpAddress(),
-                "#microsoft.graph.networkaccess.ipRange" => new IpRange(),
-                "#microsoft.graph.networkaccess.ipSubnet" => new IpSubnet(),
-                "#microsoft.graph.networkaccess.url" => new Url(),
-                "#microsoft.graph.networkaccess.webCategory" => new WebCategory(),
-                _ => new RuleDestination(),
+                "#microsoft.graph.networkaccess.fqdn" => new Microsoft.Graph.Beta.Models.Networkaccess.Fqdn(),
+                "#microsoft.graph.networkaccess.ipAddress" => new Microsoft.Graph.Beta.Models.Networkaccess.IpAddress(),
+                "#microsoft.graph.networkaccess.ipRange" => new Microsoft.Graph.Beta.Models.Networkaccess.IpRange(),
+                "#microsoft.graph.networkaccess.ipSubnet" => new Microsoft.Graph.Beta.Models.Networkaccess.IpSubnet(),
+                "#microsoft.graph.networkaccess.url" => new Microsoft.Graph.Beta.Models.Networkaccess.Url(),
+                "#microsoft.graph.networkaccess.webCategory" => new Microsoft.Graph.Beta.Models.Networkaccess.WebCategory(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.RuleDestination(),
             };
         }
         /// <summary>

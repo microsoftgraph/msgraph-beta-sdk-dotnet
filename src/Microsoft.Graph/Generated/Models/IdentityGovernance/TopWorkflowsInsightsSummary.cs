@@ -72,9 +72,9 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("totalUsers", value); }
         }
         /// <summary>The workflowCategory property</summary>
-        public LifecycleWorkflowCategory? WorkflowCategory
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory? WorkflowCategory
         {
-            get { return BackingStore?.Get<LifecycleWorkflowCategory?>("workflowCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory?>("workflowCategory"); }
             set { BackingStore?.Set("workflowCategory", value); }
         }
         /// <summary>The name of the workflow.</summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("workflowVersion", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TopWorkflowsInsightsSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.TopWorkflowsInsightsSummary"/> and sets the default values.
         /// </summary>
         public TopWorkflowsInsightsSummary()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TopWorkflowsInsightsSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.TopWorkflowsInsightsSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TopWorkflowsInsightsSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IdentityGovernance.TopWorkflowsInsightsSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TopWorkflowsInsightsSummary();
+            return new Microsoft.Graph.Beta.Models.IdentityGovernance.TopWorkflowsInsightsSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
                 { "successfulUsers", n => { SuccessfulUsers = n.GetIntValue(); } },
                 { "totalRuns", n => { TotalRuns = n.GetIntValue(); } },
                 { "totalUsers", n => { TotalUsers = n.GetIntValue(); } },
-                { "workflowCategory", n => { WorkflowCategory = n.GetEnumValue<LifecycleWorkflowCategory>(); } },
+                { "workflowCategory", n => { WorkflowCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory>(); } },
                 { "workflowDisplayName", n => { WorkflowDisplayName = n.GetStringValue(); } },
                 { "workflowId", n => { WorkflowId = n.GetStringValue(); } },
                 { "workflowVersion", n => { WorkflowVersion = n.GetIntValue(); } },
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             writer.WriteIntValue("successfulUsers", SuccessfulUsers);
             writer.WriteIntValue("totalRuns", TotalRuns);
             writer.WriteIntValue("totalUsers", TotalUsers);
-            writer.WriteEnumValue<LifecycleWorkflowCategory>("workflowCategory", WorkflowCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IdentityGovernance.LifecycleWorkflowCategory>("workflowCategory", WorkflowCategory);
             writer.WriteStringValue("workflowDisplayName", WorkflowDisplayName);
             writer.WriteStringValue("workflowId", WorkflowId);
             writer.WriteIntValue("workflowVersion", WorkflowVersion);

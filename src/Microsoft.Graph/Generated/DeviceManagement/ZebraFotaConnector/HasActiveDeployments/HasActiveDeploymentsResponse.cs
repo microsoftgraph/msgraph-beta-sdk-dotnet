@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDepl
 {
     [Obsolete("This class is obsolete. Use HasActiveDeploymentsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class HasActiveDeploymentsResponse : HasActiveDeploymentsPostResponse, IParsable
+    public class HasActiveDeploymentsResponse : Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HasActiveDeploymentsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HasActiveDeploymentsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HasActiveDeploymentsResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsResponse();
         }
     }
 }

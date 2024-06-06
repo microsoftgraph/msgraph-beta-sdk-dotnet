@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Group Policy setting to MDM/Intune mapping.
     /// </summary>
-    public class GroupPolicySettingMapping : Entity, IParsable
+    public class GroupPolicySettingMapping : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Admx Group Policy Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -222,15 +222,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Scope of the group policy setting.</summary>
-        public GroupPolicySettingScope? SettingScope
+        public Microsoft.Graph.Beta.Models.GroupPolicySettingScope? SettingScope
         {
-            get { return BackingStore?.Get<GroupPolicySettingScope?>("settingScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicySettingScope?>("settingScope"); }
             set { BackingStore?.Set("settingScope", value); }
         }
         /// <summary>Setting type of the group policy.</summary>
-        public GroupPolicySettingType? SettingType
+        public Microsoft.Graph.Beta.Models.GroupPolicySettingType? SettingType
         {
-            get { return BackingStore?.Get<GroupPolicySettingType?>("settingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicySettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }
         }
         /// <summary>The value of this group policy setting.</summary>
@@ -284,12 +284,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicySettingMapping"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicySettingMapping"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicySettingMapping CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicySettingMapping CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicySettingMapping();
+            return new Microsoft.Graph.Beta.Models.GroupPolicySettingMapping();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -307,15 +307,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "mdmCspName", n => { MdmCspName = n.GetStringValue(); } },
                 { "mdmMinimumOSVersion", n => { MdmMinimumOSVersion = n.GetIntValue(); } },
                 { "mdmSettingUri", n => { MdmSettingUri = n.GetStringValue(); } },
-                { "mdmSupportedState", n => { MdmSupportedState = n.GetEnumValue<MdmSupportedState>(); } },
+                { "mdmSupportedState", n => { MdmSupportedState = n.GetEnumValue<Microsoft.Graph.Beta.Models.MdmSupportedState>(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "settingCategory", n => { SettingCategory = n.GetStringValue(); } },
                 { "settingDisplayName", n => { SettingDisplayName = n.GetStringValue(); } },
                 { "settingDisplayValue", n => { SettingDisplayValue = n.GetStringValue(); } },
                 { "settingDisplayValueType", n => { SettingDisplayValueType = n.GetStringValue(); } },
                 { "settingName", n => { SettingName = n.GetStringValue(); } },
-                { "settingScope", n => { SettingScope = n.GetEnumValue<GroupPolicySettingScope>(); } },
-                { "settingType", n => { SettingType = n.GetEnumValue<GroupPolicySettingType>(); } },
+                { "settingScope", n => { SettingScope = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupPolicySettingScope>(); } },
+                { "settingType", n => { SettingType = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupPolicySettingType>(); } },
                 { "settingValue", n => { SettingValue = n.GetStringValue(); } },
                 { "settingValueDisplayUnits", n => { SettingValueDisplayUnits = n.GetStringValue(); } },
                 { "settingValueType", n => { SettingValueType = n.GetStringValue(); } },
@@ -337,15 +337,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("mdmCspName", MdmCspName);
             writer.WriteIntValue("mdmMinimumOSVersion", MdmMinimumOSVersion);
             writer.WriteStringValue("mdmSettingUri", MdmSettingUri);
-            writer.WriteEnumValue<MdmSupportedState>("mdmSupportedState", MdmSupportedState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MdmSupportedState>("mdmSupportedState", MdmSupportedState);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("settingCategory", SettingCategory);
             writer.WriteStringValue("settingDisplayName", SettingDisplayName);
             writer.WriteStringValue("settingDisplayValue", SettingDisplayValue);
             writer.WriteStringValue("settingDisplayValueType", SettingDisplayValueType);
             writer.WriteStringValue("settingName", SettingName);
-            writer.WriteEnumValue<GroupPolicySettingScope>("settingScope", SettingScope);
-            writer.WriteEnumValue<GroupPolicySettingType>("settingType", SettingType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupPolicySettingScope>("settingScope", SettingScope);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupPolicySettingType>("settingType", SettingType);
             writer.WriteStringValue("settingValue", SettingValue);
             writer.WriteStringValue("settingValueDisplayUnits", SettingValueDisplayUnits);
             writer.WriteStringValue("settingValueType", SettingValueType);

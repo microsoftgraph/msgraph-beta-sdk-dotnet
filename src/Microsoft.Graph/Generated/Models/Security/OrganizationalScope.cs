@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("scopeType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OrganizationalScope"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.OrganizationalScope"/> and sets the default values.
         /// </summary>
         public OrganizationalScope()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OrganizationalScope"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.OrganizationalScope"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OrganizationalScope CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.OrganizationalScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OrganizationalScope();
+            return new Microsoft.Graph.Beta.Models.Security.OrganizationalScope();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "scopeNames", n => { ScopeNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "scopeType", n => { ScopeType = n.GetEnumValue<ScopeType>(); } },
+                { "scopeType", n => { ScopeType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ScopeType>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeNames", ScopeNames);
-            writer.WriteEnumValue<ScopeType>("scopeType", ScopeType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ScopeType>("scopeType", ScopeType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

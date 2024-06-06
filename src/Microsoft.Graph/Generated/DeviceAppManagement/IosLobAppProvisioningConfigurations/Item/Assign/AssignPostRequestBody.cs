@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <summary>The appProvisioningConfigurationGroupAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppProvisioningConfigGroupAssignment>? AppProvisioningConfigurationGroupAssignments
+        public List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>? AppProvisioningConfigurationGroupAssignments
         {
-            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>?>("appProvisioningConfigurationGroupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>?>("appProvisioningConfigurationGroupAssignments"); }
             set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments
+        public List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments
         {
-            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("appProvisioningConfigurationGroupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>>("appProvisioningConfigurationGroupAssignments"); }
             set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
 #endif
@@ -39,21 +39,21 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <summary>The iOSLobAppProvisioningConfigAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosLobAppProvisioningConfigurationAssignment>? IOSLobAppProvisioningConfigAssignments
+        public List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>? IOSLobAppProvisioningConfigAssignments
         {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>?>("iOSLobAppProvisioningConfigAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>?>("iOSLobAppProvisioningConfigAssignments"); }
             set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
 #nullable restore
 #else
-        public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments
+        public List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments
         {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("iOSLobAppProvisioningConfigAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>>("iOSLobAppProvisioningConfigAssignments"); }
             set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign.AssignPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign.AssignPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign.AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign.AssignPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appProvisioningConfigurationGroupAssignments", n => { AppProvisioningConfigurationGroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "iOSLobAppProvisioningConfigAssignments", n => { IOSLobAppProvisioningConfigAssignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appProvisioningConfigurationGroupAssignments", n => { AppProvisioningConfigurationGroupAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>(Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iOSLobAppProvisioningConfigAssignments", n => { IOSLobAppProvisioningConfigAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>(Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>("appProvisioningConfigurationGroupAssignments", AppProvisioningConfigurationGroupAssignments);
-            writer.WriteCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>("iOSLobAppProvisioningConfigAssignments", IOSLobAppProvisioningConfigAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>("appProvisioningConfigurationGroupAssignments", AppProvisioningConfigurationGroupAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>("iOSLobAppProvisioningConfigAssignments", IOSLobAppProvisioningConfigAssignments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,9 +11,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
     #pragma warning restore CS1591
     {
         /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
-        public ManagementCategory? Category
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory? Category
         {
-            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
@@ -111,48 +111,48 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The managementTemplateCollections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateCollection>? ManagementTemplateCollections
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection>? ManagementTemplateCollections
         {
-            get { return BackingStore?.Get<List<ManagementTemplateCollection>?>("managementTemplateCollections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection>?>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateCollection> ManagementTemplateCollections
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection> ManagementTemplateCollections
         {
-            get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection>>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
 #endif
         /// <summary>The managementTemplateSteps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStep>? ManagementTemplateSteps
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep>? ManagementTemplateSteps
         {
-            get { return BackingStore?.Get<List<ManagementTemplateStep>?>("managementTemplateSteps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep>?>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStep> ManagementTemplateSteps
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep> ManagementTemplateSteps
         {
-            get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep>>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
 #endif
         /// <summary>The collection of parameters used by the management template. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TemplateParameter>? Parameters
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter>? Parameters
         {
-            get { return BackingStore?.Get<List<TemplateParameter>?>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<TemplateParameter> Parameters
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter> Parameters
         {
-            get { return BackingStore?.Get<List<TemplateParameter>>("parameters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
@@ -163,9 +163,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The provider property</summary>
-        public ManagementProvider? Provider
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementProvider? Provider
         {
-            get { return BackingStore?.Get<ManagementProvider?>("provider"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementProvider?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
         /// <summary>The userImpact property</summary>
@@ -193,28 +193,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkloadAction>? WorkloadActions
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction>? WorkloadActions
         {
-            get { return BackingStore?.Get<List<WorkloadAction>?>("workloadActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction>?>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
 #nullable restore
 #else
-        public List<WorkloadAction> WorkloadActions
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction> WorkloadActions
         {
-            get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction>>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementTemplate();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -232,14 +232,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<TemplateParameter>(TemplateParameter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter>(Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<ManagementProvider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementProvider>(); } },
                 { "userImpact", n => { UserImpact = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
-                { "workloadActions", n => { WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workloadActions", n => { WorkloadActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction>(Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ManagementCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>("category", Category);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
@@ -258,14 +258,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>("informationLinks", InformationLinks);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", ManagementTemplateCollections);
-            writer.WriteCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", ManagementTemplateSteps);
-            writer.WriteCollectionOfObjectValues<TemplateParameter>("parameters", Parameters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection>("managementTemplateCollections", ManagementTemplateCollections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep>("managementTemplateSteps", ManagementTemplateSteps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.TemplateParameter>("parameters", Parameters);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteEnumValue<ManagementProvider>("provider", Provider);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementProvider>("provider", Provider);
             writer.WriteStringValue("userImpact", UserImpact);
             writer.WriteIntValue("version", Version);
-            writer.WriteCollectionOfObjectValues<WorkloadAction>("workloadActions", WorkloadActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadAction>("workloadActions", WorkloadActions);
         }
     }
 }

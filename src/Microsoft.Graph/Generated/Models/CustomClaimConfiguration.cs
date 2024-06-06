@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The attribute on which we source this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomClaimAttributeBase? Attribute
+        public Microsoft.Graph.Beta.Models.CustomClaimAttributeBase? Attribute
         {
-            get { return BackingStore?.Get<CustomClaimAttributeBase?>("attribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase?>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
 #nullable restore
 #else
-        public CustomClaimAttributeBase Attribute
+        public Microsoft.Graph.Beta.Models.CustomClaimAttributeBase Attribute
         {
-            get { return BackingStore?.Get<CustomClaimAttributeBase>("attribute"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The condition, if any, associated with this configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomClaimConditionBase? Condition
+        public Microsoft.Graph.Beta.Models.CustomClaimConditionBase? Condition
         {
-            get { return BackingStore?.Get<CustomClaimConditionBase?>("condition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomClaimConditionBase?>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
 #nullable restore
 #else
-        public CustomClaimConditionBase Condition
+        public Microsoft.Graph.Beta.Models.CustomClaimConditionBase Condition
         {
-            get { return BackingStore?.Get<CustomClaimConditionBase>("condition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomClaimConditionBase>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
 #endif
@@ -70,21 +70,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>An ordered list of transformations that are applied in sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomClaimTransformation>? Transformations
+        public List<Microsoft.Graph.Beta.Models.CustomClaimTransformation>? Transformations
         {
-            get { return BackingStore?.Get<List<CustomClaimTransformation>?>("transformations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomClaimTransformation>?>("transformations"); }
             set { BackingStore?.Set("transformations", value); }
         }
 #nullable restore
 #else
-        public List<CustomClaimTransformation> Transformations
+        public List<Microsoft.Graph.Beta.Models.CustomClaimTransformation> Transformations
         {
-            get { return BackingStore?.Get<List<CustomClaimTransformation>>("transformations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomClaimTransformation>>("transformations"); }
             set { BackingStore?.Set("transformations", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomClaimConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomClaimConfiguration"/> and sets the default values.
         /// </summary>
         public CustomClaimConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomClaimConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomClaimConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomClaimConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomClaimConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomClaimConfiguration();
+            return new Microsoft.Graph.Beta.Models.CustomClaimConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute", n => { Attribute = n.GetObjectValue<CustomClaimAttributeBase>(CustomClaimAttributeBase.CreateFromDiscriminatorValue); } },
-                { "condition", n => { Condition = n.GetObjectValue<CustomClaimConditionBase>(CustomClaimConditionBase.CreateFromDiscriminatorValue); } },
+                { "attribute", n => { Attribute = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase>(Microsoft.Graph.Beta.Models.CustomClaimAttributeBase.CreateFromDiscriminatorValue); } },
+                { "condition", n => { Condition = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomClaimConditionBase>(Microsoft.Graph.Beta.Models.CustomClaimConditionBase.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "transformations", n => { Transformations = n.GetCollectionOfObjectValues<CustomClaimTransformation>(CustomClaimTransformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transformations", n => { Transformations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomClaimTransformation>(Microsoft.Graph.Beta.Models.CustomClaimTransformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<CustomClaimAttributeBase>("attribute", Attribute);
-            writer.WriteObjectValue<CustomClaimConditionBase>("condition", Condition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CustomClaimAttributeBase>("attribute", Attribute);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CustomClaimConditionBase>("condition", Condition);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<CustomClaimTransformation>("transformations", Transformations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomClaimTransformation>("transformations", Transformations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

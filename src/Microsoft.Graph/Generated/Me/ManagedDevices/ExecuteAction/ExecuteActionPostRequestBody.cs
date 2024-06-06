@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction
     #pragma warning restore CS1591
     {
         /// <summary>The actionName property</summary>
-        public ManagedDeviceRemoteAction? ActionName
+        public Microsoft.Graph.Beta.Models.ManagedDeviceRemoteAction? ActionName
         {
-            get { return BackingStore?.Get<ManagedDeviceRemoteAction?>("actionName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceRemoteAction?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction
             set { BackingStore?.Set("persistEsimDataPlan", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ExecuteActionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction.ExecuteActionPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExecuteActionPostRequestBody()
         {
@@ -167,12 +167,12 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExecuteActionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction.ExecuteActionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExecuteActionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction.ExecuteActionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExecuteActionPostRequestBody();
+            return new Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction.ExecuteActionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionName", n => { ActionName = n.GetEnumValue<ManagedDeviceRemoteAction>(); } },
+                { "actionName", n => { ActionName = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceRemoteAction>(); } },
                 { "carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
                 { "deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
                 { "deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ManagedDeviceRemoteAction>("actionName", ActionName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceRemoteAction>("actionName", ActionName);
             writer.WriteStringValue("carrierUrl", CarrierUrl);
             writer.WriteStringValue("deprovisionReason", DeprovisionReason);
             writer.WriteCollectionOfPrimitiveValues<string>("deviceIds", DeviceIds);

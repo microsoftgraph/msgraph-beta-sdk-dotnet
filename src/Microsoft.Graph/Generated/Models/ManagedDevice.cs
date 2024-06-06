@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Devices that are managed or pre-enrolled through Intune
     /// </summary>
-    public class ManagedDevice : Entity, IParsable
+    public class ManagedDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered
@@ -124,32 +124,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChromeOSDeviceProperty>? ChromeOSDeviceInfo
+        public List<Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty>? ChromeOSDeviceInfo
         {
-            get { return BackingStore?.Get<List<ChromeOSDeviceProperty>?>("chromeOSDeviceInfo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty>?>("chromeOSDeviceInfo"); }
             set { BackingStore?.Set("chromeOSDeviceInfo", value); }
         }
 #nullable restore
 #else
-        public List<ChromeOSDeviceProperty> ChromeOSDeviceInfo
+        public List<Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty> ChromeOSDeviceInfo
         {
-            get { return BackingStore?.Get<List<ChromeOSDeviceProperty>>("chromeOSDeviceInfo"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty>>("chromeOSDeviceInfo"); }
             set { BackingStore?.Set("chromeOSDeviceInfo", value); }
         }
 #endif
         /// <summary>The cloudPcRemoteActionResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcRemoteActionResult>? CloudPcRemoteActionResults
+        public List<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>? CloudPcRemoteActionResults
         {
-            get { return BackingStore?.Get<List<CloudPcRemoteActionResult>?>("cloudPcRemoteActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>?>("cloudPcRemoteActionResults"); }
             set { BackingStore?.Set("cloudPcRemoteActionResults", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcRemoteActionResult> CloudPcRemoteActionResults
+        public List<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult> CloudPcRemoteActionResults
         {
-            get { return BackingStore?.Get<List<CloudPcRemoteActionResult>>("cloudPcRemoteActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>>("cloudPcRemoteActionResults"); }
             set { BackingStore?.Set("cloudPcRemoteActionResults", value); }
         }
 #endif
@@ -216,32 +216,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>All applications currently installed on the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DetectedApp>? DetectedApps
+        public List<Microsoft.Graph.Beta.Models.DetectedApp>? DetectedApps
         {
-            get { return BackingStore?.Get<List<DetectedApp>?>("detectedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedApp>?>("detectedApps"); }
             set { BackingStore?.Set("detectedApps", value); }
         }
 #nullable restore
 #else
-        public List<DetectedApp> DetectedApps
+        public List<Microsoft.Graph.Beta.Models.DetectedApp> DetectedApps
         {
-            get { return BackingStore?.Get<List<DetectedApp>>("detectedApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedApp>>("detectedApps"); }
             set { BackingStore?.Set("detectedApps", value); }
         }
 #endif
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceActionResult>? DeviceActionResults
+        public List<Microsoft.Graph.Beta.Models.DeviceActionResult>? DeviceActionResults
         {
-            get { return BackingStore?.Get<List<DeviceActionResult>?>("deviceActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceActionResult>?>("deviceActionResults"); }
             set { BackingStore?.Set("deviceActionResults", value); }
         }
 #nullable restore
 #else
-        public List<DeviceActionResult> DeviceActionResults
+        public List<Microsoft.Graph.Beta.Models.DeviceActionResult> DeviceActionResults
         {
-            get { return BackingStore?.Get<List<DeviceActionResult>>("deviceActionResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceActionResult>>("deviceActionResults"); }
             set { BackingStore?.Set("deviceActionResults", value); }
         }
 #endif
@@ -280,32 +280,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Device compliance policy states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicyState>? DeviceCompliancePolicyStates
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState>? DeviceCompliancePolicyStates
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyState>?>("deviceCompliancePolicyStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState>?>("deviceCompliancePolicyStates"); }
             set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicyState> DeviceCompliancePolicyStates
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState> DeviceCompliancePolicyStates
         {
-            get { return BackingStore?.Get<List<DeviceCompliancePolicyState>>("deviceCompliancePolicyStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState>>("deviceCompliancePolicyStates"); }
             set { BackingStore?.Set("deviceCompliancePolicyStates", value); }
         }
 #endif
         /// <summary>Device configuration states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationState>? DeviceConfigurationStates
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationState>? DeviceConfigurationStates
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationState>?>("deviceConfigurationStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationState>?>("deviceConfigurationStates"); }
             set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationState> DeviceConfigurationStates
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationState> DeviceConfigurationStates
         {
-            get { return BackingStore?.Get<List<DeviceConfigurationState>>("deviceConfigurationStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationState>>("deviceConfigurationStates"); }
             set { BackingStore?.Set("deviceConfigurationStates", value); }
         }
 #endif
@@ -340,16 +340,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Results of device health scripts that ran for this device. Default is empty list. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceHealthScriptPolicyState>? DeviceHealthScriptStates
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState>? DeviceHealthScriptStates
         {
-            get { return BackingStore?.Get<List<DeviceHealthScriptPolicyState>?>("deviceHealthScriptStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState>?>("deviceHealthScriptStates"); }
             set { BackingStore?.Set("deviceHealthScriptStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceHealthScriptPolicyState> DeviceHealthScriptStates
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState> DeviceHealthScriptStates
         {
-            get { return BackingStore?.Get<List<DeviceHealthScriptPolicyState>>("deviceHealthScriptStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState>>("deviceHealthScriptStates"); }
             set { BackingStore?.Set("deviceHealthScriptStates", value); }
         }
 #endif
@@ -425,6 +425,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
+        /// <summary>The Entra (Azure AD) User Principal Name (UPN) of the user responsible for the enrollment of the device. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EnrolledByUserPrincipalName
+        {
+            get { return BackingStore?.Get<string?>("enrolledByUserPrincipalName"); }
+            set { BackingStore?.Set("enrolledByUserPrincipalName", value); }
+        }
+#nullable restore
+#else
+        public string EnrolledByUserPrincipalName
+        {
+            get { return BackingStore?.Get<string>("enrolledByUserPrincipalName"); }
+            set { BackingStore?.Set("enrolledByUserPrincipalName", value); }
+        }
+#endif
         /// <summary>Enrollment time of the device. Supports $filter operator &apos;lt&apos; and &apos;gt&apos;. This property is read-only.</summary>
         public DateTimeOffset? EnrolledDateTime
         {
@@ -464,15 +480,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device Exchange Access State.</summary>
-        public DeviceManagementExchangeAccessState? ExchangeAccessState
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessState? ExchangeAccessState
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessState?>("exchangeAccessState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessState?>("exchangeAccessState"); }
             set { BackingStore?.Set("exchangeAccessState", value); }
         }
         /// <summary>Device Exchange Access State Reason.</summary>
-        public DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessStateReason? ExchangeAccessStateReason
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessStateReason?>("exchangeAccessStateReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessStateReason?>("exchangeAccessStateReason"); }
             set { BackingStore?.Set("exchangeAccessStateReason", value); }
         }
         /// <summary>Last time the device contacted Exchange. This property is read-only.</summary>
@@ -578,16 +594,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of log collection requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLogCollectionResponse>? LogCollectionRequests
+        public List<Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse>? LogCollectionRequests
         {
-            get { return BackingStore?.Get<List<DeviceLogCollectionResponse>?>("logCollectionRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse>?>("logCollectionRequests"); }
             set { BackingStore?.Set("logCollectionRequests", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLogCollectionResponse> LogCollectionRequests
+        public List<Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse> LogCollectionRequests
         {
-            get { return BackingStore?.Get<List<DeviceLogCollectionResponse>>("logCollectionRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse>>("logCollectionRequests"); }
             set { BackingStore?.Set("logCollectionRequests", value); }
         }
 #endif
@@ -600,16 +616,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Managed device mobile app configuration states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationState>? ManagedDeviceMobileAppConfigurationStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState>? ManagedDeviceMobileAppConfigurationStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationState>?>("managedDeviceMobileAppConfigurationStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState>?>("managedDeviceMobileAppConfigurationStates"); }
             set { BackingStore?.Set("managedDeviceMobileAppConfigurationStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationState> ManagedDeviceMobileAppConfigurationStates
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState> ManagedDeviceMobileAppConfigurationStates
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationState>>("managedDeviceMobileAppConfigurationStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState>>("managedDeviceMobileAppConfigurationStates"); }
             set { BackingStore?.Set("managedDeviceMobileAppConfigurationStates", value); }
         }
 #endif
@@ -636,9 +652,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("managedDeviceOwnerType", value); }
         }
         /// <summary>Management agent type.</summary>
-        public ManagementAgentType? ManagementAgent
+        public Microsoft.Graph.Beta.Models.ManagementAgentType? ManagementAgent
         {
-            get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>Reports device management certificate expiration date. This property is read-only.</summary>
@@ -648,9 +664,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("managementCertificateExpirationDate", value); }
         }
         /// <summary>Device management features.</summary>
-        public ManagedDeviceManagementFeatures? ManagementFeatures
+        public Microsoft.Graph.Beta.Models.ManagedDeviceManagementFeatures? ManagementFeatures
         {
-            get { return BackingStore?.Get<ManagedDeviceManagementFeatures?>("managementFeatures"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceManagementFeatures?>("managementFeatures"); }
             set { BackingStore?.Set("managementFeatures", value); }
         }
         /// <summary>Management state of device in Microsoft Intune.</summary>
@@ -762,9 +778,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>Available health states for the Device Health API</summary>
-        public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState
+        public Microsoft.Graph.Beta.Models.ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState
         {
-            get { return BackingStore?.Get<ManagedDevicePartnerReportedHealthState?>("partnerReportedThreatState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevicePartnerReportedHealthState?>("partnerReportedThreatState"); }
             set { BackingStore?.Set("partnerReportedThreatState", value); }
         }
         /// <summary>Phone number of the device. This property is read-only.</summary>
@@ -796,9 +812,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("preferMdmOverGroupPolicyAppliedDateTime", value); }
         }
         /// <summary>Processor architecture</summary>
-        public ManagedDeviceArchitecture? ProcessorArchitecture
+        public Microsoft.Graph.Beta.Models.ManagedDeviceArchitecture? ProcessorArchitecture
         {
-            get { return BackingStore?.Get<ManagedDeviceArchitecture?>("processorArchitecture"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceArchitecture?>("processorArchitecture"); }
             set { BackingStore?.Set("processorArchitecture", value); }
         }
         /// <summary>An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.</summary>
@@ -864,16 +880,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Security baseline states for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityBaselineState>? SecurityBaselineStates
+        public List<Microsoft.Graph.Beta.Models.SecurityBaselineState>? SecurityBaselineStates
         {
-            get { return BackingStore?.Get<List<SecurityBaselineState>?>("securityBaselineStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityBaselineState>?>("securityBaselineStates"); }
             set { BackingStore?.Set("securityBaselineStates", value); }
         }
 #nullable restore
 #else
-        public List<SecurityBaselineState> SecurityBaselineStates
+        public List<Microsoft.Graph.Beta.Models.SecurityBaselineState> SecurityBaselineStates
         {
-            get { return BackingStore?.Get<List<SecurityBaselineState>>("securityBaselineStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SecurityBaselineState>>("securityBaselineStates"); }
             set { BackingStore?.Set("securityBaselineStates", value); }
         }
 #endif
@@ -1036,32 +1052,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The primary users associated with the managed device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Users
+        public List<Microsoft.Graph.Beta.Models.User>? Users
         {
-            get { return BackingStore?.Get<List<User>?>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<User> Users
+        public List<Microsoft.Graph.Beta.Models.User> Users
         {
-            get { return BackingStore?.Get<List<User>>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
         /// <summary>Indicates the last logged on users of a device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LoggedOnUser>? UsersLoggedOn
+        public List<Microsoft.Graph.Beta.Models.LoggedOnUser>? UsersLoggedOn
         {
-            get { return BackingStore?.Get<List<LoggedOnUser>?>("usersLoggedOn"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LoggedOnUser>?>("usersLoggedOn"); }
             set { BackingStore?.Set("usersLoggedOn", value); }
         }
 #nullable restore
 #else
-        public List<LoggedOnUser> UsersLoggedOn
+        public List<Microsoft.Graph.Beta.Models.LoggedOnUser> UsersLoggedOn
         {
-            get { return BackingStore?.Get<List<LoggedOnUser>>("usersLoggedOn"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LoggedOnUser>>("usersLoggedOn"); }
             set { BackingStore?.Set("usersLoggedOn", value); }
         }
 #endif
@@ -1112,16 +1128,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsManagedDevice" => new WindowsManagedDevice(),
-                _ => new ManagedDevice(),
+                "#microsoft.graph.windowsManagedDevice" => new Microsoft.Graph.Beta.Models.WindowsManagedDevice(),
+                _ => new Microsoft.Graph.Beta.Models.ManagedDevice(),
             };
         }
         /// <summary>
@@ -1141,36 +1157,37 @@ namespace Microsoft.Graph.Beta.Models
                 { "azureADRegistered", n => { AzureADRegistered = n.GetBoolValue(); } },
                 { "azureActiveDirectoryDeviceId", n => { AzureActiveDirectoryDeviceId = n.GetStringValue(); } },
                 { "bootstrapTokenEscrowed", n => { BootstrapTokenEscrowed = n.GetBoolValue(); } },
-                { "chassisType", n => { ChassisType = n.GetEnumValue<ChassisType>(); } },
-                { "chromeOSDeviceInfo", n => { ChromeOSDeviceInfo = n.GetCollectionOfObjectValues<ChromeOSDeviceProperty>(ChromeOSDeviceProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "cloudPcRemoteActionResults", n => { CloudPcRemoteActionResults = n.GetCollectionOfObjectValues<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "chassisType", n => { ChassisType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ChassisType>(); } },
+                { "chromeOSDeviceInfo", n => { ChromeOSDeviceInfo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty>(Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cloudPcRemoteActionResults", n => { CloudPcRemoteActionResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>(Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "complianceGracePeriodExpirationDateTime", n => { ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceState>(); } },
+                { "complianceState", n => { ComplianceState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceState>(); } },
                 { "configurationManagerClientEnabledFeatures", n => { ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientEnabledFeatures>(Microsoft.Graph.Beta.Models.ConfigurationManagerClientEnabledFeatures.CreateFromDiscriminatorValue); } },
                 { "configurationManagerClientHealthState", n => { ConfigurationManagerClientHealthState = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState>(Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState.CreateFromDiscriminatorValue); } },
                 { "configurationManagerClientInformation", n => { ConfigurationManagerClientInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientInformation>(Microsoft.Graph.Beta.Models.ConfigurationManagerClientInformation.CreateFromDiscriminatorValue); } },
-                { "detectedApps", n => { DetectedApps = n.GetCollectionOfObjectValues<DetectedApp>(DetectedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceActionResults", n => { DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>(DeviceActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detectedApps", n => { DetectedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DetectedApp>(Microsoft.Graph.Beta.Models.DetectedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceActionResults", n => { DeviceActionResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceActionResult>(Microsoft.Graph.Beta.Models.DeviceActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deviceCategory", n => { DeviceCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCategory>(Microsoft.Graph.Beta.Models.DeviceCategory.CreateFromDiscriminatorValue); } },
                 { "deviceCategoryDisplayName", n => { DeviceCategoryDisplayName = n.GetStringValue(); } },
-                { "deviceCompliancePolicyStates", n => { DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>(DeviceCompliancePolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceConfigurationStates", n => { DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>(DeviceConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
+                { "deviceCompliancePolicyStates", n => { DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationStates", n => { DeviceConfigurationStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationState>(Microsoft.Graph.Beta.Models.DeviceConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceEnrollmentType>(); } },
                 { "deviceFirmwareConfigurationInterfaceManaged", n => { DeviceFirmwareConfigurationInterfaceManaged = n.GetBoolValue(); } },
                 { "deviceHealthAttestationState", n => { DeviceHealthAttestationState = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealthAttestationState>(Microsoft.Graph.Beta.Models.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
-                { "deviceHealthScriptStates", n => { DeviceHealthScriptStates = n.GetCollectionOfObjectValues<DeviceHealthScriptPolicyState>(DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceHealthScriptStates", n => { DeviceHealthScriptStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState>(Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                { "deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceRegistrationState>(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceType>(); } },
                 { "easActivated", n => { EasActivated = n.GetBoolValue(); } },
                 { "easActivationDateTime", n => { EasActivationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "easDeviceId", n => { EasDeviceId = n.GetStringValue(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "enrolledByUserPrincipalName", n => { EnrolledByUserPrincipalName = n.GetStringValue(); } },
                 { "enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
                 { "ethernetMacAddress", n => { EthernetMacAddress = n.GetStringValue(); } },
-                { "exchangeAccessState", n => { ExchangeAccessState = n.GetEnumValue<DeviceManagementExchangeAccessState>(); } },
-                { "exchangeAccessStateReason", n => { ExchangeAccessStateReason = n.GetEnumValue<DeviceManagementExchangeAccessStateReason>(); } },
+                { "exchangeAccessState", n => { ExchangeAccessState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessState>(); } },
+                { "exchangeAccessStateReason", n => { ExchangeAccessStateReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessStateReason>(); } },
                 { "exchangeLastSuccessfulSyncDateTime", n => { ExchangeLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "freeStorageSpaceInBytes", n => { FreeStorageSpaceInBytes = n.GetLongValue(); } },
                 { "hardwareInformation", n => { HardwareInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.HardwareInformation>(Microsoft.Graph.Beta.Models.HardwareInformation.CreateFromDiscriminatorValue); } },
@@ -1179,35 +1196,35 @@ namespace Microsoft.Graph.Beta.Models
                 { "isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
                 { "isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
                 { "jailBroken", n => { JailBroken = n.GetStringValue(); } },
-                { "joinType", n => { JoinType = n.GetEnumValue<JoinType>(); } },
+                { "joinType", n => { JoinType = n.GetEnumValue<Microsoft.Graph.Beta.Models.JoinType>(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "logCollectionRequests", n => { LogCollectionRequests = n.GetCollectionOfObjectValues<DeviceLogCollectionResponse>(DeviceLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "lostModeState", n => { LostModeState = n.GetEnumValue<LostModeState>(); } },
-                { "managedDeviceMobileAppConfigurationStates", n => { ManagedDeviceMobileAppConfigurationStates = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationState>(ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "logCollectionRequests", n => { LogCollectionRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse>(Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lostModeState", n => { LostModeState = n.GetEnumValue<Microsoft.Graph.Beta.Models.LostModeState>(); } },
+                { "managedDeviceMobileAppConfigurationStates", n => { ManagedDeviceMobileAppConfigurationStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                { "managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
-                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                { "managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType>(); } },
+                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagementAgentType>(); } },
                 { "managementCertificateExpirationDate", n => { ManagementCertificateExpirationDate = n.GetDateTimeOffsetValue(); } },
-                { "managementFeatures", n => { ManagementFeatures = n.GetEnumValue<ManagedDeviceManagementFeatures>(); } },
-                { "managementState", n => { ManagementState = n.GetEnumValue<ManagementState>(); } },
+                { "managementFeatures", n => { ManagementFeatures = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceManagementFeatures>(); } },
+                { "managementState", n => { ManagementState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagementState>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "meid", n => { Meid = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
-                { "partnerReportedThreatState", n => { PartnerReportedThreatState = n.GetEnumValue<ManagedDevicePartnerReportedHealthState>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.OwnerType>(); } },
+                { "partnerReportedThreatState", n => { PartnerReportedThreatState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDevicePartnerReportedHealthState>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "physicalMemoryInBytes", n => { PhysicalMemoryInBytes = n.GetLongValue(); } },
                 { "preferMdmOverGroupPolicyAppliedDateTime", n => { PreferMdmOverGroupPolicyAppliedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "processorArchitecture", n => { ProcessorArchitecture = n.GetEnumValue<ManagedDeviceArchitecture>(); } },
+                { "processorArchitecture", n => { ProcessorArchitecture = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceArchitecture>(); } },
                 { "remoteAssistanceSessionErrorDetails", n => { RemoteAssistanceSessionErrorDetails = n.GetStringValue(); } },
                 { "remoteAssistanceSessionUrl", n => { RemoteAssistanceSessionUrl = n.GetStringValue(); } },
                 { "requireUserEnrollmentApproval", n => { RequireUserEnrollmentApproval = n.GetBoolValue(); } },
                 { "retireAfterDateTime", n => { RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "securityBaselineStates", n => { SecurityBaselineStates = n.GetCollectionOfObjectValues<SecurityBaselineState>(SecurityBaselineState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "securityBaselineStates", n => { SecurityBaselineStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityBaselineState>(Microsoft.Graph.Beta.Models.SecurityBaselineState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "securityPatchLevel", n => { SecurityPatchLevel = n.GetStringValue(); } },
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 { "skuFamily", n => { SkuFamily = n.GetStringValue(); } },
@@ -1219,8 +1236,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "usersLoggedOn", n => { UsersLoggedOn = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "usersLoggedOn", n => { UsersLoggedOn = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LoggedOnUser>(Microsoft.Graph.Beta.Models.LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "wiFiMacAddress", n => { WiFiMacAddress = n.GetStringValue(); } },
                 { "windowsActiveMalwareCount", n => { WindowsActiveMalwareCount = n.GetIntValue(); } },
                 { "windowsProtectionState", n => { WindowsProtectionState = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsProtectionState>(Microsoft.Graph.Beta.Models.WindowsProtectionState.CreateFromDiscriminatorValue); } },
@@ -1236,40 +1253,40 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
-            writer.WriteEnumValue<ChassisType>("chassisType", ChassisType);
-            writer.WriteCollectionOfObjectValues<ChromeOSDeviceProperty>("chromeOSDeviceInfo", ChromeOSDeviceInfo);
-            writer.WriteCollectionOfObjectValues<CloudPcRemoteActionResult>("cloudPcRemoteActionResults", CloudPcRemoteActionResults);
-            writer.WriteEnumValue<ComplianceState>("complianceState", ComplianceState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ChassisType>("chassisType", ChassisType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChromeOSDeviceProperty>("chromeOSDeviceInfo", ChromeOSDeviceInfo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcRemoteActionResult>("cloudPcRemoteActionResults", CloudPcRemoteActionResults);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceState>("complianceState", ComplianceState);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState>("configurationManagerClientHealthState", ConfigurationManagerClientHealthState);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientInformation>("configurationManagerClientInformation", ConfigurationManagerClientInformation);
-            writer.WriteCollectionOfObjectValues<DetectedApp>("detectedApps", DetectedApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DetectedApp>("detectedApps", DetectedApps);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceCategory>("deviceCategory", DeviceCategory);
-            writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
-            writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
-            writer.WriteEnumValue<DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
             writer.WriteBoolValue("deviceFirmwareConfigurationInterfaceManaged", DeviceFirmwareConfigurationInterfaceManaged);
-            writer.WriteCollectionOfObjectValues<DeviceHealthScriptPolicyState>("deviceHealthScriptStates", DeviceHealthScriptStates);
-            writer.WriteEnumValue<DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
-            writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
-            writer.WriteEnumValue<DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);
-            writer.WriteEnumValue<DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
-            writer.WriteEnumValue<JoinType>("joinType", JoinType);
-            writer.WriteCollectionOfObjectValues<DeviceLogCollectionResponse>("logCollectionRequests", LogCollectionRequests);
-            writer.WriteEnumValue<LostModeState>("lostModeState", LostModeState);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationState>("managedDeviceMobileAppConfigurationStates", ManagedDeviceMobileAppConfigurationStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState>("deviceHealthScriptStates", DeviceHealthScriptStates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceType>("deviceType", DeviceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.JoinType>("joinType", JoinType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceLogCollectionResponse>("logCollectionRequests", LogCollectionRequests);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.LostModeState>("lostModeState", LostModeState);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationState>("managedDeviceMobileAppConfigurationStates", ManagedDeviceMobileAppConfigurationStates);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
-            writer.WriteEnumValue<ManagedDeviceOwnerType>("managedDeviceOwnerType", ManagedDeviceOwnerType);
-            writer.WriteEnumValue<ManagementAgentType>("managementAgent", ManagementAgent);
-            writer.WriteEnumValue<ManagedDeviceManagementFeatures>("managementFeatures", ManagementFeatures);
-            writer.WriteEnumValue<ManagementState>("managementState", ManagementState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType>("managedDeviceOwnerType", ManagedDeviceOwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagementAgentType>("managementAgent", ManagementAgent);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceManagementFeatures>("managementFeatures", ManagementFeatures);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagementState>("managementState", ManagementState);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteEnumValue<OwnerType>("ownerType", OwnerType);
-            writer.WriteEnumValue<ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
-            writer.WriteEnumValue<ManagedDeviceArchitecture>("processorArchitecture", ProcessorArchitecture);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceArchitecture>("processorArchitecture", ProcessorArchitecture);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteCollectionOfObjectValues<SecurityBaselineState>("securityBaselineStates", SecurityBaselineStates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SecurityBaselineState>("securityBaselineStates", SecurityBaselineStates);
             writer.WriteStringValue("skuFamily", SkuFamily);
-            writer.WriteCollectionOfObjectValues<User>("users", Users);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("users", Users);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
         }
     }

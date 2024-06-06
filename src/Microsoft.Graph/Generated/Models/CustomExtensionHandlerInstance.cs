@@ -68,19 +68,19 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
-        public AccessPackageCustomExtensionStage? Stage
+        public Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage? Stage
         {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
         /// <summary>Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.</summary>
-        public AccessPackageCustomExtensionHandlerStatus? Status
+        public Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionHandlerStatus? Status
         {
-            get { return BackingStore?.Get<AccessPackageCustomExtensionHandlerStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionHandlerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CustomExtensionHandlerInstance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance"/> and sets the default values.
         /// </summary>
         public CustomExtensionHandlerInstance()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomExtensionHandlerInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomExtensionHandlerInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomExtensionHandlerInstance();
+            return new Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "customExtensionId", n => { CustomExtensionId = n.GetStringValue(); } },
                 { "externalCorrelationId", n => { ExternalCorrelationId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
-                { "status", n => { Status = n.GetEnumValue<AccessPackageCustomExtensionHandlerStatus>(); } },
+                { "stage", n => { Stage = n.GetEnumValue<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionHandlerStatus>(); } },
             };
         }
         /// <summary>
@@ -122,8 +122,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("customExtensionId", CustomExtensionId);
             writer.WriteStringValue("externalCorrelationId", ExternalCorrelationId);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AccessPackageCustomExtensionStage>("stage", Stage);
-            writer.WriteEnumValue<AccessPackageCustomExtensionHandlerStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionStage>("stage", Stage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AccessPackageCustomExtensionHandlerStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

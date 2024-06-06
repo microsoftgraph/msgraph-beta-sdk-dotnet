@@ -7,39 +7,39 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationCombinationConfiguration : Entity, IParsable
+    public class AuthenticationCombinationConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object defined for the authenticationStrengthPolicy. For fido2combinationConfigurations use &apos;fido2&apos;, for x509certificatecombinationconfiguration use &apos;x509CertificateSingleFactor&apos; or &apos;x509CertificateMultiFactor&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? AppliesToCombinations
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? AppliesToCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("appliesToCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> AppliesToCombinations
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AppliesToCombinations
         {
-            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("appliesToCombinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationCombinationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationCombinationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationCombinationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthenticationCombinationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.fido2CombinationConfiguration" => new Fido2CombinationConfiguration(),
-                "#microsoft.graph.x509CertificateCombinationConfiguration" => new X509CertificateCombinationConfiguration(),
-                _ => new AuthenticationCombinationConfiguration(),
+                "#microsoft.graph.fido2CombinationConfiguration" => new Microsoft.Graph.Beta.Models.Fido2CombinationConfiguration(),
+                "#microsoft.graph.x509CertificateCombinationConfiguration" => new Microsoft.Graph.Beta.Models.X509CertificateCombinationConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.AuthenticationCombinationConfiguration(),
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appliesToCombinations", n => { AppliesToCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "appliesToCombinations", n => { AppliesToCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("appliesToCombinations", AppliesToCombinations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>("appliesToCombinations", AppliesToCombinations);
         }
     }
 }

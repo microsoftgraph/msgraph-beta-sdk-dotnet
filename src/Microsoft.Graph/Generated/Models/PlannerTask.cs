@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerTask : PlannerDelta, IParsable
+    public class PlannerTask : Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of checklist items with value set to false, representing incomplete items.</summary>
@@ -20,48 +20,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerAppliedCategories? AppliedCategories
+        public Microsoft.Graph.Beta.Models.PlannerAppliedCategories? AppliedCategories
         {
-            get { return BackingStore?.Get<PlannerAppliedCategories?>("appliedCategories"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerAppliedCategories?>("appliedCategories"); }
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #nullable restore
 #else
-        public PlannerAppliedCategories AppliedCategories
+        public Microsoft.Graph.Beta.Models.PlannerAppliedCategories AppliedCategories
         {
-            get { return BackingStore?.Get<PlannerAppliedCategories>("appliedCategories"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerAppliedCategories>("appliedCategories"); }
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #endif
         /// <summary>The archivalInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerArchivalInfo? ArchivalInfo
+        public Microsoft.Graph.Beta.Models.PlannerArchivalInfo? ArchivalInfo
         {
-            get { return BackingStore?.Get<PlannerArchivalInfo?>("archivalInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerArchivalInfo?>("archivalInfo"); }
             set { BackingStore?.Set("archivalInfo", value); }
         }
 #nullable restore
 #else
-        public PlannerArchivalInfo ArchivalInfo
+        public Microsoft.Graph.Beta.Models.PlannerArchivalInfo ArchivalInfo
         {
-            get { return BackingStore?.Get<PlannerArchivalInfo>("archivalInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerArchivalInfo>("archivalInfo"); }
             set { BackingStore?.Set("archivalInfo", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerAssignedToTaskBoardTaskFormat? AssignedToTaskBoardFormat
+        public Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat? AssignedToTaskBoardFormat
         {
-            get { return BackingStore?.Get<PlannerAssignedToTaskBoardTaskFormat?>("assignedToTaskBoardFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat?>("assignedToTaskBoardFormat"); }
             set { BackingStore?.Set("assignedToTaskBoardFormat", value); }
         }
 #nullable restore
 #else
-        public PlannerAssignedToTaskBoardTaskFormat AssignedToTaskBoardFormat
+        public Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat AssignedToTaskBoardFormat
         {
-            get { return BackingStore?.Get<PlannerAssignedToTaskBoardTaskFormat>("assignedToTaskBoardFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat>("assignedToTaskBoardFormat"); }
             set { BackingStore?.Set("assignedToTaskBoardFormat", value); }
         }
 #endif
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The set of assignees the task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerAssignments? Assignments
+        public Microsoft.Graph.Beta.Models.PlannerAssignments? Assignments
         {
-            get { return BackingStore?.Get<PlannerAssignments?>("assignments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerAssignments?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public PlannerAssignments Assignments
+        public Microsoft.Graph.Beta.Models.PlannerAssignments Assignments
         {
-            get { return BackingStore?.Get<PlannerAssignments>("assignments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerAssignments>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -116,16 +116,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerBucketTaskBoardTaskFormat? BucketTaskBoardFormat
+        public Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat? BucketTaskBoardFormat
         {
-            get { return BackingStore?.Get<PlannerBucketTaskBoardTaskFormat?>("bucketTaskBoardFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat?>("bucketTaskBoardFormat"); }
             set { BackingStore?.Set("bucketTaskBoardFormat", value); }
         }
 #nullable restore
 #else
-        public PlannerBucketTaskBoardTaskFormat BucketTaskBoardFormat
+        public Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat BucketTaskBoardFormat
         {
-            get { return BackingStore?.Get<PlannerBucketTaskBoardTaskFormat>("bucketTaskBoardFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat>("bucketTaskBoardFormat"); }
             set { BackingStore?.Set("bucketTaskBoardFormat", value); }
         }
 #endif
@@ -138,16 +138,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the user that completed the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CompletedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CompletedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("completedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("completedBy"); }
             set { BackingStore?.Set("completedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CompletedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CompletedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("completedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("completedBy"); }
             set { BackingStore?.Set("completedBy", value); }
         }
 #endif
@@ -176,16 +176,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the user who created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -198,32 +198,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the origin of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskCreation? CreationSource
+        public Microsoft.Graph.Beta.Models.PlannerTaskCreation? CreationSource
         {
-            get { return BackingStore?.Get<PlannerTaskCreation?>("creationSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskCreation?>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskCreation CreationSource
+        public Microsoft.Graph.Beta.Models.PlannerTaskCreation CreationSource
         {
-            get { return BackingStore?.Get<PlannerTaskCreation>("creationSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskCreation>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. More details about the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskDetails? Details
+        public Microsoft.Graph.Beta.Models.PlannerTaskDetails? Details
         {
-            get { return BackingStore?.Get<PlannerTaskDetails?>("details"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskDetails?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskDetails Details
+        public Microsoft.Graph.Beta.Models.PlannerTaskDetails Details
         {
-            get { return BackingStore?.Get<PlannerTaskDetails>("details"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskDetails>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
@@ -296,9 +296,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.</summary>
-        public PlannerPreviewType? PreviewType
+        public Microsoft.Graph.Beta.Models.PlannerPreviewType? PreviewType
         {
-            get { return BackingStore?.Get<PlannerPreviewType?>("previewType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
         /// <summary>The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as &apos;urgent&apos;, 2 and 3 and 4 as &apos;important&apos;, 5, 6, and 7 as &apos;medium&apos;, and 8, 9, and 10 as &apos;low&apos;. Currently, Planner sets the value 1 for &apos;urgent&apos;, 3 for &apos;important&apos;, 5 for &apos;medium&apos;, and 9 for &apos;low&apos;.</summary>
@@ -310,32 +310,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerProgressTaskBoardTaskFormat? ProgressTaskBoardFormat
+        public Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat? ProgressTaskBoardFormat
         {
-            get { return BackingStore?.Get<PlannerProgressTaskBoardTaskFormat?>("progressTaskBoardFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat?>("progressTaskBoardFormat"); }
             set { BackingStore?.Set("progressTaskBoardFormat", value); }
         }
 #nullable restore
 #else
-        public PlannerProgressTaskBoardTaskFormat ProgressTaskBoardFormat
+        public Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat ProgressTaskBoardFormat
         {
-            get { return BackingStore?.Get<PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat"); }
             set { BackingStore?.Set("progressTaskBoardFormat", value); }
         }
 #endif
         /// <summary>Defines active or inactive recurrence for the task. null when the recurrence has never been defined for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskRecurrence? Recurrence
+        public Microsoft.Graph.Beta.Models.PlannerTaskRecurrence? Recurrence
         {
-            get { return BackingStore?.Get<PlannerTaskRecurrence?>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskRecurrence Recurrence
+        public Microsoft.Graph.Beta.Models.PlannerTaskRecurrence Recurrence
         {
-            get { return BackingStore?.Get<PlannerTaskRecurrence>("recurrence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
@@ -346,9 +346,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("referenceCount", value); }
         }
         /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
-        public PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements
+        public Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements
         {
-            get { return BackingStore?.Get<PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
             set { BackingStore?.Set("specifiedCompletionRequirements", value); }
         }
         /// <summary>Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -376,16 +376,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.businessScenarioTask" => new BusinessScenarioTask(),
-                _ => new PlannerTask(),
+                "#microsoft.graph.businessScenarioTask" => new Microsoft.Graph.Beta.Models.BusinessScenarioTask(),
+                _ => new Microsoft.Graph.Beta.Models.PlannerTask(),
             };
         }
         /// <summary>
@@ -397,21 +397,21 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "activeChecklistItemCount", n => { ActiveChecklistItemCount = n.GetIntValue(); } },
-                { "appliedCategories", n => { AppliedCategories = n.GetObjectValue<PlannerAppliedCategories>(PlannerAppliedCategories.CreateFromDiscriminatorValue); } },
-                { "archivalInfo", n => { ArchivalInfo = n.GetObjectValue<PlannerArchivalInfo>(PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
-                { "assignedToTaskBoardFormat", n => { AssignedToTaskBoardFormat = n.GetObjectValue<PlannerAssignedToTaskBoardTaskFormat>(PlannerAssignedToTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
+                { "appliedCategories", n => { AppliedCategories = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerAppliedCategories>(Microsoft.Graph.Beta.Models.PlannerAppliedCategories.CreateFromDiscriminatorValue); } },
+                { "archivalInfo", n => { ArchivalInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerArchivalInfo>(Microsoft.Graph.Beta.Models.PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
+                { "assignedToTaskBoardFormat", n => { AssignedToTaskBoardFormat = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat>(Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
                 { "assigneePriority", n => { AssigneePriority = n.GetStringValue(); } },
-                { "assignments", n => { Assignments = n.GetObjectValue<PlannerAssignments>(PlannerAssignments.CreateFromDiscriminatorValue); } },
+                { "assignments", n => { Assignments = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerAssignments>(Microsoft.Graph.Beta.Models.PlannerAssignments.CreateFromDiscriminatorValue); } },
                 { "bucketId", n => { BucketId = n.GetStringValue(); } },
-                { "bucketTaskBoardFormat", n => { BucketTaskBoardFormat = n.GetObjectValue<PlannerBucketTaskBoardTaskFormat>(PlannerBucketTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
+                { "bucketTaskBoardFormat", n => { BucketTaskBoardFormat = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat>(Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
                 { "checklistItemCount", n => { ChecklistItemCount = n.GetIntValue(); } },
-                { "completedBy", n => { CompletedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "completedBy", n => { CompletedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "conversationThreadId", n => { ConversationThreadId = n.GetStringValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "creationSource", n => { CreationSource = n.GetObjectValue<PlannerTaskCreation>(PlannerTaskCreation.CreateFromDiscriminatorValue); } },
-                { "details", n => { Details = n.GetObjectValue<PlannerTaskDetails>(PlannerTaskDetails.CreateFromDiscriminatorValue); } },
+                { "creationSource", n => { CreationSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskCreation>(Microsoft.Graph.Beta.Models.PlannerTaskCreation.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskDetails>(Microsoft.Graph.Beta.Models.PlannerTaskDetails.CreateFromDiscriminatorValue); } },
                 { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
                 { "hasDescription", n => { HasDescription = n.GetBoolValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
@@ -420,12 +420,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "orderHint", n => { OrderHint = n.GetStringValue(); } },
                 { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
+                { "previewType", n => { PreviewType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerPreviewType>(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "progressTaskBoardFormat", n => { ProgressTaskBoardFormat = n.GetObjectValue<PlannerProgressTaskBoardTaskFormat>(PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<PlannerTaskRecurrence>(PlannerTaskRecurrence.CreateFromDiscriminatorValue); } },
+                { "progressTaskBoardFormat", n => { ProgressTaskBoardFormat = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat>(Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskRecurrence>(Microsoft.Graph.Beta.Models.PlannerTaskRecurrence.CreateFromDiscriminatorValue); } },
                 { "referenceCount", n => { ReferenceCount = n.GetIntValue(); } },
-                { "specifiedCompletionRequirements", n => { SpecifiedCompletionRequirements = n.GetEnumValue<PlannerTaskCompletionRequirements>(); } },
+                { "specifiedCompletionRequirements", n => { SpecifiedCompletionRequirements = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements>(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -439,21 +439,21 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("activeChecklistItemCount", ActiveChecklistItemCount);
-            writer.WriteObjectValue<PlannerAppliedCategories>("appliedCategories", AppliedCategories);
-            writer.WriteObjectValue<PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
-            writer.WriteObjectValue<PlannerAssignedToTaskBoardTaskFormat>("assignedToTaskBoardFormat", AssignedToTaskBoardFormat);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerAppliedCategories>("appliedCategories", AppliedCategories);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerAssignedToTaskBoardTaskFormat>("assignedToTaskBoardFormat", AssignedToTaskBoardFormat);
             writer.WriteStringValue("assigneePriority", AssigneePriority);
-            writer.WriteObjectValue<PlannerAssignments>("assignments", Assignments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerAssignments>("assignments", Assignments);
             writer.WriteStringValue("bucketId", BucketId);
-            writer.WriteObjectValue<PlannerBucketTaskBoardTaskFormat>("bucketTaskBoardFormat", BucketTaskBoardFormat);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerBucketTaskBoardTaskFormat>("bucketTaskBoardFormat", BucketTaskBoardFormat);
             writer.WriteIntValue("checklistItemCount", ChecklistItemCount);
-            writer.WriteObjectValue<IdentitySet>("completedBy", CompletedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("completedBy", CompletedBy);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteStringValue("conversationThreadId", ConversationThreadId);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<PlannerTaskCreation>("creationSource", CreationSource);
-            writer.WriteObjectValue<PlannerTaskDetails>("details", Details);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskCreation>("creationSource", CreationSource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskDetails>("details", Details);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
             writer.WriteBoolValue("hasDescription", HasDescription);
             writer.WriteBoolValue("isArchived", IsArchived);
@@ -462,12 +462,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteIntValue("percentComplete", PercentComplete);
             writer.WriteStringValue("planId", PlanId);
-            writer.WriteEnumValue<PlannerPreviewType>("previewType", PreviewType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerPreviewType>("previewType", PreviewType);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteObjectValue<PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat", ProgressTaskBoardFormat);
-            writer.WriteObjectValue<PlannerTaskRecurrence>("recurrence", Recurrence);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat", ProgressTaskBoardFormat);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerTaskRecurrence>("recurrence", Recurrence);
             writer.WriteIntValue("referenceCount", ReferenceCount);
-            writer.WriteEnumValue<PlannerTaskCompletionRequirements>("specifiedCompletionRequirements", SpecifiedCompletionRequirements);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerTaskCompletionRequirements>("specifiedCompletionRequirements", SpecifiedCompletionRequirements);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("title", Title);
         }

@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryFile>? Value
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>? Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryFile>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryFile> Value
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile> Value
         {
-            get { return BackingStore?.Get<List<EdiscoveryFile>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryFileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryFileCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryFileCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoveryFileCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryFileCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoveryFileCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<EdiscoveryFile>(EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>(Microsoft.Graph.Beta.Models.Security.EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<EdiscoveryFile>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryFile>("value", Value);
         }
     }
 }

@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthorizationSystemTypeAction : Entity, IParsable
+    public class AuthorizationSystemTypeAction : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of action allowed in the authorization system&apos;s service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).</summary>
-        public AuthorizationSystemActionType? ActionType
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemActionType? ActionType
         {
-            get { return BackingStore?.Get<AuthorizationSystemActionType?>("actionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemActionType?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
         /// <summary>The display name of an action. Read-only. Supports $filter and (eq).</summary>
@@ -49,26 +49,26 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The severity property</summary>
-        public AuthorizationSystemActionSeverity? Severity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemActionSeverity? Severity
         {
-            get { return BackingStore?.Get<AuthorizationSystemActionSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemActionSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystemTypeAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationSystemTypeAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsAuthorizationSystemTypeAction" => new AwsAuthorizationSystemTypeAction(),
-                "#microsoft.graph.azureAuthorizationSystemTypeAction" => new AzureAuthorizationSystemTypeAction(),
-                "#microsoft.graph.gcpAuthorizationSystemTypeAction" => new GcpAuthorizationSystemTypeAction(),
-                _ => new AuthorizationSystemTypeAction(),
+                "#microsoft.graph.awsAuthorizationSystemTypeAction" => new Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction(),
+                "#microsoft.graph.azureAuthorizationSystemTypeAction" => new Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction(),
+                "#microsoft.graph.gcpAuthorizationSystemTypeAction" => new Microsoft.Graph.Beta.Models.GcpAuthorizationSystemTypeAction(),
+                _ => new Microsoft.Graph.Beta.Models.AuthorizationSystemTypeAction(),
             };
         }
         /// <summary>
@@ -79,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actionType", n => { ActionType = n.GetEnumValue<AuthorizationSystemActionType>(); } },
+                { "actionType", n => { ActionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthorizationSystemActionType>(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "resourceTypes", n => { ResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "severity", n => { Severity = n.GetEnumValue<AuthorizationSystemActionSeverity>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AuthorizationSystemActionSeverity>(); } },
             };
         }
         /// <summary>
@@ -93,10 +93,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AuthorizationSystemActionType>("actionType", ActionType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthorizationSystemActionType>("actionType", ActionType);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceTypes", ResourceTypes);
-            writer.WriteEnumValue<AuthorizationSystemActionSeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AuthorizationSystemActionSeverity>("severity", Severity);
         }
     }
 }

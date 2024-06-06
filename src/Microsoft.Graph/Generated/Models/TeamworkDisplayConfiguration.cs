@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of configured displays. Applicable only for Microsoft Teams Rooms devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkConfiguredPeripheral>? ConfiguredDisplays
+        public List<Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral>? ConfiguredDisplays
         {
-            get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>?>("configuredDisplays"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral>?>("configuredDisplays"); }
             set { BackingStore?.Set("configuredDisplays", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkConfiguredPeripheral> ConfiguredDisplays
+        public List<Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral> ConfiguredDisplays
         {
-            get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>>("configuredDisplays"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral>>("configuredDisplays"); }
             set { BackingStore?.Set("configuredDisplays", value); }
         }
 #endif
@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Configuration for the inbuilt display. Not applicable for Teams Rooms devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDisplayScreenConfiguration? InBuiltDisplayScreenConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration? InBuiltDisplayScreenConfiguration
         {
-            get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration?>("inBuiltDisplayScreenConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration?>("inBuiltDisplayScreenConfiguration"); }
             set { BackingStore?.Set("inBuiltDisplayScreenConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration
         {
-            get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration>("inBuiltDisplayScreenConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration>("inBuiltDisplayScreenConfiguration"); }
             set { BackingStore?.Set("inBuiltDisplayScreenConfiguration", value); }
         }
 #endif
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkDisplayConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration"/> and sets the default values.
         /// </summary>
         public TeamworkDisplayConfiguration()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkDisplayConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkDisplayConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkDisplayConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuredDisplays", n => { ConfiguredDisplays = n.GetCollectionOfObjectValues<TeamworkConfiguredPeripheral>(TeamworkConfiguredPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configuredDisplays", n => { ConfiguredDisplays = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral>(Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayCount", n => { DisplayCount = n.GetIntValue(); } },
-                { "inBuiltDisplayScreenConfiguration", n => { InBuiltDisplayScreenConfiguration = n.GetObjectValue<TeamworkDisplayScreenConfiguration>(TeamworkDisplayScreenConfiguration.CreateFromDiscriminatorValue); } },
+                { "inBuiltDisplayScreenConfiguration", n => { InBuiltDisplayScreenConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration>(Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration.CreateFromDiscriminatorValue); } },
                 { "isContentDuplicationAllowed", n => { IsContentDuplicationAllowed = n.GetBoolValue(); } },
                 { "isDualDisplayModeEnabled", n => { IsDualDisplayModeEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<TeamworkConfiguredPeripheral>("configuredDisplays", ConfiguredDisplays);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeamworkConfiguredPeripheral>("configuredDisplays", ConfiguredDisplays);
             writer.WriteIntValue("displayCount", DisplayCount);
-            writer.WriteObjectValue<TeamworkDisplayScreenConfiguration>("inBuiltDisplayScreenConfiguration", InBuiltDisplayScreenConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkDisplayScreenConfiguration>("inBuiltDisplayScreenConfiguration", InBuiltDisplayScreenConfiguration);
             writer.WriteBoolValue("isContentDuplicationAllowed", IsContentDuplicationAllowed);
             writer.WriteBoolValue("isDualDisplayModeEnabled", IsDualDisplayModeEnabled);
             writer.WriteStringValue("@odata.type", OdataType);

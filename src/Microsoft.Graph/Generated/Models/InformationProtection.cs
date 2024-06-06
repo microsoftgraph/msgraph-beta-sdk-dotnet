@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class InformationProtection : Entity, IParsable
+    public class InformationProtection : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bitlocker property</summary>
@@ -29,48 +29,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The dataLossPreventionPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataLossPreventionPolicy>? DataLossPreventionPolicies
+        public List<Microsoft.Graph.Beta.Models.DataLossPreventionPolicy>? DataLossPreventionPolicies
         {
-            get { return BackingStore?.Get<List<DataLossPreventionPolicy>?>("dataLossPreventionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DataLossPreventionPolicy>?>("dataLossPreventionPolicies"); }
             set { BackingStore?.Set("dataLossPreventionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<DataLossPreventionPolicy> DataLossPreventionPolicies
+        public List<Microsoft.Graph.Beta.Models.DataLossPreventionPolicy> DataLossPreventionPolicies
         {
-            get { return BackingStore?.Get<List<DataLossPreventionPolicy>>("dataLossPreventionPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DataLossPreventionPolicy>>("dataLossPreventionPolicies"); }
             set { BackingStore?.Set("dataLossPreventionPolicies", value); }
         }
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InformationProtectionPolicy? Policy
+        public Microsoft.Graph.Beta.Models.InformationProtectionPolicy? Policy
         {
-            get { return BackingStore?.Get<InformationProtectionPolicy?>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationProtectionPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public InformationProtectionPolicy Policy
+        public Microsoft.Graph.Beta.Models.InformationProtectionPolicy Policy
         {
-            get { return BackingStore?.Get<InformationProtectionPolicy>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationProtectionPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #endif
         /// <summary>The sensitivityLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitivityLabel>? SensitivityLabels
+        public List<Microsoft.Graph.Beta.Models.SensitivityLabel>? SensitivityLabels
         {
-            get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
 #nullable restore
 #else
-        public List<SensitivityLabel> SensitivityLabels
+        public List<Microsoft.Graph.Beta.Models.SensitivityLabel> SensitivityLabels
         {
-            get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
 #endif
@@ -93,28 +93,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The threatAssessmentRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ThreatAssessmentRequest>? ThreatAssessmentRequests
+        public List<Microsoft.Graph.Beta.Models.ThreatAssessmentRequest>? ThreatAssessmentRequests
         {
-            get { return BackingStore?.Get<List<ThreatAssessmentRequest>?>("threatAssessmentRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ThreatAssessmentRequest>?>("threatAssessmentRequests"); }
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
 #nullable restore
 #else
-        public List<ThreatAssessmentRequest> ThreatAssessmentRequests
+        public List<Microsoft.Graph.Beta.Models.ThreatAssessmentRequest> ThreatAssessmentRequests
         {
-            get { return BackingStore?.Get<List<ThreatAssessmentRequest>>("threatAssessmentRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ThreatAssessmentRequest>>("threatAssessmentRequests"); }
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InformationProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InformationProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InformationProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.InformationProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InformationProtection();
+            return new Microsoft.Graph.Beta.Models.InformationProtection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bitlocker", n => { Bitlocker = n.GetObjectValue<Microsoft.Graph.Beta.Models.Bitlocker>(Microsoft.Graph.Beta.Models.Bitlocker.CreateFromDiscriminatorValue); } },
-                { "dataLossPreventionPolicies", n => { DataLossPreventionPolicies = n.GetCollectionOfObjectValues<DataLossPreventionPolicy>(DataLossPreventionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "policy", n => { Policy = n.GetObjectValue<InformationProtectionPolicy>(InformationProtectionPolicy.CreateFromDiscriminatorValue); } },
-                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dataLossPreventionPolicies", n => { DataLossPreventionPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DataLossPreventionPolicy>(Microsoft.Graph.Beta.Models.DataLossPreventionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationProtectionPolicy>(Microsoft.Graph.Beta.Models.InformationProtectionPolicy.CreateFromDiscriminatorValue); } },
+                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitivityLabel>(Microsoft.Graph.Beta.Models.SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sensitivityPolicySettings", n => { SensitivityPolicySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue); } },
-                { "threatAssessmentRequests", n => { ThreatAssessmentRequests = n.GetCollectionOfObjectValues<ThreatAssessmentRequest>(ThreatAssessmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "threatAssessmentRequests", n => { ThreatAssessmentRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ThreatAssessmentRequest>(Microsoft.Graph.Beta.Models.ThreatAssessmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Bitlocker>("bitlocker", Bitlocker);
-            writer.WriteCollectionOfObjectValues<DataLossPreventionPolicy>("dataLossPreventionPolicies", DataLossPreventionPolicies);
-            writer.WriteObjectValue<InformationProtectionPolicy>("policy", Policy);
-            writer.WriteCollectionOfObjectValues<SensitivityLabel>("sensitivityLabels", SensitivityLabels);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DataLossPreventionPolicy>("dataLossPreventionPolicies", DataLossPreventionPolicies);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InformationProtectionPolicy>("policy", Policy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SensitivityLabel>("sensitivityLabels", SensitivityLabels);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>("sensitivityPolicySettings", SensitivityPolicySettings);
-            writer.WriteCollectionOfObjectValues<ThreatAssessmentRequest>("threatAssessmentRequests", ThreatAssessmentRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ThreatAssessmentRequest>("threatAssessmentRequests", ThreatAssessmentRequests);
         }
     }
 }

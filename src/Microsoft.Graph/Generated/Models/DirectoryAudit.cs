@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DirectoryAudit : Entity, IParsable
+    public class DirectoryAudit : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.</summary>
@@ -35,16 +35,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates more details on the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AdditionalDetails
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? AdditionalDetails
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AdditionalDetails
+        public List<Microsoft.Graph.Beta.Models.KeyValue> AdditionalDetails
         {
-            get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The initiatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditActivityInitiator? InitiatedBy
+        public Microsoft.Graph.Beta.Models.AuditActivityInitiator? InitiatedBy
         {
-            get { return BackingStore?.Get<AuditActivityInitiator?>("initiatedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuditActivityInitiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public AuditActivityInitiator InitiatedBy
+        public Microsoft.Graph.Beta.Models.AuditActivityInitiator InitiatedBy
         {
-            get { return BackingStore?.Get<AuditActivityInitiator>("initiatedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuditActivityInitiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #endif
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
-        public OperationResult? Result
+        public Microsoft.Graph.Beta.Models.OperationResult? Result
         {
-            get { return BackingStore?.Get<OperationResult?>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
         /// <summary>Indicates the reason for failure if the result is failure or timeout.</summary>
@@ -153,16 +153,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the resource that changed due to the activity. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetResource>? TargetResources
+        public List<Microsoft.Graph.Beta.Models.TargetResource>? TargetResources
         {
-            get { return BackingStore?.Get<List<TargetResource>?>("targetResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetResource>?>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
 #nullable restore
 #else
-        public List<TargetResource> TargetResources
+        public List<Microsoft.Graph.Beta.Models.TargetResource> TargetResources
         {
-            get { return BackingStore?.Get<List<TargetResource>>("targetResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetResource>>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
 #endif
@@ -185,12 +185,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectoryAudit"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectoryAudit"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectoryAudit CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DirectoryAudit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectoryAudit();
+            return new Microsoft.Graph.Beta.Models.DirectoryAudit();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -202,15 +202,15 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 { "activityDisplayName", n => { ActivityDisplayName = n.GetStringValue(); } },
-                { "additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuditActivityInitiator>(Microsoft.Graph.Beta.Models.AuditActivityInitiator.CreateFromDiscriminatorValue); } },
                 { "loggedByService", n => { LoggedByService = n.GetStringValue(); } },
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<OperationResult>(); } },
+                { "result", n => { Result = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationResult>(); } },
                 { "resultReason", n => { ResultReason = n.GetStringValue(); } },
-                { "targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetResource>(Microsoft.Graph.Beta.Models.TargetResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
         }
@@ -224,15 +224,15 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);
             writer.WriteStringValue("activityDisplayName", ActivityDisplayName);
-            writer.WriteCollectionOfObjectValues<KeyValue>("additionalDetails", AdditionalDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("additionalDetails", AdditionalDetails);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("correlationId", CorrelationId);
-            writer.WriteObjectValue<AuditActivityInitiator>("initiatedBy", InitiatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuditActivityInitiator>("initiatedBy", InitiatedBy);
             writer.WriteStringValue("loggedByService", LoggedByService);
             writer.WriteStringValue("operationType", OperationType);
-            writer.WriteEnumValue<OperationResult>("result", Result);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationResult>("result", Result);
             writer.WriteStringValue("resultReason", ResultReason);
-            writer.WriteCollectionOfObjectValues<TargetResource>("targetResources", TargetResources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetResource>("targetResources", TargetResources);
             writer.WriteStringValue("userAgent", UserAgent);
         }
     }

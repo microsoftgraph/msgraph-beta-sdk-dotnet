@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows Phone 8.1 Store apps. Inherits from graph.mobileApp. Will be deprecated in February 2023.
     /// </summary>
-    public class WindowsPhone81StoreApp : MobileApp, IParsable
+    public class WindowsPhone81StoreApp : Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The Windows Phone 8.1 app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsPhone81StoreApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81StoreApp"/> and sets the default values.
         /// </summary>
         public WindowsPhone81StoreApp() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsPhone81StoreApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsPhone81StoreApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81StoreApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsPhone81StoreApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsPhone81StoreApp();
+            return new Microsoft.Graph.Beta.Models.WindowsPhone81StoreApp();
         }
         /// <summary>
         /// The deserialization information for the current model

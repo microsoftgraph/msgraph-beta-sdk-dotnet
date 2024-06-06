@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CredentialUserRegistrationCount : Entity, IParsable
+    public class CredentialUserRegistrationCount : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Provides the count of users with accountEnabled set to true in the tenant.</summary>
@@ -19,28 +19,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of registration count and status information for users in your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserRegistrationCount>? UserRegistrationCounts
+        public List<Microsoft.Graph.Beta.Models.UserRegistrationCount>? UserRegistrationCounts
         {
-            get { return BackingStore?.Get<List<UserRegistrationCount>?>("userRegistrationCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserRegistrationCount>?>("userRegistrationCounts"); }
             set { BackingStore?.Set("userRegistrationCounts", value); }
         }
 #nullable restore
 #else
-        public List<UserRegistrationCount> UserRegistrationCounts
+        public List<Microsoft.Graph.Beta.Models.UserRegistrationCount> UserRegistrationCounts
         {
-            get { return BackingStore?.Get<List<UserRegistrationCount>>("userRegistrationCounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserRegistrationCount>>("userRegistrationCounts"); }
             set { BackingStore?.Set("userRegistrationCounts", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CredentialUserRegistrationCount"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CredentialUserRegistrationCount"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CredentialUserRegistrationCount CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CredentialUserRegistrationCount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CredentialUserRegistrationCount();
+            return new Microsoft.Graph.Beta.Models.CredentialUserRegistrationCount();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
-                { "userRegistrationCounts", n => { UserRegistrationCounts = n.GetCollectionOfObjectValues<UserRegistrationCount>(UserRegistrationCount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRegistrationCounts", n => { UserRegistrationCounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserRegistrationCount>(Microsoft.Graph.Beta.Models.UserRegistrationCount.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("totalUserCount", TotalUserCount);
-            writer.WriteCollectionOfObjectValues<UserRegistrationCount>("userRegistrationCounts", UserRegistrationCounts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserRegistrationCount>("userRegistrationCounts", UserRegistrationCounts);
         }
     }
 }

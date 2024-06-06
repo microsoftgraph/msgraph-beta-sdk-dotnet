@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The collection of management template information associated with the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateDetailedInfo>? ManagementTemplates
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo>? ManagementTemplates
         {
-            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>?>("managementTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateDetailedInfo> ManagementTemplates
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo> ManagementTemplates
         {
-            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagementIntentInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementIntentInfo"/> and sets the default values.
         /// </summary>
         public ManagementIntentInfo()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementIntentInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementIntentInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagementIntentInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.ManagementIntentInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementIntentInfo();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementIntentInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             {
                 { "managementIntentDisplayName", n => { ManagementIntentDisplayName = n.GetStringValue(); } },
                 { "managementIntentId", n => { ManagementIntentId = n.GetStringValue(); } },
-                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("managementIntentDisplayName", ManagementIntentDisplayName);
             writer.WriteStringValue("managementIntentId", ManagementIntentId);
-            writer.WriteCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", ManagementTemplates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo>("managementTemplates", ManagementTemplates);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

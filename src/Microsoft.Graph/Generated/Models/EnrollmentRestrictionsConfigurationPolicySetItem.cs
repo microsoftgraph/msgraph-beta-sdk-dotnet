@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for enrollment restriction PolicySetItem.
     /// </summary>
-    public class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem, IParsable
+    public class EnrollmentRestrictionsConfigurationPolicySetItem : Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.</summary>
         public int? Limit
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EnrollmentRestrictionsConfigurationPolicySetItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EnrollmentRestrictionsConfigurationPolicySetItem"/> and sets the default values.
         /// </summary>
         public EnrollmentRestrictionsConfigurationPolicySetItem() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnrollmentRestrictionsConfigurationPolicySetItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EnrollmentRestrictionsConfigurationPolicySetItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EnrollmentRestrictionsConfigurationPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EnrollmentRestrictionsConfigurationPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnrollmentRestrictionsConfigurationPolicySetItem();
+            return new Microsoft.Graph.Beta.Models.EnrollmentRestrictionsConfigurationPolicySetItem();
         }
         /// <summary>
         /// The deserialization information for the current model

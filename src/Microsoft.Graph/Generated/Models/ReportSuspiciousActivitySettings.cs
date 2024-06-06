@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public AdvancedConfigState? State
+        public Microsoft.Graph.Beta.Models.AdvancedConfigState? State
         {
-            get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Specifies the number the user enters on their phone to report the MFA prompt as suspicious.</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("voiceReportingCode", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ReportSuspiciousActivitySettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings"/> and sets the default values.
         /// </summary>
         public ReportSuspiciousActivitySettings()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReportSuspiciousActivitySettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReportSuspiciousActivitySettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReportSuspiciousActivitySettings();
+            return new Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "includeTarget", n => { IncludeTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncludeTarget>(Microsoft.Graph.Beta.Models.IncludeTarget.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.AdvancedConfigState>(); } },
                 { "voiceReportingCode", n => { VoiceReportingCode = n.GetIntValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IncludeTarget>("includeTarget", IncludeTarget);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AdvancedConfigState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AdvancedConfigState>("state", State);
             writer.WriteIntValue("voiceReportingCode", VoiceReportingCode);
             writer.WriteAdditionalData(AdditionalData);
         }

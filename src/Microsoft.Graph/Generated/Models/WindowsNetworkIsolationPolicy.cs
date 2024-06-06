@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProxiedDomain>? EnterpriseCloudResources
+        public List<Microsoft.Graph.Beta.Models.ProxiedDomain>? EnterpriseCloudResources
         {
-            get { return BackingStore?.Get<List<ProxiedDomain>?>("enterpriseCloudResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProxiedDomain>?>("enterpriseCloudResources"); }
             set { BackingStore?.Set("enterpriseCloudResources", value); }
         }
 #nullable restore
 #else
-        public List<ProxiedDomain> EnterpriseCloudResources
+        public List<Microsoft.Graph.Beta.Models.ProxiedDomain> EnterpriseCloudResources
         {
-            get { return BackingStore?.Get<List<ProxiedDomain>>("enterpriseCloudResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProxiedDomain>>("enterpriseCloudResources"); }
             set { BackingStore?.Set("enterpriseCloudResources", value); }
         }
 #endif
@@ -55,16 +55,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpRange>? EnterpriseIPRanges
+        public List<Microsoft.Graph.Beta.Models.IpRange>? EnterpriseIPRanges
         {
-            get { return BackingStore?.Get<List<IpRange>?>("enterpriseIPRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpRange>?>("enterpriseIPRanges"); }
             set { BackingStore?.Set("enterpriseIPRanges", value); }
         }
 #nullable restore
 #else
-        public List<IpRange> EnterpriseIPRanges
+        public List<Microsoft.Graph.Beta.Models.IpRange> EnterpriseIPRanges
         {
-            get { return BackingStore?.Get<List<IpRange>>("enterpriseIPRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpRange>>("enterpriseIPRanges"); }
             set { BackingStore?.Set("enterpriseIPRanges", value); }
         }
 #endif
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsNetworkIsolationPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy"/> and sets the default values.
         /// </summary>
         public WindowsNetworkIsolationPolicy()
         {
@@ -155,12 +155,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsNetworkIsolationPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsNetworkIsolationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsNetworkIsolationPolicy();
+            return new Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -170,8 +170,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enterpriseCloudResources", n => { EnterpriseCloudResources = n.GetCollectionOfObjectValues<ProxiedDomain>(ProxiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "enterpriseIPRanges", n => { EnterpriseIPRanges = n.GetCollectionOfObjectValues<IpRange>(IpRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseCloudResources", n => { EnterpriseCloudResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProxiedDomain>(Microsoft.Graph.Beta.Models.ProxiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enterpriseIPRanges", n => { EnterpriseIPRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpRange>(Microsoft.Graph.Beta.Models.IpRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enterpriseIPRangesAreAuthoritative", n => { EnterpriseIPRangesAreAuthoritative = n.GetBoolValue(); } },
                 { "enterpriseInternalProxyServers", n => { EnterpriseInternalProxyServers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "enterpriseNetworkDomainNames", n => { EnterpriseNetworkDomainNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -188,9 +188,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ProxiedDomain>("enterpriseCloudResources", EnterpriseCloudResources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProxiedDomain>("enterpriseCloudResources", EnterpriseCloudResources);
             writer.WriteCollectionOfPrimitiveValues<string>("enterpriseInternalProxyServers", EnterpriseInternalProxyServers);
-            writer.WriteCollectionOfObjectValues<IpRange>("enterpriseIPRanges", EnterpriseIPRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpRange>("enterpriseIPRanges", EnterpriseIPRanges);
             writer.WriteBoolValue("enterpriseIPRangesAreAuthoritative", EnterpriseIPRangesAreAuthoritative);
             writer.WriteCollectionOfPrimitiveValues<string>("enterpriseNetworkDomainNames", EnterpriseNetworkDomainNames);
             writer.WriteCollectionOfPrimitiveValues<string>("enterpriseProxyServers", EnterpriseProxyServers);

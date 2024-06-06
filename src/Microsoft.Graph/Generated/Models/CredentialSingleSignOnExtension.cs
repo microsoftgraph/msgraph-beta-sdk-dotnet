@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a Credential-type Single Sign-On extension profile.
     /// </summary>
-    public class CredentialSingleSignOnExtension : SingleSignOnExtension, IParsable
+    public class CredentialSingleSignOnExtension : Microsoft.Graph.Beta.Models.SingleSignOnExtension, IParsable
     {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyTypedValuePair>? Configurations
+        public List<Microsoft.Graph.Beta.Models.KeyTypedValuePair>? Configurations
         {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyTypedValuePair>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #nullable restore
 #else
-        public List<KeyTypedValuePair> Configurations
+        public List<Microsoft.Graph.Beta.Models.KeyTypedValuePair> Configurations
         {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #endif
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CredentialSingleSignOnExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CredentialSingleSignOnExtension"/> and sets the default values.
         /// </summary>
         public CredentialSingleSignOnExtension() : base()
         {
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CredentialSingleSignOnExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CredentialSingleSignOnExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CredentialSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CredentialSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CredentialSingleSignOnExtension();
+            return new Microsoft.Graph.Beta.Models.CredentialSingleSignOnExtension();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyTypedValuePair>(Microsoft.Graph.Beta.Models.KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
                 { "realm", n => { Realm = n.GetStringValue(); } },
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<KeyTypedValuePair>("configurations", Configurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyTypedValuePair>("configurations", Configurations);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
             writer.WriteStringValue("extensionIdentifier", ExtensionIdentifier);
             writer.WriteStringValue("realm", Realm);

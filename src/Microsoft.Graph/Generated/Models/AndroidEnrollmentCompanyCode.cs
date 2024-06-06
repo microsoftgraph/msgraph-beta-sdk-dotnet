@@ -71,21 +71,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Generated QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? QrCodeImage
+        public Microsoft.Graph.Beta.Models.MimeContent? QrCodeImage
         {
-            get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #nullable restore
 #else
-        public MimeContent QrCodeImage
+        public Microsoft.Graph.Beta.Models.MimeContent QrCodeImage
         {
-            get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidEnrollmentCompanyCode"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode"/> and sets the default values.
         /// </summary>
         public AndroidEnrollmentCompanyCode()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidEnrollmentCompanyCode"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidEnrollmentCompanyCode CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidEnrollmentCompanyCode();
+            return new Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
-                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("enrollmentToken", EnrollmentToken);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("qrCodeContent", QrCodeContent);
-            writer.WriteObjectValue<MimeContent>("qrCodeImage", QrCodeImage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("qrCodeImage", QrCodeImage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

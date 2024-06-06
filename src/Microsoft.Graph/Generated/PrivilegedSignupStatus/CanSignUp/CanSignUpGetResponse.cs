@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CanSignUpGetResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpGetResponse"/> and sets the default values.
         /// </summary>
         public CanSignUpGetResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CanSignUpGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CanSignUpGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CanSignUpGetResponse();
+            return new Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

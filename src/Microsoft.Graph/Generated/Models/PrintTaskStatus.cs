@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public PrintTaskProcessingState? State
+        public Microsoft.Graph.Beta.Models.PrintTaskProcessingState? State
         {
-            get { return BackingStore?.Get<PrintTaskProcessingState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintTaskProcessingState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintTaskStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PrintTaskStatus"/> and sets the default values.
         /// </summary>
         public PrintTaskStatus()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintTaskStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintTaskStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrintTaskStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PrintTaskStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintTaskStatus();
+            return new Microsoft.Graph.Beta.Models.PrintTaskStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<PrintTaskProcessingState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintTaskProcessingState>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PrintTaskProcessingState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintTaskProcessingState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

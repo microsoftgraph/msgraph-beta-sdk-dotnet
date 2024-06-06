@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The group policy configuration entity contains the configured values for one or more group policy definitions.
     /// </summary>
-    public class GroupPolicyConfiguration : Entity, IParsable
+    public class GroupPolicyConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyConfigurationAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyConfigurationAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of enabled or disabled group policy definition values for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyDefinitionValue>? DefinitionValues
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>? DefinitionValues
         {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("definitionValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>?>("definitionValues"); }
             set { BackingStore?.Set("definitionValues", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyDefinitionValue> DefinitionValues
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue> DefinitionValues
         {
-            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("definitionValues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>>("definitionValues"); }
             set { BackingStore?.Set("definitionValues", value); }
         }
 #endif
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Group Policy Configuration Ingestion Type</summary>
-        public GroupPolicyConfigurationIngestionType? PolicyConfigurationIngestionType
+        public Microsoft.Graph.Beta.Models.GroupPolicyConfigurationIngestionType? PolicyConfigurationIngestionType
         {
-            get { return BackingStore?.Get<GroupPolicyConfigurationIngestionType?>("policyConfigurationIngestionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationIngestionType?>("policyConfigurationIngestionType"); }
             set { BackingStore?.Set("policyConfigurationIngestionType", value); }
         }
         /// <summary>The list of scope tags for the configuration.</summary>
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyConfiguration();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,13 +127,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<GroupPolicyConfigurationAssignment>(GroupPolicyConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment>(Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "definitionValues", n => { DefinitionValues = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definitionValues", n => { DefinitionValues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>(Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "policyConfigurationIngestionType", n => { PolicyConfigurationIngestionType = n.GetEnumValue<GroupPolicyConfigurationIngestionType>(); } },
+                { "policyConfigurationIngestionType", n => { PolicyConfigurationIngestionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationIngestionType>(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -145,13 +145,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<GroupPolicyConfigurationAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<GroupPolicyDefinitionValue>("definitionValues", DefinitionValues);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionValue>("definitionValues", DefinitionValues);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<GroupPolicyConfigurationIngestionType>("policyConfigurationIngestionType", PolicyConfigurationIngestionType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupPolicyConfigurationIngestionType>("policyConfigurationIngestionType", PolicyConfigurationIngestionType);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }

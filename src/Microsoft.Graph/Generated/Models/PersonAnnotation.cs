@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PersonAnnotation : ItemFacet, IParsable
+    public class PersonAnnotation : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the detail of the note itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Detail
+        public Microsoft.Graph.Beta.Models.ItemBody? Detail
         {
-            get { return BackingStore?.Get<ItemBody?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public ItemBody Detail
+        public Microsoft.Graph.Beta.Models.ItemBody Detail
         {
-            get { return BackingStore?.Get<ItemBody>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemBody>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PersonAnnotation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PersonAnnotation"/> and sets the default values.
         /// </summary>
         public PersonAnnotation() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PersonAnnotation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonAnnotation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PersonAnnotation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PersonAnnotation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PersonAnnotation();
+            return new Microsoft.Graph.Beta.Models.PersonAnnotation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "detail", n => { Detail = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "detail", n => { Detail = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemBody>(Microsoft.Graph.Beta.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ItemBody>("detail", Detail);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemBody>("detail", Detail);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);
         }

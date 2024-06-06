@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudP
             set { BackingStore?.Set("restorePointDateTime", value); }
         }
         /// <summary>The timeRange property</summary>
-        public RestoreTimeRange? TimeRange
+        public Microsoft.Graph.Beta.Models.RestoreTimeRange? TimeRange
         {
-            get { return BackingStore?.Get<RestoreTimeRange?>("timeRange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestoreTimeRange?>("timeRange"); }
             set { BackingStore?.Set("timeRange", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BulkRestoreCloudPcPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcPostRequestBody"/> and sets the default values.
         /// </summary>
         public BulkRestoreCloudPcPostRequestBody()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudP
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BulkRestoreCloudPcPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BulkRestoreCloudPcPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BulkRestoreCloudPcPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudP
             {
                 { "managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
-                { "timeRange", n => { TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
+                { "timeRange", n => { TimeRange = n.GetEnumValue<Microsoft.Graph.Beta.Models.RestoreTimeRange>(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudP
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("managedDeviceIds", ManagedDeviceIds);
             writer.WriteDateTimeOffsetValue("restorePointDateTime", RestorePointDateTime);
-            writer.WriteEnumValue<RestoreTimeRange>("timeRange", TimeRange);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RestoreTimeRange>("timeRange", TimeRange);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

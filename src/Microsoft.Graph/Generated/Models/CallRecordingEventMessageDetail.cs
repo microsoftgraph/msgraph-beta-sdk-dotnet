@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CallRecordingEventMessageDetail : EventMessageDetail, IParsable
+    public class CallRecordingEventMessageDetail : Microsoft.Graph.Beta.Models.EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier of the call.</summary>
@@ -73,37 +73,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator
+        public Microsoft.Graph.Beta.Models.IdentitySet? Initiator
         {
-            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator
+        public Microsoft.Graph.Beta.Models.IdentitySet Initiator
         {
-            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #endif
         /// <summary>Organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? MeetingOrganizer
+        public Microsoft.Graph.Beta.Models.IdentitySet? MeetingOrganizer
         {
-            get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet MeetingOrganizer
+        public Microsoft.Graph.Beta.Models.IdentitySet MeetingOrganizer
         {
-            get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CallRecordingEventMessageDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CallRecordingEventMessageDetail"/> and sets the default values.
         /// </summary>
         public CallRecordingEventMessageDetail() : base()
         {
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallRecordingEventMessageDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecordingEventMessageDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CallRecordingEventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecordingEventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CallRecordingEventMessageDetail();
+            return new Microsoft.Graph.Beta.Models.CallRecordingEventMessageDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,10 +130,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "callId", n => { CallId = n.GetStringValue(); } },
                 { "callRecordingDisplayName", n => { CallRecordingDisplayName = n.GetStringValue(); } },
                 { "callRecordingDuration", n => { CallRecordingDuration = n.GetTimeSpanValue(); } },
-                { "callRecordingStatus", n => { CallRecordingStatus = n.GetEnumValue<CallRecordingStatus>(); } },
+                { "callRecordingStatus", n => { CallRecordingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.CallRecordingStatus>(); } },
                 { "callRecordingUrl", n => { CallRecordingUrl = n.GetStringValue(); } },
-                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("callId", CallId);
             writer.WriteStringValue("callRecordingDisplayName", CallRecordingDisplayName);
             writer.WriteTimeSpanValue("callRecordingDuration", CallRecordingDuration);
-            writer.WriteEnumValue<CallRecordingStatus>("callRecordingStatus", CallRecordingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CallRecordingStatus>("callRecordingStatus", CallRecordingStatus);
             writer.WriteStringValue("callRecordingUrl", CallRecordingUrl);
-            writer.WriteObjectValue<IdentitySet>("initiator", Initiator);
-            writer.WriteObjectValue<IdentitySet>("meetingOrganizer", MeetingOrganizer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("initiator", Initiator);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("meetingOrganizer", MeetingOrganizer);
         }
     }
 }

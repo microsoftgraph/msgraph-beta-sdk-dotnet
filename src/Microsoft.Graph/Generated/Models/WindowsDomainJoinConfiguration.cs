@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Domain Join device configuration.
     /// </summary>
-    public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable
+    public class WindowsDomainJoinConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Active Directory domain name to join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,19 +49,19 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
             set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
-        /// <summary>Reference to device configurations required for network connectivity</summary>
+        /// <summary>Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfiguration>? NetworkAccessConfigurations
+        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration>? NetworkAccessConfigurations
         {
-            get { return BackingStore?.Get<List<DeviceConfiguration>?>("networkAccessConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfiguration>?>("networkAccessConfigurations"); }
             set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfiguration> NetworkAccessConfigurations
+        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration> NetworkAccessConfigurations
         {
-            get { return BackingStore?.Get<List<DeviceConfiguration>>("networkAccessConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfiguration>>("networkAccessConfigurations"); }
             set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
 #endif
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsDomainJoinConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsDomainJoinConfiguration() : base()
         {
@@ -91,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsDomainJoinConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsDomainJoinConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsDomainJoinConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "activeDirectoryDomainName", n => { ActiveDirectoryDomainName = n.GetStringValue(); } },
                 { "computerNameStaticPrefix", n => { ComputerNameStaticPrefix = n.GetStringValue(); } },
                 { "computerNameSuffixRandomCharCount", n => { ComputerNameSuffixRandomCharCount = n.GetIntValue(); } },
-                { "networkAccessConfigurations", n => { NetworkAccessConfigurations = n.GetCollectionOfObjectValues<DeviceConfiguration>(DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkAccessConfigurations", n => { NetworkAccessConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("activeDirectoryDomainName", ActiveDirectoryDomainName);
             writer.WriteStringValue("computerNameStaticPrefix", ComputerNameStaticPrefix);
             writer.WriteIntValue("computerNameSuffixRandomCharCount", ComputerNameSuffixRandomCharCount);
-            writer.WriteCollectionOfObjectValues<DeviceConfiguration>("networkAccessConfigurations", NetworkAccessConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfiguration>("networkAccessConfigurations", NetworkAccessConfigurations);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
         }
     }

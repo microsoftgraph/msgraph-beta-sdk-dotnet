@@ -27,5 +27,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Set to expire when Approved for is elapsed or ExpireDate is elapsed, whichever is sooner.</summary>
         [EnumMember(Value = "revoked")]
         Revoked,
+        /// <summary>Indicates an elevation request that was previously approved and expired has been completed.</summary>
+        [EnumMember(Value = "completed")]
+        Completed,
     }
 }

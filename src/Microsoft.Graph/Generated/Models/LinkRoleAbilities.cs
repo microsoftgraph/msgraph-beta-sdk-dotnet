@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates if the current user can add existing external user recipients to this sharing link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddExistingExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? AddExistingExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("addExistingExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("addExistingExternalUsers"); }
             set { BackingStore?.Set("addExistingExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddExistingExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus AddExistingExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("addExistingExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addExistingExternalUsers"); }
             set { BackingStore?.Set("addExistingExternalUsers", value); }
         }
 #endif
@@ -36,32 +36,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates if the current user can add new external user recipients to this sharing link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddNewExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? AddNewExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("addNewExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("addNewExternalUsers"); }
             set { BackingStore?.Set("addNewExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddNewExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus AddNewExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("addNewExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addNewExternalUsers"); }
             set { BackingStore?.Set("addNewExternalUsers", value); }
         }
 #endif
         /// <summary>Indicates the status of the potential sharing link variants. If selected, it generates a separate sharing link from the sharing link that would otherwise be generated without the variant, yet with an identical role and scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingLinkVariants? ApplyVariants
+        public Microsoft.Graph.Beta.Models.SharingLinkVariants? ApplyVariants
         {
-            get { return BackingStore?.Get<SharingLinkVariants?>("applyVariants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingLinkVariants?>("applyVariants"); }
             set { BackingStore?.Set("applyVariants", value); }
         }
 #nullable restore
 #else
-        public SharingLinkVariants ApplyVariants
+        public Microsoft.Graph.Beta.Models.SharingLinkVariants ApplyVariants
         {
-            get { return BackingStore?.Get<SharingLinkVariants>("applyVariants"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingLinkVariants>("applyVariants"); }
             set { BackingStore?.Set("applyVariants", value); }
         }
 #endif
@@ -70,64 +70,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates if links of this role can be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? CreateLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? CreateLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("createLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("createLink"); }
             set { BackingStore?.Set("createLink", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus CreateLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus CreateLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("createLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("createLink"); }
             set { BackingStore?.Set("createLink", value); }
         }
 #endif
         /// <summary>Indicates if links of this role can be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? DeleteLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? DeleteLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("deleteLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("deleteLink"); }
             set { BackingStore?.Set("deleteLink", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus DeleteLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus DeleteLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("deleteLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("deleteLink"); }
             set { BackingStore?.Set("deleteLink", value); }
         }
 #endif
         /// <summary>Indicates if this link can include external users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? LinkAllowsExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? LinkAllowsExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("linkAllowsExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("linkAllowsExternalUsers"); }
             set { BackingStore?.Set("linkAllowsExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus LinkAllowsExternalUsers
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus LinkAllowsExternalUsers
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("linkAllowsExternalUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("linkAllowsExternalUsers"); }
             set { BackingStore?.Set("linkAllowsExternalUsers", value); }
         }
 #endif
         /// <summary>Indicates if links must expire, meaning the link is no longer usable after a specified time. If link expiration is enabled, a default link expiration time is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingLinkExpirationStatus? LinkExpiration
+        public Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus? LinkExpiration
         {
-            get { return BackingStore?.Get<SharingLinkExpirationStatus?>("linkExpiration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus?>("linkExpiration"); }
             set { BackingStore?.Set("linkExpiration", value); }
         }
 #nullable restore
 #else
-        public SharingLinkExpirationStatus LinkExpiration
+        public Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus LinkExpiration
         {
-            get { return BackingStore?.Get<SharingLinkExpirationStatus>("linkExpiration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus>("linkExpiration"); }
             set { BackingStore?.Set("linkExpiration", value); }
         }
 #endif
@@ -150,37 +150,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates if links of this role can be retrieved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? RetrieveLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? RetrieveLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("retrieveLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("retrieveLink"); }
             set { BackingStore?.Set("retrieveLink", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus RetrieveLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus RetrieveLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("retrieveLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("retrieveLink"); }
             set { BackingStore?.Set("retrieveLink", value); }
         }
 #endif
         /// <summary>Indicates if links of this role can be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? UpdateLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus? UpdateLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus?>("updateLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus?>("updateLink"); }
             set { BackingStore?.Set("updateLink", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus UpdateLink
+        public Microsoft.Graph.Beta.Models.SharingOperationStatus UpdateLink
         {
-            get { return BackingStore?.Get<SharingOperationStatus>("updateLink"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingOperationStatus>("updateLink"); }
             set { BackingStore?.Set("updateLink", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="LinkRoleAbilities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.LinkRoleAbilities"/> and sets the default values.
         /// </summary>
         public LinkRoleAbilities()
         {
@@ -190,12 +190,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LinkRoleAbilities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LinkRoleAbilities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LinkRoleAbilities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.LinkRoleAbilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LinkRoleAbilities();
+            return new Microsoft.Graph.Beta.Models.LinkRoleAbilities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -205,16 +205,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addExistingExternalUsers", n => { AddExistingExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "addNewExternalUsers", n => { AddNewExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "applyVariants", n => { ApplyVariants = n.GetObjectValue<SharingLinkVariants>(SharingLinkVariants.CreateFromDiscriminatorValue); } },
-                { "createLink", n => { CreateLink = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "deleteLink", n => { DeleteLink = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "linkAllowsExternalUsers", n => { LinkAllowsExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "linkExpiration", n => { LinkExpiration = n.GetObjectValue<SharingLinkExpirationStatus>(SharingLinkExpirationStatus.CreateFromDiscriminatorValue); } },
+                { "addExistingExternalUsers", n => { AddExistingExternalUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addNewExternalUsers", n => { AddNewExternalUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "applyVariants", n => { ApplyVariants = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingLinkVariants>(Microsoft.Graph.Beta.Models.SharingLinkVariants.CreateFromDiscriminatorValue); } },
+                { "createLink", n => { CreateLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "deleteLink", n => { DeleteLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "linkAllowsExternalUsers", n => { LinkAllowsExternalUsers = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "linkExpiration", n => { LinkExpiration = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus>(Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "retrieveLink", n => { RetrieveLink = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                { "updateLink", n => { UpdateLink = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "retrieveLink", n => { RetrieveLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "updateLink", n => { UpdateLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>(Microsoft.Graph.Beta.Models.SharingOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -224,16 +224,16 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<SharingOperationStatus>("addExistingExternalUsers", AddExistingExternalUsers);
-            writer.WriteObjectValue<SharingOperationStatus>("addNewExternalUsers", AddNewExternalUsers);
-            writer.WriteObjectValue<SharingLinkVariants>("applyVariants", ApplyVariants);
-            writer.WriteObjectValue<SharingOperationStatus>("createLink", CreateLink);
-            writer.WriteObjectValue<SharingOperationStatus>("deleteLink", DeleteLink);
-            writer.WriteObjectValue<SharingOperationStatus>("linkAllowsExternalUsers", LinkAllowsExternalUsers);
-            writer.WriteObjectValue<SharingLinkExpirationStatus>("linkExpiration", LinkExpiration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addExistingExternalUsers", AddExistingExternalUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("addNewExternalUsers", AddNewExternalUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingLinkVariants>("applyVariants", ApplyVariants);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("createLink", CreateLink);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("deleteLink", DeleteLink);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("linkAllowsExternalUsers", LinkAllowsExternalUsers);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingLinkExpirationStatus>("linkExpiration", LinkExpiration);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SharingOperationStatus>("retrieveLink", RetrieveLink);
-            writer.WriteObjectValue<SharingOperationStatus>("updateLink", UpdateLink);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("retrieveLink", RetrieveLink);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharingOperationStatus>("updateLink", UpdateLink);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

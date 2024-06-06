@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
     public class MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="kbNumber">Usage: kbNumber={kbNumber}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
             if (kbNumber != null) PathParameters.Add("kbNumber", kbNumber);
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,49 +36,49 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <summary>
         /// Invoke function findByKbNumber
         /// </summary>
-        /// <returns>A <see cref="FindByKbNumberWithKbNumberGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindByKbNumberWithKbNumberGetResponse?> GetAsFindByKbNumberWithKbNumberGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse?> GetAsFindByKbNumberWithKbNumberGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindByKbNumberWithKbNumberGetResponse> GetAsFindByKbNumberWithKbNumberGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse> GetAsFindByKbNumberWithKbNumberGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindByKbNumberWithKbNumberGetResponse>(requestInfo, FindByKbNumberWithKbNumberGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse>(requestInfo, Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function findByKbNumber
         /// </summary>
-        /// <returns>A <see cref="FindByKbNumberWithKbNumberResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsFindByKbNumberWithKbNumberGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindByKbNumberWithKbNumberResponse?> GetAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindByKbNumberWithKbNumberResponse> GetAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindByKbNumberWithKbNumberResponse>(requestInfo, FindByKbNumberWithKbNumberResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse>(requestInfo, Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function findByKbNumber
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder WithUrl(string rawUrl)
         {
-            return new MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function findByKbNumber
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>
+        public class MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilder.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBuilderGetQueryParameters>
         {
         }
     }

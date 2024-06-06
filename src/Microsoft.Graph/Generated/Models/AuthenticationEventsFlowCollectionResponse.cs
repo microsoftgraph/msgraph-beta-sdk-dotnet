@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationEventsFlowCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AuthenticationEventsFlowCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationEventsFlow>? Value
+        public List<Microsoft.Graph.Beta.Models.AuthenticationEventsFlow>? Value
         {
-            get { return BackingStore?.Get<List<AuthenticationEventsFlow>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationEventsFlow>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationEventsFlow> Value
+        public List<Microsoft.Graph.Beta.Models.AuthenticationEventsFlow> Value
         {
-            get { return BackingStore?.Get<List<AuthenticationEventsFlow>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationEventsFlow>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationEventsFlowCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationEventsFlowCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationEventsFlowCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthenticationEventsFlowCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationEventsFlowCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.AuthenticationEventsFlowCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AuthenticationEventsFlow>(AuthenticationEventsFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationEventsFlow>(Microsoft.Graph.Beta.Models.AuthenticationEventsFlow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationEventsFlow>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationEventsFlow>("value", Value);
         }
     }
 }

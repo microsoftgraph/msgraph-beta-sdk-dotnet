@@ -92,16 +92,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If an error was encountered, contains a synchronizationError object with details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationError? Error
+        public Microsoft.Graph.Beta.Models.SynchronizationError? Error
         {
-            get { return BackingStore?.Get<SynchronizationError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public SynchronizationError Error
+        public Microsoft.Graph.Beta.Models.SynchronizationError Error
         {
-            get { return BackingStore?.Get<SynchronizationError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public SynchronizationTaskExecutionResult? State
+        public Microsoft.Graph.Beta.Models.SynchronizationTaskExecutionResult? State
         {
-            get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SynchronizationTaskExecutionResult?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("timeEnded", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SynchronizationTaskExecution"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SynchronizationTaskExecution"/> and sets the default values.
         /// </summary>
         public SynchronizationTaskExecution()
         {
@@ -150,12 +150,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SynchronizationTaskExecution"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SynchronizationTaskExecution"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SynchronizationTaskExecution CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SynchronizationTaskExecution CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SynchronizationTaskExecution();
+            return new Microsoft.Graph.Beta.Models.SynchronizationTaskExecution();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,9 +175,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "countImported", n => { CountImported = n.GetLongValue(); } },
                 { "countImportedDeltas", n => { CountImportedDeltas = n.GetLongValue(); } },
                 { "countImportedReferenceDeltas", n => { CountImportedReferenceDeltas = n.GetLongValue(); } },
-                { "error", n => { Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.SynchronizationError>(Microsoft.Graph.Beta.Models.SynchronizationError.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<SynchronizationTaskExecutionResult>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.SynchronizationTaskExecutionResult>(); } },
                 { "timeBegan", n => { TimeBegan = n.GetDateTimeOffsetValue(); } },
                 { "timeEnded", n => { TimeEnded = n.GetDateTimeOffsetValue(); } },
             };
@@ -199,9 +199,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteLongValue("countImported", CountImported);
             writer.WriteLongValue("countImportedDeltas", CountImportedDeltas);
             writer.WriteLongValue("countImportedReferenceDeltas", CountImportedReferenceDeltas);
-            writer.WriteObjectValue<SynchronizationError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SynchronizationError>("error", Error);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<SynchronizationTaskExecutionResult>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SynchronizationTaskExecutionResult>("state", State);
             writer.WriteDateTimeOffsetValue("timeBegan", TimeBegan);
             writer.WriteDateTimeOffsetValue("timeEnded", TimeEnded);
             writer.WriteAdditionalData(AdditionalData);

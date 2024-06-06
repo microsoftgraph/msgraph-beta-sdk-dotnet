@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OutlookItem : Entity, IParsable
+    public class OutlookItem : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The categories associated with the item.</summary>
@@ -57,25 +57,25 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutlookItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OutlookItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
-                "#microsoft.graph.contact" => new Contact(),
-                "#microsoft.graph.event" => new Event(),
-                "#microsoft.graph.eventMessage" => new EventMessage(),
-                "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
-                "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
-                "#microsoft.graph.message" => new Message(),
-                "#microsoft.graph.note" => new Note(),
-                "#microsoft.graph.outlookTask" => new OutlookTask(),
-                "#microsoft.graph.post" => new Post(),
-                _ => new OutlookItem(),
+                "#microsoft.graph.calendarSharingMessage" => new Microsoft.Graph.Beta.Models.CalendarSharingMessage(),
+                "#microsoft.graph.contact" => new Microsoft.Graph.Beta.Models.Contact(),
+                "#microsoft.graph.event" => new Microsoft.Graph.Beta.Models.Event(),
+                "#microsoft.graph.eventMessage" => new Microsoft.Graph.Beta.Models.EventMessage(),
+                "#microsoft.graph.eventMessageRequest" => new Microsoft.Graph.Beta.Models.EventMessageRequest(),
+                "#microsoft.graph.eventMessageResponse" => new Microsoft.Graph.Beta.Models.EventMessageResponse(),
+                "#microsoft.graph.message" => new Microsoft.Graph.Beta.Models.Message(),
+                "#microsoft.graph.note" => new Microsoft.Graph.Beta.Models.Note(),
+                "#microsoft.graph.outlookTask" => new Microsoft.Graph.Beta.Models.OutlookTask(),
+                "#microsoft.graph.post" => new Microsoft.Graph.Beta.Models.Post(),
+                _ => new Microsoft.Graph.Beta.Models.OutlookItem(),
             };
         }
         /// <summary>

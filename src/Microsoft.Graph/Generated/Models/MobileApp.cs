@@ -9,47 +9,47 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     /// </summary>
-    public class MobileApp : Entity, IParsable
+    public class MobileApp : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.MobileAppAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<MobileAppAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.MobileAppAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<MobileAppAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>The list of categories for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppCategory>? Categories
+        public List<Microsoft.Graph.Beta.Models.MobileAppCategory>? Categories
         {
-            get { return BackingStore?.Get<List<MobileAppCategory>?>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppCategory> Categories
+        public List<Microsoft.Graph.Beta.Models.MobileAppCategory> Categories
         {
-            get { return BackingStore?.Get<List<MobileAppCategory>>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The date and time the app was created. This property is read-only.</summary>
+        /// <summary>The date and time the app was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The total number of dependencies the child app has. This property is read-only.</summary>
+        /// <summary>The total number of dependencies the child app has.</summary>
         public int? DependentAppCount
         {
             get { return BackingStore?.Get<int?>("dependentAppCount"); }
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("informationUrl", value); }
         }
 #endif
-        /// <summary>The value indicating whether the app is assigned to at least one group. This property is read-only.</summary>
+        /// <summary>The value indicating whether the app is assigned to at least one group.</summary>
         public bool? IsAssigned
         {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
@@ -134,20 +134,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The large icon, to be displayed in the app details and used for upload of the icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LargeIcon
+        public Microsoft.Graph.Beta.Models.MimeContent? LargeIcon
         {
-            get { return BackingStore?.Get<MimeContent?>("largeIcon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("largeIcon"); }
             set { BackingStore?.Set("largeIcon", value); }
         }
 #nullable restore
 #else
-        public MimeContent LargeIcon
+        public Microsoft.Graph.Beta.Models.MimeContent LargeIcon
         {
-            get { return BackingStore?.Get<MimeContent>("largeIcon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("largeIcon"); }
             set { BackingStore?.Set("largeIcon", value); }
         }
 #endif
-        /// <summary>The date and time the app was last modified. This property is read-only.</summary>
+        /// <summary>The date and time the app was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -218,24 +218,24 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the publishing state of an app.</summary>
-        public MobileAppPublishingState? PublishingState
+        public Microsoft.Graph.Beta.Models.MobileAppPublishingState? PublishingState
         {
-            get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
-        /// <summary>The set of direct relationships for this app.</summary>
+        /// <summary>List of relationships for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppRelationship>? Relationships
+        public List<Microsoft.Graph.Beta.Models.MobileAppRelationship>? Relationships
         {
-            get { return BackingStore?.Get<List<MobileAppRelationship>?>("relationships"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppRelationship>?>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppRelationship> Relationships
+        public List<Microsoft.Graph.Beta.Models.MobileAppRelationship> Relationships
         {
-            get { return BackingStore?.Get<List<MobileAppRelationship>>("relationships"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppRelationship>>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
 #endif
@@ -267,7 +267,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }
             set { BackingStore?.Set("supersedingAppCount", value); }
         }
-        /// <summary>The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.</summary>
+        /// <summary>The upload state.</summary>
         public int? UploadState
         {
             get { return BackingStore?.Get<int?>("uploadState"); }
@@ -276,55 +276,55 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidForWorkApp" => new AndroidForWorkApp(),
-                "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
-                "#microsoft.graph.androidManagedStoreApp" => new AndroidManagedStoreApp(),
-                "#microsoft.graph.androidManagedStoreWebApp" => new AndroidManagedStoreWebApp(),
-                "#microsoft.graph.androidStoreApp" => new AndroidStoreApp(),
-                "#microsoft.graph.iosiPadOSWebClip" => new IosiPadOSWebClip(),
-                "#microsoft.graph.iosLobApp" => new IosLobApp(),
-                "#microsoft.graph.iosStoreApp" => new IosStoreApp(),
-                "#microsoft.graph.iosVppApp" => new IosVppApp(),
-                "#microsoft.graph.macOSDmgApp" => new MacOSDmgApp(),
-                "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
-                "#microsoft.graph.macOSMicrosoftDefenderApp" => new MacOSMicrosoftDefenderApp(),
-                "#microsoft.graph.macOSMicrosoftEdgeApp" => new MacOSMicrosoftEdgeApp(),
-                "#microsoft.graph.macOSOfficeSuiteApp" => new MacOSOfficeSuiteApp(),
-                "#microsoft.graph.macOSPkgApp" => new MacOSPkgApp(),
-                "#microsoft.graph.macOsVppApp" => new MacOsVppApp(),
-                "#microsoft.graph.macOSWebClip" => new MacOSWebClip(),
-                "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
-                "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
-                "#microsoft.graph.managedApp" => new ManagedApp(),
-                "#microsoft.graph.managedIOSLobApp" => new ManagedIOSLobApp(),
-                "#microsoft.graph.managedIOSStoreApp" => new ManagedIOSStoreApp(),
-                "#microsoft.graph.managedMobileLobApp" => new ManagedMobileLobApp(),
-                "#microsoft.graph.microsoftStoreForBusinessApp" => new MicrosoftStoreForBusinessApp(),
-                "#microsoft.graph.mobileLobApp" => new MobileLobApp(),
-                "#microsoft.graph.officeSuiteApp" => new OfficeSuiteApp(),
-                "#microsoft.graph.webApp" => new WebApp(),
-                "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
-                "#microsoft.graph.win32LobApp" => new Win32LobApp(),
-                "#microsoft.graph.windowsAppX" => new WindowsAppX(),
-                "#microsoft.graph.windowsMicrosoftEdgeApp" => new WindowsMicrosoftEdgeApp(),
-                "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
-                "#microsoft.graph.windowsPhone81AppX" => new WindowsPhone81AppX(),
-                "#microsoft.graph.windowsPhone81AppXBundle" => new WindowsPhone81AppXBundle(),
-                "#microsoft.graph.windowsPhone81StoreApp" => new WindowsPhone81StoreApp(),
-                "#microsoft.graph.windowsPhoneXAP" => new WindowsPhoneXAP(),
-                "#microsoft.graph.windowsStoreApp" => new WindowsStoreApp(),
-                "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
-                "#microsoft.graph.windowsWebApp" => new WindowsWebApp(),
-                "#microsoft.graph.winGetApp" => new WinGetApp(),
-                _ => new MobileApp(),
+                "#microsoft.graph.androidForWorkApp" => new Microsoft.Graph.Beta.Models.AndroidForWorkApp(),
+                "#microsoft.graph.androidLobApp" => new Microsoft.Graph.Beta.Models.AndroidLobApp(),
+                "#microsoft.graph.androidManagedStoreApp" => new Microsoft.Graph.Beta.Models.AndroidManagedStoreApp(),
+                "#microsoft.graph.androidManagedStoreWebApp" => new Microsoft.Graph.Beta.Models.AndroidManagedStoreWebApp(),
+                "#microsoft.graph.androidStoreApp" => new Microsoft.Graph.Beta.Models.AndroidStoreApp(),
+                "#microsoft.graph.iosiPadOSWebClip" => new Microsoft.Graph.Beta.Models.IosiPadOSWebClip(),
+                "#microsoft.graph.iosLobApp" => new Microsoft.Graph.Beta.Models.IosLobApp(),
+                "#microsoft.graph.iosStoreApp" => new Microsoft.Graph.Beta.Models.IosStoreApp(),
+                "#microsoft.graph.iosVppApp" => new Microsoft.Graph.Beta.Models.IosVppApp(),
+                "#microsoft.graph.macOSDmgApp" => new Microsoft.Graph.Beta.Models.MacOSDmgApp(),
+                "#microsoft.graph.macOSLobApp" => new Microsoft.Graph.Beta.Models.MacOSLobApp(),
+                "#microsoft.graph.macOSMicrosoftDefenderApp" => new Microsoft.Graph.Beta.Models.MacOSMicrosoftDefenderApp(),
+                "#microsoft.graph.macOSMicrosoftEdgeApp" => new Microsoft.Graph.Beta.Models.MacOSMicrosoftEdgeApp(),
+                "#microsoft.graph.macOSOfficeSuiteApp" => new Microsoft.Graph.Beta.Models.MacOSOfficeSuiteApp(),
+                "#microsoft.graph.macOSPkgApp" => new Microsoft.Graph.Beta.Models.MacOSPkgApp(),
+                "#microsoft.graph.macOsVppApp" => new Microsoft.Graph.Beta.Models.MacOsVppApp(),
+                "#microsoft.graph.macOSWebClip" => new Microsoft.Graph.Beta.Models.MacOSWebClip(),
+                "#microsoft.graph.managedAndroidLobApp" => new Microsoft.Graph.Beta.Models.ManagedAndroidLobApp(),
+                "#microsoft.graph.managedAndroidStoreApp" => new Microsoft.Graph.Beta.Models.ManagedAndroidStoreApp(),
+                "#microsoft.graph.managedApp" => new Microsoft.Graph.Beta.Models.ManagedApp(),
+                "#microsoft.graph.managedIOSLobApp" => new Microsoft.Graph.Beta.Models.ManagedIOSLobApp(),
+                "#microsoft.graph.managedIOSStoreApp" => new Microsoft.Graph.Beta.Models.ManagedIOSStoreApp(),
+                "#microsoft.graph.managedMobileLobApp" => new Microsoft.Graph.Beta.Models.ManagedMobileLobApp(),
+                "#microsoft.graph.microsoftStoreForBusinessApp" => new Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessApp(),
+                "#microsoft.graph.mobileLobApp" => new Microsoft.Graph.Beta.Models.MobileLobApp(),
+                "#microsoft.graph.officeSuiteApp" => new Microsoft.Graph.Beta.Models.OfficeSuiteApp(),
+                "#microsoft.graph.webApp" => new Microsoft.Graph.Beta.Models.WebApp(),
+                "#microsoft.graph.win32CatalogApp" => new Microsoft.Graph.Beta.Models.Win32CatalogApp(),
+                "#microsoft.graph.win32LobApp" => new Microsoft.Graph.Beta.Models.Win32LobApp(),
+                "#microsoft.graph.windowsAppX" => new Microsoft.Graph.Beta.Models.WindowsAppX(),
+                "#microsoft.graph.windowsMicrosoftEdgeApp" => new Microsoft.Graph.Beta.Models.WindowsMicrosoftEdgeApp(),
+                "#microsoft.graph.windowsMobileMSI" => new Microsoft.Graph.Beta.Models.WindowsMobileMSI(),
+                "#microsoft.graph.windowsPhone81AppX" => new Microsoft.Graph.Beta.Models.WindowsPhone81AppX(),
+                "#microsoft.graph.windowsPhone81AppXBundle" => new Microsoft.Graph.Beta.Models.WindowsPhone81AppXBundle(),
+                "#microsoft.graph.windowsPhone81StoreApp" => new Microsoft.Graph.Beta.Models.WindowsPhone81StoreApp(),
+                "#microsoft.graph.windowsPhoneXAP" => new Microsoft.Graph.Beta.Models.WindowsPhoneXAP(),
+                "#microsoft.graph.windowsStoreApp" => new Microsoft.Graph.Beta.Models.WindowsStoreApp(),
+                "#microsoft.graph.windowsUniversalAppX" => new Microsoft.Graph.Beta.Models.WindowsUniversalAppX(),
+                "#microsoft.graph.windowsWebApp" => new Microsoft.Graph.Beta.Models.WindowsWebApp(),
+                "#microsoft.graph.winGetApp" => new Microsoft.Graph.Beta.Models.WinGetApp(),
+                _ => new Microsoft.Graph.Beta.Models.MobileApp(),
             };
         }
         /// <summary>
@@ -335,8 +335,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppAssignment>(Microsoft.Graph.Beta.Models.MobileAppAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppCategory>(Microsoft.Graph.Beta.Models.MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -345,14 +345,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "informationUrl", n => { InformationUrl = n.GetStringValue(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 { "isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
-                { "largeIcon", n => { LargeIcon = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "largeIcon", n => { LargeIcon = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "privacyInformationUrl", n => { PrivacyInformationUrl = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
-                { "publishingState", n => { PublishingState = n.GetEnumValue<MobileAppPublishingState>(); } },
-                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<MobileAppRelationship>(MobileAppRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publishingState", n => { PublishingState = n.GetEnumValue<Microsoft.Graph.Beta.Models.MobileAppPublishingState>(); } },
+                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppRelationship>(Microsoft.Graph.Beta.Models.MobileAppRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "supersededAppCount", n => { SupersededAppCount = n.GetIntValue(); } },
                 { "supersedingAppCount", n => { SupersedingAppCount = n.GetIntValue(); } },
@@ -367,20 +367,20 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MobileAppAssignment>("assignments", Assignments);
-            writer.WriteCollectionOfObjectValues<MobileAppCategory>("categories", Categories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppCategory>("categories", Categories);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("developer", Developer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("informationUrl", InformationUrl);
             writer.WriteBoolValue("isFeatured", IsFeatured);
-            writer.WriteObjectValue<MimeContent>("largeIcon", LargeIcon);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("largeIcon", LargeIcon);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("privacyInformationUrl", PrivacyInformationUrl);
             writer.WriteStringValue("publisher", Publisher);
-            writer.WriteEnumValue<MobileAppPublishingState>("publishingState", PublishingState);
-            writer.WriteCollectionOfObjectValues<MobileAppRelationship>("relationships", Relationships);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MobileAppPublishingState>("publishingState", PublishingState);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppRelationship>("relationships", Relationships);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }

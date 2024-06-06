@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of simulation events in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SimulationEvent>? Events
+        public List<Microsoft.Graph.Beta.Models.SimulationEvent>? Events
         {
-            get { return BackingStore?.Get<List<SimulationEvent>?>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SimulationEvent>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<SimulationEvent> Events
+        public List<Microsoft.Graph.Beta.Models.SimulationEvent> Events
         {
-            get { return BackingStore?.Get<List<SimulationEvent>>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SimulationEvent>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SimulationEventsContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SimulationEventsContent"/> and sets the default values.
         /// </summary>
         public SimulationEventsContent()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SimulationEventsContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SimulationEventsContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SimulationEventsContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SimulationEventsContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SimulationEventsContent();
+            return new Microsoft.Graph.Beta.Models.SimulationEventsContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "compromisedRate", n => { CompromisedRate = n.GetDoubleValue(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<SimulationEvent>(SimulationEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SimulationEvent>(Microsoft.Graph.Beta.Models.SimulationEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("compromisedRate", CompromisedRate);
-            writer.WriteCollectionOfObjectValues<SimulationEvent>("events", Events);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SimulationEvent>("events", Events);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

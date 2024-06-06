@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkflowExecutionTrigger"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger"/> and sets the default values.
         /// </summary>
         public WorkflowExecutionTrigger()
         {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkflowExecutionTrigger"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkflowExecutionTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.identityGovernance.attributeChangeTrigger" => new AttributeChangeTrigger(),
-                "#microsoft.graph.identityGovernance.membershipChangeTrigger" => new MembershipChangeTrigger(),
-                "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger" => new TimeBasedAttributeTrigger(),
-                _ => new WorkflowExecutionTrigger(),
+                "#microsoft.graph.identityGovernance.attributeChangeTrigger" => new Microsoft.Graph.Beta.Models.IdentityGovernance.AttributeChangeTrigger(),
+                "#microsoft.graph.identityGovernance.membershipChangeTrigger" => new Microsoft.Graph.Beta.Models.IdentityGovernance.MembershipChangeTrigger(),
+                "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger" => new Microsoft.Graph.Beta.Models.IdentityGovernance.TimeBasedAttributeTrigger(),
+                _ => new Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionTrigger(),
             };
         }
         /// <summary>

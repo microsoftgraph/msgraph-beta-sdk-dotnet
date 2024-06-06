@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages
 {
     #pragma warning disable CS1591
-    public class GetAllRetainedMessagesGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetAllRetainedMessagesGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Value
+        public List<Microsoft.Graph.Beta.Models.ChatMessage>? Value
         {
-            get { return BackingStore?.Get<List<ChatMessage>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChatMessage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Value
+        public List<Microsoft.Graph.Beta.Models.ChatMessage> Value
         {
-            get { return BackingStore?.Get<List<ChatMessage>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChatMessage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetAllRetainedMessagesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAllRetainedMessagesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetAllRetainedMessagesGetResponse();
+            return new Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChatMessage>(Microsoft.Graph.Beta.Models.ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ChatMessage>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChatMessage>("value", Value);
         }
     }
 }

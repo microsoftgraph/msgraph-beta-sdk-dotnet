@@ -132,9 +132,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type property</summary>
-        public CloudPcAuditActorType? Type
+        public Microsoft.Graph.Beta.Models.CloudPcAuditActorType? Type
         {
-            get { return BackingStore?.Get<CloudPcAuditActorType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcAuditActorType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>Microsoft Entra user ID.</summary>
@@ -188,21 +188,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of role scope tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserRoleScopeTagInfo>? UserRoleScopeTags
+        public List<Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo>? UserRoleScopeTags
         {
-            get { return BackingStore?.Get<List<CloudPcUserRoleScopeTagInfo>?>("userRoleScopeTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo>?>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserRoleScopeTagInfo> UserRoleScopeTags
+        public List<Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo> UserRoleScopeTags
         {
-            get { return BackingStore?.Get<List<CloudPcUserRoleScopeTagInfo>>("userRoleScopeTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo>>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcAuditActor"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcAuditActor"/> and sets the default values.
         /// </summary>
         public CloudPcAuditActor()
         {
@@ -212,12 +212,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcAuditActor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcAuditActor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcAuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcAuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcAuditActor();
+            return new Microsoft.Graph.Beta.Models.CloudPcAuditActor();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -234,11 +234,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "remoteTenantId", n => { RemoteTenantId = n.GetStringValue(); } },
                 { "remoteUserId", n => { RemoteUserId = n.GetStringValue(); } },
                 { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<CloudPcAuditActorType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditActorType>(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<CloudPcUserRoleScopeTagInfo>(CloudPcUserRoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo>(Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -255,11 +255,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("remoteTenantId", RemoteTenantId);
             writer.WriteStringValue("remoteUserId", RemoteUserId);
             writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);
-            writer.WriteEnumValue<CloudPcAuditActorType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditActorType>("type", Type);
             writer.WriteStringValue("userId", UserId);
             writer.WriteCollectionOfPrimitiveValues<string>("userPermissions", UserPermissions);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteCollectionOfObjectValues<CloudPcUserRoleScopeTagInfo>("userRoleScopeTags", UserRoleScopeTags);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcUserRoleScopeTagInfo>("userRoleScopeTags", UserRoleScopeTags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

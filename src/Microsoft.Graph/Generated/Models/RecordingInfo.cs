@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The participant who initiated the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? InitiatedBy
+        public Microsoft.Graph.Beta.Models.ParticipantInfo? InitiatedBy
         {
-            get { return BackingStore?.Get<ParticipantInfo?>("initiatedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParticipantInfo?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo InitiatedBy
+        public Microsoft.Graph.Beta.Models.ParticipantInfo InitiatedBy
         {
-            get { return BackingStore?.Get<ParticipantInfo>("initiatedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParticipantInfo>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #endif
         /// <summary>The identities of recording initiator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator
+        public Microsoft.Graph.Beta.Models.IdentitySet? Initiator
         {
-            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator
+        public Microsoft.Graph.Beta.Models.IdentitySet Initiator
         {
-            get { return BackingStore?.Get<IdentitySet>("initiator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("recordingStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecordingInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RecordingInfo"/> and sets the default values.
         /// </summary>
         public RecordingInfo()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecordingInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecordingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecordingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RecordingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecordingInfo();
+            return new Microsoft.Graph.Beta.Models.RecordingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
-                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.ParticipantInfo>(Microsoft.Graph.Beta.Models.ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recordingStatus", n => { RecordingStatus = n.GetEnumValue<RecordingStatus>(); } },
+                { "recordingStatus", n => { RecordingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.RecordingStatus>(); } },
             };
         }
         /// <summary>
@@ -112,10 +112,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ParticipantInfo>("initiatedBy", InitiatedBy);
-            writer.WriteObjectValue<IdentitySet>("initiator", Initiator);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ParticipantInfo>("initiatedBy", InitiatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("initiator", Initiator);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RecordingStatus>("recordingStatus", RecordingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RecordingStatus>("recordingStatus", RecordingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

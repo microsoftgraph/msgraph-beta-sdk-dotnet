@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureIdentity>? All
+        public List<Microsoft.Graph.Beta.Models.AzureIdentity>? All
         {
-            get { return BackingStore?.Get<List<AzureIdentity>?>("all"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureIdentity>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<AzureIdentity> All
+        public List<Microsoft.Graph.Beta.Models.AzureIdentity> All
         {
-            get { return BackingStore?.Get<List<AzureIdentity>>("all"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureIdentity>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The managedIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureManagedIdentity>? ManagedIdentities
+        public List<Microsoft.Graph.Beta.Models.AzureManagedIdentity>? ManagedIdentities
         {
-            get { return BackingStore?.Get<List<AzureManagedIdentity>?>("managedIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureManagedIdentity>?>("managedIdentities"); }
             set { BackingStore?.Set("managedIdentities", value); }
         }
 #nullable restore
 #else
-        public List<AzureManagedIdentity> ManagedIdentities
+        public List<Microsoft.Graph.Beta.Models.AzureManagedIdentity> ManagedIdentities
         {
-            get { return BackingStore?.Get<List<AzureManagedIdentity>>("managedIdentities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureManagedIdentity>>("managedIdentities"); }
             set { BackingStore?.Set("managedIdentities", value); }
         }
 #endif
@@ -70,37 +70,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The servicePrincipals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureServicePrincipal>? ServicePrincipals
+        public List<Microsoft.Graph.Beta.Models.AzureServicePrincipal>? ServicePrincipals
         {
-            get { return BackingStore?.Get<List<AzureServicePrincipal>?>("servicePrincipals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureServicePrincipal>?>("servicePrincipals"); }
             set { BackingStore?.Set("servicePrincipals", value); }
         }
 #nullable restore
 #else
-        public List<AzureServicePrincipal> ServicePrincipals
+        public List<Microsoft.Graph.Beta.Models.AzureServicePrincipal> ServicePrincipals
         {
-            get { return BackingStore?.Get<List<AzureServicePrincipal>>("servicePrincipals"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureServicePrincipal>>("servicePrincipals"); }
             set { BackingStore?.Set("servicePrincipals", value); }
         }
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureUser>? Users
+        public List<Microsoft.Graph.Beta.Models.AzureUser>? Users
         {
-            get { return BackingStore?.Get<List<AzureUser>?>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<AzureUser> Users
+        public List<Microsoft.Graph.Beta.Models.AzureUser> Users
         {
-            get { return BackingStore?.Get<List<AzureUser>>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AzureAssociatedIdentities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AzureAssociatedIdentities"/> and sets the default values.
         /// </summary>
         public AzureAssociatedIdentities()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureAssociatedIdentities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureAssociatedIdentities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AzureAssociatedIdentities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AzureAssociatedIdentities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureAssociatedIdentities();
+            return new Microsoft.Graph.Beta.Models.AzureAssociatedIdentities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "all", n => { All = n.GetCollectionOfObjectValues<AzureIdentity>(AzureIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "managedIdentities", n => { ManagedIdentities = n.GetCollectionOfObjectValues<AzureManagedIdentity>(AzureManagedIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureIdentity>(Microsoft.Graph.Beta.Models.AzureIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedIdentities", n => { ManagedIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureManagedIdentity>(Microsoft.Graph.Beta.Models.AzureManagedIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "servicePrincipals", n => { ServicePrincipals = n.GetCollectionOfObjectValues<AzureServicePrincipal>(AzureServicePrincipal.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<AzureUser>(AzureUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servicePrincipals", n => { ServicePrincipals = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureServicePrincipal>(Microsoft.Graph.Beta.Models.AzureServicePrincipal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureUser>(Microsoft.Graph.Beta.Models.AzureUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -139,11 +139,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AzureIdentity>("all", All);
-            writer.WriteCollectionOfObjectValues<AzureManagedIdentity>("managedIdentities", ManagedIdentities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureIdentity>("all", All);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureManagedIdentity>("managedIdentities", ManagedIdentities);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AzureServicePrincipal>("servicePrincipals", ServicePrincipals);
-            writer.WriteCollectionOfObjectValues<AzureUser>("users", Users);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureServicePrincipal>("servicePrincipals", ServicePrincipals);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureUser>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

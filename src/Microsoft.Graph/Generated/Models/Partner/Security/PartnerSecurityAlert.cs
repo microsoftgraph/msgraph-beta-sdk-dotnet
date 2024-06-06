@@ -13,48 +13,48 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <summary>Represents the activity by a partner and includes details of state transitions, who performed them, and when they occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActivityLog>? ActivityLogs
+        public List<Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog>? ActivityLogs
         {
-            get { return BackingStore?.Get<List<ActivityLog>?>("activityLogs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog>?>("activityLogs"); }
             set { BackingStore?.Set("activityLogs", value); }
         }
 #nullable restore
 #else
-        public List<ActivityLog> ActivityLogs
+        public List<Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog> ActivityLogs
         {
-            get { return BackingStore?.Get<List<ActivityLog>>("activityLogs"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog>>("activityLogs"); }
             set { BackingStore?.Set("activityLogs", value); }
         }
 #endif
         /// <summary>A bag of name-value pairs that contain more details about an alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdditionalDataDictionary? AdditionalDetails
+        public Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary? AdditionalDetails
         {
-            get { return BackingStore?.Get<AdditionalDataDictionary?>("additionalDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public AdditionalDataDictionary AdditionalDetails
+        public Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary AdditionalDetails
         {
-            get { return BackingStore?.Get<AdditionalDataDictionary>("additionalDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #endif
         /// <summary>Contains details of the resources affected by the security alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AffectedResource>? AffectedResources
+        public List<Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource>? AffectedResources
         {
-            get { return BackingStore?.Get<List<AffectedResource>?>("affectedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource>?>("affectedResources"); }
             set { BackingStore?.Set("affectedResources", value); }
         }
 #nullable restore
 #else
-        public List<AffectedResource> AffectedResources
+        public List<Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource> AffectedResources
         {
-            get { return BackingStore?.Get<List<AffectedResource>>("affectedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource>>("affectedResources"); }
             set { BackingStore?.Set("affectedResources", value); }
         }
 #endif
@@ -91,9 +91,9 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         }
 #endif
         /// <summary>The confidenceLevel property</summary>
-        public SecurityAlertConfidence? ConfidenceLevel
+        public Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertConfidence? ConfidenceLevel
         {
-            get { return BackingStore?.Get<SecurityAlertConfidence?>("confidenceLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertConfidence?>("confidenceLevel"); }
             set { BackingStore?.Set("confidenceLevel", value); }
         }
         /// <summary>The impacted customer tenant associated with the alert.</summary>
@@ -191,21 +191,21 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             set { BackingStore?.Set("resolvedOnDateTime", value); }
         }
         /// <summary>The reason provided by the partner for addressing the alert. The possible values are: legitimate, ignore, fraud, unknownFutureValue.</summary>
-        public SecurityAlertResolvedReason? ResolvedReason
+        public Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertResolvedReason? ResolvedReason
         {
-            get { return BackingStore?.Get<SecurityAlertResolvedReason?>("resolvedReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertResolvedReason?>("resolvedReason"); }
             set { BackingStore?.Set("resolvedReason", value); }
         }
         /// <summary>The severity property</summary>
-        public SecurityAlertSeverity? Severity
+        public Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertSeverity? Severity
         {
-            get { return BackingStore?.Get<SecurityAlertSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The status property</summary>
-        public SecurityAlertStatus? Status
+        public Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus? Status
         {
-            get { return BackingStore?.Get<SecurityAlertStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The subscription associated with the alert for the customer.</summary>
@@ -243,12 +243,12 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PartnerSecurityAlert"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PartnerSecurityAlert CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PartnerSecurityAlert();
+            return new Microsoft.Graph.Beta.Models.Partner.Security.PartnerSecurityAlert();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -258,12 +258,12 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activityLogs", n => { ActivityLogs = n.GetCollectionOfObjectValues<ActivityLog>(ActivityLog.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "additionalDetails", n => { AdditionalDetails = n.GetObjectValue<AdditionalDataDictionary>(AdditionalDataDictionary.CreateFromDiscriminatorValue); } },
-                { "affectedResources", n => { AffectedResources = n.GetCollectionOfObjectValues<AffectedResource>(AffectedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activityLogs", n => { ActivityLogs = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog>(Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary>(Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary.CreateFromDiscriminatorValue); } },
+                { "affectedResources", n => { AffectedResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource>(Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "alertType", n => { AlertType = n.GetStringValue(); } },
                 { "catalogOfferId", n => { CatalogOfferId = n.GetStringValue(); } },
-                { "confidenceLevel", n => { ConfidenceLevel = n.GetEnumValue<SecurityAlertConfidence>(); } },
+                { "confidenceLevel", n => { ConfidenceLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertConfidence>(); } },
                 { "customerTenantId", n => { CustomerTenantId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -273,9 +273,9 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
                 { "lastObservedDateTime", n => { LastObservedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "resolvedBy", n => { ResolvedBy = n.GetStringValue(); } },
                 { "resolvedOnDateTime", n => { ResolvedOnDateTime = n.GetDateTimeOffsetValue(); } },
-                { "resolvedReason", n => { ResolvedReason = n.GetEnumValue<SecurityAlertResolvedReason>(); } },
-                { "severity", n => { Severity = n.GetEnumValue<SecurityAlertSeverity>(); } },
-                { "status", n => { Status = n.GetEnumValue<SecurityAlertStatus>(); } },
+                { "resolvedReason", n => { ResolvedReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertResolvedReason>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertSeverity>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus>(); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 { "valueAddedResellerTenantId", n => { ValueAddedResellerTenantId = n.GetStringValue(); } },
             };
@@ -288,12 +288,12 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ActivityLog>("activityLogs", ActivityLogs);
-            writer.WriteObjectValue<AdditionalDataDictionary>("additionalDetails", AdditionalDetails);
-            writer.WriteCollectionOfObjectValues<AffectedResource>("affectedResources", AffectedResources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Partner.Security.ActivityLog>("activityLogs", ActivityLogs);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Partner.Security.AdditionalDataDictionary>("additionalDetails", AdditionalDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Partner.Security.AffectedResource>("affectedResources", AffectedResources);
             writer.WriteStringValue("alertType", AlertType);
             writer.WriteStringValue("catalogOfferId", CatalogOfferId);
-            writer.WriteEnumValue<SecurityAlertConfidence>("confidenceLevel", ConfidenceLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertConfidence>("confidenceLevel", ConfidenceLevel);
             writer.WriteStringValue("customerTenantId", CustomerTenantId);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("detectedDateTime", DetectedDateTime);
@@ -303,9 +303,9 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             writer.WriteDateTimeOffsetValue("lastObservedDateTime", LastObservedDateTime);
             writer.WriteStringValue("resolvedBy", ResolvedBy);
             writer.WriteDateTimeOffsetValue("resolvedOnDateTime", ResolvedOnDateTime);
-            writer.WriteEnumValue<SecurityAlertResolvedReason>("resolvedReason", ResolvedReason);
-            writer.WriteEnumValue<SecurityAlertSeverity>("severity", Severity);
-            writer.WriteEnumValue<SecurityAlertStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertResolvedReason>("resolvedReason", ResolvedReason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertSeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Partner.Security.SecurityAlertStatus>("status", Status);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("valueAddedResellerTenantId", ValueAddedResellerTenantId);
         }

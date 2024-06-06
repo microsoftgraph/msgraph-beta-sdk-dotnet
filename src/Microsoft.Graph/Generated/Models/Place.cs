@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Place : Entity, IParsable
+    public class Place : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The street address of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Address
+        public Microsoft.Graph.Beta.Models.PhysicalAddress? Address
         {
-            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Address
+        public Microsoft.Graph.Beta.Models.PhysicalAddress Address
         {
-            get { return BackingStore?.Get<PhysicalAddress>("address"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #endif
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OutlookGeoCoordinates? GeoCoordinates
+        public Microsoft.Graph.Beta.Models.OutlookGeoCoordinates? GeoCoordinates
         {
-            get { return BackingStore?.Get<OutlookGeoCoordinates?>("geoCoordinates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutlookGeoCoordinates?>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #nullable restore
 #else
-        public OutlookGeoCoordinates GeoCoordinates
+        public Microsoft.Graph.Beta.Models.OutlookGeoCoordinates GeoCoordinates
         {
-            get { return BackingStore?.Get<OutlookGeoCoordinates>("geoCoordinates"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #endif
@@ -93,18 +93,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Place"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Place"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Place CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Place CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.room" => new Room(),
-                "#microsoft.graph.roomList" => new RoomList(),
-                "#microsoft.graph.workspace" => new Workspace(),
-                _ => new Place(),
+                "#microsoft.graph.room" => new Microsoft.Graph.Beta.Models.Room(),
+                "#microsoft.graph.roomList" => new Microsoft.Graph.Beta.Models.RoomList(),
+                "#microsoft.graph.workspace" => new Microsoft.Graph.Beta.Models.Workspace(),
+                _ => new Microsoft.Graph.Beta.Models.Place(),
             };
         }
         /// <summary>
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<Microsoft.Graph.Beta.Models.PhysicalAddress>(Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<OutlookGeoCoordinates>(OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>(Microsoft.Graph.Beta.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "placeId", n => { PlaceId = n.GetStringValue(); } },
             };
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PhysicalAddress>("address", Address);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PhysicalAddress>("address", Address);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("placeId", PlaceId);
         }

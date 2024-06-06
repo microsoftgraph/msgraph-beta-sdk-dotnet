@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations
 {
     #pragma warning disable CS1591
-    public class GetEffectiveDeviceEnrollmentConfigurationsGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetEffectiveDeviceEnrollmentConfigurationsGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceEnrollmentConfiguration>? Value
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>? Value
         {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceEnrollmentConfiguration> Value
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration> Value
         {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetEffectiveDeviceEnrollmentConfigurationsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetEffectiveDeviceEnrollmentConfigurationsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetEffectiveDeviceEnrollmentConfigurationsGetResponse();
+            return new Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceEnrollmentConfiguration>(DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceEnrollmentConfiguration>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>("value", Value);
         }
     }
 }

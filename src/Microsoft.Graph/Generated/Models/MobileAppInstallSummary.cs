@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class MobileAppInstallSummary : Entity, IParsable
+    public class MobileAppInstallSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of Devices that have failed to install this app.</summary>
         public int? FailedDeviceCount
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppInstallSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppInstallSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppInstallSummary();
+            return new Microsoft.Graph.Beta.Models.MobileAppInstallSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -48,13 +48,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The current state of the campaign. The possible values are: unknown, draft, inProgress, scheduled, completed, failed, cancelled, excluded, deleted, unknownFutureValue.</summary>
-        public CampaignStatus? Status
+        public Microsoft.Graph.Beta.Models.CampaignStatus? Status
         {
-            get { return BackingStore?.Get<CampaignStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CampaignStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CampaignSchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CampaignSchedule"/> and sets the default values.
         /// </summary>
         public CampaignSchedule()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CampaignSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CampaignSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CampaignSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CampaignSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CampaignSchedule();
+            return new Microsoft.Graph.Beta.Models.CampaignSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CampaignStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.CampaignStatus>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
             writer.WriteDateTimeOffsetValue("launchDateTime", LaunchDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<CampaignStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CampaignStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

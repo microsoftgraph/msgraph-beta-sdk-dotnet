@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions
     public class MfaCompletionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mfaCompletions property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
         /// <param name="position">The unique identifier of mfaCompletionMetric</param>
-        /// <returns>A <see cref="MfaCompletionMetricItemRequestBuilder"/></returns>
-        public MfaCompletionMetricItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.Item.MfaCompletionMetricItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.Item.MfaCompletionMetricItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("mfaCompletionMetric%2Did", position);
-                return new MfaCompletionMetricItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.Item.MfaCompletionMetricItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MfaCompletionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MfaCompletionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions
         /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-mfacompletions?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="MfaCompletionMetricCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MfaCompletionMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MfaCompletionMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<MfaCompletionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MfaCompletionMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder.MfaCompletionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MfaCompletionMetricCollectionResponse> GetAsync(Action<RequestConfiguration<MfaCompletionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MfaCompletionMetricCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder.MfaCompletionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MfaCompletionMetricCollectionResponse>(requestInfo, MfaCompletionMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MfaCompletionMetricCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MfaCompletionMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MfaCompletionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder.MfaCompletionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MfaCompletionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder.MfaCompletionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MfaCompletionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MfaCompletionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new MfaCompletionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MfaCompletionsRequestBuilderGetRequestConfiguration : RequestConfiguration<MfaCompletionsRequestBuilderGetQueryParameters>
+        public class MfaCompletionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder.MfaCompletionsRequestBuilderGetQueryParameters>
         {
         }
     }

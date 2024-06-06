@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Represents an edition of a particular Windows product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Edition>? Editions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Edition>? Editions
         {
-            get { return BackingStore?.Get<List<Edition>?>("editions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.Edition>?>("editions"); }
             set { BackingStore?.Set("editions", value); }
         }
 #nullable restore
 #else
-        public List<Edition> Editions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Edition> Editions
         {
-            get { return BackingStore?.Get<List<Edition>>("editions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.Edition>>("editions"); }
             set { BackingStore?.Set("editions", value); }
         }
 #endif
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Represents a known issue related to a Windows product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KnownIssue>? KnownIssues
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue>? KnownIssues
         {
-            get { return BackingStore?.Get<List<KnownIssue>?>("knownIssues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue>?>("knownIssues"); }
             set { BackingStore?.Set("knownIssues", value); }
         }
 #nullable restore
 #else
-        public List<KnownIssue> KnownIssues
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue> KnownIssues
         {
-            get { return BackingStore?.Get<List<KnownIssue>>("knownIssues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue>>("knownIssues"); }
             set { BackingStore?.Set("knownIssues", value); }
         }
 #endif
@@ -93,28 +93,28 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Represents a product revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProductRevision>? Revisions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>? Revisions
         {
-            get { return BackingStore?.Get<List<ProductRevision>?>("revisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>?>("revisions"); }
             set { BackingStore?.Set("revisions", value); }
         }
 #nullable restore
 #else
-        public List<ProductRevision> Revisions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision> Revisions
         {
-            get { return BackingStore?.Get<List<ProductRevision>>("revisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>>("revisions"); }
             set { BackingStore?.Set("revisions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Product"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.Product"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Product CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.Product CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Product();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.Product();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "editions", n => { Editions = n.GetCollectionOfObjectValues<Edition>(Edition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "editions", n => { Editions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.Edition>(Microsoft.Graph.Beta.Models.WindowsUpdates.Edition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "friendlyNames", n => { FriendlyNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "groupName", n => { GroupName = n.GetStringValue(); } },
-                { "knownIssues", n => { KnownIssues = n.GetCollectionOfObjectValues<KnownIssue>(KnownIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "knownIssues", n => { KnownIssues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "revisions", n => { Revisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "revisions", n => { Revisions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>(Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,12 +140,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Edition>("editions", Editions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.Edition>("editions", Editions);
             writer.WriteCollectionOfPrimitiveValues<string>("friendlyNames", FriendlyNames);
             writer.WriteStringValue("groupName", GroupName);
-            writer.WriteCollectionOfObjectValues<KnownIssue>("knownIssues", KnownIssues);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.KnownIssue>("knownIssues", KnownIssues);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<ProductRevision>("revisions", Revisions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>("revisions", Revisions);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>List of safeguards to ignore per device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SafeguardProfile>? DisabledSafeguardProfiles
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile>? DisabledSafeguardProfiles
         {
-            get { return BackingStore?.Get<List<SafeguardProfile>?>("disabledSafeguardProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile>?>("disabledSafeguardProfiles"); }
             set { BackingStore?.Set("disabledSafeguardProfiles", value); }
         }
 #nullable restore
 #else
-        public List<SafeguardProfile> DisabledSafeguardProfiles
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile> DisabledSafeguardProfiles
         {
-            get { return BackingStore?.Get<List<SafeguardProfile>>("disabledSafeguardProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile>>("disabledSafeguardProfiles"); }
             set { BackingStore?.Set("disabledSafeguardProfiles", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SafeguardSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardSettings"/> and sets the default values.
         /// </summary>
         public SafeguardSettings()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SafeguardSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SafeguardSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SafeguardSettings();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disabledSafeguardProfiles", n => { DisabledSafeguardProfiles = n.GetCollectionOfObjectValues<SafeguardProfile>(SafeguardProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "disabledSafeguardProfiles", n => { DisabledSafeguardProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile>(Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SafeguardProfile>("disabledSafeguardProfiles", DisabledSafeguardProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.SafeguardProfile>("disabledSafeguardProfiles", DisabledSafeguardProfiles);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

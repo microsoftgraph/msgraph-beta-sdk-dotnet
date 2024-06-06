@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicyRuleDelta>? Rules
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta>? Rules
         {
-            get { return BackingStore?.Get<List<PolicyRuleDelta>?>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<PolicyRuleDelta> Rules
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta> Rules
         {
-            get { return BackingStore?.Get<List<PolicyRuleDelta>>("rules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdatePolicyRulesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGraphNetworkaccessUpdatePolicyRules.UpdatePolicyRulesPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdatePolicyRulesPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatePolicyRulesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGraphNetworkaccessUpdatePolicyRules.UpdatePolicyRulesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdatePolicyRulesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGraphNetworkaccessUpdatePolicyRules.UpdatePolicyRulesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatePolicyRulesPostRequestBody();
+            return new Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGraphNetworkaccessUpdatePolicyRules.UpdatePolicyRulesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<PolicyRuleDelta>(PolicyRuleDelta.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta>(Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<PolicyRuleDelta>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.PolicyRuleDelta>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessReview : Entity, IParsable
+    public class AccessReview : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The business flow template identifier. Required on create. This value is case sensitive.</summary>
@@ -29,32 +29,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user who created this review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The collection of decisions for this access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewDecision>? Decisions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewDecision>? Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewDecision>?>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewDecision>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewDecision> Decisions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewDecision> Decisions
         {
-            get { return BackingStore?.Get<List<AccessReviewDecision>>("decisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewDecision>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
@@ -99,64 +99,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of access reviews instances past, present, and future, if this object is a recurring access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReview>? Instances
+        public List<Microsoft.Graph.Beta.Models.AccessReview>? Instances
         {
-            get { return BackingStore?.Get<List<AccessReview>?>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReview>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<AccessReview> Instances
+        public List<Microsoft.Graph.Beta.Models.AccessReview> Instances
         {
-            get { return BackingStore?.Get<List<AccessReview>>("instances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReview>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
         /// <summary>The collection of decisions for the caller, if the caller is a reviewer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewDecision>? MyDecisions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewDecision>? MyDecisions
         {
-            get { return BackingStore?.Get<List<AccessReviewDecision>?>("myDecisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewDecision>?>("myDecisions"); }
             set { BackingStore?.Set("myDecisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewDecision> MyDecisions
+        public List<Microsoft.Graph.Beta.Models.AccessReviewDecision> MyDecisions
         {
-            get { return BackingStore?.Get<List<AccessReviewDecision>>("myDecisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewDecision>>("myDecisions"); }
             set { BackingStore?.Set("myDecisions", value); }
         }
 #endif
         /// <summary>The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? ReviewedEntity
+        public Microsoft.Graph.Beta.Models.Identity? ReviewedEntity
         {
-            get { return BackingStore?.Get<Identity?>("reviewedEntity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("reviewedEntity"); }
             set { BackingStore?.Set("reviewedEntity", value); }
         }
 #nullable restore
 #else
-        public Identity ReviewedEntity
+        public Microsoft.Graph.Beta.Models.Identity ReviewedEntity
         {
-            get { return BackingStore?.Get<Identity>("reviewedEntity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("reviewedEntity"); }
             set { BackingStore?.Set("reviewedEntity", value); }
         }
 #endif
         /// <summary>The collection of reviewers for an access review, if access review reviewerType is of type delegated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewer>? Reviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewer>? Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>?>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewer>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewer> Reviewers
+        public List<Microsoft.Graph.Beta.Models.AccessReviewReviewer> Reviewers
         {
-            get { return BackingStore?.Get<List<AccessReviewReviewer>>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessReviewReviewer>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
@@ -179,16 +179,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The settings of an accessReview, see type definition below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewSettings? Settings
+        public Microsoft.Graph.Beta.Models.AccessReviewSettings? Settings
         {
-            get { return BackingStore?.Get<AccessReviewSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public AccessReviewSettings Settings
+        public Microsoft.Graph.Beta.Models.AccessReviewSettings Settings
         {
-            get { return BackingStore?.Get<AccessReviewSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
@@ -217,12 +217,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessReview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessReview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessReview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessReview();
+            return new Microsoft.Graph.Beta.Models.AccessReview();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -233,17 +233,17 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "businessFlowTemplateId", n => { BusinessFlowTemplateId = n.GetStringValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<AccessReviewDecision>(AccessReviewDecision.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewDecision>(Microsoft.Graph.Beta.Models.AccessReviewDecision.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                { "instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReview>(AccessReview.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "myDecisions", n => { MyDecisions = n.GetCollectionOfObjectValues<AccessReviewDecision>(AccessReviewDecision.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "reviewedEntity", n => { ReviewedEntity = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReview>(Microsoft.Graph.Beta.Models.AccessReview.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "myDecisions", n => { MyDecisions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewDecision>(Microsoft.Graph.Beta.Models.AccessReviewDecision.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewedEntity", n => { ReviewedEntity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "reviewerType", n => { ReviewerType = n.GetStringValue(); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<AccessReviewSettings>(AccessReviewSettings.CreateFromDiscriminatorValue); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewer>(Microsoft.Graph.Beta.Models.AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSettings>(Microsoft.Graph.Beta.Models.AccessReviewSettings.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -257,17 +257,17 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("businessFlowTemplateId", BusinessFlowTemplateId);
-            writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
-            writer.WriteCollectionOfObjectValues<AccessReviewDecision>("decisions", Decisions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy", CreatedBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewDecision>("decisions", Decisions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteCollectionOfObjectValues<AccessReview>("instances", Instances);
-            writer.WriteCollectionOfObjectValues<AccessReviewDecision>("myDecisions", MyDecisions);
-            writer.WriteObjectValue<Identity>("reviewedEntity", ReviewedEntity);
-            writer.WriteCollectionOfObjectValues<AccessReviewReviewer>("reviewers", Reviewers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReview>("instances", Instances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewDecision>("myDecisions", MyDecisions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("reviewedEntity", ReviewedEntity);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessReviewReviewer>("reviewers", Reviewers);
             writer.WriteStringValue("reviewerType", ReviewerType);
-            writer.WriteObjectValue<AccessReviewSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSettings>("settings", Settings);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("status", Status);
         }

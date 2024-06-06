@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a device management script to a group.
     /// </summary>
-    public class DeviceHealthScriptAssignment : Entity, IParsable
+    public class DeviceHealthScriptAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>
         public bool? RunRemediationScript
@@ -20,44 +20,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Script run schedule for the target group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceHealthScriptRunSchedule? RunSchedule
+        public Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule? RunSchedule
         {
-            get { return BackingStore?.Get<DeviceHealthScriptRunSchedule?>("runSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule?>("runSchedule"); }
             set { BackingStore?.Set("runSchedule", value); }
         }
 #nullable restore
 #else
-        public DeviceHealthScriptRunSchedule RunSchedule
+        public Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule RunSchedule
         {
-            get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>("runSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule>("runSchedule"); }
             set { BackingStore?.Set("runSchedule", value); }
         }
 #endif
         /// <summary>The Azure Active Directory group we are targeting the script to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceHealthScriptAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceHealthScriptAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealthScriptAssignment();
+            return new Microsoft.Graph.Beta.Models.DeviceHealthScriptAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "runRemediationScript", n => { RunRemediationScript = n.GetBoolValue(); } },
-                { "runSchedule", n => { RunSchedule = n.GetObjectValue<DeviceHealthScriptRunSchedule>(DeviceHealthScriptRunSchedule.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "runSchedule", n => { RunSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule>(Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("runRemediationScript", RunRemediationScript);
-            writer.WriteObjectValue<DeviceHealthScriptRunSchedule>("runSchedule", RunSchedule);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule>("runSchedule", RunSchedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

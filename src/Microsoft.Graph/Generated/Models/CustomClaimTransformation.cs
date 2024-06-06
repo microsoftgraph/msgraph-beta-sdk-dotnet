@@ -19,19 +19,19 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The input property</summary>
+        /// <summary>The input attribute that provides the source for the transformation. This parameter is required if it&apos;s the first or only transformation in the list of transformations to be applied. Subsequent transformations use the output of the prior transformation as input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TransformationAttribute? Input
+        public Microsoft.Graph.Beta.Models.TransformationAttribute? Input
         {
-            get { return BackingStore?.Get<TransformationAttribute?>("input"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TransformationAttribute?>("input"); }
             set { BackingStore?.Set("input", value); }
         }
 #nullable restore
 #else
-        public TransformationAttribute Input
+        public Microsoft.Graph.Beta.Models.TransformationAttribute Input
         {
-            get { return BackingStore?.Get<TransformationAttribute>("input"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TransformationAttribute>("input"); }
             set { BackingStore?.Set("input", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomClaimTransformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomClaimTransformation"/> and sets the default values.
         /// </summary>
         public CustomClaimTransformation()
         {
@@ -62,30 +62,30 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomClaimTransformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomClaimTransformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomClaimTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomClaimTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.containsTransformation" => new ContainsTransformation(),
-                "#microsoft.graph.endsWithTransformation" => new EndsWithTransformation(),
-                "#microsoft.graph.extractAlphaTransformation" => new ExtractAlphaTransformation(),
-                "#microsoft.graph.extractMailPrefixTransformation" => new ExtractMailPrefixTransformation(),
-                "#microsoft.graph.extractNumberTransformation" => new ExtractNumberTransformation(),
-                "#microsoft.graph.extractTransformation" => new ExtractTransformation(),
-                "#microsoft.graph.ifEmptyTransformation" => new IfEmptyTransformation(),
-                "#microsoft.graph.ifNotEmptyTransformation" => new IfNotEmptyTransformation(),
-                "#microsoft.graph.joinTransformation" => new JoinTransformation(),
-                "#microsoft.graph.regexReplaceTransformation" => new RegexReplaceTransformation(),
-                "#microsoft.graph.startsWithTransformation" => new StartsWithTransformation(),
-                "#microsoft.graph.substringTransformation" => new SubstringTransformation(),
-                "#microsoft.graph.toLowercaseTransformation" => new ToLowercaseTransformation(),
-                "#microsoft.graph.toUppercaseTransformation" => new ToUppercaseTransformation(),
-                "#microsoft.graph.trimTransformation" => new TrimTransformation(),
-                _ => new CustomClaimTransformation(),
+                "#microsoft.graph.containsTransformation" => new Microsoft.Graph.Beta.Models.ContainsTransformation(),
+                "#microsoft.graph.endsWithTransformation" => new Microsoft.Graph.Beta.Models.EndsWithTransformation(),
+                "#microsoft.graph.extractAlphaTransformation" => new Microsoft.Graph.Beta.Models.ExtractAlphaTransformation(),
+                "#microsoft.graph.extractMailPrefixTransformation" => new Microsoft.Graph.Beta.Models.ExtractMailPrefixTransformation(),
+                "#microsoft.graph.extractNumberTransformation" => new Microsoft.Graph.Beta.Models.ExtractNumberTransformation(),
+                "#microsoft.graph.extractTransformation" => new Microsoft.Graph.Beta.Models.ExtractTransformation(),
+                "#microsoft.graph.ifEmptyTransformation" => new Microsoft.Graph.Beta.Models.IfEmptyTransformation(),
+                "#microsoft.graph.ifNotEmptyTransformation" => new Microsoft.Graph.Beta.Models.IfNotEmptyTransformation(),
+                "#microsoft.graph.joinTransformation" => new Microsoft.Graph.Beta.Models.JoinTransformation(),
+                "#microsoft.graph.regexReplaceTransformation" => new Microsoft.Graph.Beta.Models.RegexReplaceTransformation(),
+                "#microsoft.graph.startsWithTransformation" => new Microsoft.Graph.Beta.Models.StartsWithTransformation(),
+                "#microsoft.graph.substringTransformation" => new Microsoft.Graph.Beta.Models.SubstringTransformation(),
+                "#microsoft.graph.toLowercaseTransformation" => new Microsoft.Graph.Beta.Models.ToLowercaseTransformation(),
+                "#microsoft.graph.toUppercaseTransformation" => new Microsoft.Graph.Beta.Models.ToUppercaseTransformation(),
+                "#microsoft.graph.trimTransformation" => new Microsoft.Graph.Beta.Models.TrimTransformation(),
+                _ => new Microsoft.Graph.Beta.Models.CustomClaimTransformation(),
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "input", n => { Input = n.GetObjectValue<TransformationAttribute>(TransformationAttribute.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<Microsoft.Graph.Beta.Models.TransformationAttribute>(Microsoft.Graph.Beta.Models.TransformationAttribute.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TransformationAttribute>("input", Input);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TransformationAttribute>("input", Input);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

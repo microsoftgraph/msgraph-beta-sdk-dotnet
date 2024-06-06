@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DriveItem : BaseItem, IParsable
+    public class DriveItem : Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of recent activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityOLD>? Activities
+        public List<Microsoft.Graph.Beta.Models.ItemActivityOLD>? Activities
         {
-            get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemActivityOLD>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityOLD> Activities
+        public List<Microsoft.Graph.Beta.Models.ItemActivityOLD> Activities
         {
-            get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
         /// <summary>Analytics about the view activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemAnalytics? Analytics
+        public Microsoft.Graph.Beta.Models.ItemAnalytics? Analytics
         {
-            get { return BackingStore?.Get<ItemAnalytics?>("analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemAnalytics?>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
 #nullable restore
 #else
-        public ItemAnalytics Analytics
+        public Microsoft.Graph.Beta.Models.ItemAnalytics Analytics
         {
-            get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemAnalytics>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveItem>? Children
+        public List<Microsoft.Graph.Beta.Models.DriveItem>? Children
         {
-            get { return BackingStore?.Get<List<DriveItem>?>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<DriveItem> Children
+        public List<Microsoft.Graph.Beta.Models.DriveItem> Children
         {
-            get { return BackingStore?.Get<List<DriveItem>>("children"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #endif
@@ -157,16 +157,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>File metadata, if the item is a file. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FileObject? File
+        public Microsoft.Graph.Beta.Models.FileObject? File
         {
-            get { return BackingStore?.Get<FileObject?>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileObject?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public FileObject File
+        public Microsoft.Graph.Beta.Models.FileObject File
         {
-            get { return BackingStore?.Get<FileObject>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileObject>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
@@ -237,16 +237,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Location metadata, if the item has location data. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GeoCoordinates? Location
+        public Microsoft.Graph.Beta.Models.GeoCoordinates? Location
         {
-            get { return BackingStore?.Get<GeoCoordinates?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public GeoCoordinates Location
+        public Microsoft.Graph.Beta.Models.GeoCoordinates Location
         {
-            get { return BackingStore?.Get<GeoCoordinates>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
@@ -317,16 +317,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The set of permissions for the item. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Permission>? Permissions
+        public List<Microsoft.Graph.Beta.Models.Permission>? Permissions
         {
-            get { return BackingStore?.Get<List<Permission>?>("permissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Permission>?>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #nullable restore
 #else
-        public List<Permission> Permissions
+        public List<Microsoft.Graph.Beta.Models.Permission> Permissions
         {
-            get { return BackingStore?.Get<List<Permission>>("permissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Permission>>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
@@ -349,16 +349,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn&apos;t returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicationFacet? Publication
+        public Microsoft.Graph.Beta.Models.PublicationFacet? Publication
         {
-            get { return BackingStore?.Get<PublicationFacet?>("publication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicationFacet?>("publication"); }
             set { BackingStore?.Set("publication", value); }
         }
 #nullable restore
 #else
-        public PublicationFacet Publication
+        public Microsoft.Graph.Beta.Models.PublicationFacet Publication
         {
-            get { return BackingStore?.Get<PublicationFacet>("publication"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicationFacet>("publication"); }
             set { BackingStore?.Set("publication", value); }
         }
 #endif
@@ -381,16 +381,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about retention label and settings enforced on the driveItem. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemRetentionLabel? RetentionLabel
+        public Microsoft.Graph.Beta.Models.ItemRetentionLabel? RetentionLabel
         {
-            get { return BackingStore?.Get<ItemRetentionLabel?>("retentionLabel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemRetentionLabel?>("retentionLabel"); }
             set { BackingStore?.Set("retentionLabel", value); }
         }
 #nullable restore
 #else
-        public ItemRetentionLabel RetentionLabel
+        public Microsoft.Graph.Beta.Models.ItemRetentionLabel RetentionLabel
         {
-            get { return BackingStore?.Get<ItemRetentionLabel>("retentionLabel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemRetentionLabel>("retentionLabel"); }
             set { BackingStore?.Set("retentionLabel", value); }
         }
 #endif
@@ -467,16 +467,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about the drive item source. Read-only. Only on OneDrive for Business and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DriveItemSource? Source
+        public Microsoft.Graph.Beta.Models.DriveItemSource? Source
         {
-            get { return BackingStore?.Get<DriveItemSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItemSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public DriveItemSource Source
+        public Microsoft.Graph.Beta.Models.DriveItemSource Source
         {
-            get { return BackingStore?.Get<DriveItemSource>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItemSource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
@@ -499,48 +499,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The set of subscriptions on the item. Only supported on the root of a drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Subscription>? Subscriptions
+        public List<Microsoft.Graph.Beta.Models.Subscription>? Subscriptions
         {
-            get { return BackingStore?.Get<List<Subscription>?>("subscriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Subscription>?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #nullable restore
 #else
-        public List<Subscription> Subscriptions
+        public List<Microsoft.Graph.Beta.Models.Subscription> Subscriptions
         {
-            get { return BackingStore?.Get<List<Subscription>>("subscriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Subscription>>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
         /// <summary>Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ThumbnailSet>? Thumbnails
+        public List<Microsoft.Graph.Beta.Models.ThumbnailSet>? Thumbnails
         {
-            get { return BackingStore?.Get<List<ThumbnailSet>?>("thumbnails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ThumbnailSet>?>("thumbnails"); }
             set { BackingStore?.Set("thumbnails", value); }
         }
 #nullable restore
 #else
-        public List<ThumbnailSet> Thumbnails
+        public List<Microsoft.Graph.Beta.Models.ThumbnailSet> Thumbnails
         {
-            get { return BackingStore?.Get<List<ThumbnailSet>>("thumbnails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ThumbnailSet>>("thumbnails"); }
             set { BackingStore?.Set("thumbnails", value); }
         }
 #endif
         /// <summary>The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveItemVersion>? Versions
+        public List<Microsoft.Graph.Beta.Models.DriveItemVersion>? Versions
         {
-            get { return BackingStore?.Get<List<DriveItemVersion>?>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItemVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #nullable restore
 #else
-        public List<DriveItemVersion> Versions
+        public List<Microsoft.Graph.Beta.Models.DriveItemVersion> Versions
         {
-            get { return BackingStore?.Get<List<DriveItemVersion>>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItemVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #endif
@@ -563,16 +563,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Returns information specific to the calling user for this drive item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DriveItemViewpoint? Viewpoint
+        public Microsoft.Graph.Beta.Models.DriveItemViewpoint? Viewpoint
         {
-            get { return BackingStore?.Get<DriveItemViewpoint?>("viewpoint"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItemViewpoint?>("viewpoint"); }
             set { BackingStore?.Set("viewpoint", value); }
         }
 #nullable restore
 #else
-        public DriveItemViewpoint Viewpoint
+        public Microsoft.Graph.Beta.Models.DriveItemViewpoint Viewpoint
         {
-            get { return BackingStore?.Get<DriveItemViewpoint>("viewpoint"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItemViewpoint>("viewpoint"); }
             set { BackingStore?.Set("viewpoint", value); }
         }
 #endif
@@ -609,7 +609,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DriveItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DriveItem"/> and sets the default values.
         /// </summary>
         public DriveItem() : base()
         {
@@ -618,12 +618,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DriveItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DriveItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DriveItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DriveItem();
+            return new Microsoft.Graph.Beta.Models.DriveItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -633,42 +633,42 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "analytics", n => { Analytics = n.GetObjectValue<ItemAnalytics>(ItemAnalytics.CreateFromDiscriminatorValue); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemActivityOLD>(Microsoft.Graph.Beta.Models.ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "analytics", n => { Analytics = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemAnalytics>(Microsoft.Graph.Beta.Models.ItemAnalytics.CreateFromDiscriminatorValue); } },
                 { "audio", n => { Audio = n.GetObjectValue<Microsoft.Graph.Beta.Models.Audio>(Microsoft.Graph.Beta.Models.Audio.CreateFromDiscriminatorValue); } },
                 { "bundle", n => { Bundle = n.GetObjectValue<Microsoft.Graph.Beta.Models.Bundle>(Microsoft.Graph.Beta.Models.Bundle.CreateFromDiscriminatorValue); } },
                 { "cTag", n => { CTag = n.GetStringValue(); } },
-                { "children", n => { Children = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "content", n => { Content = n.GetByteArrayValue(); } },
                 { "contentStream", n => { ContentStream = n.GetByteArrayValue(); } },
                 { "deleted", n => { Deleted = n.GetObjectValue<Microsoft.Graph.Beta.Models.Deleted>(Microsoft.Graph.Beta.Models.Deleted.CreateFromDiscriminatorValue); } },
-                { "file", n => { File = n.GetObjectValue<FileObject>(FileObject.CreateFromDiscriminatorValue); } },
+                { "file", n => { File = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileObject>(Microsoft.Graph.Beta.Models.FileObject.CreateFromDiscriminatorValue); } },
                 { "fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>(Microsoft.Graph.Beta.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 { "folder", n => { Folder = n.GetObjectValue<Microsoft.Graph.Beta.Models.Folder>(Microsoft.Graph.Beta.Models.Folder.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetObjectValue<Microsoft.Graph.Beta.Models.Image>(Microsoft.Graph.Beta.Models.Image.CreateFromDiscriminatorValue); } },
                 { "listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.ListItem>(Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
-                { "location", n => { Location = n.GetObjectValue<GeoCoordinates>(GeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "malware", n => { Malware = n.GetObjectValue<Microsoft.Graph.Beta.Models.Malware>(Microsoft.Graph.Beta.Models.Malware.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetObjectValue<Microsoft.Graph.Beta.Models.Media>(Microsoft.Graph.Beta.Models.Media.CreateFromDiscriminatorValue); } },
                 { "package", n => { Package = n.GetObjectValue<Microsoft.Graph.Beta.Models.Package>(Microsoft.Graph.Beta.Models.Package.CreateFromDiscriminatorValue); } },
                 { "pendingOperations", n => { PendingOperations = n.GetObjectValue<Microsoft.Graph.Beta.Models.PendingOperations>(Microsoft.Graph.Beta.Models.PendingOperations.CreateFromDiscriminatorValue); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<Permission>(Permission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Permission>(Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "photo", n => { Photo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Photo>(Microsoft.Graph.Beta.Models.Photo.CreateFromDiscriminatorValue); } },
-                { "publication", n => { Publication = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
+                { "publication", n => { Publication = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicationFacet>(Microsoft.Graph.Beta.Models.PublicationFacet.CreateFromDiscriminatorValue); } },
                 { "remoteItem", n => { RemoteItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteItem>(Microsoft.Graph.Beta.Models.RemoteItem.CreateFromDiscriminatorValue); } },
-                { "retentionLabel", n => { RetentionLabel = n.GetObjectValue<ItemRetentionLabel>(ItemRetentionLabel.CreateFromDiscriminatorValue); } },
+                { "retentionLabel", n => { RetentionLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemRetentionLabel>(Microsoft.Graph.Beta.Models.ItemRetentionLabel.CreateFromDiscriminatorValue); } },
                 { "root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
                 { "searchResult", n => { SearchResult = n.GetObjectValue<Microsoft.Graph.Beta.Models.SearchResult>(Microsoft.Graph.Beta.Models.SearchResult.CreateFromDiscriminatorValue); } },
                 { "shared", n => { Shared = n.GetObjectValue<Microsoft.Graph.Beta.Models.Shared>(Microsoft.Graph.Beta.Models.Shared.CreateFromDiscriminatorValue); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetLongValue(); } },
-                { "source", n => { Source = n.GetObjectValue<DriveItemSource>(DriveItemSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItemSource>(Microsoft.Graph.Beta.Models.DriveItemSource.CreateFromDiscriminatorValue); } },
                 { "specialFolder", n => { SpecialFolder = n.GetObjectValue<Microsoft.Graph.Beta.Models.SpecialFolder>(Microsoft.Graph.Beta.Models.SpecialFolder.CreateFromDiscriminatorValue); } },
-                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Subscription>(Subscription.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "thumbnails", n => { Thumbnails = n.GetCollectionOfObjectValues<ThumbnailSet>(ThumbnailSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "versions", n => { Versions = n.GetCollectionOfObjectValues<DriveItemVersion>(DriveItemVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Subscription>(Microsoft.Graph.Beta.Models.Subscription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "thumbnails", n => { Thumbnails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ThumbnailSet>(Microsoft.Graph.Beta.Models.ThumbnailSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItemVersion>(Microsoft.Graph.Beta.Models.DriveItemVersion.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "video", n => { Video = n.GetObjectValue<Microsoft.Graph.Beta.Models.Video>(Microsoft.Graph.Beta.Models.Video.CreateFromDiscriminatorValue); } },
-                { "viewpoint", n => { Viewpoint = n.GetObjectValue<DriveItemViewpoint>(DriveItemViewpoint.CreateFromDiscriminatorValue); } },
+                { "viewpoint", n => { Viewpoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItemViewpoint>(Microsoft.Graph.Beta.Models.DriveItemViewpoint.CreateFromDiscriminatorValue); } },
                 { "webDavUrl", n => { WebDavUrl = n.GetStringValue(); } },
                 { "workbook", n => { Workbook = n.GetObjectValue<Microsoft.Graph.Beta.Models.Workbook>(Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue); } },
             };
@@ -681,42 +681,42 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ItemActivityOLD>("activities", Activities);
-            writer.WriteObjectValue<ItemAnalytics>("analytics", Analytics);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemActivityOLD>("activities", Activities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemAnalytics>("analytics", Analytics);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Audio>("audio", Audio);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Bundle>("bundle", Bundle);
-            writer.WriteCollectionOfObjectValues<DriveItem>("children", Children);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItem>("children", Children);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteByteArrayValue("contentStream", ContentStream);
             writer.WriteStringValue("cTag", CTag);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Deleted>("deleted", Deleted);
-            writer.WriteObjectValue<FileObject>("file", File);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileObject>("file", File);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Folder>("folder", Folder);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Image>("image", Image);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ListItem>("listItem", ListItem);
-            writer.WriteObjectValue<GeoCoordinates>("location", Location);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>("location", Location);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Malware>("malware", Malware);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Media>("media", Media);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Package>("package", Package);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PendingOperations>("pendingOperations", PendingOperations);
-            writer.WriteCollectionOfObjectValues<Permission>("permissions", Permissions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Photo>("photo", Photo);
-            writer.WriteObjectValue<PublicationFacet>("publication", Publication);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PublicationFacet>("publication", Publication);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteItem>("remoteItem", RemoteItem);
-            writer.WriteObjectValue<ItemRetentionLabel>("retentionLabel", RetentionLabel);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemRetentionLabel>("retentionLabel", RetentionLabel);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Root>("root", Root);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SearchResult>("searchResult", SearchResult);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Shared>("shared", Shared);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteLongValue("size", Size);
-            writer.WriteObjectValue<DriveItemSource>("source", Source);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DriveItemSource>("source", Source);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SpecialFolder>("specialFolder", SpecialFolder);
-            writer.WriteCollectionOfObjectValues<Subscription>("subscriptions", Subscriptions);
-            writer.WriteCollectionOfObjectValues<ThumbnailSet>("thumbnails", Thumbnails);
-            writer.WriteCollectionOfObjectValues<DriveItemVersion>("versions", Versions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Subscription>("subscriptions", Subscriptions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ThumbnailSet>("thumbnails", Thumbnails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItemVersion>("versions", Versions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Video>("video", Video);
-            writer.WriteObjectValue<DriveItemViewpoint>("viewpoint", Viewpoint);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DriveItemViewpoint>("viewpoint", Viewpoint);
             writer.WriteStringValue("webDavUrl", WebDavUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Workbook>("workbook", Workbook);
         }

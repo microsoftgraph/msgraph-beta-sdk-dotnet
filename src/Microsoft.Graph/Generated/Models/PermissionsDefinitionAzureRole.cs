@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionsDefinitionAzureRole : Entity, IParsable
+    public class PermissionsDefinitionAzureRole : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsDefinitionAzureRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsDefinitionAzureRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionsDefinitionAzureRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionsDefinitionAzureRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionsDefinitionAzureRole();
+            return new Microsoft.Graph.Beta.Models.PermissionsDefinitionAzureRole();
         }
         /// <summary>
         /// The deserialization information for the current model

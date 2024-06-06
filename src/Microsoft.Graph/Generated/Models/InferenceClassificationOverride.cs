@@ -7,40 +7,40 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class InferenceClassificationOverride : Entity, IParsable
+    public class InferenceClassificationOverride : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.</summary>
-        public InferenceClassificationType? ClassifyAs
+        public Microsoft.Graph.Beta.Models.InferenceClassificationType? ClassifyAs
         {
-            get { return BackingStore?.Get<InferenceClassificationType?>("classifyAs"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InferenceClassificationType?>("classifyAs"); }
             set { BackingStore?.Set("classifyAs", value); }
         }
         /// <summary>The email address information of the sender for whom the override is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? SenderEmailAddress
+        public Microsoft.Graph.Beta.Models.EmailAddress? SenderEmailAddress
         {
-            get { return BackingStore?.Get<EmailAddress?>("senderEmailAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress?>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
         }
 #nullable restore
 #else
-        public EmailAddress SenderEmailAddress
+        public Microsoft.Graph.Beta.Models.EmailAddress SenderEmailAddress
         {
-            get { return BackingStore?.Get<EmailAddress>("senderEmailAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InferenceClassificationOverride"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InferenceClassificationOverride"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InferenceClassificationOverride CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.InferenceClassificationOverride CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InferenceClassificationOverride();
+            return new Microsoft.Graph.Beta.Models.InferenceClassificationOverride();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classifyAs", n => { ClassifyAs = n.GetEnumValue<InferenceClassificationType>(); } },
-                { "senderEmailAddress", n => { SenderEmailAddress = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                { "classifyAs", n => { ClassifyAs = n.GetEnumValue<Microsoft.Graph.Beta.Models.InferenceClassificationType>(); } },
+                { "senderEmailAddress", n => { SenderEmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<InferenceClassificationType>("classifyAs", ClassifyAs);
-            writer.WriteObjectValue<EmailAddress>("senderEmailAddress", SenderEmailAddress);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InferenceClassificationType>("classifyAs", ClassifyAs);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>("senderEmailAddress", SenderEmailAddress);
         }
     }
 }

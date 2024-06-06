@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementAlertDefinition : Entity, IParsable
+    public class UnifiedRoleManagementAlertDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description of the alert.</summary>
@@ -135,20 +135,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.</summary>
-        public AlertSeverity? SeverityLevel
+        public Microsoft.Graph.Beta.Models.AlertSeverity? SeverityLevel
         {
-            get { return BackingStore?.Get<AlertSeverity?>("severityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AlertSeverity?>("severityLevel"); }
             set { BackingStore?.Set("severityLevel", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementAlertDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementAlertDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementAlertDefinition();
+            return new Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "scopeId", n => { ScopeId = n.GetStringValue(); } },
                 { "scopeType", n => { ScopeType = n.GetStringValue(); } },
                 { "securityImpact", n => { SecurityImpact = n.GetStringValue(); } },
-                { "severityLevel", n => { SeverityLevel = n.GetEnumValue<AlertSeverity>(); } },
+                { "severityLevel", n => { SeverityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.AlertSeverity>(); } },
             };
         }
         /// <summary>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("scopeId", ScopeId);
             writer.WriteStringValue("scopeType", ScopeType);
             writer.WriteStringValue("securityImpact", SecurityImpact);
-            writer.WriteEnumValue<AlertSeverity>("severityLevel", SeverityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AlertSeverity>("severityLevel", SeverityLevel);
         }
     }
 }

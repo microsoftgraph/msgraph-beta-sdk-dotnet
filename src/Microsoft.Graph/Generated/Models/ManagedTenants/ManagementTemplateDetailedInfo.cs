@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The category property</summary>
-        public ManagementCategory? Category
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory? Category
         {
-            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The display name for the management template. Required. Read-only.</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ManagementTemplateDetailedInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo"/> and sets the default values.
         /// </summary>
         public ManagementTemplateDetailedInfo()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateDetailedInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagementTemplateDetailedInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementTemplateDetailedInfo();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateDetailedInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ManagementCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>("category", Category);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("managementTemplateId", ManagementTemplateId);
             writer.WriteStringValue("@odata.type", OdataType);

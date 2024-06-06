@@ -43,31 +43,31 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.</summary>
-        public BrowserSiteCompatibilityMode? CompatibilityMode
+        public Microsoft.Graph.Beta.Models.BrowserSiteCompatibilityMode? CompatibilityMode
         {
-            get { return BackingStore?.Get<BrowserSiteCompatibilityMode?>("compatibilityMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BrowserSiteCompatibilityMode?>("compatibilityMode"); }
             set { BackingStore?.Set("compatibilityMode", value); }
         }
         /// <summary>The user who last modified the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.</summary>
-        public BrowserSiteMergeType? MergeType
+        public Microsoft.Graph.Beta.Models.BrowserSiteMergeType? MergeType
         {
-            get { return BackingStore?.Get<BrowserSiteMergeType?>("mergeType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BrowserSiteMergeType?>("mergeType"); }
             set { BackingStore?.Set("mergeType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -93,13 +93,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.</summary>
-        public BrowserSiteTargetEnvironment? TargetEnvironment
+        public Microsoft.Graph.Beta.Models.BrowserSiteTargetEnvironment? TargetEnvironment
         {
-            get { return BackingStore?.Get<BrowserSiteTargetEnvironment?>("targetEnvironment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BrowserSiteTargetEnvironment?>("targetEnvironment"); }
             set { BackingStore?.Set("targetEnvironment", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BrowserSiteHistory"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BrowserSiteHistory"/> and sets the default values.
         /// </summary>
         public BrowserSiteHistory()
         {
@@ -109,12 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BrowserSiteHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BrowserSiteHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BrowserSiteHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BrowserSiteHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BrowserSiteHistory();
+            return new Microsoft.Graph.Beta.Models.BrowserSiteHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowRedirect", n => { AllowRedirect = n.GetBoolValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "compatibilityMode", n => { CompatibilityMode = n.GetEnumValue<BrowserSiteCompatibilityMode>(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "mergeType", n => { MergeType = n.GetEnumValue<BrowserSiteMergeType>(); } },
+                { "compatibilityMode", n => { CompatibilityMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.BrowserSiteCompatibilityMode>(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "mergeType", n => { MergeType = n.GetEnumValue<Microsoft.Graph.Beta.Models.BrowserSiteMergeType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "targetEnvironment", n => { TargetEnvironment = n.GetEnumValue<BrowserSiteTargetEnvironment>(); } },
+                { "targetEnvironment", n => { TargetEnvironment = n.GetEnumValue<Microsoft.Graph.Beta.Models.BrowserSiteTargetEnvironment>(); } },
             };
         }
         /// <summary>
@@ -143,12 +143,12 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowRedirect", AllowRedirect);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteEnumValue<BrowserSiteCompatibilityMode>("compatibilityMode", CompatibilityMode);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteEnumValue<BrowserSiteMergeType>("mergeType", MergeType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BrowserSiteCompatibilityMode>("compatibilityMode", CompatibilityMode);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BrowserSiteMergeType>("mergeType", MergeType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
-            writer.WriteEnumValue<BrowserSiteTargetEnvironment>("targetEnvironment", TargetEnvironment);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BrowserSiteTargetEnvironment>("targetEnvironment", TargetEnvironment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

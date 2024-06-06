@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality, IParsable
+    public class TeleconferenceDeviceVideoQuality : Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The average inbound stream video bit rate per second.</summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("averageOutboundFrameRate", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeleconferenceDeviceVideoQuality"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeleconferenceDeviceVideoQuality"/> and sets the default values.
         /// </summary>
         public TeleconferenceDeviceVideoQuality() : base()
         {
@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeleconferenceDeviceVideoQuality"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeleconferenceDeviceVideoQuality"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeleconferenceDeviceVideoQuality CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeleconferenceDeviceVideoQuality CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.teleconferenceDeviceScreenSharingQuality" => new TeleconferenceDeviceScreenSharingQuality(),
-                _ => new TeleconferenceDeviceVideoQuality(),
+                "#microsoft.graph.teleconferenceDeviceScreenSharingQuality" => new Microsoft.Graph.Beta.Models.TeleconferenceDeviceScreenSharingQuality(),
+                _ => new Microsoft.Graph.Beta.Models.TeleconferenceDeviceVideoQuality(),
             };
         }
         /// <summary>

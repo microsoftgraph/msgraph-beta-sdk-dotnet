@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceAttributeDestination? AttributeDestination
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination? AttributeDestination
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination?>("attributeDestination"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination?>("attributeDestination"); }
             set { BackingStore?.Set("attributeDestination", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceAttributeDestination AttributeDestination
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination AttributeDestination
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>("attributeDestination"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination>("attributeDestination"); }
             set { BackingStore?.Set("attributeDestination", value); }
         }
 #endif
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceAttributeSource? AttributeSource
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource? AttributeSource
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeSource?>("attributeSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource?>("attributeSource"); }
             set { BackingStore?.Set("attributeSource", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceAttributeSource AttributeSource
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource AttributeSource
         {
-            get { return BackingStore?.Get<AccessPackageResourceAttributeSource>("attributeSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource>("attributeSource"); }
             set { BackingStore?.Set("attributeSource", value); }
         }
 #endif
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageResourceAttribute"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute"/> and sets the default values.
         /// </summary>
         public AccessPackageResourceAttribute()
         {
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResourceAttribute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageResourceAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResourceAttribute();
+            return new Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -137,9 +137,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributeDestination", n => { AttributeDestination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
+                { "attributeDestination", n => { AttributeDestination = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination>(Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
                 { "attributeName", n => { AttributeName = n.GetStringValue(); } },
-                { "attributeSource", n => { AttributeSource = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
+                { "attributeSource", n => { AttributeSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource>(Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isEditable", n => { IsEditable = n.GetBoolValue(); } },
                 { "isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
@@ -153,9 +153,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AccessPackageResourceAttributeDestination>("attributeDestination", AttributeDestination);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination>("attributeDestination", AttributeDestination);
             writer.WriteStringValue("attributeName", AttributeName);
-            writer.WriteObjectValue<AccessPackageResourceAttributeSource>("attributeSource", AttributeSource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeSource>("attributeSource", AttributeSource);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEditable", IsEditable);
             writer.WriteBoolValue("isPersistedOnAssignmentRemoval", IsPersistedOnAssignmentRemoval);

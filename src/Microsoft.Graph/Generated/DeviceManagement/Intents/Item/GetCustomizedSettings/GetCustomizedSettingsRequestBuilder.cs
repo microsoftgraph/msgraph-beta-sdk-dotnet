@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
     public class GetCustomizedSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetCustomizedSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetCustomizedSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
         /// <summary>
         /// Invoke function getCustomizedSettings
         /// </summary>
-        /// <returns>A <see cref="GetCustomizedSettingsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCustomizedSettingsGetResponse?> GetAsGetCustomizedSettingsGetResponseAsync(Action<RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsGetResponse?> GetAsGetCustomizedSettingsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetCustomizedSettingsGetResponse> GetAsGetCustomizedSettingsGetResponseAsync(Action<RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsGetResponse> GetAsGetCustomizedSettingsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetCustomizedSettingsGetResponse>(requestInfo, GetCustomizedSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsGetResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getCustomizedSettings
         /// </summary>
-        /// <returns>A <see cref="GetCustomizedSettingsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetCustomizedSettingsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCustomizedSettingsResponse?> GetAsync(Action<RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetCustomizedSettingsResponse> GetAsync(Action<RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetCustomizedSettingsResponse>(requestInfo, GetCustomizedSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getCustomizedSettings
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetCustomizedSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetCustomizedSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetCustomizedSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getCustomizedSettings
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetCustomizedSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetCustomizedSettingsRequestBuilderGetQueryParameters>
+        public class GetCustomizedSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings.GetCustomizedSettingsRequestBuilder.GetCustomizedSettingsRequestBuilderGetQueryParameters>
         {
         }
     }

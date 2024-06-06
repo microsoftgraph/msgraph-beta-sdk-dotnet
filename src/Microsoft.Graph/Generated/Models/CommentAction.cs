@@ -44,37 +44,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the user who started the comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? ParentAuthor
+        public Microsoft.Graph.Beta.Models.IdentitySet? ParentAuthor
         {
-            get { return BackingStore?.Get<IdentitySet?>("parentAuthor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("parentAuthor"); }
             set { BackingStore?.Set("parentAuthor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet ParentAuthor
+        public Microsoft.Graph.Beta.Models.IdentitySet ParentAuthor
         {
-            get { return BackingStore?.Get<IdentitySet>("parentAuthor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("parentAuthor"); }
             set { BackingStore?.Set("parentAuthor", value); }
         }
 #endif
         /// <summary>The identities of the users participating in this comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentitySet>? Participants
+        public List<Microsoft.Graph.Beta.Models.IdentitySet>? Participants
         {
-            get { return BackingStore?.Get<List<IdentitySet>?>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<IdentitySet> Participants
+        public List<Microsoft.Graph.Beta.Models.IdentitySet> Participants
         {
-            get { return BackingStore?.Get<List<IdentitySet>>("participants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CommentAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CommentAction"/> and sets the default values.
         /// </summary>
         public CommentAction()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CommentAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CommentAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CommentAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CommentAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CommentAction();
+            return new Microsoft.Graph.Beta.Models.CommentAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "isReply", n => { IsReply = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "parentAuthor", n => { ParentAuthor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                { "participants", n => { Participants = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parentAuthor", n => { ParentAuthor = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -114,8 +114,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isReply", IsReply);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentitySet>("parentAuthor", ParentAuthor);
-            writer.WriteCollectionOfObjectValues<IdentitySet>("participants", Participants);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("parentAuthor", ParentAuthor);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>("participants", Participants);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

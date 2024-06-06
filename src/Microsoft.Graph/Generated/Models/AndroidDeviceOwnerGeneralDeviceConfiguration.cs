@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the androidDeviceOwnerGeneralDeviceConfiguration resource.
     /// </summary>
-    public class AndroidDeviceOwnerGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class AndroidDeviceOwnerGeneralDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not adding or removing accounts is disabled.</summary>
         public bool? AccountsBlockModification
@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerDelegatedScopeAppSetting>? AndroidDeviceOwnerDelegatedScopeAppSettings
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting>? AndroidDeviceOwnerDelegatedScopeAppSettings
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerDelegatedScopeAppSetting>?>("androidDeviceOwnerDelegatedScopeAppSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting>?>("androidDeviceOwnerDelegatedScopeAppSettings"); }
             set { BackingStore?.Set("androidDeviceOwnerDelegatedScopeAppSettings", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerDelegatedScopeAppSetting> AndroidDeviceOwnerDelegatedScopeAppSettings
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting> AndroidDeviceOwnerDelegatedScopeAppSettings
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerDelegatedScopeAppSetting>>("androidDeviceOwnerDelegatedScopeAppSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting>>("androidDeviceOwnerDelegatedScopeAppSettings"); }
             set { BackingStore?.Set("androidDeviceOwnerDelegatedScopeAppSettings", value); }
         }
 #endif
@@ -40,15 +40,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appsAllowInstallFromUnknownSources", value); }
         }
         /// <summary>Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.</summary>
-        public AndroidDeviceOwnerAppAutoUpdatePolicyType? AppsAutoUpdatePolicy
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerAppAutoUpdatePolicyType? AppsAutoUpdatePolicy
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerAppAutoUpdatePolicyType?>("appsAutoUpdatePolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerAppAutoUpdatePolicyType?>("appsAutoUpdatePolicy"); }
             set { BackingStore?.Set("appsAutoUpdatePolicy", value); }
         }
         /// <summary>Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.</summary>
-        public AndroidDeviceOwnerDefaultAppPermissionPolicyType? AppsDefaultPermissionPolicy
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDefaultAppPermissionPolicyType? AppsDefaultPermissionPolicy
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerDefaultAppPermissionPolicyType?>("appsDefaultPermissionPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDefaultAppPermissionPolicyType?>("appsDefaultPermissionPolicy"); }
             set { BackingStore?.Set("appsDefaultPermissionPolicy", value); }
         }
         /// <summary>Whether or not to recommend all apps skip any first-time-use hints they may have added.</summary>
@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? AzureAdSharedDeviceDataClearApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? AzureAdSharedDeviceDataClearApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("azureAdSharedDeviceDataClearApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("azureAdSharedDeviceDataClearApps"); }
             set { BackingStore?.Set("azureAdSharedDeviceDataClearApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> AzureAdSharedDeviceDataClearApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem> AzureAdSharedDeviceDataClearApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("azureAdSharedDeviceDataClearApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("azureAdSharedDeviceDataClearApps"); }
             set { BackingStore?.Set("azureAdSharedDeviceDataClearApps", value); }
         }
 #endif
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("crossProfilePoliciesAllowCopyPaste", value); }
         }
         /// <summary>Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.</summary>
-        public AndroidDeviceOwnerCrossProfileDataSharing? CrossProfilePoliciesAllowDataSharing
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCrossProfileDataSharing? CrossProfilePoliciesAllowDataSharing
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerCrossProfileDataSharing?>("crossProfilePoliciesAllowDataSharing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCrossProfileDataSharing?>("crossProfilePoliciesAllowDataSharing"); }
             set { BackingStore?.Set("crossProfilePoliciesAllowDataSharing", value); }
         }
         /// <summary>Indicates whether or not contacts stored in work profile are shown in personal profile contact searches/incoming calls.</summary>
@@ -136,45 +136,45 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerUserFacingMessage? DetailedHelpText
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage? DetailedHelpText
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage?>("detailedHelpText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage?>("detailedHelpText"); }
             set { BackingStore?.Set("detailedHelpText", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerUserFacingMessage DetailedHelpText
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage DetailedHelpText
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("detailedHelpText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>("detailedHelpText"); }
             set { BackingStore?.Set("detailedHelpText", value); }
         }
 #endif
         /// <summary>Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.</summary>
-        public AndroidDeviceOwnerLocationMode? DeviceLocationMode
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerLocationMode? DeviceLocationMode
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerLocationMode?>("deviceLocationMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerLocationMode?>("deviceLocationMode"); }
             set { BackingStore?.Set("deviceLocationMode", value); }
         }
         /// <summary>Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerUserFacingMessage? DeviceOwnerLockScreenMessage
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage? DeviceOwnerLockScreenMessage
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage?>("deviceOwnerLockScreenMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage?>("deviceOwnerLockScreenMessage"); }
             set { BackingStore?.Set("deviceOwnerLockScreenMessage", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerUserFacingMessage DeviceOwnerLockScreenMessage
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage DeviceOwnerLockScreenMessage
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage"); }
             set { BackingStore?.Set("deviceOwnerLockScreenMessage", value); }
         }
 #endif
         /// <summary>Android Device Owner Enrollment Profile types.</summary>
-        public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentProfileType?>("enrollmentProfile"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfileType?>("enrollmentProfile"); }
             set { BackingStore?.Set("enrollmentProfile", value); }
         }
         /// <summary>Indicates whether or not the factory reset option in settings is disabled.</summary>
@@ -202,16 +202,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Proxy is set up directly with host, port and excluded hosts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerGlobalProxy? GlobalProxy
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy? GlobalProxy
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerGlobalProxy?>("globalProxy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy?>("globalProxy"); }
             set { BackingStore?.Set("globalProxy", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerGlobalProxy GlobalProxy
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy GlobalProxy
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerGlobalProxy>("globalProxy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy>("globalProxy"); }
             set { BackingStore?.Set("globalProxy", value); }
         }
 #endif
@@ -234,9 +234,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskCustomizationPowerButtonActionsBlocked", value); }
         }
         /// <summary>Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.</summary>
-        public AndroidDeviceOwnerKioskCustomizationStatusBar? KioskCustomizationStatusBar
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar? KioskCustomizationStatusBar
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskCustomizationStatusBar?>("kioskCustomizationStatusBar"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar?>("kioskCustomizationStatusBar"); }
             set { BackingStore?.Set("kioskCustomizationStatusBar", value); }
         }
         /// <summary>Indicates whether system error dialogs for crashed or unresponsive apps are shown in Kiosk Mode.</summary>
@@ -246,9 +246,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskCustomizationSystemErrorWarnings", value); }
         }
         /// <summary>Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.</summary>
-        public AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationSystemNavigation? KioskCustomizationSystemNavigation
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskCustomizationSystemNavigation?>("kioskCustomizationSystemNavigation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationSystemNavigation?>("kioskCustomizationSystemNavigation"); }
             set { BackingStore?.Set("kioskCustomizationSystemNavigation", value); }
         }
         /// <summary>Whether or not to enable app ordering in Kiosk Mode.</summary>
@@ -260,32 +260,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerKioskModeAppPositionItem>? KioskModeAppPositions
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem>? KioskModeAppPositions
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeAppPositionItem>?>("kioskModeAppPositions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem>?>("kioskModeAppPositions"); }
             set { BackingStore?.Set("kioskModeAppPositions", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerKioskModeAppPositionItem> KioskModeAppPositions
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem> KioskModeAppPositions
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeAppPositionItem>>("kioskModeAppPositions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem>>("kioskModeAppPositions"); }
             set { BackingStore?.Set("kioskModeAppPositions", value); }
         }
 #endif
         /// <summary>A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? KioskModeApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? KioskModeApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("kioskModeApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> KioskModeApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem> KioskModeApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
 #endif
@@ -330,9 +330,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskModeFlashlightConfigurationEnabled", value); }
         }
         /// <summary>Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.</summary>
-        public AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderIcon? KioskModeFolderIcon
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeFolderIcon?>("kioskModeFolderIcon"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderIcon?>("kioskModeFolderIcon"); }
             set { BackingStore?.Set("kioskModeFolderIcon", value); }
         }
         /// <summary>Number of rows for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999</summary>
@@ -348,9 +348,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskModeGridWidth", value); }
         }
         /// <summary>Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.</summary>
-        public AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize? KioskModeIconSize
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeIconSize?>("kioskModeIconSize"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize?>("kioskModeIconSize"); }
             set { BackingStore?.Set("kioskModeIconSize", value); }
         }
         /// <summary>Whether or not to lock home screen to the end user in Kiosk Mode.</summary>
@@ -362,16 +362,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerKioskModeManagedFolder>? KioskModeManagedFolders
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>? KioskModeManagedFolders
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeManagedFolder>?>("kioskModeManagedFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>?>("kioskModeManagedFolders"); }
             set { BackingStore?.Set("kioskModeManagedFolders", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerKioskModeManagedFolder> KioskModeManagedFolders
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder> KioskModeManagedFolders
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeManagedFolder>>("kioskModeManagedFolders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>>("kioskModeManagedFolders"); }
             set { BackingStore?.Set("kioskModeManagedFolders", value); }
         }
 #endif
@@ -462,9 +462,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskModeMediaVolumeConfigurationEnabled", value); }
         }
         /// <summary>Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.</summary>
-        public AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeScreenOrientation? KioskModeScreenOrientation
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeScreenOrientation?>("kioskModeScreenOrientation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeScreenOrientation?>("kioskModeScreenOrientation"); }
             set { BackingStore?.Set("kioskModeScreenOrientation", value); }
         }
         /// <summary>Whether or not to enable screen saver mode or not in Kiosk Mode.</summary>
@@ -520,9 +520,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskModeShowDeviceInfo", value); }
         }
         /// <summary>Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.</summary>
-        public KioskModeType? KioskModeUseManagedHomeScreenApp
+        public Microsoft.Graph.Beta.Models.KioskModeType? KioskModeUseManagedHomeScreenApp
         {
-            get { return BackingStore?.Get<KioskModeType?>("kioskModeUseManagedHomeScreenApp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KioskModeType?>("kioskModeUseManagedHomeScreenApp"); }
             set { BackingStore?.Set("kioskModeUseManagedHomeScreenApp", value); }
         }
         /// <summary>Whether or not to display a virtual home button when the device is in Kiosk Mode.</summary>
@@ -532,9 +532,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("kioskModeVirtualHomeButtonEnabled", value); }
         }
         /// <summary>Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.</summary>
-        public AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVirtualHomeButtonType? KioskModeVirtualHomeButtonType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerVirtualHomeButtonType?>("kioskModeVirtualHomeButtonType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVirtualHomeButtonType?>("kioskModeVirtualHomeButtonType"); }
             set { BackingStore?.Set("kioskModeVirtualHomeButtonType", value); }
         }
         /// <summary>URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.</summary>
@@ -634,9 +634,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftLauncherDockPresenceAllowUserModification", value); }
         }
         /// <summary>Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.</summary>
-        public MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration
+        public Microsoft.Graph.Beta.Models.MicrosoftLauncherDockPresence? MicrosoftLauncherDockPresenceConfiguration
         {
-            get { return BackingStore?.Get<MicrosoftLauncherDockPresence?>("microsoftLauncherDockPresenceConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftLauncherDockPresence?>("microsoftLauncherDockPresenceConfiguration"); }
             set { BackingStore?.Set("microsoftLauncherDockPresenceConfiguration", value); }
         }
         /// <summary>Indicates whether or not the user can modify the launcher feed on the device.</summary>
@@ -652,9 +652,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftLauncherFeedEnabled", value); }
         }
         /// <summary>Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.</summary>
-        public MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration
+        public Microsoft.Graph.Beta.Models.MicrosoftLauncherSearchBarPlacement? MicrosoftLauncherSearchBarPlacementConfiguration
         {
-            get { return BackingStore?.Get<MicrosoftLauncherSearchBarPlacement?>("microsoftLauncherSearchBarPlacementConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftLauncherSearchBarPlacement?>("microsoftLauncherSearchBarPlacementConfiguration"); }
             set { BackingStore?.Set("microsoftLauncherSearchBarPlacementConfiguration", value); }
         }
         /// <summary>Indicates whether or not the device will allow connecting to a temporary network connection at boot time.</summary>
@@ -678,16 +678,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of device keyguard features to block. This collection can contain a maximum of 11 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidKeyguardFeature?>? PasswordBlockKeyguardFeatures
+        public List<Microsoft.Graph.Beta.Models.AndroidKeyguardFeature?>? PasswordBlockKeyguardFeatures
         {
-            get { return BackingStore?.Get<List<AndroidKeyguardFeature?>?>("passwordBlockKeyguardFeatures"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidKeyguardFeature?>?>("passwordBlockKeyguardFeatures"); }
             set { BackingStore?.Set("passwordBlockKeyguardFeatures", value); }
         }
 #nullable restore
 #else
-        public List<AndroidKeyguardFeature?> PasswordBlockKeyguardFeatures
+        public List<Microsoft.Graph.Beta.Models.AndroidKeyguardFeature?> PasswordBlockKeyguardFeatures
         {
-            get { return BackingStore?.Get<List<AndroidKeyguardFeature?>>("passwordBlockKeyguardFeatures"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidKeyguardFeature?>>("passwordBlockKeyguardFeatures"); }
             set { BackingStore?.Set("passwordBlockKeyguardFeatures", value); }
         }
 #endif
@@ -752,15 +752,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordPreviousPasswordCountToBlock", value); }
         }
         /// <summary>Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
-        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.</summary>
-        public AndroidDeviceOwnerRequiredPasswordUnlock? PasswordRequireUnlock
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock? PasswordRequireUnlock
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordUnlock?>("passwordRequireUnlock"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock?>("passwordRequireUnlock"); }
             set { BackingStore?.Set("passwordRequireUnlock", value); }
         }
         /// <summary>Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11</summary>
@@ -784,23 +784,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? PersonalProfilePersonalApplications
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? PersonalProfilePersonalApplications
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("personalProfilePersonalApplications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("personalProfilePersonalApplications"); }
             set { BackingStore?.Set("personalProfilePersonalApplications", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> PersonalProfilePersonalApplications
+        public List<Microsoft.Graph.Beta.Models.AppListItem> PersonalProfilePersonalApplications
         {
-            get { return BackingStore?.Get<List<AppListItem>>("personalProfilePersonalApplications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("personalProfilePersonalApplications"); }
             set { BackingStore?.Set("personalProfilePersonalApplications", value); }
         }
 #endif
         /// <summary>Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.</summary>
-        public PersonalProfilePersonalPlayStoreMode? PersonalProfilePlayStoreMode
+        public Microsoft.Graph.Beta.Models.PersonalProfilePersonalPlayStoreMode? PersonalProfilePlayStoreMode
         {
-            get { return BackingStore?.Get<PersonalProfilePersonalPlayStoreMode?>("personalProfilePlayStoreMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonalProfilePersonalPlayStoreMode?>("personalProfilePlayStoreMode"); }
             set { BackingStore?.Set("personalProfilePlayStoreMode", value); }
         }
         /// <summary>Indicates whether to disable the capability to take screenshots on the personal profile.</summary>
@@ -810,9 +810,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("personalProfileScreenCaptureBlocked", value); }
         }
         /// <summary>Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.</summary>
-        public AndroidDeviceOwnerPlayStoreMode? PlayStoreMode
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPlayStoreMode? PlayStoreMode
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerPlayStoreMode?>("playStoreMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPlayStoreMode?>("playStoreMode"); }
             set { BackingStore?.Set("playStoreMode", value); }
         }
         /// <summary>Indicates whether or not to disable the capability to take screenshots.</summary>
@@ -848,16 +848,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the customized short help text provided to users when they attempt to modify managed settings on their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerUserFacingMessage? ShortHelpText
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage? ShortHelpText
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage?>("shortHelpText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage?>("shortHelpText"); }
             set { BackingStore?.Set("shortHelpText", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerUserFacingMessage ShortHelpText
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage ShortHelpText
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("shortHelpText"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>("shortHelpText"); }
             set { BackingStore?.Set("shortHelpText", value); }
         }
 #endif
@@ -870,16 +870,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of modes in which the device&apos;s display will stay powered-on. This collection can contain a maximum of 4 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerBatteryPluggedMode?>? StayOnModes
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerBatteryPluggedMode?>? StayOnModes
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerBatteryPluggedMode?>?>("stayOnModes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerBatteryPluggedMode?>?>("stayOnModes"); }
             set { BackingStore?.Set("stayOnModes", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerBatteryPluggedMode?> StayOnModes
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerBatteryPluggedMode?> StayOnModes
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerBatteryPluggedMode?>>("stayOnModes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerBatteryPluggedMode?>>("stayOnModes"); }
             set { BackingStore?.Set("stayOnModes", value); }
         }
 #endif
@@ -904,23 +904,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerSystemUpdateFreezePeriod>? SystemUpdateFreezePeriods
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod>? SystemUpdateFreezePeriods
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerSystemUpdateFreezePeriod>?>("systemUpdateFreezePeriods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod>?>("systemUpdateFreezePeriods"); }
             set { BackingStore?.Set("systemUpdateFreezePeriods", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerSystemUpdateFreezePeriod> SystemUpdateFreezePeriods
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod> SystemUpdateFreezePeriods
         {
-            get { return BackingStore?.Get<List<AndroidDeviceOwnerSystemUpdateFreezePeriod>>("systemUpdateFreezePeriods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod>>("systemUpdateFreezePeriods"); }
             set { BackingStore?.Set("systemUpdateFreezePeriods", value); }
         }
 #endif
         /// <summary>The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.</summary>
-        public AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerSystemUpdateInstallType?>("systemUpdateInstallType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateInstallType?>("systemUpdateInstallType"); }
             set { BackingStore?.Set("systemUpdateInstallType", value); }
         }
         /// <summary>Indicates the number of minutes after midnight that the system update window ends. Valid values 0 to 1440</summary>
@@ -1048,15 +1048,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfilePasswordPreviousPasswordCountToBlock", value); }
         }
         /// <summary>Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
-        public AndroidDeviceOwnerRequiredPasswordType? WorkProfilePasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType? WorkProfilePasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("workProfilePasswordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType?>("workProfilePasswordRequiredType"); }
             set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
         }
         /// <summary>Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.</summary>
-        public AndroidDeviceOwnerRequiredPasswordUnlock? WorkProfilePasswordRequireUnlock
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock? WorkProfilePasswordRequireUnlock
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordUnlock?>("workProfilePasswordRequireUnlock"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock?>("workProfilePasswordRequireUnlock"); }
             set { BackingStore?.Set("workProfilePasswordRequireUnlock", value); }
         }
         /// <summary>Indicates the number of times a user can enter an incorrect work profile password before the device is wiped. Valid values 4 to 11</summary>
@@ -1066,7 +1066,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfilePasswordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerGeneralDeviceConfiguration() : base()
         {
@@ -1075,12 +1075,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -1091,53 +1091,53 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountsBlockModification", n => { AccountsBlockModification = n.GetBoolValue(); } },
-                { "androidDeviceOwnerDelegatedScopeAppSettings", n => { AndroidDeviceOwnerDelegatedScopeAppSettings = n.GetCollectionOfObjectValues<AndroidDeviceOwnerDelegatedScopeAppSetting>(AndroidDeviceOwnerDelegatedScopeAppSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidDeviceOwnerDelegatedScopeAppSettings", n => { AndroidDeviceOwnerDelegatedScopeAppSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "appsAllowInstallFromUnknownSources", n => { AppsAllowInstallFromUnknownSources = n.GetBoolValue(); } },
-                { "appsAutoUpdatePolicy", n => { AppsAutoUpdatePolicy = n.GetEnumValue<AndroidDeviceOwnerAppAutoUpdatePolicyType>(); } },
-                { "appsDefaultPermissionPolicy", n => { AppsDefaultPermissionPolicy = n.GetEnumValue<AndroidDeviceOwnerDefaultAppPermissionPolicyType>(); } },
+                { "appsAutoUpdatePolicy", n => { AppsAutoUpdatePolicy = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerAppAutoUpdatePolicyType>(); } },
+                { "appsDefaultPermissionPolicy", n => { AppsDefaultPermissionPolicy = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDefaultAppPermissionPolicyType>(); } },
                 { "appsRecommendSkippingFirstUseHints", n => { AppsRecommendSkippingFirstUseHints = n.GetBoolValue(); } },
-                { "azureAdSharedDeviceDataClearApps", n => { AzureAdSharedDeviceDataClearApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "azureAdSharedDeviceDataClearApps", n => { AzureAdSharedDeviceDataClearApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "bluetoothBlockConfiguration", n => { BluetoothBlockConfiguration = n.GetBoolValue(); } },
                 { "bluetoothBlockContactSharing", n => { BluetoothBlockContactSharing = n.GetBoolValue(); } },
                 { "cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
                 { "cellularBlockWiFiTethering", n => { CellularBlockWiFiTethering = n.GetBoolValue(); } },
                 { "certificateCredentialConfigurationDisabled", n => { CertificateCredentialConfigurationDisabled = n.GetBoolValue(); } },
                 { "crossProfilePoliciesAllowCopyPaste", n => { CrossProfilePoliciesAllowCopyPaste = n.GetBoolValue(); } },
-                { "crossProfilePoliciesAllowDataSharing", n => { CrossProfilePoliciesAllowDataSharing = n.GetEnumValue<AndroidDeviceOwnerCrossProfileDataSharing>(); } },
+                { "crossProfilePoliciesAllowDataSharing", n => { CrossProfilePoliciesAllowDataSharing = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCrossProfileDataSharing>(); } },
                 { "crossProfilePoliciesShowWorkContactsInPersonalProfile", n => { CrossProfilePoliciesShowWorkContactsInPersonalProfile = n.GetBoolValue(); } },
                 { "dataRoamingBlocked", n => { DataRoamingBlocked = n.GetBoolValue(); } },
                 { "dateTimeConfigurationBlocked", n => { DateTimeConfigurationBlocked = n.GetBoolValue(); } },
-                { "detailedHelpText", n => { DetailedHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
-                { "deviceLocationMode", n => { DeviceLocationMode = n.GetEnumValue<AndroidDeviceOwnerLocationMode>(); } },
-                { "deviceOwnerLockScreenMessage", n => { DeviceOwnerLockScreenMessage = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
-                { "enrollmentProfile", n => { EnrollmentProfile = n.GetEnumValue<AndroidDeviceOwnerEnrollmentProfileType>(); } },
+                { "detailedHelpText", n => { DetailedHelpText = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
+                { "deviceLocationMode", n => { DeviceLocationMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerLocationMode>(); } },
+                { "deviceOwnerLockScreenMessage", n => { DeviceOwnerLockScreenMessage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
+                { "enrollmentProfile", n => { EnrollmentProfile = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfileType>(); } },
                 { "factoryResetBlocked", n => { FactoryResetBlocked = n.GetBoolValue(); } },
                 { "factoryResetDeviceAdministratorEmails", n => { FactoryResetDeviceAdministratorEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "globalProxy", n => { GlobalProxy = n.GetObjectValue<AndroidDeviceOwnerGlobalProxy>(AndroidDeviceOwnerGlobalProxy.CreateFromDiscriminatorValue); } },
+                { "globalProxy", n => { GlobalProxy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy.CreateFromDiscriminatorValue); } },
                 { "googleAccountsBlocked", n => { GoogleAccountsBlocked = n.GetBoolValue(); } },
                 { "kioskCustomizationDeviceSettingsBlocked", n => { KioskCustomizationDeviceSettingsBlocked = n.GetBoolValue(); } },
                 { "kioskCustomizationPowerButtonActionsBlocked", n => { KioskCustomizationPowerButtonActionsBlocked = n.GetBoolValue(); } },
-                { "kioskCustomizationStatusBar", n => { KioskCustomizationStatusBar = n.GetEnumValue<AndroidDeviceOwnerKioskCustomizationStatusBar>(); } },
+                { "kioskCustomizationStatusBar", n => { KioskCustomizationStatusBar = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar>(); } },
                 { "kioskCustomizationSystemErrorWarnings", n => { KioskCustomizationSystemErrorWarnings = n.GetBoolValue(); } },
-                { "kioskCustomizationSystemNavigation", n => { KioskCustomizationSystemNavigation = n.GetEnumValue<AndroidDeviceOwnerKioskCustomizationSystemNavigation>(); } },
+                { "kioskCustomizationSystemNavigation", n => { KioskCustomizationSystemNavigation = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationSystemNavigation>(); } },
                 { "kioskModeAppOrderEnabled", n => { KioskModeAppOrderEnabled = n.GetBoolValue(); } },
-                { "kioskModeAppPositions", n => { KioskModeAppPositions = n.GetCollectionOfObjectValues<AndroidDeviceOwnerKioskModeAppPositionItem>(AndroidDeviceOwnerKioskModeAppPositionItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "kioskModeApps", n => { KioskModeApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kioskModeAppPositions", n => { KioskModeAppPositions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kioskModeApps", n => { KioskModeApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "kioskModeAppsInFolderOrderedByName", n => { KioskModeAppsInFolderOrderedByName = n.GetBoolValue(); } },
                 { "kioskModeBluetoothConfigurationEnabled", n => { KioskModeBluetoothConfigurationEnabled = n.GetBoolValue(); } },
                 { "kioskModeDebugMenuEasyAccessEnabled", n => { KioskModeDebugMenuEasyAccessEnabled = n.GetBoolValue(); } },
                 { "kioskModeExitCode", n => { KioskModeExitCode = n.GetStringValue(); } },
                 { "kioskModeFlashlightConfigurationEnabled", n => { KioskModeFlashlightConfigurationEnabled = n.GetBoolValue(); } },
-                { "kioskModeFolderIcon", n => { KioskModeFolderIcon = n.GetEnumValue<AndroidDeviceOwnerKioskModeFolderIcon>(); } },
+                { "kioskModeFolderIcon", n => { KioskModeFolderIcon = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderIcon>(); } },
                 { "kioskModeGridHeight", n => { KioskModeGridHeight = n.GetIntValue(); } },
                 { "kioskModeGridWidth", n => { KioskModeGridWidth = n.GetIntValue(); } },
-                { "kioskModeIconSize", n => { KioskModeIconSize = n.GetEnumValue<AndroidDeviceOwnerKioskModeIconSize>(); } },
+                { "kioskModeIconSize", n => { KioskModeIconSize = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize>(); } },
                 { "kioskModeLockHomeScreen", n => { KioskModeLockHomeScreen = n.GetBoolValue(); } },
-                { "kioskModeManagedFolders", n => { KioskModeManagedFolders = n.GetCollectionOfObjectValues<AndroidDeviceOwnerKioskModeManagedFolder>(AndroidDeviceOwnerKioskModeManagedFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kioskModeManagedFolders", n => { KioskModeManagedFolders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "kioskModeManagedHomeScreenAutoSignout", n => { KioskModeManagedHomeScreenAutoSignout = n.GetBoolValue(); } },
                 { "kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds", n => { KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds = n.GetIntValue(); } },
                 { "kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds", n => { KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds = n.GetIntValue(); } },
-                { "kioskModeManagedHomeScreenPinComplexity", n => { KioskModeManagedHomeScreenPinComplexity = n.GetEnumValue<KioskModeManagedHomeScreenPinComplexity>(); } },
+                { "kioskModeManagedHomeScreenPinComplexity", n => { KioskModeManagedHomeScreenPinComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity>(); } },
                 { "kioskModeManagedHomeScreenPinRequired", n => { KioskModeManagedHomeScreenPinRequired = n.GetBoolValue(); } },
                 { "kioskModeManagedHomeScreenPinRequiredToResume", n => { KioskModeManagedHomeScreenPinRequiredToResume = n.GetBoolValue(); } },
                 { "kioskModeManagedHomeScreenSignInBackground", n => { KioskModeManagedHomeScreenSignInBackground = n.GetStringValue(); } },
@@ -1145,7 +1145,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "kioskModeManagedHomeScreenSignInEnabled", n => { KioskModeManagedHomeScreenSignInEnabled = n.GetBoolValue(); } },
                 { "kioskModeManagedSettingsEntryDisabled", n => { KioskModeManagedSettingsEntryDisabled = n.GetBoolValue(); } },
                 { "kioskModeMediaVolumeConfigurationEnabled", n => { KioskModeMediaVolumeConfigurationEnabled = n.GetBoolValue(); } },
-                { "kioskModeScreenOrientation", n => { KioskModeScreenOrientation = n.GetEnumValue<AndroidDeviceOwnerKioskModeScreenOrientation>(); } },
+                { "kioskModeScreenOrientation", n => { KioskModeScreenOrientation = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeScreenOrientation>(); } },
                 { "kioskModeScreenSaverConfigurationEnabled", n => { KioskModeScreenSaverConfigurationEnabled = n.GetBoolValue(); } },
                 { "kioskModeScreenSaverDetectMediaDisabled", n => { KioskModeScreenSaverDetectMediaDisabled = n.GetBoolValue(); } },
                 { "kioskModeScreenSaverDisplayTimeInSeconds", n => { KioskModeScreenSaverDisplayTimeInSeconds = n.GetIntValue(); } },
@@ -1153,9 +1153,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "kioskModeScreenSaverStartDelayInSeconds", n => { KioskModeScreenSaverStartDelayInSeconds = n.GetIntValue(); } },
                 { "kioskModeShowAppNotificationBadge", n => { KioskModeShowAppNotificationBadge = n.GetBoolValue(); } },
                 { "kioskModeShowDeviceInfo", n => { KioskModeShowDeviceInfo = n.GetBoolValue(); } },
-                { "kioskModeUseManagedHomeScreenApp", n => { KioskModeUseManagedHomeScreenApp = n.GetEnumValue<KioskModeType>(); } },
+                { "kioskModeUseManagedHomeScreenApp", n => { KioskModeUseManagedHomeScreenApp = n.GetEnumValue<Microsoft.Graph.Beta.Models.KioskModeType>(); } },
                 { "kioskModeVirtualHomeButtonEnabled", n => { KioskModeVirtualHomeButtonEnabled = n.GetBoolValue(); } },
-                { "kioskModeVirtualHomeButtonType", n => { KioskModeVirtualHomeButtonType = n.GetEnumValue<AndroidDeviceOwnerVirtualHomeButtonType>(); } },
+                { "kioskModeVirtualHomeButtonType", n => { KioskModeVirtualHomeButtonType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVirtualHomeButtonType>(); } },
                 { "kioskModeWallpaperUrl", n => { KioskModeWallpaperUrl = n.GetStringValue(); } },
                 { "kioskModeWiFiConfigurationEnabled", n => { KioskModeWiFiConfigurationEnabled = n.GetBoolValue(); } },
                 { "kioskModeWifiAllowedSsids", n => { KioskModeWifiAllowedSsids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -1167,14 +1167,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "microsoftLauncherCustomWallpaperEnabled", n => { MicrosoftLauncherCustomWallpaperEnabled = n.GetBoolValue(); } },
                 { "microsoftLauncherCustomWallpaperImageUrl", n => { MicrosoftLauncherCustomWallpaperImageUrl = n.GetStringValue(); } },
                 { "microsoftLauncherDockPresenceAllowUserModification", n => { MicrosoftLauncherDockPresenceAllowUserModification = n.GetBoolValue(); } },
-                { "microsoftLauncherDockPresenceConfiguration", n => { MicrosoftLauncherDockPresenceConfiguration = n.GetEnumValue<MicrosoftLauncherDockPresence>(); } },
+                { "microsoftLauncherDockPresenceConfiguration", n => { MicrosoftLauncherDockPresenceConfiguration = n.GetEnumValue<Microsoft.Graph.Beta.Models.MicrosoftLauncherDockPresence>(); } },
                 { "microsoftLauncherFeedAllowUserModification", n => { MicrosoftLauncherFeedAllowUserModification = n.GetBoolValue(); } },
                 { "microsoftLauncherFeedEnabled", n => { MicrosoftLauncherFeedEnabled = n.GetBoolValue(); } },
-                { "microsoftLauncherSearchBarPlacementConfiguration", n => { MicrosoftLauncherSearchBarPlacementConfiguration = n.GetEnumValue<MicrosoftLauncherSearchBarPlacement>(); } },
+                { "microsoftLauncherSearchBarPlacementConfiguration", n => { MicrosoftLauncherSearchBarPlacementConfiguration = n.GetEnumValue<Microsoft.Graph.Beta.Models.MicrosoftLauncherSearchBarPlacement>(); } },
                 { "networkEscapeHatchAllowed", n => { NetworkEscapeHatchAllowed = n.GetBoolValue(); } },
                 { "nfcBlockOutgoingBeam", n => { NfcBlockOutgoingBeam = n.GetBoolValue(); } },
                 { "passwordBlockKeyguard", n => { PasswordBlockKeyguard = n.GetBoolValue(); } },
-                { "passwordBlockKeyguardFeatures", n => { PasswordBlockKeyguardFeatures = n.GetCollectionOfEnumValues<AndroidKeyguardFeature>()?.ToList(); } },
+                { "passwordBlockKeyguardFeatures", n => { PasswordBlockKeyguardFeatures = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AndroidKeyguardFeature>()?.ToList(); } },
                 { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
                 { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 { "passwordMinimumLetterCharacters", n => { PasswordMinimumLetterCharacters = n.GetIntValue(); } },
@@ -1185,28 +1185,28 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinimumUpperCaseCharacters", n => { PasswordMinimumUpperCaseCharacters = n.GetIntValue(); } },
                 { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
                 { "passwordPreviousPasswordCountToBlock", n => { PasswordPreviousPasswordCountToBlock = n.GetIntValue(); } },
-                { "passwordRequireUnlock", n => { PasswordRequireUnlock = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordUnlock>(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
+                { "passwordRequireUnlock", n => { PasswordRequireUnlock = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "personalProfileAppsAllowInstallFromUnknownSources", n => { PersonalProfileAppsAllowInstallFromUnknownSources = n.GetBoolValue(); } },
                 { "personalProfileCameraBlocked", n => { PersonalProfileCameraBlocked = n.GetBoolValue(); } },
-                { "personalProfilePersonalApplications", n => { PersonalProfilePersonalApplications = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "personalProfilePlayStoreMode", n => { PersonalProfilePlayStoreMode = n.GetEnumValue<PersonalProfilePersonalPlayStoreMode>(); } },
+                { "personalProfilePersonalApplications", n => { PersonalProfilePersonalApplications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "personalProfilePlayStoreMode", n => { PersonalProfilePlayStoreMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.PersonalProfilePersonalPlayStoreMode>(); } },
                 { "personalProfileScreenCaptureBlocked", n => { PersonalProfileScreenCaptureBlocked = n.GetBoolValue(); } },
-                { "playStoreMode", n => { PlayStoreMode = n.GetEnumValue<AndroidDeviceOwnerPlayStoreMode>(); } },
+                { "playStoreMode", n => { PlayStoreMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPlayStoreMode>(); } },
                 { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
                 { "securityCommonCriteriaModeEnabled", n => { SecurityCommonCriteriaModeEnabled = n.GetBoolValue(); } },
                 { "securityDeveloperSettingsEnabled", n => { SecurityDeveloperSettingsEnabled = n.GetBoolValue(); } },
                 { "securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 { "shareDeviceLocationDisabled", n => { ShareDeviceLocationDisabled = n.GetBoolValue(); } },
-                { "shortHelpText", n => { ShortHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
+                { "shortHelpText", n => { ShortHelpText = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
                 { "statusBarBlocked", n => { StatusBarBlocked = n.GetBoolValue(); } },
-                { "stayOnModes", n => { StayOnModes = n.GetCollectionOfEnumValues<AndroidDeviceOwnerBatteryPluggedMode>()?.ToList(); } },
+                { "stayOnModes", n => { StayOnModes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerBatteryPluggedMode>()?.ToList(); } },
                 { "storageAllowUsb", n => { StorageAllowUsb = n.GetBoolValue(); } },
                 { "storageBlockExternalMedia", n => { StorageBlockExternalMedia = n.GetBoolValue(); } },
                 { "storageBlockUsbFileTransfer", n => { StorageBlockUsbFileTransfer = n.GetBoolValue(); } },
-                { "systemUpdateFreezePeriods", n => { SystemUpdateFreezePeriods = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSystemUpdateFreezePeriod>(AndroidDeviceOwnerSystemUpdateFreezePeriod.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "systemUpdateInstallType", n => { SystemUpdateInstallType = n.GetEnumValue<AndroidDeviceOwnerSystemUpdateInstallType>(); } },
+                { "systemUpdateFreezePeriods", n => { SystemUpdateFreezePeriods = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemUpdateInstallType", n => { SystemUpdateInstallType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateInstallType>(); } },
                 { "systemUpdateWindowEndMinutesAfterMidnight", n => { SystemUpdateWindowEndMinutesAfterMidnight = n.GetIntValue(); } },
                 { "systemUpdateWindowStartMinutesAfterMidnight", n => { SystemUpdateWindowStartMinutesAfterMidnight = n.GetIntValue(); } },
                 { "systemWindowsBlocked", n => { SystemWindowsBlocked = n.GetBoolValue(); } },
@@ -1226,8 +1226,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "workProfilePasswordMinimumSymbolCharacters", n => { WorkProfilePasswordMinimumSymbolCharacters = n.GetIntValue(); } },
                 { "workProfilePasswordMinimumUpperCaseCharacters", n => { WorkProfilePasswordMinimumUpperCaseCharacters = n.GetIntValue(); } },
                 { "workProfilePasswordPreviousPasswordCountToBlock", n => { WorkProfilePasswordPreviousPasswordCountToBlock = n.GetIntValue(); } },
-                { "workProfilePasswordRequireUnlock", n => { WorkProfilePasswordRequireUnlock = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordUnlock>(); } },
-                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
+                { "workProfilePasswordRequireUnlock", n => { WorkProfilePasswordRequireUnlock = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock>(); } },
+                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>(); } },
                 { "workProfilePasswordSignInFailureCountBeforeFactoryReset", n => { WorkProfilePasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
             };
         }
@@ -1240,53 +1240,53 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountsBlockModification", AccountsBlockModification);
-            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerDelegatedScopeAppSetting>("androidDeviceOwnerDelegatedScopeAppSettings", AndroidDeviceOwnerDelegatedScopeAppSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDelegatedScopeAppSetting>("androidDeviceOwnerDelegatedScopeAppSettings", AndroidDeviceOwnerDelegatedScopeAppSettings);
             writer.WriteBoolValue("appsAllowInstallFromUnknownSources", AppsAllowInstallFromUnknownSources);
-            writer.WriteEnumValue<AndroidDeviceOwnerAppAutoUpdatePolicyType>("appsAutoUpdatePolicy", AppsAutoUpdatePolicy);
-            writer.WriteEnumValue<AndroidDeviceOwnerDefaultAppPermissionPolicyType>("appsDefaultPermissionPolicy", AppsDefaultPermissionPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerAppAutoUpdatePolicyType>("appsAutoUpdatePolicy", AppsAutoUpdatePolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerDefaultAppPermissionPolicyType>("appsDefaultPermissionPolicy", AppsDefaultPermissionPolicy);
             writer.WriteBoolValue("appsRecommendSkippingFirstUseHints", AppsRecommendSkippingFirstUseHints);
-            writer.WriteCollectionOfObjectValues<AppListItem>("azureAdSharedDeviceDataClearApps", AzureAdSharedDeviceDataClearApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("azureAdSharedDeviceDataClearApps", AzureAdSharedDeviceDataClearApps);
             writer.WriteBoolValue("bluetoothBlockConfiguration", BluetoothBlockConfiguration);
             writer.WriteBoolValue("bluetoothBlockContactSharing", BluetoothBlockContactSharing);
             writer.WriteBoolValue("cameraBlocked", CameraBlocked);
             writer.WriteBoolValue("cellularBlockWiFiTethering", CellularBlockWiFiTethering);
             writer.WriteBoolValue("certificateCredentialConfigurationDisabled", CertificateCredentialConfigurationDisabled);
             writer.WriteBoolValue("crossProfilePoliciesAllowCopyPaste", CrossProfilePoliciesAllowCopyPaste);
-            writer.WriteEnumValue<AndroidDeviceOwnerCrossProfileDataSharing>("crossProfilePoliciesAllowDataSharing", CrossProfilePoliciesAllowDataSharing);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCrossProfileDataSharing>("crossProfilePoliciesAllowDataSharing", CrossProfilePoliciesAllowDataSharing);
             writer.WriteBoolValue("crossProfilePoliciesShowWorkContactsInPersonalProfile", CrossProfilePoliciesShowWorkContactsInPersonalProfile);
             writer.WriteBoolValue("dataRoamingBlocked", DataRoamingBlocked);
             writer.WriteBoolValue("dateTimeConfigurationBlocked", DateTimeConfigurationBlocked);
-            writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("detailedHelpText", DetailedHelpText);
-            writer.WriteEnumValue<AndroidDeviceOwnerLocationMode>("deviceLocationMode", DeviceLocationMode);
-            writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage", DeviceOwnerLockScreenMessage);
-            writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentProfileType>("enrollmentProfile", EnrollmentProfile);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>("detailedHelpText", DetailedHelpText);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerLocationMode>("deviceLocationMode", DeviceLocationMode);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage", DeviceOwnerLockScreenMessage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfileType>("enrollmentProfile", EnrollmentProfile);
             writer.WriteBoolValue("factoryResetBlocked", FactoryResetBlocked);
             writer.WriteCollectionOfPrimitiveValues<string>("factoryResetDeviceAdministratorEmails", FactoryResetDeviceAdministratorEmails);
-            writer.WriteObjectValue<AndroidDeviceOwnerGlobalProxy>("globalProxy", GlobalProxy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy>("globalProxy", GlobalProxy);
             writer.WriteBoolValue("googleAccountsBlocked", GoogleAccountsBlocked);
             writer.WriteBoolValue("kioskCustomizationDeviceSettingsBlocked", KioskCustomizationDeviceSettingsBlocked);
             writer.WriteBoolValue("kioskCustomizationPowerButtonActionsBlocked", KioskCustomizationPowerButtonActionsBlocked);
-            writer.WriteEnumValue<AndroidDeviceOwnerKioskCustomizationStatusBar>("kioskCustomizationStatusBar", KioskCustomizationStatusBar);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationStatusBar>("kioskCustomizationStatusBar", KioskCustomizationStatusBar);
             writer.WriteBoolValue("kioskCustomizationSystemErrorWarnings", KioskCustomizationSystemErrorWarnings);
-            writer.WriteEnumValue<AndroidDeviceOwnerKioskCustomizationSystemNavigation>("kioskCustomizationSystemNavigation", KioskCustomizationSystemNavigation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskCustomizationSystemNavigation>("kioskCustomizationSystemNavigation", KioskCustomizationSystemNavigation);
             writer.WriteBoolValue("kioskModeAppOrderEnabled", KioskModeAppOrderEnabled);
-            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerKioskModeAppPositionItem>("kioskModeAppPositions", KioskModeAppPositions);
-            writer.WriteCollectionOfObjectValues<AppListItem>("kioskModeApps", KioskModeApps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeAppPositionItem>("kioskModeAppPositions", KioskModeAppPositions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("kioskModeApps", KioskModeApps);
             writer.WriteBoolValue("kioskModeAppsInFolderOrderedByName", KioskModeAppsInFolderOrderedByName);
             writer.WriteBoolValue("kioskModeBluetoothConfigurationEnabled", KioskModeBluetoothConfigurationEnabled);
             writer.WriteBoolValue("kioskModeDebugMenuEasyAccessEnabled", KioskModeDebugMenuEasyAccessEnabled);
             writer.WriteStringValue("kioskModeExitCode", KioskModeExitCode);
             writer.WriteBoolValue("kioskModeFlashlightConfigurationEnabled", KioskModeFlashlightConfigurationEnabled);
-            writer.WriteEnumValue<AndroidDeviceOwnerKioskModeFolderIcon>("kioskModeFolderIcon", KioskModeFolderIcon);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeFolderIcon>("kioskModeFolderIcon", KioskModeFolderIcon);
             writer.WriteIntValue("kioskModeGridHeight", KioskModeGridHeight);
             writer.WriteIntValue("kioskModeGridWidth", KioskModeGridWidth);
-            writer.WriteEnumValue<AndroidDeviceOwnerKioskModeIconSize>("kioskModeIconSize", KioskModeIconSize);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeIconSize>("kioskModeIconSize", KioskModeIconSize);
             writer.WriteBoolValue("kioskModeLockHomeScreen", KioskModeLockHomeScreen);
-            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerKioskModeManagedFolder>("kioskModeManagedFolders", KioskModeManagedFolders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeManagedFolder>("kioskModeManagedFolders", KioskModeManagedFolders);
             writer.WriteBoolValue("kioskModeManagedHomeScreenAutoSignout", KioskModeManagedHomeScreenAutoSignout);
             writer.WriteIntValue("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds", KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds);
             writer.WriteIntValue("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds", KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds);
-            writer.WriteEnumValue<KioskModeManagedHomeScreenPinComplexity>("kioskModeManagedHomeScreenPinComplexity", KioskModeManagedHomeScreenPinComplexity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KioskModeManagedHomeScreenPinComplexity>("kioskModeManagedHomeScreenPinComplexity", KioskModeManagedHomeScreenPinComplexity);
             writer.WriteBoolValue("kioskModeManagedHomeScreenPinRequired", KioskModeManagedHomeScreenPinRequired);
             writer.WriteBoolValue("kioskModeManagedHomeScreenPinRequiredToResume", KioskModeManagedHomeScreenPinRequiredToResume);
             writer.WriteStringValue("kioskModeManagedHomeScreenSignInBackground", KioskModeManagedHomeScreenSignInBackground);
@@ -1294,7 +1294,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("kioskModeManagedHomeScreenSignInEnabled", KioskModeManagedHomeScreenSignInEnabled);
             writer.WriteBoolValue("kioskModeManagedSettingsEntryDisabled", KioskModeManagedSettingsEntryDisabled);
             writer.WriteBoolValue("kioskModeMediaVolumeConfigurationEnabled", KioskModeMediaVolumeConfigurationEnabled);
-            writer.WriteEnumValue<AndroidDeviceOwnerKioskModeScreenOrientation>("kioskModeScreenOrientation", KioskModeScreenOrientation);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeScreenOrientation>("kioskModeScreenOrientation", KioskModeScreenOrientation);
             writer.WriteBoolValue("kioskModeScreenSaverConfigurationEnabled", KioskModeScreenSaverConfigurationEnabled);
             writer.WriteBoolValue("kioskModeScreenSaverDetectMediaDisabled", KioskModeScreenSaverDetectMediaDisabled);
             writer.WriteIntValue("kioskModeScreenSaverDisplayTimeInSeconds", KioskModeScreenSaverDisplayTimeInSeconds);
@@ -1302,9 +1302,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("kioskModeScreenSaverStartDelayInSeconds", KioskModeScreenSaverStartDelayInSeconds);
             writer.WriteBoolValue("kioskModeShowAppNotificationBadge", KioskModeShowAppNotificationBadge);
             writer.WriteBoolValue("kioskModeShowDeviceInfo", KioskModeShowDeviceInfo);
-            writer.WriteEnumValue<KioskModeType>("kioskModeUseManagedHomeScreenApp", KioskModeUseManagedHomeScreenApp);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.KioskModeType>("kioskModeUseManagedHomeScreenApp", KioskModeUseManagedHomeScreenApp);
             writer.WriteBoolValue("kioskModeVirtualHomeButtonEnabled", KioskModeVirtualHomeButtonEnabled);
-            writer.WriteEnumValue<AndroidDeviceOwnerVirtualHomeButtonType>("kioskModeVirtualHomeButtonType", KioskModeVirtualHomeButtonType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVirtualHomeButtonType>("kioskModeVirtualHomeButtonType", KioskModeVirtualHomeButtonType);
             writer.WriteStringValue("kioskModeWallpaperUrl", KioskModeWallpaperUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("kioskModeWifiAllowedSsids", KioskModeWifiAllowedSsids);
             writer.WriteBoolValue("kioskModeWiFiConfigurationEnabled", KioskModeWiFiConfigurationEnabled);
@@ -1316,14 +1316,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("microsoftLauncherCustomWallpaperEnabled", MicrosoftLauncherCustomWallpaperEnabled);
             writer.WriteStringValue("microsoftLauncherCustomWallpaperImageUrl", MicrosoftLauncherCustomWallpaperImageUrl);
             writer.WriteBoolValue("microsoftLauncherDockPresenceAllowUserModification", MicrosoftLauncherDockPresenceAllowUserModification);
-            writer.WriteEnumValue<MicrosoftLauncherDockPresence>("microsoftLauncherDockPresenceConfiguration", MicrosoftLauncherDockPresenceConfiguration);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MicrosoftLauncherDockPresence>("microsoftLauncherDockPresenceConfiguration", MicrosoftLauncherDockPresenceConfiguration);
             writer.WriteBoolValue("microsoftLauncherFeedAllowUserModification", MicrosoftLauncherFeedAllowUserModification);
             writer.WriteBoolValue("microsoftLauncherFeedEnabled", MicrosoftLauncherFeedEnabled);
-            writer.WriteEnumValue<MicrosoftLauncherSearchBarPlacement>("microsoftLauncherSearchBarPlacementConfiguration", MicrosoftLauncherSearchBarPlacementConfiguration);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MicrosoftLauncherSearchBarPlacement>("microsoftLauncherSearchBarPlacementConfiguration", MicrosoftLauncherSearchBarPlacementConfiguration);
             writer.WriteBoolValue("networkEscapeHatchAllowed", NetworkEscapeHatchAllowed);
             writer.WriteBoolValue("nfcBlockOutgoingBeam", NfcBlockOutgoingBeam);
             writer.WriteBoolValue("passwordBlockKeyguard", PasswordBlockKeyguard);
-            writer.WriteCollectionOfEnumValues<AndroidKeyguardFeature>("passwordBlockKeyguardFeatures", PasswordBlockKeyguardFeatures);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AndroidKeyguardFeature>("passwordBlockKeyguardFeatures", PasswordBlockKeyguardFeatures);
             writer.WriteIntValue("passwordExpirationDays", PasswordExpirationDays);
             writer.WriteIntValue("passwordMinimumLength", PasswordMinimumLength);
             writer.WriteIntValue("passwordMinimumLetterCharacters", PasswordMinimumLetterCharacters);
@@ -1334,28 +1334,28 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinimumUpperCaseCharacters", PasswordMinimumUpperCaseCharacters);
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordCountToBlock", PasswordPreviousPasswordCountToBlock);
-            writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
-            writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordUnlock>("passwordRequireUnlock", PasswordRequireUnlock);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock>("passwordRequireUnlock", PasswordRequireUnlock);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
             writer.WriteBoolValue("personalProfileAppsAllowInstallFromUnknownSources", PersonalProfileAppsAllowInstallFromUnknownSources);
             writer.WriteBoolValue("personalProfileCameraBlocked", PersonalProfileCameraBlocked);
-            writer.WriteCollectionOfObjectValues<AppListItem>("personalProfilePersonalApplications", PersonalProfilePersonalApplications);
-            writer.WriteEnumValue<PersonalProfilePersonalPlayStoreMode>("personalProfilePlayStoreMode", PersonalProfilePlayStoreMode);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("personalProfilePersonalApplications", PersonalProfilePersonalApplications);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PersonalProfilePersonalPlayStoreMode>("personalProfilePlayStoreMode", PersonalProfilePlayStoreMode);
             writer.WriteBoolValue("personalProfileScreenCaptureBlocked", PersonalProfileScreenCaptureBlocked);
-            writer.WriteEnumValue<AndroidDeviceOwnerPlayStoreMode>("playStoreMode", PlayStoreMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerPlayStoreMode>("playStoreMode", PlayStoreMode);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
             writer.WriteBoolValue("securityCommonCriteriaModeEnabled", SecurityCommonCriteriaModeEnabled);
             writer.WriteBoolValue("securityDeveloperSettingsEnabled", SecurityDeveloperSettingsEnabled);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteBoolValue("shareDeviceLocationDisabled", ShareDeviceLocationDisabled);
-            writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("shortHelpText", ShortHelpText);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerUserFacingMessage>("shortHelpText", ShortHelpText);
             writer.WriteBoolValue("statusBarBlocked", StatusBarBlocked);
-            writer.WriteCollectionOfEnumValues<AndroidDeviceOwnerBatteryPluggedMode>("stayOnModes", StayOnModes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerBatteryPluggedMode>("stayOnModes", StayOnModes);
             writer.WriteBoolValue("storageAllowUsb", StorageAllowUsb);
             writer.WriteBoolValue("storageBlockExternalMedia", StorageBlockExternalMedia);
             writer.WriteBoolValue("storageBlockUsbFileTransfer", StorageBlockUsbFileTransfer);
-            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerSystemUpdateFreezePeriod>("systemUpdateFreezePeriods", SystemUpdateFreezePeriods);
-            writer.WriteEnumValue<AndroidDeviceOwnerSystemUpdateInstallType>("systemUpdateInstallType", SystemUpdateInstallType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateFreezePeriod>("systemUpdateFreezePeriods", SystemUpdateFreezePeriods);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerSystemUpdateInstallType>("systemUpdateInstallType", SystemUpdateInstallType);
             writer.WriteIntValue("systemUpdateWindowEndMinutesAfterMidnight", SystemUpdateWindowEndMinutesAfterMidnight);
             writer.WriteIntValue("systemUpdateWindowStartMinutesAfterMidnight", SystemUpdateWindowStartMinutesAfterMidnight);
             writer.WriteBoolValue("systemWindowsBlocked", SystemWindowsBlocked);
@@ -1375,8 +1375,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("workProfilePasswordMinimumSymbolCharacters", WorkProfilePasswordMinimumSymbolCharacters);
             writer.WriteIntValue("workProfilePasswordMinimumUpperCaseCharacters", WorkProfilePasswordMinimumUpperCaseCharacters);
             writer.WriteIntValue("workProfilePasswordPreviousPasswordCountToBlock", WorkProfilePasswordPreviousPasswordCountToBlock);
-            writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
-            writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordUnlock>("workProfilePasswordRequireUnlock", WorkProfilePasswordRequireUnlock);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerRequiredPasswordUnlock>("workProfilePasswordRequireUnlock", WorkProfilePasswordRequireUnlock);
             writer.WriteIntValue("workProfilePasswordSignInFailureCountBeforeFactoryReset", WorkProfilePasswordSignInFailureCountBeforeFactoryReset);
         }
     }

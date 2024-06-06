@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS software update category summary report for a device and user
     /// </summary>
-    public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable
+    public class MacOSSoftwareUpdateCategorySummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,24 +68,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("totalUpdateCount", value); }
         }
         /// <summary>MacOS Software Update Category</summary>
-        public MacOSSoftwareUpdateCategory? UpdateCategory
+        public Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory? UpdateCategory
         {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>("updateCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory?>("updateCategory"); }
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Summary of the update states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSoftwareUpdateStateSummary>? UpdateStateSummaries
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary>? UpdateStateSummaries
         {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>?>("updateStateSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary>?>("updateStateSummaries"); }
             set { BackingStore?.Set("updateStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSoftwareUpdateStateSummary> UpdateStateSummaries
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary> UpdateStateSummaries
         {
-            get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>>("updateStateSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary>>("updateStateSummaries"); }
             set { BackingStore?.Set("updateStateSummaries", value); }
         }
 #endif
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSSoftwareUpdateCategorySummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSSoftwareUpdateCategorySummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSSoftwareUpdateCategorySummary();
+            return new Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,8 +129,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
                 { "totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
-                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
-                { "updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory>(); } },
+                { "updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary>(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -148,8 +148,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteIntValue("successfulUpdateCount", SuccessfulUpdateCount);
             writer.WriteIntValue("totalUpdateCount", TotalUpdateCount);
-            writer.WriteEnumValue<MacOSSoftwareUpdateCategory>("updateCategory", UpdateCategory);
-            writer.WriteCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>("updateStateSummaries", UpdateStateSummaries);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategory>("updateCategory", UpdateCategory);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateStateSummary>("updateStateSummaries", UpdateStateSummaries);
             writer.WriteStringValue("userId", UserId);
         }
     }

@@ -7,29 +7,29 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Group : DirectoryObject, IParsable
+    public class Group : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? AcceptedSenders
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? AcceptedSenders
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("acceptedSenders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("acceptedSenders"); }
             set { BackingStore?.Set("acceptedSenders", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> AcceptedSenders
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> AcceptedSenders
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("acceptedSenders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("acceptedSenders"); }
             set { BackingStore?.Set("acceptedSenders", value); }
         }
 #endif
         /// <summary>Indicates the type of access to the group. Possible values are none, private, secret, and public.</summary>
-        public GroupAccessType? AccessType
+        public Microsoft.Graph.Beta.Models.GroupAccessType? AccessType
         {
-            get { return BackingStore?.Get<GroupAccessType?>("accessType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupAccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
@@ -41,48 +41,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the app roles a group has been granted for an application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppRoleAssignment>? AppRoleAssignments
+        public List<Microsoft.Graph.Beta.Models.AppRoleAssignment>? AppRoleAssignments
         {
-            get { return BackingStore?.Get<List<AppRoleAssignment>?>("appRoleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppRoleAssignment>?>("appRoleAssignments"); }
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<AppRoleAssignment> AppRoleAssignments
+        public List<Microsoft.Graph.Beta.Models.AppRoleAssignment> AppRoleAssignments
         {
-            get { return BackingStore?.Get<List<AppRoleAssignment>>("appRoleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppRoleAssignment>>("appRoleAssignments"); }
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
         /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedLabel>? AssignedLabels
+        public List<Microsoft.Graph.Beta.Models.AssignedLabel>? AssignedLabels
         {
-            get { return BackingStore?.Get<List<AssignedLabel>?>("assignedLabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedLabel>?>("assignedLabels"); }
             set { BackingStore?.Set("assignedLabels", value); }
         }
 #nullable restore
 #else
-        public List<AssignedLabel> AssignedLabels
+        public List<Microsoft.Graph.Beta.Models.AssignedLabel> AssignedLabels
         {
-            get { return BackingStore?.Get<List<AssignedLabel>>("assignedLabels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedLabel>>("assignedLabels"); }
             set { BackingStore?.Set("assignedLabels", value); }
         }
 #endif
         /// <summary>The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedLicense>? AssignedLicenses
+        public List<Microsoft.Graph.Beta.Models.AssignedLicense>? AssignedLicenses
         {
-            get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #nullable restore
 #else
-        public List<AssignedLicense> AssignedLicenses
+        public List<Microsoft.Graph.Beta.Models.AssignedLicense> AssignedLicenses
         {
-            get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #endif
@@ -111,16 +111,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The calendar view for the calendar. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? CalendarView
+        public List<Microsoft.Graph.Beta.Models.Event>? CalendarView
         {
-            get { return BackingStore?.Get<List<Event>?>("calendarView"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>?>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #nullable restore
 #else
-        public List<Event> CalendarView
+        public List<Microsoft.Graph.Beta.Models.Event> CalendarView
         {
-            get { return BackingStore?.Get<List<Event>>("calendarView"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
@@ -143,16 +143,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The group&apos;s conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Conversation>? Conversations
+        public List<Microsoft.Graph.Beta.Models.Conversation>? Conversations
         {
-            get { return BackingStore?.Get<List<Conversation>?>("conversations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Conversation>?>("conversations"); }
             set { BackingStore?.Set("conversations", value); }
         }
 #nullable restore
 #else
-        public List<Conversation> Conversations
+        public List<Microsoft.Graph.Beta.Models.Conversation> Conversations
         {
-            get { return BackingStore?.Get<List<Conversation>>("conversations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Conversation>>("conversations"); }
             set { BackingStore?.Set("conversations", value); }
         }
 #endif
@@ -181,16 +181,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user (or application) that created the group. Note: This isn&apos;t set if the user is an administrator. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? CreatedOnBehalfOf
+        public Microsoft.Graph.Beta.Models.DirectoryObject? CreatedOnBehalfOf
         {
-            get { return BackingStore?.Get<DirectoryObject?>("createdOnBehalfOf"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject?>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject CreatedOnBehalfOf
+        public Microsoft.Graph.Beta.Models.DirectoryObject CreatedOnBehalfOf
         {
-            get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
 #endif
@@ -261,32 +261,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Endpoints for the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Endpoint>? Endpoints
+        public List<Microsoft.Graph.Beta.Models.Endpoint>? Endpoints
         {
-            get { return BackingStore?.Get<List<Endpoint>?>("endpoints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Endpoint>?>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
 #nullable restore
 #else
-        public List<Endpoint> Endpoints
+        public List<Microsoft.Graph.Beta.Models.Endpoint> Endpoints
         {
-            get { return BackingStore?.Get<List<Endpoint>>("endpoints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Endpoint>>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
 #endif
         /// <summary>The group&apos;s events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Event>? Events
+        public List<Microsoft.Graph.Beta.Models.Event>? Events
         {
-            get { return BackingStore?.Get<List<Event>?>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<Event> Events
+        public List<Microsoft.Graph.Beta.Models.Event> Events
         {
-            get { return BackingStore?.Get<List<Event>>("events"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Event>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #endif
@@ -299,32 +299,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of open extensions defined for the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>The collection of lifecycle policies for this group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupLifecyclePolicy>? GroupLifecyclePolicies
+        public List<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>? GroupLifecyclePolicies
         {
-            get { return BackingStore?.Get<List<GroupLifecyclePolicy>?>("groupLifecyclePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>?>("groupLifecyclePolicies"); }
             set { BackingStore?.Set("groupLifecyclePolicies", value); }
         }
 #nullable restore
 #else
-        public List<GroupLifecyclePolicy> GroupLifecyclePolicies
+        public List<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy> GroupLifecyclePolicies
         {
-            get { return BackingStore?.Get<List<GroupLifecyclePolicy>>("groupLifecyclePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>>("groupLifecyclePolicies"); }
             set { BackingStore?.Set("groupLifecyclePolicies", value); }
         }
 #endif
@@ -465,32 +465,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? MemberOf
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> MemberOf
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> MemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
         /// <summary>Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Members
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? Members
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Members
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> Members
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
@@ -545,16 +545,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of group members with license errors from this group-based license assignment. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? MembersWithLicenseErrors
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? MembersWithLicenseErrors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("membersWithLicenseErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("membersWithLicenseErrors"); }
             set { BackingStore?.Set("membersWithLicenseErrors", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> MembersWithLicenseErrors
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> MembersWithLicenseErrors
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("membersWithLicenseErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("membersWithLicenseErrors"); }
             set { BackingStore?.Set("membersWithLicenseErrors", value); }
         }
 #endif
@@ -615,16 +615,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors
+        public List<Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>? OnPremisesProvisioningErrors
         {
-            get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors
+        public List<Microsoft.Graph.Beta.Models.OnPremisesProvisioningError> OnPremisesProvisioningErrors
         {
-            get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
@@ -685,80 +685,80 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The owners of the group who can be users or service principals. Nullable. If this property isn&apos;t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Owners
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? Owners
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("owners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Owners
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> Owners
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #endif
         /// <summary>The permissions granted for a group to a specific application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceSpecificPermissionGrant>? PermissionGrants
+        public List<Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>? PermissionGrants
         {
-            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>?>("permissionGrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>?>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
 #nullable restore
 #else
-        public List<ResourceSpecificPermissionGrant> PermissionGrants
+        public List<Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant> PermissionGrants
         {
-            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
 #endif
         /// <summary>The group&apos;s profile photo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProfilePhoto? Photo
+        public Microsoft.Graph.Beta.Models.ProfilePhoto? Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto?>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProfilePhoto?>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #nullable restore
 #else
-        public ProfilePhoto Photo
+        public Microsoft.Graph.Beta.Models.ProfilePhoto Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProfilePhoto>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #endif
         /// <summary>The profile photos owned by the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfilePhoto>? Photos
+        public List<Microsoft.Graph.Beta.Models.ProfilePhoto>? Photos
         {
-            get { return BackingStore?.Get<List<ProfilePhoto>?>("photos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProfilePhoto>?>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
 #nullable restore
 #else
-        public List<ProfilePhoto> Photos
+        public List<Microsoft.Graph.Beta.Models.ProfilePhoto> Photos
         {
-            get { return BackingStore?.Get<List<ProfilePhoto>>("photos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProfilePhoto>>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
 #endif
         /// <summary>Selective Planner services available to the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerGroup? Planner
+        public Microsoft.Graph.Beta.Models.PlannerGroup? Planner
         {
-            get { return BackingStore?.Get<PlannerGroup?>("planner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerGroup?>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
 #nullable restore
 #else
-        public PlannerGroup Planner
+        public Microsoft.Graph.Beta.Models.PlannerGroup Planner
         {
-            get { return BackingStore?.Get<PlannerGroup>("planner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerGroup>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
 #endif
@@ -813,16 +813,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of users or groups not allowed to create posts or calendar events in this group. Nullable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? RejectedSenders
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? RejectedSenders
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("rejectedSenders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("rejectedSenders"); }
             set { BackingStore?.Set("rejectedSenders", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> RejectedSenders
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> RejectedSenders
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("rejectedSenders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("rejectedSenders"); }
             set { BackingStore?.Set("rejectedSenders", value); }
         }
 #endif
@@ -889,48 +889,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceProvisioningError>? ServiceProvisioningErrors
+        public List<Microsoft.Graph.Beta.Models.ServiceProvisioningError>? ServiceProvisioningErrors
         {
-            get { return BackingStore?.Get<List<ServiceProvisioningError>?>("serviceProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceProvisioningError>?>("serviceProvisioningErrors"); }
             set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #nullable restore
 #else
-        public List<ServiceProvisioningError> ServiceProvisioningErrors
+        public List<Microsoft.Graph.Beta.Models.ServiceProvisioningError> ServiceProvisioningErrors
         {
-            get { return BackingStore?.Get<List<ServiceProvisioningError>>("serviceProvisioningErrors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceProvisioningError>>("serviceProvisioningErrors"); }
             set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #endif
         /// <summary>Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectorySetting>? Settings
+        public List<Microsoft.Graph.Beta.Models.DirectorySetting>? Settings
         {
-            get { return BackingStore?.Get<List<DirectorySetting>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectorySetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DirectorySetting> Settings
+        public List<Microsoft.Graph.Beta.Models.DirectorySetting> Settings
         {
-            get { return BackingStore?.Get<List<DirectorySetting>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectorySetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Site>? Sites
+        public List<Microsoft.Graph.Beta.Models.Site>? Sites
         {
-            get { return BackingStore?.Get<List<Site>?>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Site>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #nullable restore
 #else
-        public List<Site> Sites
+        public List<Microsoft.Graph.Beta.Models.Site> Sites
         {
-            get { return BackingStore?.Get<List<Site>>("sites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Site>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
 #endif
@@ -969,48 +969,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The group&apos;s conversation threads. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationThread>? Threads
+        public List<Microsoft.Graph.Beta.Models.ConversationThread>? Threads
         {
-            get { return BackingStore?.Get<List<ConversationThread>?>("threads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConversationThread>?>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
 #nullable restore
 #else
-        public List<ConversationThread> Threads
+        public List<Microsoft.Graph.Beta.Models.ConversationThread> Threads
         {
-            get { return BackingStore?.Get<List<ConversationThread>>("threads"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConversationThread>>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
 #endif
         /// <summary>The groups a group is a member of, either directly or through nested membership. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TransitiveMemberOf
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TransitiveMemberOf
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> TransitiveMemberOf
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
         /// <summary>The direct and transitive members of a group. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? TransitiveMembers
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? TransitiveMembers
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("transitiveMembers"); }
             set { BackingStore?.Set("transitiveMembers", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> TransitiveMembers
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> TransitiveMembers
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("transitiveMembers"); }
             set { BackingStore?.Set("transitiveMembers", value); }
         }
 #endif
@@ -1067,21 +1067,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premises Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupWritebackConfiguration? WritebackConfiguration
+        public Microsoft.Graph.Beta.Models.GroupWritebackConfiguration? WritebackConfiguration
         {
-            get { return BackingStore?.Get<GroupWritebackConfiguration?>("writebackConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupWritebackConfiguration?>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
 #nullable restore
 #else
-        public GroupWritebackConfiguration WritebackConfiguration
+        public Microsoft.Graph.Beta.Models.GroupWritebackConfiguration WritebackConfiguration
         {
-            get { return BackingStore?.Get<GroupWritebackConfiguration>("writebackConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Group"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Group"/> and sets the default values.
         /// </summary>
         public Group() : base()
         {
@@ -1090,12 +1090,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Group"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Group"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Group CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Group CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Group();
+            return new Microsoft.Graph.Beta.Models.Group();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -1105,29 +1105,29 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "acceptedSenders", n => { AcceptedSenders = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessType", n => { AccessType = n.GetEnumValue<GroupAccessType>(); } },
+                { "acceptedSenders", n => { AcceptedSenders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupAccessType>(); } },
                 { "allowExternalSenders", n => { AllowExternalSenders = n.GetBoolValue(); } },
-                { "appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignedLabels", n => { AssignedLabels = n.GetCollectionOfObjectValues<AssignedLabel>(AssignedLabel.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppRoleAssignment>(Microsoft.Graph.Beta.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedLabels", n => { AssignedLabels = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedLabel>(Microsoft.Graph.Beta.Models.AssignedLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedLicense>(Microsoft.Graph.Beta.Models.AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "autoSubscribeNewMembers", n => { AutoSubscribeNewMembers = n.GetBoolValue(); } },
                 { "calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue); } },
-                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "classification", n => { Classification = n.GetStringValue(); } },
-                { "conversations", n => { Conversations = n.GetCollectionOfObjectValues<Conversation>(Conversation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conversations", n => { Conversations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Conversation>(Microsoft.Graph.Beta.Models.Conversation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<Endpoint>(Endpoint.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Endpoint>(Microsoft.Graph.Beta.Models.Endpoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "groupLifecyclePolicies", n => { GroupLifecyclePolicies = n.GetCollectionOfObjectValues<GroupLifecyclePolicy>(GroupLifecyclePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupLifecyclePolicies", n => { GroupLifecyclePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>(Microsoft.Graph.Beta.Models.GroupLifecyclePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "groupTypes", n => { GroupTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "hasMembersWithLicenseErrors", n => { HasMembersWithLicenseErrors = n.GetBoolValue(); } },
                 { "hideFromAddressLists", n => { HideFromAddressLists = n.GetBoolValue(); } },
@@ -1142,49 +1142,49 @@ namespace Microsoft.Graph.Beta.Models
                 { "mail", n => { Mail = n.GetStringValue(); } },
                 { "mailEnabled", n => { MailEnabled = n.GetBoolValue(); } },
                 { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "membersWithLicenseErrors", n => { MembersWithLicenseErrors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "membersWithLicenseErrors", n => { MembersWithLicenseErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "membershipRule", n => { MembershipRule = n.GetStringValue(); } },
                 { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
                 { "membershipRuleProcessingStatus", n => { MembershipRuleProcessingStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus>(Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus.CreateFromDiscriminatorValue); } },
                 { "onPremisesDomainName", n => { OnPremisesDomainName = n.GetStringValue(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesNetBiosName", n => { OnPremisesNetBiosName = n.GetStringValue(); } },
-                { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>(Microsoft.Graph.Beta.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "onPremisesSamAccountName", n => { OnPremisesSamAccountName = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Beta.Models.Onenote>(Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "owners", n => { Owners = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
-                { "photos", n => { Photos = n.GetCollectionOfObjectValues<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "planner", n => { Planner = n.GetObjectValue<PlannerGroup>(PlannerGroup.CreateFromDiscriminatorValue); } },
+                { "owners", n => { Owners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>(Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "photo", n => { Photo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProfilePhoto>(Microsoft.Graph.Beta.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
+                { "photos", n => { Photos = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProfilePhoto>(Microsoft.Graph.Beta.Models.ProfilePhoto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "planner", n => { Planner = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerGroup>(Microsoft.Graph.Beta.Models.PlannerGroup.CreateFromDiscriminatorValue); } },
                 { "preferredDataLocation", n => { PreferredDataLocation = n.GetStringValue(); } },
                 { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
                 { "proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "rejectedSenders", n => { RejectedSenders = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rejectedSenders", n => { RejectedSenders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "renewedDateTime", n => { RenewedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "resourceBehaviorOptions", n => { ResourceBehaviorOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "resourceProvisioningOptions", n => { ResourceProvisioningOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "securityEnabled", n => { SecurityEnabled = n.GetBoolValue(); } },
                 { "securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
-                { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<ServiceProvisioningError>(ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DirectorySetting>(DirectorySetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sites", n => { Sites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceProvisioningError>(Microsoft.Graph.Beta.Models.ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectorySetting>(Microsoft.Graph.Beta.Models.DirectorySetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sites", n => { Sites = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Site>(Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
                 { "theme", n => { Theme = n.GetStringValue(); } },
-                { "threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "transitiveMembers", n => { TransitiveMembers = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "threads", n => { Threads = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConversationThread>(Microsoft.Graph.Beta.Models.ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveMembers", n => { TransitiveMembers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "uniqueName", n => { UniqueName = n.GetStringValue(); } },
                 { "unseenConversationsCount", n => { UnseenConversationsCount = n.GetIntValue(); } },
                 { "unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 { "unseenMessagesCount", n => { UnseenMessagesCount = n.GetIntValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
-                { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<GroupWritebackConfiguration>(GroupWritebackConfiguration.CreateFromDiscriminatorValue); } },
+                { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>(Microsoft.Graph.Beta.Models.GroupWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -1195,29 +1195,29 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("acceptedSenders", AcceptedSenders);
-            writer.WriteEnumValue<GroupAccessType>("accessType", AccessType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("acceptedSenders", AcceptedSenders);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupAccessType>("accessType", AccessType);
             writer.WriteBoolValue("allowExternalSenders", AllowExternalSenders);
-            writer.WriteCollectionOfObjectValues<AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
-            writer.WriteCollectionOfObjectValues<AssignedLabel>("assignedLabels", AssignedLabels);
-            writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedLabel>("assignedLabels", AssignedLabels);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteBoolValue("autoSubscribeNewMembers", AutoSubscribeNewMembers);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Calendar>("calendar", Calendar);
-            writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>("calendarView", CalendarView);
             writer.WriteStringValue("classification", Classification);
-            writer.WriteCollectionOfObjectValues<Conversation>("conversations", Conversations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Conversation>("conversations", Conversations);
             writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
-            writer.WriteCollectionOfObjectValues<Endpoint>("endpoints", Endpoints);
-            writer.WriteCollectionOfObjectValues<Event>("events", Events);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Endpoint>("endpoints", Endpoints);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Event>("events", Events);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
-            writer.WriteCollectionOfObjectValues<GroupLifecyclePolicy>("groupLifecyclePolicies", GroupLifecyclePolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>("groupLifecyclePolicies", GroupLifecyclePolicies);
             writer.WriteCollectionOfPrimitiveValues<string>("groupTypes", GroupTypes);
             writer.WriteBoolValue("hasMembersWithLicenseErrors", HasMembersWithLicenseErrors);
             writer.WriteBoolValue("hideFromAddressLists", HideFromAddressLists);
@@ -1232,49 +1232,49 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("mail", Mail);
             writer.WriteBoolValue("mailEnabled", MailEnabled);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("memberOf", MemberOf);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("memberOf", MemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("members", Members);
             writer.WriteStringValue("membershipRule", MembershipRule);
             writer.WriteStringValue("membershipRuleProcessingState", MembershipRuleProcessingState);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus>("membershipRuleProcessingStatus", MembershipRuleProcessingStatus);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Onenote>("onenote", Onenote);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesNetBiosName", OnPremisesNetBiosName);
-            writer.WriteCollectionOfObjectValues<OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
             writer.WriteStringValue("onPremisesSamAccountName", OnPremisesSamAccountName);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("owners", Owners);
-            writer.WriteCollectionOfObjectValues<ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
-            writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
-            writer.WriteCollectionOfObjectValues<ProfilePhoto>("photos", Photos);
-            writer.WriteObjectValue<PlannerGroup>("planner", Planner);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("owners", Owners);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ProfilePhoto>("photo", Photo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProfilePhoto>("photos", Photos);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerGroup>("planner", Planner);
             writer.WriteStringValue("preferredDataLocation", PreferredDataLocation);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("rejectedSenders", RejectedSenders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("rejectedSenders", RejectedSenders);
             writer.WriteDateTimeOffsetValue("renewedDateTime", RenewedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceBehaviorOptions", ResourceBehaviorOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceProvisioningOptions", ResourceProvisioningOptions);
             writer.WriteBoolValue("securityEnabled", SecurityEnabled);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
-            writer.WriteCollectionOfObjectValues<ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
-            writer.WriteCollectionOfObjectValues<DirectorySetting>("settings", Settings);
-            writer.WriteCollectionOfObjectValues<Site>("sites", Sites);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectorySetting>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Site>("sites", Sites);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("team", Team);
             writer.WriteStringValue("theme", Theme);
-            writer.WriteCollectionOfObjectValues<ConversationThread>("threads", Threads);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMembers", TransitiveMembers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConversationThread>("threads", Threads);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("transitiveMembers", TransitiveMembers);
             writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteIntValue("unseenConversationsCount", UnseenConversationsCount);
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteIntValue("unseenMessagesCount", UnseenMessagesCount);
             writer.WriteStringValue("visibility", Visibility);
-            writer.WriteObjectValue<GroupWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GroupWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
         }
     }
 }

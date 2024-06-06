@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.R
 {
     [Obsolete("This class is obsolete. Use RejectPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RejectResponse : RejectPostResponse, IParsable
+    public class RejectResponse : Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RejectResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RejectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RejectResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectResponse();
         }
     }
 }

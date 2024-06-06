@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryExportOperation : CaseOperation, IParsable
+    public class EdiscoveryExportOperation : Microsoft.Graph.Beta.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.</summary>
@@ -81,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
-        public ExportFileStructure? ExportStructure
+        public Microsoft.Graph.Beta.Models.Security.ExportFileStructure? ExportStructure
         {
-            get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.</summary>
@@ -121,44 +121,44 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Review set from where documents are exported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewSet? ReviewSet
+        public Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet? ReviewSet
         {
-            get { return BackingStore?.Get<EdiscoveryReviewSet?>("reviewSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewSet ReviewSet
+        public Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet ReviewSet
         {
-            get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #endif
         /// <summary>The review set query that is used to filter the documents for export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewSetQuery? ReviewSetQuery
+        public Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery? ReviewSetQuery
         {
-            get { return BackingStore?.Get<EdiscoveryReviewSetQuery?>("reviewSetQuery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery?>("reviewSetQuery"); }
             set { BackingStore?.Set("reviewSetQuery", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewSetQuery ReviewSetQuery
+        public Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery ReviewSetQuery
         {
-            get { return BackingStore?.Get<EdiscoveryReviewSetQuery>("reviewSetQuery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>("reviewSetQuery"); }
             set { BackingStore?.Set("reviewSetQuery", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryExportOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryExportOperation();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoveryExportOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -172,12 +172,12 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>(Microsoft.Graph.Beta.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
-                { "exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                { "exportOptions", n => { ExportOptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportOptions>(); } },
+                { "exportStructure", n => { ExportStructure = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ExportFileStructure>(); } },
                 { "outputFolderId", n => { OutputFolderId = n.GetStringValue(); } },
                 { "outputName", n => { OutputName = n.GetStringValue(); } },
-                { "reviewSet", n => { ReviewSet = n.GetObjectValue<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
-                { "reviewSetQuery", n => { ReviewSetQuery = n.GetObjectValue<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue); } },
+                { "reviewSet", n => { ReviewSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet>(Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
+                { "reviewSetQuery", n => { ReviewSetQuery = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>(Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -192,12 +192,12 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("azureBlobToken", AzureBlobToken);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>("exportFileMetadata", ExportFileMetadata);
-            writer.WriteEnumValue<ExportOptions>("exportOptions", ExportOptions);
-            writer.WriteEnumValue<ExportFileStructure>("exportStructure", ExportStructure);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportOptions>("exportOptions", ExportOptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ExportFileStructure>("exportStructure", ExportStructure);
             writer.WriteStringValue("outputFolderId", OutputFolderId);
             writer.WriteStringValue("outputName", OutputName);
-            writer.WriteObjectValue<EdiscoveryReviewSet>("reviewSet", ReviewSet);
-            writer.WriteObjectValue<EdiscoveryReviewSetQuery>("reviewSetQuery", ReviewSetQuery);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSet>("reviewSet", ReviewSet);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewSetQuery>("reviewSetQuery", ReviewSetQuery);
         }
     }
 }

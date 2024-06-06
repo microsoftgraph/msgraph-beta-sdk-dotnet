@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The question the answer is for. Required and Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageQuestion? AnsweredQuestion
+        public Microsoft.Graph.Beta.Models.AccessPackageQuestion? AnsweredQuestion
         {
-            get { return BackingStore?.Get<AccessPackageQuestion?>("answeredQuestion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageQuestion?>("answeredQuestion"); }
             set { BackingStore?.Set("answeredQuestion", value); }
         }
 #nullable restore
 #else
-        public AccessPackageQuestion AnsweredQuestion
+        public Microsoft.Graph.Beta.Models.AccessPackageQuestion AnsweredQuestion
         {
-            get { return BackingStore?.Get<AccessPackageQuestion>("answeredQuestion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageQuestion>("answeredQuestion"); }
             set { BackingStore?.Set("answeredQuestion", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessPackageAnswer"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccessPackageAnswer"/> and sets the default values.
         /// </summary>
         public AccessPackageAnswer()
         {
@@ -78,16 +78,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAnswer"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageAnswer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessPackageAnswer CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccessPackageAnswer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessPackageAnswerString" => new AccessPackageAnswerString(),
-                _ => new AccessPackageAnswer(),
+                "#microsoft.graph.accessPackageAnswerString" => new Microsoft.Graph.Beta.Models.AccessPackageAnswerString(),
+                _ => new Microsoft.Graph.Beta.Models.AccessPackageAnswer(),
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "answeredQuestion", n => { AnsweredQuestion = n.GetObjectValue<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue); } },
+                { "answeredQuestion", n => { AnsweredQuestion = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageQuestion>(Microsoft.Graph.Beta.Models.AccessPackageQuestion.CreateFromDiscriminatorValue); } },
                 { "displayValue", n => { DisplayValue = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AccessPackageQuestion>("answeredQuestion", AnsweredQuestion);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageQuestion>("answeredQuestion", AnsweredQuestion);
             writer.WriteStringValue("displayValue", DisplayValue);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

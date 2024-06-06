@@ -13,23 +13,23 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The acceptedVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagementTemplateStepVersion? AcceptedVersion
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion? AcceptedVersion
         {
-            get { return BackingStore?.Get<ManagementTemplateStepVersion?>("acceptedVersion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion?>("acceptedVersion"); }
             set { BackingStore?.Set("acceptedVersion", value); }
         }
 #nullable restore
 #else
-        public ManagementTemplateStepVersion AcceptedVersion
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion AcceptedVersion
         {
-            get { return BackingStore?.Get<ManagementTemplateStepVersion>("acceptedVersion"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>("acceptedVersion"); }
             set { BackingStore?.Set("acceptedVersion", value); }
         }
 #endif
         /// <summary>The category property</summary>
-        public ManagementCategory? Category
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory? Category
         {
-            get { return BackingStore?.Get<ManagementCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
@@ -181,28 +181,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepVersion>? Versions
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>? Versions
         {
-            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>?>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepVersion> Versions
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion> Versions
         {
-            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateStep"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagementTemplateStep CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementTemplateStep();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStep();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -212,8 +212,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "acceptedVersion", n => { AcceptedVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
-                { "category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                { "acceptedVersion", n => { AcceptedVersion = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "portalLink", n => { PortalLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "userImpact", n => { UserImpact = n.GetStringValue(); } },
-                { "versions", n => { Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -236,8 +236,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ManagementTemplateStepVersion>("acceptedVersion", AcceptedVersion);
-            writer.WriteEnumValue<ManagementCategory>("category", Category);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>("acceptedVersion", AcceptedVersion);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementCategory>("category", Category);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
@@ -249,7 +249,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>("portalLink", PortalLink);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("userImpact", UserImpact);
-            writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", Versions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepVersion>("versions", Versions);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device compliance policy group assignment.
     /// </summary>
-    public class DeviceCompliancePolicyGroupAssignment : Entity, IParsable
+    public class DeviceCompliancePolicyGroupAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The navigation link to the  device compliance polic targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceCompliancePolicyGroupAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceCompliancePolicyGroupAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceCompliancePolicyGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceCompliancePolicyGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceCompliancePolicyGroupAssignment();
+            return new Microsoft.Graph.Beta.Models.DeviceCompliancePolicyGroupAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model

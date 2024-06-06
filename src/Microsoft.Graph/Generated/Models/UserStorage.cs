@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UserStorage : Entity, IParsable
+    public class UserStorage : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedStorageQuota? Quota
+        public Microsoft.Graph.Beta.Models.UnifiedStorageQuota? Quota
         {
-            get { return BackingStore?.Get<UnifiedStorageQuota?>("quota"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedStorageQuota?>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
 #nullable restore
 #else
-        public UnifiedStorageQuota Quota
+        public Microsoft.Graph.Beta.Models.UnifiedStorageQuota Quota
         {
-            get { return BackingStore?.Get<UnifiedStorageQuota>("quota"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedStorageQuota>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserStorage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserStorage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserStorage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserStorage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserStorage();
+            return new Microsoft.Graph.Beta.Models.UserStorage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "quota", n => { Quota = n.GetObjectValue<UnifiedStorageQuota>(UnifiedStorageQuota.CreateFromDiscriminatorValue); } },
+                { "quota", n => { Quota = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedStorageQuota>(Microsoft.Graph.Beta.Models.UnifiedStorageQuota.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UnifiedStorageQuota>("quota", Quota);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedStorageQuota>("quota", Quota);
         }
     }
 }

@@ -7,23 +7,23 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsRole : AwsIdentity, IParsable
+    public class AwsRole : Microsoft.Graph.Beta.Models.AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The roleType property</summary>
-        public AwsRoleType? RoleType
+        public Microsoft.Graph.Beta.Models.AwsRoleType? RoleType
         {
-            get { return BackingStore?.Get<AwsRoleType?>("roleType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsRoleType?>("roleType"); }
             set { BackingStore?.Set("roleType", value); }
         }
         /// <summary>The trustEntityType property</summary>
-        public AwsRoleTrustEntityType? TrustEntityType
+        public Microsoft.Graph.Beta.Models.AwsRoleTrustEntityType? TrustEntityType
         {
-            get { return BackingStore?.Get<AwsRoleTrustEntityType?>("trustEntityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsRoleTrustEntityType?>("trustEntityType"); }
             set { BackingStore?.Set("trustEntityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AwsRole"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsRole"/> and sets the default values.
         /// </summary>
         public AwsRole() : base()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsRole();
+            return new Microsoft.Graph.Beta.Models.AwsRole();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "roleType", n => { RoleType = n.GetEnumValue<AwsRoleType>(); } },
-                { "trustEntityType", n => { TrustEntityType = n.GetEnumValue<AwsRoleTrustEntityType>(); } },
+                { "roleType", n => { RoleType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AwsRoleType>(); } },
+                { "trustEntityType", n => { TrustEntityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AwsRoleTrustEntityType>(); } },
             };
         }
         /// <summary>
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AwsRoleType>("roleType", RoleType);
-            writer.WriteEnumValue<AwsRoleTrustEntityType>("trustEntityType", TrustEntityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AwsRoleType>("roleType", RoleType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AwsRoleTrustEntityType>("trustEntityType", TrustEntityType);
         }
     }
 }

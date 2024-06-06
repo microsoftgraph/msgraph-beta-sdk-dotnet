@@ -23,32 +23,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Device properties used for filter evaluation during device check-in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? DeviceProperties
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? DeviceProperties
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("deviceProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("deviceProperties"); }
             set { BackingStore?.Set("deviceProperties", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> DeviceProperties
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> DeviceProperties
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("deviceProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("deviceProperties"); }
             set { BackingStore?.Set("deviceProperties", value); }
         }
 #endif
         /// <summary>Evaluation result summaries for each filter associated to device and payload</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignmentFilterEvaluationSummary>? EvalutionSummaries
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary>? EvalutionSummaries
         {
-            get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>?>("evalutionSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary>?>("evalutionSummaries"); }
             set { BackingStore?.Set("evalutionSummaries", value); }
         }
 #nullable restore
 #else
-        public List<AssignmentFilterEvaluationSummary> EvalutionSummaries
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary> EvalutionSummaries
         {
-            get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>>("evalutionSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary>>("evalutionSummaries"); }
             set { BackingStore?.Set("evalutionSummaries", value); }
         }
 #endif
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentFilterStatusDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterStatusDetails"/> and sets the default values.
         /// </summary>
         public AssignmentFilterStatusDetails()
         {
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentFilterStatusDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterStatusDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentFilterStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AssignmentFilterStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentFilterStatusDetails();
+            return new Microsoft.Graph.Beta.Models.AssignmentFilterStatusDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,8 +142,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceProperties", n => { DeviceProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "evalutionSummaries", n => { EvalutionSummaries = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationSummary>(AssignmentFilterEvaluationSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceProperties", n => { DeviceProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "evalutionSummaries", n => { EvalutionSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary>(Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "payloadId", n => { PayloadId = n.GetStringValue(); } },
@@ -157,8 +157,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("deviceProperties", DeviceProperties);
-            writer.WriteCollectionOfObjectValues<AssignmentFilterEvaluationSummary>("evalutionSummaries", EvalutionSummaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("deviceProperties", DeviceProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary>("evalutionSummaries", EvalutionSummaries);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("payloadId", PayloadId);

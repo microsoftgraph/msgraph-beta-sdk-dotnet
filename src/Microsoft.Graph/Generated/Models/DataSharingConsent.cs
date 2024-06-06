@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Data sharing consent information.
     /// </summary>
-    public class DataSharingConsent : Entity, IParsable
+    public class DataSharingConsent : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The time consent was granted for this account</summary>
         public DateTimeOffset? GrantDateTime
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataSharingConsent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DataSharingConsent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DataSharingConsent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DataSharingConsent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DataSharingConsent();
+            return new Microsoft.Graph.Beta.Models.DataSharingConsent();
         }
         /// <summary>
         /// The deserialization information for the current model

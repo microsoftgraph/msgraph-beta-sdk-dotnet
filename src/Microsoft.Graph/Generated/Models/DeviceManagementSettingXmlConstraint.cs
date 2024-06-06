@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint enforcing the setting is well formed XML
     /// </summary>
-    public class DeviceManagementSettingXmlConstraint : DeviceManagementConstraint, IParsable
+    public class DeviceManagementSettingXmlConstraint : Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementSettingXmlConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingXmlConstraint"/> and sets the default values.
         /// </summary>
         public DeviceManagementSettingXmlConstraint() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingXmlConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingXmlConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingXmlConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementSettingXmlConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingXmlConstraint();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementSettingXmlConstraint();
         }
         /// <summary>
         /// The deserialization information for the current model

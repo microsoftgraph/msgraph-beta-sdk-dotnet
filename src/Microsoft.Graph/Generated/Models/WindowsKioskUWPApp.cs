@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The base class for a type of apps
     /// </summary>
-    public class WindowsKioskUWPApp : WindowsKioskAppBase, IParsable
+    public class WindowsKioskUWPApp : Microsoft.Graph.Beta.Models.WindowsKioskAppBase, IParsable
     {
         /// <summary>This references an Intune App that will be target to the same assignments as Kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskUWPApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskUWPApp"/> and sets the default values.
         /// </summary>
         public WindowsKioskUWPApp() : base()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskUWPApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskUWPApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskUWPApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskUWPApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskUWPApp();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskUWPApp();
         }
         /// <summary>
         /// The deserialization information for the current model

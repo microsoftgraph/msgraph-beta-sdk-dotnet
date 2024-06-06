@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers
 {
     [Obsolete("This class is obsolete. Use GetManagedAppBlockedUsersGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedAppBlockedUsersResponse : GetManagedAppBlockedUsersGetResponse, IParsable
+    public class GetManagedAppBlockedUsersResponse : Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers.GetManagedAppBlockedUsersGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetManagedAppBlockedUsersResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers.GetManagedAppBlockedUsersResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedAppBlockedUsersResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers.GetManagedAppBlockedUsersResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetManagedAppBlockedUsersResponse();
+            return new Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers.GetManagedAppBlockedUsersResponse();
         }
     }
 }

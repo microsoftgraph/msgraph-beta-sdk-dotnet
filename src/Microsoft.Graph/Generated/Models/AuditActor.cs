@@ -215,21 +215,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of user scope tags when the audit was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleScopeTagInfo>? UserRoleScopeTags
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTagInfo>? UserRoleScopeTags
         {
-            get { return BackingStore?.Get<List<RoleScopeTagInfo>?>("userRoleScopeTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTagInfo>?>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #nullable restore
 #else
-        public List<RoleScopeTagInfo> UserRoleScopeTags
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTagInfo> UserRoleScopeTags
         {
-            get { return BackingStore?.Get<List<RoleScopeTagInfo>>("userRoleScopeTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTagInfo>>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuditActor"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuditActor"/> and sets the default values.
         /// </summary>
         public AuditActor()
         {
@@ -239,12 +239,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuditActor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuditActor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuditActor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuditActor();
+            return new Microsoft.Graph.Beta.Models.AuditActor();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -266,7 +266,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTagInfo>(RoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTagInfo>(Microsoft.Graph.Beta.Models.RoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -288,7 +288,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("userId", UserId);
             writer.WriteCollectionOfPrimitiveValues<string>("userPermissions", UserPermissions);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteCollectionOfObjectValues<RoleScopeTagInfo>("userRoleScopeTags", UserRoleScopeTags);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTagInfo>("userRoleScopeTags", UserRoleScopeTags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

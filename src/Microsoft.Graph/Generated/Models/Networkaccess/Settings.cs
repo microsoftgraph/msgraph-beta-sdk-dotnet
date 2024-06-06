@@ -13,32 +13,32 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>The conditionalAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessSettings? ConditionalAccess
+        public Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings? ConditionalAccess
         {
-            get { return BackingStore?.Get<ConditionalAccessSettings?>("conditionalAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings?>("conditionalAccess"); }
             set { BackingStore?.Set("conditionalAccess", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessSettings ConditionalAccess
+        public Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings ConditionalAccess
         {
-            get { return BackingStore?.Get<ConditionalAccessSettings>("conditionalAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>("conditionalAccess"); }
             set { BackingStore?.Set("conditionalAccess", value); }
         }
 #endif
         /// <summary>The crossTenantAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantAccessSettings? CrossTenantAccess
+        public Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings? CrossTenantAccess
         {
-            get { return BackingStore?.Get<CrossTenantAccessSettings?>("crossTenantAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings?>("crossTenantAccess"); }
             set { BackingStore?.Set("crossTenantAccess", value); }
         }
 #nullable restore
 #else
-        public CrossTenantAccessSettings CrossTenantAccess
+        public Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings CrossTenantAccess
         {
-            get { return BackingStore?.Get<CrossTenantAccessSettings>("crossTenantAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>("crossTenantAccess"); }
             set { BackingStore?.Set("crossTenantAccess", value); }
         }
 #endif
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Settings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.Settings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Settings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.Settings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Settings();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.Settings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,8 +92,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<ConditionalAccessSettings>(ConditionalAccessSettings.CreateFromDiscriminatorValue); } },
-                { "crossTenantAccess", n => { CrossTenantAccess = n.GetObjectValue<CrossTenantAccessSettings>(CrossTenantAccessSettings.CreateFromDiscriminatorValue); } },
+                { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>(Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings.CreateFromDiscriminatorValue); } },
+                { "crossTenantAccess", n => { CrossTenantAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>(Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings.CreateFromDiscriminatorValue); } },
                 { "enrichedAuditLogs", n => { EnrichedAuditLogs = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>(Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs.CreateFromDiscriminatorValue); } },
                 { "forwardingOptions", n => { ForwardingOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>(Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions.CreateFromDiscriminatorValue); } },
             };
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ConditionalAccessSettings>("conditionalAccess", ConditionalAccess);
-            writer.WriteObjectValue<CrossTenantAccessSettings>("crossTenantAccess", CrossTenantAccess);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>("conditionalAccess", ConditionalAccess);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.CrossTenantAccessSettings>("crossTenantAccess", CrossTenantAccess);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>("enrichedAuditLogs", EnrichedAuditLogs);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>("forwardingOptions", ForwardingOptions);
         }

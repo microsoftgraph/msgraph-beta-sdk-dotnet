@@ -38,32 +38,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Details of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PublicErrorDetail>? Details
+        public List<Microsoft.Graph.Beta.Models.PublicErrorDetail>? Details
         {
-            get { return BackingStore?.Get<List<PublicErrorDetail>?>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicErrorDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<PublicErrorDetail> Details
+        public List<Microsoft.Graph.Beta.Models.PublicErrorDetail> Details
         {
-            get { return BackingStore?.Get<List<PublicErrorDetail>>("details"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicErrorDetail>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #endif
         /// <summary>Details of the inner error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicInnerError? InnerError
+        public Microsoft.Graph.Beta.Models.PublicInnerError? InnerError
         {
-            get { return BackingStore?.Get<PublicInnerError?>("innerError"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicInnerError?>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
 #nullable restore
 #else
-        public PublicInnerError InnerError
+        public Microsoft.Graph.Beta.Models.PublicInnerError InnerError
         {
-            get { return BackingStore?.Get<PublicInnerError>("innerError"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicInnerError>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PublicError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PublicError"/> and sets the default values.
         /// </summary>
         public PublicError()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PublicError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PublicError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PublicError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PublicError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PublicError();
+            return new Microsoft.Graph.Beta.Models.PublicError();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,8 +142,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetCollectionOfObjectValues<PublicErrorDetail>(PublicErrorDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "innerError", n => { InnerError = n.GetObjectValue<PublicInnerError>(PublicInnerError.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicErrorDetail>(Microsoft.Graph.Beta.Models.PublicErrorDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "innerError", n => { InnerError = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicInnerError>(Microsoft.Graph.Beta.Models.PublicInnerError.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -157,8 +157,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteCollectionOfObjectValues<PublicErrorDetail>("details", Details);
-            writer.WriteObjectValue<PublicInnerError>("innerError", InnerError);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicErrorDetail>("details", Details);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PublicInnerError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("target", Target);

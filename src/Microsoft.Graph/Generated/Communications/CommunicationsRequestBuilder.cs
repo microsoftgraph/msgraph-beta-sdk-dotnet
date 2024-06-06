@@ -23,32 +23,32 @@ namespace Microsoft.Graph.Beta.Communications
     public class CommunicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.</summary>
-        public CallRecordsRequestBuilder CallRecords
+        public Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsRequestBuilder CallRecords
         {
-            get => new CallRecordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.</summary>
-        public CallsRequestBuilder Calls
+        public Microsoft.Graph.Beta.Communications.Calls.CallsRequestBuilder Calls
         {
-            get => new CallsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.Calls.CallsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
-        public GetPresencesByUserIdRequestBuilder GetPresencesByUserId
+        public Microsoft.Graph.Beta.Communications.GetPresencesByUserId.GetPresencesByUserIdRequestBuilder GetPresencesByUserId
         {
-            get => new GetPresencesByUserIdRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.GetPresencesByUserId.GetPresencesByUserIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.</summary>
-        public OnlineMeetingsRequestBuilder OnlineMeetings
+        public Microsoft.Graph.Beta.Communications.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
         {
-            get => new OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.</summary>
-        public PresencesRequestBuilder Presences
+        public Microsoft.Graph.Beta.Communications.Presences.PresencesRequestBuilder Presences
         {
-            get => new PresencesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Communications.Presences.PresencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="CommunicationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Communications
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CommunicationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -66,60 +66,60 @@ namespace Microsoft.Graph.Beta.Communications
         /// <summary>
         /// Get communications
         /// </summary>
-        /// <returns>A <see cref="CloudCommunications"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudCommunications"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudCommunications?> GetAsync(Action<RequestConfiguration<CommunicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudCommunications?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder.CommunicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudCommunications> GetAsync(Action<RequestConfiguration<CommunicationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudCommunications> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder.CommunicationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudCommunications>(requestInfo, CloudCommunications.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudCommunications>(requestInfo, Microsoft.Graph.Beta.Models.CloudCommunications.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
         /// </summary>
-        /// <returns>A <see cref="OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Communications.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
-        public OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl)
+        public Microsoft.Graph.Beta.Communications.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl)
         {
             if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
-            return new OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
+            return new Microsoft.Graph.Beta.Communications.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Update communications
         /// </summary>
-        /// <returns>A <see cref="CloudCommunications"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudCommunications"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudCommunications?> PatchAsync(CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudCommunications?> PatchAsync(Microsoft.Graph.Beta.Models.CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CloudCommunications> PatchAsync(CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.CloudCommunications> PatchAsync(Microsoft.Graph.Beta.Models.CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CloudCommunications>(requestInfo, CloudCommunications.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudCommunications>(requestInfo, Microsoft.Graph.Beta.Models.CloudCommunications.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get communications
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Communications
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CommunicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder.CommunicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CommunicationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder.CommunicationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,11 +148,11 @@ namespace Microsoft.Graph.Beta.Communications
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.CloudCommunications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Beta.Communications
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CommunicationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CommunicationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CommunicationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get communications
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Communications
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CommunicationsRequestBuilderGetRequestConfiguration : RequestConfiguration<CommunicationsRequestBuilderGetQueryParameters>
+        public class CommunicationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Communications.CommunicationsRequestBuilder.CommunicationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Flag enum representing the allowed macOS system extension types.</summary>
-        public MacOSSystemExtensionType? AllowedTypes
+        public Microsoft.Graph.Beta.Models.MacOSSystemExtensionType? AllowedTypes
         {
-            get { return BackingStore?.Get<MacOSSystemExtensionType?>("allowedTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSystemExtensionType?>("allowedTypes"); }
             set { BackingStore?.Set("allowedTypes", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MacOSSystemExtensionTypeMapping"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping"/> and sets the default values.
         /// </summary>
         public MacOSSystemExtensionTypeMapping()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSSystemExtensionTypeMapping"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MacOSSystemExtensionTypeMapping CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSSystemExtensionTypeMapping();
+            return new Microsoft.Graph.Beta.Models.MacOSSystemExtensionTypeMapping();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedTypes", n => { AllowedTypes = n.GetEnumValue<MacOSSystemExtensionType>(); } },
+                { "allowedTypes", n => { AllowedTypes = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSSystemExtensionType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<MacOSSystemExtensionType>("allowedTypes", AllowedTypes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSSystemExtensionType>("allowedTypes", AllowedTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("teamIdentifier", TeamIdentifier);
             writer.WriteAdditionalData(AdditionalData);

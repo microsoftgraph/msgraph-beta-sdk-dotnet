@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettin
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetDevicesStatusBySettingReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetDevicesStatusBySettingReportPostRequestBody()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettin
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetDevicesStatusBySettingReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetDevicesStatusBySettingReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetDevicesStatusBySettingReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

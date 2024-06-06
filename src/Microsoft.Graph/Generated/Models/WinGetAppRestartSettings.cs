@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restartNotificationSnoozeDurationInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WinGetAppRestartSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WinGetAppRestartSettings"/> and sets the default values.
         /// </summary>
         public WinGetAppRestartSettings()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WinGetAppRestartSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WinGetAppRestartSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WinGetAppRestartSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WinGetAppRestartSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WinGetAppRestartSettings();
+            return new Microsoft.Graph.Beta.Models.WinGetAppRestartSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

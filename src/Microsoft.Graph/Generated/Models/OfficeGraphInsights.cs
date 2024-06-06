@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OfficeGraphInsights : Entity, IParsable
+    public class OfficeGraphInsights : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Access this property from the derived type itemInsights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedInsight>? Shared
+        public List<Microsoft.Graph.Beta.Models.SharedInsight>? Shared
         {
-            get { return BackingStore?.Get<List<SharedInsight>?>("shared"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedInsight>?>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
 #nullable restore
 #else
-        public List<SharedInsight> Shared
+        public List<Microsoft.Graph.Beta.Models.SharedInsight> Shared
         {
-            get { return BackingStore?.Get<List<SharedInsight>>("shared"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedInsight>>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Access this property from the derived type itemInsights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UsedInsight>? Used
+        public List<Microsoft.Graph.Beta.Models.UsedInsight>? Used
         {
-            get { return BackingStore?.Get<List<UsedInsight>?>("used"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UsedInsight>?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
 #nullable restore
 #else
-        public List<UsedInsight> Used
+        public List<Microsoft.Graph.Beta.Models.UsedInsight> Used
         {
-            get { return BackingStore?.Get<List<UsedInsight>>("used"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UsedInsight>>("used"); }
             set { BackingStore?.Set("used", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OfficeGraphInsights"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OfficeGraphInsights"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OfficeGraphInsights CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OfficeGraphInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.itemInsights" => new ItemInsights(),
-                _ => new OfficeGraphInsights(),
+                "#microsoft.graph.itemInsights" => new Microsoft.Graph.Beta.Models.ItemInsights(),
+                _ => new Microsoft.Graph.Beta.Models.OfficeGraphInsights(),
             };
         }
         /// <summary>
@@ -81,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "shared", n => { Shared = n.GetCollectionOfObjectValues<SharedInsight>(SharedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shared", n => { Shared = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedInsight>(Microsoft.Graph.Beta.Models.SharedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "trending", n => { Trending = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Trending>(Microsoft.Graph.Beta.Models.Trending.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "used", n => { Used = n.GetCollectionOfObjectValues<UsedInsight>(UsedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "used", n => { Used = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UsedInsight>(Microsoft.Graph.Beta.Models.UsedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SharedInsight>("shared", Shared);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedInsight>("shared", Shared);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Trending>("trending", Trending);
-            writer.WriteCollectionOfObjectValues<UsedInsight>("used", Used);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UsedInsight>("used", Used);
         }
     }
 }

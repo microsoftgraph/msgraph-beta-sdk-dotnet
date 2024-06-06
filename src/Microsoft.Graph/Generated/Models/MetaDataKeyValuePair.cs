@@ -54,21 +54,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Value of the metadata. Should be an object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Value
+        public UntypedNode? Value
         {
-            get { return BackingStore?.Get<Json?>("value"); }
+            get { return BackingStore?.Get<UntypedNode?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public Json Value
+        public UntypedNode Value
         {
-            get { return BackingStore?.Get<Json>("value"); }
+            get { return BackingStore?.Get<UntypedNode>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MetaDataKeyValuePair"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MetaDataKeyValuePair"/> and sets the default values.
         /// </summary>
         public MetaDataKeyValuePair()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MetaDataKeyValuePair"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MetaDataKeyValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MetaDataKeyValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MetaDataKeyValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MetaDataKeyValuePair();
+            return new Microsoft.Graph.Beta.Models.MetaDataKeyValuePair();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Json>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

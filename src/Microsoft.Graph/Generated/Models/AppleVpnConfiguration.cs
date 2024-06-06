@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Apple VPN configuration profile.
     /// </summary>
-    public class AppleVpnConfiguration : DeviceConfiguration, IParsable
+    public class AppleVpnConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Associated Domains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>VPN Authentication Method.</summary>
-        public VpnAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.VpnAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
@@ -50,40 +50,40 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Apple VPN connection type.</summary>
-        public AppleVpnConnectionType? ConnectionType
+        public Microsoft.Graph.Beta.Models.AppleVpnConnectionType? ConnectionType
         {
-            get { return BackingStore?.Get<AppleVpnConnectionType?>("connectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppleVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? CustomData
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? CustomData
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> CustomData
+        public List<Microsoft.Graph.Beta.Models.KeyValue> CustomData
         {
-            get { return BackingStore?.Get<List<KeyValue>>("customData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #endif
         /// <summary>Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomKeyValueData
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? CustomKeyValueData
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomKeyValueData
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> CustomKeyValueData
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #endif
@@ -168,16 +168,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>On-Demand Rules. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnOnDemandRule>? OnDemandRules
+        public List<Microsoft.Graph.Beta.Models.VpnOnDemandRule>? OnDemandRules
         {
-            get { return BackingStore?.Get<List<VpnOnDemandRule>?>("onDemandRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnOnDemandRule>?>("onDemandRules"); }
             set { BackingStore?.Set("onDemandRules", value); }
         }
 #nullable restore
 #else
-        public List<VpnOnDemandRule> OnDemandRules
+        public List<Microsoft.Graph.Beta.Models.VpnOnDemandRule> OnDemandRules
         {
-            get { return BackingStore?.Get<List<VpnOnDemandRule>>("onDemandRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VpnOnDemandRule>>("onDemandRules"); }
             set { BackingStore?.Set("onDemandRules", value); }
         }
 #endif
@@ -188,24 +188,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("optInToDeviceIdSharing", value); }
         }
         /// <summary>Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.</summary>
-        public VpnProviderType? ProviderType
+        public Microsoft.Graph.Beta.Models.VpnProviderType? ProviderType
         {
-            get { return BackingStore?.Get<VpnProviderType?>("providerType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnProviderType?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VpnProxyServer? ProxyServer
+        public Microsoft.Graph.Beta.Models.VpnProxyServer? ProxyServer
         {
-            get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #nullable restore
 #else
-        public VpnProxyServer ProxyServer
+        public Microsoft.Graph.Beta.Models.VpnProxyServer ProxyServer
         {
-            get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #endif
@@ -260,21 +260,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>VPN Server definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VpnServer? Server
+        public Microsoft.Graph.Beta.Models.VpnServer? Server
         {
-            get { return BackingStore?.Get<VpnServer?>("server"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnServer?>("server"); }
             set { BackingStore?.Set("server", value); }
         }
 #nullable restore
 #else
-        public VpnServer Server
+        public Microsoft.Graph.Beta.Models.VpnServer Server
         {
-            get { return BackingStore?.Get<VpnServer>("server"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnServer>("server"); }
             set { BackingStore?.Set("server", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppleVpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppleVpnConfiguration"/> and sets the default values.
         /// </summary>
         public AppleVpnConfiguration() : base()
         {
@@ -283,18 +283,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppleVpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppleVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppleVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AppleVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosikEv2VpnConfiguration" => new IosikEv2VpnConfiguration(),
-                "#microsoft.graph.iosVpnConfiguration" => new IosVpnConfiguration(),
-                "#microsoft.graph.macOSVpnConfiguration" => new MacOSVpnConfiguration(),
-                _ => new AppleVpnConfiguration(),
+                "#microsoft.graph.iosikEv2VpnConfiguration" => new Microsoft.Graph.Beta.Models.IosikEv2VpnConfiguration(),
+                "#microsoft.graph.iosVpnConfiguration" => new Microsoft.Graph.Beta.Models.IosVpnConfiguration(),
+                "#microsoft.graph.macOSVpnConfiguration" => new Microsoft.Graph.Beta.Models.MacOSVpnConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.AppleVpnConfiguration(),
             };
         }
         /// <summary>
@@ -306,11 +306,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "associatedDomains", n => { AssociatedDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>(); } },
                 { "connectionName", n => { ConnectionName = n.GetStringValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetEnumValue<AppleVpnConnectionType>(); } },
-                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppleVpnConnectionType>(); } },
+                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "disableOnDemandUserOverride", n => { DisableOnDemandUserOverride = n.GetBoolValue(); } },
                 { "disconnectOnIdle", n => { DisconnectOnIdle = n.GetBoolValue(); } },
                 { "disconnectOnIdleTimerInSeconds", n => { DisconnectOnIdleTimerInSeconds = n.GetIntValue(); } },
@@ -319,14 +319,14 @@ namespace Microsoft.Graph.Beta.Models
                 { "excludedDomains", n => { ExcludedDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
                 { "loginGroupOrDomain", n => { LoginGroupOrDomain = n.GetStringValue(); } },
-                { "onDemandRules", n => { OnDemandRules = n.GetCollectionOfObjectValues<VpnOnDemandRule>(VpnOnDemandRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onDemandRules", n => { OnDemandRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnOnDemandRule>(Microsoft.Graph.Beta.Models.VpnOnDemandRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "optInToDeviceIdSharing", n => { OptInToDeviceIdSharing = n.GetBoolValue(); } },
-                { "providerType", n => { ProviderType = n.GetEnumValue<VpnProviderType>(); } },
-                { "proxyServer", n => { ProxyServer = n.GetObjectValue<VpnProxyServer>(VpnProxyServer.CreateFromDiscriminatorValue); } },
+                { "providerType", n => { ProviderType = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnProviderType>(); } },
+                { "proxyServer", n => { ProxyServer = n.GetObjectValue<Microsoft.Graph.Beta.Models.VpnProxyServer>(Microsoft.Graph.Beta.Models.VpnProxyServer.CreateFromDiscriminatorValue); } },
                 { "realm", n => { Realm = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "safariDomains", n => { SafariDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "server", n => { Server = n.GetObjectValue<VpnServer>(VpnServer.CreateFromDiscriminatorValue); } },
+                { "server", n => { Server = n.GetObjectValue<Microsoft.Graph.Beta.Models.VpnServer>(Microsoft.Graph.Beta.Models.VpnServer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -338,11 +338,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("associatedDomains", AssociatedDomains);
-            writer.WriteEnumValue<VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteStringValue("connectionName", ConnectionName);
-            writer.WriteEnumValue<AppleVpnConnectionType>("connectionType", ConnectionType);
-            writer.WriteCollectionOfObjectValues<KeyValue>("customData", CustomData);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customKeyValueData", CustomKeyValueData);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppleVpnConnectionType>("connectionType", ConnectionType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("customData", CustomData);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("customKeyValueData", CustomKeyValueData);
             writer.WriteBoolValue("disableOnDemandUserOverride", DisableOnDemandUserOverride);
             writer.WriteBoolValue("disconnectOnIdle", DisconnectOnIdle);
             writer.WriteIntValue("disconnectOnIdleTimerInSeconds", DisconnectOnIdleTimerInSeconds);
@@ -351,14 +351,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("excludedDomains", ExcludedDomains);
             writer.WriteStringValue("identifier", Identifier);
             writer.WriteStringValue("loginGroupOrDomain", LoginGroupOrDomain);
-            writer.WriteCollectionOfObjectValues<VpnOnDemandRule>("onDemandRules", OnDemandRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VpnOnDemandRule>("onDemandRules", OnDemandRules);
             writer.WriteBoolValue("optInToDeviceIdSharing", OptInToDeviceIdSharing);
-            writer.WriteEnumValue<VpnProviderType>("providerType", ProviderType);
-            writer.WriteObjectValue<VpnProxyServer>("proxyServer", ProxyServer);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnProviderType>("providerType", ProviderType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VpnProxyServer>("proxyServer", ProxyServer);
             writer.WriteStringValue("realm", Realm);
             writer.WriteStringValue("role", Role);
             writer.WriteCollectionOfPrimitiveValues<string>("safariDomains", SafariDomains);
-            writer.WriteObjectValue<VpnServer>("server", Server);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VpnServer>("server", Server);
         }
     }
 }

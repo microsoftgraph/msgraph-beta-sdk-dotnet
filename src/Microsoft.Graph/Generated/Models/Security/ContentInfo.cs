@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIPLabelGUID_PropName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Metadata
+        public List<Microsoft.Graph.Beta.Models.Security.KeyValuePair>? Metadata
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.KeyValuePair>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Metadata
+        public List<Microsoft.Graph.Beta.Models.Security.KeyValuePair> Metadata
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.KeyValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -84,13 +84,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The state property</summary>
-        public ContentState? State
+        public Microsoft.Graph.Beta.Models.Security.ContentState? State
         {
-            get { return BackingStore?.Get<ContentState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContentInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.ContentInfo"/> and sets the default values.
         /// </summary>
         public ContentInfo()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.ContentInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.ContentInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentInfo();
+            return new Microsoft.Graph.Beta.Models.Security.ContentInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,9 +117,9 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "contentFormat", n => { ContentFormat = n.GetStringValue(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.KeyValuePair>(Microsoft.Graph.Beta.Models.Security.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<ContentState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ContentState>(); } },
             };
         }
         /// <summary>
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contentFormat", ContentFormat);
             writer.WriteStringValue("identifier", Identifier);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.KeyValuePair>("metadata", Metadata);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ContentState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ContentState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

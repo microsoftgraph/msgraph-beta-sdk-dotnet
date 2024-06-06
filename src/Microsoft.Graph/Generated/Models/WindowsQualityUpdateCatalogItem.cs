@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows update catalog item entity
     /// </summary>
-    public class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable
+    public class WindowsQualityUpdateCatalogItem : Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem, IParsable
     {
         /// <summary>Windows quality update classification</summary>
-        public WindowsQualityUpdateClassification? Classification
+        public Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification? Classification
         {
-            get { return BackingStore?.Get<WindowsQualityUpdateClassification?>("classification"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Flag indicating if update qualifies for expedite</summary>
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsQualityUpdateCatalogItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogItem"/> and sets the default values.
         /// </summary>
         public WindowsQualityUpdateCatalogItem() : base()
         {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsQualityUpdateCatalogItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsQualityUpdateCatalogItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsQualityUpdateCatalogItem();
+            return new Microsoft.Graph.Beta.Models.WindowsQualityUpdateCatalogItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classification", n => { Classification = n.GetEnumValue<WindowsQualityUpdateClassification>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification>(); } },
                 { "isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
                 { "kbArticleId", n => { KbArticleId = n.GetStringValue(); } },
             };
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsQualityUpdateClassification>("classification", Classification);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsQualityUpdateClassification>("classification", Classification);
             writer.WriteBoolValue("isExpeditable", IsExpeditable);
             writer.WriteStringValue("kbArticleId", KbArticleId);
         }

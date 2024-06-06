@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Models
     public class IosVppAppRevokeLicensesActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
-        public VppTokenActionFailureReason? ActionFailureReason
+        public Microsoft.Graph.Beta.Models.VppTokenActionFailureReason? ActionFailureReason
         {
-            get { return BackingStore?.Get<VppTokenActionFailureReason?>("actionFailureReason"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenActionFailureReason?>("actionFailureReason"); }
             set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>Action name</summary>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IosVppAppRevokeLicensesActionResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosVppAppRevokeLicensesActionResult"/> and sets the default values.
         /// </summary>
         public IosVppAppRevokeLicensesActionResult()
         {
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosVppAppRevokeLicensesActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosVppAppRevokeLicensesActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IosVppAppRevokeLicensesActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IosVppAppRevokeLicensesActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosVppAppRevokeLicensesActionResult();
+            return new Microsoft.Graph.Beta.Models.IosVppAppRevokeLicensesActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<VppTokenActionFailureReason>(); } },
+                { "actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.VppTokenActionFailureReason>(); } },
                 { "actionName", n => { ActionName = n.GetStringValue(); } },
-                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ActionState>(); } },
                 { "failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
@@ -165,9 +165,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<VppTokenActionFailureReason>("actionFailureReason", ActionFailureReason);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VppTokenActionFailureReason>("actionFailureReason", ActionFailureReason);
             writer.WriteStringValue("actionName", ActionName);
-            writer.WriteEnumValue<ActionState>("actionState", ActionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ActionState>("actionState", ActionState);
             writer.WriteIntValue("failedLicensesCount", FailedLicensesCount);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
