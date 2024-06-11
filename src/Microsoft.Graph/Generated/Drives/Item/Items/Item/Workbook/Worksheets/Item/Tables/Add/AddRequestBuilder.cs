@@ -33,8 +33,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
         {
         }
         /// <summary>
-        /// Use this API to create a new Table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-post-tables?view=graph-rest-beta" />
+        /// Create a new table. The range source address determines the worksheet under which the table will be added. If the table can&apos;t be added (for example, because the address is invalid, or the table would overlap with another table), an error is thrown.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookTable"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WorkbookTable>(requestInfo, Microsoft.Graph.Beta.Models.WorkbookTable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new Table.
+        /// Create a new table. The range source address determines the worksheet under which the table will be added. If the table can&apos;t be added (for example, because the address is invalid, or the table would overlap with another table), an error is thrown.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

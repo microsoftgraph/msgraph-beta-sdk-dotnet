@@ -37,6 +37,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("gracePeriodDateTime"); }
             set { BackingStore?.Set("gracePeriodDateTime", value); }
         }
+        /// <summary>Identity of the person who last modified the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>Timestamp of the last modification of the entity.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +116,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "backupServiceConsumer", n => { BackupServiceConsumer = n.GetEnumValue<Microsoft.Graph.Beta.Models.BackupServiceConsumer>(); } },
                 { "disableReason", n => { DisableReason = n.GetEnumValue<Microsoft.Graph.Beta.Models.DisableReason>(); } },
                 { "gracePeriodDateTime", n => { GracePeriodDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restoreAllowedTillDateTime", n => { RestoreAllowedTillDateTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.BackupServiceStatus>(); } },
@@ -109,6 +133,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BackupServiceConsumer>("backupServiceConsumer", BackupServiceConsumer);
             writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DisableReason>("disableReason", DisableReason);
             writer.WriteDateTimeOffsetValue("gracePeriodDateTime", GracePeriodDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restoreAllowedTillDateTime", RestoreAllowedTillDateTime);
             writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BackupServiceStatus>("status", Status);

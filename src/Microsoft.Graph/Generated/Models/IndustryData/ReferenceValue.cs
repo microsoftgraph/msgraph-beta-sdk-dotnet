@@ -86,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.industryData.fileFormatReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue(),
                 "#microsoft.graph.industryData.identifierTypeReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue(),
                 "#microsoft.graph.industryData.roleReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.RoleReferenceValue(),
                 "#microsoft.graph.industryData.sectionRoleReferenceValue" => new Microsoft.Graph.Beta.Models.IndustryData.SectionRoleReferenceValue(),

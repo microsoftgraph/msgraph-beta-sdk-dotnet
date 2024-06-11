@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of an inboundFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,8 +92,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.InboundFlow>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an inboundFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-beta" />
+        /// Update the properties of an inboundFileFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
+        /// Read the properties and relationships of an inboundFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an inboundFlow object.
+        /// Update the properties of an inboundFileFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
+        /// Read the properties and relationships of an inboundFlow object.
         /// </summary>
         public class InboundFlowItemRequestBuilderGetQueryParameters 
         {

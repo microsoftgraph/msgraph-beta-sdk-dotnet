@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>Date time the module was created.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Date time the module was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -86,13 +86,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>Date time the module was last modified.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Date time the module was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Learning objects that are associated with this module.  Only teachers can modify this list. Nullable.</summary>
+        /// <summary>Learning objects that are associated with this module. Only teachers can modify this list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.EducationModuleResource>? Resources
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourcesFolderUrl", value); }
         }
 #endif
-        /// <summary>Status of the module.  You can&apos;t use a PATCH operation to update this value. Possible values are: draft and published.</summary>
+        /// <summary>Status of the module. You can&apos;t use a PATCH operation to update this value. Possible values are: draft and published.</summary>
         public Microsoft.Graph.Beta.Models.EducationModuleStatus? Status
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationModuleStatus?>("status"); }

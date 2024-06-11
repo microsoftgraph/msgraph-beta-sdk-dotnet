@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.AdministrativeUnit
         }
         /// <summary>
         /// Retrieve the directory administrativeUnit that corresponds to this educationSchool.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-beta" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-get-administrativeunit?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdministrativeUnit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

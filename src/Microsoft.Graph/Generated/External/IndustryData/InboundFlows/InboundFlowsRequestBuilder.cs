@@ -52,8 +52,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
         {
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-beta" />
+        /// Get a list of the inboundFlow objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-beta" />
+        /// Create a new inboundApiFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.InboundFlow>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Get a list of the inboundFlow objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+        /// Create a new inboundApiFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows
             return new Microsoft.Graph.Beta.External.IndustryData.InboundFlows.InboundFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Get a list of the inboundFlow objects and their properties.
         /// </summary>
         public class InboundFlowsRequestBuilderGetQueryParameters 
         {

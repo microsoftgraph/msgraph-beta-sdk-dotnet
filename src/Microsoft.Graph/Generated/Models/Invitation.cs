@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class Invitation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The user created as part of the invitation creation. Read-Only</summary>
+        /// <summary>The user created as part of the invitation creation. Read-Only. The id property is required in the request body to reset a redemption status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.User? InvitedUser
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("invitedUserEmailAddress", value); }
         }
 #endif
-        /// <summary>Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.</summary>
+        /// <summary>Contins configuration information for the message being sent to the invited user, including customizing message text, language, and cc recipient list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.InvitedUserMessageInfo? InvitedUserMessageInfo
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
 #endif
-        /// <summary>Reset the user&apos;s redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user (Preview).</summary>
+        /// <summary>Reset the user&apos;s redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. When true, the invitedUser/id relationship is required. For more information about using this property, see Reset redemption status for a guest user.</summary>
         public bool? ResetRedemption
         {
             get { return BackingStore?.Get<bool?>("resetRedemption"); }

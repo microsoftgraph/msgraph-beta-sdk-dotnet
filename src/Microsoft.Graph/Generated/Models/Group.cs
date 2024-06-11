@@ -644,7 +644,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesSamAccountName", value); }
         }
 #endif
-        /// <summary>Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.</summary>
+        /// <summary>Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSecurityIdentifier
@@ -870,7 +870,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("securityEnabled"); }
             set { BackingStore?.Set("securityEnabled", value); }
         }
-        /// <summary>Security identifier of the group, used in Windows scenarios. Returned by default.</summary>
+        /// <summary>Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecurityIdentifier

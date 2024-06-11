@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         }
         /// <summary>
         /// Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-filterByCurrentUser?view=graph-rest-beta" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.Item.UserConsentRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         }
         /// <summary>
         /// Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-filterByCurrentUser?view=graph-rest-beta" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.Item.UserConsentRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

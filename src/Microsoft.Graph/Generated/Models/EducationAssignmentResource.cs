@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("distributeForStudentWork"); }
             set { BackingStore?.Set("distributeForStudentWork", value); }
         }
-        /// <summary>Resource object that has been associated with this assignment.</summary>
+        /// <summary>Resource object that is associated with this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.EducationResource? Resource

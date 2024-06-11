@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gradingSchemes", value); }
         }
 #endif
-        /// <summary>Indicates whether turn-in celebration animation will be shown. If true, the animation won&apos;t be shown. The default value is false.</summary>
+        /// <summary>Indicates whether turn-in celebration animation is shown. If true, the animation doesn&apos;t show. The default value is false.</summary>
         public bool? SubmissionAnimationDisabled
         {
             get { return BackingStore?.Get<bool?>("submissionAnimationDisabled"); }

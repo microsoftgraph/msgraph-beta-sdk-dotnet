@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.Year
         {
         }
         /// <summary>
-        /// The year that the data brought in via this flow applies to.
+        /// The year associated to the data that this flow brings in.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.Year
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The year that the data brought in via this flow applies to.
+        /// The year associated to the data that this flow brings in.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.Year
             return new Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.Year.YearRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The year that the data brought in via this flow applies to.
+        /// The year associated to the data that this flow brings in.
         /// </summary>
         public class YearRequestBuilderGetQueryParameters 
         {

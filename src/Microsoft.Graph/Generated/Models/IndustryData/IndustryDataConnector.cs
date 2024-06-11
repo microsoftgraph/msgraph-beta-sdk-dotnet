@@ -53,8 +53,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.industryData.apiDataConnector" => new Microsoft.Graph.Beta.Models.IndustryData.ApiDataConnector(),
                 "#microsoft.graph.industryData.azureDataLakeConnector" => new Microsoft.Graph.Beta.Models.IndustryData.AzureDataLakeConnector(),
                 "#microsoft.graph.industryData.fileDataConnector" => new Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector(),
+                "#microsoft.graph.industryData.oneRosterApiDataConnector" => new Microsoft.Graph.Beta.Models.IndustryData.OneRosterApiDataConnector(),
                 _ => new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector(),
             };
         }

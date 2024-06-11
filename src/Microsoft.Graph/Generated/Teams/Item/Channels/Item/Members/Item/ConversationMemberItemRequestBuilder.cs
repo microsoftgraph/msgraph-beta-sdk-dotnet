@@ -80,8 +80,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Item
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConversationMember>(requestInfo, Microsoft.Graph.Beta.Models.ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team.or channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-beta" />
+        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConversationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team.or channel.
+        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

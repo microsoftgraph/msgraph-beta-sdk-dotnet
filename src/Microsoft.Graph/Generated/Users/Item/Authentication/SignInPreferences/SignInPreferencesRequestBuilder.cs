@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SignInPreferences
         {
         }
         /// <summary>
-        /// Read the properties of a user&apos;s authentication method states. Use this API to retrieve the following information:
+        /// Read the properties of a user&apos;s authentication states. Use this API to retrieve the following information:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SignInPreferences"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SignInPreferences
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SignInPreferences>(requestInfo, Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of a user&apos;s authentication method states. Use this API to retrieve the following information:
+        /// Read the properties of a user&apos;s authentication states. Use this API to retrieve the following information:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SignInPreferences
             return new Microsoft.Graph.Beta.Users.Item.Authentication.SignInPreferences.SignInPreferencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties of a user&apos;s authentication method states. Use this API to retrieve the following information:
+        /// Read the properties of a user&apos;s authentication states. Use this API to retrieve the following information:
         /// </summary>
         public class SignInPreferencesRequestBuilderGetQueryParameters 
         {

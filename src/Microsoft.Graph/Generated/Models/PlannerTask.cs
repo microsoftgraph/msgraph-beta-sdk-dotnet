@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignedToTaskBoardFormat", value); }
         }
 #endif
-        /// <summary>A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.</summary>
+        /// <summary>A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneePriority
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DueDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
-        /// <summary>A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.</summary>
+        /// <summary>Indicates whether to show this task in the MyDay view. If true, it shows the task.</summary>
         public bool? IsOnMyDay
         {
             get { return BackingStore?.Get<bool?>("isOnMyDay"); }
@@ -257,7 +257,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("isOnMyDayLastModifiedDate"); }
             set { BackingStore?.Set("isOnMyDayLastModifiedDate", value); }
         }
-        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.</summary>
+        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderHint
@@ -301,7 +301,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
-        /// <summary>The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as &apos;urgent&apos;, 2 and 3 and 4 as &apos;important&apos;, 5, 6, and 7 as &apos;medium&apos;, and 8, 9, and 10 as &apos;low&apos;. Currently, Planner sets the value 1 for &apos;urgent&apos;, 3 for &apos;important&apos;, 5 for &apos;medium&apos;, and 9 for &apos;low&apos;.</summary>
+        /// <summary>The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as &apos;urgent&apos;, 2 and 3 and 4 as &apos;important&apos;, 5, 6, and 7 as &apos;medium&apos;, and 8, 9, and 10 as &apos;low&apos;. Currently, planner sets the value 1 for &apos;urgent&apos;, 3 for &apos;important&apos;, 5 for &apos;medium&apos;, and 9 for &apos;low&apos;.</summary>
         public int? Priority
         {
             get { return BackingStore?.Get<int?>("priority"); }

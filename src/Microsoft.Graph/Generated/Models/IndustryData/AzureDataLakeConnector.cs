@@ -10,6 +10,22 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
     public class AzureDataLakeConnector : Microsoft.Graph.Beta.Models.IndustryData.FileDataConnector, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The file format that external systems can upload using this connector.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue? FileFormat
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue?>("fileFormat"); }
+            set { BackingStore?.Set("fileFormat", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue FileFormat
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue>("fileFormat"); }
+            set { BackingStore?.Set("fileFormat", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.AzureDataLakeConnector"/> and sets the default values.
         /// </summary>
@@ -35,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "fileFormat", n => { FileFormat = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -45,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.FileFormatReferenceValue>("fileFormat", FileFormat);
         }
     }
 }

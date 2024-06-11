@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnectorCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new industryDataConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-beta" />
+        /// Create a new oneRosterApiDataConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors
             return requestInfo;
         }
         /// <summary>
-        /// Create a new industryDataConnector object.
+        /// Create a new oneRosterApiDataConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

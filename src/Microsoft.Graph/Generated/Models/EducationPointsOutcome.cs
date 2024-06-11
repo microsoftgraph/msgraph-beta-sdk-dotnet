@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class EducationPointsOutcome : Microsoft.Graph.Beta.Models.EducationOutcome, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The numeric grade the teacher has given the student for this assignment.</summary>
+        /// <summary>The numeric grade that the teacher gave the student for this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.EducationAssignmentPointsGrade? Points

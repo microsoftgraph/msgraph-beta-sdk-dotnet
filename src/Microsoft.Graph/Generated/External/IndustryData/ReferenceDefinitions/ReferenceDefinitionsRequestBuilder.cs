@@ -76,7 +76,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to referenceDefinitions for external
+        /// Create a new referenceDefinition object. referenceDefinition objects associate incoming data with standardized reference types values for validation. You can extend the following reference types with other codes that better align with your source data.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-referencedefinition-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.ReferenceDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to referenceDefinitions for external
+        /// Create a new referenceDefinition object. referenceDefinition objects associate incoming data with standardized reference types values for validation. You can extend the following reference types with other codes that better align with your source data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

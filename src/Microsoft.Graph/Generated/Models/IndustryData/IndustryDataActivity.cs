@@ -43,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.industryData.inboundApiFlow" => new Microsoft.Graph.Beta.Models.IndustryData.InboundApiFlow(),
                 "#microsoft.graph.industryData.inboundFileFlow" => new Microsoft.Graph.Beta.Models.IndustryData.InboundFileFlow(),
                 "#microsoft.graph.industryData.inboundFlow" => new Microsoft.Graph.Beta.Models.IndustryData.InboundFlow(),
                 _ => new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivity(),

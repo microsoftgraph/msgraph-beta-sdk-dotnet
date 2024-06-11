@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a namedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of a compliantNetworkNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/compliantnetworknamedlocation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.NamedLocation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,8 +80,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.NamedLocation>(requestInfo, Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ipNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-beta" />
+        /// Update the properties of a countryNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.NamedLocation"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a namedLocation object.
+        /// Read the properties and relationships of a compliantNetworkNamedLocation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ipNamedLocation object.
+        /// Update the properties of a countryNamedLocation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a namedLocation object.
+        /// Read the properties and relationships of a compliantNetworkNamedLocation object.
         /// </summary>
         public class NamedLocationItemRequestBuilderGetQueryParameters 
         {

@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Invitations
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InvitationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.InvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
+        /// Create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Invitation"/></returns>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Invitations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
+        /// Create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

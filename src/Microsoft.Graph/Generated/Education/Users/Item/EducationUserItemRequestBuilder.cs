@@ -116,8 +116,8 @@ namespace Microsoft.Graph.Beta.Education.Users.Item
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EducationUser>(requestInfo, Microsoft.Graph.Beta.Models.EducationUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationuser object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-beta" />
+        /// Update the relatedContact collection of an educationUser object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/relatedcontact-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationUser"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationuser object.
+        /// Update the relatedContact collection of an educationUser object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

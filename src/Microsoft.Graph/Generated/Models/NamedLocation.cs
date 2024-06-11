@@ -49,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.compliantNetworkNamedLocation" => new Microsoft.Graph.Beta.Models.CompliantNetworkNamedLocation(),
                 "#microsoft.graph.countryNamedLocation" => new Microsoft.Graph.Beta.Models.CountryNamedLocation(),
                 "#microsoft.graph.ipNamedLocation" => new Microsoft.Graph.Beta.Models.IpNamedLocation(),
                 _ => new Microsoft.Graph.Beta.Models.NamedLocation(),

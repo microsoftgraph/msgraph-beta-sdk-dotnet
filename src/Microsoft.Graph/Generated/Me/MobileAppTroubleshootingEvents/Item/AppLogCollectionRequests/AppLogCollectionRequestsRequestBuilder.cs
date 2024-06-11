@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
         {
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// The collection property of AppLogUploadRequest.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppLogCollectionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AppLogCollectionRequest>(requestInfo, Microsoft.Graph.Beta.Models.AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// The collection property of AppLogUploadRequest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
             return new Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.AppLogCollectionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// The collection property of AppLogUploadRequest.
         /// </summary>
         public class AppLogCollectionRequestsRequestBuilderGetQueryParameters 
         {
