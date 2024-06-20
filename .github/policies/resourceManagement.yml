@@ -91,6 +91,16 @@ configuration:
           reply: This pull request has been automatically marked as stale because it has been marked as requiring author feedback but has not had any activity for **7 days**. It will be closed if no further activity occurs **within 7 days of this comment**.
     eventResponderTasks:
     - if:
+      - payloadType: Issues
+      - isAction:
+          action: Closed
+      - hasLabel:
+          label: 'status:waiting-for-author-feedback'
+      then:
+      - removeLabel:
+          label: 'status:waiting-for-author-feedback'
+      description:
+    - if:
       - payloadType: Issue_Comment
       - isAction:
           action: Created
