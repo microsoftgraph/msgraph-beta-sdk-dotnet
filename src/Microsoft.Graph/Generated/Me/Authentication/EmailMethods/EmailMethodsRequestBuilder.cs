@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods
         {
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call only returns a single object referenced by ID 3ddfcfc8-9383-446f-83cc-3ab9be4be18f as only one email method can be set on users.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-emailmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EmailAuthenticationMethodCollectionResponse"/></returns>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>(requestInfo, Microsoft.Graph.Beta.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call only returns a single object referenced by ID 3ddfcfc8-9383-446f-83cc-3ab9be4be18f as only one email method can be set on users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods
             return new Microsoft.Graph.Beta.Me.Authentication.EmailMethods.EmailMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call only returns a single object referenced by ID 3ddfcfc8-9383-446f-83cc-3ab9be4be18f as only one email method can be set on users.
         /// </summary>
         public class EmailMethodsRequestBuilderGetQueryParameters 
         {

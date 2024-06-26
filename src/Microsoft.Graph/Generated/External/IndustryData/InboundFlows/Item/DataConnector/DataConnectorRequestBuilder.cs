@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConne
         {
         }
         /// <summary>
-        /// The data connector in the context of which this flow pulls in data from a source system.
+        /// The data connector to the source system from where this flow gets its data.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConne
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The data connector in the context of which this flow pulls in data from a source system.
+        /// The data connector to the source system from where this flow gets its data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConne
             return new Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConnector.DataConnectorRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The data connector in the context of which this flow pulls in data from a source system.
+        /// The data connector to the source system from where this flow gets its data.
         /// </summary>
         public class DataConnectorRequestBuilderGetQueryParameters 
         {

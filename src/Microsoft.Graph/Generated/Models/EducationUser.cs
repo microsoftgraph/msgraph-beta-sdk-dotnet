@@ -294,7 +294,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("onPremisesInfo", value); }
         }
 #endif
-        /// <summary>Specifies password policies for the user. See standard [user] resource for more details.</summary>
+        /// <summary>Specifies password policies for the user. For more details, see the standard [user] resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PasswordPolicies
@@ -310,7 +310,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordPolicies", value); }
         }
 #endif
-        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. See standard [user] resource for more details.</summary>
+        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. For more details, see the standard [user] resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile
@@ -488,7 +488,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("taughtClasses", value); }
         }
 #endif
-        /// <summary>If the primary role is teacher, this block will contain teacher specific data.</summary>
+        /// <summary>If the primary role is teacher, this block contains teacher specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.EducationTeacher? Teacher
@@ -504,7 +504,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("teacher", value); }
         }
 #endif
-        /// <summary>A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.</summary>
+        /// <summary>A two-letter country code ([ISO 3166 Alpha-2]). Required for users who are assigned licenses. Not nullable. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UsageLocation
@@ -536,7 +536,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("user", value); }
         }
 #endif
-        /// <summary>The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.</summary>
+        /// <summary>The user principal name (UPN) for the user. Supports $filter and $orderby. For more details, see the standard [user] resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName

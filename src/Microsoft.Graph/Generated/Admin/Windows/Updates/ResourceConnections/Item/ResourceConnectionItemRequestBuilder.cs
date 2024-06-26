@@ -33,8 +33,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
         {
         }
         /// <summary>
-        /// Delete an operationalInsightsConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-beta" />
+        /// Delete a resourceConnection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an operationalInsightsConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of a resourceConnection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an operationalInsightsConnection object.
+        /// Delete a resourceConnection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an operationalInsightsConnection object.
+        /// Read the properties and relationships of a resourceConnection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an operationalInsightsConnection object.
+        /// Read the properties and relationships of a resourceConnection object.
         /// </summary>
         public class ResourceConnectionItemRequestBuilderGetQueryParameters 
         {

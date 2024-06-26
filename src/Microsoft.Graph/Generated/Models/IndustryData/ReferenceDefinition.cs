@@ -32,7 +32,23 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Indicates whether the definition has been disabled.</summary>
+        /// <summary>A human-readable representation of the reference code value for display in a user interface.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>Indicates whether the definition is disabled.</summary>
         public bool? IsDisabled
         {
             get { return BackingStore?.Get<bool?>("isDisabled"); }
@@ -60,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("referenceType", value); }
         }
 #endif
-        /// <summary>The ordering index to present the definitions within a type consistently in user interfaces.</summary>
+        /// <summary>The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.</summary>
         public int? SortIndex
         {
             get { return BackingStore?.Get<int?>("sortIndex"); }
@@ -102,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             {
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "referenceType", n => { ReferenceType = n.GetStringValue(); } },
@@ -118,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("code", Code);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteStringValue("referenceType", ReferenceType);
             writer.WriteIntValue("sortIndex", SortIndex);

@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }
             set { BackingStore?.Set("itemMajorVersionLimit", value); }
         }
-        /// <summary>The lockState property</summary>
+        /// <summary>Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.SiteLockState? LockState
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SiteLockState?>("lockState"); }
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileStorageContainerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Storage used in the fileStorageContainer. In bytes. Read-only.</summary>
+        /// <summary>Storage used in the fileStorageContainer, in bytes. Read-only.</summary>
         public long? StorageUsedInBytes
         {
             get { return BackingStore?.Get<long?>("storageUsedInBytes"); }

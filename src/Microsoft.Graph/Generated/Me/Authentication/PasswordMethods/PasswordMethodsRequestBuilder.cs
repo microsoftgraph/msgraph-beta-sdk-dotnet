@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods
         {
         }
         /// <summary>
-        /// Retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+        /// Retrieve a list of password authentication method objects. This API returns exactly one object referenced by ID 28c10230-6103-485e-b985-444c60001490, as a user can have exactly one password. For security, the password itself is never returned in the object and the password property is always null.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PasswordAuthenticationMethodCollectionResponse"/></returns>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod>(requestInfo, Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+        /// Retrieve a list of password authentication method objects. This API returns exactly one object referenced by ID 28c10230-6103-485e-b985-444c60001490, as a user can have exactly one password. For security, the password itself is never returned in the object and the password property is always null.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods
             return new Microsoft.Graph.Beta.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+        /// Retrieve a list of password authentication method objects. This API returns exactly one object referenced by ID 28c10230-6103-485e-b985-444c60001490, as a user can have exactly one password. For security, the password itself is never returned in the object and the password property is always null.
         /// </summary>
         public class PasswordMethodsRequestBuilderGetQueryParameters 
         {

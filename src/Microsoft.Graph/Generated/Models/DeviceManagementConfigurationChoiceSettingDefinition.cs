@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class DeviceManagementConfigurationChoiceSettingDefinition : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Default option for choice setting</summary>
+        /// <summary>Default option for the choice setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultOptionId
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defaultOptionId", value); }
         }
 #endif
-        /// <summary>Options for the setting that can be selected</summary>
+        /// <summary>Options for the setting that can be selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationOptionDefinition>? Options

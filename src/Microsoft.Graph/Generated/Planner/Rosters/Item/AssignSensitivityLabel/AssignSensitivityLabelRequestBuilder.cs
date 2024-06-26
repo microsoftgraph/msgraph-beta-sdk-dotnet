@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.AssignSensitivityLabel
         {
         }
         /// <summary>
-        /// Invoke action assignSensitivityLabel
+        /// Assign a sensitivity label to a plannerRoster object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-assignsensitivitylabel?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerRoster"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.AssignSensitivityLabel
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerRoster>(requestInfo, Microsoft.Graph.Beta.Models.PlannerRoster.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action assignSensitivityLabel
+        /// Assign a sensitivity label to a plannerRoster object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

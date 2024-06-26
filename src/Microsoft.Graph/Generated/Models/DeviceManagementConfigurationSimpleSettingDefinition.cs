@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class DeviceManagementConfigurationSimpleSettingDefinition : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Default setting value for this setting</summary>
+        /// <summary>Default setting value for this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue? DefaultValue
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
-        /// <summary>list of child settings that depend on this setting</summary>
+        /// <summary>list of child settings that depend on this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dependedOnBy", value); }
         }
 #endif
-        /// <summary>list of parent settings this setting is dependent on</summary>
+        /// <summary>list of parent settings this setting is dependent on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationDependentOn>? DependentOn
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dependentOn", value); }
         }
 #endif
-        /// <summary>Definition of the value for this setting</summary>
+        /// <summary>Definition of the value for this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition? ValueDefinition
