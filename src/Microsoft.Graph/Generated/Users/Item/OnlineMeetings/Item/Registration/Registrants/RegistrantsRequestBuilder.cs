@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,27 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
     /// <summary>
     /// Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.
     /// </summary>
-    public class RegistrantsRequestBuilder : BaseRequestBuilder
+    public partial class RegistrantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.</summary>
         /// <param name="position">The unique identifier of meetingRegistrantBase</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("meetingRegistrantBase%2Did", position);
-                return new Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,51 +54,51 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <summary>
         /// Registrants of the online meeting.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enroll a meeting registrant in an online meeting that has meeting registration enabled on behalf of the registrant. This operation has two scenarios: In either scenario, the registrant will receive an email notification that contains their registration information.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-post-registrants?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrantBase"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrantBase?> PostAsync(Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase?> PostAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MeetingRegistrantBase> PostAsync(Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase> PostAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MeetingRegistrantBase>(requestInfo, Microsoft.Graph.Beta.Models.MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase>(requestInfo, global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registrants of the online meeting.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +144,16 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Registrants of the online meeting.
         /// </summary>
-        public class RegistrantsRequestBuilderGetQueryParameters 
+        public partial class RegistrantsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +219,14 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RegistrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>
+        public partial class RegistrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RegistrantsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class RegistrantsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

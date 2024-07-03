@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Count;
 using Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,27 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
     /// <summary>
     /// Provides operations to manage the controls property of the microsoft.graph.program entity.
     /// </summary>
-    public class ControlsRequestBuilder : BaseRequestBuilder
+    public partial class ControlsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the controls property of the microsoft.graph.program entity.</summary>
         /// <param name="position">The unique identifier of programControl</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("programControl%2Did1", position);
-                return new Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
         /// <summary>
         /// Controls associated with the program.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ProgramControlCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to controls for programControls
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProgramControl"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ProgramControl"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ProgramControl?> PostAsync(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ProgramControl?> PostAsync(global::Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ProgramControl> PostAsync(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ProgramControl> PostAsync(global::Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ProgramControl>(requestInfo, Microsoft.Graph.Beta.Models.ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ProgramControl>(requestInfo, global::Microsoft.Graph.Beta.Models.ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Controls associated with the program.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ProgramControl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +143,16 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Controls associated with the program.
         /// </summary>
-        public class ControlsRequestBuilderGetQueryParameters 
+        public partial class ControlsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +218,14 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ControlsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>
+        public partial class ControlsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.ControlsRequestBuilder.ControlsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ControlsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ControlsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

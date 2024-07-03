@@ -19,5 +19,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "peerRecommended")]
+        #pragma warning disable CS1591
+        PeerRecommended,
+        #pragma warning restore CS1591
     }
 }

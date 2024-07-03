@@ -4,11 +4,11 @@ using Microsoft.Graph.Beta.GroupLifecyclePolicies.Item;
 using Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,32 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
     /// <summary>
     /// Provides operations to manage the collection of groupLifecyclePolicy entities.
     /// </summary>
-    public class GroupLifecyclePoliciesRequestBuilder : BaseRequestBuilder
+    public partial class GroupLifecyclePoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.GroupLifecyclePolicies.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.GroupLifecyclePolicies.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.GroupLifecyclePolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.GroupLifecyclePolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the renewGroup method.</summary>
-        public Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup.RenewGroupRequestBuilder RenewGroup
+        public global::Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup.RenewGroupRequestBuilder RenewGroup
         {
-            get => new Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup.RenewGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup.RenewGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
         /// <param name="position">The unique identifier of groupLifecyclePolicy</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("groupLifecyclePolicy%2Did", position);
-                return new Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,51 +61,51 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
         /// List all the groupLifecyclePolicies.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new groupLifecyclePolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupLifecyclePolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy?> PostAsync(Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy?> PostAsync(global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy> PostAsync(Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy> PostAsync(global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>(requestInfo, Microsoft.Graph.Beta.Models.GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all the groupLifecyclePolicies.
@@ -114,11 +114,11 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -134,11 +134,11 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GroupLifecyclePolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -151,16 +151,16 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all the groupLifecyclePolicies.
         /// </summary>
-        public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters 
+        public partial class GroupLifecyclePoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -226,14 +226,14 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>
+        public partial class GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder.GroupLifecyclePoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

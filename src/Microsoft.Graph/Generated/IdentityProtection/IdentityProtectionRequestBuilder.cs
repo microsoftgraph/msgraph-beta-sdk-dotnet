@@ -5,11 +5,11 @@ using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers;
 using Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,30 +18,30 @@ namespace Microsoft.Graph.Beta.IdentityProtection
     /// <summary>
     /// Provides operations to manage the identityProtectionRoot singleton.
     /// </summary>
-    public class IdentityProtectionRequestBuilder : BaseRequestBuilder
+    public partial class IdentityProtectionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
-        public Microsoft.Graph.Beta.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder RiskDetections
+        public global::Microsoft.Graph.Beta.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder RiskDetections
         {
-            get => new Microsoft.Graph.Beta.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.IdentityProtection.RiskDetections.RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
-        public Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.RiskyServicePrincipalsRequestBuilder RiskyServicePrincipals
+        public global::Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.RiskyServicePrincipalsRequestBuilder RiskyServicePrincipals
         {
-            get => new Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.RiskyServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.RiskyServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.</summary>
-        public Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder RiskyUsers
+        public global::Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder RiskyUsers
         {
-            get => new Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
-        public Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder ServicePrincipalRiskDetections
+        public global::Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder ServicePrincipalRiskDetections
         {
-            get => new Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,50 +59,50 @@ namespace Microsoft.Graph.Beta.IdentityProtection
         /// <summary>
         /// Get identityProtection
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityProtectionRoot"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IdentityProtectionRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IdentityProtectionRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityProtectionRoot>(requestInfo, Microsoft.Graph.Beta.Models.IdentityProtectionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update identityProtection
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityProtectionRoot"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IdentityProtectionRoot?> PatchAsync(Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot?> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IdentityProtectionRoot> PatchAsync(Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityProtectionRoot>(requestInfo, Microsoft.Graph.Beta.Models.IdentityProtectionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get identityProtection
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.IdentityProtection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Beta.IdentityProtection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityProtectionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -148,16 +148,16 @@ namespace Microsoft.Graph.Beta.IdentityProtection
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get identityProtection
         /// </summary>
-        public class IdentityProtectionRequestBuilderGetQueryParameters 
+        public partial class IdentityProtectionRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -184,14 +184,14 @@ namespace Microsoft.Graph.Beta.IdentityProtection
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IdentityProtectionRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>
+        public partial class IdentityProtectionRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.IdentityProtection.IdentityProtectionRequestBuilder.IdentityProtectionRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IdentityProtectionRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class IdentityProtectionRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

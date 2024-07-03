@@ -190,11 +190,11 @@ using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -203,925 +203,925 @@ namespace Microsoft.Graph.Beta.DeviceManagement
     /// <summary>
     /// Provides operations to manage the deviceManagement singleton.
     /// </summary>
-    public class DeviceManagementRequestBuilder : BaseRequestBuilder
+    public partial class DeviceManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder AdvancedThreatProtectionOnboardingStateSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder AdvancedThreatProtectionOnboardingStateSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.AndroidDeviceOwnerEnrollmentProfilesRequestBuilder AndroidDeviceOwnerEnrollmentProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.AndroidDeviceOwnerEnrollmentProfilesRequestBuilder AndroidDeviceOwnerEnrollmentProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.AndroidDeviceOwnerEnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.AndroidDeviceOwnerEnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSchemas.AndroidForWorkAppConfigurationSchemasRequestBuilder AndroidForWorkAppConfigurationSchemas
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSchemas.AndroidForWorkAppConfigurationSchemasRequestBuilder AndroidForWorkAppConfigurationSchemas
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSchemas.AndroidForWorkAppConfigurationSchemasRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSchemas.AndroidForWorkAppConfigurationSchemasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.AndroidForWorkEnrollmentProfilesRequestBuilder AndroidForWorkEnrollmentProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.AndroidForWorkEnrollmentProfilesRequestBuilder AndroidForWorkEnrollmentProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.AndroidForWorkEnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.AndroidForWorkEnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidForWorkSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder AndroidForWorkSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder AndroidForWorkSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.AndroidForWorkSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder AndroidManagedStoreAccountEnterpriseSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder AndroidManagedStoreAccountEnterpriseSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidManagedStoreAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurationSchemas.AndroidManagedStoreAppConfigurationSchemasRequestBuilder AndroidManagedStoreAppConfigurationSchemas
+        public global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurationSchemas.AndroidManagedStoreAppConfigurationSchemasRequestBuilder AndroidManagedStoreAppConfigurationSchemas
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurationSchemas.AndroidManagedStoreAppConfigurationSchemasRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurationSchemas.AndroidManagedStoreAppConfigurationSchemasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the applePushNotificationCertificate property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.ApplePushNotificationCertificateRequestBuilder ApplePushNotificationCertificate
+        public global::Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.ApplePushNotificationCertificateRequestBuilder ApplePushNotificationCertificate
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.ApplePushNotificationCertificateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.ApplePushNotificationCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.AppleUserInitiatedEnrollmentProfilesRequestBuilder AppleUserInitiatedEnrollmentProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.AppleUserInitiatedEnrollmentProfilesRequestBuilder AppleUserInitiatedEnrollmentProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.AppleUserInitiatedEnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.AppleUserInitiatedEnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.AssignmentFiltersRequestBuilder AssignmentFilters
+        public global::Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.AssignmentFiltersRequestBuilder AssignmentFilters
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.AssignmentFiltersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.AssignmentFiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AuditEvents.AuditEventsRequestBuilder AuditEvents
+        public global::Microsoft.Graph.Beta.DeviceManagement.AuditEvents.AuditEventsRequestBuilder AuditEvents
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AuditEvents.AuditEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AuditEvents.AuditEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.AutopilotEventsRequestBuilder AutopilotEvents
+        public global::Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.AutopilotEventsRequestBuilder AutopilotEvents
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.AutopilotEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.AutopilotEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.CartToClassAssociationsRequestBuilder CartToClassAssociations
+        public global::Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.CartToClassAssociationsRequestBuilder CartToClassAssociations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.CartToClassAssociationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.CartToClassAssociationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Categories.CategoriesRequestBuilder Categories
+        public global::Microsoft.Graph.Beta.DeviceManagement.Categories.CategoriesRequestBuilder Categories
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.CertificateConnectorDetailsRequestBuilder CertificateConnectorDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.CertificateConnectorDetailsRequestBuilder CertificateConnectorDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.CertificateConnectorDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.CertificateConnectorDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.ChromeOSOnboardingSettingsRequestBuilder ChromeOSOnboardingSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.ChromeOSOnboardingSettingsRequestBuilder ChromeOSOnboardingSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.ChromeOSOnboardingSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.ChromeOSOnboardingSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.CloudPCConnectivityIssuesRequestBuilder CloudPCConnectivityIssues
+        public global::Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.CloudPCConnectivityIssuesRequestBuilder CloudPCConnectivityIssues
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.CloudPCConnectivityIssuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.CloudPCConnectivityIssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ComanagedDevicesRequestBuilder ComanagedDevices
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ComanagedDevicesRequestBuilder ComanagedDevices
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ComanagedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ComanagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder ComanagementEligibleDevices
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder ComanagementEligibleDevices
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories.ComplianceCategoriesRequestBuilder ComplianceCategories
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories.ComplianceCategoriesRequestBuilder ComplianceCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories.ComplianceCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories.ComplianceCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ComplianceManagementPartners.ComplianceManagementPartnersRequestBuilder ComplianceManagementPartners
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComplianceManagementPartners.ComplianceManagementPartnersRequestBuilder ComplianceManagementPartners
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ComplianceManagementPartners.ComplianceManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComplianceManagementPartners.ComplianceManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.CompliancePoliciesRequestBuilder CompliancePolicies
+        public global::Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.CompliancePoliciesRequestBuilder CompliancePolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.CompliancePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.CompliancePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the complianceSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ComplianceSettings.ComplianceSettingsRequestBuilder ComplianceSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComplianceSettings.ComplianceSettingsRequestBuilder ComplianceSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ComplianceSettings.ComplianceSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComplianceSettings.ComplianceSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConditionalAccessSettings.ConditionalAccessSettingsRequestBuilder ConditionalAccessSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConditionalAccessSettings.ConditionalAccessSettingsRequestBuilder ConditionalAccessSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConditionalAccessSettings.ConditionalAccessSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConditionalAccessSettings.ConditionalAccessSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder ConfigManagerCollections
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder ConfigManagerCollections
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.ConfigManagerCollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configurationCategories property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories.ConfigurationCategoriesRequestBuilder ConfigurationCategories
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories.ConfigurationCategoriesRequestBuilder ConfigurationCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories.ConfigurationCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories.ConfigurationCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.ConfigurationPoliciesRequestBuilder ConfigurationPolicies
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.ConfigurationPoliciesRequestBuilder ConfigurationPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.ConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.ConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configurationPolicyTemplates property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.ConfigurationPolicyTemplatesRequestBuilder ConfigurationPolicyTemplates
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.ConfigurationPolicyTemplatesRequestBuilder ConfigurationPolicyTemplates
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.ConfigurationPolicyTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.ConfigurationPolicyTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configurationSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationSettings.ConfigurationSettingsRequestBuilder ConfigurationSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationSettings.ConfigurationSettingsRequestBuilder ConfigurationSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationSettings.ConfigurationSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationSettings.ConfigurationSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.DataSharingConsentsRequestBuilder DataSharingConsents
+        public global::Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.DataSharingConsentsRequestBuilder DataSharingConsents
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.DataSharingConsentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.DataSharingConsentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.DepOnboardingSettingsRequestBuilder DepOnboardingSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.DepOnboardingSettingsRequestBuilder DepOnboardingSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.DepOnboardingSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.DepOnboardingSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.DerivedCredentialsRequestBuilder DerivedCredentials
+        public global::Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.DerivedCredentialsRequestBuilder DerivedCredentials
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.DerivedCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials.DerivedCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DetectedApps.DetectedAppsRequestBuilder DetectedApps
+        public global::Microsoft.Graph.Beta.DeviceManagement.DetectedApps.DetectedAppsRequestBuilder DetectedApps
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DetectedApps.DetectedAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DetectedApps.DetectedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder DeviceCategories
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder DeviceCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCategories.DeviceCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.DeviceCompliancePoliciesRequestBuilder DeviceCompliancePolicies
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.DeviceCompliancePoliciesRequestBuilder DeviceCompliancePolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.DeviceCompliancePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.DeviceCompliancePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicyDeviceStateSummary property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicyDeviceStateSummary.DeviceCompliancePolicyDeviceStateSummaryRequestBuilder DeviceCompliancePolicyDeviceStateSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicyDeviceStateSummary.DeviceCompliancePolicyDeviceStateSummaryRequestBuilder DeviceCompliancePolicyDeviceStateSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicyDeviceStateSummary.DeviceCompliancePolicyDeviceStateSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicyDeviceStateSummary.DeviceCompliancePolicyDeviceStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder DeviceCompliancePolicySettingStateSummaries
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder DeviceCompliancePolicySettingStateSummaries
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.DeviceComplianceScriptsRequestBuilder DeviceComplianceScripts
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.DeviceComplianceScriptsRequestBuilder DeviceComplianceScripts
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.DeviceComplianceScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.DeviceComplianceScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationConflictSummary property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSummary.DeviceConfigurationConflictSummaryRequestBuilder DeviceConfigurationConflictSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSummary.DeviceConfigurationConflictSummaryRequestBuilder DeviceConfigurationConflictSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSummary.DeviceConfigurationConflictSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSummary.DeviceConfigurationConflictSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationDeviceStateSummaries property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries.DeviceConfigurationDeviceStateSummariesRequestBuilder DeviceConfigurationDeviceStateSummaries
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries.DeviceConfigurationDeviceStateSummariesRequestBuilder DeviceConfigurationDeviceStateSummaries
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries.DeviceConfigurationDeviceStateSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries.DeviceConfigurationDeviceStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles.DeviceConfigurationProfilesRequestBuilder DeviceConfigurationProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles.DeviceConfigurationProfilesRequestBuilder DeviceConfigurationProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles.DeviceConfigurationProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles.DeviceConfigurationProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations.DeviceConfigurationRestrictedAppsViolationsRequestBuilder DeviceConfigurationRestrictedAppsViolations
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations.DeviceConfigurationRestrictedAppsViolationsRequestBuilder DeviceConfigurationRestrictedAppsViolations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations.DeviceConfigurationRestrictedAppsViolationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations.DeviceConfigurationRestrictedAppsViolationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder DeviceConfigurations
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder DeviceConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder DeviceConfigurationsAllManagedDeviceCertificateStates
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder DeviceConfigurationsAllManagedDeviceCertificateStates
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationUserStateSummaries property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder DeviceConfigurationUserStateSummaries
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder DeviceConfigurationUserStateSummaries
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.DeviceCustomAttributeShellScriptsRequestBuilder DeviceCustomAttributeShellScripts
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.DeviceCustomAttributeShellScriptsRequestBuilder DeviceCustomAttributeShellScripts
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.DeviceCustomAttributeShellScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.DeviceCustomAttributeShellScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.DeviceHealthScriptsRequestBuilder DeviceHealthScripts
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.DeviceHealthScriptsRequestBuilder DeviceHealthScripts
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.DeviceHealthScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.DeviceHealthScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.DeviceManagementPartnersRequestBuilder DeviceManagementPartners
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.DeviceManagementPartnersRequestBuilder DeviceManagementPartners
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.DeviceManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.DeviceManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.DeviceManagementScriptsRequestBuilder DeviceManagementScripts
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.DeviceManagementScriptsRequestBuilder DeviceManagementScripts
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.DeviceManagementScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.DeviceManagementScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.DeviceShellScriptsRequestBuilder DeviceShellScripts
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.DeviceShellScriptsRequestBuilder DeviceShellScripts
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.DeviceShellScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.DeviceShellScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.DomainJoinConnectorsRequestBuilder DomainJoinConnectors
+        public global::Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.DomainJoinConnectorsRequestBuilder DomainJoinConnectors
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.DomainJoinConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors.DomainJoinConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.ElevationRequestsRequestBuilder ElevationRequests
+        public global::Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.ElevationRequestsRequestBuilder ElevationRequests
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.ElevationRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.ElevationRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.EmbeddedSIMActivationCodePoolsRequestBuilder EmbeddedSIMActivationCodePools
+        public global::Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.EmbeddedSIMActivationCodePoolsRequestBuilder EmbeddedSIMActivationCodePools
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.EmbeddedSIMActivationCodePoolsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.EmbeddedSIMActivationCodePoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enableAndroidDeviceAdministratorEnrollment method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment.EnableAndroidDeviceAdministratorEnrollmentRequestBuilder EnableAndroidDeviceAdministratorEnrollment
+        public global::Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment.EnableAndroidDeviceAdministratorEnrollmentRequestBuilder EnableAndroidDeviceAdministratorEnrollment
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment.EnableAndroidDeviceAdministratorEnrollmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment.EnableAndroidDeviceAdministratorEnrollmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enableLegacyPcManagement method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement.EnableLegacyPcManagementRequestBuilder EnableLegacyPcManagement
+        public global::Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement.EnableLegacyPcManagementRequestBuilder EnableLegacyPcManagement
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement.EnableLegacyPcManagementRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement.EnableLegacyPcManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enableUnlicensedAdminstrators method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.EnableUnlicensedAdminstrators.EnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators
+        public global::Microsoft.Graph.Beta.DeviceManagement.EnableUnlicensedAdminstrators.EnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.EnableUnlicensedAdminstrators.EnableUnlicensedAdminstratorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.EnableUnlicensedAdminstrators.EnableUnlicensedAdminstratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the endpointPrivilegeManagementProvisioningStatus property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.EndpointPrivilegeManagementProvisioningStatus.EndpointPrivilegeManagementProvisioningStatusRequestBuilder EndpointPrivilegeManagementProvisioningStatus
+        public global::Microsoft.Graph.Beta.DeviceManagement.EndpointPrivilegeManagementProvisioningStatus.EndpointPrivilegeManagementProvisioningStatusRequestBuilder EndpointPrivilegeManagementProvisioningStatus
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.EndpointPrivilegeManagementProvisioningStatus.EndpointPrivilegeManagementProvisioningStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.EndpointPrivilegeManagementProvisioningStatus.EndpointPrivilegeManagementProvisioningStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateAssignmentFilter method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter.EvaluateAssignmentFilterRequestBuilder EvaluateAssignmentFilter
+        public global::Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter.EvaluateAssignmentFilterRequestBuilder EvaluateAssignmentFilter
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter.EvaluateAssignmentFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter.EvaluateAssignmentFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.ExchangeConnectorsRequestBuilder ExchangeConnectors
+        public global::Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.ExchangeConnectorsRequestBuilder ExchangeConnectors
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.ExchangeConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.ExchangeConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.ExchangeOnPremisesPoliciesRequestBuilder ExchangeOnPremisesPolicies
+        public global::Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.ExchangeOnPremisesPoliciesRequestBuilder ExchangeOnPremisesPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.ExchangeOnPremisesPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.ExchangeOnPremisesPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.ExchangeOnPremisesPolicyRequestBuilder ExchangeOnPremisesPolicy
+        public global::Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.ExchangeOnPremisesPolicyRequestBuilder ExchangeOnPremisesPolicy
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.ExchangeOnPremisesPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.ExchangeOnPremisesPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAssignedRoleDetails method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails.GetAssignedRoleDetailsRequestBuilder GetAssignedRoleDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails.GetAssignedRoleDetailsRequestBuilder GetAssignedRoleDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails.GetAssignedRoleDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails.GetAssignedRoleDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAssignmentFiltersStatusDetails method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsRequestBuilder GetAssignmentFiltersStatusDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsRequestBuilder GetAssignmentFiltersStatusDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails.GetAssignmentFiltersStatusDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComanagedDevicesSummary method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary.GetComanagedDevicesSummaryRequestBuilder GetComanagedDevicesSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary.GetComanagedDevicesSummaryRequestBuilder GetComanagedDevicesSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary.GetComanagedDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary.GetComanagedDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComanagementEligibleDevicesSummary method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GetComanagementEligibleDevicesSummary.GetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetComanagementEligibleDevicesSummary.GetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GetComanagementEligibleDevicesSummary.GetComanagementEligibleDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GetComanagementEligibleDevicesSummary.GetComanagementEligibleDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder GetEffectivePermissions
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder GetEffectivePermissions
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions.GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.GroupPolicyCategoriesRequestBuilder GroupPolicyCategories
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.GroupPolicyCategoriesRequestBuilder GroupPolicyCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.GroupPolicyCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.GroupPolicyCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.GroupPolicyConfigurationsRequestBuilder GroupPolicyConfigurations
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.GroupPolicyConfigurationsRequestBuilder GroupPolicyConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.GroupPolicyConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.GroupPolicyConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.GroupPolicyDefinitionFilesRequestBuilder GroupPolicyDefinitionFiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.GroupPolicyDefinitionFilesRequestBuilder GroupPolicyDefinitionFiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.GroupPolicyDefinitionFilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.GroupPolicyDefinitionFilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.GroupPolicyDefinitionsRequestBuilder GroupPolicyDefinitions
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.GroupPolicyDefinitionsRequestBuilder GroupPolicyDefinitions
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.GroupPolicyDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.GroupPolicyDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.GroupPolicyMigrationReportsRequestBuilder GroupPolicyMigrationReports
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.GroupPolicyMigrationReportsRequestBuilder GroupPolicyMigrationReports
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.GroupPolicyMigrationReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.GroupPolicyMigrationReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyObjectFiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.GroupPolicyObjectFilesRequestBuilder GroupPolicyObjectFiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.GroupPolicyObjectFilesRequestBuilder GroupPolicyObjectFiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.GroupPolicyObjectFilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.GroupPolicyObjectFilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder GroupPolicyUploadedDefinitionFiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder GroupPolicyUploadedDefinitionFiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.GroupPolicyUploadedDefinitionFilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hardwareConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder HardwareConfigurations
+        public global::Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder HardwareConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.HardwareConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hardwarePasswordDetails property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordDetails.HardwarePasswordDetailsRequestBuilder HardwarePasswordDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordDetails.HardwarePasswordDetailsRequestBuilder HardwarePasswordDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordDetails.HardwarePasswordDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordDetails.HardwarePasswordDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hardwarePasswordInfo property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordInfo.HardwarePasswordInfoRequestBuilder HardwarePasswordInfo
+        public global::Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordInfo.HardwarePasswordInfoRequestBuilder HardwarePasswordInfo
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordInfo.HardwarePasswordInfoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordInfo.HardwarePasswordInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportedDeviceIdentitiesRequestBuilder ImportedDeviceIdentities
+        public global::Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportedDeviceIdentitiesRequestBuilder ImportedDeviceIdentities
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportedDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportedDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder ImportedWindowsAutopilotDeviceIdentities
+        public global::Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder ImportedWindowsAutopilotDeviceIdentities
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Intents.IntentsRequestBuilder Intents
+        public global::Microsoft.Graph.Beta.DeviceManagement.Intents.IntentsRequestBuilder Intents
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Intents.IntentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Intents.IntentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder IntuneBrandingProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder IntuneBrandingProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.IntuneBrandingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses.IosUpdateStatusesRequestBuilder IosUpdateStatuses
+        public global::Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses.IosUpdateStatusesRequestBuilder IosUpdateStatuses
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses.IosUpdateStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses.IosUpdateStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.MacOSSoftwareUpdateAccountSummariesRequestBuilder MacOSSoftwareUpdateAccountSummaries
+        public global::Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.MacOSSoftwareUpdateAccountSummariesRequestBuilder MacOSSoftwareUpdateAccountSummaries
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.MacOSSoftwareUpdateAccountSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.MacOSSoftwareUpdateAccountSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceCleanupRules property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceCleanupRules.ManagedDeviceCleanupRulesRequestBuilder ManagedDeviceCleanupRules
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceCleanupRules.ManagedDeviceCleanupRulesRequestBuilder ManagedDeviceCleanupRules
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceCleanupRules.ManagedDeviceCleanupRulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceCleanupRules.ManagedDeviceCleanupRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.ManagedDeviceEncryptionStatesRequestBuilder ManagedDeviceEncryptionStates
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.ManagedDeviceEncryptionStatesRequestBuilder ManagedDeviceEncryptionStates
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.ManagedDeviceEncryptionStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates.ManagedDeviceEncryptionStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceOverview property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceOverview.ManagedDeviceOverviewRequestBuilder ManagedDeviceOverview
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceOverview.ManagedDeviceOverviewRequestBuilder ManagedDeviceOverview
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceOverview.ManagedDeviceOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceOverview.ManagedDeviceOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ManagedDevicesRequestBuilder ManagedDevices
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ManagedDevicesRequestBuilder ManagedDevices
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.MicrosoftTunnelConfigurationsRequestBuilder MicrosoftTunnelConfigurations
+        public global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.MicrosoftTunnelConfigurationsRequestBuilder MicrosoftTunnelConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.MicrosoftTunnelConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.MicrosoftTunnelConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.MicrosoftTunnelHealthThresholdsRequestBuilder MicrosoftTunnelHealthThresholds
+        public global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.MicrosoftTunnelHealthThresholdsRequestBuilder MicrosoftTunnelHealthThresholds
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.MicrosoftTunnelHealthThresholdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds.MicrosoftTunnelHealthThresholdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder MicrosoftTunnelServerLogCollectionResponses
+        public global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder MicrosoftTunnelServerLogCollectionResponses
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.MicrosoftTunnelServerLogCollectionResponsesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.MicrosoftTunnelSitesRequestBuilder MicrosoftTunnelSites
+        public global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.MicrosoftTunnelSitesRequestBuilder MicrosoftTunnelSites
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.MicrosoftTunnelSitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.MicrosoftTunnelSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder MobileAppTroubleshootingEvents
+        public global::Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder MobileAppTroubleshootingEvents
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder MobileThreatDefenseConnectors
+        public global::Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder MobileThreatDefenseConnectors
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors.MobileThreatDefenseConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Monitoring.MonitoringRequestBuilder Monitoring
+        public global::Microsoft.Graph.Beta.DeviceManagement.Monitoring.MonitoringRequestBuilder Monitoring
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Monitoring.MonitoringRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Monitoring.MonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.NdesConnectorsRequestBuilder NdesConnectors
+        public global::Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.NdesConnectorsRequestBuilder NdesConnectors
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.NdesConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.NdesConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.NotificationMessageTemplatesRequestBuilder NotificationMessageTemplates
+        public global::Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.NotificationMessageTemplatesRequestBuilder NotificationMessageTemplates
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.NotificationMessageTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.NotificationMessageTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operationApprovalPolicies property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.OperationApprovalPoliciesRequestBuilder OperationApprovalPolicies
+        public global::Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.OperationApprovalPoliciesRequestBuilder OperationApprovalPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.OperationApprovalPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.OperationApprovalPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder OperationApprovalRequests
+        public global::Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder OperationApprovalRequests
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations.PrivilegeManagementElevationsRequestBuilder PrivilegeManagementElevations
+        public global::Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations.PrivilegeManagementElevationsRequestBuilder PrivilegeManagementElevations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations.PrivilegeManagementElevationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations.PrivilegeManagementElevationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.RemoteActionAuditsRequestBuilder RemoteActionAudits
+        public global::Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.RemoteActionAuditsRequestBuilder RemoteActionAudits
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.RemoteActionAuditsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.RemoteActionAuditsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.RemoteAssistancePartnersRequestBuilder RemoteAssistancePartners
+        public global::Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.RemoteAssistancePartnersRequestBuilder RemoteAssistancePartners
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.RemoteAssistancePartnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.RemoteAssistancePartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteAssistanceSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings.RemoteAssistanceSettingsRequestBuilder RemoteAssistanceSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings.RemoteAssistanceSettingsRequestBuilder RemoteAssistanceSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings.RemoteAssistanceSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings.RemoteAssistanceSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder Reports
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder Reports
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.ResourceAccessProfilesRequestBuilder ResourceAccessProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.ResourceAccessProfilesRequestBuilder ResourceAccessProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.ResourceAccessProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.ResourceAccessProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.ResourceOperationsRequestBuilder ResourceOperations
+        public global::Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.ResourceOperationsRequestBuilder ResourceOperations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.ResourceOperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.ResourceOperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.ReusablePolicySettingsRequestBuilder ReusablePolicySettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.ReusablePolicySettingsRequestBuilder ReusablePolicySettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.ReusablePolicySettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.ReusablePolicySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reusableSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ReusableSettings.ReusableSettingsRequestBuilder ReusableSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ReusableSettings.ReusableSettingsRequestBuilder ReusableSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ReusableSettings.ReusableSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ReusableSettings.ReusableSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
+        public global::Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
+        public global::Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.RoleScopeTagsRequestBuilder RoleScopeTags
+        public global::Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.RoleScopeTagsRequestBuilder RoleScopeTags
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.RoleScopeTagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.RoleScopeTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal
+        public global::Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections.ServiceNowConnectionsRequestBuilder ServiceNowConnections
+        public global::Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections.ServiceNowConnectionsRequestBuilder ServiceNowConnections
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections.ServiceNowConnectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections.ServiceNowConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.SettingDefinitionsRequestBuilder SettingDefinitions
+        public global::Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.SettingDefinitionsRequestBuilder SettingDefinitions
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.SettingDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.SettingDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareUpdateStatusSummary property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder SoftwareUpdateStatusSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder SoftwareUpdateStatusSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder TelecomExpenseManagementPartners
+        public global::Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder TelecomExpenseManagementPartners
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.TemplateInsights.TemplateInsightsRequestBuilder TemplateInsights
+        public global::Microsoft.Graph.Beta.DeviceManagement.TemplateInsights.TemplateInsightsRequestBuilder TemplateInsights
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.TemplateInsights.TemplateInsightsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.TemplateInsights.TemplateInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Templates.TemplatesRequestBuilder Templates
+        public global::Microsoft.Graph.Beta.DeviceManagement.Templates.TemplatesRequestBuilder Templates
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.TemplateSettings.TemplateSettingsRequestBuilder TemplateSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.TemplateSettings.TemplateSettingsRequestBuilder TemplateSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.TemplateSettings.TemplateSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.TemplateSettings.TemplateSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantAttachRBAC property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.TenantAttachRBACRequestBuilder TenantAttachRBAC
+        public global::Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.TenantAttachRBACRequestBuilder TenantAttachRBAC
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.TenantAttachRBACRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.TenantAttachRBACRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder TermsAndConditions
+        public global::Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder TermsAndConditions
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder TroubleshootingEvents
+        public global::Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder TroubleshootingEvents
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.TroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly.UserExperienceAnalyticsAnomalyRequestBuilder UserExperienceAnalyticsAnomaly
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly.UserExperienceAnalyticsAnomalyRequestBuilder UserExperienceAnalyticsAnomaly
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly.UserExperienceAnalyticsAnomalyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly.UserExperienceAnalyticsAnomalyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAnomalyCorrelationGroupOverview property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilder UserExperienceAnalyticsAnomalyCorrelationGroupOverview
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilder UserExperienceAnalyticsAnomalyCorrelationGroupOverview
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyDevice.UserExperienceAnalyticsAnomalyDeviceRequestBuilder UserExperienceAnalyticsAnomalyDevice
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyDevice.UserExperienceAnalyticsAnomalyDeviceRequestBuilder UserExperienceAnalyticsAnomalyDevice
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyDevice.UserExperienceAnalyticsAnomalyDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyDevice.UserExperienceAnalyticsAnomalyDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance.UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthDeviceModelPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDeviceModelPerformance.UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder UserExperienceAnalyticsAppHealthDeviceModelPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDeviceModelPerformance.UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder UserExperienceAnalyticsAppHealthDeviceModelPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDeviceModelPerformance.UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDeviceModelPerformance.UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformance.UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformance.UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformance.UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformance.UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformanceDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder UserExperienceAnalyticsAppHealthDevicePerformanceDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthOSVersionPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOSVersionPerformance.UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder UserExperienceAnalyticsAppHealthOSVersionPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOSVersionPerformance.UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder UserExperienceAnalyticsAppHealthOSVersionPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOSVersionPerformance.UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOSVersionPerformance.UserExperienceAnalyticsAppHealthOSVersionPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthOverview property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOverview.UserExperienceAnalyticsAppHealthOverviewRequestBuilder UserExperienceAnalyticsAppHealthOverview
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOverview.UserExperienceAnalyticsAppHealthOverviewRequestBuilder UserExperienceAnalyticsAppHealthOverview
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOverview.UserExperienceAnalyticsAppHealthOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthOverview.UserExperienceAnalyticsAppHealthOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.UserExperienceAnalyticsBaselinesRequestBuilder UserExperienceAnalyticsBaselines
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.UserExperienceAnalyticsBaselinesRequestBuilder UserExperienceAnalyticsBaselines
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.UserExperienceAnalyticsBaselinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.UserExperienceAnalyticsBaselinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder UserExperienceAnalyticsBatteryHealthAppImpact
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder UserExperienceAnalyticsBatteryHealthAppImpact
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthCapacityDetails property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthCapacityDetails.UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder UserExperienceAnalyticsBatteryHealthCapacityDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthCapacityDetails.UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder UserExperienceAnalyticsBatteryHealthCapacityDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthCapacityDetails.UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthCapacityDetails.UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceAppImpact property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder UserExperienceAnalyticsBatteryHealthDeviceAppImpact
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder UserExperienceAnalyticsBatteryHealthDeviceAppImpact
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDevicePerformance.UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder UserExperienceAnalyticsBatteryHealthDevicePerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDevicePerformance.UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder UserExperienceAnalyticsBatteryHealthDevicePerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDevicePerformance.UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDevicePerformance.UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthModelPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthModelPerformance.UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder UserExperienceAnalyticsBatteryHealthModelPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthModelPerformance.UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder UserExperienceAnalyticsBatteryHealthModelPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthModelPerformance.UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthModelPerformance.UserExperienceAnalyticsBatteryHealthModelPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthOsPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthOsPerformance.UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder UserExperienceAnalyticsBatteryHealthOsPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthOsPerformance.UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder UserExperienceAnalyticsBatteryHealthOsPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthOsPerformance.UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthOsPerformance.UserExperienceAnalyticsBatteryHealthOsPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthRuntimeDetails property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthRuntimeDetails.UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder UserExperienceAnalyticsBatteryHealthRuntimeDetails
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthRuntimeDetails.UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder UserExperienceAnalyticsBatteryHealthRuntimeDetails
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthRuntimeDetails.UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthRuntimeDetails.UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsCategories property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.UserExperienceAnalyticsCategoriesRequestBuilder UserExperienceAnalyticsCategories
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.UserExperienceAnalyticsCategoriesRequestBuilder UserExperienceAnalyticsCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.UserExperienceAnalyticsCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.UserExperienceAnalyticsCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceMetricHistory property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceMetricHistory.UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder UserExperienceAnalyticsDeviceMetricHistory
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceMetricHistory.UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder UserExperienceAnalyticsDeviceMetricHistory
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceMetricHistory.UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceMetricHistory.UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.UserExperienceAnalyticsDevicePerformanceRequestBuilder UserExperienceAnalyticsDevicePerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.UserExperienceAnalyticsDevicePerformanceRequestBuilder UserExperienceAnalyticsDevicePerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.UserExperienceAnalyticsDevicePerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.UserExperienceAnalyticsDevicePerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceScope property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.UserExperienceAnalyticsDeviceScopeRequestBuilder UserExperienceAnalyticsDeviceScope
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.UserExperienceAnalyticsDeviceScopeRequestBuilder UserExperienceAnalyticsDeviceScope
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.UserExperienceAnalyticsDeviceScopeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.UserExperienceAnalyticsDeviceScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder UserExperienceAnalyticsDeviceScopes
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder UserExperienceAnalyticsDeviceScopes
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.UserExperienceAnalyticsDeviceScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceScores property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder UserExperienceAnalyticsDeviceScores
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder UserExperienceAnalyticsDeviceScores
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScores.UserExperienceAnalyticsDeviceScoresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceStartupHistory property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder UserExperienceAnalyticsDeviceStartupHistory
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder UserExperienceAnalyticsDeviceStartupHistory
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupHistory.UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcesses.UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder UserExperienceAnalyticsDeviceStartupProcesses
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcesses.UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder UserExperienceAnalyticsDeviceStartupProcesses
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcesses.UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcesses.UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcessPerformance.UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder UserExperienceAnalyticsDeviceStartupProcessPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcessPerformance.UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder UserExperienceAnalyticsDeviceStartupProcessPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcessPerformance.UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcessPerformance.UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTimelineEvent.UserExperienceAnalyticsDeviceTimelineEventRequestBuilder UserExperienceAnalyticsDeviceTimelineEvent
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTimelineEvent.UserExperienceAnalyticsDeviceTimelineEventRequestBuilder UserExperienceAnalyticsDeviceTimelineEvent
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTimelineEvent.UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTimelineEvent.UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsImpactingProcess.UserExperienceAnalyticsImpactingProcessRequestBuilder UserExperienceAnalyticsImpactingProcess
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsImpactingProcess.UserExperienceAnalyticsImpactingProcessRequestBuilder UserExperienceAnalyticsImpactingProcess
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsImpactingProcess.UserExperienceAnalyticsImpactingProcessRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsImpactingProcess.UserExperienceAnalyticsImpactingProcessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsMetricHistory.UserExperienceAnalyticsMetricHistoryRequestBuilder UserExperienceAnalyticsMetricHistory
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsMetricHistory.UserExperienceAnalyticsMetricHistoryRequestBuilder UserExperienceAnalyticsMetricHistory
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsMetricHistory.UserExperienceAnalyticsMetricHistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsMetricHistory.UserExperienceAnalyticsMetricHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsModelScores property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScores.UserExperienceAnalyticsModelScoresRequestBuilder UserExperienceAnalyticsModelScores
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScores.UserExperienceAnalyticsModelScoresRequestBuilder UserExperienceAnalyticsModelScores
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScores.UserExperienceAnalyticsModelScoresRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScores.UserExperienceAnalyticsModelScoresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsNotAutopilotReadyDevice property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsNotAutopilotReadyDevice.UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder UserExperienceAnalyticsNotAutopilotReadyDevice
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsNotAutopilotReadyDevice.UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder UserExperienceAnalyticsNotAutopilotReadyDevice
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsNotAutopilotReadyDevice.UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsNotAutopilotReadyDevice.UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsOverview property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsOverview.UserExperienceAnalyticsOverviewRequestBuilder UserExperienceAnalyticsOverview
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsOverview.UserExperienceAnalyticsOverviewRequestBuilder UserExperienceAnalyticsOverview
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsOverview.UserExperienceAnalyticsOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsOverview.UserExperienceAnalyticsOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.UserExperienceAnalyticsRemoteConnectionRequestBuilder UserExperienceAnalyticsRemoteConnection
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.UserExperienceAnalyticsRemoteConnectionRequestBuilder UserExperienceAnalyticsRemoteConnection
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.UserExperienceAnalyticsRemoteConnectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.UserExperienceAnalyticsRemoteConnectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsResourcePerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.UserExperienceAnalyticsResourcePerformanceRequestBuilder UserExperienceAnalyticsResourcePerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.UserExperienceAnalyticsResourcePerformanceRequestBuilder UserExperienceAnalyticsResourcePerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.UserExperienceAnalyticsResourcePerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.UserExperienceAnalyticsResourcePerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsScoreHistory property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsScoreHistory.UserExperienceAnalyticsScoreHistoryRequestBuilder UserExperienceAnalyticsScoreHistory
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsScoreHistory.UserExperienceAnalyticsScoreHistoryRequestBuilder UserExperienceAnalyticsScoreHistory
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsScoreHistory.UserExperienceAnalyticsScoreHistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsScoreHistory.UserExperienceAnalyticsScoreHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the userExperienceAnalyticsSummarizedDeviceScopes method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizedDeviceScopes.UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder UserExperienceAnalyticsSummarizedDeviceScopes
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizedDeviceScopes.UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder UserExperienceAnalyticsSummarizedDeviceScopes
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizedDeviceScopes.UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizedDeviceScopes.UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsWorkFromAnywhereMetrics property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereMetrics.UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder UserExperienceAnalyticsWorkFromAnywhereMetrics
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereMetrics.UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder UserExperienceAnalyticsWorkFromAnywhereMetrics
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereMetrics.UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereMetrics.UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder UserExperienceAnalyticsWorkFromAnywhereModelPerformance
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder UserExperienceAnalyticsWorkFromAnywhereModelPerformance
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.UserPfxCertificatesRequestBuilder UserPfxCertificates
+        public global::Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.UserPfxCertificatesRequestBuilder UserPfxCertificates
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.UserPfxCertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.UserPfxCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder VirtualEndpoint
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder VirtualEndpoint
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.VirtualEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.WindowsAutopilotDeploymentProfilesRequestBuilder WindowsAutopilotDeploymentProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.WindowsAutopilotDeploymentProfilesRequestBuilder WindowsAutopilotDeploymentProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.WindowsAutopilotDeploymentProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.WindowsAutopilotDeploymentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.WindowsAutopilotDeviceIdentitiesRequestBuilder WindowsAutopilotDeviceIdentities
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.WindowsAutopilotDeviceIdentitiesRequestBuilder WindowsAutopilotDeviceIdentities
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.WindowsAutopilotDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.WindowsAutopilotDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsAutopilotSettings property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings.WindowsAutopilotSettingsRequestBuilder WindowsAutopilotSettings
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings.WindowsAutopilotSettingsRequestBuilder WindowsAutopilotSettings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings.WindowsAutopilotSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings.WindowsAutopilotSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.WindowsDriverUpdateProfilesRequestBuilder WindowsDriverUpdateProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.WindowsDriverUpdateProfilesRequestBuilder WindowsDriverUpdateProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.WindowsDriverUpdateProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.WindowsDriverUpdateProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.WindowsFeatureUpdateProfilesRequestBuilder WindowsFeatureUpdateProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.WindowsFeatureUpdateProfilesRequestBuilder WindowsFeatureUpdateProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.WindowsFeatureUpdateProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.WindowsFeatureUpdateProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder WindowsInformationProtectionAppLearningSummaries
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder WindowsInformationProtectionAppLearningSummaries
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder WindowsInformationProtectionNetworkLearningSummaries
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder WindowsInformationProtectionNetworkLearningSummaries
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsMalwareInformation property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsMalwareInformation.WindowsMalwareInformationRequestBuilder WindowsMalwareInformation
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsMalwareInformation.WindowsMalwareInformationRequestBuilder WindowsMalwareInformation
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsMalwareInformation.WindowsMalwareInformationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsMalwareInformation.WindowsMalwareInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsQualityUpdatePolicies property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.WindowsQualityUpdatePoliciesRequestBuilder WindowsQualityUpdatePolicies
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.WindowsQualityUpdatePoliciesRequestBuilder WindowsQualityUpdatePolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.WindowsQualityUpdatePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdatePolicies.WindowsQualityUpdatePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.WindowsQualityUpdateProfilesRequestBuilder WindowsQualityUpdateProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.WindowsQualityUpdateProfilesRequestBuilder WindowsQualityUpdateProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.WindowsQualityUpdateProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.WindowsQualityUpdateProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.WindowsUpdateCatalogItemsRequestBuilder WindowsUpdateCatalogItems
+        public global::Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.WindowsUpdateCatalogItemsRequestBuilder WindowsUpdateCatalogItems
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.WindowsUpdateCatalogItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems.WindowsUpdateCatalogItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.ZebraFotaArtifactsRequestBuilder ZebraFotaArtifacts
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.ZebraFotaArtifactsRequestBuilder ZebraFotaArtifacts
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.ZebraFotaArtifactsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.ZebraFotaArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder ZebraFotaConnector
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder ZebraFotaConnector
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the zebraFotaDeployments property of the microsoft.graph.deviceManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.ZebraFotaDeploymentsRequestBuilder ZebraFotaDeployments
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.ZebraFotaDeploymentsRequestBuilder ZebraFotaDeployments
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.ZebraFotaDeploymentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.ZebraFotaDeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -1129,7 +1129,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -1139,100 +1139,100 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// <summary>
         /// Get deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getEffectivePermissions method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder"/></returns>
         /// <param name="scope">Usage: scope=&apos;{scope}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder GetEffectivePermissionsWithScope(string scope)
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder GetEffectivePermissionsWithScope(string scope)
         {
             if(string.IsNullOrEmpty(scope)) throw new ArgumentNullException(nameof(scope));
-            return new Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder(PathParameters, RequestAdapter, scope);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder(PathParameters, RequestAdapter, scope);
         }
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByIds method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds.GetRoleScopeTagsByIdsWithIdsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds.GetRoleScopeTagsByIdsWithIdsRequestBuilder"/></returns>
         /// <param name="ids">Usage: ids={ids}</param>
-        public Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds.GetRoleScopeTagsByIdsWithIdsRequestBuilder GetRoleScopeTagsByIdsWithIds(string ids)
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds.GetRoleScopeTagsByIdsWithIdsRequestBuilder GetRoleScopeTagsByIdsWithIds(string ids)
         {
             if(string.IsNullOrEmpty(ids)) throw new ArgumentNullException(nameof(ids));
-            return new Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds.GetRoleScopeTagsByIdsWithIdsRequestBuilder(PathParameters, RequestAdapter, ids);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds.GetRoleScopeTagsByIdsWithIdsRequestBuilder(PathParameters, RequestAdapter, ids);
         }
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByResource method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder"/></returns>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder GetRoleScopeTagsByResourceWithResource(string resource)
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder GetRoleScopeTagsByResourceWithResource(string resource)
         {
             if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
-            return new Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
         }
         /// <summary>
         /// Provides operations to call the getSuggestedEnrollmentLimit method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder"/></returns>
         /// <param name="enrollmentType">Usage: enrollmentType=&apos;{enrollmentType}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder GetSuggestedEnrollmentLimitWithEnrollmentType(string enrollmentType)
+        public global::Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder GetSuggestedEnrollmentLimitWithEnrollmentType(string enrollmentType)
         {
             if(string.IsNullOrEmpty(enrollmentType)) throw new ArgumentNullException(nameof(enrollmentType));
-            return new Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(PathParameters, RequestAdapter, enrollmentType);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType.GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(PathParameters, RequestAdapter, enrollmentType);
         }
         /// <summary>
         /// Update deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the scopedForResource method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource.ScopedForResourceWithResourceRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource.ScopedForResourceWithResourceRequestBuilder"/></returns>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource.ScopedForResourceWithResourceRequestBuilder ScopedForResourceWithResource(string resource)
+        public global::Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource.ScopedForResourceWithResourceRequestBuilder ScopedForResourceWithResource(string resource)
         {
             if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
-            return new Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource.ScopedForResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource.ScopedForResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
         }
         /// <summary>
         /// Get deviceManagement
@@ -1241,11 +1241,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -1261,11 +1261,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -1278,26 +1278,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// <summary>
         /// Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder"/></returns>
         /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(string domainName)
+        public global::Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(string domainName)
         {
             if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
-            return new Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName.VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get deviceManagement
         /// </summary>
-        public class DeviceManagementRequestBuilderGetQueryParameters 
+        public partial class DeviceManagementRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1324,14 +1324,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>
+        public partial class DeviceManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DeviceManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

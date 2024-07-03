@@ -27,11 +27,11 @@ using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -40,140 +40,140 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
     /// <summary>
     /// Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
-    public class MobileAppItemRequestBuilder : BaseRequestBuilder
+    public partial class MobileAppItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign.AssignRequestBuilder Assign
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign.AssignRequestBuilder Assign
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments.AssignmentsRequestBuilder Assignments
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.CategoriesRequestBuilder Categories
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.CategoriesRequestBuilder Categories
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to androidForWorkApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidForWorkApp.GraphAndroidForWorkAppRequestBuilder GraphAndroidForWorkApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidForWorkApp.GraphAndroidForWorkAppRequestBuilder GraphAndroidForWorkApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidForWorkApp.GraphAndroidForWorkAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidForWorkApp.GraphAndroidForWorkAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to androidLobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.GraphAndroidLobAppRequestBuilder GraphAndroidLobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.GraphAndroidLobAppRequestBuilder GraphAndroidLobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.GraphAndroidLobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp.GraphAndroidLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to androidManagedStoreApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidManagedStoreApp.GraphAndroidManagedStoreAppRequestBuilder GraphAndroidManagedStoreApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidManagedStoreApp.GraphAndroidManagedStoreAppRequestBuilder GraphAndroidManagedStoreApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidManagedStoreApp.GraphAndroidManagedStoreAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidManagedStoreApp.GraphAndroidManagedStoreAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to androidStoreApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder GraphAndroidStoreApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder GraphAndroidStoreApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to iosLobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosLobApp.GraphIosLobAppRequestBuilder GraphIosLobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosLobApp.GraphIosLobAppRequestBuilder GraphIosLobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosLobApp.GraphIosLobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosLobApp.GraphIosLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to iosStoreApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp.GraphIosStoreAppRequestBuilder GraphIosStoreApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp.GraphIosStoreAppRequestBuilder GraphIosStoreApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp.GraphIosStoreAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp.GraphIosStoreAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to iosVppApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder GraphIosVppApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder GraphIosVppApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to macOSDmgApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmgApp.GraphMacOSDmgAppRequestBuilder GraphMacOSDmgApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmgApp.GraphMacOSDmgAppRequestBuilder GraphMacOSDmgApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmgApp.GraphMacOSDmgAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmgApp.GraphMacOSDmgAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to macOSLobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.GraphMacOSLobAppRequestBuilder GraphMacOSLobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.GraphMacOSLobAppRequestBuilder GraphMacOSLobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.GraphMacOSLobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp.GraphMacOSLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to macOSPkgApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSPkgApp.GraphMacOSPkgAppRequestBuilder GraphMacOSPkgApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSPkgApp.GraphMacOSPkgAppRequestBuilder GraphMacOSPkgApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSPkgApp.GraphMacOSPkgAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSPkgApp.GraphMacOSPkgAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to managedAndroidLobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedAndroidLobApp.GraphManagedAndroidLobAppRequestBuilder GraphManagedAndroidLobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedAndroidLobApp.GraphManagedAndroidLobAppRequestBuilder GraphManagedAndroidLobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedAndroidLobApp.GraphManagedAndroidLobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedAndroidLobApp.GraphManagedAndroidLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to managedIOSLobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder GraphManagedIOSLobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder GraphManagedIOSLobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp.GraphManagedMobileLobAppRequestBuilder GraphManagedMobileLobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp.GraphManagedMobileLobAppRequestBuilder GraphManagedMobileLobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp.GraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp.GraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to microsoftStoreForBusinessApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder GraphMicrosoftStoreForBusinessApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder GraphMicrosoftStoreForBusinessApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStoreForBusinessApp.GraphMicrosoftStoreForBusinessAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to win32LobApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder GraphWin32LobApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder GraphWin32LobApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp.GraphWin32LobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to windowsAppX.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsAppX.GraphWindowsAppXRequestBuilder GraphWindowsAppX
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsAppX.GraphWindowsAppXRequestBuilder GraphWindowsAppX
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsAppX.GraphWindowsAppXRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsAppX.GraphWindowsAppXRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to windowsMobileMSI.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsMobileMSI.GraphWindowsMobileMSIRequestBuilder GraphWindowsMobileMSI
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsMobileMSI.GraphWindowsMobileMSIRequestBuilder GraphWindowsMobileMSI
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsMobileMSI.GraphWindowsMobileMSIRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsMobileMSI.GraphWindowsMobileMSIRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to windowsStoreApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder GraphWindowsStoreApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder GraphWindowsStoreApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp.GraphWindowsStoreAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to windowsUniversalAppX.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsUniversalAppX.GraphWindowsUniversalAppXRequestBuilder GraphWindowsUniversalAppX
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsUniversalAppX.GraphWindowsUniversalAppXRequestBuilder GraphWindowsUniversalAppX
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsUniversalAppX.GraphWindowsUniversalAppXRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsUniversalAppX.GraphWindowsUniversalAppXRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to windowsWebApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsWebApp.GraphWindowsWebAppRequestBuilder GraphWindowsWebApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsWebApp.GraphWindowsWebAppRequestBuilder GraphWindowsWebApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsWebApp.GraphWindowsWebAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsWebApp.GraphWindowsWebAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to winGetApp.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetApp.GraphWinGetAppRequestBuilder GraphWinGetApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetApp.GraphWinGetAppRequestBuilder GraphWinGetApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetApp.GraphWinGetAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetApp.GraphWinGetAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships.RelationshipsRequestBuilder Relationships
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships.RelationshipsRequestBuilder Relationships
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateRelationships method.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsRequestBuilder UpdateRelationships
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsRequestBuilder UpdateRelationships
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -206,57 +206,57 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The mobile apps.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileApp"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MobileApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileApp?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MobileApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileApp> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MobileApp>(requestInfo, Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property mobileApps in deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileApp"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MobileApp?> PatchAsync(Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileApp?> PatchAsync(global::Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MobileApp> PatchAsync(Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MobileApp> PatchAsync(global::Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MobileApp>(requestInfo, Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property mobileApps for deviceAppManagement
@@ -284,11 +284,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -304,11 +304,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -321,23 +321,23 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MobileAppItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class MobileAppItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The mobile apps.
         /// </summary>
-        public class MobileAppItemRequestBuilderGetQueryParameters 
+        public partial class MobileAppItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -364,14 +364,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MobileAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>
+        public partial class MobileAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MobileAppItemRequestBuilder.MobileAppItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MobileAppItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class MobileAppItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

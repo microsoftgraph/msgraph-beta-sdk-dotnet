@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Count;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,27 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
     /// <summary>
     /// Provides operations to manage the tenantsCustomizedInformation property of the microsoft.graph.managedTenants.managedTenant entity.
     /// </summary>
-    public class TenantsCustomizedInformationRequestBuilder : BaseRequestBuilder
+    public partial class TenantsCustomizedInformationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantsCustomizedInformation property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         /// <param name="position">The unique identifier of tenantCustomizedInformation</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item.TenantCustomizedInformationItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item.TenantCustomizedInformationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item.TenantCustomizedInformationItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item.TenantCustomizedInformationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("tenantCustomizedInformation%2Did", position);
-                return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item.TenantCustomizedInformationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item.TenantCustomizedInformationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         /// Get a list of the tenantCustomizedInformation objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantscustomizedinformation?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to tenantsCustomizedInformation for tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation?> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation?> PostAsync(global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation> PostAsync(global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the tenantCustomizedInformation objects and their properties.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedTenants.TenantCustomizedInformation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +144,16 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the tenantCustomizedInformation objects and their properties.
         /// </summary>
-        public class TenantsCustomizedInformationRequestBuilderGetQueryParameters 
+        public partial class TenantsCustomizedInformationRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +219,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TenantsCustomizedInformationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>
+        public partial class TenantsCustomizedInformationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder.TenantsCustomizedInformationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TenantsCustomizedInformationRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class TenantsCustomizedInformationRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

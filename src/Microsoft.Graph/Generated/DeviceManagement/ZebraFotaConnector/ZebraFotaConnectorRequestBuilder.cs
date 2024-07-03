@@ -5,11 +5,11 @@ using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,30 +18,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
     /// <summary>
     /// Provides operations to manage the zebraFotaConnector property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class ZebraFotaConnectorRequestBuilder : BaseRequestBuilder
+    public partial class ZebraFotaConnectorRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the approveFotaApps method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps.ApproveFotaAppsRequestBuilder ApproveFotaApps
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps.ApproveFotaAppsRequestBuilder ApproveFotaApps
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps.ApproveFotaAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps.ApproveFotaAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the connect method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectRequestBuilder Connect
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectRequestBuilder Connect
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect.ConnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disconnect method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect.DisconnectRequestBuilder Disconnect
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect.DisconnectRequestBuilder Disconnect
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect.DisconnectRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect.DisconnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasActiveDeployments method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsRequestBuilder HasActiveDeployments
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsRequestBuilder HasActiveDeployments
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments.HasActiveDeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,57 +74,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The singleton ZebraFotaConnector associated with account.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ZebraFotaConnector"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ZebraFotaConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ZebraFotaConnector?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ZebraFotaConnector?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ZebraFotaConnector> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ZebraFotaConnector> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, global::Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property zebraFotaConnector in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ZebraFotaConnector"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ZebraFotaConnector"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ZebraFotaConnector?> PatchAsync(Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ZebraFotaConnector?> PatchAsync(global::Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ZebraFotaConnector> PatchAsync(Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ZebraFotaConnector> PatchAsync(global::Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, global::Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property zebraFotaConnector for deviceManagement
@@ -152,11 +152,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ZebraFotaConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -189,23 +189,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ZebraFotaConnectorRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ZebraFotaConnectorRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The singleton ZebraFotaConnector associated with account.
         /// </summary>
-        public class ZebraFotaConnectorRequestBuilderGetQueryParameters 
+        public partial class ZebraFotaConnectorRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -232,14 +232,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ZebraFotaConnectorRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>
+        public partial class ZebraFotaConnectorRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ZebraFotaConnectorRequestBuilder.ZebraFotaConnectorRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ZebraFotaConnectorRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ZebraFotaConnectorRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -7,11 +7,11 @@ using Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainName
 using Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants;
 using Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -20,30 +20,30 @@ namespace Microsoft.Graph.Beta.TenantRelationships
     /// <summary>
     /// Provides operations to manage the tenantRelationship singleton.
     /// </summary>
-    public class TenantRelationshipsRequestBuilder : BaseRequestBuilder
+    public partial class TenantRelationshipsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.DelegatedAdminCustomersRequestBuilder DelegatedAdminCustomers
+        public global::Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.DelegatedAdminCustomersRequestBuilder DelegatedAdminCustomers
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.DelegatedAdminCustomersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.DelegatedAdminCustomersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships
+        public global::Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder ManagedTenants
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder ManagedTenants
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder MultiTenantOrganization
+        public global::Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder MultiTenantOrganization
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,70 +61,70 @@ namespace Microsoft.Graph.Beta.TenantRelationships
         /// <summary>
         /// Provides operations to call the findTenantInformationByDomainName method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/></returns>
         /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
-        public Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName)
+        public global::Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName)
         {
             if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
-            return new Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
+            return new global::Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName.FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
         }
         /// <summary>
         /// Provides operations to call the findTenantInformationByTenantId method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId.FindTenantInformationByTenantIdWithTenantIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId.FindTenantInformationByTenantIdWithTenantIdRequestBuilder"/></returns>
         /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
-        public Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId.FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId)
+        public global::Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId.FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId)
         {
             if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
-            return new Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId.FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
+            return new global::Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId.FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
         /// <summary>
         /// Get tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TenantRelationship"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantRelationship"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TenantRelationship?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TenantRelationship?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TenantRelationship> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TenantRelationship> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantRelationship>(requestInfo, Microsoft.Graph.Beta.Models.TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantRelationship>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TenantRelationship"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TenantRelationship"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TenantRelationship?> PatchAsync(Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TenantRelationship?> PatchAsync(global::Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TenantRelationship> PatchAsync(Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TenantRelationship> PatchAsync(global::Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantRelationship>(requestInfo, Microsoft.Graph.Beta.Models.TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TenantRelationship>(requestInfo, global::Microsoft.Graph.Beta.Models.TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get tenantRelationships
@@ -133,11 +133,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -153,11 +153,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -170,16 +170,16 @@ namespace Microsoft.Graph.Beta.TenantRelationships
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get tenantRelationships
         /// </summary>
-        public class TenantRelationshipsRequestBuilderGetQueryParameters 
+        public partial class TenantRelationshipsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,14 +206,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TenantRelationshipsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>
+        public partial class TenantRelationshipsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.TenantRelationshipsRequestBuilder.TenantRelationshipsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TenantRelationshipsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class TenantRelationshipsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

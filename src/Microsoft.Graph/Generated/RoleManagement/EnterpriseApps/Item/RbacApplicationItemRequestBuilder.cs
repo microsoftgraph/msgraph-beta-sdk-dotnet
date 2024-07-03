@@ -14,11 +14,11 @@ using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilitySch
 using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -27,75 +27,75 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
     /// <summary>
     /// Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
     /// </summary>
-    public class RbacApplicationItemRequestBuilder : BaseRequestBuilder
+    public partial class RbacApplicationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentApprovals property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentApprovals.RoleAssignmentApprovalsRequestBuilder RoleAssignmentApprovals
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentApprovals.RoleAssignmentApprovalsRequestBuilder RoleAssignmentApprovals
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentApprovals.RoleAssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentApprovals.RoleAssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignments.RoleAssignmentsRequestBuilder RoleAssignments
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignments.RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder RoleAssignmentScheduleInstances
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder RoleAssignmentScheduleInstances
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleInstances.RoleAssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder RoleAssignmentScheduleRequests
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder RoleAssignmentScheduleRequests
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentScheduleRequests.RoleAssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder RoleAssignmentSchedules
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder RoleAssignmentSchedules
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignmentSchedules.RoleAssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.RoleDefinitionsRequestBuilder RoleDefinitions
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleDefinitions.RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder RoleEligibilityScheduleInstances
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder RoleEligibilityScheduleInstances
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleInstances.RoleEligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder RoleEligibilityScheduleRequests
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder RoleEligibilityScheduleRequests
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilityScheduleRequests.RoleEligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilitySchedules.RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roleScheduleInstances method.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roleSchedules method.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.TransitiveRoleAssignmentsRequestBuilder TransitiveRoleAssignments
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.TransitiveRoleAssignmentsRequestBuilder TransitiveRoleAssignments
         {
-            get => new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.TransitiveRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.TransitiveRoleAssignments.TransitiveRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -128,57 +128,57 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get enterpriseApps from roleManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RbacApplication"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RbacApplication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.RbacApplication?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplication?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.RbacApplication> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplication> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RbacApplication>(requestInfo, Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RbacApplication>(requestInfo, global::Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property enterpriseApps in roleManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RbacApplication"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RbacApplication"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.RbacApplication?> PatchAsync(Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplication?> PatchAsync(global::Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.RbacApplication> PatchAsync(Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RbacApplication> PatchAsync(global::Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RbacApplication>(requestInfo, Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RbacApplication>(requestInfo, global::Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property enterpriseApps for roleManagement
@@ -206,11 +206,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -226,11 +226,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.RbacApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -243,23 +243,23 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RbacApplicationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class RbacApplicationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get enterpriseApps from roleManagement
         /// </summary>
-        public class RbacApplicationItemRequestBuilderGetQueryParameters 
+        public partial class RbacApplicationItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -286,14 +286,14 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RbacApplicationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>
+        public partial class RbacApplicationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RbacApplicationItemRequestBuilder.RbacApplicationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RbacApplicationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class RbacApplicationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

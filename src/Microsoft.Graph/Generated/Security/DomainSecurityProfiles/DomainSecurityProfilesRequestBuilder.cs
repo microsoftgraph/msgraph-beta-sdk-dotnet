@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Count;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,29 +16,29 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
     /// <summary>
     /// Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
     /// </summary>
-    public class DomainSecurityProfilesRequestBuilder : BaseRequestBuilder
+    public partial class DomainSecurityProfilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of domainSecurityProfile</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item.DomainSecurityProfileItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item.DomainSecurityProfileItemRequestBuilder"/></returns>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item.DomainSecurityProfileItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item.DomainSecurityProfileItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("domainSecurityProfile%2Did", position);
-                return new Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item.DomainSecurityProfileItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.Item.DomainSecurityProfileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,52 +56,52 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
         /// <summary>
         /// Get domainSecurityProfiles from security
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DomainSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to domainSecurityProfiles for security
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DomainSecurityProfile"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DomainSecurityProfile"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DomainSecurityProfile?> PostAsync(Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DomainSecurityProfile?> PostAsync(global::Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DomainSecurityProfile> PostAsync(Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DomainSecurityProfile> PostAsync(global::Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DomainSecurityProfile>(requestInfo, Microsoft.Graph.Beta.Models.DomainSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DomainSecurityProfile>(requestInfo, global::Microsoft.Graph.Beta.Models.DomainSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get domainSecurityProfiles from security
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.DomainSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,17 +149,17 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get domainSecurityProfiles from security
         /// </summary>
-        public class DomainSecurityProfilesRequestBuilderGetQueryParameters 
+        public partial class DomainSecurityProfilesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -225,14 +225,14 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DomainSecurityProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>
+        public partial class DomainSecurityProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Security.DomainSecurityProfiles.DomainSecurityProfilesRequestBuilder.DomainSecurityProfilesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DomainSecurityProfilesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DomainSecurityProfilesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

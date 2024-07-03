@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Activate;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Deactivate;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,20 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
     /// <summary>
     /// Provides operations to manage the serviceApps property of the microsoft.graph.backupRestoreRoot entity.
     /// </summary>
-    public class ServiceAppItemRequestBuilder : BaseRequestBuilder
+    public partial class ServiceAppItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the activate method.</summary>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Activate.ActivateRequestBuilder Activate
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Activate.ActivateRequestBuilder Activate
         {
-            get => new Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deactivate method.</summary>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Deactivate.DeactivateRequestBuilder Deactivate
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Deactivate.DeactivateRequestBuilder Deactivate
         {
-            get => new Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Deactivate.DeactivateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.Deactivate.DeactivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,50 +71,50 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         /// Read the properties and relationships of a serviceApp object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceapp-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServiceApp"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServiceApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ServiceApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ServiceApp?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ServiceApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ServiceApp> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceApp>(requestInfo, Microsoft.Graph.Beta.Models.ServiceApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ServiceApp>(requestInfo, global::Microsoft.Graph.Beta.Models.ServiceApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property serviceApps in solutions
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServiceApp"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ServiceApp"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ServiceApp?> PatchAsync(Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ServiceApp?> PatchAsync(global::Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ServiceApp> PatchAsync(Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ServiceApp> PatchAsync(global::Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceApp>(requestInfo, Microsoft.Graph.Beta.Models.ServiceApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ServiceApp>(requestInfo, global::Microsoft.Graph.Beta.Models.ServiceApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a serviceApp.
@@ -142,11 +142,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -162,11 +162,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ServiceApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -179,23 +179,23 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceAppItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ServiceAppItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a serviceApp object.
         /// </summary>
-        public class ServiceAppItemRequestBuilderGetQueryParameters 
+        public partial class ServiceAppItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -222,14 +222,14 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>
+        public partial class ServiceAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.ServiceApps.Item.ServiceAppItemRequestBuilder.ServiceAppItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceAppItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ServiceAppItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

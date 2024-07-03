@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta;
 using Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,20 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups
     /// <summary>
     /// Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.
     /// </summary>
-    public class JoinedGroupsRequestBuilder : BaseRequestBuilder
+    public partial class JoinedGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the delta method.</summary>
-        public Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta.DeltaRequestBuilder Delta
+        public global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta.DeltaRequestBuilder Delta
         {
-            get => new Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
-        public Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership.EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership
+        public global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership.EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership
         {
-            get => new Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership.EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership.EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,25 +47,25 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups
         /// <summary>
         /// Get joinedGroups from users
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.GroupCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.GroupCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GroupCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get joinedGroups from users
@@ -74,11 +74,11 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get joinedGroups from users
         /// </summary>
-        public class JoinedGroupsRequestBuilderGetQueryParameters 
+        public partial class JoinedGroupsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class JoinedGroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>
+        public partial class JoinedGroupsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.JoinedGroups.JoinedGroupsRequestBuilder.JoinedGroupsRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -38,11 +38,11 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedI
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -51,195 +51,195 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
     /// <summary>
     /// Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
     /// </summary>
-    public class ManagedTenantsRequestBuilder : BaseRequestBuilder
+    public partial class ManagedTenantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the aggregatedPolicyCompliances property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances.AggregatedPolicyCompliancesRequestBuilder AggregatedPolicyCompliances
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances.AggregatedPolicyCompliancesRequestBuilder AggregatedPolicyCompliances
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances.AggregatedPolicyCompliancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances.AggregatedPolicyCompliancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appPerformances property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder AppPerformances
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder AppPerformances
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformances.AppPerformancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.AuditEventsRequestBuilder AuditEvents
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.AuditEventsRequestBuilder AuditEvents
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.AuditEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.AuditEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder CloudPcConnections
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder CloudPcConnections
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.CloudPcConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPcDevices property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices.CloudPcDevicesRequestBuilder CloudPcDevices
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices.CloudPcDevicesRequestBuilder CloudPcDevices
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices.CloudPcDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices.CloudPcDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPcsOverview property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOverview.CloudPcsOverviewRequestBuilder CloudPcsOverview
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOverview.CloudPcsOverviewRequestBuilder CloudPcsOverview
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOverview.CloudPcsOverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOverview.CloudPcsOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the conditionalAccessPolicyCoverages property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages.ConditionalAccessPolicyCoveragesRequestBuilder ConditionalAccessPolicyCoverages
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages.ConditionalAccessPolicyCoveragesRequestBuilder ConditionalAccessPolicyCoverages
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages.ConditionalAccessPolicyCoveragesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages.ConditionalAccessPolicyCoveragesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.CredentialUserRegistrationsSummariesRequestBuilder CredentialUserRegistrationsSummaries
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.CredentialUserRegistrationsSummariesRequestBuilder CredentialUserRegistrationsSummaries
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.CredentialUserRegistrationsSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.CredentialUserRegistrationsSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceAppPerformances property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceAppPerformances.DeviceAppPerformancesRequestBuilder DeviceAppPerformances
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceAppPerformances.DeviceAppPerformancesRequestBuilder DeviceAppPerformances
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceAppPerformances.DeviceAppPerformancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceAppPerformances.DeviceAppPerformancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder DeviceCompliancePolicySettingStateSummaries
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder DeviceCompliancePolicySettingStateSummaries
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries.DeviceCompliancePolicySettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceHealthStatuses property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceHealthStatuses.DeviceHealthStatusesRequestBuilder DeviceHealthStatuses
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceHealthStatuses.DeviceHealthStatusesRequestBuilder DeviceHealthStatuses
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceHealthStatuses.DeviceHealthStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceHealthStatuses.DeviceHealthStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceCompliances property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances.ManagedDeviceCompliancesRequestBuilder ManagedDeviceCompliances
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances.ManagedDeviceCompliancesRequestBuilder ManagedDeviceCompliances
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances.ManagedDeviceCompliancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances.ManagedDeviceCompliancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends.ManagedDeviceComplianceTrendsRequestBuilder ManagedDeviceComplianceTrends
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends.ManagedDeviceComplianceTrendsRequestBuilder ManagedDeviceComplianceTrends
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends.ManagedDeviceComplianceTrendsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends.ManagedDeviceComplianceTrendsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantAlertLogs property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertLogs.ManagedTenantAlertLogsRequestBuilder ManagedTenantAlertLogs
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertLogs.ManagedTenantAlertLogsRequestBuilder ManagedTenantAlertLogs
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertLogs.ManagedTenantAlertLogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertLogs.ManagedTenantAlertLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantAlertRuleDefinitions property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRuleDefinitions.ManagedTenantAlertRuleDefinitionsRequestBuilder ManagedTenantAlertRuleDefinitions
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRuleDefinitions.ManagedTenantAlertRuleDefinitionsRequestBuilder ManagedTenantAlertRuleDefinitions
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRuleDefinitions.ManagedTenantAlertRuleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRuleDefinitions.ManagedTenantAlertRuleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantAlertRules property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.ManagedTenantAlertRulesRequestBuilder ManagedTenantAlertRules
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.ManagedTenantAlertRulesRequestBuilder ManagedTenantAlertRules
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.ManagedTenantAlertRulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules.ManagedTenantAlertRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantAlerts property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.ManagedTenantAlertsRequestBuilder ManagedTenantAlerts
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.ManagedTenantAlertsRequestBuilder ManagedTenantAlerts
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.ManagedTenantAlertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.ManagedTenantAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantApiNotifications property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantApiNotifications.ManagedTenantApiNotificationsRequestBuilder ManagedTenantApiNotifications
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantApiNotifications.ManagedTenantApiNotificationsRequestBuilder ManagedTenantApiNotifications
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantApiNotifications.ManagedTenantApiNotificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantApiNotifications.ManagedTenantApiNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantEmailNotifications property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantEmailNotifications.ManagedTenantEmailNotificationsRequestBuilder ManagedTenantEmailNotifications
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantEmailNotifications.ManagedTenantEmailNotificationsRequestBuilder ManagedTenantEmailNotifications
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantEmailNotifications.ManagedTenantEmailNotificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantEmailNotifications.ManagedTenantEmailNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedTenantTicketingEndpoints property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantTicketingEndpoints.ManagedTenantTicketingEndpointsRequestBuilder ManagedTenantTicketingEndpoints
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantTicketingEndpoints.ManagedTenantTicketingEndpointsRequestBuilder ManagedTenantTicketingEndpoints
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantTicketingEndpoints.ManagedTenantTicketingEndpointsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantTicketingEndpoints.ManagedTenantTicketingEndpointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.ManagementActionsRequestBuilder ManagementActions
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.ManagementActionsRequestBuilder ManagementActions
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.ManagementActionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.ManagementActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ManagementActionTenantDeploymentStatusesRequestBuilder ManagementActionTenantDeploymentStatuses
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ManagementActionTenantDeploymentStatusesRequestBuilder ManagementActionTenantDeploymentStatuses
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ManagementActionTenantDeploymentStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ManagementActionTenantDeploymentStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementIntents property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents.ManagementIntentsRequestBuilder ManagementIntents
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents.ManagementIntentsRequestBuilder ManagementIntents
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents.ManagementIntentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents.ManagementIntentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.ManagementTemplateCollectionsRequestBuilder ManagementTemplateCollections
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.ManagementTemplateCollectionsRequestBuilder ManagementTemplateCollections
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.ManagementTemplateCollectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.ManagementTemplateCollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollectionTenantSummaries.ManagementTemplateCollectionTenantSummariesRequestBuilder ManagementTemplateCollectionTenantSummaries
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollectionTenantSummaries.ManagementTemplateCollectionTenantSummariesRequestBuilder ManagementTemplateCollectionTenantSummaries
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollectionTenantSummaries.ManagementTemplateCollectionTenantSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollectionTenantSummaries.ManagementTemplateCollectionTenantSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.ManagementTemplatesRequestBuilder ManagementTemplates
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.ManagementTemplatesRequestBuilder ManagementTemplates
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.ManagementTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.ManagementTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder ManagementTemplateSteps
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder ManagementTemplateSteps
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.ManagementTemplateStepsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepTenantSummaries.ManagementTemplateStepTenantSummariesRequestBuilder ManagementTemplateStepTenantSummaries
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepTenantSummaries.ManagementTemplateStepTenantSummariesRequestBuilder ManagementTemplateStepTenantSummaries
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepTenantSummaries.ManagementTemplateStepTenantSummariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepTenantSummaries.ManagementTemplateStepTenantSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateStepVersions property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.ManagementTemplateStepVersionsRequestBuilder ManagementTemplateStepVersions
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.ManagementTemplateStepVersionsRequestBuilder ManagementTemplateStepVersions
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.ManagementTemplateStepVersionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.ManagementTemplateStepVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the myRoles property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.MyRolesRequestBuilder MyRoles
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.MyRolesRequestBuilder MyRoles
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.MyRolesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles.MyRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantGroupsRequestBuilder TenantGroups
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantGroupsRequestBuilder TenantGroups
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenants property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.TenantsRequestBuilder Tenants
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.TenantsRequestBuilder Tenants
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantsCustomizedInformation property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder TenantsCustomizedInformation
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder TenantsCustomizedInformation
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.TenantsCustomizedInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantsDetailedInformation property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation.TenantsDetailedInformationRequestBuilder TenantsDetailedInformation
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation.TenantsDetailedInformationRequestBuilder TenantsDetailedInformation
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation.TenantsDetailedInformationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation.TenantsDetailedInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.TenantTagsRequestBuilder TenantTags
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.TenantTagsRequestBuilder TenantTags
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.TenantTagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.TenantTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsDeviceMalwareStates property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates.WindowsDeviceMalwareStatesRequestBuilder WindowsDeviceMalwareStates
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates.WindowsDeviceMalwareStatesRequestBuilder WindowsDeviceMalwareStates
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates.WindowsDeviceMalwareStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates.WindowsDeviceMalwareStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates.WindowsProtectionStatesRequestBuilder WindowsProtectionStates
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates.WindowsProtectionStatesRequestBuilder WindowsProtectionStates
         {
-            get => new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates.WindowsProtectionStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates.WindowsProtectionStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -259,7 +259,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -272,57 +272,57 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The operations available to interact with the multi-tenant management platform.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property managedTenants in tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant?> PatchAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant?> PatchAsync(global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant> PatchAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant> PatchAsync(global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property managedTenants for tenantRelationships
@@ -350,11 +350,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -370,11 +370,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -387,23 +387,23 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedTenantsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ManagedTenantsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The operations available to interact with the multi-tenant management platform.
         /// </summary>
-        public class ManagedTenantsRequestBuilderGetQueryParameters 
+        public partial class ManagedTenantsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -430,14 +430,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedTenantsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>
+        public partial class ManagedTenantsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantsRequestBuilder.ManagedTenantsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedTenantsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ManagedTenantsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }
