@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>An enum representing the possible values of Android MAC Address Randomization Mode.</summary>
     public enum MacAddressRandomizationMode
     {

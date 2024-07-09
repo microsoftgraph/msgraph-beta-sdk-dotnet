@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Android For Work cross profile data sharing type.</summary>
     public enum AndroidForWorkCrossProfileDataSharingType
     {

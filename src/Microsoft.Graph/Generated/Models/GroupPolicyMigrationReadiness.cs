@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Indicates if the Group Policy Object file is covered and ready for Intune migration.</summary>
     public enum GroupPolicyMigrationReadiness
     {

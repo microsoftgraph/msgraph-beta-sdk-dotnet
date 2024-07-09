@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.</summary>
     public enum MobileThreatDefensePartnerPriority
     {

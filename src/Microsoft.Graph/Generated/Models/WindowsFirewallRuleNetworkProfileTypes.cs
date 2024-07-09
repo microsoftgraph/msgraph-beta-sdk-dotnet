@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Flags representing which network profile types apply to a firewall rule.</summary>
     [Flags]
     public enum WindowsFirewallRuleNetworkProfileTypes

@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Indicates whether global device health scripts are enabled and are in which state</summary>
     public enum GlobalDeviceHealthScriptState
     {

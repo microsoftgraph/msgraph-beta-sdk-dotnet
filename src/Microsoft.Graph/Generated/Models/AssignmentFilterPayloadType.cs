@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
     public enum AssignmentFilterPayloadType
     {

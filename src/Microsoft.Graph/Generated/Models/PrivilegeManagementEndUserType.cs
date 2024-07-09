@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>The type of user account on Windows that was used to performed the elevation.</summary>
     public enum PrivilegeManagementEndUserType
     {

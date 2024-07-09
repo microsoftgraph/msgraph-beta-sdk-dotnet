@@ -115,11 +115,11 @@ using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId;
 using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -128,560 +128,561 @@ namespace Microsoft.Graph.Beta.Me
     /// <summary>
     /// Provides operations to manage the user singleton.
     /// </summary>
-    public class MeRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class MeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Activities.ActivitiesRequestBuilder Activities
+        public global::Microsoft.Graph.Beta.Me.Activities.ActivitiesRequestBuilder Activities
         {
-            get => new Microsoft.Graph.Beta.Me.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
+        public global::Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
         {
-            get => new Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the analytics property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Analytics.AnalyticsRequestBuilder Analytics
+        public global::Microsoft.Graph.Beta.Me.Analytics.AnalyticsRequestBuilder Analytics
         {
-            get => new Microsoft.Graph.Beta.Me.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder AppConsentRequestsForApproval
+        public global::Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder AppConsentRequestsForApproval
         {
-            get => new Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.AppRoleAssignedResources.AppRoleAssignedResourcesRequestBuilder AppRoleAssignedResources
+        public global::Microsoft.Graph.Beta.Me.AppRoleAssignedResources.AppRoleAssignedResourcesRequestBuilder AppRoleAssignedResources
         {
-            get => new Microsoft.Graph.Beta.Me.AppRoleAssignedResources.AppRoleAssignedResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.AppRoleAssignedResources.AppRoleAssignedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        public global::Microsoft.Graph.Beta.Me.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
         {
-            get => new Microsoft.Graph.Beta.Me.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the approvals property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder Approvals
+        public global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder Approvals
         {
-            get => new Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignLicense method.</summary>
-        public Microsoft.Graph.Beta.Me.AssignLicense.AssignLicenseRequestBuilder AssignLicense
+        public global::Microsoft.Graph.Beta.Me.AssignLicense.AssignLicenseRequestBuilder AssignLicense
         {
-            get => new Microsoft.Graph.Beta.Me.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authentication property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Authentication.AuthenticationRequestBuilder Authentication
+        public global::Microsoft.Graph.Beta.Me.Authentication.AuthenticationRequestBuilder Authentication
         {
-            get => new Microsoft.Graph.Beta.Me.Authentication.AuthenticationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Authentication.AuthenticationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Calendar.CalendarRequestBuilder Calendar
+        public global::Microsoft.Graph.Beta.Me.Calendar.CalendarRequestBuilder Calendar
         {
-            get => new Microsoft.Graph.Beta.Me.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.CalendarGroups.CalendarGroupsRequestBuilder CalendarGroups
+        public global::Microsoft.Graph.Beta.Me.CalendarGroups.CalendarGroupsRequestBuilder CalendarGroups
         {
-            get => new Microsoft.Graph.Beta.Me.CalendarGroups.CalendarGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CalendarGroups.CalendarGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendars property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.CalendarsRequestBuilder Calendars
+        public global::Microsoft.Graph.Beta.Me.Calendars.CalendarsRequestBuilder Calendars
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.CalendarsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.CalendarsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.CalendarView.CalendarViewRequestBuilder CalendarView
+        public global::Microsoft.Graph.Beta.Me.CalendarView.CalendarViewRequestBuilder CalendarView
         {
-            get => new Microsoft.Graph.Beta.Me.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changePassword method.</summary>
-        public Microsoft.Graph.Beta.Me.ChangePassword.ChangePasswordRequestBuilder ChangePassword
+        public global::Microsoft.Graph.Beta.Me.ChangePassword.ChangePasswordRequestBuilder ChangePassword
         {
-            get => new Microsoft.Graph.Beta.Me.ChangePassword.ChangePasswordRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ChangePassword.ChangePasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder Chats
+        public global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder Chats
         {
-            get => new Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public Microsoft.Graph.Beta.Me.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public global::Microsoft.Graph.Beta.Me.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new Microsoft.Graph.Beta.Me.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public Microsoft.Graph.Beta.Me.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public global::Microsoft.Graph.Beta.Me.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new Microsoft.Graph.Beta.Me.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.CloudClipboard.CloudClipboardRequestBuilder CloudClipboard
+        public global::Microsoft.Graph.Beta.Me.CloudClipboard.CloudClipboardRequestBuilder CloudClipboard
         {
-            get => new Microsoft.Graph.Beta.Me.CloudClipboard.CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CloudClipboard.CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder CloudPCs
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder CloudPCs
         {
-            get => new Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder ContactFolders
+        public global::Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder ContactFolders
         {
-            get => new Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contacts property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Contacts.ContactsRequestBuilder Contacts
+        public global::Microsoft.Graph.Beta.Me.Contacts.ContactsRequestBuilder Contacts
         {
-            get => new Microsoft.Graph.Beta.Me.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the convertExternalToInternalMemberUser method.</summary>
-        public Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser.ConvertExternalToInternalMemberUserRequestBuilder ConvertExternalToInternalMemberUser
+        public global::Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser.ConvertExternalToInternalMemberUserRequestBuilder ConvertExternalToInternalMemberUser
         {
-            get => new Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser.ConvertExternalToInternalMemberUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser.ConvertExternalToInternalMemberUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
+        public global::Microsoft.Graph.Beta.Me.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
         {
-            get => new Microsoft.Graph.Beta.Me.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
-        public Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
+        public global::Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
         {
-            get => new Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations
+        public global::Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations
         {
-            get => new Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
+        public global::Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
         {
-            get => new Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Devices.DevicesRequestBuilder Devices
+        public global::Microsoft.Graph.Beta.Me.Devices.DevicesRequestBuilder Devices
         {
-            get => new Microsoft.Graph.Beta.Me.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder DirectReports
+        public global::Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder DirectReports
         {
-            get => new Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder Drive
+        public global::Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder Drive
         {
-            get => new Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Drives.DrivesRequestBuilder Drives
+        public global::Microsoft.Graph.Beta.Me.Drives.DrivesRequestBuilder Drives
         {
-            get => new Microsoft.Graph.Beta.Me.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employeeExperience property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder EmployeeExperience
+        public global::Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder EmployeeExperience
         {
-            get => new Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Events.EventsRequestBuilder Events
+        public global::Microsoft.Graph.Beta.Me.Events.EventsRequestBuilder Events
         {
-            get => new Microsoft.Graph.Beta.Me.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exportDeviceAndAppManagementData method.</summary>
-        public Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData
+        public global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData
         {
-            get => new Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exportPersonalData method.</summary>
-        public Microsoft.Graph.Beta.Me.ExportPersonalData.ExportPersonalDataRequestBuilder ExportPersonalData
+        public global::Microsoft.Graph.Beta.Me.ExportPersonalData.ExportPersonalDataRequestBuilder ExportPersonalData
         {
-            get => new Microsoft.Graph.Beta.Me.ExportPersonalData.ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ExportPersonalData.ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder Extensions
+        public global::Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findMeetingTimes method.</summary>
-        public Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder FindMeetingTimes
+        public global::Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder FindMeetingTimes
         {
-            get => new Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findRoomLists method.</summary>
-        public Microsoft.Graph.Beta.Me.FindRoomLists.FindRoomListsRequestBuilder FindRoomLists
+        public global::Microsoft.Graph.Beta.Me.FindRoomLists.FindRoomListsRequestBuilder FindRoomLists
         {
-            get => new Microsoft.Graph.Beta.Me.FindRoomLists.FindRoomListsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.FindRoomLists.FindRoomListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findRooms method.</summary>
-        public Microsoft.Graph.Beta.Me.FindRooms.FindRoomsRequestBuilder FindRooms
+        public global::Microsoft.Graph.Beta.Me.FindRooms.FindRoomsRequestBuilder FindRooms
         {
-            get => new Microsoft.Graph.Beta.Me.FindRooms.FindRoomsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.FindRooms.FindRoomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the followedSites property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.FollowedSites.FollowedSitesRequestBuilder FollowedSites
+        public global::Microsoft.Graph.Beta.Me.FollowedSites.FollowedSitesRequestBuilder FollowedSites
         {
-            get => new Microsoft.Graph.Beta.Me.FollowedSites.FollowedSitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.FollowedSites.FollowedSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.</summary>
-        public Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder GetEffectiveDeviceEnrollmentConfigurations
+        public global::Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder GetEffectiveDeviceEnrollmentConfigurations
         {
-            get => new Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getLoggedOnManagedDevices method.</summary>
-        public Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesRequestBuilder GetLoggedOnManagedDevices
+        public global::Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesRequestBuilder GetLoggedOnManagedDevices
         {
-            get => new Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMailTips method.</summary>
-        public Microsoft.Graph.Beta.Me.GetMailTips.GetMailTipsRequestBuilder GetMailTips
+        public global::Microsoft.Graph.Beta.Me.GetMailTips.GetMailTipsRequestBuilder GetMailTips
         {
-            get => new Microsoft.Graph.Beta.Me.GetMailTips.GetMailTipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetMailTips.GetMailTipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppDiagnosticStatuses method.</summary>
-        public Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder GetManagedAppDiagnosticStatuses
+        public global::Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder GetManagedAppDiagnosticStatuses
         {
-            get => new Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppPolicies method.</summary>
-        public Microsoft.Graph.Beta.Me.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder GetManagedAppPolicies
+        public global::Microsoft.Graph.Beta.Me.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder GetManagedAppPolicies
         {
-            get => new Microsoft.Graph.Beta.Me.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedDevicesWithAppFailures method.</summary>
-        public Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures
+        public global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures
         {
-            get => new Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.</summary>
-        public Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder GetManagedDevicesWithFailedOrPendingApps
+        public global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder GetManagedDevicesWithFailedOrPendingApps
         {
-            get => new Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public Microsoft.Graph.Beta.Me.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
+        public global::Microsoft.Graph.Beta.Me.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new Microsoft.Graph.Beta.Me.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
+        public global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
-        public Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
+        public global::Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
         {
-            get => new Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder InferenceClassification
+        public global::Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder InferenceClassification
         {
-            get => new Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the informationProtection property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder InformationProtection
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder InformationProtection
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the insights property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Insights.InsightsRequestBuilder Insights
+        public global::Microsoft.Graph.Beta.Me.Insights.InsightsRequestBuilder Insights
         {
-            get => new Microsoft.Graph.Beta.Me.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the invalidateAllRefreshTokens method.</summary>
-        public Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens
+        public global::Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens
         {
-            get => new Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the invitedBy property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.InvitedBy.InvitedByRequestBuilder InvitedBy
+        public global::Microsoft.Graph.Beta.Me.InvitedBy.InvitedByRequestBuilder InvitedBy
         {
-            get => new Microsoft.Graph.Beta.Me.InvitedBy.InvitedByRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InvitedBy.InvitedByRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isManagedAppUserBlocked method.</summary>
-        public Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked.IsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked
+        public global::Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked.IsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked
         {
-            get => new Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked.IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked.IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.JoinedGroups.JoinedGroupsRequestBuilder JoinedGroups
+        public global::Microsoft.Graph.Beta.Me.JoinedGroups.JoinedGroupsRequestBuilder JoinedGroups
         {
-            get => new Microsoft.Graph.Beta.Me.JoinedGroups.JoinedGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.JoinedGroups.JoinedGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder JoinedTeams
+        public global::Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder JoinedTeams
         {
-            get => new Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder LicenseDetails
+        public global::Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder LicenseDetails
         {
-            get => new Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mailboxSettings property</summary>
-        public Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
+        public global::Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
-            get => new Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder MailFolders
+        public global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder MailFolders
         {
-            get => new Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppLogCollectionRequests property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests.ManagedAppLogCollectionRequestsRequestBuilder ManagedAppLogCollectionRequests
+        public global::Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests.ManagedAppLogCollectionRequestsRequestBuilder ManagedAppLogCollectionRequests
         {
-            get => new Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests.ManagedAppLogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests.ManagedAppLogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
+        public global::Microsoft.Graph.Beta.Me.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
         {
-            get => new Microsoft.Graph.Beta.Me.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.ManagedDevices.ManagedDevicesRequestBuilder ManagedDevices
+        public global::Microsoft.Graph.Beta.Me.ManagedDevices.ManagedDevicesRequestBuilder ManagedDevices
         {
-            get => new Microsoft.Graph.Beta.Me.ManagedDevices.ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the manager property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Manager.ManagerRequestBuilder Manager
+        public global::Microsoft.Graph.Beta.Me.Manager.ManagerRequestBuilder Manager
         {
-            get => new Microsoft.Graph.Beta.Me.Manager.ManagerRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Manager.ManagerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.MemberOf.MemberOfRequestBuilder MemberOf
+        public global::Microsoft.Graph.Beta.Me.MemberOf.MemberOfRequestBuilder MemberOf
         {
-            get => new Microsoft.Graph.Beta.Me.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder Messages
+        public global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder Messages
         {
-            get => new Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder MobileAppIntentAndStates
+        public global::Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder MobileAppIntentAndStates
         {
-            get => new Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder MobileAppTroubleshootingEvents
+        public global::Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder MobileAppTroubleshootingEvents
         {
-            get => new Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notifications property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder Notifications
+        public global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder Notifications
         {
-            get => new Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
+        public global::Microsoft.Graph.Beta.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
         {
-            get => new Microsoft.Graph.Beta.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Onenote.OnenoteRequestBuilder Onenote
+        public global::Microsoft.Graph.Beta.Me.Onenote.OnenoteRequestBuilder Onenote
         {
-            get => new Microsoft.Graph.Beta.Me.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
+        public global::Microsoft.Graph.Beta.Me.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
         {
-            get => new Microsoft.Graph.Beta.Me.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Outlook.OutlookRequestBuilder Outlook
+        public global::Microsoft.Graph.Beta.Me.Outlook.OutlookRequestBuilder Outlook
         {
-            get => new Microsoft.Graph.Beta.Me.Outlook.OutlookRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Outlook.OutlookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.OwnedDevices.OwnedDevicesRequestBuilder OwnedDevices
+        public global::Microsoft.Graph.Beta.Me.OwnedDevices.OwnedDevicesRequestBuilder OwnedDevices
         {
-            get => new Microsoft.Graph.Beta.Me.OwnedDevices.OwnedDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.OwnedDevices.OwnedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.OwnedObjects.OwnedObjectsRequestBuilder OwnedObjects
+        public global::Microsoft.Graph.Beta.Me.OwnedObjects.OwnedObjectsRequestBuilder OwnedObjects
         {
-            get => new Microsoft.Graph.Beta.Me.OwnedObjects.OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.OwnedObjects.OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.PendingAccessReviewInstancesRequestBuilder PendingAccessReviewInstances
+        public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.PendingAccessReviewInstancesRequestBuilder PendingAccessReviewInstances
         {
-            get => new Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.PendingAccessReviewInstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.PendingAccessReviewInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the people property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.People.PeopleRequestBuilder People
+        public global::Microsoft.Graph.Beta.Me.People.PeopleRequestBuilder People
         {
-            get => new Microsoft.Graph.Beta.Me.People.PeopleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.People.PeopleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
+        public global::Microsoft.Graph.Beta.Me.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new Microsoft.Graph.Beta.Me.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Photo.PhotoRequestBuilder Photo
+        public global::Microsoft.Graph.Beta.Me.Photo.PhotoRequestBuilder Photo
         {
-            get => new Microsoft.Graph.Beta.Me.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Photos.PhotosRequestBuilder Photos
+        public global::Microsoft.Graph.Beta.Me.Photos.PhotosRequestBuilder Photos
         {
-            get => new Microsoft.Graph.Beta.Me.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder Planner
+        public global::Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder Planner
         {
-            get => new Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presence property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Presence.PresenceRequestBuilder Presence
+        public global::Microsoft.Graph.Beta.Me.Presence.PresenceRequestBuilder Presence
         {
-            get => new Microsoft.Graph.Beta.Me.Presence.PresenceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Presence.PresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the profile property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder Profile
+        public global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder Profile
         {
-            get => new Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.RegisteredDevices.RegisteredDevicesRequestBuilder RegisteredDevices
+        public global::Microsoft.Graph.Beta.Me.RegisteredDevices.RegisteredDevicesRequestBuilder RegisteredDevices
         {
-            get => new Microsoft.Graph.Beta.Me.RegisteredDevices.RegisteredDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.RegisteredDevices.RegisteredDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeAllDevicesFromManagement method.</summary>
-        public Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement
+        public global::Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement
         {
-            get => new Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reprocessLicenseAssignment method.</summary>
-        public Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment
+        public global::Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment
         {
-            get => new Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public Microsoft.Graph.Beta.Me.Restore.RestoreRequestBuilder Restore
+        public global::Microsoft.Graph.Beta.Me.Restore.RestoreRequestBuilder Restore
         {
-            get => new Microsoft.Graph.Beta.Me.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
-        public Microsoft.Graph.Beta.Me.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
+        public global::Microsoft.Graph.Beta.Me.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
         {
-            get => new Microsoft.Graph.Beta.Me.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeSignInSessions method.</summary>
-        public Microsoft.Graph.Beta.Me.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder RevokeSignInSessions
+        public global::Microsoft.Graph.Beta.Me.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder RevokeSignInSessions
         {
-            get => new Microsoft.Graph.Beta.Me.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder ScopedRoleMemberOf
+        public global::Microsoft.Graph.Beta.Me.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder ScopedRoleMemberOf
         {
-            get => new Microsoft.Graph.Beta.Me.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the security property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Security.SecurityRequestBuilder Security
+        public global::Microsoft.Graph.Beta.Me.Security.SecurityRequestBuilder Security
         {
-            get => new Microsoft.Graph.Beta.Me.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendMail method.</summary>
-        public Microsoft.Graph.Beta.Me.SendMail.SendMailRequestBuilder SendMail
+        public global::Microsoft.Graph.Beta.Me.SendMail.SendMailRequestBuilder SendMail
         {
-            get => new Microsoft.Graph.Beta.Me.SendMail.SendMailRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.SendMail.SendMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public Microsoft.Graph.Beta.Me.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public global::Microsoft.Graph.Beta.Me.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new Microsoft.Graph.Beta.Me.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Settings.SettingsRequestBuilder Settings
+        public global::Microsoft.Graph.Beta.Me.Settings.SettingsRequestBuilder Settings
         {
-            get => new Microsoft.Graph.Beta.Me.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder Sponsors
+        public global::Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder Sponsors
         {
-            get => new Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Teamwork.TeamworkRequestBuilder Teamwork
+        public global::Microsoft.Graph.Beta.Me.Teamwork.TeamworkRequestBuilder Teamwork
         {
-            get => new Microsoft.Graph.Beta.Me.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the todo property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.Todo.TodoRequestBuilder Todo
+        public global::Microsoft.Graph.Beta.Me.Todo.TodoRequestBuilder Todo
         {
-            get => new Microsoft.Graph.Beta.Me.Todo.TodoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Todo.TodoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
+        public global::Microsoft.Graph.Beta.Me.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
         {
-            get => new Microsoft.Graph.Beta.Me.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveReports property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.TransitiveReports.TransitiveReportsRequestBuilder TransitiveReports
+        public global::Microsoft.Graph.Beta.Me.TransitiveReports.TransitiveReportsRequestBuilder TransitiveReports
         {
-            get => new Microsoft.Graph.Beta.Me.TransitiveReports.TransitiveReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.TransitiveReports.TransitiveReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the translateExchangeIds method.</summary>
-        public Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder TranslateExchangeIds
+        public global::Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder TranslateExchangeIds
         {
-            get => new Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unblockManagedApps method.</summary>
-        public Microsoft.Graph.Beta.Me.UnblockManagedApps.UnblockManagedAppsRequestBuilder UnblockManagedApps
+        public global::Microsoft.Graph.Beta.Me.UnblockManagedApps.UnblockManagedAppsRequestBuilder UnblockManagedApps
         {
-            get => new Microsoft.Graph.Beta.Me.UnblockManagedApps.UnblockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.UnblockManagedApps.UnblockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the usageRights property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.UsageRights.UsageRightsRequestBuilder UsageRights
+        public global::Microsoft.Graph.Beta.Me.UsageRights.UsageRightsRequestBuilder UsageRights
         {
-            get => new Microsoft.Graph.Beta.Me.UsageRights.UsageRightsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.UsageRights.UsageRightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents
+        public global::Microsoft.Graph.Beta.Me.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents
         {
-            get => new Microsoft.Graph.Beta.Me.VirtualEvents.VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.VirtualEvents.VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
-        public Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations
+        public global::Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations
         {
-            get => new Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeAndBlockManagedApps method.</summary>
-        public Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps.WipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps
+        public global::Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps.WipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps
         {
-            get => new Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps.WipeAndBlockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps.WipeAndBlockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationByDeviceTag method.</summary>
-        public Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagRequestBuilder WipeManagedAppRegistrationByDeviceTag
+        public global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagRequestBuilder WipeManagedAppRegistrationByDeviceTag
         {
-            get => new Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationsByAzureAdDeviceId method.</summary>
-        public Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId.WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder WipeManagedAppRegistrationsByAzureAdDeviceId
+        public global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId.WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder WipeManagedAppRegistrationsByAzureAdDeviceId
         {
-            get => new Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId.WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId.WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.</summary>
-        public Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder WipeManagedAppRegistrationsByDeviceTag
+        public global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder WipeManagedAppRegistrationsByDeviceTag
         {
-            get => new Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
-        public Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder AppRoleAssignedResourcesWithAppId(string appId)
+        public global::Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder AppRoleAssignedResourcesWithAppId(string appId)
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
-            return new Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+            return new global::Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.MeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.MeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -689,7 +690,7 @@ namespace Microsoft.Graph.Beta.Me
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.MeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.MeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -699,119 +700,119 @@ namespace Microsoft.Graph.Beta.Me
         /// <summary>
         /// Provides operations to manage the devices property of the microsoft.graph.user entity.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of device</param>
-        public Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId)
+        public global::Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId)
         {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
-            return new Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
+            return new global::Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder"/></returns>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
-        public Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
+        public global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
         {
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
             _ = top ?? throw new ArgumentNullException(nameof(top));
-            return new Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
+            return new global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
         /// Provides operations to call the findRooms method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder"/></returns>
         /// <param name="roomList">Usage: RoomList=&apos;{RoomList}&apos;</param>
-        public Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder FindRoomsWithRoomList(string roomList)
+        public global::Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder FindRoomsWithRoomList(string roomList)
         {
             if(string.IsNullOrEmpty(roomList)) throw new ArgumentNullException(nameof(roomList));
-            return new Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
+            return new global::Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-beta" />
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.User"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.User?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.User?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.User> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
-        public Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl)
+        public global::Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl)
         {
             if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
-            return new Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
+            return new global::Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.User"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.User?> PatchAsync(Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.User?> PatchAsync(global::Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.User> PatchAsync(Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.User> PatchAsync(global::Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the reminderView method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: EndDateTime=&apos;{EndDateTime}&apos;</param>
         /// <param name="startDateTime">Usage: StartDateTime=&apos;{StartDateTime}&apos;</param>
-        public Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime)
+        public global::Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime)
         {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -827,11 +828,11 @@ namespace Microsoft.Graph.Beta.Me
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -844,16 +845,17 @@ namespace Microsoft.Graph.Beta.Me
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.MeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.MeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Me.MeRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Me.MeRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Me.MeRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Me.MeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
         /// </summary>
-        public class MeRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class MeRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -880,14 +882,16 @@ namespace Microsoft.Graph.Beta.Me
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MeRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class MeRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MeRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class MeRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

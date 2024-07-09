@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Userless enrollment block status, indicating whether the next device enrollment will be blocked.</summary>
     public enum WindowsAutopilotUserlessEnrollmentStatus
     {

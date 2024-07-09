@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Diffie Hellman Group values for Windows10 VPN policies with IKEv2 connection type.</summary>
     public enum DiffieHellmanGroup
     {

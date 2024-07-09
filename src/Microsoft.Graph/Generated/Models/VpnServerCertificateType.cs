@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>The type of certificate the VPN server will present to the VPN client for authentication</summary>
     public enum VpnServerCertificateType
     {

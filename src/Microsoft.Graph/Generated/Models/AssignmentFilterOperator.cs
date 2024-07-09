@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Represents the different type of operators which can be used to craft the AssignmentFilter rule.</summary>
     public enum AssignmentFilterOperator
     {

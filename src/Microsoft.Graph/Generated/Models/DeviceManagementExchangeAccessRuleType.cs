@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Criteria which defines the type of device this access rule will apply to</summary>
     public enum DeviceManagementExchangeAccessRuleType
     {

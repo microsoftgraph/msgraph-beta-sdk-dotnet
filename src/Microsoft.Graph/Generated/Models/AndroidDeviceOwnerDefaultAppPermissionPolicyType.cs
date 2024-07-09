@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Android Device Owner default app permission policy type.</summary>
     public enum AndroidDeviceOwnerDefaultAppPermissionPolicyType
     {

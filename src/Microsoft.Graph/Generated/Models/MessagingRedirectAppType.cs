@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.</summary>
     public enum MessagingRedirectAppType
     {

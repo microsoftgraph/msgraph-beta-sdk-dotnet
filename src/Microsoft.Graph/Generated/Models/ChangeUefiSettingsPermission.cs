@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Defines the permission level granted to users to enable them change Uefi settings</summary>
     public enum ChangeUefiSettingsPermission
     {

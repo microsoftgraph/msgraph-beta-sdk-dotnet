@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     /// <summary>Define the platform type for which the admin wants to create the device clean up rule</summary>
     public enum DeviceCleanupRulePlatformType
     {
