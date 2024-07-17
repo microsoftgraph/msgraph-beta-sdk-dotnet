@@ -1,0 +1,22 @@
+{
+  "bootstrap-sha": "3fb37dd971d96e0aa78f28909c9663eb848809a3",
+  "exclude-paths": [
+    ".git",
+    ".idea",
+    ".github",
+    ".vscode"
+  ],
+  "release-type": "dotnet-yoshi",
+  "include-component-in-tag": false,
+  "include-v-in-tag": true,
+  "packages": {
+    ".": {
+      "package-name": "src/Microsoft.Graph.Beta/",
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        "src/Microsoft.Graph.Beta.csproj"
+      ]
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
