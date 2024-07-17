@@ -14,7 +14,7 @@
     <PackageProjectUrl>https://developer.microsoft.com/graph</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=288890</PackageIconUrl>
+    <PackageIconUrl>https://go.microsoft.com/fwlink/?LinkID=288890</PackageIconUrl>
     <RepositoryUrl>https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet</RepositoryUrl>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard2.0' ">2.0.0</NetStandardImplicitPackageVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -34,7 +34,6 @@
     which commit was used to generate the preview build. -->
     <!-- $(Prerelease).$(BUILD_BUILDID) -->
     <!-- <VersionSuffix Condition=" '$(Prerelease)' != '' ">$(Prerelease)</VersionSuffix> -->
-    <VersionSuffix>preview</VersionSuffix>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <Deterministic>true</Deterministic>
