@@ -6,7 +6,7 @@
       ".github",
       ".vscode"
     ],
-    "release-type": "dotnet",
+    "release-type": "dotnet-yoshi",
     "include-component-in-tag": false,
     "include-v-in-tag": true,
     "prerelease": true,
@@ -15,7 +15,6 @@
         "package-name": "src/Microsoft.Graph/",
         "changelog-path": "CHANGELOG.md",
         "extra-files": [
-          "README.md",
           "src/Microsoft.Graph.Beta.csproj"
         ]
       }
