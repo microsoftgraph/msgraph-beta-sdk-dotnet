@@ -9,9 +9,9 @@ There are a few different recommended paths to get contributions into the releas
 The best way to get started with a contribution is to start a dialog with us. Sometimes features will be under development or out of scope for this library and it's best to check before starting work on contribution, especially for large work items.
 
 ## Pull requests
-All pull requests should be submitted against the **dev** branch or a specific feature branch. The master branch is intended to represent the code released in the most-recent Nuget package.
+All pull requests should be submitted against the **master** branch or a specific feature branch. The master branch is intended to represent the code released in the most-recent Nuget package.
 
-When a new package is about to be released, changes in dev will be merged into master. The package will be generated from master.
+When a new package is about to be released, the release PR will be merged into master. The package will be generated from master.
 
 ## Commit message format
 
@@ -40,7 +40,7 @@ The recommended commit types used are:
  - **docs** for documentation updates e.g. ReadMe update or code documentation updates
  - **build** for build system changes (gradle updates, external dependency updates)
  - **ci** for CI configuration file changes e.g. updating a pipeline
- - **chore** for miscallaneous non-sdk changesin the repo e.g. removing an unused file
+ - **chore** for miscellaneous non-sdk changes in the repo e.g. removing an unused file
 
 Adding a footer with the prefix **BREAKING CHANGE:** will cause an increment of the _major_ version.
 
