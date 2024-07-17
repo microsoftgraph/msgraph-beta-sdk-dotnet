@@ -38,7 +38,7 @@ Between 0.x and 4.x there were some major breaking changes:
 
  * .NET Standard minimum version bumped from `netStandard1.3` to `netstandard2.0`
  * .NET Framework minimum version bumped from `net45` to `net462`
- * Replacing Newtosoft.Json with System.Text.Json
+ * Replacing Newtonsoft.Json with System.Text.Json
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
 View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/upgrade-to-v4.md)..
