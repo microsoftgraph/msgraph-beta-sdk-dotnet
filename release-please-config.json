@@ -14,7 +14,7 @@
         "package-name": "src/Microsoft.Graph/",
         "changelog-path": "CHANGELOG.md",
         "extra-files": [
-          "src/Microsoft.Graph.Beta.csproj"
+          "src/Microsoft.Graph/Microsoft.Graph.Beta.csproj"
         ]
       }
     },
