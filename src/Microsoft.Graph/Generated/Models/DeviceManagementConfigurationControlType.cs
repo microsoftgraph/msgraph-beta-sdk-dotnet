@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Setting control type representation in the UX</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceManagementConfigurationControlType
     {
         /// <summary>Default. UX uses default UX element base on setting type for the setting.</summary>

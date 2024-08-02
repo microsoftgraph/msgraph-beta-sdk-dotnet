@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Type of Group Policy operation status.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum GroupPolicyOperationStatus
     {
         /// <summary>Group Policy unknown operation status.</summary>

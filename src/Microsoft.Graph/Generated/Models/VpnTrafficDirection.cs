@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Specify whether the rule applies to inbound traffic or outbound traffic.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum VpnTrafficDirection
     {
         /// <summary>The rule applies to all outbound traffic.</summary>

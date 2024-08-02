@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The maxium threat level allowed for an app to be compliant.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum ManagedAppDeviceThreatLevel
     {
         /// <summary>Value not configured</summary>

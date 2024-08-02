@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates if machine is physical or virtual. Possible values are: physical or virtual</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum UserExperienceAnalyticsMachineType
     {
         /// <summary>Indicates that the type is unknown.</summary>

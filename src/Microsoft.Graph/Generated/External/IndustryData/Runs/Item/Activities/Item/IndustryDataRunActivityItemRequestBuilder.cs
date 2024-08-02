@@ -2,11 +2,11 @@
 using Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.Activity;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -15,15 +15,16 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item
     /// <summary>
     /// Provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.
     /// </summary>
-    public class IndustryDataRunActivityItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class IndustryDataRunActivityItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activity property of the microsoft.graph.industryData.industryDataRunActivity entity.</summary>
-        public Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.Activity.ActivityRequestBuilder Activity
+        public global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.Activity.ActivityRequestBuilder Activity
         {
-            get => new Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +42,25 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item
         /// <summary>
         /// The set of activities performed during the run.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>(requestInfo, global::Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The set of activities performed during the run.
@@ -68,11 +69,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,16 +84,17 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The set of activities performed during the run.
         /// </summary>
-        public class IndustryDataRunActivityItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class IndustryDataRunActivityItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +121,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IndustryDataRunActivityItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class IndustryDataRunActivityItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.IndustryDataRunActivityItemRequestBuilder.IndustryDataRunActivityItemRequestBuilderGetQueryParameters>
         {
         }
     }

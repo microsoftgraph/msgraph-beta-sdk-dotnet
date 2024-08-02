@@ -2,11 +2,11 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -15,15 +15,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
     /// <summary>
     /// Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
-    public class CloudPcDeviceImageItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class CloudPcDeviceImageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the reupload method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload.ReuploadRequestBuilder Reupload
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload.ReuploadRequestBuilder Reupload
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload.ReuploadRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload.ReuploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -65,50 +66,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         /// Read the properties and relationships of a specific cloudPcDeviceImage object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcDeviceImage"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcDeviceImage?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcDeviceImage> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceImages in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcDeviceImage"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcDeviceImage?> PatchAsync(Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage?> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcDeviceImage> PatchAsync(Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a cloudPcDeviceImage object.
@@ -136,11 +137,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -156,11 +157,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcDeviceImage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -173,23 +174,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class CloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a specific cloudPcDeviceImage object.
         /// </summary>
-        public class CloudPcDeviceImageItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class CloudPcDeviceImageItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -216,14 +219,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPcDeviceImageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class CloudPcDeviceImageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.CloudPcDeviceImageItemRequestBuilder.CloudPcDeviceImageItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPcDeviceImageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class CloudPcDeviceImageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

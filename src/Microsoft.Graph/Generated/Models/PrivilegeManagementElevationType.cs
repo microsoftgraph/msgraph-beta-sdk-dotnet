@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the type of elevation occured</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum PrivilegeManagementElevationType
     {
         /// <summary>Default. If the type was unknown on the client for some reasons.</summary>

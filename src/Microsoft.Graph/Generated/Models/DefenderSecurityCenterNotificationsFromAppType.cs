@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values for defenderSecurityCenterNotificationsFromApp</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DefenderSecurityCenterNotificationsFromAppType
     {
         /// <summary>Not Configured</summary>
