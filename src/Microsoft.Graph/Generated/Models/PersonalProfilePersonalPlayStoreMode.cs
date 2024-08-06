@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Used together with personalApplications to control how apps in the personal profile are allowed or blocked.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum PersonalProfilePersonalPlayStoreMode
     {
         /// <summary>Not configured.</summary>

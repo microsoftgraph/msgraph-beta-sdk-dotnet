@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Windows DnF update inventory sync state.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum WindowsDriverUpdateProfileInventorySyncState
     {
         /// <summary>Pending sync.</summary>

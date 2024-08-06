@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Extensible Authentication Protocol (EAP) Configuration Types.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AndroidEapType
     {
         /// <summary>Extensible Authentication Protocol-Transport Layer Security (EAP-TLS).</summary>

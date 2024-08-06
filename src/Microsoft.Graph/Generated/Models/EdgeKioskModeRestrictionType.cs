@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Specify how the Microsoft Edge settings are restricted based on kiosk mode.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum EdgeKioskModeRestrictionType
     {
         /// <summary>Not configured (unrestricted).</summary>

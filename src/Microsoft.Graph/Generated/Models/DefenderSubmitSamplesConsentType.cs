@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values for DefenderSubmitSamplesConsentType</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DefenderSubmitSamplesConsentType
     {
         /// <summary>Send safe samples automatically</summary>

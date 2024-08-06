@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>MacOS Software Update State</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum MacOSSoftwareUpdateState
     {
         /// <summary>The software update successfully installed</summary>

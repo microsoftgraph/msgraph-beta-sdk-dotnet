@@ -6,11 +6,11 @@ using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Pre
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Registrations;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -19,25 +19,26 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
     /// <summary>
     /// Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
     /// </summary>
-    public class VirtualEventSessionItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class VirtualEventSessionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.</summary>
-        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.AttendanceReports.AttendanceReportsRequestBuilder AttendanceReports
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.AttendanceReports.AttendanceReportsRequestBuilder AttendanceReports
         {
-            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.AttendanceReports.AttendanceReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.AttendanceReports.AttendanceReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presenters property of the microsoft.graph.virtualEventSession entity.</summary>
-        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Presenters.PresentersRequestBuilder Presenters
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Presenters.PresentersRequestBuilder Presenters
         {
-            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Presenters.PresentersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Presenters.PresentersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.</summary>
-        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Registrations.RegistrationsRequestBuilder Registrations
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Registrations.RegistrationsRequestBuilder Registrations
         {
-            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +46,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,77 +71,77 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The sessions for the virtual event.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventSession"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEventSession?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventSession?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEventSession> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventSession> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEventSession>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventSession>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sessions in solutions
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventSession"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VirtualEventSession"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEventSession?> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventSession?> PatchAsync(global::Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEventSession> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VirtualEventSession> PatchAsync(global::Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEventSession>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VirtualEventSession>(requestInfo, global::Microsoft.Graph.Beta.Models.VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder"/></returns>
         /// <param name="email">Alternate key of virtualEventRegistration</param>
-        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder RegistrationsWithEmail(string email)
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder RegistrationsWithEmail(string email)
         {
             if(string.IsNullOrEmpty(email)) throw new ArgumentNullException(nameof(email));
-            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder(PathParameters, RequestAdapter, email);
+            return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithEmail.RegistrationsWithEmailRequestBuilder(PathParameters, RequestAdapter, email);
         }
         /// <summary>
         /// Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder"/></returns>
         /// <param name="userId">Alternate key of virtualEventRegistration</param>
-        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder RegistrationsWithUserId(string userId)
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder RegistrationsWithUserId(string userId)
         {
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
-            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder(PathParameters, RequestAdapter, userId);
+            return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder(PathParameters, RequestAdapter, userId);
         }
         /// <summary>
         /// Delete navigation property sessions for solutions
@@ -168,11 +169,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -188,11 +189,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.VirtualEventSession body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -205,23 +206,25 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VirtualEventSessionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VirtualEventSessionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The sessions for the virtual event.
         /// </summary>
-        public class VirtualEventSessionItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VirtualEventSessionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -248,14 +251,16 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VirtualEventSessionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VirtualEventSessionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.VirtualEventSessionItemRequestBuilder.VirtualEventSessionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VirtualEventSessionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VirtualEventSessionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

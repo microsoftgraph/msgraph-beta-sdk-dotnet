@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Values for the InkWorkspaceAccess setting.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum InkAccessSetting
     {
         /// <summary>Not configured.</summary>

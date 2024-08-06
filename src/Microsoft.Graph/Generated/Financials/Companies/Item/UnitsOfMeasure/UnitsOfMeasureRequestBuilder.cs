@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Count;
 using Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,40 +16,41 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
     /// <summary>
     /// Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
     /// </summary>
-    public class UnitsOfMeasureRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class UnitsOfMeasureRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of unitOfMeasure</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("unitOfMeasure%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of unitOfMeasure</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("unitOfMeasure%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item.UnitOfMeasureItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,50 +68,50 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
         /// <summary>
         /// Get unitsOfMeasure from financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.UnitOfMeasureCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to unitsOfMeasure for financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnitOfMeasure"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UnitOfMeasure"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.UnitOfMeasure?> PostAsync(Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnitOfMeasure?> PostAsync(global::Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.UnitOfMeasure> PostAsync(Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.UnitOfMeasure> PostAsync(global::Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UnitOfMeasure>(requestInfo, Microsoft.Graph.Beta.Models.UnitOfMeasure.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UnitOfMeasure>(requestInfo, global::Microsoft.Graph.Beta.Models.UnitOfMeasure.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get unitsOfMeasure from financials
@@ -119,11 +120,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -139,11 +140,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.UnitOfMeasure body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -156,16 +157,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get unitsOfMeasure from financials
         /// </summary>
-        public class UnitsOfMeasureRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class UnitsOfMeasureRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -231,14 +233,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnitsOfMeasureRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class UnitsOfMeasureRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder.UnitsOfMeasureRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UnitsOfMeasureRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class UnitsOfMeasureRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

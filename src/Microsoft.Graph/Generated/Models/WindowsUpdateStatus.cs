@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Windows update for business configuration device states</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum WindowsUpdateStatus
     {
         /// <summary>There are no pending updates, no pending reboot updates and no failed updates.</summary>

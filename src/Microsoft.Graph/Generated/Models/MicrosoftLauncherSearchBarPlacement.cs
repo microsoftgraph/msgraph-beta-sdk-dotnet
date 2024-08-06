@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Microsoft Launcher Search Bar Placement selection.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum MicrosoftLauncherSearchBarPlacement
     {
         /// <summary>Not configured; this value is ignored.</summary>

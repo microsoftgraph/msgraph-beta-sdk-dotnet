@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The Enum to specify the Office365 ProductIds that represent the Office365 Suite SKUs.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum OfficeProductId
     {
         [EnumMember(Value = "o365ProPlusRetail")]
