@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android For Work VPN connection type.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AndroidForWorkVpnConnectionType
     {
         /// <summary>Cisco AnyConnect.</summary>

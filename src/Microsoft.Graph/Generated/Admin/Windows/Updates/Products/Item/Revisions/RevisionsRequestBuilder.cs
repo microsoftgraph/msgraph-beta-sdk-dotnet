@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Count;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
     /// <summary>
     /// Provides operations to manage the revisions property of the microsoft.graph.windowsUpdates.product entity.
     /// </summary>
-    public class RevisionsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the revisions property of the microsoft.graph.windowsUpdates.product entity.</summary>
         /// <param name="position">The unique identifier of productRevision</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item.ProductRevisionItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item.ProductRevisionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item.ProductRevisionItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item.ProductRevisionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("productRevision%2Did", position);
-                return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item.ProductRevisionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.Item.ProductRevisionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
         /// <summary>
         /// Represents a product revision.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevisionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to revisions for admin
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision?> PostAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision?> PostAsync(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision> PostAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision> PostAsync(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents a product revision.
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents a product revision.
         /// </summary>
-        public class RevisionsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class RevisionsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RevisionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class RevisionsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RevisionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class RevisionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

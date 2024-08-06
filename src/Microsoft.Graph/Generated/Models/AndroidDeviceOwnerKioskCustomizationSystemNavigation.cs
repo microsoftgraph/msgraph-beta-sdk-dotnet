@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum representing possible values for kiosk customization system navigation.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AndroidDeviceOwnerKioskCustomizationSystemNavigation
     {
         /// <summary>Not configured; this value defaults to NAVIGATION_DISABLED.</summary>

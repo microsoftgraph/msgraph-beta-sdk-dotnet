@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum VpnOnDemandRuleInterfaceTypeMatch
     {
         /// <summary>NotConfigured</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>This enum represents associated assignment payload type</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AssociatedAssignmentPayloadType
     {
         /// <summary>Invalid payload type</summary>

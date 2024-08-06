@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Device app management task status.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceAppManagementTaskStatus
     {
         /// <summary>State is undefined.</summary>

@@ -11,11 +11,11 @@ using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareFo
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -24,60 +24,61 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
     /// <summary>
     /// Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class DepOnboardingSettingItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class DepOnboardingSettingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile.DefaultIosEnrollmentProfileRequestBuilder DefaultIosEnrollmentProfile
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile.DefaultIosEnrollmentProfileRequestBuilder DefaultIosEnrollmentProfile
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile.DefaultIosEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile.DefaultIosEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder DefaultMacOsEnrollmentProfile
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder DefaultMacOsEnrollmentProfile
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.DefaultMacOsEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.EnrollmentProfilesRequestBuilder EnrollmentProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.EnrollmentProfilesRequestBuilder EnrollmentProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.EnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.EnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the generateEncryptionPublicKey method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey.GenerateEncryptionPublicKeyRequestBuilder GenerateEncryptionPublicKey
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey.GenerateEncryptionPublicKeyRequestBuilder GenerateEncryptionPublicKey
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey.GenerateEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey.GenerateEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEncryptionPublicKey method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyRequestBuilder GetEncryptionPublicKey
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyRequestBuilder GetEncryptionPublicKey
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder ImportedAppleDeviceIdentities
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder ImportedAppleDeviceIdentities
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportedAppleDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService.ShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService.ShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService.ShareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService.ShareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncWithAppleDeviceEnrollmentProgram method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram.SyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram.SyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram.SyncWithAppleDeviceEnrollmentProgramRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram.SyncWithAppleDeviceEnrollmentProgramRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unshareForSchoolDataSyncService method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService.UnshareForSchoolDataSyncServiceRequestBuilder UnshareForSchoolDataSyncService
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService.UnshareForSchoolDataSyncServiceRequestBuilder UnshareForSchoolDataSyncService
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService.UnshareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService.UnshareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadDepToken method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken.UploadDepTokenRequestBuilder UploadDepToken
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken.UploadDepTokenRequestBuilder UploadDepToken
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken.UploadDepTokenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken.UploadDepTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,7 +98,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,57 +111,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DepOnboardingSetting"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DepOnboardingSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DepOnboardingSetting?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DepOnboardingSetting> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DepOnboardingSetting>(requestInfo, Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting>(requestInfo, global::Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property depOnboardingSettings in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DepOnboardingSetting"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DepOnboardingSetting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DepOnboardingSetting?> PatchAsync(Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting?> PatchAsync(global::Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DepOnboardingSetting> PatchAsync(Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting> PatchAsync(global::Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DepOnboardingSetting>(requestInfo, Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DepOnboardingSetting>(requestInfo, global::Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property depOnboardingSettings for deviceManagement
@@ -188,11 +189,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -208,11 +209,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -225,23 +226,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
         /// </summary>
-        public class DepOnboardingSettingItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DepOnboardingSettingItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -268,14 +271,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DepOnboardingSettingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DepOnboardingSettingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DepOnboardingSettingItemRequestBuilder.DepOnboardingSettingItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

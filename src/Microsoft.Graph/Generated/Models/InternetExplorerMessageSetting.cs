@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>What message will be displayed by Edge before switching to Internet Explorer.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum InternetExplorerMessageSetting
     {
         /// <summary>Not configured.</summary>

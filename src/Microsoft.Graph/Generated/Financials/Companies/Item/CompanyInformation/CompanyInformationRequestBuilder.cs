@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Count;
 using Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,40 +16,41 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation
     /// <summary>
     /// Provides operations to manage the companyInformation property of the microsoft.graph.company entity.
     /// </summary>
-    public class CompanyInformationRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class CompanyInformationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the companyInformation property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of companyInformation</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("companyInformation%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>Provides operations to manage the companyInformation property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of companyInformation</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("companyInformation%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item.CompanyInformationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,25 +68,25 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation
         /// <summary>
         /// Get companyInformation from financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CompanyInformationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get companyInformation from financials
@@ -94,11 +95,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -109,16 +110,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get companyInformation from financials
         /// </summary>
-        public class CompanyInformationRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class CompanyInformationRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -184,7 +186,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CompanyInformationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class CompanyInformationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder.CompanyInformationRequestBuilderGetQueryParameters>
         {
         }
     }

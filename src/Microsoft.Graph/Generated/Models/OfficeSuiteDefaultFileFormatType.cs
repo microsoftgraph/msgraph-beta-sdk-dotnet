@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Describes the OfficeSuiteApp file format types that can be selected.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum OfficeSuiteDefaultFileFormatType
     {
         /// <summary>No file format selected</summary>

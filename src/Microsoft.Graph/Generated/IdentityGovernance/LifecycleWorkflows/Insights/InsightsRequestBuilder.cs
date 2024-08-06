@@ -5,11 +5,11 @@ using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.Micros
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,10 +18,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
     /// <summary>
     /// Provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
     /// </summary>
-    public class InsightsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class InsightsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +30,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,105 +55,105 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The insight container holding workflow insight summaries for a tenant.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.Insights"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.Insights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the topTasksProcessedSummary method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the topWorkflowsProcessedSummary method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceTopWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the workflowsProcessedByCategory method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedByCategoryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the workflowsProcessedSummary method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Update the navigation property insights in identityGovernance
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.Insights"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights?> PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights?> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights> PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights> PatchAsync(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.Insights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property insights for identityGovernance
@@ -180,11 +181,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -200,11 +201,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityGovernance.Insights body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -217,23 +218,25 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InsightsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class InsightsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The insight container holding workflow insight summaries for a tenant.
         /// </summary>
-        public class InsightsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class InsightsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -260,14 +263,16 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InsightsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class InsightsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InsightsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class InsightsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

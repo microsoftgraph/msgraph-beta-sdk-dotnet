@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the expected type for a macOS custom attribute script value.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceCustomAttributeValueType
     {
         /// <summary>Indicates the value for a custom attribute script is an integer.</summary>

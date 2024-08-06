@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum EnrollmentRestrictionPlatformType
     {
         /// <summary>Indicates that the enrollment configuration applies to all platforms</summary>

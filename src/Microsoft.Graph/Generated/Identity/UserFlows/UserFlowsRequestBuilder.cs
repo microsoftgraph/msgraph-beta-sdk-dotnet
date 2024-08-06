@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Identity.UserFlows.Count;
 using Microsoft.Graph.Beta.Identity.UserFlows.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,29 +16,30 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
     /// <summary>
     /// Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
     /// </summary>
-    public class UserFlowsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class UserFlowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
-        public Microsoft.Graph.Beta.Identity.UserFlows.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Identity.UserFlows.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Identity.UserFlows.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.UserFlows.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.</summary>
         /// <param name="position">The unique identifier of identityUserFlow</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder"/></returns>
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
-        public Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("identityUserFlow%2Did", position);
-                return new Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Identity.UserFlows.Item.IdentityUserFlowItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,53 +58,53 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// Retrieve a list of userflows.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new userFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-post-userflows?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityUserFlow"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.IdentityUserFlow"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.IdentityUserFlow?> PostAsync(Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityUserFlow?> PostAsync(global::Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.IdentityUserFlow> PostAsync(Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.IdentityUserFlow> PostAsync(global::Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityUserFlow>(requestInfo, Microsoft.Graph.Beta.Models.IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.IdentityUserFlow>(requestInfo, global::Microsoft.Graph.Beta.Models.IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of userflows.
@@ -113,11 +114,11 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -134,11 +135,11 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.IdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -151,17 +152,18 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider")]
-        public Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of userflows.
         /// </summary>
-        public class UserFlowsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class UserFlowsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -227,14 +229,16 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserFlowsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class UserFlowsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Identity.UserFlows.UserFlowsRequestBuilder.UserFlowsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserFlowsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class UserFlowsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

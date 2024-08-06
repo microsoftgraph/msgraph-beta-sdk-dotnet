@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values of Secure Boot with DMA</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum SecureBootWithDMAType
     {
         /// <summary>Not configured, no operation</summary>

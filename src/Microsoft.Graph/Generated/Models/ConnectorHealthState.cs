@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Connector health state for connector status</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum ConnectorHealthState
     {
         /// <summary>Indicates a healthy connector status and no action required.</summary>

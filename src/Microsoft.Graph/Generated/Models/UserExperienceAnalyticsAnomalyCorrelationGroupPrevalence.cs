@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the level of prevalence of the correlation group features in the anomaly. Possible values are: high, medium or low</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence
     {
         /// <summary>Indicates that we have a high prevalence in the correlation between the anomaly and correlation group.</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>App source options for iOS kiosk mode.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum IosKioskModeAppType
     {
         /// <summary>Device default value, no intent.</summary>

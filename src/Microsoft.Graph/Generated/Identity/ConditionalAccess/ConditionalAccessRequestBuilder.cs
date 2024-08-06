@@ -6,10 +6,10 @@ using Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
 namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
@@ -17,45 +17,46 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
     /// <summary>
     /// Builds and executes requests for operations under \identity\conditionalAccess
     /// </summary>
-    public class ConditionalAccessRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class ConditionalAccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences.AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences.AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences.AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences.AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationStrength property of the microsoft.graph.conditionalAccessRoot entity.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder AuthenticationStrength
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder AuthenticationStrength
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder AuthenticationStrengths
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder AuthenticationStrengths
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluate method.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder Evaluate
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder Evaluate
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.NamedLocationsRequestBuilder NamedLocations
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.NamedLocationsRequestBuilder NamedLocations
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.NamedLocationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.NamedLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder Policies
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder Policies
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
-        public Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.TemplatesRequestBuilder Templates
+        public global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.TemplatesRequestBuilder Templates
         {
-            get => new Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.ConditionalAccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.ConditionalAccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.ConditionalAccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Identity.ConditionalAccess.ConditionalAccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

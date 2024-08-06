@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Previous
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
     /// <summary>
     /// Provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.
     /// </summary>
-    public class PresentationsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class PresentationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presentations property of the microsoft.graph.groupPolicyDefinition entity.</summary>
         /// <param name="position">The unique identifier of groupPolicyPresentation</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item.GroupPolicyPresentationItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item.GroupPolicyPresentationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item.GroupPolicyPresentationItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item.GroupPolicyPresentationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("groupPolicyPresentation%2Did", position);
-                return new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item.GroupPolicyPresentationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.Item.GroupPolicyPresentationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
         /// <summary>
         /// The group policy presentations associated with the definition.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to presentations for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyPresentation"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyPresentation?> PostAsync(Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation?> PostAsync(global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.GroupPolicyPresentation> PostAsync(Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation> PostAsync(global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GroupPolicyPresentation>(requestInfo, Microsoft.Graph.Beta.Models.GroupPolicyPresentation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation>(requestInfo, global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The group policy presentations associated with the definition.
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The group policy presentations associated with the definition.
         /// </summary>
-        public class PresentationsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class PresentationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Prev
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PresentationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class PresentationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition.Presentations.PresentationsRequestBuilder.PresentationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PresentationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class PresentationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

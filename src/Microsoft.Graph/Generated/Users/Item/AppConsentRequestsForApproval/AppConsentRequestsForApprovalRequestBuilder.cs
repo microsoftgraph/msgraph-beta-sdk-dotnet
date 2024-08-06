@@ -4,11 +4,11 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Count;
 using Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn;
 using Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,27 +17,28 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
     /// <summary>
     /// Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
     /// </summary>
-    public class AppConsentRequestsForApprovalRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class AppConsentRequestsForApprovalRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of appConsentRequest</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.AppConsentRequestItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.AppConsentRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.AppConsentRequestItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.AppConsentRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("appConsentRequest%2Did", position);
-                return new Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.AppConsentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.AppConsentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,60 +56,60 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
         /// <summary>
         /// Provides operations to call the filterByCurrentUser method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        public Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
+        public global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
-            return new Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
+            return new global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
         /// Get appConsentRequestsForApproval from users
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.AppConsentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to appConsentRequestsForApproval for users
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppConsentRequest"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AppConsentRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AppConsentRequest?> PostAsync(Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AppConsentRequest?> PostAsync(global::Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AppConsentRequest> PostAsync(Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AppConsentRequest> PostAsync(global::Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AppConsentRequest>(requestInfo, Microsoft.Graph.Beta.Models.AppConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AppConsentRequest>(requestInfo, global::Microsoft.Graph.Beta.Models.AppConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get appConsentRequestsForApproval from users
@@ -117,11 +118,11 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -137,11 +138,11 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -154,16 +155,17 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get appConsentRequestsForApproval from users
         /// </summary>
-        public class AppConsentRequestsForApprovalRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class AppConsentRequestsForApprovalRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -229,14 +231,16 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AppConsentRequestsForApprovalRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class AppConsentRequestsForApprovalRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder.AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AppConsentRequestsForApprovalRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class AppConsentRequestsForApprovalRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

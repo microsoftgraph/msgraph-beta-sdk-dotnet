@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Group Policy Configuration Ingestion Type</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum GroupPolicyConfigurationIngestionType
     {
         /// <summary>Unknown policy configuration ingestion type</summary>

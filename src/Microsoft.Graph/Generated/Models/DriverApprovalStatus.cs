@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum type to represent approval status of a driver.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DriverApprovalStatus
     {
         /// <summary>This indicates a driver needs IT admin&apos;s review.</summary>

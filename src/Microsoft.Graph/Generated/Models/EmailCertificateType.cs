@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Supported certificate sources for email signing and encryption.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum EmailCertificateType
     {
         /// <summary>Do not use a certificate as a source.</summary>

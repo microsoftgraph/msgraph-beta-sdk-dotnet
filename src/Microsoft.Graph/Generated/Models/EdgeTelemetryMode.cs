@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Type of browsing data sent to Microsoft 365 analytics</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum EdgeTelemetryMode
     {
         /// <summary>Default – No telemetry data collected or sent</summary>

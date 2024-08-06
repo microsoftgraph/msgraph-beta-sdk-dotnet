@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android action taken when an app requests a dangerous permission.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AndroidPermissionActionType
     {
         [EnumMember(Value = "prompt")]

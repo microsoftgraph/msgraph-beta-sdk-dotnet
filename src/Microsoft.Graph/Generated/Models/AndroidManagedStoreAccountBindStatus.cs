@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Bind status of the tenant with the Google EMM API</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AndroidManagedStoreAccountBindStatus
     {
         [EnumMember(Value = "notBound")]

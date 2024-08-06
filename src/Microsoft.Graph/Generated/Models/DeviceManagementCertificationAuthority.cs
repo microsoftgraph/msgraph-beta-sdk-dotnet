@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Device Management Certification Authority Types.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceManagementCertificationAuthority
     {
         /// <summary>Not configured.</summary>

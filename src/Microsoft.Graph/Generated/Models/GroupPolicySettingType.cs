@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Setting type of the group policy.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum GroupPolicySettingType
     {
         /// <summary>GroupPolicySettingType unknown</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum VppTokenActionFailureReason
     {
         /// <summary>None.</summary>

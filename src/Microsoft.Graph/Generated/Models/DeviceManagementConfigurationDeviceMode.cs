@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Describes applicability for the mode the device is in</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceManagementConfigurationDeviceMode
     {
         /// <summary>No Device Mode specified</summary>

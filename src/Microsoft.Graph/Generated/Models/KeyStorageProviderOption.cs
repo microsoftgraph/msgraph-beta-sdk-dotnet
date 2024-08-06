@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Key Storage Provider (KSP) Import Options.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum KeyStorageProviderOption
     {
         /// <summary>Import to Trusted Platform Module (TPM) KSP if present, otherwise import to Software KSP.</summary>

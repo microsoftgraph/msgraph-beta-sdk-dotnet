@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     #pragma warning disable CS1591
     public enum PlannerCreationSourceKind
     #pragma warning restore CS1591

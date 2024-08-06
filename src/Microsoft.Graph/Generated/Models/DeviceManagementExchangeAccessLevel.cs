@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Access Level in Exchange.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceManagementExchangeAccessLevel
     {
         /// <summary>No device access rule has been configured in Exchange.</summary>

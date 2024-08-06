@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The tile size of Windows app in the start layout.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum WindowsAppStartLayoutTileSize
     {
         /// <summary>Hidden.</summary>

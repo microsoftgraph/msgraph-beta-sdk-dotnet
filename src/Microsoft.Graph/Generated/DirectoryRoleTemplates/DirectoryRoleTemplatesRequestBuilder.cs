@@ -7,11 +7,11 @@ using Microsoft.Graph.Beta.DirectoryRoleTemplates.Item;
 using Microsoft.Graph.Beta.DirectoryRoleTemplates.ValidateProperties;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -20,47 +20,48 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
     /// <summary>
     /// Provides operations to manage the collection of directoryRoleTemplate entities.
     /// </summary>
-    public class DirectoryRoleTemplatesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class DirectoryRoleTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.DirectoryRoleTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.Delta.DeltaRequestBuilder Delta
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Delta.DeltaRequestBuilder Delta
         {
-            get => new Microsoft.Graph.Beta.DirectoryRoleTemplates.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.GetByIds.GetByIdsRequestBuilder GetByIds
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.GetByIds.GetByIdsRequestBuilder GetByIds
         {
-            get => new Microsoft.Graph.Beta.DirectoryRoleTemplates.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects
         {
-            get => new Microsoft.Graph.Beta.DirectoryRoleTemplates.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.GetUserOwnedObjects.GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new Microsoft.Graph.Beta.DirectoryRoleTemplates.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRoleTemplate entities.</summary>
         /// <param name="position">The unique identifier of directoryRoleTemplate</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.DirectoryRoleTemplateItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.DirectoryRoleTemplateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.DirectoryRoleTemplateItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.DirectoryRoleTemplateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryRoleTemplate%2Did", position);
-                return new Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.DirectoryRoleTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.DirectoryRoleTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,50 +80,50 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
         /// Retrieve a list of directoryroletemplate objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to directoryRoleTemplates
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectoryRoleTemplate"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleTemplate?> PostAsync(Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate?> PostAsync(global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleTemplate> PostAsync(Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate> PostAsync(global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DirectoryRoleTemplate>(requestInfo, Microsoft.Graph.Beta.Models.DirectoryRoleTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate>(requestInfo, global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of directoryroletemplate objects.
@@ -131,11 +132,11 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +152,11 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.DirectoryRoleTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,16 +169,17 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of directoryroletemplate objects.
         /// </summary>
-        public class DirectoryRoleTemplatesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DirectoryRoleTemplatesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -243,14 +245,16 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryRoleTemplates.DirectoryRoleTemplatesRequestBuilder.DirectoryRoleTemplatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

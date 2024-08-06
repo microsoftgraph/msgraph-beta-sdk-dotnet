@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Supported values for the derived credential issuer.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceManagementDerivedCredentialIssuer
     {
         /// <summary>Intercede</summary>
