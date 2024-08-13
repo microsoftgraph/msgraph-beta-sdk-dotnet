@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The enrollment token type for an enrollment profile.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AndroidDeviceOwnerEnrollmentTokenType
     {
         /// <summary>Default token type.</summary>

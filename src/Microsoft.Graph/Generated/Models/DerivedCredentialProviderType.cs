@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Provider type for Derived Credentials.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DerivedCredentialProviderType
     {
         /// <summary>No Derived Credential Provider Configured.</summary>

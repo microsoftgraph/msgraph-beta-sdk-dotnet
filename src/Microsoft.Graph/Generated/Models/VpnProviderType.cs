@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Provider type for per-app VPN.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum VpnProviderType
     {
         /// <summary>Tunnel traffic is not explicitly configured.</summary>

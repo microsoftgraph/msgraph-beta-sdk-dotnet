@@ -5,11 +5,11 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscri
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,32 +18,33 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
     /// <summary>
     /// Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
-    public class SnapshotsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class SnapshotsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSubscriptions method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsRequestBuilder GetSubscriptions
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsRequestBuilder GetSubscriptions
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions.GetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
         /// <param name="position">The unique identifier of cloudPcSnapshot</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item.CloudPcSnapshotItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item.CloudPcSnapshotItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item.CloudPcSnapshotItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item.CloudPcSnapshotItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("cloudPcSnapshot%2Did", position);
-                return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item.CloudPcSnapshotItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item.CloudPcSnapshotItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,60 +63,60 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         /// Get a list of cloudPcSnapshot objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcSnapshotCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getStorageAccounts method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder"/></returns>
         /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder GetStorageAccountsWithSubscriptionId(string subscriptionId)
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder GetStorageAccountsWithSubscriptionId(string subscriptionId)
         {
             if(string.IsNullOrEmpty(subscriptionId)) throw new ArgumentNullException(nameof(subscriptionId));
-            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId.GetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
         }
         /// <summary>
         /// Create new navigation property to snapshots for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcSnapshot"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcSnapshot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcSnapshot?> PostAsync(Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot?> PostAsync(global::Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CloudPcSnapshot> PostAsync(Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot> PostAsync(global::Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPcSnapshot>(requestInfo, Microsoft.Graph.Beta.Models.CloudPcSnapshot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcSnapshot>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcSnapshot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of cloudPcSnapshot objects and their properties.
@@ -124,11 +125,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -144,11 +145,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPcSnapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -161,16 +162,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of cloudPcSnapshot objects and their properties.
         /// </summary>
-        public class SnapshotsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class SnapshotsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -236,14 +238,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SnapshotsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class SnapshotsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.SnapshotsRequestBuilder.SnapshotsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SnapshotsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class SnapshotsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

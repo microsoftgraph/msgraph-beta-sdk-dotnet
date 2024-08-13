@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values for App update on Windows10 recurrence.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum Windows10AppsUpdateRecurrence
     {
         /// <summary>Default value, specifies a single occurence.</summary>

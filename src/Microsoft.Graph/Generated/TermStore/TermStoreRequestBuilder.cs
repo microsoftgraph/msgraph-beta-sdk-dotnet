@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.TermStore.Groups;
 using Microsoft.Graph.Beta.TermStore.Sets;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.Beta.TermStore
     /// <summary>
     /// Provides operations to manage the store singleton.
     /// </summary>
-    public class TermStoreRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class TermStoreRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.</summary>
-        public Microsoft.Graph.Beta.TermStore.Groups.GroupsRequestBuilder Groups
+        public global::Microsoft.Graph.Beta.TermStore.Groups.GroupsRequestBuilder Groups
         {
-            get => new Microsoft.Graph.Beta.TermStore.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TermStore.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sets property of the microsoft.graph.termStore.store entity.</summary>
-        public Microsoft.Graph.Beta.TermStore.Sets.SetsRequestBuilder Sets
+        public global::Microsoft.Graph.Beta.TermStore.Sets.SetsRequestBuilder Sets
         {
-            get => new Microsoft.Graph.Beta.TermStore.Sets.SetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.TermStore.Sets.SetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Beta.TermStore
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,51 +49,51 @@ namespace Microsoft.Graph.Beta.TermStore
         /// Read the properties and relationships of a store object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermStore.Store"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TermStore.Store"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TermStore.Store?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TermStore.Store?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TermStore.Store> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TermStore.Store> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Store>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Store.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TermStore.Store>(requestInfo, global::Microsoft.Graph.Beta.Models.TermStore.Store.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a store object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-store-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermStore.Store"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TermStore.Store"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TermStore.Store?> PatchAsync(Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TermStore.Store?> PatchAsync(global::Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TermStore.Store> PatchAsync(Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TermStore.Store> PatchAsync(global::Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Store>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Store.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TermStore.Store>(requestInfo, global::Microsoft.Graph.Beta.Models.TermStore.Store.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a store object.
@@ -101,11 +102,11 @@ namespace Microsoft.Graph.Beta.TermStore
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -121,11 +122,11 @@ namespace Microsoft.Graph.Beta.TermStore
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TermStore.Store body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,16 +139,17 @@ namespace Microsoft.Graph.Beta.TermStore
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of a store object.
         /// </summary>
-        public class TermStoreRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TermStoreRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,14 +176,16 @@ namespace Microsoft.Graph.Beta.TermStore
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TermStoreRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TermStoreRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.TermStore.TermStoreRequestBuilder.TermStoreRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TermStoreRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TermStoreRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

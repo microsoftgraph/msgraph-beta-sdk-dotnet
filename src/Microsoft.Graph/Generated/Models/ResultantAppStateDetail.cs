@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Enum indicating additional details regarding why an application has a particular install state.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum ResultantAppStateDetail
     {
         /// <summary>Device architecture (e.g. x86/amd64) is not applicable for the application.</summary>

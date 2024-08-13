@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The type of VPN security association integrity algorithm</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum VpnIntegrityAlgorithmType
     {
         /// <summary>SHA2-256</summary>

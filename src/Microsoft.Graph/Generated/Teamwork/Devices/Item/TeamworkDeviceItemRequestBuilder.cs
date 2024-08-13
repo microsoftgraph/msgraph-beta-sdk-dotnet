@@ -8,11 +8,11 @@ using Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -21,45 +21,46 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
     /// <summary>
     /// Provides operations to manage the devices property of the microsoft.graph.teamwork entity.
     /// </summary>
-    public class TeamworkDeviceItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class TeamworkDeviceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activity property of the microsoft.graph.teamworkDevice entity.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity.ActivityRequestBuilder Activity
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity.ActivityRequestBuilder Activity
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the configuration property of the microsoft.graph.teamworkDevice entity.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration.ConfigurationRequestBuilder Configuration
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Health.HealthRequestBuilder Health
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Health.HealthRequestBuilder Health
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.Health.HealthRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Health.HealthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder Operations
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder Operations
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restart method.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart.RestartRequestBuilder Restart
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart.RestartRequestBuilder Restart
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart.RestartRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart.RestartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the runDiagnostics method.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics.RunDiagnosticsRequestBuilder RunDiagnostics
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics.RunDiagnosticsRequestBuilder RunDiagnostics
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics.RunDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics.RunDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateSoftware method.</summary>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware.UpdateSoftwareRequestBuilder UpdateSoftware
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware.UpdateSoftwareRequestBuilder UpdateSoftware
         {
-            get => new Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware.UpdateSoftwareRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware.UpdateSoftwareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +68,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -100,50 +101,50 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         /// Get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that&apos;s enabled for Teams.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdevice-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDevice"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TeamworkDevice?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkDevice?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TeamworkDevice> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkDevice> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamworkDevice>(requestInfo, Microsoft.Graph.Beta.Models.TeamworkDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property devices in teamwork
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDevice"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TeamworkDevice"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TeamworkDevice?> PatchAsync(Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkDevice?> PatchAsync(global::Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TeamworkDevice> PatchAsync(Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TeamworkDevice> PatchAsync(global::Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamworkDevice>(requestInfo, Microsoft.Graph.Beta.Models.TeamworkDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TeamworkDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.TeamworkDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property devices for teamwork
@@ -171,11 +172,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -191,11 +192,11 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TeamworkDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -208,23 +209,25 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamworkDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TeamworkDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that&apos;s enabled for Teams.
         /// </summary>
-        public class TeamworkDeviceItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TeamworkDeviceItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -251,14 +254,16 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamworkDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TeamworkDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Teamwork.Devices.Item.TeamworkDeviceItemRequestBuilder.TeamworkDeviceItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamworkDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class TeamworkDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

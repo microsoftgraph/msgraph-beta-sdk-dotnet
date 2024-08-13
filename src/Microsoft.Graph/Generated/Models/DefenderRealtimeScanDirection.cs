@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values for monitoring file activity.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DefenderRealtimeScanDirection
     {
         /// <summary>0 (default) – Monitor all files(bi-directional)</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Values to restrict peer selection by.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeliveryOptimizationRestrictPeerSelectionByOptions
     {
         /// <summary>Not configured.</summary>

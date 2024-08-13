@@ -4,11 +4,11 @@ using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStore
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Relationships;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,25 +17,26 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidS
     /// <summary>
     /// Casts the previous resource to androidStoreApp.
     /// </summary>
-    public class GraphAndroidStoreAppRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class GraphAndroidStoreAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Assignments.AssignmentsRequestBuilder Assignments
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Categories.CategoriesRequestBuilder Categories
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Categories.CategoriesRequestBuilder Categories
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Relationships.RelationshipsRequestBuilder Relationships
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Relationships.RelationshipsRequestBuilder Relationships
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidS
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,25 +54,25 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidS
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidStoreApp"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AndroidStoreApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AndroidStoreApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AndroidStoreApp?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AndroidStoreApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AndroidStoreApp> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AndroidStoreApp>(requestInfo, Microsoft.Graph.Beta.Models.AndroidStoreApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AndroidStoreApp>(requestInfo, global::Microsoft.Graph.Beta.Models.AndroidStoreApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
@@ -80,11 +81,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -95,16 +96,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidS
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
         /// </summary>
-        public class GraphAndroidStoreAppRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class GraphAndroidStoreAppRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +133,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphAndroidStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class GraphAndroidStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp.GraphAndroidStoreAppRequestBuilder.GraphAndroidStoreAppRequestBuilderGetQueryParameters>
         {
         }
     }

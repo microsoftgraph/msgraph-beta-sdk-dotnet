@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum AssignmentFilterPayloadType
     {
         /// <summary>NotSet</summary>

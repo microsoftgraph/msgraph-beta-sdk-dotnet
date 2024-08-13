@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Describes the TemplateFamily for the Template entity</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum DeviceManagementConfigurationTemplateFamily
     {
         /// <summary>Default for Template Family when Policy is not linked to a Template</summary>

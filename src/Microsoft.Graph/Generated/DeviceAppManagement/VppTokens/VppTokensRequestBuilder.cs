@@ -5,11 +5,11 @@ using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item;
 using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,32 +18,33 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
     /// <summary>
     /// Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
-    public class VppTokensRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class VppTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncLicenseCounts method.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts.SyncLicenseCountsRequestBuilder SyncLicenseCounts
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts.SyncLicenseCountsRequestBuilder SyncLicenseCounts
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts.SyncLicenseCountsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts.SyncLicenseCountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of vppToken</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.VppTokenItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.VppTokenItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.VppTokenItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.VppTokenItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("vppToken%2Did", position);
-                return new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.VppTokenItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.VppTokenItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,60 +62,60 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
         /// <summary>
         /// List of Vpp tokens for this organization.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VppTokenCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VppTokenCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.VppTokenCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VppTokenCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.VppTokenCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VppTokenCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VppTokenCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.VppTokenCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VppTokenCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.VppTokenCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getLicensesForApp method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdRequestBuilder"/></returns>
         /// <param name="bundleId">Usage: bundleId=&apos;{bundleId}&apos;</param>
-        public Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdRequestBuilder GetLicensesForAppWithBundleId(string bundleId)
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdRequestBuilder GetLicensesForAppWithBundleId(string bundleId)
         {
             if(string.IsNullOrEmpty(bundleId)) throw new ArgumentNullException(nameof(bundleId));
-            return new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdRequestBuilder(PathParameters, RequestAdapter, bundleId);
+            return new global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdRequestBuilder(PathParameters, RequestAdapter, bundleId);
         }
         /// <summary>
         /// Create new navigation property to vppTokens for deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VppToken"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.VppToken"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.VppToken?> PostAsync(Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VppToken?> PostAsync(global::Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.VppToken> PostAsync(Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.VppToken> PostAsync(global::Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VppToken>(requestInfo, Microsoft.Graph.Beta.Models.VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.VppToken>(requestInfo, global::Microsoft.Graph.Beta.Models.VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of Vpp tokens for this organization.
@@ -123,11 +124,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +144,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.VppToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -160,16 +161,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of Vpp tokens for this organization.
         /// </summary>
-        public class VppTokensRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VppTokensRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -235,14 +237,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VppTokensRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VppTokensRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder.VppTokensRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class VppTokensRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class VppTokensRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

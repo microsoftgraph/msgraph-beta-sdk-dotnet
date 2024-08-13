@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum WindowsAutopilotDeviceRemediationState
     {
         /// <summary>Unknown status.</summary>

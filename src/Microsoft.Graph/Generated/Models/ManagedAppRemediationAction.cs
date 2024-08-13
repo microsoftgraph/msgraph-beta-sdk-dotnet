@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An admin initiated action to be applied on a managed app.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum ManagedAppRemediationAction
     {
         /// <summary>app and the corresponding company data to be blocked</summary>

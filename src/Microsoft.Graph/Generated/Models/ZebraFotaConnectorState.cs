@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents various states for Zebra FOTA connector.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public enum ZebraFotaConnectorState
     {
         /// <summary>Default value when the connector has not been setup (the feature has not been used yet).</summary>
