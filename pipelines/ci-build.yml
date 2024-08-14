@@ -112,6 +112,7 @@ extends:
             arguments: '--configuration $(BuildConfiguration) --no-build --verbosity normal'
         - task: PowerShell@2
           displayName: 'Validate updated version'
+          condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
           inputs:
             targetType: filePath
             filePath: '$(Build.SourcesDirectory)\scripts\ValidateUpdatedNugetVersion.ps1'
