@@ -17,13 +17,13 @@
     Specifies the name of the repository.
 
 .Parameter branchName
-    Specifies the target branch name. The default value is 'master'.
+    Specifies the target branch name. The default value is 'main'.
 #>
 
 Param(
     [string]$owner,
     [string]$repo,
-    [string]$branchName = "master"
+    [string]$branchName = "main"
 )
 
 if ([string]::IsNullOrEmpty($owner)) {
