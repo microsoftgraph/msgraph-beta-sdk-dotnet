@@ -1,11 +1,6 @@
-[![Build Status](https://dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_apis/build/status/Dotnet/Dotnet%20Beta%20Preview?branchName=master)](https://dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_build/latest?definitionId=199&branchName=master)  [![nuget](https://img.shields.io/nuget/v/Microsoft.Graph.Beta.svg)](https://www.nuget.org/packages/Microsoft.Graph.Beta/)
+[![Build Status](https://dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_apis/build/status/Dotnet/Dotnet%20Beta%20Preview?branchName=main)](https://dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_build/latest?definitionId=199&branchName=main)  [![nuget](https://img.shields.io/nuget/v/Microsoft.Graph.Beta.svg)](https://www.nuget.org/packages/Microsoft.Graph.Beta/)
 
 # Microsoft Graph Beta .NET Client Library
-
-<!--
-[![Build status](https://ci.appveyor.com/api/projects/status/m8qncaosr2ry4ks6/branch/master?svg=true)](https://ci.appveyor.com/project/MIchaelMainer/msgraph-sdk-dotnet/branch/master)
-[![NuGet Version](https://buildstats.info/nuget/Microsoft.Graph)](https://www.nuget.org/packages/Microsoft.Graph/)
--->
 
 Integrate the [Microsoft Graph Beta API](https://graph.microsoft.com) into your .NET project!
 
@@ -41,11 +36,11 @@ Between 0.x and 4.x there were some major breaking changes:
  * Replacing Newtonsoft.Json with System.Text.Json
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
-View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/upgrade-to-v4.md)..
+View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/docs/upgrade-to-v4.md)..
 
 ### Upgrading to v5
 
-View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/feature/5.0/docs/upgrade-to-v5.md)..
+View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/docs/upgrade-to-v5.md)..
 
 ## Issues
 
@@ -69,4 +64,4 @@ If you are looking to build the library locally for the purposes of contributing
 
 ## License
 
-Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT [license](LICENSE.txt). See [Third Party Notices](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/master/THIRD%20PARTY%20NOTICES) for information on the packages referenced via NuGet.
+Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT [license](LICENSE.txt). See [Third Party Notices](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/THIRD%20PARTY%20NOTICES) for information on the packages referenced via NuGet.

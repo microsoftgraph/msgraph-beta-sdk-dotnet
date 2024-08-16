@@ -4,7 +4,7 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 trigger:
   branches:
     include:
-    - master
+    - main
 pr: none
 variables:
   BuildConfiguration: 'release'
@@ -112,7 +112,7 @@ extends:
             arguments: '--configuration $(BuildConfiguration) --no-build --verbosity normal'
         - task: PowerShell@2
           displayName: 'Validate updated version'
-          condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
+          condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
           inputs:
             targetType: filePath
             filePath: '$(Build.SourcesDirectory)\scripts\ValidateUpdatedNugetVersion.ps1'
@@ -253,7 +253,7 @@ extends:
             TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
     - stage: deploy
-      condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
+      condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
       dependsOn: build
       jobs:
         - deployment: deploy_nuget
@@ -282,7 +282,7 @@ extends:
                   inputs:
                     targetType: filePath
                     filePath: '$(Pipeline.Workspace)\scripts\GetLatestCommitSHA.ps1'
-                    arguments: '-repo "msgraph-beta-sdk-dotnet" -owner "microsoftgraph" -branchName "master"'
+                    arguments: '-repo "msgraph-beta-sdk-dotnet" -owner "microsoftgraph" -branchName "main"'
                     pwsh: true
                 - task: PowerShell@2
                   displayName: 'Extract release information to pipeline'
