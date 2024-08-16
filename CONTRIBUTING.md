@@ -56,7 +56,7 @@ For the purposes of the .Net client library, the generator runs through an openA
 
 ### When new features are added to the library
 Generation happens as part of a manual process that occurs once a significant change or set of changes has been added to the Graph. This may include:
- - A new workload comes to v1.0 of Graph (Microsoft Teams, Batching, etc.)
+ - A new workload comes to beta of Graph (Microsoft Teams, Batching, etc.)
  - There is significant addition of functionality (Delta Queries, etc.)
  
 However, this is evaluated on a case-by-case basis. If the library is missing beta Graph functionality that you wish to utilize, please [file an issue](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues).
