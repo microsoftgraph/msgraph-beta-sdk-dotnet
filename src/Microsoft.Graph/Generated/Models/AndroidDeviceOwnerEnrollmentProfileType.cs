@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android Device Owner Enrollment Profile types.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AndroidDeviceOwnerEnrollmentProfileType
     {
         /// <summary>Not configured; this value is ignored.</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents source of assignment.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceAndAppManagementAssignmentSource
     {
         /// <summary>Direct indicates a direct assignment.</summary>

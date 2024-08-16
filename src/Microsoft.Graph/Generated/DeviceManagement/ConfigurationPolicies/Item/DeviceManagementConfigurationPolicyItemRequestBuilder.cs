@@ -6,14 +6,15 @@ using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCop
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveEnrollmentTimeDeviceMembershipTarget;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveLatestUpgradeDefaultBaselinePolicy;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.SetEnrollmentTimeDeviceMembershipTarget;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -22,50 +23,56 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
     /// <summary>
     /// Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class DeviceManagementConfigurationPolicyItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DeviceManagementConfigurationPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the assign method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assign.AssignRequestBuilder Assign
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assign.AssignRequestBuilder Assign
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assign.AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assignments.AssignmentsRequestBuilder Assignments
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clearEnrollmentTimeDeviceMembershipTarget method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.ClearEnrollmentTimeDeviceMembershipTarget.ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder ClearEnrollmentTimeDeviceMembershipTarget
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.ClearEnrollmentTimeDeviceMembershipTarget.ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder ClearEnrollmentTimeDeviceMembershipTarget
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.ClearEnrollmentTimeDeviceMembershipTarget.ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.ClearEnrollmentTimeDeviceMembershipTarget.ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createCopy method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyRequestBuilder CreateCopy
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyRequestBuilder CreateCopy
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy.CreateCopyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reorder method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder.ReorderRequestBuilder Reorder
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder.ReorderRequestBuilder Reorder
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder.ReorderRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder.ReorderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveEnrollmentTimeDeviceMembershipTarget method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveEnrollmentTimeDeviceMembershipTarget.RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder RetrieveEnrollmentTimeDeviceMembershipTarget
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveEnrollmentTimeDeviceMembershipTarget.RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder RetrieveEnrollmentTimeDeviceMembershipTarget
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveEnrollmentTimeDeviceMembershipTarget.RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveEnrollmentTimeDeviceMembershipTarget.RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveLatestUpgradeDefaultBaselinePolicy.RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder RetrieveLatestUpgradeDefaultBaselinePolicy
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveLatestUpgradeDefaultBaselinePolicy.RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder RetrieveLatestUpgradeDefaultBaselinePolicy
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveLatestUpgradeDefaultBaselinePolicy.RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveLatestUpgradeDefaultBaselinePolicy.RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setEnrollmentTimeDeviceMembershipTarget method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.SetEnrollmentTimeDeviceMembershipTarget.SetEnrollmentTimeDeviceMembershipTargetRequestBuilder SetEnrollmentTimeDeviceMembershipTarget
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.SetEnrollmentTimeDeviceMembershipTarget.SetEnrollmentTimeDeviceMembershipTargetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings.SettingsRequestBuilder Settings
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,57 +105,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of all Configuration policies
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property configurationPolicies in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy?> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property configurationPolicies for deviceManagement
@@ -176,11 +183,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -196,11 +203,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -213,23 +220,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// List of all Configuration policies
         /// </summary>
-        public class DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -256,14 +265,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementConfigurationPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceManagementConfigurationPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.DeviceManagementConfigurationPolicyItemRequestBuilder.DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementConfigurationPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceManagementConfigurationPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

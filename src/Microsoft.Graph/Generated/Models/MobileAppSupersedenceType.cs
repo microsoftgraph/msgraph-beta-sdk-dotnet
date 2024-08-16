@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the supersedence type associated with a relationship between two mobile apps.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MobileAppSupersedenceType
     {
         /// <summary>Indicates that the child app should be updated by the internal logic of the parent app.</summary>

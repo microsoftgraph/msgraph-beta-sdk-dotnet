@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the device licensing status after Windows device based subscription has been enabled.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceLicensingStatus
     {
         /// <summary>Default. Set to unknown when status cannot be determined.</summary>

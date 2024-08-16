@@ -72,13 +72,14 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummary
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -87,375 +88,381 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class ReportsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfigurations.CachedReportConfigurationsRequestBuilder CachedReportConfigurations
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfigurations.CachedReportConfigurationsRequestBuilder CachedReportConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfigurations.CachedReportConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfigurations.CachedReportConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.ExportJobsRequestBuilder ExportJobs
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.ExportJobsRequestBuilder ExportJobs
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.ExportJobsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActiveMalwareReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareReport.GetActiveMalwareReportRequestBuilder GetActiveMalwareReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareReport.GetActiveMalwareReportRequestBuilder GetActiveMalwareReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareReport.GetActiveMalwareReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareReport.GetActiveMalwareReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActiveMalwareSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryReport.GetActiveMalwareSummaryReportRequestBuilder GetActiveMalwareSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryReport.GetActiveMalwareSummaryReportRequestBuilder GetActiveMalwareSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryReport.GetActiveMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryReport.GetActiveMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllCertificatesReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport.GetAllCertificatesReportRequestBuilder GetAllCertificatesReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport.GetAllCertificatesReportRequestBuilder GetAllCertificatesReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport.GetAllCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport.GetAllCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAppsInstallSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport.GetAppsInstallSummaryReportRequestBuilder GetAppsInstallSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport.GetAppsInstallSummaryReportRequestBuilder GetAppsInstallSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport.GetAppsInstallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport.GetAppsInstallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAppStatusOverviewReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport.GetAppStatusOverviewReportRequestBuilder GetAppStatusOverviewReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport.GetAppStatusOverviewReportRequestBuilder GetAppStatusOverviewReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport.GetAppStatusOverviewReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport.GetAppStatusOverviewReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCachedReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport.GetCachedReportRequestBuilder GetCachedReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport.GetCachedReportRequestBuilder GetCachedReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport.GetCachedReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport.GetCachedReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCertificatesReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportRequestBuilder GetCertificatesReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportRequestBuilder GetCertificatesReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport.GetCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePoliciesReportForDevice method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice.GetCompliancePoliciesReportForDeviceRequestBuilder GetCompliancePoliciesReportForDevice
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice.GetCompliancePoliciesReportForDeviceRequestBuilder GetCompliancePoliciesReportForDevice
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice.GetCompliancePoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice.GetCompliancePoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyDevicesReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport.GetCompliancePolicyDevicesReportRequestBuilder GetCompliancePolicyDevicesReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport.GetCompliancePolicyDevicesReportRequestBuilder GetCompliancePolicyDevicesReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport.GetCompliancePolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport.GetCompliancePolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyDeviceSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport.GetCompliancePolicyDeviceSummaryReportRequestBuilder GetCompliancePolicyDeviceSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport.GetCompliancePolicyDeviceSummaryReportRequestBuilder GetCompliancePolicyDeviceSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport.GetCompliancePolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport.GetCompliancePolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport.GetCompliancePolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport.GetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport.GetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport.GetCompliancePolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport.GetCompliancePolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingDetailsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDetailsReport.GetComplianceSettingDetailsReportRequestBuilder GetComplianceSettingDetailsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDetailsReport.GetComplianceSettingDetailsReportRequestBuilder GetComplianceSettingDetailsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDetailsReport.GetComplianceSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDetailsReport.GetComplianceSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingNonComplianceReport.GetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingNonComplianceReport.GetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingNonComplianceReport.GetComplianceSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingNonComplianceReport.GetComplianceSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportRequestBuilder GetComplianceSettingsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportRequestBuilder GetComplianceSettingsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport.GetComplianceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigManagerDevicePolicyStatusReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigManagerDevicePolicyStatusReport.GetConfigManagerDevicePolicyStatusReportRequestBuilder GetConfigManagerDevicePolicyStatusReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigManagerDevicePolicyStatusReport.GetConfigManagerDevicePolicyStatusReportRequestBuilder GetConfigManagerDevicePolicyStatusReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigManagerDevicePolicyStatusReport.GetConfigManagerDevicePolicyStatusReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigManagerDevicePolicyStatusReport.GetConfigManagerDevicePolicyStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPoliciesReportForDevice method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice.GetConfigurationPoliciesReportForDeviceRequestBuilder GetConfigurationPoliciesReportForDevice
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice.GetConfigurationPoliciesReportForDeviceRequestBuilder GetConfigurationPoliciesReportForDevice
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice.GetConfigurationPoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice.GetConfigurationPoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyDevicesReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport.GetConfigurationPolicyDevicesReportRequestBuilder GetConfigurationPolicyDevicesReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport.GetConfigurationPolicyDevicesReportRequestBuilder GetConfigurationPolicyDevicesReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport.GetConfigurationPolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport.GetConfigurationPolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyDeviceSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDeviceSummaryReport.GetConfigurationPolicyDeviceSummaryReportRequestBuilder GetConfigurationPolicyDeviceSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDeviceSummaryReport.GetConfigurationPolicyDeviceSummaryReportRequestBuilder GetConfigurationPolicyDeviceSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDeviceSummaryReport.GetConfigurationPolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDeviceSummaryReport.GetConfigurationPolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport.GetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport.GetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport.GetConfigurationPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport.GetConfigurationPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceSummaryReport.GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceSummaryReport.GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceSummaryReport.GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceSummaryReport.GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicySettingsDeviceSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicySettingsDeviceSummaryReport.GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder GetConfigurationPolicySettingsDeviceSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicySettingsDeviceSummaryReport.GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder GetConfigurationPolicySettingsDeviceSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicySettingsDeviceSummaryReport.GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicySettingsDeviceSummaryReport.GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingDetailsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingDetailsReport.GetConfigurationSettingDetailsReportRequestBuilder GetConfigurationSettingDetailsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingDetailsReport.GetConfigurationSettingDetailsReportRequestBuilder GetConfigurationSettingDetailsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingDetailsReport.GetConfigurationSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingDetailsReport.GetConfigurationSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport.GetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport.GetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport.GetConfigurationSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport.GetConfigurationSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportRequestBuilder GetConfigurationSettingsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportRequestBuilder GetConfigurationSettingsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport.GetConfigurationSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceConfigurationPolicySettingsSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport.GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder GetDeviceConfigurationPolicySettingsSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport.GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder GetDeviceConfigurationPolicySettingsSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport.GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport.GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceConfigurationPolicyStatusSummary method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder GetDeviceConfigurationPolicyStatusSummary
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder GetDeviceConfigurationPolicyStatusSummary
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary.GetDeviceConfigurationPolicyStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceInstallStatusReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder GetDeviceInstallStatusReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder GetDeviceInstallStatusReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport.GetDeviceInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles.GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentSettingsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport.GetDeviceManagementIntentSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport.GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport.GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport.GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport.GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicePoliciesComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePoliciesComplianceReport.GetDevicePoliciesComplianceReportRequestBuilder GetDevicePoliciesComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePoliciesComplianceReport.GetDevicePoliciesComplianceReportRequestBuilder GetDevicePoliciesComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePoliciesComplianceReport.GetDevicePoliciesComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePoliciesComplianceReport.GetDevicePoliciesComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicePolicySettingsComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePolicySettingsComplianceReport.GetDevicePolicySettingsComplianceReportRequestBuilder GetDevicePolicySettingsComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePolicySettingsComplianceReport.GetDevicePolicySettingsComplianceReportRequestBuilder GetDevicePolicySettingsComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePolicySettingsComplianceReport.GetDevicePolicySettingsComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePolicySettingsComplianceReport.GetDevicePolicySettingsComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesStatusByPolicyPlatformComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusByPolicyPlatformComplianceReport.GetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder GetDevicesStatusByPolicyPlatformComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusByPolicyPlatformComplianceReport.GetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder GetDevicesStatusByPolicyPlatformComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusByPolicyPlatformComplianceReport.GetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusByPolicyPlatformComplianceReport.GetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesStatusBySettingReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportRequestBuilder GetDevicesStatusBySettingReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportRequestBuilder GetDevicesStatusBySettingReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport.GetDevicesStatusBySettingReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceStatusByCompliacePolicyReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliacePolicyReport.GetDeviceStatusByCompliacePolicyReportRequestBuilder GetDeviceStatusByCompliacePolicyReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliacePolicyReport.GetDeviceStatusByCompliacePolicyReportRequestBuilder GetDeviceStatusByCompliacePolicyReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliacePolicyReport.GetDeviceStatusByCompliacePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliacePolicyReport.GetDeviceStatusByCompliacePolicyReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceStatusByCompliancePolicySettingReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportRequestBuilder GetDeviceStatusByCompliancePolicySettingReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportRequestBuilder GetDeviceStatusByCompliancePolicySettingReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport.GetDeviceStatusByCompliancePolicySettingReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceStatusSummaryByCompliacePolicyReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder GetDeviceStatusSummaryByCompliacePolicyReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder GetDeviceStatusSummaryByCompliacePolicyReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceStatusSummaryByCompliancePolicySettingsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliancePolicySettingsReport.GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder GetDeviceStatusSummaryByCompliancePolicySettingsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliancePolicySettingsReport.GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder GetDeviceStatusSummaryByCompliancePolicySettingsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliancePolicySettingsReport.GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliancePolicySettingsReport.GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesWithoutCompliancePolicyReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport.GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport.GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport.GetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport.GetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEncryptionReportForDevices method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices.GetEncryptionReportForDevicesRequestBuilder GetEncryptionReportForDevices
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices.GetEncryptionReportForDevicesRequestBuilder GetEncryptionReportForDevices
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices.GetEncryptionReportForDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices.GetEncryptionReportForDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder GetEnrollmentConfigurationPoliciesByDevice
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder GetEnrollmentConfigurationPoliciesByDevice
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFailedMobileAppsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport.GetFailedMobileAppsReportRequestBuilder GetFailedMobileAppsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport.GetFailedMobileAppsReportRequestBuilder GetFailedMobileAppsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport.GetFailedMobileAppsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport.GetFailedMobileAppsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFailedMobileAppsSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsSummaryReport.GetFailedMobileAppsSummaryReportRequestBuilder GetFailedMobileAppsSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsSummaryReport.GetFailedMobileAppsSummaryReportRequestBuilder GetFailedMobileAppsSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsSummaryReport.GetFailedMobileAppsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsSummaryReport.GetFailedMobileAppsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getGroupPolicySettingsDeviceSettingsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport.GetGroupPolicySettingsDeviceSettingsReportRequestBuilder GetGroupPolicySettingsDeviceSettingsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport.GetGroupPolicySettingsDeviceSettingsReportRequestBuilder GetGroupPolicySettingsDeviceSettingsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport.GetGroupPolicySettingsDeviceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport.GetGroupPolicySettingsDeviceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHistoricalReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetHistoricalReport.GetHistoricalReportRequestBuilder GetHistoricalReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetHistoricalReport.GetHistoricalReportRequestBuilder GetHistoricalReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetHistoricalReport.GetHistoricalReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetHistoricalReport.GetHistoricalReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMalwareSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetMalwareSummaryReport.GetMalwareSummaryReportRequestBuilder GetMalwareSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetMalwareSummaryReport.GetMalwareSummaryReportRequestBuilder GetMalwareSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetMalwareSummaryReport.GetMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetMalwareSummaryReport.GetMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMobileApplicationManagementAppConfigurationReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportRequestBuilder GetMobileApplicationManagementAppConfigurationReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportRequestBuilder GetMobileApplicationManagementAppConfigurationReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport.GetMobileApplicationManagementAppConfigurationReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMobileApplicationManagementAppRegistrationSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppRegistrationSummaryReport.GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder GetMobileApplicationManagementAppRegistrationSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppRegistrationSummaryReport.GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder GetMobileApplicationManagementAppRegistrationSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppRegistrationSummaryReport.GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppRegistrationSummaryReport.GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNoncompliantDevicesAndSettingsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSettingsReport.GetNoncompliantDevicesAndSettingsReportRequestBuilder GetNoncompliantDevicesAndSettingsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSettingsReport.GetNoncompliantDevicesAndSettingsReportRequestBuilder GetNoncompliantDevicesAndSettingsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSettingsReport.GetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSettingsReport.GetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceMetadata method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata.GetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata.GetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata.GetPolicyNonComplianceMetadataRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata.GetPolicyNonComplianceMetadataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport.GetPolicyNonComplianceReportRequestBuilder GetPolicyNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport.GetPolicyNonComplianceReportRequestBuilder GetPolicyNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport.GetPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport.GetPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport.GetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport.GetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport.GetPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport.GetPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getQuietTimePolicyUsersReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportRequestBuilder GetQuietTimePolicyUsersReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportRequestBuilder GetQuietTimePolicyUsersReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport.GetQuietTimePolicyUsersReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getQuietTimePolicyUserSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport.GetQuietTimePolicyUserSummaryReportRequestBuilder GetQuietTimePolicyUserSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport.GetQuietTimePolicyUserSummaryReportRequestBuilder GetQuietTimePolicyUserSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport.GetQuietTimePolicyUserSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport.GetQuietTimePolicyUserSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRelatedAppsStatusReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetRelatedAppsStatusReport.GetRelatedAppsStatusReportRequestBuilder GetRelatedAppsStatusReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetRelatedAppsStatusReport.GetRelatedAppsStatusReportRequestBuilder GetRelatedAppsStatusReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetRelatedAppsStatusReport.GetRelatedAppsStatusReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetRelatedAppsStatusReport.GetRelatedAppsStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteAssistanceSessionsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport.GetRemoteAssistanceSessionsReportRequestBuilder GetRemoteAssistanceSessionsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport.GetRemoteAssistanceSessionsReportRequestBuilder GetRemoteAssistanceSessionsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport.GetRemoteAssistanceSessionsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport.GetRemoteAssistanceSessionsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getReportFilters method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters.GetReportFiltersRequestBuilder GetReportFilters
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters.GetReportFiltersRequestBuilder GetReportFilters
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters.GetReportFiltersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters.GetReportFiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSettingNonComplianceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetSettingNonComplianceReport.GetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetSettingNonComplianceReport.GetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetSettingNonComplianceReport.GetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetSettingNonComplianceReport.GetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUnhealthyDefenderAgentsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport.GetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport.GetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport.GetUnhealthyDefenderAgentsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport.GetUnhealthyDefenderAgentsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUnhealthyFirewallReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport.GetUnhealthyFirewallReportRequestBuilder GetUnhealthyFirewallReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport.GetUnhealthyFirewallReportRequestBuilder GetUnhealthyFirewallReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport.GetUnhealthyFirewallReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport.GetUnhealthyFirewallReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUnhealthyFirewallSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport.GetUnhealthyFirewallSummaryReportRequestBuilder GetUnhealthyFirewallSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport.GetUnhealthyFirewallSummaryReportRequestBuilder GetUnhealthyFirewallSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport.GetUnhealthyFirewallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport.GetUnhealthyFirewallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserInstallStatusReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport.GetUserInstallStatusReportRequestBuilder GetUserInstallStatusReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport.GetUserInstallStatusReportRequestBuilder GetUserInstallStatusReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport.GetUserInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport.GetUserInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsDriverUpdateAlertSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertSummaryReport.GetWindowsDriverUpdateAlertSummaryReportRequestBuilder GetWindowsDriverUpdateAlertSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertSummaryReport.GetWindowsDriverUpdateAlertSummaryReportRequestBuilder GetWindowsDriverUpdateAlertSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertSummaryReport.GetWindowsDriverUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertSummaryReport.GetWindowsDriverUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsQualityUpdateAlertSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportRequestBuilder GetWindowsQualityUpdateAlertSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportRequestBuilder GetWindowsQualityUpdateAlertSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport.GetWindowsQualityUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport.GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsUpdateAlertsPerPolicyPerDeviceReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport.GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsUpdateAlertsPerPolicyPerDeviceReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport.GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport.GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsUpdateAlertSummaryReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport.GetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getZebraFotaDeploymentReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveAssignedApplicationsReport method.</summary>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport.RetrieveAssignedApplicationsReportRequestBuilder RetrieveAssignedApplicationsReport
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport.RetrieveAssignedApplicationsReportRequestBuilder RetrieveAssignedApplicationsReport
         {
-            get => new Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport.RetrieveAssignedApplicationsReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveAssignedApplicationsReport.RetrieveAssignedApplicationsReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveWin32CatalogAppsUpdateReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport.RetrieveWin32CatalogAppsUpdateReportRequestBuilder RetrieveWin32CatalogAppsUpdateReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport.RetrieveWin32CatalogAppsUpdateReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -463,7 +470,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -475,7 +482,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -488,57 +495,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Reports singleton
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementReports"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagementReports"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementReports?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementReports?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementReports> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementReports> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementReports>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagementReports>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property reports in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementReports"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceManagementReports"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementReports?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementReports?> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagementReports> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementReports> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagementReports>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagementReports>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property reports for deviceManagement
@@ -566,11 +573,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -586,11 +593,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -603,23 +610,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Reports singleton
         /// </summary>
-        public class ReportsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -646,14 +655,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

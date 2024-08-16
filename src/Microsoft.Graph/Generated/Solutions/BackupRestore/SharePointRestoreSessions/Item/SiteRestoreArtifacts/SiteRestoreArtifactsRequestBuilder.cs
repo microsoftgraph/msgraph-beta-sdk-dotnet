@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Count;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
     /// <summary>
     /// Provides operations to manage the siteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.
     /// </summary>
-    public class SiteRestoreArtifactsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class SiteRestoreArtifactsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.</summary>
         /// <param name="position">The unique identifier of siteRestoreArtifact</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item.SiteRestoreArtifactItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item.SiteRestoreArtifactItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item.SiteRestoreArtifactItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item.SiteRestoreArtifactItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("siteRestoreArtifact%2Did", position);
-                return new Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item.SiteRestoreArtifactItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.Item.SiteRestoreArtifactItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         /// List all the siteRestoreArtifact objects for a sharePointRestoreSession for the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifacts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to siteRestoreArtifacts for solutions
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SiteRestoreArtifact"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.SiteRestoreArtifact?> PostAsync(Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact?> PostAsync(global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.SiteRestoreArtifact> PostAsync(Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact> PostAsync(global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SiteRestoreArtifact>(requestInfo, Microsoft.Graph.Beta.Models.SiteRestoreArtifact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact>(requestInfo, global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all the siteRestoreArtifact objects for a sharePointRestoreSession for the tenant.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all the siteRestoreArtifact objects for a sharePointRestoreSession for the tenant.
         /// </summary>
-        public class SiteRestoreArtifactsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SiteRestoreArtifactsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SiteRestoreArtifactsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SiteRestoreArtifactsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder.SiteRestoreArtifactsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SiteRestoreArtifactsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SiteRestoreArtifactsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

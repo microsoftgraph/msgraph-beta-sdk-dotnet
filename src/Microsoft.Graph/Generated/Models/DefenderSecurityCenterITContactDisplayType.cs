@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values for defenderSecurityCenterITContactDisplay</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DefenderSecurityCenterITContactDisplayType
     {
         /// <summary>Not Configured</summary>

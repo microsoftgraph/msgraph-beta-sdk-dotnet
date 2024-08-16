@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Delivery state of Configuration Manager device action</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ConfigurationManagerActionDeliveryStatus
     {
         /// <summary>Pending to deliver the action to ConfigurationManager</summary>

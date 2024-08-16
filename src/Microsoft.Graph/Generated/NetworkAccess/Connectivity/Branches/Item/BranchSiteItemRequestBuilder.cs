@@ -4,11 +4,11 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ConnectivityConfiguration;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,28 +17,29 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
     /// <summary>
     /// Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
     /// </summary>
-    public class BranchSiteItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class BranchSiteItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the connectivityConfiguration property of the microsoft.graph.networkaccess.branchSite entity.</summary>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
-        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ConnectivityConfiguration.ConnectivityConfigurationRequestBuilder ConnectivityConfiguration
+        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ConnectivityConfiguration.ConnectivityConfigurationRequestBuilder ConnectivityConfiguration
         {
-            get => new Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ConnectivityConfiguration.ConnectivityConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ConnectivityConfiguration.ConnectivityConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.branchSite entity.</summary>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
-        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks.DeviceLinksRequestBuilder DeviceLinks
+        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks.DeviceLinksRequestBuilder DeviceLinks
         {
-            get => new Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks.DeviceLinksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLinks.DeviceLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.</summary>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
-        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.ForwardingProfilesRequestBuilder ForwardingProfiles
+        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.ForwardingProfilesRequestBuilder ForwardingProfiles
         {
-            get => new Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.ForwardingProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.ForwardingProfiles.ForwardingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -81,53 +82,53 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         /// Retrieve information about a specific branch.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.BranchSite"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the configuration or properties of a specific branch.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.BranchSite"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite?> PatchAsync(Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite?> PatchAsync(global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite> PatchAsync(Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite> PatchAsync(global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a specific branch.
@@ -157,11 +158,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -178,11 +179,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Networkaccess.BranchSite body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -195,24 +196,26 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
-        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BranchSiteItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BranchSiteItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve information about a specific branch.
         /// </summary>
-        public class BranchSiteItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BranchSiteItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -239,14 +242,16 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BranchSiteItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BranchSiteItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.BranchSiteItemRequestBuilder.BranchSiteItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BranchSiteItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BranchSiteItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

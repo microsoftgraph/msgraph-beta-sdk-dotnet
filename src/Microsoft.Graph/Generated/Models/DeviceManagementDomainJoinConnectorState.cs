@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The ODJ request states.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceManagementDomainJoinConnectorState
     {
         /// <summary>Connector is actively pinging Intune.</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates state of elevation request</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ElevationRequestState
     {
         /// <summary>Default Value. Indicates that elevation request status is unavailable</summary>

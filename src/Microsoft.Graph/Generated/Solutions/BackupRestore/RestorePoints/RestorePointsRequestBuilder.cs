@@ -4,11 +4,11 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Count;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Search;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,33 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
     /// <summary>
     /// Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.
     /// </summary>
-    public class RestorePointsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class RestorePointsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the search method.</summary>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Search.SearchRequestBuilder Search
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Search.SearchRequestBuilder Search
         {
-            get => new Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.</summary>
         /// <param name="position">The unique identifier of restorePoint</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item.RestorePointItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item.RestorePointItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item.RestorePointItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item.RestorePointItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("restorePoint%2Did", position);
-                return new Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item.RestorePointItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.Item.RestorePointItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,50 +61,50 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
         /// <summary>
         /// List of restore points in the tenant.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RestorePointCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RestorePointCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.RestorePointCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RestorePointCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.RestorePointCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RestorePointCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RestorePointCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.RestorePointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RestorePointCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.RestorePointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to restorePoints for solutions
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RestorePoint"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.RestorePoint"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.RestorePoint?> PostAsync(Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RestorePoint?> PostAsync(global::Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.RestorePoint> PostAsync(Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.RestorePoint> PostAsync(global::Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RestorePoint>(requestInfo, Microsoft.Graph.Beta.Models.RestorePoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.RestorePoint>(requestInfo, global::Microsoft.Graph.Beta.Models.RestorePoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of restore points in the tenant.
@@ -112,11 +113,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +133,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.RestorePoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,16 +150,17 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of restore points in the tenant.
         /// </summary>
-        public class RestorePointsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RestorePointsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -224,14 +226,16 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RestorePointsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RestorePointsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder.RestorePointsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RestorePointsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RestorePointsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

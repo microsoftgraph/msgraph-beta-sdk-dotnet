@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Count;
 using Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,40 +16,41 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
     /// <summary>
     /// Provides operations to manage the taxAreas property of the microsoft.graph.company entity.
     /// </summary>
-    public class TaxAreasRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class TaxAreasRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxAreas property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of taxArea</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("taxArea%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>Provides operations to manage the taxAreas property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of taxArea</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("taxArea%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.Item.TaxAreaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,50 +68,50 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
         /// <summary>
         /// Get taxAreas from financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.TaxAreaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to taxAreas for financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TaxArea"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.TaxArea"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TaxArea?> PostAsync(Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TaxArea?> PostAsync(global::Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TaxArea> PostAsync(Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.TaxArea> PostAsync(global::Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TaxArea>(requestInfo, Microsoft.Graph.Beta.Models.TaxArea.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.TaxArea>(requestInfo, global::Microsoft.Graph.Beta.Models.TaxArea.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get taxAreas from financials
@@ -119,11 +120,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -139,11 +140,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.TaxArea body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -156,16 +157,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get taxAreas from financials
         /// </summary>
-        public class TaxAreasRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TaxAreasRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -231,14 +233,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TaxAreasRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TaxAreasRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder.TaxAreasRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TaxAreasRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TaxAreasRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }
