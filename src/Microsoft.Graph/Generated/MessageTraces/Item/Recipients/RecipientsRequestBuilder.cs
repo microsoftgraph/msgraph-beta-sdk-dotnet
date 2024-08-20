@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Count;
 using Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
     /// <summary>
     /// Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
     /// </summary>
-    public class RecipientsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class RecipientsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.</summary>
         /// <param name="position">The unique identifier of messageRecipient</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item.MessageRecipientItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item.MessageRecipientItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item.MessageRecipientItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item.MessageRecipientItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("messageRecipient%2Did", position);
-                return new Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item.MessageRecipientItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item.MessageRecipientItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
         /// <summary>
         /// Get recipients from messageTraces
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MessageRecipientCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to recipients for messageTraces
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MessageRecipient"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MessageRecipient"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MessageRecipient?> PostAsync(Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MessageRecipient?> PostAsync(global::Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MessageRecipient> PostAsync(Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.MessageRecipient> PostAsync(global::Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MessageRecipient>(requestInfo, Microsoft.Graph.Beta.Models.MessageRecipient.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MessageRecipient>(requestInfo, global::Microsoft.Graph.Beta.Models.MessageRecipient.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get recipients from messageTraces
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MessageRecipient body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get recipients from messageTraces
         /// </summary>
-        public class RecipientsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RecipientsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RecipientsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RecipientsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.MessageTraces.Item.Recipients.RecipientsRequestBuilder.RecipientsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RecipientsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RecipientsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

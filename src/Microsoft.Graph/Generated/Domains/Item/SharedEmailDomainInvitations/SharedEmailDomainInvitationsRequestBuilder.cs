@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Count;
 using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
     /// <summary>
     /// Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
     /// </summary>
-    public class SharedEmailDomainInvitationsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class SharedEmailDomainInvitationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.</summary>
         /// <param name="position">The unique identifier of sharedEmailDomainInvitation</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item.SharedEmailDomainInvitationItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item.SharedEmailDomainInvitationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item.SharedEmailDomainInvitationItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item.SharedEmailDomainInvitationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("sharedEmailDomainInvitation%2Did", position);
-                return new Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item.SharedEmailDomainInvitationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item.SharedEmailDomainInvitationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
         /// <summary>
         /// Get sharedEmailDomainInvitations from domains
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sharedEmailDomainInvitations for domains
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation?> PostAsync(Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation?> PostAsync(global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation> PostAsync(Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation> PostAsync(global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>(requestInfo, Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation>(requestInfo, global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sharedEmailDomainInvitations from domains
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.SharedEmailDomainInvitation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get sharedEmailDomainInvitations from domains
         /// </summary>
-        public class SharedEmailDomainInvitationsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SharedEmailDomainInvitationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.SharedEmailDomainInvitationsRequestBuilder.SharedEmailDomainInvitationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

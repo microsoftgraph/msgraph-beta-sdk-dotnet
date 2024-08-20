@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Count;
 using Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,40 +16,41 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable
     /// <summary>
     /// Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
     /// </summary>
-    public class AgedAccountsPayableRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class AgedAccountsPayableRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of agedAccountsPayable</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("agedAccountsPayable%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of agedAccountsPayable</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("agedAccountsPayable%2Did", position);
-                return new Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Item.AgedAccountsPayableItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,25 +68,25 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable
         /// <summary>
         /// Get agedAccountsPayable from financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.AgedAccountsPayableCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get agedAccountsPayable from financials
@@ -94,11 +95,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -109,16 +110,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get agedAccountsPayable from financials
         /// </summary>
-        public class AgedAccountsPayableRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AgedAccountsPayableRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -184,7 +186,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AgedAccountsPayableRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AgedAccountsPayableRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder.AgedAccountsPayableRequestBuilderGetQueryParameters>
         {
         }
     }

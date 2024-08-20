@@ -28,11 +28,11 @@ using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -41,145 +41,146 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
     /// <summary>
     /// Provides operations to manage the deviceAppManagement singleton.
     /// </summary>
-    public class DeviceAppManagementRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DeviceAppManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.AndroidManagedAppProtectionsRequestBuilder AndroidManagedAppProtections
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.AndroidManagedAppProtectionsRequestBuilder AndroidManagedAppProtections
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.AndroidManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.AndroidManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.DefaultManagedAppProtections.DefaultManagedAppProtectionsRequestBuilder DefaultManagedAppProtections
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.DefaultManagedAppProtections.DefaultManagedAppProtectionsRequestBuilder DefaultManagedAppProtections
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.DefaultManagedAppProtections.DefaultManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.DefaultManagedAppProtections.DefaultManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.DeviceAppManagementTasksRequestBuilder DeviceAppManagementTasks
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.DeviceAppManagementTasksRequestBuilder DeviceAppManagementTasks
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.DeviceAppManagementTasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.DeviceAppManagementTasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertificates.EnterpriseCodeSigningCertificatesRequestBuilder EnterpriseCodeSigningCertificates
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertificates.EnterpriseCodeSigningCertificatesRequestBuilder EnterpriseCodeSigningCertificates
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertificates.EnterpriseCodeSigningCertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertificates.EnterpriseCodeSigningCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.IosLobAppProvisioningConfigurationsRequestBuilder IosLobAppProvisioningConfigurations
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.IosLobAppProvisioningConfigurationsRequestBuilder IosLobAppProvisioningConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.IosLobAppProvisioningConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.IosLobAppProvisioningConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.IosManagedAppProtectionsRequestBuilder IosManagedAppProtections
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.IosManagedAppProtectionsRequestBuilder IosManagedAppProtections
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.IosManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.IosManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder ManagedAppPolicies
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder ManagedAppPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder ManagedAppStatuses
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder ManagedAppStatuses
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses.ManagedAppStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedEBookCategories property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.ManagedEBookCategoriesRequestBuilder ManagedEBookCategories
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.ManagedEBookCategoriesRequestBuilder ManagedEBookCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.ManagedEBookCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.ManagedEBookCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.ManagedEBooksRequestBuilder ManagedEBooks
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.ManagedEBooksRequestBuilder ManagedEBooks
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.ManagedEBooksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.ManagedEBooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder MdmWindowsInformationProtectionPolicies
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder MdmWindowsInformationProtectionPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.MdmWindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppCatalogPackages property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCatalogPackages.MobileAppCatalogPackagesRequestBuilder MobileAppCatalogPackages
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCatalogPackages.MobileAppCatalogPackagesRequestBuilder MobileAppCatalogPackages
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCatalogPackages.MobileAppCatalogPackagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCatalogPackages.MobileAppCatalogPackagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories.MobileAppCategoriesRequestBuilder MobileAppCategories
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories.MobileAppCategoriesRequestBuilder MobileAppCategories
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories.MobileAppCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories.MobileAppCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.MobileAppConfigurationsRequestBuilder MobileAppConfigurations
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.MobileAppConfigurationsRequestBuilder MobileAppConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.MobileAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.MobileAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MobileAppsRequestBuilder MobileApps
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MobileAppsRequestBuilder MobileApps
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MobileAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MobileAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.PolicySetsRequestBuilder PolicySets
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.PolicySetsRequestBuilder PolicySets
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.PolicySetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.PolicySetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the symantecCodeSigningCertificate property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificate.SymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificate.SymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificate.SymantecCodeSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificate.SymantecCodeSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncMicrosoftStoreForBusinessApps method.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps.SyncMicrosoftStoreForBusinessAppsRequestBuilder SyncMicrosoftStoreForBusinessApps
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps.SyncMicrosoftStoreForBusinessAppsRequestBuilder SyncMicrosoftStoreForBusinessApps
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps.SyncMicrosoftStoreForBusinessAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps.SyncMicrosoftStoreForBusinessAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.TargetedManagedAppConfigurationsRequestBuilder TargetedManagedAppConfigurations
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.TargetedManagedAppConfigurationsRequestBuilder TargetedManagedAppConfigurations
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.TargetedManagedAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.TargetedManagedAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder VppTokens
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder VppTokens
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.VppTokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder WdacSupplementalPolicies
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder WdacSupplementalPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.WdacSupplementalPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionPolicies.WindowsInformationProtectionPoliciesRequestBuilder WindowsInformationProtectionPolicies
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionPolicies.WindowsInformationProtectionPoliciesRequestBuilder WindowsInformationProtectionPolicies
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionPolicies.WindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionPolicies.WindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions.WindowsInformationProtectionWipeActionsRequestBuilder WindowsInformationProtectionWipeActions
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions.WindowsInformationProtectionWipeActionsRequestBuilder WindowsInformationProtectionWipeActions
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions.WindowsInformationProtectionWipeActionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions.WindowsInformationProtectionWipeActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.WindowsManagedAppProtectionsRequestBuilder WindowsManagedAppProtections
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.WindowsManagedAppProtectionsRequestBuilder WindowsManagedAppProtections
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.WindowsManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.WindowsManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsManagementApp property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp.WindowsManagementAppRequestBuilder WindowsManagementApp
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp.WindowsManagementAppRequestBuilder WindowsManagementApp
         {
-            get => new Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp.WindowsManagementAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp.WindowsManagementAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -187,7 +188,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -197,50 +198,50 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
         /// <summary>
         /// Get deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAppManagement"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceAppManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceAppManagement?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceAppManagement> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAppManagement"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DeviceAppManagement"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceAppManagement?> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.DeviceAppManagement> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get deviceAppManagement
@@ -249,11 +250,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -269,11 +270,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -286,16 +287,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get deviceAppManagement
         /// </summary>
-        public class DeviceAppManagementRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceAppManagementRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -322,14 +324,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceAppManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceAppManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder.DeviceAppManagementRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceAppManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DeviceAppManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

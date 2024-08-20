@@ -11,11 +11,11 @@ using Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests;
 using Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -24,60 +24,71 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
     /// <summary>
     /// Provides operations to manage the informationProtection property of the microsoft.graph.user entity.
     /// </summary>
-    public class InformationProtectionRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class InformationProtectionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.Bitlocker.BitlockerRequestBuilder Bitlocker
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.Bitlocker.BitlockerRequestBuilder Bitlocker
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.Bitlocker.BitlockerRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.Bitlocker.BitlockerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder DataLossPreventionPolicies
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder DataLossPreventionPolicies
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decryptBuffer method.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.DecryptBuffer.DecryptBufferRequestBuilder DecryptBuffer
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.DecryptBuffer.DecryptBufferRequestBuilder DecryptBuffer
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.DecryptBuffer.DecryptBufferRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.DecryptBuffer.DecryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the encryptBuffer method.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.EncryptBuffer.EncryptBufferRequestBuilder EncryptBuffer
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.EncryptBuffer.EncryptBufferRequestBuilder EncryptBuffer
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.EncryptBuffer.EncryptBufferRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.EncryptBuffer.EncryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policy property of the microsoft.graph.informationProtection entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.Policy.PolicyRequestBuilder Policy
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.Policy.PolicyRequestBuilder Policy
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder SensitivityLabels
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder SensitivityLabels
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.SensitivityPolicySettings.SensitivityPolicySettingsRequestBuilder SensitivityPolicySettings
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.SensitivityPolicySettings.SensitivityPolicySettingsRequestBuilder SensitivityPolicySettings
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.SensitivityPolicySettings.SensitivityPolicySettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.SensitivityPolicySettings.SensitivityPolicySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the signDigest method.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.SignDigest.SignDigestRequestBuilder SignDigest
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.SignDigest.SignDigestRequestBuilder SignDigest
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.SignDigest.SignDigestRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.SignDigest.SignDigestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests.ThreatAssessmentRequestsRequestBuilder ThreatAssessmentRequests
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests.ThreatAssessmentRequestsRequestBuilder ThreatAssessmentRequests
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests.ThreatAssessmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests.ThreatAssessmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the verifySignature method.</summary>
-        public Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature.VerifySignatureRequestBuilder VerifySignature
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature.VerifySignatureRequestBuilder VerifySignature
         {
-            get => new Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature.VerifySignatureRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature.VerifySignatureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +96,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,7 +108,8 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,63 +122,66 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get informationProtection from me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InformationProtection"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.InformationProtection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.InformationProtection?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.InformationProtection?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.InformationProtection> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.InformationProtection> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, global::Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property informationProtection in me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InformationProtection"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.InformationProtection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.InformationProtection?> PatchAsync(Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.InformationProtection?> PatchAsync(global::Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.InformationProtection> PatchAsync(Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.InformationProtection> PatchAsync(global::Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, global::Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property informationProtection for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -186,13 +201,14 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -206,13 +222,14 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.InformationProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -225,23 +242,26 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder WithUrl(string rawUrl)
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InformationProtectionRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class InformationProtectionRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get informationProtection from me
         /// </summary>
-        public class InformationProtectionRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class InformationProtectionRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -268,14 +288,16 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InformationProtectionRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class InformationProtectionRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder.InformationProtectionRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InformationProtectionRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class InformationProtectionRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

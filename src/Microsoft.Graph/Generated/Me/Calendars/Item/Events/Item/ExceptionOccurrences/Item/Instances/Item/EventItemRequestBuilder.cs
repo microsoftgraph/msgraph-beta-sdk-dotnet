@@ -11,11 +11,11 @@ using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.It
 using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.TentativelyAccept;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -24,60 +24,71 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
     /// <summary>
     /// Provides operations to manage the instances property of the microsoft.graph.event entity.
     /// </summary>
-    public class EventItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class EventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the accept method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Accept.AcceptRequestBuilder Accept
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Accept.AcceptRequestBuilder Accept
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Accept.AcceptRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Accept.AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.AttachmentsRequestBuilder Attachments
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.AttachmentsRequestBuilder Attachments
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel.CancelRequestBuilder Cancel
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decline method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline.DeclineRequestBuilder Decline
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline.DeclineRequestBuilder Decline
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline.DeclineRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline.DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismissReminder method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Extensions.ExtensionsRequestBuilder Extensions
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Forward.ForwardRequestBuilder Forward
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Forward.ForwardRequestBuilder Forward
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.SnoozeReminder.SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.SnoozeReminder.SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.TentativelyAccept.TentativelyAcceptRequestBuilder TentativelyAccept
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.TentativelyAccept.TentativelyAcceptRequestBuilder TentativelyAccept
         {
-            get => new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.TentativelyAccept.TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.TentativelyAccept.TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +96,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -95,38 +106,40 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Event"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Event"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Event?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Event?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Event> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Event> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Event>(requestInfo, Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Event>(requestInfo, global::Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -137,16 +150,18 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder WithUrl(string rawUrl)
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
-        public class EventItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class EventItemRequestBuilderGetQueryParameters 
         {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,7 +208,8 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>
         {
         }
     }

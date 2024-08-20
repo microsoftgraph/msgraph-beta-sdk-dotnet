@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum WorkplaceSensorType
     #pragma warning restore CS1591
@@ -19,6 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The heartbeat sensor type.</summary>
         [EnumMember(Value = "heartbeat")]
         Heartbeat,
+        /// <summary>The badge swipe sensor type.</summary>
+        [EnumMember(Value = "badge")]
+        Badge,
         /// <summary>The unknown feature value.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,

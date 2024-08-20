@@ -36,11 +36,11 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Vendors;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -49,185 +49,186 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item
     /// <summary>
     /// Provides operations to manage the companies property of the microsoft.graph.financials entity.
     /// </summary>
-    public class CompanyItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class CompanyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accounts property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Accounts.AccountsRequestBuilder Accounts
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Accounts.AccountsRequestBuilder Accounts
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder AgedAccountsPayable
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder AgedAccountsPayable
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.AgedAccountsPayableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable.AgedAccountsReceivableRequestBuilder AgedAccountsReceivable
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable.AgedAccountsReceivableRequestBuilder AgedAccountsReceivable
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable.AgedAccountsReceivableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable.AgedAccountsReceivableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the companyInformation property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder CompanyInformation
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder CompanyInformation
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.CompanyInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the countriesRegions property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.CountriesRegionsRequestBuilder CountriesRegions
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.CountriesRegionsRequestBuilder CountriesRegions
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.CountriesRegionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.CountriesRegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the currencies property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.CurrenciesRequestBuilder Currencies
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.CurrenciesRequestBuilder Currencies
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.CurrenciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.CurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder CustomerPaymentJournals
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder CustomerPaymentJournals
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.CustomerPaymentJournalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customerPayments property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.CustomerPaymentsRequestBuilder CustomerPayments
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.CustomerPaymentsRequestBuilder CustomerPayments
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.CustomerPaymentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.CustomerPaymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customers property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Customers.CustomersRequestBuilder Customers
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Customers.CustomersRequestBuilder Customers
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Customers.CustomersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Customers.CustomersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dimensions property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.DimensionsRequestBuilder Dimensions
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.DimensionsRequestBuilder Dimensions
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.DimensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.DimensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dimensionValues property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.DimensionValuesRequestBuilder DimensionValues
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.DimensionValuesRequestBuilder DimensionValues
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.DimensionValuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.DimensionValuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employees property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Employees.EmployeesRequestBuilder Employees
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Employees.EmployeesRequestBuilder Employees
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Employees.EmployeesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Employees.EmployeesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.GeneralLedgerEntriesRequestBuilder GeneralLedgerEntries
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.GeneralLedgerEntriesRequestBuilder GeneralLedgerEntries
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.GeneralLedgerEntriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.GeneralLedgerEntriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the itemCategories property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.ItemCategoriesRequestBuilder ItemCategories
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.ItemCategoriesRequestBuilder ItemCategories
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.ItemCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.ItemCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Items.ItemsRequestBuilder Items
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Items.ItemsRequestBuilder Items
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the journalLines property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.JournalLines.JournalLinesRequestBuilder JournalLines
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.JournalLines.JournalLinesRequestBuilder JournalLines
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.JournalLines.JournalLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.JournalLines.JournalLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the journals property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Journals.JournalsRequestBuilder Journals
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Journals.JournalsRequestBuilder Journals
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Journals.JournalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Journals.JournalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentMethods property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.PaymentMethodsRequestBuilder PaymentMethods
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.PaymentMethodsRequestBuilder PaymentMethods
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.PaymentMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.PaymentMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.PaymentTermsRequestBuilder PaymentTerms
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.PaymentTermsRequestBuilder PaymentTerms
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.PaymentTermsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms.PaymentTermsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the picture property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Picture.PictureRequestBuilder Picture
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Picture.PictureRequestBuilder Picture
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Picture.PictureRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Picture.PictureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines.PurchaseInvoiceLinesRequestBuilder PurchaseInvoiceLines
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines.PurchaseInvoiceLinesRequestBuilder PurchaseInvoiceLines
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines.PurchaseInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines.PurchaseInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.PurchaseInvoicesRequestBuilder PurchaseInvoices
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.PurchaseInvoicesRequestBuilder PurchaseInvoices
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.PurchaseInvoicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.PurchaseInvoicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder SalesCreditMemoLines
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder SalesCreditMemoLines
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.SalesCreditMemoLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.SalesCreditMemosRequestBuilder SalesCreditMemos
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.SalesCreditMemosRequestBuilder SalesCreditMemos
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.SalesCreditMemosRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.SalesCreditMemosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder SalesInvoiceLines
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder SalesInvoiceLines
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.SalesInvoicesRequestBuilder SalesInvoices
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.SalesInvoicesRequestBuilder SalesInvoices
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.SalesInvoicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.SalesInvoicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.SalesOrderLinesRequestBuilder SalesOrderLines
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.SalesOrderLinesRequestBuilder SalesOrderLines
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.SalesOrderLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.SalesOrderLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesOrders property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.SalesOrdersRequestBuilder SalesOrders
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.SalesOrdersRequestBuilder SalesOrders
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.SalesOrdersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.SalesOrdersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.SalesQuoteLinesRequestBuilder SalesQuoteLines
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.SalesQuoteLinesRequestBuilder SalesQuoteLines
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.SalesQuotesRequestBuilder SalesQuotes
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.SalesQuotesRequestBuilder SalesQuotes
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.SalesQuotesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.SalesQuotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.ShipmentMethodsRequestBuilder ShipmentMethods
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.ShipmentMethodsRequestBuilder ShipmentMethods
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.ShipmentMethodsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods.ShipmentMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxAreas property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder TaxAreas
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder TaxAreas
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas.TaxAreasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxGroups property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.TaxGroupsRequestBuilder TaxGroups
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.TaxGroupsRequestBuilder TaxGroups
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.TaxGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups.TaxGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder UnitsOfMeasure
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder UnitsOfMeasure
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.UnitsOfMeasureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vendors property of the microsoft.graph.company entity.</summary>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.VendorsRequestBuilder Vendors
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.VendorsRequestBuilder Vendors
         {
-            get => new Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.VendorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.VendorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -235,7 +236,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -245,25 +246,25 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item
         /// <summary>
         /// Get companies from financials
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Company"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Company"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Company?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Company?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Company> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.Company> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Company>(requestInfo, Microsoft.Graph.Beta.Models.Company.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Company>(requestInfo, global::Microsoft.Graph.Beta.Models.Company.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get companies from financials
@@ -272,11 +273,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -287,16 +288,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get companies from financials
         /// </summary>
-        public class CompanyItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CompanyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -323,7 +325,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CompanyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CompanyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Financials.Companies.Item.CompanyItemRequestBuilder.CompanyItemRequestBuilderGetQueryParameters>
         {
         }
     }

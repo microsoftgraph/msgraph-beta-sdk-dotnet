@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents various schedule modes for Zebra FOTA deployment.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ZebraFotaScheduleMode
     {
         /// <summary>Instructs the device to install the update as soon as it is received.</summary>

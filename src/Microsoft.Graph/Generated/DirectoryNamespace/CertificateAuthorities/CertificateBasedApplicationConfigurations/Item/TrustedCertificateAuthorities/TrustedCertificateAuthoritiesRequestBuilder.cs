@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certificate
 using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
     /// <summary>
     /// Provides operations to manage the trustedCertificateAuthorities property of the microsoft.graph.trustedCertificateAuthorityAsEntityBase entity.
     /// </summary>
-    public class TrustedCertificateAuthoritiesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class TrustedCertificateAuthoritiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trustedCertificateAuthorities property of the microsoft.graph.trustedCertificateAuthorityAsEntityBase entity.</summary>
         /// <param name="position">The unique identifier of certificateAuthorityAsEntity</param>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item.CertificateAuthorityAsEntityItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item.CertificateAuthorityAsEntityItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item.CertificateAuthorityAsEntityItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item.CertificateAuthorityAsEntityItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("certificateAuthorityAsEntity%2Did", position);
-                return new Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item.CertificateAuthorityAsEntityItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.Item.CertificateAuthorityAsEntityItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +56,51 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// List the trusted certificate authorities in a certificateBasedApplicationConfiguration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-list-trustedcertificateauthorities?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new trusted certificate authority in a certificateBasedApplicationConfiguration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-post-trustedcertificateauthorities?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity?> PostAsync(Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity?> PostAsync(global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity> PostAsync(Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity> PostAsync(global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>(requestInfo, Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the trusted certificate authorities in a certificateBasedApplicationConfiguration object.
@@ -108,11 +109,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List the trusted certificate authorities in a certificateBasedApplicationConfiguration object.
         /// </summary>
-        public class TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TrustedCertificateAuthoritiesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TrustedCertificateAuthoritiesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities.TrustedCertificateAuthoritiesRequestBuilder.TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TrustedCertificateAuthoritiesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TrustedCertificateAuthoritiesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

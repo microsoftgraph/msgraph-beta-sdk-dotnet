@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum DisableReason
     #pragma warning restore CS1591
@@ -22,6 +23,10 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "controllerServiceAppDeleted")]
+        #pragma warning disable CS1591
+        ControllerServiceAppDeleted,
         #pragma warning restore CS1591
     }
 }

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Cancel or confirm scheduled retire </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ScheduledRetireState
     {
         /// <summary>CancelRetire</summary>

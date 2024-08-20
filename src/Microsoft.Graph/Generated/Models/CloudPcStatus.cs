@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum CloudPcStatus
     #pragma warning restore CS1591
@@ -62,6 +63,10 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "updatingSingleSignOn")]
         #pragma warning disable CS1591
         UpdatingSingleSignOn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "modifyingSingleSignOn")]
+        #pragma warning disable CS1591
+        ModifyingSingleSignOn,
         #pragma warning restore CS1591
     }
 }

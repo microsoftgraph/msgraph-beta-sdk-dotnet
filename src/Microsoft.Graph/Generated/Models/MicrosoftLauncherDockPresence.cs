@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Microsoft Launcher Dock Presence selection.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MicrosoftLauncherDockPresence
     {
         /// <summary>Not configured; this value is ignored.</summary>

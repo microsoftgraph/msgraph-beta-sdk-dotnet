@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AppleDeploymentChannel
     {
         /// <summary>Send payload down over Device Channel.</summary>
@@ -12,5 +13,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Send payload down over User Channel.</summary>
         [EnumMember(Value = "userChannel")]
         UserChannel,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

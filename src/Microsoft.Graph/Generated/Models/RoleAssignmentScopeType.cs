@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Specifies the type of scope for a Role Assignment.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RoleAssignmentScopeType
     {
         /// <summary>Allow assignments to the specified ResourceScopes.</summary>
