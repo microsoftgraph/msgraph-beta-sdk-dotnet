@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Update behavior options for macOS software updates.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MacOSSoftwareUpdateBehavior
     {
         /// <summary>Not configured.</summary>

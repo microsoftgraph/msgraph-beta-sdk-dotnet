@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum FilteringPolicyAction
     #pragma warning restore CS1591
@@ -18,6 +19,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bypass")]
+        #pragma warning disable CS1591
+        Bypass,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alert")]
+        #pragma warning disable CS1591
+        Alert,
         #pragma warning restore CS1591
     }
 }

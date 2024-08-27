@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>BitLocker recovery password rotation type</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum BitLockerRecoveryPasswordRotationType
     {
         /// <summary>Not configured</summary>

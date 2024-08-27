@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Non-EAP methods for authentication.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum NonEapAuthenticationMethodForEapTtlsType
     {
         /// <summary>Unencrypted password (PAP).</summary>

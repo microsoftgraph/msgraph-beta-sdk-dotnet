@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Metered Connection Limit Settings.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MeteredConnectionLimitType
     {
         /// <summary>Unrestricted</summary>

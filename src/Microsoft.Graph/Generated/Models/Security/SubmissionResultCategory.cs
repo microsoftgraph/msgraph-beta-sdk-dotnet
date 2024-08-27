@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum SubmissionResultCategory
     #pragma warning restore CS1591
@@ -46,6 +47,78 @@ namespace Microsoft.Graph.Beta.Models.Security
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "beingAnalyzed")]
+        #pragma warning disable CS1591
+        BeingAnalyzed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "notSubmittedToMicrosoft")]
+        #pragma warning disable CS1591
+        NotSubmittedToMicrosoft,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "phishingSimulation")]
+        #pragma warning disable CS1591
+        PhishingSimulation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "allowedDueToOrganizationOverride")]
+        #pragma warning disable CS1591
+        AllowedDueToOrganizationOverride,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blockedDueToOrganizationOverride")]
+        #pragma warning disable CS1591
+        BlockedDueToOrganizationOverride,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "allowedDueToUserOverride")]
+        #pragma warning disable CS1591
+        AllowedDueToUserOverride,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blockedDueToUserOverride")]
+        #pragma warning disable CS1591
+        BlockedDueToUserOverride,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemNotfound")]
+        #pragma warning disable CS1591
+        ItemNotfound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "threatsFound")]
+        #pragma warning disable CS1591
+        ThreatsFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "noThreatsFound")]
+        #pragma warning disable CS1591
+        NoThreatsFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "domainImpersonation")]
+        #pragma warning disable CS1591
+        DomainImpersonation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "userImpersonation")]
+        #pragma warning disable CS1591
+        UserImpersonation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "brandImpersonation")]
+        #pragma warning disable CS1591
+        BrandImpersonation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "authenticationFailure")]
+        #pragma warning disable CS1591
+        AuthenticationFailure,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "spoofedBlocked")]
+        #pragma warning disable CS1591
+        SpoofedBlocked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "spoofedAllowed")]
+        #pragma warning disable CS1591
+        SpoofedAllowed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "reasonLostInTransit")]
+        #pragma warning disable CS1591
+        ReasonLostInTransit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bulk")]
+        #pragma warning disable CS1591
+        Bulk,
         #pragma warning restore CS1591
     }
 }

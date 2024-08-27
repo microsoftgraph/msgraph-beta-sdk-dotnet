@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     [Flags]
     #pragma warning disable CS1591
     public enum IncomingTokenType
@@ -31,6 +32,10 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "remoteDesktopToken")]
         #pragma warning disable CS1591
         RemoteDesktopToken = 32,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "refreshToken")]
+        #pragma warning disable CS1591
+        RefreshToken = 64,
         #pragma warning restore CS1591
     }
 }

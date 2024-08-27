@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values of the ConfigurationUsage list.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ConfigurationUsage
     {
         /// <summary>Disallowed.</summary>

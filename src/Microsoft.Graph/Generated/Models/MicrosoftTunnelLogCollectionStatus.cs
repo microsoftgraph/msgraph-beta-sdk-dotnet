@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Enum type that represent the status of log collection</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MicrosoftTunnelLogCollectionStatus
     {
         /// <summary>Indicates that the log collection is in progress</summary>

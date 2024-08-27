@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Indicates the type of content allowed to be cached by Apple&apos;s content caching service.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MacOSContentCachingType
     {
         /// <summary>Default. Both user iCloud data and non-iCloud data will be cached.</summary>

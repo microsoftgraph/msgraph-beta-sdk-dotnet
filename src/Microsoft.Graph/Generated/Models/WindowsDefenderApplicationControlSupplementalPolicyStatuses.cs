@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WindowsDefenderApplicationControlSupplementalPolicyStatuses
     {
         /// <summary>The status of the WindowsDefenderApplicationControl supplemental policy is not known.</summary>

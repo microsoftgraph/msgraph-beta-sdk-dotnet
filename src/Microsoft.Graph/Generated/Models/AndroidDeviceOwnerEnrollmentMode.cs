@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The enrollment mode for an enrollment profile.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AndroidDeviceOwnerEnrollmentMode
     {
         [EnumMember(Value = "corporateOwnedDedicatedDevice")]

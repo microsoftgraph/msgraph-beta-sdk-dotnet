@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The endpoint security policy type.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum EndpointSecurityConfigurationType
     {
         /// <summary>Unknown.</summary>
