@@ -3,11 +3,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.Beta.Models;
     using Microsoft.Kiota.Abstractions;
+    using Microsoft.Kiota.Abstractions.Serialization;
     using Microsoft.Kiota.Serialization.Json;
     using System;
     using System.IO;
     using System.Net.Http;
     using System.Text;
+    using System.Threading;
     using System.Threading.Tasks;
     using Xunit;
     using System.Collections.Generic;
@@ -357,9 +359,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 {
                     // Deserialize into OneNotePage object.
                     var content = await response.Content.ReadAsStreamAsync();
-                    var parseNodeFactory = new JsonParseNodeFactory();
-                    var parseNode = parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, content);
-                    testPage = parseNode.GetObjectValue<OnenotePage>(OnenotePage.CreateFromDiscriminatorValue);
+                    testPage = await KiotaJsonSerializer.DeserializeAsync<OnenotePage>(content, CancellationToken.None);
 
                     Assert.NotNull(testPage);
                     Assert.Contains(testPage.Title, title);
@@ -413,9 +413,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Deserialize into OneNotePage object.
                 // Send the request and get the response.
                 var content = await graphClient.RequestAdapter.SendPrimitiveAsync<Stream>(requestInformation);
-                var parseNodeFactory = new JsonParseNodeFactory();
-                var parseNode = parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, content);
-                testPage = parseNode.GetObjectValue<OnenotePage>(OnenotePage.CreateFromDiscriminatorValue);
+                testPage = await KiotaJsonSerializer.DeserializeAsync<OnenotePage>(content, CancellationToken.None);
 
                 Assert.NotNull(testPage);
                 Assert.Contains(testPage.Title, title);
