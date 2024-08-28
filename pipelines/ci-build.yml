@@ -64,6 +64,15 @@ extends:
           inputs:
             command: restore
             projects: '**/*.csproj'
+        - task: PowerShell@2
+          displayName: 'Validate updated version'
+          condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
+          inputs:
+            targetType: filePath
+            filePath: '$(Build.SourcesDirectory)\scripts\ValidateUpdatedNugetVersion.ps1'
+            arguments: '-packageName "Microsoft.Graph.Beta" -projectPath "$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"'
+            pwsh: true
+          enabled: true
         - powershell: |
             # This allows us to not have to checkin .csproj files with DelaySign and SignAssembly set to to true. If the flag is set,
             # then project is not debuggable with SignAssembly set to true.
@@ -110,15 +119,6 @@ extends:
           inputs:
             command: 'test'
             arguments: '--configuration $(BuildConfiguration) --no-build --verbosity normal'
-        - task: PowerShell@2
-          displayName: 'Validate updated version'
-          condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
-          inputs:
-            targetType: filePath
-            filePath: '$(Build.SourcesDirectory)\scripts\ValidateUpdatedNugetVersion.ps1'
-            arguments: '-packageName "Microsoft.Graph.Beta" -projectPath "$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"'
-            pwsh: true
-          enabled: true
         - task: EsrpCodeSigning@5
           displayName: 'ESRP DLL Strong Name (Microsoft.Graph.Beta)'
           inputs:
