@@ -28,15 +28,11 @@ Param(
 
 [xml]$xmlDoc = Get-Content $projectPath
 
-# Assumption: VersionPrefix is set in the first property group.
-$versionPrefixString = $xmlDoc.Project.PropertyGroup[0].VersionPrefix
-if($xmlDoc.Project.PropertyGroup[0].VersionSuffix){
-    $versionPrefixString = $versionPrefixString + "-"  + $xmlDoc.Project.PropertyGroup[0].VersionSuffix
-}
-
+# Assumption: Version is set in the first property group.
+$versionString = $xmlDoc.Project.PropertyGroup[0].Version
 
 # System.Version, get the version prefix.
-$currentProjectVersion = [System.Management.Automation.SemanticVersion]"$versionPrefixString"
+$currentProjectVersion = [System.Management.Automation.SemanticVersion]"$versionString"
 
 # API is case-sensitive
 $packageName = $packageName.ToLower()
