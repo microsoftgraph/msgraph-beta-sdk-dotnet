@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android Device Owner Location Mode Type</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AndroidDeviceOwnerLocationMode
     {
         /// <summary>No restrictions on the location setting and no specific behavior is set or enforced. This is the default</summary>

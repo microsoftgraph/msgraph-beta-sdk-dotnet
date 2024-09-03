@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Wi-Fi Security Types for Android.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AndroidWiFiSecurityType
     {
         /// <summary>Open (No Authentication).</summary>

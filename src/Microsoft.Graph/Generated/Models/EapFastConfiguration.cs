@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Available settings for EAP-FAST Configuration.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum EapFastConfiguration
     {
         /// <summary>Use EAP-FAST without Protected Access Credential (PAC).</summary>

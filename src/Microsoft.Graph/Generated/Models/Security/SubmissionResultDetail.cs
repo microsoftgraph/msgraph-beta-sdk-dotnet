@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum SubmissionResultDetail
     #pragma warning restore CS1591
@@ -222,6 +223,74 @@ namespace Microsoft.Graph.Beta.Models.Security
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "willNotifyOnceDone")]
+        #pragma warning disable CS1591
+        WillNotifyOnceDone,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "checkUserReportedSettings")]
+        #pragma warning disable CS1591
+        CheckUserReportedSettings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "partOfEducationCampaign")]
+        #pragma warning disable CS1591
+        PartOfEducationCampaign,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "allowedByAdvancedDelivery")]
+        #pragma warning disable CS1591
+        AllowedByAdvancedDelivery,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "allowedByEnhancedFiltering")]
+        #pragma warning disable CS1591
+        AllowedByEnhancedFiltering,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemDeleted")]
+        #pragma warning disable CS1591
+        ItemDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemFoundClean")]
+        #pragma warning disable CS1591
+        ItemFoundClean,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemFoundMalicious")]
+        #pragma warning disable CS1591
+        ItemFoundMalicious,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unableToMakeDecision")]
+        #pragma warning disable CS1591
+        UnableToMakeDecision,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "domainResembledYourOrganization")]
+        #pragma warning disable CS1591
+        DomainResembledYourOrganization,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "endUserBeingImpersonated")]
+        #pragma warning disable CS1591
+        EndUserBeingImpersonated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "associatedWithBrand")]
+        #pragma warning disable CS1591
+        AssociatedWithBrand,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "senderFailedAuthentication")]
+        #pragma warning disable CS1591
+        SenderFailedAuthentication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "endUserBeingSpoofed")]
+        #pragma warning disable CS1591
+        EndUserBeingSpoofed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemFoundBulk")]
+        #pragma warning disable CS1591
+        ItemFoundBulk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemNotReceivedByService")]
+        #pragma warning disable CS1591
+        ItemNotReceivedByService,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "itemFoundSpam")]
+        #pragma warning disable CS1591
+        ItemFoundSpam,
         #pragma warning restore CS1591
     }
 }
