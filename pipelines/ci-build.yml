@@ -304,12 +304,12 @@ extends:
                   inputs:
                     gitHubConnection: 'Kiota_Release'
                     target: $(Build.SourceVersion)
+                    repositoryName: '$(Build.Repository.Name)'
                     action: edit
-                    tagSource: userSpecifiedTag
-                    tag: 'v$(VERSION_STRING)'
-                    title: 'v$(VERSION_STRING)'
+                    tag: $(VERSION_STRING)
+                    addChangeLog: false
+                    assetUploadMode: replace
                     assets: |
                       !**/**
                       $(Pipeline.Workspace)/Microsoft.Graph.Beta.*.*nupkg
-                    addChangeLog: false
 
