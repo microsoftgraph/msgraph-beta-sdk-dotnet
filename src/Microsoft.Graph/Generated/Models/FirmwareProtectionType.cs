@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can&apos;t get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values &quot;systemGuardSecureLaunch&quot; or &quot;firmwareAttackSurfaceReduction&quot; or &quot;disabled&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum FirmwareProtectionType
     {
         /// <summary>Indicates that the device is not a Windows 11 device.</summary>

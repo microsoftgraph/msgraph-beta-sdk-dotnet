@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Determines which content caches other content caches will peer with.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MacOSContentCachingPeerPolicy
     {
         /// <summary>Defaults to peers in local network.</summary>

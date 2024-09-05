@@ -4,28 +4,32 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Platform Type</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum PlatformType
     {
-        /// <summary>None Platform Type</summary>
+        /// <summary>None</summary>
         [EnumMember(Value = "none")]
         None,
-        /// <summary>Android Platform Type</summary>
+        /// <summary>Android</summary>
         [EnumMember(Value = "android")]
         Android,
-        /// <summary>Android Enterprise Platform Type</summary>
-        [EnumMember(Value = "androidEnterprise")]
-        AndroidEnterprise,
-        /// <summary>iOS Platform Type</summary>
+        /// <summary>iOS</summary>
         [EnumMember(Value = "iOS")]
         IOS,
-        /// <summary>MacOS Platform Type</summary>
+        /// <summary>MacOS</summary>
         [EnumMember(Value = "macOS")]
         MacOS,
         /// <summary>Windows 10X Platform Type</summary>
         [EnumMember(Value = "windows10X")]
         Windows10X,
-        /// <summary>Windows 10 Platform Type</summary>
+        /// <summary>Windows 10</summary>
         [EnumMember(Value = "windows10")]
         Windows10,
+        /// <summary>Linux</summary>
+        [EnumMember(Value = "linux")]
+        Linux,
+        /// <summary>UnknownFutureValue</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Locations which can be used to bring data into organization documents</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ManagedAppDataIngestionLocation
     {
         /// <summary>OneDrive for business</summary>

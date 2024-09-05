@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Authoring source of a policy</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum SecurityBaselinePolicySourceType
     {
         [EnumMember(Value = "deviceConfiguration")]

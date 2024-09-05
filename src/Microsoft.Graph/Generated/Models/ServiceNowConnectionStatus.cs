@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Status of ServiceNow Connection</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ServiceNowConnectionStatus
     {
         /// <summary>Tenant has disabled the connection</summary>

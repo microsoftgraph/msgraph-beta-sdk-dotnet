@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values for LocalSecurityOptionsMinimumSessionSecurity</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum LocalSecurityOptionsMinimumSessionSecurity
     {
         /// <summary>Send LM &amp; NTLM responses</summary>

@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum CloudPcReportName
     #pragma warning restore CS1591
@@ -50,6 +51,10 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "inaccessibleCloudPcReports")]
         #pragma warning disable CS1591
         InaccessibleCloudPcReports,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "actionStatusReport")]
+        #pragma warning disable CS1591
+        ActionStatusReport,
         #pragma warning restore CS1591
         [EnumMember(Value = "rawRemoteConnectionReports")]
         #pragma warning disable CS1591

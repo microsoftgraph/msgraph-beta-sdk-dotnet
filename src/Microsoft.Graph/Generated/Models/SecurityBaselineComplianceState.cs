@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Security Baseline Compliance State</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum SecurityBaselineComplianceState
     {
         /// <summary>Unknown state</summary>

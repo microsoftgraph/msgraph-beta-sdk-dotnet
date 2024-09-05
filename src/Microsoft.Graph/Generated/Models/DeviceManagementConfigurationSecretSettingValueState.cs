@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>type tracking the encryption state of a secret setting value</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceManagementConfigurationSecretSettingValueState
     {
         /// <summary>default invalid value</summary>

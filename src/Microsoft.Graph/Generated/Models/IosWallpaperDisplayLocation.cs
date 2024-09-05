@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum type for wallpaper display location specifier.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum IosWallpaperDisplayLocation
     {
         /// <summary>No location specified for wallpaper display.</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android Device Owner Kiosk Mode managed home screen orientation.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AndroidDeviceOwnerKioskModeScreenOrientation
     {
         /// <summary>Not configured; this value is ignored.</summary>

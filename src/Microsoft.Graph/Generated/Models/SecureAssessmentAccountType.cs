@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum SecureAssessmentAccountType
     {
         /// <summary>Indicates an Azure AD account in format of AzureAD\username@tenant.com.</summary>

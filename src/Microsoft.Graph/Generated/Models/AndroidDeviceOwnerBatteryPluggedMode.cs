@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android Device Owner possible values for states of the device&apos;s plugged-in power modes.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AndroidDeviceOwnerBatteryPluggedMode
     {
         /// <summary>Not configured; this value is ignored.</summary>

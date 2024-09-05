@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Determines which clients a content cache will serve.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MacOSContentCachingClientPolicy
     {
         /// <summary>Defaults to clients in local network.</summary>
