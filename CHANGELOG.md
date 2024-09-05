@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does NOT adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and packages shipped from the beta service library will always be in `preview` as changes to the API are for non production use and commonly ship breaking changes.
 
 
+## [5.79.0-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/v5.78.1-preview...5.79.0-preview) (2024-09-05)
+
+
+### Features
+
+* **generation:** update request builders and models ([7c5cfba](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/7c5cfba8e32d7e89ccdc507192ab5eb01c96e313))
+
+
+### Bug Fixes
+
+* updated the UploadSession model to implement IUploadSession from the core package. ([540a4b4](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/commit/540a4b4e0eb50dcf97dd8470071dbcddbaa6e76b))
+
 ## [5.78.1-preview](https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/compare/5.78.0-preview...5.78.1-preview) (2024-08-27)
 
 
