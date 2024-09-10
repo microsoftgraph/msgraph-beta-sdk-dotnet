@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device compliance policy group assignment.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceCompliancePolicyGroupAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The navigation link to the  device compliance polic targeted.</summary>

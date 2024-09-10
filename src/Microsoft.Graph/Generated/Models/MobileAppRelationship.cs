@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes a relationship between two mobile apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppRelationship : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The target mobile app&apos;s display name. This property is read-only.</summary>

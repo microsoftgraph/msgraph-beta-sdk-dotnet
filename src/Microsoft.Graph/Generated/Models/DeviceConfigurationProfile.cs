@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The listing service profile entity contains the meta data of an Intune configuration profile 
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceConfigurationProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Account Id.</summary>

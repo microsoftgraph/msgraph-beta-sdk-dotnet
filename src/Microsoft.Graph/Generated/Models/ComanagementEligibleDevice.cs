@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Co-Management eligibility state
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ComanagementEligibleDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Device registration status.</summary>

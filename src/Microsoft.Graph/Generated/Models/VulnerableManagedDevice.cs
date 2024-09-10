@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity represents a device associated with a task.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class VulnerableManagedDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The device name.</summary>

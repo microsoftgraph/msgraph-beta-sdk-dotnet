@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A device app management task.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceAppManagementTask : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The name or email of the admin this task is assigned to.</summary>

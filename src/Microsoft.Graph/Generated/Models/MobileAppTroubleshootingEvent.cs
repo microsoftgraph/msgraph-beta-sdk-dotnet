@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Event representing a users device application install status.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppTroubleshootingEvent : global::Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent, IParsable
     {
         /// <summary>Intune application identifier.</summary>
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applicationId", value); }
         }
 #endif
-        /// <summary>The collection property of AppLogUploadRequest.</summary>
+        /// <summary>Indicates collection of App Log Upload Request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AppLogCollectionRequest>? AppLogCollectionRequests

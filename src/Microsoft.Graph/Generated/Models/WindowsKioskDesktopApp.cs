@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The base class for a type of apps
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsKioskDesktopApp : global::Microsoft.Graph.Beta.Models.WindowsKioskAppBase, IParsable
     {
         /// <summary>Define the DesktopApplicationID of the app</summary>

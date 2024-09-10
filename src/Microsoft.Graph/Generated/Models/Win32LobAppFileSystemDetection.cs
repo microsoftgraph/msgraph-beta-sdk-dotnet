@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains file or folder path to detect a Win32 App
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Win32LobAppFileSystemDetection : global::Microsoft.Graph.Beta.Models.Win32LobAppDetection, IParsable
     {
         /// <summary>A value indicating whether this file or folder is for checking 32-bit app on 64-bit system</summary>

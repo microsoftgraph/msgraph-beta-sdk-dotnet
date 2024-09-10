@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RolePermission : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Allowed Actions - Deprecated</summary>

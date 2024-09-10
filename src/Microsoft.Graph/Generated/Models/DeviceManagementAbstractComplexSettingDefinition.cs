@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing the defintion for an abstract complex setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementAbstractComplexSettingDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition, IParsable
     {
         /// <summary>List of definition IDs for all possible implementations of this abstract complex setting</summary>

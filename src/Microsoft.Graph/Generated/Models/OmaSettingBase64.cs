@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// OMA Settings Base64 definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OmaSettingBase64 : global::Microsoft.Graph.Beta.Models.OmaSetting, IParsable
     {
         /// <summary>File name associated with the Value property (.cer</summary>

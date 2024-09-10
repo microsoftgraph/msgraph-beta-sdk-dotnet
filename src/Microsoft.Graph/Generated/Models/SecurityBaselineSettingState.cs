@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline compliance state of a setting for a device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecurityBaselineSettingState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The policies that contribute to this setting instance</summary>

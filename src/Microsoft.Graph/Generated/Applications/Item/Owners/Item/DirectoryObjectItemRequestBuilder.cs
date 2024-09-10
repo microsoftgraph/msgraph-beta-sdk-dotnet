@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Owners.Item
     /// <summary>
     /// Builds and executes requests for operations under \applications\{application-id}\owners\{directoryObject-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to endpoint.</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Users.Item.GetLoggedOnManagedDevices
 {
     [Obsolete("This class is obsolete. Use GetLoggedOnManagedDevicesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetLoggedOnManagedDevicesResponse : global::Microsoft.Graph.Beta.Users.Item.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesGetResponse, IParsable
     #pragma warning restore CS1591

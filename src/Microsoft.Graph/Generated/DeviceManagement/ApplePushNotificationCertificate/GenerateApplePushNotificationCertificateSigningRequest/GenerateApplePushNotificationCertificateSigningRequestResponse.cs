@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest
 {
     [Obsolete("This class is obsolete. Use GenerateApplePushNotificationCertificateSigningRequestPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GenerateApplePushNotificationCertificateSigningRequestResponse : global::Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest.GenerateApplePushNotificationCertificateSigningRequestPostResponse, IParsable
     #pragma warning restore CS1591

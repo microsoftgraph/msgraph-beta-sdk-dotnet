@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Choice Setting Value Constant Default Template
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Option Children</summary>

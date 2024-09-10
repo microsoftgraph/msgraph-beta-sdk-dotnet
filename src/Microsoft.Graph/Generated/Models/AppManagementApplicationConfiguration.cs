@@ -7,11 +7,27 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class AppManagementApplicationConfiguration : global::Microsoft.Graph.Beta.Models.AppManagementConfiguration, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The identifierUris property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration? IdentifierUris
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration?>("identifierUris"); }
+            set { BackingStore?.Set("identifierUris", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration IdentifierUris
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>("identifierUris"); }
+            set { BackingStore?.Set("identifierUris", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.AppManagementApplicationConfiguration"/> and sets the default values.
         /// </summary>
@@ -37,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "identifierUris", n => { IdentifierUris = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>(global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -47,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration>("identifierUris", IdentifierUris);
         }
     }
 }

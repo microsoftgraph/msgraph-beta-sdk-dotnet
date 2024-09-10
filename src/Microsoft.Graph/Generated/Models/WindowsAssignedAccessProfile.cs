@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Assigned Access profile for Windows.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsAssignedAccessProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu.</summary>

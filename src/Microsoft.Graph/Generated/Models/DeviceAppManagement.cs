@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity that acts as a container for all device app management functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceAppManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Android managed app policies.</summary>
@@ -293,6 +293,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #endif
+        /// <summary>List mobileAppRelationship objects for mobile applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>? MobileAppRelationships
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>?>("mobileAppRelationships"); }
+            set { BackingStore?.Set("mobileAppRelationships", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MobileAppRelationship> MobileAppRelationships
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>>("mobileAppRelationships"); }
+            set { BackingStore?.Set("mobileAppRelationships", value); }
+        }
+#endif
         /// <summary>The mobile apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -507,6 +523,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "mobileAppCatalogPackages", n => { MobileAppCatalogPackages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>(global::Microsoft.Graph.Beta.Models.MobileAppCatalogPackage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileAppCategories", n => { MobileAppCategories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppCategory>(global::Microsoft.Graph.Beta.Models.MobileAppCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>(global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mobileAppRelationships", n => { MobileAppRelationships = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>(global::Microsoft.Graph.Beta.Models.MobileAppRelationship.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileApp>(global::Microsoft.Graph.Beta.Models.MobileApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policySets", n => { PolicySets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicySet>(global::Microsoft.Graph.Beta.Models.PolicySet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "symantecCodeSigningCertificate", n => { SymantecCodeSigningCertificate = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>(global::Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate.CreateFromDiscriminatorValue); } },
@@ -548,6 +565,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppCatalogPackage>("mobileAppCatalogPackages", MobileAppCatalogPackages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppCategory>("mobileAppCategories", MobileAppCategories);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileAppRelationship>("mobileAppRelationships", MobileAppRelationships);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MobileApp>("mobileApps", MobileApps);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PolicySet>("policySets", PolicySets);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate", SymantecCodeSigningCertificate);

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Data type for a configuration item inside an Android for Work application&apos;s custom configuration schema</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AndroidForWorkAppConfigurationSchemaItemDataType
     {
         [EnumMember(Value = "bool")]

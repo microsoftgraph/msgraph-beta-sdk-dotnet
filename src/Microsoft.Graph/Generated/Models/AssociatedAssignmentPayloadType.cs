@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>This enum represents associated assignment payload type</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AssociatedAssignmentPayloadType
     {
         /// <summary>Invalid payload type</summary>
@@ -43,5 +43,8 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates that this filter is associated with a configuration or compliance policy on Device Configuration v2 Infrastructure payload type</summary>
         [EnumMember(Value = "deviceManagmentConfigurationAndCompliancePolicy")]
         DeviceManagmentConfigurationAndCompliancePolicy,
+        /// <summary>Indicates that this filter is associated with Bios Configurations And Other Settings payload type</summary>
+        [EnumMember(Value = "hardwareConfiguration")]
+        HardwareConfiguration,
     }
 }

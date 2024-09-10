@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public enum AuditLogRecordType
     #pragma warning restore CS1591
@@ -1015,6 +1015,146 @@ namespace Microsoft.Graph.Beta.Models.Security
         [EnumMember(Value = "CdpColdCrawlStatus")]
         #pragma warning disable CS1591
         CdpColdCrawlStatus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PowerPlatformAdministratorActivity")]
+        #pragma warning disable CS1591
+        PowerPlatformAdministratorActivity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Windows365CustomerLockbox")]
+        #pragma warning disable CS1591
+        Windows365CustomerLockbox,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CdpResourceScopeChangeEvent")]
+        #pragma warning disable CS1591
+        CdpResourceScopeChangeEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceCCExchangeExecutionResult")]
+        #pragma warning disable CS1591
+        ComplianceCCExchangeExecutionResult,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CdpOcrCostEstimatorRecord")]
+        #pragma warning disable CS1591
+        CdpOcrCostEstimatorRecord,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CopilotInteraction")]
+        #pragma warning disable CS1591
+        CopilotInteraction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CdpOcrBillingRecord")]
+        #pragma warning disable CS1591
+        CdpOcrBillingRecord,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceDLPApplications")]
+        #pragma warning disable CS1591
+        ComplianceDLPApplications,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UAMOperation")]
+        #pragma warning disable CS1591
+        UAMOperation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaLearning")]
+        #pragma warning disable CS1591
+        VivaLearning,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaLearningAdmin")]
+        #pragma warning disable CS1591
+        VivaLearningAdmin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PurviewPolicyOperation")]
+        #pragma warning disable CS1591
+        PurviewPolicyOperation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PurviewMetadataPolicyOperation")]
+        #pragma warning disable CS1591
+        PurviewMetadataPolicyOperation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PeopleAdminSettings")]
+        #pragma warning disable CS1591
+        PeopleAdminSettings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CdpComplianceDLPExchangeClassification")]
+        #pragma warning disable CS1591
+        CdpComplianceDLPExchangeClassification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CdpComplianceDLPSharePointClassification")]
+        #pragma warning disable CS1591
+        CdpComplianceDLPSharePointClassification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FilteringBulkSenderInsightData")]
+        #pragma warning disable CS1591
+        FilteringBulkSenderInsightData,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FilteringBulkThresholdInsightData")]
+        #pragma warning disable CS1591
+        FilteringBulkThresholdInsightData,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PrivacyOpenAccess")]
+        #pragma warning disable CS1591
+        PrivacyOpenAccess,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OWAAuth")]
+        #pragma warning disable CS1591
+        OWAAuth,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceDLPApplicationsClassification")]
+        #pragma warning disable CS1591
+        ComplianceDLPApplicationsClassification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SharePointESignature")]
+        #pragma warning disable CS1591
+        SharePointESignature,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Dynamics365BusinessCentral")]
+        #pragma warning disable CS1591
+        Dynamics365BusinessCentral,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MeshWorlds")]
+        #pragma warning disable CS1591
+        MeshWorlds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaPulseResponse")]
+        #pragma warning disable CS1591
+        VivaPulseResponse,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaPulseOrganizer")]
+        #pragma warning disable CS1591
+        VivaPulseOrganizer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaPulseAdmin")]
+        #pragma warning disable CS1591
+        VivaPulseAdmin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaPulseReport")]
+        #pragma warning disable CS1591
+        VivaPulseReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AIAppInteraction")]
+        #pragma warning disable CS1591
+        AIAppInteraction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceDLMExchange")]
+        #pragma warning disable CS1591
+        ComplianceDLMExchange,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceDLMSharePoint")]
+        #pragma warning disable CS1591
+        ComplianceDLMSharePoint,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ProjectForTheWebAssignedToMeSettings")]
+        #pragma warning disable CS1591
+        ProjectForTheWebAssignedToMeSettings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CPSOperation")]
+        #pragma warning disable CS1591
+        CPSOperation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceDLPExchangeDiscovery")]
+        #pragma warning disable CS1591
+        ComplianceDLPExchangeDiscovery,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PurviewMCRecommendation")]
+        #pragma warning disable CS1591
+        PurviewMCRecommendation,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591

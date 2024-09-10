@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class Alert : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>The severity property</summary>
-        public global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity? Severity
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity? Severity
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity?>("severity"); }
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The vendorName property</summary>
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>(global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy.CreateFromDiscriminatorValue); } },
                 { "relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>(global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity>(); } },
                 { "vendorName", n => { VendorName = n.GetStringValue(); } },
             };
         }
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy>("policy", Policy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource>("relatedResources", RelatedResources);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ThreatSeverity>("severity", Severity);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertSeverity>("severity", Severity);
             writer.WriteStringValue("vendorName", VendorName);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks
 {
     [Obsolete("This class is obsolete. Use HasPayloadLinksPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class HasPayloadLinksResponse : global::Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks.HasPayloadLinksPostResponse, IParsable
     #pragma warning restore CS1591

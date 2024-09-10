@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ActiveDirectoryWindowsAutopilotDeploymentProfile : global::Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile, IParsable
     {
         /// <summary>Configuration to join Active Directory domain</summary>

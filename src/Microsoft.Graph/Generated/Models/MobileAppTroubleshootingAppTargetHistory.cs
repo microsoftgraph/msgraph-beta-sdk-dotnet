@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// History Item contained in the Mobile App Troubleshooting Event.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppTroubleshootingAppTargetHistory : global::Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem, IParsable
     {
         /// <summary>Error code for the failure, empty if no failure.</summary>

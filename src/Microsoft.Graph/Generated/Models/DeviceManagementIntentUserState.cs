@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents user state for an intent
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementIntentUserState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Count of Devices that belongs to a user for an intent</summary>

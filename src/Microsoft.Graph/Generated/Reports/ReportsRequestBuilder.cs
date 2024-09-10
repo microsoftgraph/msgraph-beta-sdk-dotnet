@@ -44,6 +44,9 @@ using Microsoft.Graph.Beta.Reports.GetMailboxUsageDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageMailboxCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetMailboxUsageStorageWithPeriod;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod;
+using Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserCounts;
 using Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail;
@@ -160,7 +163,7 @@ namespace Microsoft.Graph.Beta.Reports
     /// <summary>
     /// Provides operations to manage the reportRoot singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
@@ -635,6 +638,36 @@ namespace Microsoft.Graph.Beta.Reports
         {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
             return new global::Microsoft.Graph.Beta.Reports.GetMailboxUsageStorageWithPeriod.GetMailboxUsageStorageWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder"/></returns>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder GetMicrosoft365CopilotUsageUserDetailWithPeriod(string period)
+        {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWithPeriod.GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder"/></returns>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder GetMicrosoft365CopilotUserCountSummaryWithPeriod(string period)
+        {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWithPeriod.GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod.GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder"/></returns>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod.GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder GetMicrosoft365CopilotUserCountTrendWithPeriod(string period)
+        {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new global::Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithPeriod.GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserCounts method.
@@ -1600,7 +1633,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// <summary>
         /// Get reports
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -1628,7 +1661,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>
         {
         }
@@ -1636,7 +1669,7 @@ namespace Microsoft.Graph.Beta.Reports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

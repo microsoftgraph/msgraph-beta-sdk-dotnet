@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a Kerberos-type Single Sign-On extension profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class KerberosSingleSignOnExtension : global::Microsoft.Graph.Beta.Models.SingleSignOnExtension, IParsable
     {
         /// <summary>Gets or sets the Active Directory site.</summary>

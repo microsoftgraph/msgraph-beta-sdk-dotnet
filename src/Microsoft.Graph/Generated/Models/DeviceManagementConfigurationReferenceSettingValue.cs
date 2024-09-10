@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Model for ReferenceSettingValue
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementConfigurationReferenceSettingValue : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValue, IParsable
     {
         /// <summary>A note that admin can use to put some contextual information</summary>

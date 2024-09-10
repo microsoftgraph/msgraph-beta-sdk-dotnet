@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod
 {
     [Obsolete("This class is obsolete. Use GetOffice365ActiveUserCountsWithPeriodGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetOffice365ActiveUserCountsWithPeriodResponse : global::Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod.GetOffice365ActiveUserCountsWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591

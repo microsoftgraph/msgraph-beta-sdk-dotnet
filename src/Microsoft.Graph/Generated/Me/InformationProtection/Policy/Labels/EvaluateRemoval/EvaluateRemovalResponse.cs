@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateRemoval
 {
     [Obsolete("This class is obsolete. Use EvaluateRemovalPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class EvaluateRemovalResponse : global::Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateRemoval.EvaluateRemovalPostResponse, IParsable
     #pragma warning restore CS1591

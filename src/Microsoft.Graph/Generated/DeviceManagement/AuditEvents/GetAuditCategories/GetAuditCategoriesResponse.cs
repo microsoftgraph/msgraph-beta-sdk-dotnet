@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories
 {
     [Obsolete("This class is obsolete. Use GetAuditCategoriesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetAuditCategoriesResponse : global::Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline template of the account
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecurityBaselineTemplate : global::Microsoft.Graph.Beta.Models.DeviceManagementTemplate, IParsable
     {
         /// <summary>The security baseline per category device state summary</summary>

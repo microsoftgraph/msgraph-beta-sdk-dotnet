@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsInformationProtectionWipeAction : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Last checkin time of the device that was targeted by this wipe action.</summary>

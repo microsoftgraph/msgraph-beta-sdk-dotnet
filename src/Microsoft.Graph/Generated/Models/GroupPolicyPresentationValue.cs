@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The base presentation value entity that stores the value for a single group policy presentation.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GroupPolicyPresentationValue : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date and time the object was created.</summary>

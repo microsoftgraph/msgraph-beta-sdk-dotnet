@@ -10,9 +10,25 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign an Win32 LOB mobile app to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Win32LobAppAssignmentSettings : global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
+        /// <summary>The auto-update settings to apply for this app assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings? AutoUpdateSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings?>("autoUpdateSettings"); }
+            set { BackingStore?.Set("autoUpdateSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings AutoUpdateSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings>("autoUpdateSettings"); }
+            set { BackingStore?.Set("autoUpdateSettings", value); }
+        }
+#endif
         /// <summary>Contains value for delivery optimization priority.</summary>
         public global::Microsoft.Graph.Beta.Models.Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority
         {
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "autoUpdateSettings", n => { AutoUpdateSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings>(global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings.CreateFromDiscriminatorValue); } },
                 { "deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppDeliveryOptimizationPriority>(); } },
                 { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppInstallTimeSettings>(global::Microsoft.Graph.Beta.Models.MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
                 { "notifications", n => { Notifications = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppNotification>(); } },
@@ -101,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Win32LobAppAutoUpdateSettings>("autoUpdateSettings", AutoUpdateSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppDeliveryOptimizationPriority>("deliveryOptimizationPriority", DeliveryOptimizationPriority);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.MobileAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Win32LobAppNotification>("notifications", Notifications);

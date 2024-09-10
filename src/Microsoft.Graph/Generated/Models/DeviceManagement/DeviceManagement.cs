@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
@@ -1161,7 +1161,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("hardwarePasswordDetails", value); }
         }
 #endif
-        /// <summary>Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated</summary>
+        /// <summary>Intune will provide customer the ability to configure BIOS configuration settings on the enrolled Windows 10 and Windows 11 Microsoft Entra joined devices. Starting from June, 2024, customers should start using hardwarePasswordDetail resource type - Microsoft Graph beta | Microsoft Learn. HardwarePasswordInfo will be marked as deprecated with Intune Release 2409</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.HardwarePasswordInfo>? HardwarePasswordInfo

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Android Device Owner possible values for states of the device&apos;s app auto update policy.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AndroidDeviceOwnerAppAutoUpdatePolicyType
     {
         /// <summary>Not configured; this value is ignored.</summary>

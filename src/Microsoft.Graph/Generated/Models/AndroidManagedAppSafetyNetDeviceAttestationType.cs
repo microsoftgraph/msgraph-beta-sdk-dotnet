@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An admin enforced Android SafetyNet Device Attestation requirement on a managed app.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AndroidManagedAppSafetyNetDeviceAttestationType
     {
         /// <summary>no requirement set</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes
 {
     [Obsolete("This class is obsolete. Use FindByMethodModeWithAuthenticationMethodModesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class FindByMethodModeWithAuthenticationMethodModesResponse : global::Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse, IParsable
     #pragma warning restore CS1591

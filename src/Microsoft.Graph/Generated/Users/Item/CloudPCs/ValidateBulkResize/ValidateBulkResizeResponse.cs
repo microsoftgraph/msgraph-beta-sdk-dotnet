@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.ValidateBulkResize
 {
     [Obsolete("This class is obsolete. Use ValidateBulkResizePostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class ValidateBulkResizeResponse : global::Microsoft.Graph.Beta.Users.Item.CloudPCs.ValidateBulkResize.ValidateBulkResizePostResponse, IParsable
     #pragma warning restore CS1591

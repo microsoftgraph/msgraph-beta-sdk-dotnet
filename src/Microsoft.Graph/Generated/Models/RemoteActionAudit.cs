@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Report of remote actions initiated on the devices belonging to a certain tenant.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RemoteActionAudit : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Remote actions Intune supports.</summary>
@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("bulkDeviceActionId", value); }
         }
 #endif
+        /// <summary>Enum type used for DeviceActionCategory</summary>
+        public global::Microsoft.Graph.Beta.Models.DeviceActionCategory? DeviceActionCategory
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceActionCategory?>("deviceActionCategory"); }
+            set { BackingStore?.Set("deviceActionCategory", value); }
+        }
         /// <summary>Intune device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +170,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "action", n => { Action = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RemoteAction>(); } },
                 { "actionState", n => { ActionState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.ActionState>(); } },
                 { "bulkDeviceActionId", n => { BulkDeviceActionId = n.GetStringValue(); } },
+                { "deviceActionCategory", n => { DeviceActionCategory = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.DeviceActionCategory>(); } },
                 { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
                 { "deviceIMEI", n => { DeviceIMEI = n.GetStringValue(); } },
                 { "deviceOwnerUserPrincipalName", n => { DeviceOwnerUserPrincipalName = n.GetStringValue(); } },
@@ -184,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RemoteAction>("action", Action);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.ActionState>("actionState", ActionState);
             writer.WriteStringValue("bulkDeviceActionId", BulkDeviceActionId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.DeviceActionCategory>("deviceActionCategory", DeviceActionCategory);
             writer.WriteStringValue("deviceDisplayName", DeviceDisplayName);
             writer.WriteStringValue("deviceIMEI", DeviceIMEI);
             writer.WriteStringValue("deviceOwnerUserPrincipalName", DeviceOwnerUserPrincipalName);

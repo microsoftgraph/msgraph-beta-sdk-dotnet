@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetGroupPolicySettingsDeviceSettingsReportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -139,6 +139,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDe
             get { return BackingStore?.Get<int?>("skip"); }
             set { BackingStore?.Set("skip", value); }
         }
+        /// <summary>The skiptoken property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Skiptoken
+        {
+            get { return BackingStore?.Get<string?>("skiptoken"); }
+            set { BackingStore?.Set("skiptoken", value); }
+        }
+#nullable restore
+#else
+        public string Skiptoken
+        {
+            get { return BackingStore?.Get<string>("skiptoken"); }
+            set { BackingStore?.Set("skiptoken", value); }
+        }
+#endif
         /// <summary>The top property</summary>
         public int? Top
         {
@@ -179,6 +195,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDe
                 { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "skip", n => { Skip = n.GetIntValue(); } },
+                { "skiptoken", n => { Skiptoken = n.GetStringValue(); } },
                 { "top", n => { Top = n.GetIntValue(); } },
             };
         }
@@ -197,6 +214,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDe
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteIntValue("skip", Skip);
+            writer.WriteStringValue("skiptoken", Skiptoken);
             writer.WriteIntValue("top", Top);
             writer.WriteAdditionalData(AdditionalData);
         }

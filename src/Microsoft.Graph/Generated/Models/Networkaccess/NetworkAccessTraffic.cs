@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -165,6 +165,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("destinationWebCategory"); }
             set { BackingStore?.Set("destinationWebCategory", value); }
+        }
+#endif
+        /// <summary>The device property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.Device? Device
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Device?>("device"); }
+            set { BackingStore?.Set("device", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.Device Device
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Device>("device"); }
+            set { BackingStore?.Set("device", value); }
         }
 #endif
         /// <summary>Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
@@ -513,6 +529,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
+        /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.User? User
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.User?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.User User
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.User>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#endif
         /// <summary>Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -598,6 +630,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "destinationPort", n => { DestinationPort = n.GetIntValue(); } },
                 { "destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
                 { "destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>(global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Device>(global::Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
                 { "deviceCategory", n => { DeviceCategory = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory>(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
@@ -624,6 +657,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "trafficType", n => { TrafficType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>(); } },
                 { "transactionId", n => { TransactionId = n.GetStringValue(); } },
                 { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
+                { "user", n => { User = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.User>(global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "vendorNames", n => { VendorNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -647,6 +681,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteIntValue("destinationPort", DestinationPort);
             writer.WriteStringValue("destinationUrl", DestinationUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("destinationWebCategory", DestinationWebCategory);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Device>("device", Device);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceOperatingSystem", DeviceOperatingSystem);
@@ -673,6 +708,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>("trafficType", TrafficType);
             writer.WriteStringValue("transactionId", TransactionId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("transportProtocol", TransportProtocol);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.User>("user", User);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteCollectionOfPrimitiveValues<string>("vendorNames", VendorNames);

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows 8.1 Phone and Mobile PFX Import certificate profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsPhone81ImportedPFXCertificateProfile : global::Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase, IParsable
     {
         /// <summary>PFX Import Options.</summary>

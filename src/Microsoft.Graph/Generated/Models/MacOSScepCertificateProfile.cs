@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Mac OS SCEP certificate profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MacOSScepCertificateProfile : global::Microsoft.Graph.Beta.Models.MacOSCertificateProfileBase, IParsable
     {
         /// <summary>AllowAllAppsAccess setting</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementDomainJoinConnector : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The connector display name.</summary>

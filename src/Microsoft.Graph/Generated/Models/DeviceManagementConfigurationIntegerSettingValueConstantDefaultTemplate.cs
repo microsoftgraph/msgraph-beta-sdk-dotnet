@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Integer Setting Value Constant Default Template
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Default Constant Value. Valid values -2147483648 to 2147483647</summary>

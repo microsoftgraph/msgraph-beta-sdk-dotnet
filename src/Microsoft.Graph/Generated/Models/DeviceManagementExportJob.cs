@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing a job to export a report.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementExportJob : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Time that the exported report expires.</summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("filter", value); }
         }
 #endif
-        /// <summary>Possible values for the file format of a report.</summary>
+        /// <summary>Possible values for the file format of a report to be exported.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagementReportFileFormat? Format
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementReportFileFormat?>("format"); }

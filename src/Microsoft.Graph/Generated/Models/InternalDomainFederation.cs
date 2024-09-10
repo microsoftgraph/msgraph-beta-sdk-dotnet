@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class InternalDomainFederation : global::Microsoft.Graph.Beta.Models.SamlOrWsFedProvider, IParsable
     #pragma warning restore CS1591
@@ -54,6 +54,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("nextSigningCertificate"); }
             set { BackingStore?.Set("nextSigningCertificate", value); }
+        }
+#endif
+        /// <summary>The passwordResetUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PasswordResetUri
+        {
+            get { return BackingStore?.Get<string?>("passwordResetUri"); }
+            set { BackingStore?.Set("passwordResetUri", value); }
+        }
+#nullable restore
+#else
+        public string PasswordResetUri
+        {
+            get { return BackingStore?.Get<string>("passwordResetUri"); }
+            set { BackingStore?.Set("passwordResetUri", value); }
         }
 #endif
         /// <summary>Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.</summary>
@@ -123,6 +139,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "federatedIdpMfaBehavior", n => { FederatedIdpMfaBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior>(); } },
                 { "isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 { "nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
+                { "passwordResetUri", n => { PasswordResetUri = n.GetStringValue(); } },
                 { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.PromptLoginBehavior>(); } },
                 { "signOutUri", n => { SignOutUri = n.GetStringValue(); } },
                 { "signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>(global::Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
@@ -140,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior>("federatedIdpMfaBehavior", FederatedIdpMfaBehavior);
             writer.WriteBoolValue("isSignedAuthenticationRequestRequired", IsSignedAuthenticationRequestRequired);
             writer.WriteStringValue("nextSigningCertificate", NextSigningCertificate);
+            writer.WriteStringValue("passwordResetUri", PasswordResetUri);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
             writer.WriteStringValue("signOutUri", SignOutUri);

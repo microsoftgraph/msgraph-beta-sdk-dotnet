@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Specify access control level per privacy data category
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsPrivacyDataAccessControlItem : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Determine the access level to specific Windows privacy data category.</summary>

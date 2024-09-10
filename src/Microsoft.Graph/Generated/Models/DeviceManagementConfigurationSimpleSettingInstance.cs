@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Simple setting instance
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementConfigurationSimpleSettingInstance : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>The simpleSettingValue property</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Sites.Item.ContentModels.Item.GetAppliedDrives
 {
     [Obsolete("This class is obsolete. Use GetAppliedDrivesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetAppliedDrivesResponse : global::Microsoft.Graph.Beta.Sites.Item.ContentModels.Item.GetAppliedDrives.GetAppliedDrivesGetResponse, IParsable
     #pragma warning restore CS1591

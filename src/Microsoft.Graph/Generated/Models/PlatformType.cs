@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Platform Type</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum PlatformType
     {
         /// <summary>None</summary>
@@ -31,5 +31,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>UnknownFutureValue</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>AndroidEnterprise</summary>
+        [EnumMember(Value = "androidEnterprise")]
+        AndroidEnterprise,
+        /// <summary>Android Open Source Project</summary>
+        [EnumMember(Value = "aosp")]
+        Aosp,
     }
 }

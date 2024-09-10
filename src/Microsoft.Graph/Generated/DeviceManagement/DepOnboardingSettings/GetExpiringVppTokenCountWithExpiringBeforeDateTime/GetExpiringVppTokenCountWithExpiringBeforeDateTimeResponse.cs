@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime
 {
     [Obsolete("This class is obsolete. Use GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse : global::Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime.GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse, IParsable
     #pragma warning restore CS1591

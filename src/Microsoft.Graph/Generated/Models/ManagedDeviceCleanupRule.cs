@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Define the rule when the admin wants the devices to be cleaned up.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ManagedDeviceCleanupRule : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the description for the device clean up rule.</summary>
