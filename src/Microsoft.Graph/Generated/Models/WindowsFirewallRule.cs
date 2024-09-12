@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A rule controlling traffic through the Windows Firewall.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsFirewallRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>State Management Setting.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the run summary of a device management script.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceComplianceScriptRunSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647</summary>

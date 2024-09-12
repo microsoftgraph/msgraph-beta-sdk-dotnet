@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity contains the properties used to assign a windows feature update profile to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsFeatureUpdateProfileAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The assignment target that the feature update profile is assigned to.</summary>

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for Excluded Office365 Apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ExcludedApps : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>The value for if MS Office Access should be excluded or not.</summary>

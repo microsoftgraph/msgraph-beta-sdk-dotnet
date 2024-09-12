@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The status of the action performed with an Apple Volume Purchase Program token.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class VppTokenActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Action name</summary>

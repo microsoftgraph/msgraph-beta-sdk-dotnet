@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Graph model for a reusable setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementReusablePolicySetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>

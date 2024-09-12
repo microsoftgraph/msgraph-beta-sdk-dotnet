@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Update schedule type for iOS software updates.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum IosSoftwareUpdateScheduleType
     {
         /// <summary>Update outside of active hours.</summary>

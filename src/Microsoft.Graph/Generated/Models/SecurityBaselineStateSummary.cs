@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline compliance state summary for the security baseline of the account.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecurityBaselineStateSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of conflict devices</summary>

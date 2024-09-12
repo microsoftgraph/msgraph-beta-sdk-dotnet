@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Data sharing consent information.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DataSharingConsent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The time consent was granted for this account</summary>

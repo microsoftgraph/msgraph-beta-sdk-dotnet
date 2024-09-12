@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber
 {
     [Obsolete("This class is obsolete. Use FindByKbNumberWithKbNumberGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class FindByKbNumberWithKbNumberResponse : global::Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber.FindByKbNumberWithKbNumberGetResponse, IParsable
     #pragma warning restore CS1591

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class CloudPcProvisioningPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -58,6 +58,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch>("autopatch"); }
             set { BackingStore?.Set("autopatch", value); }
+        }
+#endif
+        /// <summary>The autopilotConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration? AutopilotConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration?>("autopilotConfiguration"); }
+            set { BackingStore?.Set("autopilotConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration AutopilotConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>("autopilotConfiguration"); }
+            set { BackingStore?.Set("autopilotConfiguration", value); }
         }
 #endif
         /// <summary>The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.</summary>
@@ -293,6 +309,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment>(global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "autopatch", n => { Autopatch = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch>(global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch.CreateFromDiscriminatorValue); } },
+                { "autopilotConfiguration", n => { AutopilotConfiguration = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>(global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration.CreateFromDiscriminatorValue); } },
                 { "cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 { "cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -323,6 +340,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcProvisioningPolicyAutopatch>("autopatch", Autopatch);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration>("autopilotConfiguration", AutopilotConfiguration);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
             writer.WriteStringValue("description", Description);

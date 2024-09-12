@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp
 {
     [Obsolete("This class is obsolete. Use CanSignUpGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class CanSignUpResponse : global::Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp.CanSignUpGetResponse, IParsable
     #pragma warning restore CS1591

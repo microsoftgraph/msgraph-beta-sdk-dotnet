@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Options available for enrollment flow customization</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum EnrollmentAvailabilityOptions
     {
         /// <summary>Device enrollment flow is shown to the end user with guided enrollment prompts</summary>

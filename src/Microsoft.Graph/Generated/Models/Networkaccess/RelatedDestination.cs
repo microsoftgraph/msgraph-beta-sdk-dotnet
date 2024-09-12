@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class RelatedDestination : global::Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
     #pragma warning restore CS1591

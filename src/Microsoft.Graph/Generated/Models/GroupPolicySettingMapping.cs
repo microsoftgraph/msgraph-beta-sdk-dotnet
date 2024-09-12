@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Group Policy setting to MDM/Intune mapping.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GroupPolicySettingMapping : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Admx Group Policy Id</summary>

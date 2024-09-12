@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum MessagingRedirectAppType
     {
         /// <summary>App protection policy will allow messaging redirection to any app.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IosLobAppProvisioningConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify a local account for the kiosk configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsKioskLocalUser : global::Microsoft.Graph.Beta.Models.WindowsKioskUser, IParsable
     {
         /// <summary>The local user that will be locked to this kiosk configuration</summary>

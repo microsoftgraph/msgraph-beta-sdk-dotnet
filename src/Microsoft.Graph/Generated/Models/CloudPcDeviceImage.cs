@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class CloudPcDeviceImage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -85,6 +85,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus?>("osStatus"); }
             set { BackingStore?.Set("osStatus", value); }
         }
+        /// <summary>The osVersionNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OsVersionNumber
+        {
+            get { return BackingStore?.Get<string?>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#nullable restore
+#else
+        public string OsVersionNumber
+        {
+            get { return BackingStore?.Get<string>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#endif
         /// <summary>The scopeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +186,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
                 { "osStatus", n => { OsStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>(); } },
+                { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus>(); } },
@@ -192,6 +209,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteStringValue("osBuildNumber", OsBuildNumber);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageOsStatus>("osStatus", OsStatus);
+            writer.WriteStringValue("osVersionNumber", OsVersionNumber);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("sourceImageResourceId", SourceImageResourceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDeviceImageStatus>("status", Status);

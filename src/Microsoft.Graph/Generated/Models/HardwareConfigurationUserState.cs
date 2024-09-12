@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for User state of the hardware configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class HardwareConfigurationUserState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Error device count for specific user.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analyte remote connection entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsRemoteConnection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The sign in failure percentage of Cloud PC Device. Valid values 0 to 100</summary>

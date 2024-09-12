@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Derived Credential profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IosDerivedCredentialAuthenticationConfiguration : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Defines results for actions on MacOS Vpp Apps, contains inherited properties for ActionResult.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MacOsVppAppRevokeLicensesActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>

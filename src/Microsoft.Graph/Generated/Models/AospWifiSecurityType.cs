@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AospWifiSecurityType
     {
         /// <summary>No security type.</summary>

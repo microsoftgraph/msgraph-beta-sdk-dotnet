@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows 10 Desktop and Mobile PKCS certificate profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Windows10PkcsCertificateProfile : global::Microsoft.Graph.Beta.Models.Windows10CertificateProfileBase, IParsable
     {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>

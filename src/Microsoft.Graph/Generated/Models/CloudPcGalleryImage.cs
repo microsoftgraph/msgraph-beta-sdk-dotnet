@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class CloudPcGalleryImage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -87,6 +87,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("offerName"); }
             set { BackingStore?.Set("offerName", value); }
+        }
+#endif
+        /// <summary>The osVersionNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OsVersionNumber
+        {
+            get { return BackingStore?.Get<string?>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#nullable restore
+#else
+        public string OsVersionNumber
+        {
+            get { return BackingStore?.Get<string>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
         }
 #endif
         /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.</summary>
@@ -227,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "offer", n => { Offer = n.GetStringValue(); } },
                 { "offerDisplayName", n => { OfferDisplayName = n.GetStringValue(); } },
                 { "offerName", n => { OfferName = n.GetStringValue(); } },
+                { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "publisherName", n => { PublisherName = n.GetStringValue(); } },
                 { "recommendedSku", n => { RecommendedSku = n.GetStringValue(); } },
@@ -252,6 +269,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("offer", Offer);
             writer.WriteStringValue("offerDisplayName", OfferDisplayName);
             writer.WriteStringValue("offerName", OfferName);
+            writer.WriteStringValue("osVersionNumber", OsVersionNumber);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteStringValue("recommendedSku", RecommendedSku);

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible ways of adding a mobile device to management.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum DeviceEnrollmentType
     {
         /// <summary>Default value, enrollment type was not collected.</summary>
@@ -40,10 +40,10 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Windows 10 Azure AD Join using Device Auth.</summary>
         [EnumMember(Value = "windowsAzureADJoinUsingDeviceAuth")]
         WindowsAzureADJoinUsingDeviceAuth,
-        /// <summary>Device managed by Apple user enrollment</summary>
+        /// <summary>Indicates the device is enrolled via Apple User Enrollment with Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities</summary>
         [EnumMember(Value = "appleUserEnrollment")]
         AppleUserEnrollment,
-        /// <summary>Device managed by Apple user enrollment with service account</summary>
+        /// <summary>Indicates the device is enrolled via Apple User Enrollment with Company Portal using a device enrollment manager user. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities</summary>
         [EnumMember(Value = "appleUserEnrollmentWithServiceAccount")]
         AppleUserEnrollmentWithServiceAccount,
         /// <summary>Azure AD Join enrollment when an Azure VM is provisioned</summary>

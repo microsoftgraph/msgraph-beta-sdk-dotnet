@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Mapping between an Android app permission and the action Android should take when that permission is requested.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AndroidPermissionAction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Android action taken when an app requests a dangerous permission.</summary>

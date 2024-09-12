@@ -10,25 +10,9 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Android store apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AndroidStoreApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
-        /// <summary>The Identity Name. This property is read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AppIdentifier
-        {
-            get { return BackingStore?.Get<string?>("appIdentifier"); }
-            set { BackingStore?.Set("appIdentifier", value); }
-        }
-#nullable restore
-#else
-        public string AppIdentifier
-        {
-            get { return BackingStore?.Get<string>("appIdentifier"); }
-            set { BackingStore?.Set("appIdentifier", value); }
-        }
-#endif
         /// <summary>The Android app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +86,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appIdentifier", n => { AppIdentifier = n.GetStringValue(); } },
                 { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
                 { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem>(global::Microsoft.Graph.Beta.Models.AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 { "packageId", n => { PackageId = n.GetStringValue(); } },

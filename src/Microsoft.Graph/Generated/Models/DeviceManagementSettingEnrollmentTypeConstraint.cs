@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint that enforces the enrollment types applied to a setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementSettingEnrollmentTypeConstraint : global::Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>List of enrollment types</summary>

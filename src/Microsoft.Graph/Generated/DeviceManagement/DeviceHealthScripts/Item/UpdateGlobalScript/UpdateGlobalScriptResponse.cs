@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript
 {
     [Obsolete("This class is obsolete. Use UpdateGlobalScriptPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class UpdateGlobalScriptResponse : global::Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript.UpdateGlobalScriptPostResponse, IParsable
     #pragma warning restore CS1591

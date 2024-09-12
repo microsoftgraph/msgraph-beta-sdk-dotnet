@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Describes the TemplateFamily for the Template entity</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum DeviceEnrollmentConfigurationType
     {
         /// <summary>Default. Set to unknown if the configuration type cannot be determined.</summary>

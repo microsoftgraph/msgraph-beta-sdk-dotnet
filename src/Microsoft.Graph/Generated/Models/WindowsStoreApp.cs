@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows Store apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsStoreApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The Windows app store URL.</summary>

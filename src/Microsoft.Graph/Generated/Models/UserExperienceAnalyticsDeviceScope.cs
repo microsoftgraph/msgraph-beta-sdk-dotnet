@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsDeviceScope : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the creation date and time for the custom device scope.</summary>

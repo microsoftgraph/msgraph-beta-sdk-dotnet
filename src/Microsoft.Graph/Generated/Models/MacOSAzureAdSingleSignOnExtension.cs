@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an Azure AD-type Single Sign-On extension profile for macOS devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MacOSAzureAdSingleSignOnExtension : global::Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension, IParsable
     {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>

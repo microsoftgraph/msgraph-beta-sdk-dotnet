@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a Microsoft Tunnel site
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MicrosoftTunnelSite : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The site&apos;s description (optional)</summary>

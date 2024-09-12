@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// ServiceNow properties including the ServiceNow instanceUrl, connection credentials and other metadata.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ServiceNowConnection : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the method used by Intune to authenticate with ServiceNow. Currently supports only web authentication with ServiceNow using the specified app id.</summary>

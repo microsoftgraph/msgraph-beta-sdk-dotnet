@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify the single app configuration for the kiosk win32 configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsKioskSingleWin32App : global::Microsoft.Graph.Beta.Models.WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>The win32App property</summary>

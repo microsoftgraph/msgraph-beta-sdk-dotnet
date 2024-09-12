@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes a supersedence relationship between two mobile apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppSupersedence : global::Microsoft.Graph.Beta.Models.MobileAppRelationship, IParsable
     {
         /// <summary>The total number of apps directly or indirectly superseded by the child app. This property is read-only.</summary>

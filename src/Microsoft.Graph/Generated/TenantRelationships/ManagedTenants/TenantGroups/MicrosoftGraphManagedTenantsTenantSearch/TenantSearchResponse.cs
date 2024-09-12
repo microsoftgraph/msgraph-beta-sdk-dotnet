@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.MicrosoftGraphManagedTenantsTenantSearch
 {
     [Obsolete("This class is obsolete. Use TenantSearchPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class TenantSearchResponse : global::Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.MicrosoftGraphManagedTenantsTenantSearch.TenantSearchPostResponse, IParsable
     #pragma warning restore CS1591

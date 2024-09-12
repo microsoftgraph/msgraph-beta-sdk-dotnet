@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A setting instance representing a complex value
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementComplexSettingInstance : global::Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance, IParsable
     {
         /// <summary>The values that make up the complex setting</summary>

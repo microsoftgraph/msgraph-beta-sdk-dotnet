@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class that represents a contained app of a MicrosoftStoreForBusinessApp.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MicrosoftStoreForBusinessContainedApp : global::Microsoft.Graph.Beta.Models.MobileContainedApp, IParsable
     {
         /// <summary>The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.</summary>

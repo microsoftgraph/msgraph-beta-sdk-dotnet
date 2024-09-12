@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum type to represent approval actions of single or list of drivers.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum DriverApprovalAction
     {
         /// <summary>This indicates the action to approve single or list of drivers.</summary>

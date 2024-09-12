@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint indicating that this value is a secret and will be encrypted.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementIntentSettingSecretConstraint : global::Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>

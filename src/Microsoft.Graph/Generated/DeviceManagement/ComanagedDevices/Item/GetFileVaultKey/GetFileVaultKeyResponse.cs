@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey
 {
     [Obsolete("This class is obsolete. Use GetFileVaultKeyGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetFileVaultKeyResponse : global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey.GetFileVaultKeyGetResponse, IParsable
     #pragma warning restore CS1591

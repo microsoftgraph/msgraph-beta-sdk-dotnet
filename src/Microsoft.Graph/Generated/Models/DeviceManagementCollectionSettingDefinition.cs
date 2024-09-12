@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing the defintion for a collection setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementCollectionSettingDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition, IParsable
     {
         /// <summary>The Setting Definition ID that describes what each element of the collection looks like</summary>

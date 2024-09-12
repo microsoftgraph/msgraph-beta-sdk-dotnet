@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Booking entities that provide a display name.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class BookingNamedEntity : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A name for the derived entity, which interfaces with customers.</summary>

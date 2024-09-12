@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class PrivateAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -25,6 +25,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The appSegmentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppSegmentId
+        {
+            get { return BackingStore?.Get<string?>("appSegmentId"); }
+            set { BackingStore?.Set("appSegmentId", value); }
+        }
+#nullable restore
+#else
+        public string AppSegmentId
+        {
+            get { return BackingStore?.Get<string>("appSegmentId"); }
+            set { BackingStore?.Set("appSegmentId", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connectionStatus property</summary>
@@ -156,6 +172,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessType", n => { AccessType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AccessType>(); } },
+                { "appSegmentId", n => { AppSegmentId = n.GetStringValue(); } },
                 { "connectionStatus", n => { ConnectionStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus>(); } },
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 { "connectorIp", n => { ConnectorIp = n.GetStringValue(); } },
@@ -173,6 +190,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.AccessType>("accessType", AccessType);
+            writer.WriteStringValue("appSegmentId", AppSegmentId);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus>("connectionStatus", ConnectionStatus);
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("connectorIp", ConnectorIp);

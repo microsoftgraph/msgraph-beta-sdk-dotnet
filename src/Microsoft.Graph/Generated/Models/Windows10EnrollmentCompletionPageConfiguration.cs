@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows 10 Enrollment Status Page Configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Windows10EnrollmentCompletionPageConfiguration : global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.</summary>

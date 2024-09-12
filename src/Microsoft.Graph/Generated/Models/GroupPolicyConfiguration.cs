@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The group policy configuration entity contains the configured values for one or more group policy definitions.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GroupPolicyConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the configuration.</summary>

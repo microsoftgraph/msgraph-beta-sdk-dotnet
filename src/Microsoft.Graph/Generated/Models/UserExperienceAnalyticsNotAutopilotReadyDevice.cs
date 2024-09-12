@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics Device not windows autopilot ready.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsNotAutopilotReadyDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>

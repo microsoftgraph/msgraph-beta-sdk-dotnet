@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount
 {
     [Obsolete("This class is obsolete. Use GetCredentialUserRegistrationCountGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetCredentialUserRegistrationCountResponse : global::Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount.GetCredentialUserRegistrationCountGetResponse, IParsable
     #pragma warning restore CS1591

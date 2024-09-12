@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics anomaly entity contains anomaly details.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsAnomaly : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the first occurrence date and time for the anomaly.</summary>

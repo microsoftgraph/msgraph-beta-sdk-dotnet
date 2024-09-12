@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The type of user account on Windows that was used to performed the elevation.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum PrivilegeManagementEndUserType
     {
         /// <summary>Default. Unable to determine the login type of the user.</summary>

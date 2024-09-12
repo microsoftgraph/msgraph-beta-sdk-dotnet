@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base Profile Type for Authentication Certificates (SCEP or PFX Create)
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Windows10XCertificateProfile : global::Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>

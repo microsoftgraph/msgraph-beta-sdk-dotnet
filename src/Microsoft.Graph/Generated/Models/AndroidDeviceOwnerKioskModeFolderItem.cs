@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an item that can be added to Android Device Owner folder (application or weblink)
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AndroidDeviceOwnerKioskModeFolderItem : global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
     {
         /// <summary>

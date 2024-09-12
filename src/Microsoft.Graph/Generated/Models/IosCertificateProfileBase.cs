@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS certificate profile base.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IosCertificateProfileBase : global::Microsoft.Graph.Beta.Models.IosCertificateProfile, IParsable
     {
         /// <summary>Certificate Validity Period Options.</summary>

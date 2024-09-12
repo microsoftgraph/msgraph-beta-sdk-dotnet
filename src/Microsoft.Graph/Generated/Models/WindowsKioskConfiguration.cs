@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the kiosk resource.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsKioskConfiguration : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.</summary>

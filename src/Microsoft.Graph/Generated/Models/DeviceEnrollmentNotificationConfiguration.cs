@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enrollment Notification Configuration which is used to send notification
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceEnrollmentNotificationConfiguration : global::Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>

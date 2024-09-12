@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens
 {
     [Obsolete("This class is obsolete. Use InvalidateAllRefreshTokensPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class InvalidateAllRefreshTokensResponse : global::Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse, IParsable
     #pragma warning restore CS1591

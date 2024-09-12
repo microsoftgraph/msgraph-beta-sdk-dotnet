@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assign
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class AssignPostResponse : global::Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591

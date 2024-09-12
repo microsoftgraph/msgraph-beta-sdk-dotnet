@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for mobile app PolicySetItem.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppPolicySetItem : global::Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// OMA Settings Boolean definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OmaSettingBoolean : global::Microsoft.Graph.Beta.Models.OmaSetting, IParsable
     {
         /// <summary>Value.</summary>

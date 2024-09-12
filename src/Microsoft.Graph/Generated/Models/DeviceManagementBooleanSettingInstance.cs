@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A setting instance representing a boolean value
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementBooleanSettingInstance : global::Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance, IParsable
     {
         /// <summary>The boolean value</summary>

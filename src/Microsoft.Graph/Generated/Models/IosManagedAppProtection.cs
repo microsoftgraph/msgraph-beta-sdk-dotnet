@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IosManagedAppProtection : global::Microsoft.Graph.Beta.Models.TargetedManagedAppProtection, IParsable
     {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("apps", value); }
         }
 #endif
-        /// <summary>A custom browser protocol to open weblink on iOS.</summary>
+        /// <summary>A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserProtocol

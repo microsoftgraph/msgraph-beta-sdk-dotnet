@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The Base Class of Device Enrollment Configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceEnrollmentConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments for the device configuration profile</summary>

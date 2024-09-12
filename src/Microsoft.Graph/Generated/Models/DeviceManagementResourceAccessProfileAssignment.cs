@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that describes tenant level settings for derived credentials
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementResourceAccessProfileAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The administrator intent for the assignment of the profile.</summary>

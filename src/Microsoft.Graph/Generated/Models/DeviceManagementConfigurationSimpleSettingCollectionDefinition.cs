@@ -7,18 +7,18 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class DeviceManagementConfigurationSimpleSettingCollectionDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Maximum number of simple settings in the collection</summary>
+        /// <summary>Maximum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount
         {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>Minimum number of simple settings in the collection</summary>
+        /// <summary>Minimum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MinimumCount
         {
             get { return BackingStore?.Get<int?>("minimumCount"); }

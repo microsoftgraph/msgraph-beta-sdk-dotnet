@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for device run state of the device health script.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceHealthScriptDeviceState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>

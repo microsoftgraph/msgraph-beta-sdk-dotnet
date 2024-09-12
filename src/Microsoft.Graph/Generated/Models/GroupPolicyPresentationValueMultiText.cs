@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity represents a string value of a multi-line text box presentation on a policy definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GroupPolicyPresentationValueMultiText : global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationValue, IParsable
     {
         /// <summary>A collection of non-empty strings for the associated presentation.</summary>

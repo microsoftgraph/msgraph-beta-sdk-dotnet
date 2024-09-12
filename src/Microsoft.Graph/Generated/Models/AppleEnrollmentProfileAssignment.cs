@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An assignment of an Apple profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AppleEnrollmentProfileAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The assignment target for the Apple user initiated deployment profile.</summary>

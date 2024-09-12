@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint the enforces a particular boolean value
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementSettingBooleanConstraint : global::Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>The boolean value to compare against</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing the defintion for a complex setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementComplexSettingDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition, IParsable
     {
         /// <summary>The definitions of each property of the complex setting</summary>

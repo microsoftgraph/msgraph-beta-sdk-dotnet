@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// OMA Settings StringXML definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OmaSettingStringXml : global::Microsoft.Graph.Beta.Models.OmaSetting, IParsable
     {
         /// <summary>File name associated with the Value property (.xml).</summary>

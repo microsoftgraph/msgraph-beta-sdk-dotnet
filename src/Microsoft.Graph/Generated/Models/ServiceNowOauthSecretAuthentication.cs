@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// App id for the ServiceNow client app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ServiceNowOauthSecretAuthentication : global::Microsoft.Graph.Beta.Models.ServiceNowAuthenticationMethod, IParsable
     {
         /// <summary>Tenant appId registered with Azure AD</summary>

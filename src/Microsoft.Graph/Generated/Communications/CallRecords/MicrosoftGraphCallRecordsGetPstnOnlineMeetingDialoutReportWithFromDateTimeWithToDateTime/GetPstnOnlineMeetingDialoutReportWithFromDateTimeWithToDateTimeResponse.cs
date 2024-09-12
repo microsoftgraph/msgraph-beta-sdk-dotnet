@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime
 {
     [Obsolete("This class is obsolete. Use GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeResponse : global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime.GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591

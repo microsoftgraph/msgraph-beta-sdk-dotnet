@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for Android for Work (AFW) Apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AndroidForWorkApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The Identity Name. This property is read-only.</summary>

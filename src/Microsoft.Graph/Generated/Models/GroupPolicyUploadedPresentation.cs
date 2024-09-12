@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an ADMX checkBox element and an ADMX boolean element.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GroupPolicyUploadedPresentation : global::Microsoft.Graph.Beta.Models.GroupPolicyPresentation, IParsable
     {
         /// <summary>

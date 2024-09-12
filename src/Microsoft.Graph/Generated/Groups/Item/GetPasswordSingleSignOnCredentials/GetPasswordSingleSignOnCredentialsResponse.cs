@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials
 {
     [Obsolete("This class is obsolete. Use GetPasswordSingleSignOnCredentialsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetPasswordSingleSignOnCredentialsResponse : global::Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsPostResponse, IParsable
     #pragma warning restore CS1591
