@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("locale", value); }
         }
 #endif
-        /// <summary>List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.</summary>
+        /// <summary>List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, chat, and tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ChatMessageMention>? Mentions

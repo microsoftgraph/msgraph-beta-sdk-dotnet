@@ -105,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.cloudPcBulkCreateSnapshot" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkCreateSnapshot(),
                 "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailback(),
                 "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailover(),
                 "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkModifyDiskEncryptionType(),
@@ -114,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.cloudPcBulkResize" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkResize(),
                 "#microsoft.graph.cloudPcBulkRestart" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRestart(),
                 "#microsoft.graph.cloudPcBulkRestore" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkRestore(),
+                "#microsoft.graph.cloudPcBulkSetReviewStatus" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkSetReviewStatus(),
                 "#microsoft.graph.cloudPcBulkTroubleshoot" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkTroubleshoot(),
                 _ => new global::Microsoft.Graph.Beta.Models.CloudPcBulkAction(),
             };

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppRelationship : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The target mobile app&apos;s display name. This property is read-only.</summary>
+        /// <summary>The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplayName
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDisplayName", value); }
         }
 #endif
-        /// <summary>The target mobile app&apos;s display version. This property is read-only.</summary>
+        /// <summary>The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplayVersion
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
 #endif
-        /// <summary>The target mobile app&apos;s app id.</summary>
+        /// <summary>App ID of the app that is the target of the mobile app relationship entity. Read-Only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetId
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetId", value); }
         }
 #endif
-        /// <summary>The target mobile app&apos;s publisher. This property is read-only.</summary>
+        /// <summary>The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetPublisher

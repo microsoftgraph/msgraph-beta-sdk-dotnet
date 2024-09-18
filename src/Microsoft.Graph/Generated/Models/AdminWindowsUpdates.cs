@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AdminWindowsUpdates : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
+        /// <summary>Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog? Catalog
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deploymentAudiences", value); }
         }
 #endif
-        /// <summary>Deployments created using the deployment service.</summary>
+        /// <summary>Deployments created using Windows Autopatch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment>? Deployments
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceConnections", value); }
         }
 #endif
-        /// <summary>Assets registered with the deployment service that can receive updates.</summary>
+        /// <summary>Assets registered with Windows Autopatch that can receive updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>? UpdatableAssets

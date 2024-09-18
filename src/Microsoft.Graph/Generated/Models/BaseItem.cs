@@ -185,6 +185,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.list" => new global::Microsoft.Graph.Beta.Models.List(),
                 "#microsoft.graph.listItem" => new global::Microsoft.Graph.Beta.Models.ListItem(),
                 "#microsoft.graph.newsLinkPage" => new global::Microsoft.Graph.Beta.Models.NewsLinkPage(),
+                "#microsoft.graph.pageTemplate" => new global::Microsoft.Graph.Beta.Models.PageTemplate(),
                 "#microsoft.graph.recycleBin" => new global::Microsoft.Graph.Beta.Models.RecycleBin(),
                 "#microsoft.graph.recycleBinItem" => new global::Microsoft.Graph.Beta.Models.RecycleBinItem(),
                 "#microsoft.graph.sharedDriveItem" => new global::Microsoft.Graph.Beta.Models.SharedDriveItem(),

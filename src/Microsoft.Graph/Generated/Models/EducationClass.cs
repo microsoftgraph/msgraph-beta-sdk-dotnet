@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationExternalSource?>("externalSource"); }
             set { BackingStore?.Set("externalSource", value); }
         }
-        /// <summary>The name of the external source this resources was generated from.</summary>
+        /// <summary>The name of the external source from which this resource was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalSourceDetail

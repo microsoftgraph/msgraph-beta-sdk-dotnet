@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AiInsights;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AlternativeRecording;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendanceReports;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport;
@@ -30,6 +31,12 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OnlineMeetingItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the aiInsights property of the microsoft.graph.onlineMeeting entity.</summary>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AiInsights.AiInsightsRequestBuilder AiInsights
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AiInsights.AiInsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the media for the user entity.</summary>
         [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AlternativeRecording.AlternativeRecordingRequestBuilder AlternativeRecording

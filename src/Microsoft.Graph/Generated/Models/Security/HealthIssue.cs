@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
-        /// <summary>The date and time of when the health issue was generated.</summary>
+        /// <summary>The date and time when the health issue was generated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -104,13 +104,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("issueTypeId", value); }
         }
 #endif
-        /// <summary>The date and time of when the health issue was last updated.</summary>
+        /// <summary>The date and time when the health issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>This field contains a list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include how to investigate the issue further. Not limited to prewritten responses.</summary>
+        /// <summary>A list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include instructions for further investigation and aren&apos;t limited to prewritten responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Recommendations
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("recommendations", value); }
         }
 #endif
-        /// <summary>Contains a list of commands from the product&apos;s PowerShell module that can be used to resolve the issue, if available. If there aren&apos;t any commands that can be used to solve the issue, this field is empty. The commands, if present, provide a quick and efficient way to address the issue. The commands run in order for the single recommended fix.</summary>
+        /// <summary>A list of commands from the PowerShell module for the product that can be used to resolve the issue, if available. If no commands can be used to solve the issue, this property is empty. The commands, if present, provide a quick and efficient way to address the issue. These commands run in sequence for the single recommended fix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RecommendedActionCommands
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("recommendedActionCommands", value); }
         }
 #endif
-        /// <summary>A list of the dns names of the sensors the health issue is related to.</summary>
+        /// <summary>A list of the DNS names of the sensors the health issue is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SensorDNSNames

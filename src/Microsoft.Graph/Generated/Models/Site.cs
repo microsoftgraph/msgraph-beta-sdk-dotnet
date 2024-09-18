@@ -275,6 +275,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pages", value); }
         }
 #endif
+        /// <summary>The collection of page templates on this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.PageTemplate>? PageTemplates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PageTemplate>?>("pageTemplates"); }
+            set { BackingStore?.Set("pageTemplates", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.PageTemplate> PageTemplates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.PageTemplate>>("pageTemplates"); }
+            set { BackingStore?.Set("pageTemplates", value); }
+        }
+#endif
         /// <summary>The permissions associated with the site. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -444,6 +460,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lists", n => { Lists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.List>(global::Microsoft.Graph.Beta.Models.List.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>(global::Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RichLongRunningOperation>(global::Microsoft.Graph.Beta.Models.RichLongRunningOperation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pageTemplates", n => { PageTemplates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PageTemplate>(global::Microsoft.Graph.Beta.Models.PageTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BaseSitePage>(global::Microsoft.Graph.Beta.Models.BaseSitePage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>(global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>(global::Microsoft.Graph.Beta.Models.RecycleBin.CreateFromDiscriminatorValue); } },
@@ -480,6 +497,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RichLongRunningOperation>("operations", Operations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.BaseSitePage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.PageTemplate>("pageTemplates", PageTemplates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Root>("root", Root);

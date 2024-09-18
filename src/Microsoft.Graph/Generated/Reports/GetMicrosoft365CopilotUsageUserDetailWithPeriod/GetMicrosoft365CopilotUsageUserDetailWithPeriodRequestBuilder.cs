@@ -36,7 +36,8 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWith
         {
         }
         /// <summary>
-        /// Invoke function getMicrosoft365CopilotUsageUserDetail
+        /// Get the most recent activity data for enabled users of Copilot for Microsoft 365 apps.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUsageUserDetailWith
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getMicrosoft365CopilotUsageUserDetail
+        /// Get the most recent activity data for enabled users of Copilot for Microsoft 365 apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

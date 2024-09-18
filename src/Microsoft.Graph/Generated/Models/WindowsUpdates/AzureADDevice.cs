@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     public partial class AzureADDevice : global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.</summary>
+        /// <summary>Specifies areas in which the device is enrolled. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment>? Enrollments

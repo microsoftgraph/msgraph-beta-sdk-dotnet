@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppSupersedence : global::Microsoft.Graph.Beta.Models.MobileAppRelationship, IParsable
     {
-        /// <summary>The total number of apps directly or indirectly superseded by the child app. This property is read-only.</summary>
+        /// <summary>The total number of apps directly or indirectly superseded by the child app. Read-Only. This property is read-only.</summary>
         public int? SupersededAppCount
         {
             get { return BackingStore?.Get<int?>("supersededAppCount"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppSupersedenceType?>("supersedenceType"); }
             set { BackingStore?.Set("supersedenceType", value); }
         }
-        /// <summary>The total number of apps directly or indirectly superseding the parent app. This property is read-only.</summary>
+        /// <summary>The total number of apps directly or indirectly superseding the parent app. Read-Only. This property is read-only.</summary>
         public int? SupersedingAppCount
         {
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }

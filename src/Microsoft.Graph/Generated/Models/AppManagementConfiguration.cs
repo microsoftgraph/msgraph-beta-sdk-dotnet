@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Collection of keyCredential restrictions settings to be applied to an application or service principal.</summary>
+        /// <summary>Collection of certificate restrictions settings to be applied to an application or service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.KeyCredentialConfiguration>? KeyCredentials

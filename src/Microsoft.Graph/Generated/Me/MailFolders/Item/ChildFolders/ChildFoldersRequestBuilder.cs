@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.MailFolderCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-beta" />
+        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

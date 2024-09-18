@@ -16,6 +16,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPCRemoteActionResults;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetryPartnerAgentInstallation;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.SetReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Start;
@@ -118,6 +119,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder RetrieveReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveSnapshots method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder RetrieveSnapshots
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetryPartnerAgentInstallation.RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation

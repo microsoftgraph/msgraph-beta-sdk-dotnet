@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
             get { return BackingStore?.Get<bool?>("childrenOnly"); }
             set { BackingStore?.Set("childrenOnly", value); }
         }
+        /// <summary>The includeAllVersionHistory property</summary>
+        public bool? IncludeAllVersionHistory
+        {
+            get { return BackingStore?.Get<bool?>("includeAllVersionHistory"); }
+            set { BackingStore?.Set("includeAllVersionHistory", value); }
+        }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "childrenOnly", n => { ChildrenOnly = n.GetBoolValue(); } },
+                { "includeAllVersionHistory", n => { IncludeAllVersionHistory = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentReference", n => { ParentReference = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.ItemReference>(global::Microsoft.Graph.Beta.Models.ItemReference.CreateFromDiscriminatorValue); } },
             };
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("childrenOnly", ChildrenOnly);
+            writer.WriteBoolValue("includeAllVersionHistory", IncludeAllVersionHistory);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.ItemReference>("parentReference", ParentReference);
             writer.WriteAdditionalData(AdditionalData);
