@@ -259,6 +259,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Date?>("isOnMyDayLastModifiedDate"); }
             set { BackingStore?.Set("isOnMyDayLastModifiedDate", value); }
         }
+        /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>The lastModifiedDateTime property</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
         /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -419,6 +441,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isOnMyDay", n => { IsOnMyDay = n.GetBoolValue(); } },
                 { "isOnMyDayLastModifiedDate", n => { IsOnMyDayLastModifiedDate = n.GetDateValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "orderHint", n => { OrderHint = n.GetStringValue(); } },
                 { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
@@ -461,6 +485,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isOnMyDay", IsOnMyDay);
             writer.WriteDateValue("isOnMyDayLastModifiedDate", IsOnMyDayLastModifiedDate);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteIntValue("percentComplete", PercentComplete);
             writer.WriteStringValue("planId", PlanId);

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Sets the per-user MFA state for the user. The possible values are: disabled, enforced, enabled, unknownFutureValue.</summary>
+        /// <summary>Sets the per-user MFA state for the user. The possible values are: disabled, enforced, enabled, unknownFutureValue. When you update a user&apos;s MFA state to enabled and the user has already registered an MFA method, their state changes automatically to enforced.</summary>
         public global::Microsoft.Graph.Beta.Models.PerUserMfaState? PerUserMfaState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.PerUserMfaState?>("perUserMfaState"); }

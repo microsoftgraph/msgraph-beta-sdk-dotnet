@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PeopleAdminSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents administrator settings that manage the support for item insights in an organization.</summary>
+        /// <summary>Administrator settings that manage the support for item insights in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.InsightsSettings? ItemInsights
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("itemInsights", value); }
         }
 #endif
-        /// <summary>Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.</summary>
+        /// <summary>A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.ProfileCardProperty>? ProfileCardProperties
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #endif
-        /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
+        /// <summary>Administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PronounsSettings? Pronouns

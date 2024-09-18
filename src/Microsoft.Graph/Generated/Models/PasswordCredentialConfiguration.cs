@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
-        /// <summary>The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, and unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
+        /// <summary>The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, customPasswordAddition, and unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
         public global::Microsoft.Graph.Beta.Models.AppCredentialRestrictionType? RestrictionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppCredentialRestrictionType?>("restrictionType"); }

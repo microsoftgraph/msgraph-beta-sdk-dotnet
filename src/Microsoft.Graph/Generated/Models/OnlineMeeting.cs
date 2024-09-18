@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnlineMeeting : global::Microsoft.Graph.Beta.Models.OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The aiInsights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CallAiInsight>? AiInsights
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CallAiInsight>?>("aiInsights"); }
+            set { BackingStore?.Set("aiInsights", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CallAiInsight> AiInsights
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CallAiInsight>>("aiInsights"); }
+            set { BackingStore?.Set("aiInsights", value); }
+        }
+#endif
         /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -285,6 +301,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "aiInsights", n => { AiInsights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallAiInsight>(global::Microsoft.Graph.Beta.Models.CallAiInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 { "attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 { "broadcastRecording", n => { BroadcastRecording = n.GetByteArrayValue(); } },
@@ -313,6 +330,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CallAiInsight>("aiInsights", AiInsights);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteByteArrayValue("broadcastRecording", BroadcastRecording);

@@ -409,6 +409,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
+        /// <summary>The remoteNetworkId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RemoteNetworkId
+        {
+            get { return BackingStore?.Get<string?>("remoteNetworkId"); }
+            set { BackingStore?.Set("remoteNetworkId", value); }
+        }
+#nullable restore
+#else
+        public string RemoteNetworkId
+        {
+            get { return BackingStore?.Get<string>("remoteNetworkId"); }
+            set { BackingStore?.Set("remoteNetworkId", value); }
+        }
+#endif
         /// <summary>The resourceTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -647,6 +663,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
                 { "privateAccessDetails", n => { PrivateAccessDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>(global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails.CreateFromDiscriminatorValue); } },
                 { "receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
+                { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
                 { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 { "sentBytes", n => { SentBytes = n.GetLongValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
@@ -698,6 +715,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("policyRuleName", PolicyRuleName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>("privateAccessDetails", PrivateAccessDetails);
             writer.WriteLongValue("receivedBytes", ReceivedBytes);
+            writer.WriteStringValue("remoteNetworkId", RemoteNetworkId);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteLongValue("sentBytes", SentBytes);
             writer.WriteStringValue("sessionId", SessionId);

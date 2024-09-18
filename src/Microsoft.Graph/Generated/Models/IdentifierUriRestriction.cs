@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The excludeAppsReceivingV2Tokens property</summary>
+        /// <summary>If true, the restriction isn&apos;t enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn&apos;t enforced for those applications.</summary>
         public bool? ExcludeAppsReceivingV2Tokens
         {
             get { return BackingStore?.Get<bool?>("excludeAppsReceivingV2Tokens"); }
             set { BackingStore?.Set("excludeAppsReceivingV2Tokens", value); }
         }
-        /// <summary>The excludeSaml property</summary>
+        /// <summary>If true, the restriction isn&apos;t enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.</summary>
         public bool? ExcludeSaml
         {
             get { return BackingStore?.Get<bool?>("excludeSaml"); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The restrictForAppsCreatedAfterDateTime property</summary>
+        /// <summary>Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }

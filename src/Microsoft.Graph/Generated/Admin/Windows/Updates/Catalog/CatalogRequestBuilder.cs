@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog
             return requestInfo;
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog
         {
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CatalogRequestBuilderGetQueryParameters 

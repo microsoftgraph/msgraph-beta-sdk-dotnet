@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RoleManagement.CloudPC;
+using Microsoft.Graph.Beta.RoleManagement.Defender;
 using Microsoft.Graph.Beta.RoleManagement.DeviceManagement;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace;
 using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.Beta.RoleManagement
         public global::Microsoft.Graph.Beta.RoleManagement.CloudPC.CloudPCRequestBuilder CloudPC
         {
             get => new global::Microsoft.Graph.Beta.RoleManagement.CloudPC.CloudPCRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the defender property of the microsoft.graph.roleManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder Defender
+        {
+            get => new global::Microsoft.Graph.Beta.RoleManagement.Defender.DefenderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.</summary>
         public global::Microsoft.Graph.Beta.RoleManagement.DeviceManagement.DeviceManagementRequestBuilder DeviceManagement

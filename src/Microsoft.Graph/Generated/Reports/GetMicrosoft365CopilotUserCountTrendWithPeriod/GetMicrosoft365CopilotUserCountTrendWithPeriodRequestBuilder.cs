@@ -36,7 +36,8 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithP
         {
         }
         /// <summary>
-        /// Invoke function getMicrosoft365CopilotUserCountTrend
+        /// Get the trend in the daily number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountTrendWithP
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getMicrosoft365CopilotUserCountTrend
+        /// Get the trend in the daily number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

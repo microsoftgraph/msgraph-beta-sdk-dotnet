@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
             set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
-        /// <summary>Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.</summary>
+        /// <summary>Reference to device configurations required for network connectivity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DeviceConfiguration>? NetworkAccessConfigurations

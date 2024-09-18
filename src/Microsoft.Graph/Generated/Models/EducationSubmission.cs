@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class EducationSubmission : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The unique identifier for the assignment with which this submission is associated. A submission is always associated with one and only one assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssignmentId
+        {
+            get { return BackingStore?.Get<string?>("assignmentId"); }
+            set { BackingStore?.Set("assignmentId", value); }
+        }
+#nullable restore
+#else
+        public string AssignmentId
+        {
+            get { return BackingStore?.Get<string>("assignmentId"); }
+            set { BackingStore?.Set("assignmentId", value); }
+        }
+#endif
         /// <summary>The user that marked the submission as excused.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("excusedDateTime"); }
             set { BackingStore?.Set("excusedDateTime", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The identities of those who modified the submission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
@@ -50,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time the submission was modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -164,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("returnedDateTime"); }
             set { BackingStore?.Set("returnedDateTime", value); }
         }
-        /// <summary>Read-only. Possible values are: working, submitted, returned, unknownFutureValue, reassigned, and excused. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned, and excused.</summary>
+        /// <summary>Read-only. Possible values are: working, submitted, returned, unknownFutureValue, reassigned, and excused. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned, and excused.</summary>
         public global::Microsoft.Graph.Beta.Models.EducationSubmissionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.EducationSubmissionStatus?>("status"); }
@@ -264,6 +280,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "assignmentId", n => { AssignmentId = n.GetStringValue(); } },
                 { "excusedBy", n => { ExcusedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "excusedDateTime", n => { ExcusedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },

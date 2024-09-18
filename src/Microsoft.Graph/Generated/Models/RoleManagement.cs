@@ -37,6 +37,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cloudPC", value); }
         }
 #endif
+        /// <summary>The defender property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple? Defender
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple?>("defender"); }
+            set { BackingStore?.Set("defender", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple Defender
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("defender"); }
+            set { BackingStore?.Set("defender", value); }
+        }
+#endif
         /// <summary>The RbacApplication for Device Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cloudPC", n => { CloudPC = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
+                { "defender", n => { Defender = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
                 { "deviceManagement", n => { DeviceManagement = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
                 { "directory", n => { Directory = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplication>(global::Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue); } },
                 { "enterpriseApps", n => { EnterpriseApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RbacApplication>(global::Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -176,6 +193,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("cloudPC", CloudPC);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("defender", Defender);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("deviceManagement", DeviceManagement);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RbacApplication>("directory", Directory);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RbacApplication>("enterpriseApps", EnterpriseApps);

@@ -160,13 +160,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>Ownership type of the fileStorageContainer.The possible values are: tenantOwned. Read-only.</summary>
+        /// <summary>Ownership type of the fileStorageContainer. The possible values are: tenantOwned. Read-only.</summary>
         public global::Microsoft.Graph.Beta.Models.FileStorageContainerOwnershipType? OwnershipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.FileStorageContainerOwnershipType?>("ownershipType"); }
             set { BackingStore?.Set("ownershipType", value); }
         }
-        /// <summary>The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are &apos;reader&apos;, &apos;writer&apos;, &apos;manager&apos;, and &apos;owner&apos;. Read-write.</summary>
+        /// <summary>The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Permission>? Permissions

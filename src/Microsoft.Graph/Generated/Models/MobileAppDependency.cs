@@ -19,13 +19,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.MobileAppDependencyType?>("dependencyType"); }
             set { BackingStore?.Set("dependencyType", value); }
         }
-        /// <summary>The total number of apps that directly or indirectly depend on the parent app. This property is read-only.</summary>
+        /// <summary>The total number of apps that directly or indirectly depend on the parent app. Read-Only. This property is read-only.</summary>
         public int? DependentAppCount
         {
             get { return BackingStore?.Get<int?>("dependentAppCount"); }
             set { BackingStore?.Set("dependentAppCount", value); }
         }
-        /// <summary>The total number of apps the child app directly or indirectly depends on. This property is read-only.</summary>
+        /// <summary>The total number of apps the child app directly or indirectly depends on. Read-Only. This property is read-only.</summary>
         public int? DependsOnAppCount
         {
             get { return BackingStore?.Get<int?>("dependsOnAppCount"); }

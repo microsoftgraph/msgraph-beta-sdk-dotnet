@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AppManagementApplicationConfiguration : global::Microsoft.Graph.Beta.Models.AppManagementConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identifierUris property</summary>
+        /// <summary>Configuration object for restrictions on identifierUris property for an application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.IdentifierUriConfiguration? IdentifierUris

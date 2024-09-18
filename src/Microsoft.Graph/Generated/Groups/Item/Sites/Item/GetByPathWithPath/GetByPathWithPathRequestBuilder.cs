@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.LastModified
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Lists;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Onenote;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Operations;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.PageTemplates;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Pages;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Permissions;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.RecycleBin;
@@ -119,6 +120,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Pages.PagesRequestBuilder Pages
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the pageTemplates property of the microsoft.graph.site entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.PageTemplates.PageTemplatesRequestBuilder PageTemplates
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.PageTemplates.PageTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.Permissions.PermissionsRequestBuilder Permissions

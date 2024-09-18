@@ -4,6 +4,8 @@ using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts.Count;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts.Item;
+using Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -75,6 +77,32 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.AlertCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.AlertCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getAlertFrequencies method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        [Obsolete(" as of 2022-06/PrivatePreview:NetworkAccess")]
+        public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        {
+            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getAlertSeveritySummaries method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        [Obsolete(" as of 2022-06/PrivatePreview:NetworkAccess")]
+        public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        {
+            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Create new navigation property to alerts for networkAccess

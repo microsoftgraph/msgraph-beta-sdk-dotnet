@@ -16,6 +16,7 @@ using Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Start;
@@ -134,6 +135,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder RetrieveReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveSnapshots method.</summary>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder RetrieveSnapshots
+        {
+            get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
         [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]

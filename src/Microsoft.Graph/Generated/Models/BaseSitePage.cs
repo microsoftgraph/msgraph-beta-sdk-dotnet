@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.newsLinkPage" => new global::Microsoft.Graph.Beta.Models.NewsLinkPage(),
+                "#microsoft.graph.pageTemplate" => new global::Microsoft.Graph.Beta.Models.PageTemplate(),
                 "#microsoft.graph.sitePage" => new global::Microsoft.Graph.Beta.Models.SitePage(),
                 "#microsoft.graph.videoNewsLinkPage" => new global::Microsoft.Graph.Beta.Models.VideoNewsLinkPage(),
                 _ => new global::Microsoft.Graph.Beta.Models.BaseSitePage(),
