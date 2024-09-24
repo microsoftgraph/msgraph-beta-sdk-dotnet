@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWit
         {
         }
         /// <summary>
-        /// Get the aggregated number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+        /// Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Reports.GetMicrosoft365CopilotUserCountSummaryWit
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the aggregated number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
+        /// Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

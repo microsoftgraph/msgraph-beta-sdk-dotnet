@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The domainControllerDnsNames property</summary>
+        /// <summary>DNS names for the domain controller</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DomainControllerDnsNames
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("domainControllerDnsNames", value); }
         }
 #endif
-        /// <summary>The isDelayedDeploymentEnabled property</summary>
+        /// <summary>Indicates whether to delay updates for the sensor.</summary>
         public bool? IsDelayedDeploymentEnabled
         {
             get { return BackingStore?.Get<bool?>("isDelayedDeploymentEnabled"); }

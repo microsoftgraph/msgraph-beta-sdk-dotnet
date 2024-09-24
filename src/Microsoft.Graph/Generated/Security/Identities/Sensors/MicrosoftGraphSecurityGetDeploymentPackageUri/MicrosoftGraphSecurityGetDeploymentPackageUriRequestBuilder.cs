@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.MicrosoftGraphSecurit
         {
         }
         /// <summary>
-        /// Invoke function getDeploymentPackageUri
+        /// Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.MicrosoftGraphSecurit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.SensorDeploymentPackage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDeploymentPackageUri
+        /// Get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
