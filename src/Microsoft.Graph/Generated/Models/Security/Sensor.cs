@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class Sensor : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the sensor was generated.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.DeploymentStatus?>("deploymentStatus"); }
             set { BackingStore?.Set("deploymentStatus", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The domainName property</summary>
+        /// <summary>The fully qualified domain name of the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>The healthIssues property</summary>
+        /// <summary>Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>? HealthIssues
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.SensorHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
-        /// <summary>The openHealthIssuesCount property</summary>
+        /// <summary>This field displays the count of health issues related to this sensor.</summary>
         public long? OpenHealthIssuesCount
         {
             get { return BackingStore?.Get<long?>("openHealthIssuesCount"); }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("settings", value); }
         }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version of the sensor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version

@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.MicrosoftGraphSecurit
         {
         }
         /// <summary>
-        /// Invoke action regenerateDeploymentAccessKey
+        /// Generate a new deployment access key that can be used to install a sensor associated with the workspace.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.DeploymentAccessKeyType"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.MicrosoftGraphSecurit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.DeploymentAccessKeyType>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.DeploymentAccessKeyType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action regenerateDeploymentAccessKey
+        /// Generate a new deployment access key that can be used to install a sensor associated with the workspace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

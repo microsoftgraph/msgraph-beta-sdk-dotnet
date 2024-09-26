@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class NetworkAdapter : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether the network adapter is selected for capturing and analyzing network traffic.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the network adapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name

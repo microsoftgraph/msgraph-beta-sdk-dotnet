@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("nextSigningCertificate", value); }
         }
 #endif
-        /// <summary>The passwordResetUri property</summary>
+        /// <summary>URI that clients are redirected to for resetting their password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PasswordResetUri

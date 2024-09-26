@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item.HealthIssues
         {
         }
         /// <summary>
-        /// Get healthIssues from security
+        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.HealthIssueCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item.HealthIssues
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.HealthIssueCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.HealthIssueCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get healthIssues from security
+        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item.HealthIssues
             return new global::Microsoft.Graph.Beta.Security.Identities.Sensors.Item.HealthIssues.HealthIssuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get healthIssues from security
+        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class HealthIssuesRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public partial class IdentityContainer : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents potential issues identified by Microsoft Defender for Identity within a customer&apos;s Microsoft Defender for Identity configuration.</summary>
+        /// <summary>Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.HealthIssue>? HealthIssues
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
-        /// <summary>The sensors property</summary>
+        /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Security.Sensor>? Sensors

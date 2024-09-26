@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         {
         }
         /// <summary>
-        /// Delete navigation property sensors for security
+        /// Delete a sensor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identitycontainer-delete-sensors?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensors from security
+        /// Read the properties and relationships of a sensor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Sensor"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.Sensor>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sensors in security
+        /// Update the properties of a sensor object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Security.Sensor"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Security.Sensor>(requestInfo, global::Microsoft.Graph.Beta.Models.Security.Sensor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sensors for security
+        /// Delete a sensor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get sensors from security
+        /// Read the properties and relationships of a sensor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sensors in security
+        /// Update the properties of a sensor object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.Sensors.Item
         {
         }
         /// <summary>
-        /// Get sensors from security
+        /// Read the properties and relationships of a sensor object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class SensorItemRequestBuilderGetQueryParameters 
