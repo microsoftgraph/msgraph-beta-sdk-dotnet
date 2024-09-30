@@ -40,7 +40,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <NoWarn>$(NoWarn);NU5048;NETSDK1138</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFrameworkVersion)' == 'net5.0'">
+  <PropertyGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)','net5.0'))">
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
