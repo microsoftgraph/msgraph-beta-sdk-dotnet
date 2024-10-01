@@ -29,6 +29,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
+        /// <summary>The browser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Browser
+        {
+            get { return BackingStore?.Get<string?>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#nullable restore
+#else
+        public string Browser
+        {
+            get { return BackingStore?.Get<string>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#endif
         /// <summary>The total number of users who signed up in the specified period. Supports $filter (eq).</summary>
         public long? Count
         {
@@ -124,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
+                { "browser", n => { Browser = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetLongValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "factDate", n => { FactDate = n.GetDateValue(); } },
@@ -141,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("browser", Browser);
             writer.WriteLongValue("count", Count);
             writer.WriteStringValue("country", Country);
             writer.WriteDateValue("factDate", FactDate);

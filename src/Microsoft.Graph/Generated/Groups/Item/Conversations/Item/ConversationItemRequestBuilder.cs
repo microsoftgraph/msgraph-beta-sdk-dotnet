@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a group&apos;s conversation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-beta" />
+        /// Retrieve the properties and relationships of conversation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Conversation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get a group&apos;s conversation object.
+        /// Retrieve the properties and relationships of conversation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item
         {
         }
         /// <summary>
-        /// Get a group&apos;s conversation object.
+        /// Retrieve the properties and relationships of conversation object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ConversationItemRequestBuilderGetQueryParameters 

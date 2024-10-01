@@ -826,6 +826,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
             set { BackingStore?.Set("tokenIssuerType", value); }
         }
+        /// <summary>The tokenProtectionStatusDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails? TokenProtectionStatusDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails?>("tokenProtectionStatusDetails"); }
+            set { BackingStore?.Set("tokenProtectionStatusDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails TokenProtectionStatusDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails>("tokenProtectionStatusDetails"); }
+            set { BackingStore?.Set("tokenProtectionStatusDetails", value); }
+        }
+#endif
         /// <summary>A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they&apos;re redeemed at resource providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -994,6 +1010,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "status", n => { Status = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.SignInStatus>(global::Microsoft.Graph.Beta.Models.SignInStatus.CreateFromDiscriminatorValue); } },
                 { "tokenIssuerName", n => { TokenIssuerName = n.GetStringValue(); } },
                 { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.TokenIssuerType>(); } },
+                { "tokenProtectionStatusDetails", n => { TokenProtectionStatusDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails>(global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails.CreateFromDiscriminatorValue); } },
                 { "uniqueTokenIdentifier", n => { UniqueTokenIdentifier = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
@@ -1074,6 +1091,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.SignInStatus>("status", Status);
             writer.WriteStringValue("tokenIssuerName", TokenIssuerName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.TokenIssuerType>("tokenIssuerType", TokenIssuerType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TokenProtectionStatusDetails>("tokenProtectionStatusDetails", TokenProtectionStatusDetails);
             writer.WriteStringValue("uniqueTokenIdentifier", UniqueTokenIdentifier);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("userDisplayName", UserDisplayName);

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The applicationTimeoutInMinutes property</summary>
+        /// <summary>Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn&apos;t finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 10 and 360. Required.</summary>
         public int? ApplicationTimeoutInMinutes
         {
             get { return BackingStore?.Get<int?>("applicationTimeoutInMinutes"); }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The devicePreparationProfileId property</summary>
+        /// <summary>The unique identifier (ID) of the Autopilot device preparation profile (DPP) that links a Windows Autopilot device preparation policy to ensure that devices are ready for users after provisioning. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePreparationProfileId
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The onFailureDeviceAccessDenied property</summary>
+        /// <summary>Indicates whether the access to the device is allowed when the application of Autopilot device preparation profile (DPP) configurations fails or times out. If true, the status of the device is failed and the device is unable to access; otherwise, the status of the device is provisionedWithWarnings and the device is allowed to access. The default value is false. Required.</summary>
         public bool? OnFailureDeviceAccessDenied
         {
             get { return BackingStore?.Get<bool?>("onFailureDeviceAccessDenied"); }

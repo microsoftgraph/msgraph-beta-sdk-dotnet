@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsUniversalAppXAppAssignmentSettings : global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
-        /// <summary>If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.</summary>
+        /// <summary>Whether or not to use device execution context for Windows Universal AppX mobile app.</summary>
         public bool? UseDeviceContext
         {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }

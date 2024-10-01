@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages
         {
         }
         /// <summary>
-        /// Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse>(requestInfo, global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages
             return new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class GetAllRetainedMessagesRequestBuilderGetQueryParameters 

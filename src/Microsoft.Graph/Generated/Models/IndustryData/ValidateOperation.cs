@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
+    /// <summary>
+    /// The status of a long-running operation.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public partial class ValidateOperation : global::Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Set of errors discovered through validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

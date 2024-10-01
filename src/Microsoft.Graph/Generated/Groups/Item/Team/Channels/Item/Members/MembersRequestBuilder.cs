@@ -3,6 +3,7 @@
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Add;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Count;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Item;
+using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Remove;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members
         public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the remove method.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of conversationMember</param>

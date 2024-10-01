@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Add;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Count;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Item;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Remove;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -32,6 +33,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Members
         public global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the remove method.</summary>
+        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        public global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.chat entity.</summary>
         /// <param name="position">The unique identifier of conversationMember</param>

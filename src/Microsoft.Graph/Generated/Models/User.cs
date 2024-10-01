@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    /// <summary>
+    /// Represents a Microsoft Entra user account.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public partial class User : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>A freeform text entry field for users to describe themselves. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1659,7 +1660,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordPolicies", value); }
         }
 #endif
-        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
+        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values). To update this property:  In delegated access, the calling app must be assigned the Directory.AccessAsUser.All delegated permission on behalf of the signed-in user.  In application-only access, the calling app must be assigned the User.ReadWrite.All (least privilege) or Directory.ReadWrite.All (higher privilege) application permission and at least the User Administrator Microsoft Entra role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile

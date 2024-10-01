@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
+    /// <summary>
+    /// Represents a Microsoft Entra group.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public partial class Group : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -132,6 +132,7 @@ using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithDate;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityGroupCountsWithPeriod;
+using Microsoft.Graph.Beta.Reports.HealthMonitoring;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken;
 using Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetails;
@@ -255,6 +256,11 @@ namespace Microsoft.Graph.Beta.Reports
         public global::Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail.GetOffice365ActivationsUserDetailRequestBuilder GetOffice365ActivationsUserDetail
         {
             get => new global::Microsoft.Graph.Beta.Reports.GetOffice365ActivationsUserDetail.GetOffice365ActivationsUserDetailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the healthMonitoring property of the microsoft.graph.reportRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.HealthMonitoring.HealthMonitoringRequestBuilder HealthMonitoring
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.HealthMonitoring.HealthMonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the managedDeviceEnrollmentFailureDetails method.</summary>
         public global::Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentFailureDetails.ManagedDeviceEnrollmentFailureDetailsRequestBuilder ManagedDeviceEnrollmentFailureDetails

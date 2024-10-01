@@ -123,8 +123,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.FileStorageContainer>(requestInfo, global::Microsoft.Graph.Beta.Models.FileStorageContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a fileStorageContainer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-update?view=graph-rest-beta" />
+        /// Update the navigation property containers in storage
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.FileStorageContainer"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +186,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a fileStorageContainer object.
+        /// Update the navigation property containers in storage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

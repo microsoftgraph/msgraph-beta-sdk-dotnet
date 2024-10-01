@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Add;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Count;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Item;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Remove;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the remove method.</summary>
+        public global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of conversationMember</param>

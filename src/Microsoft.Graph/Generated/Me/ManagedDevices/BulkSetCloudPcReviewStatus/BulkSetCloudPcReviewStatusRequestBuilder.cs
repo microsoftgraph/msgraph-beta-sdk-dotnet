@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.BulkSetCloudPcReviewStatus
         {
         }
         /// <summary>
-        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+        /// Invoke action bulkSetCloudPcReviewStatus
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcBulkRemoteActionResult"/></returns>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.BulkSetCloudPcReviewStatus
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcBulkRemoteActionResult>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcBulkRemoteActionResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+        /// Invoke action bulkSetCloudPcReviewStatus
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Value
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a message object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-beta" />
+        /// Update the properties of an eventMessage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Binary request body</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Value
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a message object.
+        /// Update the properties of an eventMessage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
