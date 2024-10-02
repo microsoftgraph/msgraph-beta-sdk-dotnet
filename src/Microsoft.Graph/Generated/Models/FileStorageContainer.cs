@@ -126,13 +126,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Guid?>("externalGroupId"); }
             set { BackingStore?.Set("externalGroupId", value); }
         }
-        /// <summary>Indicates whether versioning is enabled for the fileStorageContainer. The setting is applicable to all items in the fileStorageContainer. Read-Write.</summary>
+        /// <summary>The isItemVersioningEnabled property</summary>
         public bool? IsItemVersioningEnabled
         {
             get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
             set { BackingStore?.Set("isItemVersioningEnabled", value); }
         }
-        /// <summary>Maximum number of major versions allowed for items in the fileStorageContainer. Read-write.</summary>
+        /// <summary>The itemMajorVersionLimit property</summary>
         public int? ItemMajorVersionLimit
         {
             get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomAppManagementConfiguration : global::Microsoft.Graph.Beta.Models.AppManagementConfiguration, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Restrictions applicable only to application objects that the policy applies to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration? ApplicationRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration?>("applicationRestrictions"); }
+            set { BackingStore?.Set("applicationRestrictions", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration ApplicationRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration>("applicationRestrictions"); }
+            set { BackingStore?.Set("applicationRestrictions", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CustomAppManagementConfiguration"/> and sets the default values.
         /// </summary>
@@ -37,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "applicationRestrictions", n => { ApplicationRestrictions = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration>(global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -47,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CustomAppManagementApplicationConfiguration>("applicationRestrictions", ApplicationRestrictions);
         }
     }
 }

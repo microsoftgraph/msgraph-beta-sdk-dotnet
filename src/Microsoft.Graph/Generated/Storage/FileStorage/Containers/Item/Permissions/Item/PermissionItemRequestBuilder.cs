@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
         {
         }
         /// <summary>
-        /// Delete permissions from a fileStorageContainer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-delete-permissions?view=graph-rest-beta" />
+        /// Delete navigation property permissions for storage
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,8 +92,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing permission on a fileStorageContainer by making a PATCH request on the permission resource. Only the roles property can be updated.  One role per user is supported. A new ID is generated for the updated permissions object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-update-permissions?view=graph-rest-beta" />
+        /// Update the navigation property permissions in storage
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +117,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Permission>(requestInfo, global::Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete permissions from a fileStorageContainer object.
+        /// Delete navigation property permissions for storage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.Containers.Item.Permissions.I
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing permission on a fileStorageContainer by making a PATCH request on the permission resource. Only the roles property can be updated.  One role per user is supported. A new ID is generated for the updated permissions object.
+        /// Update the navigation property permissions in storage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

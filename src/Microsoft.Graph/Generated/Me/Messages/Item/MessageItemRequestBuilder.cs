@@ -178,8 +178,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-beta" />
+        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -203,8 +203,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Message>(requestInfo, global::Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a message object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-beta" />
+        /// Update the properties of an eventMessage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
+        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -270,7 +270,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a message object.
+        /// Update the properties of an eventMessage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -311,7 +311,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item
         {
         }
         /// <summary>
-        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
+        /// Get the properties and relationships of the eventMessage object. Apply the $expand parameter on the eventnavigation property to get the associated event in an attendee&apos;s calendar.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 

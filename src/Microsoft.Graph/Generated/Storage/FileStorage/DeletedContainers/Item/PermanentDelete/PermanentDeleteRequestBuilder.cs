@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Perman
         {
         }
         /// <summary>
-        /// Invoke action permanentDelete
+        /// Permanently delete a fileStorageContainer object. Deleting a file storage container with this method permanently removes it. It isn&apos;t sent to the deleted container collection. Therefore, it can&apos;t be restored later.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-permanentdelete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Storage.FileStorage.DeletedContainers.Item.Perman
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action permanentDelete
+        /// Permanently delete a fileStorageContainer object. Deleting a file storage container with this method permanently removes it. It isn&apos;t sent to the deleted container collection. Therefore, it can&apos;t be restored later.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
+using Microsoft.Graph.Beta.Models.HealthMonitoring;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
@@ -270,6 +271,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.authenticationEventListener" => new global::Microsoft.Graph.Beta.Models.AuthenticationEventListener(),
                 "#microsoft.graph.authenticationEventsFlow" => new global::Microsoft.Graph.Beta.Models.AuthenticationEventsFlow(),
                 "#microsoft.graph.authenticationEventsPolicy" => new global::Microsoft.Graph.Beta.Models.AuthenticationEventsPolicy(),
+                "#microsoft.graph.authenticationFailure" => new global::Microsoft.Graph.Beta.Models.AuthenticationFailure(),
                 "#microsoft.graph.authenticationFlowsPolicy" => new global::Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy(),
                 "#microsoft.graph.authenticationListener" => new global::Microsoft.Graph.Beta.Models.AuthenticationListener(),
                 "#microsoft.graph.authenticationMethod" => new global::Microsoft.Graph.Beta.Models.AuthenticationMethod(),
@@ -701,6 +703,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.embeddedSIMActivationCodePool" => new global::Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool(),
                 "#microsoft.graph.embeddedSIMActivationCodePoolAssignment" => new global::Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePoolAssignment(),
                 "#microsoft.graph.embeddedSIMDeviceState" => new global::Microsoft.Graph.Beta.Models.EmbeddedSIMDeviceState(),
+                "#microsoft.graph.emergencyCallEvent" => new global::Microsoft.Graph.Beta.Models.EmergencyCallEvent(),
                 "#microsoft.graph.employeeExperienceUser" => new global::Microsoft.Graph.Beta.Models.EmployeeExperienceUser(),
                 "#microsoft.graph.encryptedAwsStorageBucketFinding" => new global::Microsoft.Graph.Beta.Models.EncryptedAwsStorageBucketFinding(),
                 "#microsoft.graph.encryptedAzureStorageAccountFinding" => new global::Microsoft.Graph.Beta.Models.EncryptedAzureStorageAccountFinding(),
@@ -833,6 +836,9 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.hardwarePasswordDetail" => new global::Microsoft.Graph.Beta.Models.HardwarePasswordDetail(),
                 "#microsoft.graph.hardwarePasswordInfo" => new global::Microsoft.Graph.Beta.Models.HardwarePasswordInfo(),
+                "#microsoft.graph.healthMonitoring.alert" => new global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert(),
+                "#microsoft.graph.healthMonitoring.alertConfiguration" => new global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration(),
+                "#microsoft.graph.healthMonitoring.healthMonitoringRoot" => new global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.horizontalSection" => new global::Microsoft.Graph.Beta.Models.HorizontalSection(),
                 "#microsoft.graph.horizontalSectionColumn" => new global::Microsoft.Graph.Beta.Models.HorizontalSectionColumn(),

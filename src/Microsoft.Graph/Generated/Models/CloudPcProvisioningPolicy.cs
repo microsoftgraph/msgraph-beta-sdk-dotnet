@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("autopatch", value); }
         }
 #endif
-        /// <summary>The autopilotConfiguration property</summary>
+        /// <summary>The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcAutopilotConfiguration? AutopilotConfiguration

@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("offerName", value); }
         }
 #endif
-        /// <summary>The osVersionNumber property</summary>
+        /// <summary>The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersionNumber
