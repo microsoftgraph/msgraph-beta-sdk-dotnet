@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a device management script to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceHealthScriptAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents the synchronization details of an android app, with management capabilities, for a specific user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidManagedAppRegistration : global::Microsoft.Graph.Beta.Models.ManagedAppRegistration, IParsable
     {
         /// <summary>The patch version for the current android app registration</summary>

@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item
     /// <summary>
     /// Builds and executes requests for operations under \devices\{device-id}\registeredOwners\{directoryObject-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to endpoint.</summary>

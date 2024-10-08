@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Education.Classes.Item.GetRecentlyModifiedSubmissions
 {
     [Obsolete("This class is obsolete. Use GetRecentlyModifiedSubmissionsGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetRecentlyModifiedSubmissionsResponse : global::Microsoft.Graph.Beta.Education.Classes.Item.GetRecentlyModifiedSubmissions.GetRecentlyModifiedSubmissionsGetResponse, IParsable
     #pragma warning restore CS1591

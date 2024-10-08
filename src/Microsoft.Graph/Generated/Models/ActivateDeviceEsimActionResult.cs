@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Activate device eSIM action result
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ActivateDeviceEsimActionResult : global::Microsoft.Graph.Beta.Models.DeviceActionResult, IParsable
     {
         /// <summary>Carrier Url to activate the device eSIM</summary>

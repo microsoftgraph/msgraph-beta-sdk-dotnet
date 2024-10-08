@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for macOS web apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class MacOSWebClip : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The web app URL starting with http:// or https://, such as https://learn.microsoft.com/mem/.</summary>

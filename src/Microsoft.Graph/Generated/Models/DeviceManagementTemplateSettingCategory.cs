@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing a template setting category
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementTemplateSettingCategory : global::Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory, IParsable
     {
         /// <summary>The settings this category contains</summary>

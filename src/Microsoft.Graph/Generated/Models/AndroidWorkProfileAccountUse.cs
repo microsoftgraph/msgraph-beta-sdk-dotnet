@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum representing possible values for account use in work profile.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum AndroidWorkProfileAccountUse
     {
         /// <summary>Allow additon of all accounts except Google accounts in Android Work Profile.</summary>

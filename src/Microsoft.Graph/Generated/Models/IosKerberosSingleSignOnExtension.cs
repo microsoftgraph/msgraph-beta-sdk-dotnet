@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a Kerberos-type Single Sign-On extension profile for iOS devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IosKerberosSingleSignOnExtension : global::Microsoft.Graph.Beta.Models.IosSingleSignOnExtension, IParsable
     {
         /// <summary>Gets or sets the Active Directory site.</summary>

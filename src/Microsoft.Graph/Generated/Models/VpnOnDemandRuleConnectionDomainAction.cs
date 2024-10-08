@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum VpnOnDemandRuleConnectionDomainAction
     {
         /// <summary>Connect if needed.</summary>

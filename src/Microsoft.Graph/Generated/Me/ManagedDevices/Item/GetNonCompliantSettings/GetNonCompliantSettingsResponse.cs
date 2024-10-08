@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
 {
     [Obsolete("This class is obsolete. Use GetNonCompliantSettingsGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetNonCompliantSettingsResponse : global::Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse, IParsable
     #pragma warning restore CS1591

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>State of remote assistance for the account</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum RemoteAssistanceState
     {
         /// <summary>Remote assistance is disabled for the account. With this value, Quick Assist remote assistance sessions are not allowed for the account.</summary>

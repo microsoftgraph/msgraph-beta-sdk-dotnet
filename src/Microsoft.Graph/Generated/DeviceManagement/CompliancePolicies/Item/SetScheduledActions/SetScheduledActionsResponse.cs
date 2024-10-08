@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions
 {
     [Obsolete("This class is obsolete. Use SetScheduledActionsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class SetScheduledActionsResponse : global::Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions.SetScheduledActionsPostResponse, IParsable
     #pragma warning restore CS1591

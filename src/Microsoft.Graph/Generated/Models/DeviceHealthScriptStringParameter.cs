@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Properties of the  String script parameter.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceHealthScriptStringParameter : global::Microsoft.Graph.Beta.Models.DeviceHealthScriptParameter, IParsable
     {
         /// <summary>The default value of string param</summary>

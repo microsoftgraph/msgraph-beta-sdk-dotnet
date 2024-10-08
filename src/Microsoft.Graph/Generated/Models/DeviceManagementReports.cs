@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity that acts as a container for all reports functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementReports : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Entity representing the configuration of a cached report.</summary>

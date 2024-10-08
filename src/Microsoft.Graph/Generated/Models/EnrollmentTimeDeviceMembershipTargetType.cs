@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the type of the targets that devices will become members of when enrolled with the associated profile. Possible values are staticSecurityGroup.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum EnrollmentTimeDeviceMembershipTargetType
     {
         /// <summary>Default value. Do not use.</summary>

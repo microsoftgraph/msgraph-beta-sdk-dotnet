@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline per category compliance state summary for the security baseline of the account.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class SecurityBaselineCategoryStateSummary : global::Microsoft.Graph.Beta.Models.SecurityBaselineStateSummary, IParsable
     {
         /// <summary>The category name</summary>

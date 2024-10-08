@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Access Rules in Exchange.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementExchangeAccessRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Access Level in Exchange.</summary>

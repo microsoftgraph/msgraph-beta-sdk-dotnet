@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics battery health device performance entity contains device level battery information.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UserExperienceAnalyticsBatteryHealthDevicePerformance : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Estimated battery age. Unit in days. Valid values 0 to 2147483647</summary>

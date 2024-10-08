@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity represents an group policy operation.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class GroupPolicyOperation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date and time the entity was last modified.</summary>

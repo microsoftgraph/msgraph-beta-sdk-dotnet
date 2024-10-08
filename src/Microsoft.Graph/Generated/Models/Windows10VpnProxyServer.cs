@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// VPN Proxy Server.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Windows10VpnProxyServer : global::Microsoft.Graph.Beta.Models.VpnProxyServer, IParsable
     {
         /// <summary>Bypass proxy server for local address.</summary>

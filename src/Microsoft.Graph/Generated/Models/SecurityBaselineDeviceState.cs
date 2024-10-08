@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The security baseline compliance state summary of the security baseline for a device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class SecurityBaselineDeviceState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Display name of the device</summary>

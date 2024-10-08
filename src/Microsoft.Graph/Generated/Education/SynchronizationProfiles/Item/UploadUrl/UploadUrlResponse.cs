@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl
 {
     [Obsolete("This class is obsolete. Use UploadUrlGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class UploadUrlResponse : global::Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Delivery Optimization max cache size absolute type.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeliveryOptimizationMaxCacheSizeAbsolute : global::Microsoft.Graph.Beta.Models.DeliveryOptimizationMaxCacheSize, IParsable
     {
         /// <summary>Specifies the maximum size in GB of Delivery Optimization cache. Valid values 0 to 4294967295</summary>

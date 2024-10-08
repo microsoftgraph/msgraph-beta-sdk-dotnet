@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows defender advanced threat protection onboarding state summary across the account.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AdvancedThreatProtectionOnboardingStateSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The advancedThreatProtectionOnboardingDeviceSettingStates property</summary>

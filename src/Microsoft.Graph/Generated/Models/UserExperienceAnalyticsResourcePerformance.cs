@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics resource performance entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UserExperienceAnalyticsResourcePerformance : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>

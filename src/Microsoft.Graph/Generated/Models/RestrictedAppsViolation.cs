@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Violation of restricted apps configuration profile per device per user
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class RestrictedAppsViolation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>

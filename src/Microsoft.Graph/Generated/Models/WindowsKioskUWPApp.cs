@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The base class for a type of apps
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsKioskUWPApp : global::Microsoft.Graph.Beta.Models.WindowsKioskAppBase, IParsable
     {
         /// <summary>This references an Intune App that will be target to the same assignments as Kiosk configuration</summary>

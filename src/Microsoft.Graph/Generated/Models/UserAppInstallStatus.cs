@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the installation status for a user. This will be deprecated in May, 2023
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UserAppInstallStatus : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The navigation link to the mobile app.</summary>

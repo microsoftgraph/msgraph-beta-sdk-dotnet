@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Result of the ConfigurationManager action
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ConfigurationManagerActionResult : global::Microsoft.Graph.Beta.Models.DeviceActionResult, IParsable
     {
         /// <summary>Delivery state of Configuration Manager device action</summary>

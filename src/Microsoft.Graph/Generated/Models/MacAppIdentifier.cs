@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The identifier for a Mac app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class MacAppIdentifier : global::Microsoft.Graph.Beta.Models.MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the app store.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Local Action Configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidDeviceComplianceLocalActionBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647</summary>

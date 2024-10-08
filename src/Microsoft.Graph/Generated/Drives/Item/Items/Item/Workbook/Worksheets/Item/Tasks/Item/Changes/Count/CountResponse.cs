@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tasks.Item.Changes.Count
 {
     [Obsolete("This class is obsolete. Use CountGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class CountResponse : global::Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tasks.Item.Changes.Count.CountGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS software update state summary for a device and user
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class MacOSSoftwareUpdateStateSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Human readable name of the software update</summary>

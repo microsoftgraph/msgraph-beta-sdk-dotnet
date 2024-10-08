@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.FilterByCurrentUserWithOn
 {
     [Obsolete("This class is obsolete. Use FilterByCurrentUserWithOnGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class FilterByCurrentUserWithOnResponse : global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse, IParsable
     #pragma warning restore CS1591

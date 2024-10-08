@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base type of Device health script time schedule.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceHealthScriptTimeSchedule : global::Microsoft.Graph.Beta.Models.DeviceHealthScriptRunSchedule, IParsable
     {
         /// <summary>At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.</summary>

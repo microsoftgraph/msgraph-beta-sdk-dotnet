@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign an Win32 catalog mobile app to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Win32CatalogAppAssignmentSettings : global::Microsoft.Graph.Beta.Models.Win32LobAppAssignmentSettings, IParsable
     {
         /// <summary>

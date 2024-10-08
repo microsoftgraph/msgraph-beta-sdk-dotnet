@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device BIOS password information for devices with managed BIOS and firmware configuration, which provides device serial number, list of previous passwords, and current password.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class HardwarePasswordDetail : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The current device&apos;s BIOS password. Supports: $filter, $select, $top, $OrderBy, $skip. This property is read-only.</summary>

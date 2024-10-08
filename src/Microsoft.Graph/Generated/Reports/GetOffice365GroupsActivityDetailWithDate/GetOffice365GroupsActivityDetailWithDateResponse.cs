@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate
 {
     [Obsolete("This class is obsolete. Use GetOffice365GroupsActivityDetailWithDateGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetOffice365GroupsActivityDetailWithDateResponse : global::Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate.GetOffice365GroupsActivityDetailWithDateGetResponse, IParsable
     #pragma warning restore CS1591

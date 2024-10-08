@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity contains the properties used to assign a branding profile to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IntuneBrandingProfileAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Assignment target that the branding profile is assigned to.</summary>

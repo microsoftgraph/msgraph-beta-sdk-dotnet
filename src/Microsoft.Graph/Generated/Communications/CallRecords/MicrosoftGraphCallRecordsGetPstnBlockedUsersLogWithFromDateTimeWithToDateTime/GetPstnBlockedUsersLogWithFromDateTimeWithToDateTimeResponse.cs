@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime
 {
     [Obsolete("This class is obsolete. Use GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponse : global::Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime.GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591

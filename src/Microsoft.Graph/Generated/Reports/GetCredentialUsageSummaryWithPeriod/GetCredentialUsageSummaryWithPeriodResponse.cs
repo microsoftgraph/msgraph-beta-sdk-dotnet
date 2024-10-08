@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod
 {
     [Obsolete("This class is obsolete. Use GetCredentialUsageSummaryWithPeriodGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetCredentialUsageSummaryWithPeriodResponse : global::Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod.GetCredentialUsageSummaryWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity describes all of the information about a single group policy.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class GroupPolicyDefinition : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The group policy category associated with the definition.</summary>

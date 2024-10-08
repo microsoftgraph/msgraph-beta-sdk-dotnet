@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Devices that are managed or pre-enrolled through Intune
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ManagedDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android For Work PKCS certificate profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidForWorkPkcsCertificateProfile : global::Microsoft.Graph.Beta.Models.AndroidForWorkCertificateProfileBase, IParsable
     {
         /// <summary>PKCS Certificate Template Name</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Allows IT admins to set a predefined default search engine for MDM-Controlled devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class EdgeSearchEngine : global::Microsoft.Graph.Beta.Models.EdgeSearchEngineBase, IParsable
     {
         /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies
 {
     [Obsolete("This class is obsolete. Use ImportOffice365DeviceConfigurationPoliciesPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class ImportOffice365DeviceConfigurationPoliciesResponse : global::Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies.ImportOffice365DeviceConfigurationPoliciesPostResponse, IParsable
     #pragma warning restore CS1591

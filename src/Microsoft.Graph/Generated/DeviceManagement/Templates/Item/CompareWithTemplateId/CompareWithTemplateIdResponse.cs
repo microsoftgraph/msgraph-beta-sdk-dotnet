@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTemplateId
 {
     [Obsolete("This class is obsolete. Use CompareWithTemplateIdGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class CompareWithTemplateIdResponse : global::Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTemplateId.CompareWithTemplateIdGetResponse, IParsable
     #pragma warning restore CS1591

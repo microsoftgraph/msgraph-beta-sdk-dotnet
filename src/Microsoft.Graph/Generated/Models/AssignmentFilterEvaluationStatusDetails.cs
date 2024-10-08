@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing information about the payloads on which filter has been applied.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AssignmentFilterEvaluationStatusDetails : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>PayloadId on which filter has been applied.</summary>
