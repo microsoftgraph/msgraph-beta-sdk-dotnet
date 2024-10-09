@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a Chromebook tenant settings
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ChromeOSOnboardingSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>

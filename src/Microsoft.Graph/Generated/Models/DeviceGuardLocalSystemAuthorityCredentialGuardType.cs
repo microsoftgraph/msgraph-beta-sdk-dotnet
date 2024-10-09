@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values of Credential Guard settings.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum DeviceGuardLocalSystemAuthorityCredentialGuardType
     {
         /// <summary>Turns off Credential Guard remotely if configured previously without UEFI Lock.</summary>

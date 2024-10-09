@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for device run state of the hardware configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class HardwareConfigurationDeviceState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A list of identifier strings of different assignment filters applied</summary>

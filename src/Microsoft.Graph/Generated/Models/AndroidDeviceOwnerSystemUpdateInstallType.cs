@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>System Update Types for Android Device Owner.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum AndroidDeviceOwnerSystemUpdateInstallType
     {
         /// <summary>Device default behavior, which typically prompts the user to accept system updates.</summary>

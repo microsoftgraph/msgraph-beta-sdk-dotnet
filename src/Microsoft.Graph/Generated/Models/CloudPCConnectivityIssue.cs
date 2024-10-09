@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analyte connectivity issue entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class CloudPCConnectivityIssue : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>

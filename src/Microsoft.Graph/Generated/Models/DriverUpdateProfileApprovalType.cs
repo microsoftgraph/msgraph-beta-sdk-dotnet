@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>An enum type to represent approval type of a driver update profile.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum DriverUpdateProfileApprovalType
     {
         /// <summary>This indicates a driver and firmware profile needs to be approved manually.</summary>

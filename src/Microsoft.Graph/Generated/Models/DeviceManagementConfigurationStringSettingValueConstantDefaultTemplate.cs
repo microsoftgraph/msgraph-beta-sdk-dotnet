@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// String Setting Value Constant Default Template
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Default Constant Value</summary>

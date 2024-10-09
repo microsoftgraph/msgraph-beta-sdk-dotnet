@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity defines different Windows Operating System products, like &apos;Windows 11 22H1&apos;, &apos;Windows 11 22H2&apos; etc., along with their available configurations.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ManagedDeviceWindowsOperatingSystemImage : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the available Quality/Security updates for a specific Windows product version (example: Windows 11 22H1), for upto last 3 Patch Tuesdays . This value in the API response would be updated 2-3 days after every Patch Tuesday. Supports: $filter, $select, $top, $skip. Read-only.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for Android Enterprise mobile app configurations.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidManagedStoreAppConfiguration : global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration, IParsable
     {
         /// <summary>Whether or not this AppConfig is an OEMConfig policy. This property is read-only.</summary>

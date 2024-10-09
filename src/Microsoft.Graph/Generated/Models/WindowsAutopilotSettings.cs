@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsAutopilotSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Last data sync date time with DDS service.</summary>

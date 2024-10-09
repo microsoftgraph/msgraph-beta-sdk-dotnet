@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a device management script to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementScriptGroupAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The Id of the Azure Active Directory group we are targeting the script to.</summary>

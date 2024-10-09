@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Desktop App for Windows information protection
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsInformationProtectionDesktopApp : global::Microsoft.Graph.Beta.Models.WindowsInformationProtectionApp, IParsable
     {
         /// <summary>The binary name.</summary>

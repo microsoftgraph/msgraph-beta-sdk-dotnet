@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml
 {
     [Obsolete("This class is obsolete. Use ValidateXmlPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class ValidateXmlResponse : global::Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml.ValidateXmlPostResponse, IParsable
     #pragma warning restore CS1591

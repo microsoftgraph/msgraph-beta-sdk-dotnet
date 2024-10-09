@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Event representing an general failure.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementTroubleshootingEvent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>

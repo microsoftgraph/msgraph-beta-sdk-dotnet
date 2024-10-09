@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Revoke Apple Vpp licenses action result
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class RevokeAppleVppLicensesActionResult : global::Microsoft.Graph.Beta.Models.DeviceActionResult, IParsable
     {
         /// <summary>Total number of Apple Vpp licenses that failed to revoke</summary>

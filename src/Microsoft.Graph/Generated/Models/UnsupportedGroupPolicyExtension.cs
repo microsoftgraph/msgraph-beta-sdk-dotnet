@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Unsupported Group Policy Extension.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UnsupportedGroupPolicyExtension : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>ExtensionType of the unsupported extension.</summary>

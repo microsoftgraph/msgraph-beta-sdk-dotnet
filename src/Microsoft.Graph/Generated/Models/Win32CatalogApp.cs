@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A mobileApp that is based on a referenced application in a Win32CatalogApp repository
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Win32CatalogApp : global::Microsoft.Graph.Beta.Models.Win32LobApp, IParsable
     {
         /// <summary>The latest available catalog package the app is upgradeable to. This property is read-only.</summary>

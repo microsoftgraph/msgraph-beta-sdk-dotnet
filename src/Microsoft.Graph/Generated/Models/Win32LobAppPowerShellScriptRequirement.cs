@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains PowerShell script properties to detect a Win32 App
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Win32LobAppPowerShellScriptRequirement : global::Microsoft.Graph.Beta.Models.Win32LobAppRequirement, IParsable
     {
         /// <summary>Contains all supported Powershell Script output detection type.</summary>

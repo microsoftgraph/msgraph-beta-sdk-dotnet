@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device health script daily schedule.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceHealthScriptDailySchedule : global::Microsoft.Graph.Beta.Models.DeviceHealthScriptTimeSchedule, IParsable
     {
         /// <summary>

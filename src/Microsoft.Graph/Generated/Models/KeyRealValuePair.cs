@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A key-value pair with a string key and a real (floating-point) value.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class KeyRealValuePair : global::Microsoft.Graph.Beta.Models.KeyTypedValuePair, IParsable
     {
         /// <summary>The real (floating-point) value of the key-value pair.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity contains the properties used to assign a windows driver update profile to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsDriverUpdateProfileAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Base type for assignment targets.</summary>

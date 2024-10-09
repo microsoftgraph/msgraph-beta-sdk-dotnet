@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains product code and version properties to detect a Win32 App
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Win32LobAppProductCodeDetection : global::Microsoft.Graph.Beta.Models.Win32LobAppDetection, IParsable
     {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>

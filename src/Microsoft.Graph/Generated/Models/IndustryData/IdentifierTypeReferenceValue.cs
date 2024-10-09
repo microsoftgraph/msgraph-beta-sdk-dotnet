@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class IdentifierTypeReferenceValue : global::Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue, IParsable
     #pragma warning restore CS1591

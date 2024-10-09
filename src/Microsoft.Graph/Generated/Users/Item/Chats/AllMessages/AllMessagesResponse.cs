@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Users.Item.Chats.AllMessages
 {
     [Obsolete("This class is obsolete. Use AllMessagesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class AllMessagesResponse : global::Microsoft.Graph.Beta.Users.Item.Chats.AllMessages.AllMessagesGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enrollment Configuration Assignment
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class EnrollmentConfigurationAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Represents source of assignment.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// ATP onboarding State for a given device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AdvancedThreatProtectionOnboardingDeviceSettingState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>

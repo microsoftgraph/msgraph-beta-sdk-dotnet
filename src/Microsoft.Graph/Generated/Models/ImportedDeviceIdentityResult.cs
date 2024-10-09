@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The importedDeviceIdentityResult resource represents the result of attempting to import a device identity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ImportedDeviceIdentityResult : global::Microsoft.Graph.Beta.Models.ImportedDeviceIdentity, IParsable
     {
         /// <summary>Status of imported device identity</summary>

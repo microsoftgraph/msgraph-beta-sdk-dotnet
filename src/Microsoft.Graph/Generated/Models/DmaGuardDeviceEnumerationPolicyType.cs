@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Possible values of the DmaGuardDeviceEnumerationPolicy.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum DmaGuardDeviceEnumerationPolicyType
     {
         /// <summary>Default value. Devices with DMA remapping incompatible drivers will only be enumerated after the user unlocks the screen.</summary>

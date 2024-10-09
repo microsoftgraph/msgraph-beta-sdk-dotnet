@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Managed Device Mobile App Configuration State for a given device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ManagedDeviceMobileAppConfigurationState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The name of the policy for this policyBase</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Setting instance within policy
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementConfigurationSetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>

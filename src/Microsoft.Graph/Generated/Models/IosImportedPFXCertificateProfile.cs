@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS PFX Import certificate profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IosImportedPFXCertificateProfile : global::Microsoft.Graph.Beta.Models.IosCertificateProfile, IParsable
     {
         /// <summary>PFX Import Options.</summary>

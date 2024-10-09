@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing the defintion for a given setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementSettingDefinition : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Collection of constraints for the setting value</summary>

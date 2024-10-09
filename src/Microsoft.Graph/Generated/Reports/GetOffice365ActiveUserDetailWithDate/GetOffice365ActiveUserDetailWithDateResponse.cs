@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate
 {
     [Obsolete("This class is obsolete. Use GetOffice365ActiveUserDetailWithDateGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetOffice365ActiveUserDetailWithDateResponse : global::Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate.GetOffice365ActiveUserDetailWithDateGetResponse, IParsable
     #pragma warning restore CS1591

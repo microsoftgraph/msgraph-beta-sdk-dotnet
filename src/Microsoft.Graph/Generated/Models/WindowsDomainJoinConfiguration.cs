@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Domain Join device configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsDomainJoinConfiguration : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Active Directory domain name to join.</summary>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
             set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
-        /// <summary>Reference to device configurations required for network connectivity</summary>
+        /// <summary>Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DeviceConfiguration>? NetworkAccessConfigurations

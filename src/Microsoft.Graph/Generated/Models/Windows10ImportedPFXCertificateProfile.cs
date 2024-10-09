@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows 10 Desktop and Mobile PFX Import certificate profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Windows10ImportedPFXCertificateProfile : global::Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase, IParsable
     {
         /// <summary>PFX Import Options.</summary>

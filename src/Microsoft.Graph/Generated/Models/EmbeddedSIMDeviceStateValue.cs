@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Describes the various states for an embedded SIM activation code.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum EmbeddedSIMDeviceStateValue
     {
         /// <summary>Designates that the embedded SIM activation code is free and available to be assigned to a device.</summary>

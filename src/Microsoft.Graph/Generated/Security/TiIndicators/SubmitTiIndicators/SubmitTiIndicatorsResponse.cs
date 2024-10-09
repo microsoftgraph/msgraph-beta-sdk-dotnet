@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
 {
     [Obsolete("This class is obsolete. Use SubmitTiIndicatorsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class SubmitTiIndicatorsResponse : global::Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostResponse, IParsable
     #pragma warning restore CS1591

@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Define the platform type for which the admin wants to create the device clean up rule</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum DeviceCleanupRulePlatformType
     {
         /// <summary>Default. Indicates that clean up rule is associated with all managed device platforms.</summary>

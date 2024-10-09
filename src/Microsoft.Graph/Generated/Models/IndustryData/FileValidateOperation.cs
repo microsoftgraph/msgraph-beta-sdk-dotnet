@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
     /// <summary>
     /// The status of a long-running operation.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class FileValidateOperation : global::Microsoft.Graph.Beta.Models.IndustryData.ValidateOperation, IParsable
     {
         /// <summary>Set of files validated by the validate operation.</summary>

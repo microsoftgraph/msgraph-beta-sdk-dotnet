@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Custom group id type
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeliveryOptimizationGroupIdCustom : global::Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSource, IParsable
     {
         /// <summary>Specifies an arbitrary group ID that the device belongs to</summary>

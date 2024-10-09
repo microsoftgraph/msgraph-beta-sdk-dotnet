@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify the MultiMode app configuration for the kiosk configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsKioskMultipleApps : global::Microsoft.Graph.Beta.Models.WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>This setting allows access to Downloads folder in file explorer.</summary>

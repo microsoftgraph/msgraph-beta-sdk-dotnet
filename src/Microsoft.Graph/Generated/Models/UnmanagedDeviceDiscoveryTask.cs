@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This task derived type represents a list of unmanaged devices discovered in the network.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UnmanagedDeviceDiscoveryTask : global::Microsoft.Graph.Beta.Models.DeviceAppManagementTask, IParsable
     {
         /// <summary>Unmanaged devices discovered in the network.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for Windows10EnrollmentCompletionPageConfiguration PolicySetItem.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : global::Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</summary>

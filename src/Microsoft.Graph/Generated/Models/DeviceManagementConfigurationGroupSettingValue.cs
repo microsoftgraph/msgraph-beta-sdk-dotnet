@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Value of the GroupSetting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementConfigurationGroupSettingValue : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue, IParsable
     {
         /// <summary>Collection of child setting instances contained within this GroupSetting</summary>

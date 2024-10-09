@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class AccessPackageUserDirectoryAttributeStore : global::Microsoft.Graph.Beta.Models.AccessPackageResourceAttributeDestination, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IosManagedAppProtection : global::Microsoft.Graph.Beta.Models.TargetedManagedAppProtection, IParsable
     {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>

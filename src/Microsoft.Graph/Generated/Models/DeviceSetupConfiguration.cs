@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This is the base class for Setup Configuration. Setup configurations are platform specific and individual per-platform setup configurations inherit from here.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceSetupConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>DateTime the object was created.</summary>

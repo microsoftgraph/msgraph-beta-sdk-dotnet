@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for web apps configured to be distributed via the managed Android app store.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidManagedStoreWebApp : global::Microsoft.Graph.Beta.Models.AndroidManagedStoreApp, IParsable
     {
         /// <summary>

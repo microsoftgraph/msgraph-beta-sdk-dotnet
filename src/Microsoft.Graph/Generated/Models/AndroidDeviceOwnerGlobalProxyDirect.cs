@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android Device Owner Global Proxy Direct.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidDeviceOwnerGlobalProxyDirect : global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy, IParsable
     {
         /// <summary>The excluded hosts</summary>

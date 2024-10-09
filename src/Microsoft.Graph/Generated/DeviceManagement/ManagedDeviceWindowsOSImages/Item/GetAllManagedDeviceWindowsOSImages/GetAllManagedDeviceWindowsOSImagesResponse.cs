@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceWindowsOSImages.Item.GetAllManagedDeviceWindowsOSImages
 {
     [Obsolete("This class is obsolete. Use GetAllManagedDeviceWindowsOSImagesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetAllManagedDeviceWindowsOSImagesResponse : global::Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceWindowsOSImages.Item.GetAllManagedDeviceWindowsOSImages.GetAllManagedDeviceWindowsOSImagesGetResponse, IParsable
     #pragma warning restore CS1591

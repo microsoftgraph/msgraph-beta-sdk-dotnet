@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class GroupPolicyConfigurationAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date and time the entity was last modified.</summary>

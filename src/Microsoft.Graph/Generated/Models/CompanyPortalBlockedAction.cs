@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Blocked actions on the company portal as per platform and device ownership types
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Action on a device that can be executed in the Company Portal</summary>

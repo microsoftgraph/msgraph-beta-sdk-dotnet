@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Applicability for an Exchange Online Setting
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementConfigurationExchangeOnlineSettingApplicability : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability, IParsable
     {
         /// <summary>

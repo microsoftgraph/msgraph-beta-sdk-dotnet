@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Show the home button; clicking the home button loads a specific URL.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class EdgeHomeButtonOpensCustomURL : global::Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration, IParsable
     {
         /// <summary>The specific URL to load.</summary>

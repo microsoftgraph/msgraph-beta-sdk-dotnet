@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Event representing an Apple Vpp Token Troubleshooting Event.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AppleVppTokenTroubleshootingEvent : global::Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent, IParsable
     {
         /// <summary>Apple Volume Purchase Program Token Identifier.</summary>

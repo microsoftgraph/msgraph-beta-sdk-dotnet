@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for the Office365 Suite App.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class OfficeSuiteApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The value to accept the EULA automatically on the enduser&apos;s device.</summary>
