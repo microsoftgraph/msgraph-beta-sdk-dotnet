@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents per-process privacy preferences.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSPrivacyAccessControlItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible values of a property</summary>

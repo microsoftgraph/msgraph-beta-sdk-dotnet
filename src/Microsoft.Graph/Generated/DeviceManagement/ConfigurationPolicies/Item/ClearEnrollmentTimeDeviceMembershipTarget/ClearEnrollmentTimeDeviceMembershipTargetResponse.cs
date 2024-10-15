@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.ClearEnrollmentTimeDeviceMembershipTarget
 {
     [Obsolete("This class is obsolete. Use ClearEnrollmentTimeDeviceMembershipTargetPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ClearEnrollmentTimeDeviceMembershipTargetResponse : global::Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.ClearEnrollmentTimeDeviceMembershipTarget.ClearEnrollmentTimeDeviceMembershipTargetPostResponse, IParsable
     #pragma warning restore CS1591

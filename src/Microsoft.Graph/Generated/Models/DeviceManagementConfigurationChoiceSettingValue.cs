@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Setting value
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementConfigurationChoiceSettingValue : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValue, IParsable
     {
         /// <summary>Child settings.</summary>

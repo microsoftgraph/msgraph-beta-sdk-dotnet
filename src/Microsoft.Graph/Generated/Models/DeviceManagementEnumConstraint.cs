@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint that enforces the setting value is from a permitted set of strings
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementEnumConstraint : global::Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>List of valid values for this string</summary>

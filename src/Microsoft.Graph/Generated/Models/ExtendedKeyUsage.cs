@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Complex type that represents the extended key usage of a certificate. This is shared complex type.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExtendedKeyUsage : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Extended Key Usage Name</summary>
+        /// <summary>The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Extended Key Usage Object Identifier</summary>
+        /// <summary>The object identifier (OID) of an extended key usage of a certificate. For example, &apos;1.3.6.1.5.5.7.3.2&apos; for client authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectIdentifier

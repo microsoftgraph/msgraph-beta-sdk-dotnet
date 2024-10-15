@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults
 {
     [Obsolete("This class is obsolete. Use GetCloudPcRemoteActionResultsGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetCloudPcRemoteActionResultsResponse : global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsGetResponse, IParsable
     #pragma warning restore CS1591

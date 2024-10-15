@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Conflict summary for a set of device configuration policies.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceConfigurationConflictSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The set of policies in conflict with the given setting</summary>

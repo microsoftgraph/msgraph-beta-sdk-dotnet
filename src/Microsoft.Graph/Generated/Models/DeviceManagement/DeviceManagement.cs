@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
@@ -2355,7 +2355,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("userExperienceAnalyticsCategories", value); }
         }
 #endif
-        /// <summary>User experience analytics device metric history</summary>
+        /// <summary>User experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsDeviceMetricHistory
@@ -2595,7 +2595,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
         }
 #endif
-        /// <summary>User experience analytics remote connection</summary>
+        /// <summary>User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>? UserExperienceAnalyticsRemoteConnection

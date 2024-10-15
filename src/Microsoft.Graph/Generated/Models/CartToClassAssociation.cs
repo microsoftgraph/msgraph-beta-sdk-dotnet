@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// CartToClassAssociation for associating device carts with classrooms.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CartToClassAssociation : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Identifiers of classrooms to be associated with device carts.</summary>

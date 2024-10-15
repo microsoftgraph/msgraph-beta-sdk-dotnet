@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.HealthMonitoring
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ResourceImpactSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The impactedCount property</summary>
+        /// <summary>The number of resources impacted. The number could be an exhaustive count or a sampling count.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImpactedCount
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             set { BackingStore?.Set("impactedCount", value); }
         }
 #endif
-        /// <summary>The impactedCountLimitExceeded property</summary>
+        /// <summary>Indicates whether impactedCount is exhaustive or a sampling. When this value is true, the limit was exceeded and impactedCount represents a sampling; otherwise, impactedCount represents the true number of impacts.</summary>
         public bool? ImpactedCountLimitExceeded
         {
             get { return BackingStore?.Get<bool?>("impactedCountLimitExceeded"); }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The resourceType property</summary>
+        /// <summary>The type of resource that was impacted. Examples include user, group, application, servicePrincipal, device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType

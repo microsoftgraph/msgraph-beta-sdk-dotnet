@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcUserSetting : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("localAdminEnabled"); }
             set { BackingStore?.Set("localAdminEnabled", value); }
         }
-        /// <summary>The notificationSetting property</summary>
+        /// <summary>Defines the setting of the Cloud PC notification prompts for the Cloud PC user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.CloudPcNotificationSetting? NotificationSetting

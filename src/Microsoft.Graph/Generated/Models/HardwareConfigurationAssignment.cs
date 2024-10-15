@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a hardware configuration to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HardwareConfigurationAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The Id of the Azure Active Directory group we are targeting the configuration to.</summary>

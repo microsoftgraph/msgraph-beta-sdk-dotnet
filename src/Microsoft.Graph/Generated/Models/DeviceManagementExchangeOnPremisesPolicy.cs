@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Singleton entity which represents the Exchange OnPremises policy configured for a tenant.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementExchangeOnPremisesPolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization</summary>

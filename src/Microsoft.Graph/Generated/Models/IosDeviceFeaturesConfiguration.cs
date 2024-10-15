@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Device Features Configuration Profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosDeviceFeaturesConfiguration : global::Microsoft.Graph.Beta.Models.AppleDeviceFeaturesConfigurationBase, IParsable
     {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>

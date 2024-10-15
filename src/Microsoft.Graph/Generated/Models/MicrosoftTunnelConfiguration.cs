@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a collection of Microsoft Tunnel settings
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MicrosoftTunnelConfiguration : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Additional settings that may be applied to the server</summary>

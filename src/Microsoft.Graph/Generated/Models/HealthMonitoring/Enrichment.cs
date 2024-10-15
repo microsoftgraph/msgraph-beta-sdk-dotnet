@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.HealthMonitoring
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Enrichment : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The impacts property</summary>
+        /// <summary>A collection of resource impact summaries that gives a high level view of the kind of resources that were impacted and to what degree.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.ResourceImpactSummary>? Impacts
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HealthMonitoring.EnrichmentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The supportingData property</summary>
+        /// <summary>A collection of supportingData locations that can be queried for debugging the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.HealthMonitoring.SupportingData? SupportingData

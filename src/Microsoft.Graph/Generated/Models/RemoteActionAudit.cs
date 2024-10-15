@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Report of remote actions initiated on the devices belonging to a certain tenant.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoteActionAudit : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Remote actions Intune supports.</summary>

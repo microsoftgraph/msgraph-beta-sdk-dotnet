@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity represents a string value for a drop-down list, combo box, or text box presentation on a policy definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupPolicyPresentationValueText : global::Microsoft.Graph.Beta.Models.GroupPolicyPresentationValue, IParsable
     {
         /// <summary>A string value for the associated presentation.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains PowerShell script properties to detect a Win32 App
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobAppPowerShellScriptDetection : global::Microsoft.Graph.Beta.Models.Win32LobAppDetection, IParsable
     {
         /// <summary>A value indicating whether signature check is enforced</summary>

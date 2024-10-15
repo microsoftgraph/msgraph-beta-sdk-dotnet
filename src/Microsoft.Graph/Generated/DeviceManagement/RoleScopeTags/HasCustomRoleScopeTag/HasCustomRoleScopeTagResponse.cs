@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag
 {
     [Obsolete("This class is obsolete. Use HasCustomRoleScopeTagGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class HasCustomRoleScopeTagResponse : global::Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag.HasCustomRoleScopeTagGetResponse, IParsable
     #pragma warning restore CS1591

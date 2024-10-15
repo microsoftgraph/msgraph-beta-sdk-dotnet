@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enterprise settings for an Android managed store account.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidManagedStoreAccountEnterpriseSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Company codes for AndroidManagedStoreAccountEnterpriseSettings</summary>

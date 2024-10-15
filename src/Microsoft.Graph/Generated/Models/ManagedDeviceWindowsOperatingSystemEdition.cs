@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Different Windows&apos; versions have Edition specific support timelines. This complex type defines the date until which a particular edition is supported in a Windows&apos; version.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceWindowsOperatingSystemEdition : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

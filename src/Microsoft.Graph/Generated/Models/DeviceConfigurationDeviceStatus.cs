@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Support for this Entity is being deprecated starting May 2026 &amp; will no longer be supported.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceConfigurationDeviceStatus : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>

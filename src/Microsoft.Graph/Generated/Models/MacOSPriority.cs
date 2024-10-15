@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>The scheduling priority options for downloading and preparing the requested mac OS update</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MacOSPriority
     {
         /// <summary>Indicates low scheduling priority for downloading and preparing the requested update</summary>

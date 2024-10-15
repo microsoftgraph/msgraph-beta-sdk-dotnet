@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Properties of the  Booolean script parameter.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceHealthScriptBooleanParameter : global::Microsoft.Graph.Beta.Models.DeviceHealthScriptParameter, IParsable
     {
         /// <summary>The default value of boolean param</summary>

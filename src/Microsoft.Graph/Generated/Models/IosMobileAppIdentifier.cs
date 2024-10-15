@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The identifier for an iOS app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosMobileAppIdentifier : global::Microsoft.Graph.Beta.Models.MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the app store.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android PFX Import certificate profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidImportedPFXCertificateProfile : global::Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase, IParsable
     {
         /// <summary>PFX Import Options.</summary>

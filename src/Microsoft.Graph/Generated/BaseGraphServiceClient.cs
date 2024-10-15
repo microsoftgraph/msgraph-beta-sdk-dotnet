@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BaseGraphServiceClient : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject
 {
     [Obsolete("This class is obsolete. Use RejectPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RejectResponse : global::Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Reject.RejectPostResponse, IParsable
     #pragma warning restore CS1591

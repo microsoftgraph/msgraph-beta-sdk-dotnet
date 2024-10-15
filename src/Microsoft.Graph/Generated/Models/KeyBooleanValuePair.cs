@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A key-value pair with a string key and a Boolean value.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KeyBooleanValuePair : global::Microsoft.Graph.Beta.Models.KeyTypedValuePair, IParsable
     {
         /// <summary>The Boolean value of the key-value pair.</summary>
