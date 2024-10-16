@@ -10,10 +10,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used when assigning a Windows Universal AppX mobile app to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsUniversalAppXAppAssignmentSettings : global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
-        /// <summary>Whether or not to use device execution context for Windows Universal AppX mobile app.</summary>
+        /// <summary>If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.</summary>
         public bool? UseDeviceContext
         {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }

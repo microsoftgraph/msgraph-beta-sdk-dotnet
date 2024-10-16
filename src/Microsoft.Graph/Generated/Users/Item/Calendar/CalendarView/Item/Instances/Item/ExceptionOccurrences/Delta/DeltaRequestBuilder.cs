@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
     /// <summary>
     /// Provides operations to call the delta method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeltaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -41,7 +41,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +87,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -108,7 +106,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
@@ -116,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
         /// <summary>
         /// Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user&apos;s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -203,7 +200,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>
         {
         }

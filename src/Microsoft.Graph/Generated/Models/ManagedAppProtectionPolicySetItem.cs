@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for managed app protection PolicySetItem.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedAppProtectionPolicySetItem : global::Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>TargetedAppManagementLevels of the ManagedAppPolicySetItem.</summary>

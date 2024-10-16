@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsAnomalyCorrelationGroupOverview : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the number of correlation groups in the anomaly. Valid values -2147483648 to 2147483647</summary>

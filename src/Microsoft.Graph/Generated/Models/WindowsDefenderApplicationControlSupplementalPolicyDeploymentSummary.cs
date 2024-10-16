@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.</summary>

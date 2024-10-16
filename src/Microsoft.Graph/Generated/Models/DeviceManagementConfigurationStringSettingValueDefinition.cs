@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// String constraints
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementConfigurationStringSettingValueDefinition : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingValueDefinition, IParsable
     {
         /// <summary>Supported file types for this setting.</summary>
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileTypes", value); }
         }
 #endif
-        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.</summary>
+        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat? Format
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringFormat?>("format"); }
@@ -57,13 +57,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isSecret"); }
             set { BackingStore?.Set("isSecret", value); }
         }
-        /// <summary>Maximum length of string</summary>
+        /// <summary>Maximum length of string. Valid values 0 to 87516</summary>
         public long? MaximumLength
         {
             get { return BackingStore?.Get<long?>("maximumLength"); }
             set { BackingStore?.Set("maximumLength", value); }
         }
-        /// <summary>Minimum length of string</summary>
+        /// <summary>Minimum length of string. Valid values 0 to 87516</summary>
         public long? MinimumLength
         {
             get { return BackingStore?.Get<long?>("minimumLength"); }

@@ -19,23 +19,20 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
     /// <summary>
     /// Provides operations to manage the directReports property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DirectReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.DirectReports.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.DirectReports.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.DirectReports.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.DirectReports.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.DirectReports.GraphUser.GraphUserRequestBuilder GraphUser
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.DirectReports.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
@@ -43,7 +40,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
@@ -76,7 +72,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,7 +93,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -118,7 +112,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder(rawUrl, RequestAdapter);
@@ -126,7 +119,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
         /// <summary>
         /// The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -193,7 +186,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DirectReports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>
         {
         }

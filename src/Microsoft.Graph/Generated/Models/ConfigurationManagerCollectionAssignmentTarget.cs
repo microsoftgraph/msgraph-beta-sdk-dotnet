@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an assignment to a Configuration Manager Collection.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConfigurationManagerCollectionAssignmentTarget : global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>The collection Id that is the target of the assignment.</summary>

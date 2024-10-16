@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.</summary>

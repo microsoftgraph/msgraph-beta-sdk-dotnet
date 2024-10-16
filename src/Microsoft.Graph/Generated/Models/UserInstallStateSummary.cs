@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the installation state summary for a user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserInstallStateSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The install state of the eBook.</summary>

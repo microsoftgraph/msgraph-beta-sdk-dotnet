@@ -93,6 +93,7 @@ using Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement;
 using Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment;
 using Microsoft.Graph.Beta.Me.Restore;
+using Microsoft.Graph.Beta.Me.RetrieveManagedDevicesWithAppInstallationIssues;
 using Microsoft.Graph.Beta.Me.RetryServiceProvisioning;
 using Microsoft.Graph.Beta.Me.RevokeSignInSessions;
 using Microsoft.Graph.Beta.Me.ScopedRoleMemberOf;
@@ -130,659 +131,555 @@ namespace Microsoft.Graph.Beta.Me
     /// <summary>
     /// Provides operations to manage the user singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Activities.ActivitiesRequestBuilder Activities
         {
             get => new global::Microsoft.Graph.Beta.Me.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
         {
             get => new global::Microsoft.Graph.Beta.Me.AgreementAcceptances.AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the analytics property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Microsoft.Graph.Beta.Me.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder AppConsentRequestsForApproval
         {
             get => new global::Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.AppConsentRequestsForApprovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.AppRoleAssignedResources.AppRoleAssignedResourcesRequestBuilder AppRoleAssignedResources
         {
             get => new global::Microsoft.Graph.Beta.Me.AppRoleAssignedResources.AppRoleAssignedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
         {
             get => new global::Microsoft.Graph.Beta.Me.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the approvals property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder Approvals
         {
             get => new global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignLicense method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.AssignLicense.AssignLicenseRequestBuilder AssignLicense
         {
             get => new global::Microsoft.Graph.Beta.Me.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authentication property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Authentication.AuthenticationRequestBuilder Authentication
         {
             get => new global::Microsoft.Graph.Beta.Me.Authentication.AuthenticationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Calendar.CalendarRequestBuilder Calendar
         {
             get => new global::Microsoft.Graph.Beta.Me.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CalendarGroups.CalendarGroupsRequestBuilder CalendarGroups
         {
             get => new global::Microsoft.Graph.Beta.Me.CalendarGroups.CalendarGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendars property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Calendars.CalendarsRequestBuilder Calendars
         {
             get => new global::Microsoft.Graph.Beta.Me.Calendars.CalendarsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CalendarView.CalendarViewRequestBuilder CalendarView
         {
             get => new global::Microsoft.Graph.Beta.Me.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changePassword method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ChangePassword.ChangePasswordRequestBuilder ChangePassword
         {
             get => new global::Microsoft.Graph.Beta.Me.ChangePassword.ChangePasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder Chats
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
             get => new global::Microsoft.Graph.Beta.Me.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
             get => new global::Microsoft.Graph.Beta.Me.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudClipboard.CloudClipboardRequestBuilder CloudClipboard
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudClipboard.CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder CloudPCs
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder ContactFolders
         {
             get => new global::Microsoft.Graph.Beta.Me.ContactFolders.ContactFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contacts property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Contacts.ContactsRequestBuilder Contacts
         {
             get => new global::Microsoft.Graph.Beta.Me.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the convertExternalToInternalMemberUser method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser.ConvertExternalToInternalMemberUserRequestBuilder ConvertExternalToInternalMemberUser
         {
             get => new global::Microsoft.Graph.Beta.Me.ConvertExternalToInternalMemberUser.ConvertExternalToInternalMemberUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
         {
             get => new global::Microsoft.Graph.Beta.Me.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
         {
             get => new global::Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations
         {
             get => new global::Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
         {
             get => new global::Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Devices.DevicesRequestBuilder Devices
         {
             get => new global::Microsoft.Graph.Beta.Me.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder DirectReports
         {
             get => new global::Microsoft.Graph.Beta.Me.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder Drive
         {
             get => new global::Microsoft.Graph.Beta.Me.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Microsoft.Graph.Beta.Me.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employeeExperience property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder EmployeeExperience
         {
             get => new global::Microsoft.Graph.Beta.Me.EmployeeExperience.EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Events.EventsRequestBuilder Events
         {
             get => new global::Microsoft.Graph.Beta.Me.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exportDeviceAndAppManagementData method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData
         {
             get => new global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData.ExportDeviceAndAppManagementDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exportPersonalData method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ExportPersonalData.ExportPersonalDataRequestBuilder ExportPersonalData
         {
             get => new global::Microsoft.Graph.Beta.Me.ExportPersonalData.ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder Extensions
         {
             get => new global::Microsoft.Graph.Beta.Me.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findMeetingTimes method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder FindMeetingTimes
         {
             get => new global::Microsoft.Graph.Beta.Me.FindMeetingTimes.FindMeetingTimesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findRoomLists method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.FindRoomLists.FindRoomListsRequestBuilder FindRoomLists
         {
             get => new global::Microsoft.Graph.Beta.Me.FindRoomLists.FindRoomListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findRooms method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.FindRooms.FindRoomsRequestBuilder FindRooms
         {
             get => new global::Microsoft.Graph.Beta.Me.FindRooms.FindRoomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the followedSites property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.FollowedSites.FollowedSitesRequestBuilder FollowedSites
         {
             get => new global::Microsoft.Graph.Beta.Me.FollowedSites.FollowedSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder GetEffectiveDeviceEnrollmentConfigurations
         {
             get => new global::Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getLoggedOnManagedDevices method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesRequestBuilder GetLoggedOnManagedDevices
         {
             get => new global::Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMailTips method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetMailTips.GetMailTipsRequestBuilder GetMailTips
         {
             get => new global::Microsoft.Graph.Beta.Me.GetMailTips.GetMailTipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppDiagnosticStatuses method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder GetManagedAppDiagnosticStatuses
         {
             get => new global::Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppPolicies method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder GetManagedAppPolicies
         {
             get => new global::Microsoft.Graph.Beta.Me.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedDevicesWithAppFailures method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures
         {
             get => new global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder GetManagedDevicesWithFailedOrPendingApps
         {
             get => new global::Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps.GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
             get => new global::Microsoft.Graph.Beta.Me.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
             get => new global::Microsoft.Graph.Beta.Me.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
         {
             get => new global::Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder InferenceClassification
         {
             get => new global::Microsoft.Graph.Beta.Me.InferenceClassification.InferenceClassificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the informationProtection property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder InformationProtection
         {
             get => new global::Microsoft.Graph.Beta.Me.InformationProtection.InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the insights property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Insights.InsightsRequestBuilder Insights
         {
             get => new global::Microsoft.Graph.Beta.Me.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the invalidateAllRefreshTokens method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens
         {
             get => new global::Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the invitedBy property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InvitedBy.InvitedByRequestBuilder InvitedBy
         {
             get => new global::Microsoft.Graph.Beta.Me.InvitedBy.InvitedByRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isManagedAppUserBlocked method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked.IsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked
         {
             get => new global::Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked.IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.JoinedGroups.JoinedGroupsRequestBuilder JoinedGroups
         {
             get => new global::Microsoft.Graph.Beta.Me.JoinedGroups.JoinedGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder JoinedTeams
         {
             get => new global::Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder LicenseDetails
         {
             get => new global::Microsoft.Graph.Beta.Me.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mailboxSettings property</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
             get => new global::Microsoft.Graph.Beta.Me.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder MailFolders
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppLogCollectionRequests property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests.ManagedAppLogCollectionRequestsRequestBuilder ManagedAppLogCollectionRequests
         {
             get => new global::Microsoft.Graph.Beta.Me.ManagedAppLogCollectionRequests.ManagedAppLogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
         {
             get => new global::Microsoft.Graph.Beta.Me.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ManagedDevices.ManagedDevicesRequestBuilder ManagedDevices
         {
             get => new global::Microsoft.Graph.Beta.Me.ManagedDevices.ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the manager property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Manager.ManagerRequestBuilder Manager
         {
             get => new global::Microsoft.Graph.Beta.Me.Manager.ManagerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MemberOf.MemberOfRequestBuilder MemberOf
         {
             get => new global::Microsoft.Graph.Beta.Me.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Me.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder MobileAppIntentAndStates
         {
             get => new global::Microsoft.Graph.Beta.Me.MobileAppIntentAndStates.MobileAppIntentAndStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder MobileAppTroubleshootingEvents
         {
             get => new global::Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.MobileAppTroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notifications property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder Notifications
         {
             get => new global::Microsoft.Graph.Beta.Me.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
         {
             get => new global::Microsoft.Graph.Beta.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Onenote.OnenoteRequestBuilder Onenote
         {
             get => new global::Microsoft.Graph.Beta.Me.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
         {
             get => new global::Microsoft.Graph.Beta.Me.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Outlook.OutlookRequestBuilder Outlook
         {
             get => new global::Microsoft.Graph.Beta.Me.Outlook.OutlookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OwnedDevices.OwnedDevicesRequestBuilder OwnedDevices
         {
             get => new global::Microsoft.Graph.Beta.Me.OwnedDevices.OwnedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OwnedObjects.OwnedObjectsRequestBuilder OwnedObjects
         {
             get => new global::Microsoft.Graph.Beta.Me.OwnedObjects.OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.PendingAccessReviewInstancesRequestBuilder PendingAccessReviewInstances
         {
             get => new global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.PendingAccessReviewInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the people property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.People.PeopleRequestBuilder People
         {
             get => new global::Microsoft.Graph.Beta.Me.People.PeopleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
             get => new global::Microsoft.Graph.Beta.Me.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Photo.PhotoRequestBuilder Photo
         {
             get => new global::Microsoft.Graph.Beta.Me.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Photos.PhotosRequestBuilder Photos
         {
             get => new global::Microsoft.Graph.Beta.Me.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder Planner
         {
             get => new global::Microsoft.Graph.Beta.Me.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presence property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Presence.PresenceRequestBuilder Presence
         {
             get => new global::Microsoft.Graph.Beta.Me.Presence.PresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the profile property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder Profile
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.RegisteredDevices.RegisteredDevicesRequestBuilder RegisteredDevices
         {
             get => new global::Microsoft.Graph.Beta.Me.RegisteredDevices.RegisteredDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeAllDevicesFromManagement method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement
         {
             get => new global::Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reprocessLicenseAssignment method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment
         {
             get => new global::Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment.ReprocessLicenseAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Me.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveManagedDevicesWithAppInstallationIssues method.</summary>
+        public global::Microsoft.Graph.Beta.Me.RetrieveManagedDevicesWithAppInstallationIssues.RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilder RetrieveManagedDevicesWithAppInstallationIssues
+        {
+            get => new global::Microsoft.Graph.Beta.Me.RetrieveManagedDevicesWithAppInstallationIssues.RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
         {
             get => new global::Microsoft.Graph.Beta.Me.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeSignInSessions method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder RevokeSignInSessions
         {
             get => new global::Microsoft.Graph.Beta.Me.RevokeSignInSessions.RevokeSignInSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder ScopedRoleMemberOf
         {
             get => new global::Microsoft.Graph.Beta.Me.ScopedRoleMemberOf.ScopedRoleMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the security property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Security.SecurityRequestBuilder Security
         {
             get => new global::Microsoft.Graph.Beta.Me.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendMail method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.SendMail.SendMailRequestBuilder SendMail
         {
             get => new global::Microsoft.Graph.Beta.Me.SendMail.SendMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
             get => new global::Microsoft.Graph.Beta.Me.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Microsoft.Graph.Beta.Me.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the solutions property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Solutions.SolutionsRequestBuilder Solutions
         {
             get => new global::Microsoft.Graph.Beta.Me.Solutions.SolutionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder Sponsors
         {
             get => new global::Microsoft.Graph.Beta.Me.Sponsors.SponsorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Teamwork.TeamworkRequestBuilder Teamwork
         {
             get => new global::Microsoft.Graph.Beta.Me.Teamwork.TeamworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the todo property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Todo.TodoRequestBuilder Todo
         {
             get => new global::Microsoft.Graph.Beta.Me.Todo.TodoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
         {
             get => new global::Microsoft.Graph.Beta.Me.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveReports property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.TransitiveReports.TransitiveReportsRequestBuilder TransitiveReports
         {
             get => new global::Microsoft.Graph.Beta.Me.TransitiveReports.TransitiveReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the translateExchangeIds method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder TranslateExchangeIds
         {
             get => new global::Microsoft.Graph.Beta.Me.TranslateExchangeIds.TranslateExchangeIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unblockManagedApps method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.UnblockManagedApps.UnblockManagedAppsRequestBuilder UnblockManagedApps
         {
             get => new global::Microsoft.Graph.Beta.Me.UnblockManagedApps.UnblockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the usageRights property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.UsageRights.UsageRightsRequestBuilder UsageRights
         {
             get => new global::Microsoft.Graph.Beta.Me.UsageRights.UsageRightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents
         {
             get => new global::Microsoft.Graph.Beta.Me.VirtualEvents.VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations
         {
             get => new global::Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations.WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeAndBlockManagedApps method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps.WipeAndBlockManagedAppsRequestBuilder WipeAndBlockManagedApps
         {
             get => new global::Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps.WipeAndBlockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationByDeviceTag method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagRequestBuilder WipeManagedAppRegistrationByDeviceTag
         {
             get => new global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag.WipeManagedAppRegistrationByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationsByAzureAdDeviceId method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId.WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder WipeManagedAppRegistrationsByAzureAdDeviceId
         {
             get => new global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId.WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder WipeManagedAppRegistrationsByDeviceTag
         {
             get => new global::Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag.WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
@@ -792,7 +689,6 @@ namespace Microsoft.Graph.Beta.Me
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId.AppRoleAssignedResourcesWithAppIdRequestBuilder AppRoleAssignedResourcesWithAppId(string appId)
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
@@ -819,7 +715,6 @@ namespace Microsoft.Graph.Beta.Me
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of device</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId)
         {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
@@ -831,7 +726,6 @@ namespace Microsoft.Graph.Beta.Me
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder"/></returns>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
         {
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
@@ -843,7 +737,6 @@ namespace Microsoft.Graph.Beta.Me
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder"/></returns>
         /// <param name="roomList">Usage: RoomList=&apos;{RoomList}&apos;</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.FindRoomsWithRoomList.FindRoomsWithRoomListRequestBuilder FindRoomsWithRoomList(string roomList)
         {
             if(string.IsNullOrEmpty(roomList)) throw new ArgumentNullException(nameof(roomList));
@@ -857,7 +750,6 @@ namespace Microsoft.Graph.Beta.Me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.User?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -879,7 +771,6 @@ namespace Microsoft.Graph.Beta.Me
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl)
         {
             if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
@@ -894,7 +785,6 @@ namespace Microsoft.Graph.Beta.Me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.User?> PatchAsync(global::Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -918,7 +808,6 @@ namespace Microsoft.Graph.Beta.Me
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: EndDateTime=&apos;{EndDateTime}&apos;</param>
         /// <param name="startDateTime">Usage: StartDateTime=&apos;{StartDateTime}&apos;</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime)
         {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
@@ -930,7 +819,6 @@ namespace Microsoft.Graph.Beta.Me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -951,7 +839,6 @@ namespace Microsoft.Graph.Beta.Me
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -973,7 +860,6 @@ namespace Microsoft.Graph.Beta.Me
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.MeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.MeRequestBuilder(rawUrl, RequestAdapter);
@@ -981,7 +867,7 @@ namespace Microsoft.Graph.Beta.Me
         /// <summary>
         /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -1009,7 +895,7 @@ namespace Microsoft.Graph.Beta.Me
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.MeRequestBuilder.MeRequestBuilderGetQueryParameters>
         {
         }
@@ -1017,7 +903,7 @@ namespace Microsoft.Graph.Beta.Me
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

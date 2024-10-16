@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base type for a setting instance
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementSettingInstance : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The ID of the setting definition for this instance</summary>

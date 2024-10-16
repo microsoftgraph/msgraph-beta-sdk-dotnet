@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class SharePointProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteProtectionUnits", value); }
         }
 #endif
+        /// <summary>The siteProtectionUnitsBulkAdditionJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>? SiteProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>?>("siteProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("siteProtectionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob> SiteProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>>("siteProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("siteProtectionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.SharePointProtectionPolicy"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "siteInclusionRules", n => { SiteInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionRule>(global::Microsoft.Graph.Beta.Models.SiteProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "siteProtectionUnits", n => { SiteProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnit>(global::Microsoft.Graph.Beta.Models.SiteProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "siteProtectionUnitsBulkAdditionJobs", n => { SiteProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionRule>("siteInclusionRules", SiteInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnit>("siteProtectionUnits", SiteProtectionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob>("siteProtectionUnitsBulkAdditionJobs", SiteProtectionUnitsBulkAdditionJobs);
         }
     }
 }

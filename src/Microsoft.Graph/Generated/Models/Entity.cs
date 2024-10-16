@@ -14,7 +14,7 @@ using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Models.Partners;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Models.TeamsUserConfiguration;
+using Microsoft.Graph.Beta.Models.TeamsAdministration;
 using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -25,7 +25,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Entity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -369,9 +369,11 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.canvasLayout" => new global::Microsoft.Graph.Beta.Models.CanvasLayout(),
                 "#microsoft.graph.cartToClassAssociation" => new global::Microsoft.Graph.Beta.Models.CartToClassAssociation(),
                 "#microsoft.graph.certificateAuthorityAsEntity" => new global::Microsoft.Graph.Beta.Models.CertificateAuthorityAsEntity(),
+                "#microsoft.graph.certificateAuthorityDetail" => new global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail(),
                 "#microsoft.graph.certificateAuthorityPath" => new global::Microsoft.Graph.Beta.Models.CertificateAuthorityPath(),
                 "#microsoft.graph.certificateBasedApplicationConfiguration" => new global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration(),
                 "#microsoft.graph.certificateBasedAuthConfiguration" => new global::Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration(),
+                "#microsoft.graph.certificateBasedAuthPki" => new global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki(),
                 "#microsoft.graph.certificateConnectorDetails" => new global::Microsoft.Graph.Beta.Models.CertificateConnectorDetails(),
                 "#microsoft.graph.changeTrackedEntity" => new global::Microsoft.Graph.Beta.Models.ChangeTrackedEntity(),
                 "#microsoft.graph.channel" => new global::Microsoft.Graph.Beta.Models.Channel(),
@@ -385,6 +387,8 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.classificationJobResponse" => new global::Microsoft.Graph.Beta.Models.ClassificationJobResponse(),
                 "#microsoft.graph.cloudAppSecurityProfile" => new global::Microsoft.Graph.Beta.Models.CloudAppSecurityProfile(),
+                "#microsoft.graph.cloudCertificationAuthority" => new global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority(),
+                "#microsoft.graph.cloudCertificationAuthorityLeafCertificate" => new global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate(),
                 "#microsoft.graph.cloudClipboardItem" => new global::Microsoft.Graph.Beta.Models.CloudClipboardItem(),
                 "#microsoft.graph.cloudClipboardRoot" => new global::Microsoft.Graph.Beta.Models.CloudClipboardRoot(),
                 "#microsoft.graph.cloudPC" => new global::Microsoft.Graph.Beta.Models.CloudPC(),
@@ -526,7 +530,6 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.deviceConfigurationDeviceStatus" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStatus(),
                 "#microsoft.graph.deviceConfigurationGroupAssignment" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationGroupAssignment(),
                 "#microsoft.graph.deviceConfigurationPolicySetItem" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationPolicySetItem(),
-                "#microsoft.graph.deviceConfigurationProfile" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile(),
                 "#microsoft.graph.deviceConfigurationState" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationState(),
                 "#microsoft.graph.deviceConfigurationUserOverview" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationUserOverview(),
                 "#microsoft.graph.deviceConfigurationUserStateSummary" => new global::Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary(),
@@ -643,6 +646,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.driveItemVersion" => new global::Microsoft.Graph.Beta.Models.DriveItemVersion(),
                 "#microsoft.graph.driveProtectionRule" => new global::Microsoft.Graph.Beta.Models.DriveProtectionRule(),
                 "#microsoft.graph.driveProtectionUnit" => new global::Microsoft.Graph.Beta.Models.DriveProtectionUnit(),
+                "#microsoft.graph.driveProtectionUnitsBulkAdditionJob" => new global::Microsoft.Graph.Beta.Models.DriveProtectionUnitsBulkAdditionJob(),
                 "#microsoft.graph.driveRestoreArtifact" => new global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact(),
                 "#microsoft.graph.easEmailProfileConfigurationBase" => new global::Microsoft.Graph.Beta.Models.EasEmailProfileConfigurationBase(),
                 "#microsoft.graph.eBookInstallSummary" => new global::Microsoft.Graph.Beta.Models.EBookInstallSummary(),
@@ -1025,6 +1029,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.mailAssessmentRequest" => new global::Microsoft.Graph.Beta.Models.MailAssessmentRequest(),
                 "#microsoft.graph.mailboxProtectionRule" => new global::Microsoft.Graph.Beta.Models.MailboxProtectionRule(),
                 "#microsoft.graph.mailboxProtectionUnit" => new global::Microsoft.Graph.Beta.Models.MailboxProtectionUnit(),
+                "#microsoft.graph.mailboxProtectionUnitsBulkAdditionJob" => new global::Microsoft.Graph.Beta.Models.MailboxProtectionUnitsBulkAdditionJob(),
                 "#microsoft.graph.mailboxRestoreArtifact" => new global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifact(),
                 "#microsoft.graph.mailFolder" => new global::Microsoft.Graph.Beta.Models.MailFolder(),
                 "#microsoft.graph.mailSearchFolder" => new global::Microsoft.Graph.Beta.Models.MailSearchFolder(),
@@ -1415,8 +1420,10 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.protectionPolicyBase" => new global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase(),
                 "#microsoft.graph.protectionRuleBase" => new global::Microsoft.Graph.Beta.Models.ProtectionRuleBase(),
                 "#microsoft.graph.protectionUnitBase" => new global::Microsoft.Graph.Beta.Models.ProtectionUnitBase(),
+                "#microsoft.graph.protectionUnitsBulkJobBase" => new global::Microsoft.Graph.Beta.Models.ProtectionUnitsBulkJobBase(),
                 "#microsoft.graph.providerTenantSetting" => new global::Microsoft.Graph.Beta.Models.ProviderTenantSetting(),
                 "#microsoft.graph.provisioningObjectSummary" => new global::Microsoft.Graph.Beta.Models.ProvisioningObjectSummary(),
+                "#microsoft.graph.publicKeyInfrastructureRoot" => new global::Microsoft.Graph.Beta.Models.PublicKeyInfrastructureRoot(),
                 "#microsoft.graph.publishedResource" => new global::Microsoft.Graph.Beta.Models.PublishedResource(),
                 "#microsoft.graph.purchaseInvoiceLine" => new global::Microsoft.Graph.Beta.Models.PurchaseInvoiceLine(),
                 "#microsoft.graph.rbacApplication" => new global::Microsoft.Graph.Beta.Models.RbacApplication(),
@@ -1642,6 +1649,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.sitePage" => new global::Microsoft.Graph.Beta.Models.SitePage(),
                 "#microsoft.graph.siteProtectionRule" => new global::Microsoft.Graph.Beta.Models.SiteProtectionRule(),
                 "#microsoft.graph.siteProtectionUnit" => new global::Microsoft.Graph.Beta.Models.SiteProtectionUnit(),
+                "#microsoft.graph.siteProtectionUnitsBulkAdditionJob" => new global::Microsoft.Graph.Beta.Models.SiteProtectionUnitsBulkAdditionJob(),
                 "#microsoft.graph.siteRestoreArtifact" => new global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact(),
                 "#microsoft.graph.skillProficiency" => new global::Microsoft.Graph.Beta.Models.SkillProficiency(),
                 "#microsoft.graph.skypeForBusinessUserConversationMember" => new global::Microsoft.Graph.Beta.Models.SkypeForBusinessUserConversationMember(),
@@ -1687,6 +1695,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.taxGroup" => new global::Microsoft.Graph.Beta.Models.TaxGroup(),
                 "#microsoft.graph.team" => new global::Microsoft.Graph.Beta.Models.Team(),
                 "#microsoft.graph.teamInfo" => new global::Microsoft.Graph.Beta.Models.TeamInfo(),
+                "#microsoft.graph.teamsAdministration.teamsAdminRoot" => new global::Microsoft.Graph.Beta.Models.TeamsAdministration.TeamsAdminRoot(),
                 "#microsoft.graph.teamsApp" => new global::Microsoft.Graph.Beta.Models.TeamsApp(),
                 "#microsoft.graph.teamsAppDashboardCardDefinition" => new global::Microsoft.Graph.Beta.Models.TeamsAppDashboardCardDefinition(),
                 "#microsoft.graph.teamsAppDefinition" => new global::Microsoft.Graph.Beta.Models.TeamsAppDefinition(),
@@ -1696,7 +1705,6 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.teamsAsyncOperation" => new global::Microsoft.Graph.Beta.Models.TeamsAsyncOperation(),
                 "#microsoft.graph.teamsTab" => new global::Microsoft.Graph.Beta.Models.TeamsTab(),
                 "#microsoft.graph.teamsTemplate" => new global::Microsoft.Graph.Beta.Models.TeamsTemplate(),
-                "#microsoft.graph.teamsUserConfiguration.teamsAdminRoot" => new global::Microsoft.Graph.Beta.Models.TeamsUserConfiguration.TeamsAdminRoot(),
                 "#microsoft.graph.teamTemplate" => new global::Microsoft.Graph.Beta.Models.TeamTemplate(),
                 "#microsoft.graph.teamTemplateDefinition" => new global::Microsoft.Graph.Beta.Models.TeamTemplateDefinition(),
                 "#microsoft.graph.teamwork" => new global::Microsoft.Graph.Beta.Models.Teamwork(),
@@ -1793,7 +1801,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.userActivity" => new global::Microsoft.Graph.Beta.Models.UserActivity(),
                 "#microsoft.graph.userAnalytics" => new global::Microsoft.Graph.Beta.Models.UserAnalytics(),
                 "#microsoft.graph.userAppInstallStatus" => new global::Microsoft.Graph.Beta.Models.UserAppInstallStatus(),
-                "#microsoft.graph.userConfiguration" => new global::Microsoft.Graph.Beta.Models.TeamsUserConfiguration.UserConfiguration(),
+                "#microsoft.graph.userConfiguration" => new global::Microsoft.Graph.Beta.Models.UserConfiguration(),
                 "#microsoft.graph.userConsentRequest" => new global::Microsoft.Graph.Beta.Models.UserConsentRequest(),
                 "#microsoft.graph.userCountMetric" => new global::Microsoft.Graph.Beta.Models.UserCountMetric(),
                 "#microsoft.graph.userCredentialUsageDetails" => new global::Microsoft.Graph.Beta.Models.UserCredentialUsageDetails(),

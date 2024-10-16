@@ -21,35 +21,30 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners
     /// <summary>
     /// Provides operations to manage the registeredOwners property of the microsoft.graph.device entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegisteredOwnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphUser.GraphUserRequestBuilder GraphUser
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Ref.RefRequestBuilder Ref
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
@@ -89,7 +84,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.RegisteredOwnersRequestBuilder.RegisteredOwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,7 +105,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.RegisteredOwnersRequestBuilder.RegisteredOwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -131,7 +124,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.RegisteredOwnersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.RegisteredOwnersRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.RegisteredOwnersRequestBuilder(rawUrl, RequestAdapter);
@@ -139,7 +131,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners
         /// <summary>
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegisteredOwnersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -206,7 +198,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegisteredOwnersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.RegisteredOwnersRequestBuilder.RegisteredOwnersRequestBuilderGetQueryParameters>
         {
         }

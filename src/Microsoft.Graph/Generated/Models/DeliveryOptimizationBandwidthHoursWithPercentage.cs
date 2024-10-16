@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Bandwidth limit as a percentage with business hours.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeliveryOptimizationBandwidthHoursWithPercentage : global::Microsoft.Graph.Beta.Models.DeliveryOptimizationBandwidth, IParsable
     {
         /// <summary>Background download percentage hours.</summary>

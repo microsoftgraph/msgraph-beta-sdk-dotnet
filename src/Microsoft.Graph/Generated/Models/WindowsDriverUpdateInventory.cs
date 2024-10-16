@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A new entity to represent driver inventories.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsDriverUpdateInventory : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The number of devices for which this driver is applicable.</summary>

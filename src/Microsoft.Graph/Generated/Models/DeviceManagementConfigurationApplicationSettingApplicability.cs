@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Applicability for a setting that can be targeted on managed Applications by Intune
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementConfigurationApplicationSettingApplicability : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingApplicability, IParsable
     {
         /// <summary>

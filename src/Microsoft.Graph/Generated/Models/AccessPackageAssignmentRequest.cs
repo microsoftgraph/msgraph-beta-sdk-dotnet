@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AccessPackageAssignmentRequest : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -110,6 +110,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
+        /// <summary>The history property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.RequestActivity>? History
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RequestActivity>?>("history"); }
+            set { BackingStore?.Set("history", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.RequestActivity> History
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RequestActivity>>("history"); }
+            set { BackingStore?.Set("history", value); }
+        }
+#endif
         /// <summary>True if the request isn&apos;t to be processed for assignment.</summary>
         public bool? IsValidationOnly
         {
@@ -254,6 +270,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>(global::Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customExtensionHandlerInstances", n => { CustomExtensionHandlerInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>(global::Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RequestActivity>(global::Microsoft.Graph.Beta.Models.RequestActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "requestState", n => { RequestState = n.GetStringValue(); } },
@@ -280,6 +297,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomExtensionHandlerInstance>("customExtensionHandlerInstances", CustomExtensionHandlerInstances);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RequestActivity>("history", History);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AccessPackageSubject>("requestor", Requestor);

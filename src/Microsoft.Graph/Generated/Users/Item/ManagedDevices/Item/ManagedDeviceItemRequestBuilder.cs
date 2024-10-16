@@ -74,359 +74,300 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the activateDeviceEsim method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ActivateDeviceEsim.ActivateDeviceEsimRequestBuilder ActivateDeviceEsim
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ActivateDeviceEsim.ActivateDeviceEsimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEvaluationStatusDetails.AssignmentFilterEvaluationStatusDetailsRequestBuilder AssignmentFilterEvaluationStatusDetails
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEvaluationStatusDetails.AssignmentFilterEvaluationStatusDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bypassActivationLock method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder BypassActivationLock
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changeAssignments method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ChangeAssignments.ChangeAssignmentsRequestBuilder ChangeAssignments
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ChangeAssignments.ChangeAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cleanWindowsDevice method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDeviceRequestBuilder CleanWindowsDevice
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createDeviceLogCollectionRequest method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CreateDeviceLogCollectionRequest.CreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CreateDeviceLogCollectionRequest.CreateDeviceLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deprovision method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Deprovision.DeprovisionRequestBuilder Deprovision
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Deprovision.DeprovisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder DetectedApps
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceCategory.DeviceCategoryRequestBuilder DeviceCategory
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceCategory.DeviceCategoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceCompliancePolicyStates.DeviceCompliancePolicyStatesRequestBuilder DeviceCompliancePolicyStates
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceCompliancePolicyStates.DeviceCompliancePolicyStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceConfigurationStates.DeviceConfigurationStatesRequestBuilder DeviceConfigurationStates
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceConfigurationStates.DeviceConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScriptStates.DeviceHealthScriptStatesRequestBuilder DeviceHealthScriptStates
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScriptStates.DeviceHealthScriptStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disable method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Disable.DisableRequestBuilder Disable
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disableLostMode method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DisableLostMode.DisableLostModeRequestBuilder DisableLostMode
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DisableLostMode.DisableLostModeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enableLostMode method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode.EnableLostModeRequestBuilder EnableLostMode
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode.EnableLostModeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollNowAction method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnrollNowAction.EnrollNowActionRequestBuilder EnrollNowAction
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnrollNowAction.EnrollNowActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcRemoteActionResults method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcReviewStatus method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus.GetCloudPcReviewStatusRequestBuilder GetCloudPcReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus.GetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFileVaultKey method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyRequestBuilder GetFileVaultKey
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNonCompliantSettings method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder GetNonCompliantSettings
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the initiateDeviceAttestation method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateDeviceAttestation.InitiateDeviceAttestationRequestBuilder InitiateDeviceAttestation
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateDeviceAttestation.InitiateDeviceAttestationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the initiateMobileDeviceManagementKeyRecovery method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateMobileDeviceManagementKeyRecovery.InitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateMobileDeviceManagementKeyRecovery.InitiateMobileDeviceManagementKeyRecoveryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the initiateOnDemandProactiveRemediation method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandProactiveRemediation.InitiateOnDemandProactiveRemediationRequestBuilder InitiateOnDemandProactiveRemediation
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandProactiveRemediation.InitiateOnDemandProactiveRemediationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the locateDevice method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LocateDevice.LocateDeviceRequestBuilder LocateDevice
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LocateDevice.LocateDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.LogCollectionRequestsRequestBuilder LogCollectionRequests
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.LogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logoutSharedAppleDeviceActiveUser method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser.LogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser.LogoutSharedAppleDeviceActiveUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceMobileAppConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceMobileAppConfigurationStates.ManagedDeviceMobileAppConfigurationStatesRequestBuilder ManagedDeviceMobileAppConfigurationStates
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceMobileAppConfigurationStates.ManagedDeviceMobileAppConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the overrideComplianceState method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.OverrideComplianceState.OverrideComplianceStateRequestBuilder OverrideComplianceState
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.OverrideComplianceState.OverrideComplianceStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pauseConfigurationRefresh method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.PauseConfigurationRefresh.PauseConfigurationRefreshRequestBuilder PauseConfigurationRefresh
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.PauseConfigurationRefresh.PauseConfigurationRefreshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the playLostModeSound method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.PlayLostModeSound.PlayLostModeSoundRequestBuilder PlayLostModeSound
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.PlayLostModeSound.PlayLostModeSoundRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rebootNow method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RebootNow.RebootNowRequestBuilder RebootNow
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RebootNow.RebootNowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the recoverPasscode method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RecoverPasscode.RecoverPasscodeRequestBuilder RecoverPasscode
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RecoverPasscode.RecoverPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reenable method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Reenable.ReenableRequestBuilder Reenable
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Reenable.ReenableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remoteLock method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder RemoteLock
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeDeviceFirmwareConfigurationInterfaceManagement method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder RemoveDeviceFirmwareConfigurationInterfaceManagement
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reprovisionCloudPc method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc.ReprovisionCloudPcRequestBuilder ReprovisionCloudPc
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc.ReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetPasscode method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder ResetPasscode
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resizeCloudPc method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResizeCloudPc.ResizeCloudPcRequestBuilder ResizeCloudPc
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResizeCloudPc.ResizeCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restoreCloudPc method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RestoreCloudPc.RestoreCloudPcRequestBuilder RestoreCloudPc
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RestoreCloudPc.RestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retire method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Retire.RetireRequestBuilder Retire
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Retire.RetireRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeAppleVppLicenses method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RevokeAppleVppLicenses.RevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RevokeAppleVppLicenses.RevokeAppleVppLicensesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rotateBitLockerKeys method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateBitLockerKeys.RotateBitLockerKeysRequestBuilder RotateBitLockerKeys
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateBitLockerKeys.RotateBitLockerKeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rotateFileVaultKey method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateFileVaultKey.RotateFileVaultKeyRequestBuilder RotateFileVaultKey
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateFileVaultKey.RotateFileVaultKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rotateLocalAdminPassword method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateLocalAdminPassword.RotateLocalAdminPasswordRequestBuilder RotateLocalAdminPassword
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateLocalAdminPassword.RotateLocalAdminPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder SecurityBaselineStates
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setCloudPcReviewStatus method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewStatus.SetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewStatus.SetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setDeviceName method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName.SetDeviceNameRequestBuilder SetDeviceName
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName.SetDeviceNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the shutDown method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder ShutDown
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncDevice method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder SyncDevice
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.TriggerConfigurationManagerAction.TriggerConfigurationManagerActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateWindowsDeviceAccount method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder Users
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the windowsDefenderScan method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanRequestBuilder WindowsDefenderScan
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the windowsDefenderUpdateSignatures method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderUpdateSignatures.WindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderUpdateSignatures.WindowsDefenderUpdateSignaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder WindowsProtectionState
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipe method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Wipe.WipeRequestBuilder Wipe
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Wipe.WipeRequestBuilder(PathParameters, RequestAdapter);
@@ -453,7 +394,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -477,7 +417,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ManagedDevice?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -502,7 +441,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ManagedDevice?> PatchAsync(global::Microsoft.Graph.Beta.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -525,7 +463,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -545,7 +482,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -566,7 +502,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -588,7 +523,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder(rawUrl, RequestAdapter);
@@ -597,14 +531,14 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The managed devices associated with the user.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -632,7 +566,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>
         {
         }
@@ -640,7 +574,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

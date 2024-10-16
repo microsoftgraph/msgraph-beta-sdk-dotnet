@@ -6,9 +6,11 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Count;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadAppDiagnostics;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadPowerliftAppDiagnostic;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -24,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
@@ -51,6 +53,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadAppDiagnostics.DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadAppDiagnostics.DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the downloadPowerliftAppDiagnostic method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadPowerliftAppDiagnostic.DownloadPowerliftAppDiagnosticRequestBuilder DownloadPowerliftAppDiagnostic
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadPowerliftAppDiagnostic.DownloadPowerliftAppDiagnosticRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the executeAction method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ExecuteAction.ExecuteActionRequestBuilder ExecuteAction
@@ -149,6 +156,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
         /// The list of managed devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -201,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices
         /// <summary>
         /// The list of managed devices.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDevicesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -268,7 +285,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ManagedDevicesRequestBuilder.ManagedDevicesRequestBuilderGetQueryParameters>
         {
         }
@@ -276,7 +293,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDevicesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

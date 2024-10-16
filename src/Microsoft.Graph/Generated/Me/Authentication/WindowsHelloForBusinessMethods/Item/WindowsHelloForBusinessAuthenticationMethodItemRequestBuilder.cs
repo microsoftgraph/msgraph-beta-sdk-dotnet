@@ -16,11 +16,10 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
     /// <summary>
     /// Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the device property of the microsoft.graph.windowsHelloForBusinessAuthenticationMethod entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.Device.DeviceRequestBuilder Device
         {
             get => new global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.Device.DeviceRequestBuilder(PathParameters, RequestAdapter);
@@ -47,7 +46,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +69,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.WindowsHelloForBusinessAuthenticationMethod?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,7 +90,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -113,7 +109,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -133,7 +128,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
@@ -142,14 +136,14 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -177,7 +171,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters>
         {
         }

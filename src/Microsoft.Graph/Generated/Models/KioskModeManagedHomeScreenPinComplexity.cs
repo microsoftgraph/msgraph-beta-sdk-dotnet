@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Complexity of PIN for Managed Home Screen sign-in session.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum KioskModeManagedHomeScreenPinComplexity
     {
         /// <summary>Not configured.</summary>

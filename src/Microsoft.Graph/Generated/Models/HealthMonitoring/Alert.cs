@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.HealthMonitoring
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Alert : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -24,13 +24,13 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Category?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time when Microsoft Entra Health monitoring generated the alert. Supports $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The documentation property</summary>
+        /// <summary>A key-value pair that contains the name of and link to the documentation to aid in investigation of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.HealthMonitoring.Documentation? Documentation
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             set { BackingStore?.Set("documentation", value); }
         }
 #endif
-        /// <summary>The enrichment property</summary>
+        /// <summary>Investigative information on the alert. This information typically includes counts of impacted objects, which include directory objects such as users, groups, and devices, and a pointer to supporting data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.HealthMonitoring.Enrichment? Enrichment
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Scenario?>("scenario"); }
             set { BackingStore?.Set("scenario", value); }
         }
-        /// <summary>The signals property</summary>
+        /// <summary>The collection of signals that were used in the generation of the alert. These signals are sourced from serviceActivity APIs and are added to the alert as key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.HealthMonitoring.Signals? Signals

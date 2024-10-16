@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Supported platform types.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Flags]
     public enum DeviceManagementConfigurationPlatforms
     {
@@ -32,5 +32,11 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 128,
+        /// <summary>Indicates that the settings contained in associated configuration applies to the android operating system corporate owned devices.</summary>
+        [EnumMember(Value = "androidEnterprise")]
+        AndroidEnterprise = 256,
+        /// <summary>Indicates that the settings contained in associated configuration applies to the android open source operating system.</summary>
+        [EnumMember(Value = "aosp")]
+        Aosp = 512,
     }
 }

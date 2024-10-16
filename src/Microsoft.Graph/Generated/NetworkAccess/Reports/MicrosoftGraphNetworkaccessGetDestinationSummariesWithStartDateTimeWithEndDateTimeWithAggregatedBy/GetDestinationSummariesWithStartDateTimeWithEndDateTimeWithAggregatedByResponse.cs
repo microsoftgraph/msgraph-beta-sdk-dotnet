@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy
 {
     [Obsolete("This class is obsolete. Use GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse : global::Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy.GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse, IParsable
     #pragma warning restore CS1591

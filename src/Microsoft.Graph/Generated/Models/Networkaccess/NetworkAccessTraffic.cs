@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -285,6 +285,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("headers", value); }
         }
 #endif
+        /// <summary>The httpMethod property</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod? HttpMethod
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod?>("httpMethod"); }
+            set { BackingStore?.Set("httpMethod", value); }
+        }
         /// <summary>The initiatingProcessName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -441,6 +447,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
+        /// <summary>The responseCode property</summary>
+        public int? ResponseCode
+        {
+            get { return BackingStore?.Get<int?>("responseCode"); }
+            set { BackingStore?.Set("responseCode", value); }
+        }
         /// <summary>Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? SentBytes
         {
@@ -654,6 +666,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "filteringProfileId", n => { FilteringProfileId = n.GetStringValue(); } },
                 { "filteringProfileName", n => { FilteringProfileName = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Headers>(global::Microsoft.Graph.Beta.Models.Networkaccess.Headers.CreateFromDiscriminatorValue); } },
+                { "httpMethod", n => { HttpMethod = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod>(); } },
                 { "initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
                 { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -665,6 +678,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
                 { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
                 { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
+                { "responseCode", n => { ResponseCode = n.GetIntValue(); } },
                 { "sentBytes", n => { SentBytes = n.GetLongValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "sourceIp", n => { SourceIp = n.GetStringValue(); } },
@@ -706,6 +720,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("filteringProfileId", FilteringProfileId);
             writer.WriteStringValue("filteringProfileName", FilteringProfileName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.Headers>("headers", Headers);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.HttpMethod>("httpMethod", HttpMethod);
             writer.WriteStringValue("initiatingProcessName", InitiatingProcessName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("networkProtocol", NetworkProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
@@ -717,6 +732,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteLongValue("receivedBytes", ReceivedBytes);
             writer.WriteStringValue("remoteNetworkId", RemoteNetworkId);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
+            writer.WriteIntValue("responseCode", ResponseCode);
             writer.WriteLongValue("sentBytes", SentBytes);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("sourceIp", SourceIp);

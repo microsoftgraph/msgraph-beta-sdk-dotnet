@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A pool represents a group of embedded SIM activation codes.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmbeddedSIMActivationCodePool : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The total count of activation codes which belong to this pool.</summary>

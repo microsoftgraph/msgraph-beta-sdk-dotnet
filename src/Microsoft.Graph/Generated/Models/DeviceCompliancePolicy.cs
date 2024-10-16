@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. 
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceCompliancePolicy : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The collection of assignments for this compliance policy.</summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.</summary>
+        /// <summary>The list of scheduled action for this rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>? ScheduledActionsForRule

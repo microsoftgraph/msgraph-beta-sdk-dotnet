@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoleScopeTagAutoAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The auto-assignment target for the specific Role Scope Tag.</summary>

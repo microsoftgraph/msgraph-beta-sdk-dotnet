@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Devices that are managed or pre-enrolled through Intune
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
@@ -355,7 +355,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceHealthScriptStates", value); }
         }
 #endif
-        /// <summary>Name of the device. This property is read-only.</summary>
+        /// <summary>Name of the device. Supports $filter operator &apos;eq&apos; and &apos;contains&apos;. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for Payload Compatible Assignment Filter.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayloadCompatibleAssignmentFilter : global::Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter, IParsable
     {
         /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>

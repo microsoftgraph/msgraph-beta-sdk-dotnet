@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows management app health state entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsManagementAppHealthState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Name of the device on which Windows management app is installed.</summary>

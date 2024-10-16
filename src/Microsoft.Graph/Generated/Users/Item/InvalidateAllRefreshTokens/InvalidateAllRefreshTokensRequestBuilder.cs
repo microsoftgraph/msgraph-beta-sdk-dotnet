@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
     /// <summary>
     /// Provides operations to call the invalidateAllRefreshTokens method.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvalidateAllRefreshTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -34,14 +34,13 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
         {
         }
         /// <summary>
-        /// Invalidates all of the user&apos;s refresh tokens issued to applications (as well as session cookies in a user&apos;s browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
+        /// Invalidates all of the user&apos;s refresh tokens issued to applications and session cookies in a user&apos;s browser, by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application receives an error. If this happens, the application needs to acquire a new refresh token by making a request to the OAuth 2.0 /authorize endpoint, which forces the user to sign in.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse?> PostAsInvalidateAllRefreshTokensPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse>(requestInfo, global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invalidates all of the user&apos;s refresh tokens issued to applications (as well as session cookies in a user&apos;s browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
+        /// Invalidates all of the user&apos;s refresh tokens issued to applications and session cookies in a user&apos;s browser, by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application receives an error. If this happens, the application needs to acquire a new refresh token by making a request to the OAuth 2.0 /authorize endpoint, which forces the user to sign in.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensResponse"/></returns>
@@ -84,11 +83,10 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensResponse>(requestInfo, global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invalidates all of the user&apos;s refresh tokens issued to applications (as well as session cookies in a user&apos;s browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
+        /// Invalidates all of the user&apos;s refresh tokens issued to applications and session cookies in a user&apos;s browser, by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application receives an error. If this happens, the application needs to acquire a new refresh token by making a request to the OAuth 2.0 /authorize endpoint, which forces the user to sign in.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -108,7 +106,6 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder(rawUrl, RequestAdapter);
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

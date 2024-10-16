@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains the properties used to assign an App provisioning configuration to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppProvisioningConfigGroupAssignment : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The ID of the AAD group in which the app provisioning configuration is being targeted.</summary>

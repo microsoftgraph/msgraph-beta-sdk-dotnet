@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An abstract base class for all macOS-specific single sign-on extension types.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOSSingleSignOnExtension : global::Microsoft.Graph.Beta.Models.SingleSignOnExtension, IParsable
     {
         /// <summary>

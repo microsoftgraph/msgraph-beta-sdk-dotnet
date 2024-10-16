@@ -16,11 +16,11 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
     /// <summary>
     /// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\collaborators\{user-id}\serviceProvisioningErrors
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServiceProvisioningErrorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
         public global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ServiceProvisioningErrorCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
         public global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(rawUrl, RequestAdapter);
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// <summary>
         /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceProvisioningErrorsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceProvisioningErrorsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder.ServiceProvisioningErrorsRequestBuilderGetQueryParameters>
         {
         }

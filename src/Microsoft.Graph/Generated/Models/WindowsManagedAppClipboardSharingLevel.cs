@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WindowsManagedAppClipboardSharingLevel
     {
         /// <summary>Org users can paste data from and cut/copy data to any account, document, location or application.</summary>
