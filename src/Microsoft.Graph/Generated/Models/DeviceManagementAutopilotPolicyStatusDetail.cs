@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy status detail item contained by an autopilot event.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementAutopilotPolicyStatusDetail : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The complianceStatus property</summary>

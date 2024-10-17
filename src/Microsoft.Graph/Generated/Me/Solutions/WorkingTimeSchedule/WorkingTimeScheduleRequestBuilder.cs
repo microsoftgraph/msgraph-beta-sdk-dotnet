@@ -17,17 +17,15 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
     /// <summary>
     /// Provides operations to manage the workingTimeSchedule property of the microsoft.graph.userSolutionRoot entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkingTimeScheduleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the endWorkingTime method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.EndWorkingTime.EndWorkingTimeRequestBuilder EndWorkingTime
         {
             get => new global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.EndWorkingTime.EndWorkingTimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the startWorkingTime method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.StartWorkingTime.StartWorkingTimeRequestBuilder StartWorkingTime
         {
             get => new global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.StartWorkingTime.StartWorkingTimeRequestBuilder(PathParameters, RequestAdapter);
@@ -54,7 +52,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,7 +75,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.WorkingTimeSchedule?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.WorkingTimeScheduleRequestBuilder.WorkingTimeScheduleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -103,7 +99,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.WorkingTimeSchedule?> PatchAsync(global::Microsoft.Graph.Beta.Models.WorkingTimeSchedule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -126,7 +121,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -146,7 +140,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.WorkingTimeScheduleRequestBuilder.WorkingTimeScheduleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -167,7 +160,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.WorkingTimeSchedule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -189,7 +181,6 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.WorkingTimeScheduleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.WorkingTimeScheduleRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.WorkingTimeScheduleRequestBuilder(rawUrl, RequestAdapter);
@@ -198,14 +189,14 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkingTimeScheduleRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The working time schedule entity associated with the solution.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkingTimeScheduleRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -233,7 +224,7 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkingTimeScheduleRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule.WorkingTimeScheduleRequestBuilder.WorkingTimeScheduleRequestBuilderGetQueryParameters>
         {
         }
@@ -241,7 +232,7 @@ namespace Microsoft.Graph.Beta.Me.Solutions.WorkingTimeSchedule
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkingTimeScheduleRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

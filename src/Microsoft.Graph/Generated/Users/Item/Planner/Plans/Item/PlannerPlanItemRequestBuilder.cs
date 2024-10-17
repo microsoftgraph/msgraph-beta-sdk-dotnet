@@ -21,41 +21,35 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
     /// <summary>
     /// Provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlannerPlanItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the archive method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Archive.ArchiveRequestBuilder Archive
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Buckets.BucketsRequestBuilder Buckets
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Buckets.BucketsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerPlan entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Details.DetailsRequestBuilder Details
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the moveToContainer method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.MoveToContainer.MoveToContainerRequestBuilder MoveToContainer
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.MoveToContainer.MoveToContainerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Unarchive.UnarchiveRequestBuilder Unarchive
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
@@ -82,7 +76,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,7 +99,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PlannerPlan?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -131,7 +123,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PlannerPlan?> PatchAsync(global::Microsoft.Graph.Beta.Models.PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -154,7 +145,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -174,7 +164,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -195,7 +184,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -217,7 +205,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.PlannerPlanItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.PlannerPlanItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.PlannerPlanItemRequestBuilder(rawUrl, RequestAdapter);
@@ -226,14 +213,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerPlanItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get plans from users
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerPlanItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -261,7 +248,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerPlanItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>
         {
         }
@@ -269,7 +256,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerPlanItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

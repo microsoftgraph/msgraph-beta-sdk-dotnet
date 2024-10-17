@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for device run state of the device management script.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementScriptDeviceState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Error code corresponding to erroneous execution of the device management script.</summary>

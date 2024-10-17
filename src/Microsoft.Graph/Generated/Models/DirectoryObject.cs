@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DirectoryObject : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -34,7 +34,9 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.application" => new global::Microsoft.Graph.Beta.Models.Application(),
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Beta.Models.AppManagementPolicy(),
                 "#microsoft.graph.authorizationPolicy" => new global::Microsoft.Graph.Beta.Models.AuthorizationPolicy(),
+                "#microsoft.graph.certificateAuthorityDetail" => new global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail(),
                 "#microsoft.graph.certificateBasedApplicationConfiguration" => new global::Microsoft.Graph.Beta.Models.CertificateBasedApplicationConfiguration(),
+                "#microsoft.graph.certificateBasedAuthPki" => new global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki(),
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.contract" => new global::Microsoft.Graph.Beta.Models.Contract(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new global::Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy(),

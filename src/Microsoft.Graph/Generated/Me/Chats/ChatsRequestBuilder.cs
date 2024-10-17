@@ -20,29 +20,25 @@ namespace Microsoft.Graph.Beta.Me.Chats
     /// <summary>
     /// Provides operations to manage the chats property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChatsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the allMessages method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.AllMessages.AllMessagesRequestBuilder AllMessages
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.AllMessages.AllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllMessages method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder GetAllMessages
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllRetainedMessages method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder GetAllRetainedMessages
         {
             get => new global::Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder(PathParameters, RequestAdapter);
@@ -50,7 +46,6 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of chat</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.Item.ChatItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.Item.ChatItemRequestBuilder this[string position]
         {
             get
@@ -83,7 +78,6 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ChatCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -108,7 +102,6 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Chat?> PostAsync(global::Microsoft.Graph.Beta.Models.Chat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -131,7 +124,6 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -152,7 +144,6 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Chat body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -174,7 +165,6 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder(rawUrl, RequestAdapter);
@@ -182,7 +172,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// <summary>
         /// Get chats from me
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChatsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -249,7 +239,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChatsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Chats.ChatsRequestBuilder.ChatsRequestBuilderGetQueryParameters>
         {
         }
@@ -257,7 +247,7 @@ namespace Microsoft.Graph.Beta.Me.Chats
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChatsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

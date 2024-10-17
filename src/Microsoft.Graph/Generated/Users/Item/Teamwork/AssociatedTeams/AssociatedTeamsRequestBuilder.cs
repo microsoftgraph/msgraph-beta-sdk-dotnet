@@ -17,11 +17,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
     /// <summary>
     /// Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssociatedTeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +28,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// <summary>Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.</summary>
         /// <param name="position">The unique identifier of associatedTeamInfo</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item.AssociatedTeamInfoItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item.AssociatedTeamInfoItemRequestBuilder this[string position]
         {
             get
@@ -62,7 +60,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfoCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder.AssociatedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,7 +84,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo?> PostAsync(global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +106,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder.AssociatedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -131,7 +126,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AssociatedTeamInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -153,7 +147,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder(rawUrl, RequestAdapter);
@@ -161,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// <summary>
         /// The list of associatedTeamInfo objects that a user is associated with.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssociatedTeamsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -228,7 +221,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssociatedTeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder.AssociatedTeamsRequestBuilderGetQueryParameters>
         {
         }
@@ -236,7 +229,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssociatedTeamsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

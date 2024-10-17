@@ -7,12 +7,12 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.HealthMonitoring
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class HealthMonitoringRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The alertConfigurations property</summary>
+        /// <summary>The configuration of an alert type, which defines behavior that occurs when an alert is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.AlertConfiguration>? AlertConfigurations
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             set { BackingStore?.Set("alertConfigurations", value); }
         }
 #endif
-        /// <summary>The alerts property</summary>
+        /// <summary>The collection of health monitoring system detected alerts for anomalous usage patterns found in a Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.HealthMonitoring.Alert>? Alerts

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// KioskModeApp v4 for Win32 app support
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsKioskWin32App : global::Microsoft.Graph.Beta.Models.WindowsKioskAppBase, IParsable
     {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>

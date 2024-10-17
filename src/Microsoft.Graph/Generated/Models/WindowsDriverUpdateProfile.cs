@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Driver Update Profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsDriverUpdateProfile : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>An enum type to represent approval type of a driver update profile.</summary>

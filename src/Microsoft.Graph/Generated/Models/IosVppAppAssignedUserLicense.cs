@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// iOS Volume Purchase Program user license assignment. This class does not support Create, Delete, or Update.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosVppAppAssignedUserLicense : global::Microsoft.Graph.Beta.Models.IosVppAppAssignedLicense, IParsable
     {
         /// <summary>

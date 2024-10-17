@@ -18,11 +18,10 @@ namespace Microsoft.Graph.Beta.Me.Approvals
     /// <summary>
     /// Provides operations to manage the approvals property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApprovalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Approvals.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.Approvals.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -30,7 +29,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// <summary>Provides operations to manage the approvals property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of approval</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Approvals.Item.ApprovalItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Approvals.Item.ApprovalItemRequestBuilder this[string position]
         {
             get
@@ -61,7 +59,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Approvals.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Approvals.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -74,7 +71,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ApprovalCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder.ApprovalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,7 +95,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Approval?> PostAsync(global::Microsoft.Graph.Beta.Models.Approval body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -122,7 +117,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder.ApprovalsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -143,7 +137,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Approval body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -165,7 +158,6 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder(rawUrl, RequestAdapter);
@@ -173,7 +165,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// <summary>
         /// Get approvals from me
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApprovalsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -240,7 +232,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApprovalsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Approvals.ApprovalsRequestBuilder.ApprovalsRequestBuilderGetQueryParameters>
         {
         }
@@ -248,7 +240,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApprovalsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

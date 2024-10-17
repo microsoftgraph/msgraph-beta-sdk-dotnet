@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for MacOS Volume-Purchased Program (VPP) Apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOsVppApp : global::Microsoft.Graph.Beta.Models.MobileApp, IParsable
     {
         /// <summary>The store URL.</summary>

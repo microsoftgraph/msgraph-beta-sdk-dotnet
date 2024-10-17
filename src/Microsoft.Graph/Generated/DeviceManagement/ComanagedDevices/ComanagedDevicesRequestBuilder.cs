@@ -6,9 +6,11 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Count;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiagnostics;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadPowerliftAppDiagnostic;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.MoveDevicesToOU;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -24,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices
     /// <summary>
     /// Provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComanagedDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
@@ -51,6 +53,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiagnostics.DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiagnostics.DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the downloadPowerliftAppDiagnostic method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadPowerliftAppDiagnostic.DownloadPowerliftAppDiagnosticRequestBuilder DownloadPowerliftAppDiagnostic
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadPowerliftAppDiagnostic.DownloadPowerliftAppDiagnosticRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the executeAction method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction.ExecuteActionRequestBuilder ExecuteAction
@@ -149,6 +156,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
         /// The list of co-managed devices report
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -201,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices
         /// <summary>
         /// The list of co-managed devices report
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ComanagedDevicesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -268,7 +285,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ComanagedDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ComanagedDevicesRequestBuilder.ComanagedDevicesRequestBuilderGetQueryParameters>
         {
         }
@@ -276,7 +293,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ComanagedDevicesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

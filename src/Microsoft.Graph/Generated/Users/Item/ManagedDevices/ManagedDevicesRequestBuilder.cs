@@ -8,9 +8,11 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadAppDiagnostics;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadPowerliftAppDiagnostic;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MoveDevicesToOU;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,47 +26,45 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc.BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc.BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus.BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus.BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the downloadAppDiagnostics method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadAppDiagnostics.DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadAppDiagnostics.DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the downloadPowerliftAppDiagnostic method.</summary>
+        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadPowerliftAppDiagnostic.DownloadPowerliftAppDiagnosticRequestBuilder DownloadPowerliftAppDiagnostic
+        {
+            get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadPowerliftAppDiagnostic.DownloadPowerliftAppDiagnosticRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the executeAction method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction.ExecuteActionRequestBuilder ExecuteAction
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction.ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.MoveDevicesToOU.MoveDevicesToOURequestBuilder MoveDevicesToOU
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.MoveDevicesToOU.MoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
@@ -72,7 +72,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of managedDevice</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceItemRequestBuilder this[string position]
         {
             get
@@ -87,7 +86,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.AppDiagnosticsWithUpn.AppDiagnosticsWithUpnRequestBuilder"/></returns>
         /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.AppDiagnosticsWithUpn.AppDiagnosticsWithUpnRequestBuilder AppDiagnosticsWithUpn(string upn)
         {
             if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
@@ -116,7 +114,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ManagedDeviceCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder.ManagedDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -141,7 +138,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.ManagedDevice?> PostAsync(global::Microsoft.Graph.Beta.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -160,11 +156,20 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ManagedDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
+        public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName.RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
         /// The managed devices associated with the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder.ManagedDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -185,7 +190,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -207,7 +211,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder(rawUrl, RequestAdapter);
@@ -215,7 +218,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// <summary>
         /// The managed devices associated with the user.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDevicesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -282,7 +285,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.ManagedDevices.ManagedDevicesRequestBuilder.ManagedDevicesRequestBuilderGetQueryParameters>
         {
         }
@@ -290,7 +293,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDevicesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

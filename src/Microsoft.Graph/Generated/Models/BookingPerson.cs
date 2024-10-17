@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a booking customer or staff member.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BookingPerson : global::Microsoft.Graph.Beta.Models.BookingNamedEntity, IParsable
     {
         /// <summary>The email address of the person.</summary>

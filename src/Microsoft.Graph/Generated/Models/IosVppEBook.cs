@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties for iOS Vpp eBook.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosVppEBook : global::Microsoft.Graph.Beta.Models.ManagedEBook, IParsable
     {
         /// <summary>The Apple ID associated with Vpp token.</summary>
