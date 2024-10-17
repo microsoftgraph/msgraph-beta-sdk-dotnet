@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Windows Operating System is available in different editions, which have a specific set of features available. This enum type defines the corresponding edition.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedDeviceWindowsOperatingSystemEditionType
     {
         /// <summary>Default. Indicates Professional Operating System edition used for the managed device.</summary>

@@ -18,11 +18,10 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
     /// <summary>
     /// Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -30,7 +29,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// <summary>Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.</summary>
         /// <param name="position">The unique identifier of accessReviewStage</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.AccessReviewStageItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.AccessReviewStageItemRequestBuilder this[string position]
         {
             get
@@ -61,7 +59,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder"/></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on)
         {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -74,7 +71,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AccessReviewStageCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.StagesRequestBuilder.StagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,7 +95,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.AccessReviewStage?> PostAsync(global::Microsoft.Graph.Beta.Models.AccessReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -122,7 +117,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.StagesRequestBuilder.StagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -143,7 +137,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.AccessReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -165,7 +158,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.StagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.StagesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.StagesRequestBuilder(rawUrl, RequestAdapter);
@@ -173,7 +165,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// <summary>
         /// If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StagesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -240,7 +232,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.StagesRequestBuilder.StagesRequestBuilderGetQueryParameters>
         {
         }
@@ -248,7 +240,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StagesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

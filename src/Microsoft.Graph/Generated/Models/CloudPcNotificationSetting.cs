@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CloudPcNotificationSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The restartPromptsDisabled property</summary>
+        /// <summary>If true, doesn&apos;t prompt the user to restart the Cloud PC. If false, prompts the user to restart Cloud PC. The default value is false.</summary>
         public bool? RestartPromptsDisabled
         {
             get { return BackingStore?.Get<bool?>("restartPromptsDisabled"); }

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity which represents an OnPrem Ndes connector.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NdesConnector : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The build version of the Ndes Connector.</summary>

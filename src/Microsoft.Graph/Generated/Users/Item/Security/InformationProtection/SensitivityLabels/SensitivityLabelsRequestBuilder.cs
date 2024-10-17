@@ -21,35 +21,30 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
     /// <summary>
     /// Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SensitivityLabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication.MicrosoftGraphSecurityEvaluateApplicationRequestBuilder MicrosoftGraphSecurityEvaluateApplication
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication.MicrosoftGraphSecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder MicrosoftGraphSecurityEvaluateClassificationResults
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval.MicrosoftGraphSecurityEvaluateRemovalRequestBuilder MicrosoftGraphSecurityEvaluateRemoval
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval.MicrosoftGraphSecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractContentLabel method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.MicrosoftGraphSecurityExtractContentLabelRequestBuilder MicrosoftGraphSecurityExtractContentLabel
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
@@ -57,7 +52,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
         /// <param name="position">The unique identifier of sensitivityLabel</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder this[string position]
         {
             get
@@ -91,7 +85,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Security.SensitivityLabelCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -116,7 +109,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Security.SensitivityLabel?> PostAsync(global::Microsoft.Graph.Beta.Models.Security.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -139,7 +131,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -160,7 +151,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.Security.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -182,7 +172,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder(rawUrl, RequestAdapter);
@@ -190,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <summary>
         /// Get a list of sensitivityLabel objects associated with a user or organization.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -257,7 +246,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>
         {
         }
@@ -265,7 +254,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SensitivityLabelsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A security configuration task.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecurityConfigurationTask : global::Microsoft.Graph.Beta.Models.DeviceAppManagementTask, IParsable
     {
         /// <summary>The endpoint security configuration applicable platform.</summary>

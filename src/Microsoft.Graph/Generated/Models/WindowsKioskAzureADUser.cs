@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify an AzureAD user account for the kiosk configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsKioskAzureADUser : global::Microsoft.Graph.Beta.Models.WindowsKioskUser, IParsable
     {
         /// <summary>The ID of the AzureAD user that will be locked to this kiosk configuration</summary>

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// VPN On-Demand Rule definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VpnOnDemandRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>VPN On-Demand Rule Connection Action.</summary>

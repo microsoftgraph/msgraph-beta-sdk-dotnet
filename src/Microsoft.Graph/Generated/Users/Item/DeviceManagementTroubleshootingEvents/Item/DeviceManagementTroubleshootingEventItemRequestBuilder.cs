@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
     /// <summary>
     /// Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementTroubleshootingEventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -40,7 +40,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,7 +63,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder.DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +87,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent?> PatchAsync(global::Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +109,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -132,7 +128,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder.DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -153,7 +148,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -175,7 +169,6 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder(rawUrl, RequestAdapter);
@@ -184,14 +177,14 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The list of troubleshooting events for this user.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -219,7 +212,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementTroubleshootingEventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.Item.DeviceManagementTroubleshootingEventItemRequestBuilder.DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters>
         {
         }
@@ -227,7 +220,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

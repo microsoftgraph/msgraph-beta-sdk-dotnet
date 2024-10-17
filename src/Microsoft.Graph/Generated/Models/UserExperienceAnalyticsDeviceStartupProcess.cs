@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics device startup process details.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsDeviceStartupProcess : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>

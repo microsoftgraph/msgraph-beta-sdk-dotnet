@@ -34,119 +34,100 @@ namespace Microsoft.Graph.Beta.Me.Profile
     /// <summary>
     /// Provides operations to manage the profile property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfileRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Account.AccountRequestBuilder Account
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the addresses property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Addresses.AddressesRequestBuilder Addresses
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Addresses.AddressesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the anniversaries property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Anniversaries.AnniversariesRequestBuilder Anniversaries
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Anniversaries.AnniversariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the awards property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Awards.AwardsRequestBuilder Awards
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Awards.AwardsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certifications property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Certifications.CertificationsRequestBuilder Certifications
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Certifications.CertificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.EducationalActivities.EducationalActivitiesRequestBuilder EducationalActivities
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.EducationalActivities.EducationalActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emails property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Emails.EmailsRequestBuilder Emails
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Emails.EmailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the interests property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Interests.InterestsRequestBuilder Interests
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Interests.InterestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Languages.LanguagesRequestBuilder Languages
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Languages.LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the names property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Names.NamesRequestBuilder Names
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Names.NamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Notes.NotesRequestBuilder Notes
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the patents property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Patents.PatentsRequestBuilder Patents
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Patents.PatentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the phones property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Phones.PhonesRequestBuilder Phones
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Phones.PhonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the positions property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Positions.PositionsRequestBuilder Positions
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Positions.PositionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the projects property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the publications property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Publications.PublicationsRequestBuilder Publications
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Publications.PublicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the skills property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Skills.SkillsRequestBuilder Skills
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Skills.SkillsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.WebAccounts.WebAccountsRequestBuilder WebAccounts
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.WebAccounts.WebAccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the websites property of the microsoft.graph.profile entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder Websites
         {
             get => new global::Microsoft.Graph.Beta.Me.Profile.Websites.WebsitesRequestBuilder(PathParameters, RequestAdapter);
@@ -174,7 +155,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -199,7 +179,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Profile?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -224,7 +203,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Profile?> PatchAsync(global::Microsoft.Graph.Beta.Models.Profile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -247,7 +225,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -267,7 +244,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -288,7 +264,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Profile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -310,7 +285,6 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder(rawUrl, RequestAdapter);
@@ -319,14 +293,14 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfileRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfileRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -354,7 +328,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfileRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Profile.ProfileRequestBuilder.ProfileRequestBuilderGetQueryParameters>
         {
         }
@@ -362,7 +336,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfileRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

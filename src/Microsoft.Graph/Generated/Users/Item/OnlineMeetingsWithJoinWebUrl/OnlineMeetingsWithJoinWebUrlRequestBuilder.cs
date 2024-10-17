@@ -18,23 +18,20 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
     /// <summary>
     /// Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OnlineMeetingsWithJoinWebUrlRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the getVirtualAppointmentJoinWebUrl method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.GetVirtualAppointmentJoinWebUrl.GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.GetVirtualAppointmentJoinWebUrl.GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendVirtualAppointmentReminderSms method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsRequestBuilder SendVirtualAppointmentReminderSms
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentReminderSms.SendVirtualAppointmentReminderSmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendVirtualAppointmentSms method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentSms.SendVirtualAppointmentSmsRequestBuilder SendVirtualAppointmentSms
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtualAppointmentSms.SendVirtualAppointmentSmsRequestBuilder(PathParameters, RequestAdapter);
@@ -63,7 +60,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,7 +83,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.OnlineMeeting?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder.OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +107,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.OnlineMeeting?> PatchAsync(global::Microsoft.Graph.Beta.Models.OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -135,7 +129,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -155,7 +148,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder.OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -176,7 +168,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -198,7 +189,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder(rawUrl, RequestAdapter);
@@ -207,14 +197,14 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnlineMeetingsWithJoinWebUrlRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -242,7 +232,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.OnlineMeetingsWithJoinWebUrlRequestBuilder.OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>
         {
         }
@@ -250,7 +240,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

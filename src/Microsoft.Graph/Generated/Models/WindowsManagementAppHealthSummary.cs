@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the health summary of the Windows management app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsManagementAppHealthSummary : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Healthy device count.</summary>

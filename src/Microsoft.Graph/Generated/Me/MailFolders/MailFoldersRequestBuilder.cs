@@ -18,17 +18,15 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
     /// <summary>
     /// Provides operations to manage the mailFolders property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MailFoldersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
@@ -36,7 +34,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of mailFolder</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.MailFolders.Item.MailFolderItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.MailFolderItemRequestBuilder this[string position]
         {
             get
@@ -70,7 +67,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MailFolderCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder.MailFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +92,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MailFolder?> PostAsync(global::Microsoft.Graph.Beta.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -119,7 +114,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder.MailFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -140,7 +134,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -162,7 +155,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder(rawUrl, RequestAdapter);
@@ -170,7 +162,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// <summary>
         /// Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter includeHiddenFolders to include them in the response. This operation does not return all mail folders in a mailbox, only the child folders of the root folder. To return all mail folders in a mailbox, each child folder must be traversed separately.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFoldersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -247,7 +239,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFoldersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.MailFolders.MailFoldersRequestBuilder.MailFoldersRequestBuilderGetQueryParameters>
         {
         }
@@ -255,7 +247,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFoldersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

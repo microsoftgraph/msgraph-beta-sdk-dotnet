@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The resource that represents an instance of Enrollment Failure Reports.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Represents a collection of sign-in activities of application credentials.</summary>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
 #endif
-        /// <summary>The healthMonitoring property</summary>
+        /// <summary>Reports for Microsoft Entra Health Monitoring.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.HealthMonitoring.HealthMonitoringRoot? HealthMonitoring
@@ -303,7 +303,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
         }
 #endif
-        /// <summary>Reports that relate to tenant-level Microsoft Entra SLA attainment.</summary>
+        /// <summary>Reports that relate to tenant-level Microsoft Entra Health SLA attainment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.ServiceLevelAgreementRoot? Sla

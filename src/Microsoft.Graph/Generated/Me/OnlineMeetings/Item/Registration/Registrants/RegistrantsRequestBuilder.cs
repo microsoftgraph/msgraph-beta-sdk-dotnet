@@ -17,11 +17,10 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
     /// <summary>
     /// Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +28,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// <summary>Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.</summary>
         /// <param name="position">The unique identifier of meetingRegistrantBase</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.Item.MeetingRegistrantBaseItemRequestBuilder this[string position]
         {
             get
@@ -63,7 +61,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +86,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase?> PostAsync(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +108,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -133,7 +128,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingRegistrantBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -155,7 +149,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder(rawUrl, RequestAdapter);
@@ -163,7 +156,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// <summary>
         /// Get a list of the externalMeetingRegistrants of an onlineMeeting.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrantsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -230,7 +223,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants.RegistrantsRequestBuilder.RegistrantsRequestBuilderGetQueryParameters>
         {
         }
@@ -238,7 +231,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.Registrants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrantsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

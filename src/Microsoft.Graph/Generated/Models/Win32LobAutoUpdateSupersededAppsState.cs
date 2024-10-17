@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Contains value for auto-update superseded apps.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Win32LobAutoUpdateSupersededAppsState
     {
         /// <summary>Indicates that the auto-update superseded apps state is not configured and the app will not auto-update the superseded apps.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagement : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
@@ -289,6 +289,38 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>>("chromeOSOnboardingSettings"); }
             set { BackingStore?.Set("chromeOSOnboardingSettings", value); }
+        }
+#endif
+        /// <summary>Collection of CloudCertificationAuthority records associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority>? CloudCertificationAuthority
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority>?>("cloudCertificationAuthority"); }
+            set { BackingStore?.Set("cloudCertificationAuthority", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority> CloudCertificationAuthority
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority>>("cloudCertificationAuthority"); }
+            set { BackingStore?.Set("cloudCertificationAuthority", value); }
+        }
+#endif
+        /// <summary>Collection of CloudCertificationAuthorityLeafCertificate records associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate>? CloudCertificationAuthorityLeafCertificate
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate>?>("cloudCertificationAuthorityLeafCertificate"); }
+            set { BackingStore?.Set("cloudCertificationAuthorityLeafCertificate", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate> CloudCertificationAuthorityLeafCertificate
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate>>("cloudCertificationAuthorityLeafCertificate"); }
+            set { BackingStore?.Set("cloudCertificationAuthorityLeafCertificate", value); }
         }
 #endif
         /// <summary>The list of CloudPC Connectivity Issue.</summary>
@@ -711,22 +743,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
-        }
-#endif
-        /// <summary>Profile Id of the object.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>? DeviceConfigurationProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>?>("deviceConfigurationProfiles"); }
-            set { BackingStore?.Set("deviceConfigurationProfiles", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile> DeviceConfigurationProfiles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>>("deviceConfigurationProfiles"); }
-            set { BackingStore?.Set("deviceConfigurationProfiles", value); }
         }
 #endif
         /// <summary>Restricted apps violations for this account.</summary>
@@ -3015,6 +3031,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>(global::Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "certificateConnectorDetails", n => { CertificateConnectorDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(global::Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "chromeOSOnboardingSettings", n => { ChromeOSOnboardingSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>(global::Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudCertificationAuthority", n => { CloudCertificationAuthority = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority>(global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cloudCertificationAuthorityLeafCertificate", n => { CloudCertificationAuthorityLeafCertificate = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate>(global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudPCConnectivityIssues", n => { CloudPCConnectivityIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>(global::Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "comanagedDevices", n => { ComanagedDevices = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedDevice>(global::Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "comanagementEligibleDevices", n => { ComanagementEligibleDevices = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>(global::Microsoft.Graph.Beta.Models.ComanagementEligibleDevice.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -3042,7 +3060,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "deviceComplianceScripts", n => { DeviceComplianceScripts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceComplianceScript>(global::Microsoft.Graph.Beta.Models.DeviceComplianceScript.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceConfigurationConflictSummary", n => { DeviceConfigurationConflictSummary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>(global::Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceConfigurationDeviceStateSummaries", n => { DeviceConfigurationDeviceStateSummaries = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>(global::Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary.CreateFromDiscriminatorValue); } },
-                { "deviceConfigurationProfiles", n => { DeviceConfigurationProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>(global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceConfigurationRestrictedAppsViolations", n => { DeviceConfigurationRestrictedAppsViolations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RestrictedAppsViolation>(global::Microsoft.Graph.Beta.Models.RestrictedAppsViolation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceConfigurationUserStateSummaries", n => { DeviceConfigurationUserStateSummaries = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>(global::Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue); } },
                 { "deviceConfigurations", n => { DeviceConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfiguration>(global::Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -3216,6 +3233,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>("categories", Categories);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CertificateConnectorDetails>("certificateConnectorDetails", CertificateConnectorDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>("chromeOSOnboardingSettings", ChromeOSOnboardingSettings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthority>("cloudCertificationAuthority", CloudCertificationAuthority);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudCertificationAuthorityLeafCertificate>("cloudCertificationAuthorityLeafCertificate", CloudCertificationAuthorityLeafCertificate);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>("cloudPCConnectivityIssues", CloudPCConnectivityIssues);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedDevice>("comanagedDevices", ComanagedDevices);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>("comanagementEligibleDevices", ComanagementEligibleDevices);
@@ -3242,7 +3261,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceComplianceScript>("deviceComplianceScripts", DeviceComplianceScripts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>("deviceConfigurationConflictSummary", DeviceConfigurationConflictSummary);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries", DeviceConfigurationDeviceStateSummaries);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>("deviceConfigurationProfiles", DeviceConfigurationProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RestrictedAppsViolation>("deviceConfigurationRestrictedAppsViolations", DeviceConfigurationRestrictedAppsViolations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceConfiguration>("deviceConfigurations", DeviceConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>("deviceConfigurationsAllManagedDeviceCertificateStates", DeviceConfigurationsAllManagedDeviceCertificateStates);

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Settings for Android For Work.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidForWorkSettings : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Bind status of the tenant with the Google EMM API</summary>

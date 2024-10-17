@@ -18,17 +18,15 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
     /// <summary>
     /// Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CalendarViewRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
@@ -36,7 +34,6 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.</summary>
         /// <param name="position">The unique identifier of event</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.EventItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.EventItemRequestBuilder this[string position]
         {
             get
@@ -70,7 +67,6 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.EventCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,7 +88,6 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -112,7 +107,6 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.CalendarViewRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.CalendarViewRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.CalendarViewRequestBuilder(rawUrl, RequestAdapter);
@@ -120,7 +114,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
         /// <summary>
         /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CalendarViewRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -207,7 +201,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CalendarViewRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Calendar.CalendarView.CalendarViewRequestBuilder.CalendarViewRequestBuilderGetQueryParameters>
         {
         }

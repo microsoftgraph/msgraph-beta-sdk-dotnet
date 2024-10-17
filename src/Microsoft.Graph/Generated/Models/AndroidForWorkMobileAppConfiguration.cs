@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for AFW mobile app configurations.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidForWorkMobileAppConfiguration : global::Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfiguration, IParsable
     {
         /// <summary>Setting to specify whether to allow ConnectedApps experience for this app.</summary>

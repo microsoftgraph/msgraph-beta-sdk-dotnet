@@ -16,11 +16,10 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
     /// <summary>
     /// Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlatformCredentialAuthenticationMethodItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the device property of the microsoft.graph.platformCredentialAuthenticationMethod entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.Device.DeviceRequestBuilder Device
         {
             get => new global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.Device.DeviceRequestBuilder(PathParameters, RequestAdapter);
@@ -47,7 +46,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -72,7 +70,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.PlatformCredentialAuthenticationMethod?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder.PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,7 +91,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -114,7 +110,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder.PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -134,7 +129,6 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
@@ -143,14 +137,14 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlatformCredentialAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a platformCredentialAuthenticationMethod object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -178,7 +172,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlatformCredentialAuthenticationMethodItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item.PlatformCredentialAuthenticationMethodItemRequestBuilder.PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters>
         {
         }

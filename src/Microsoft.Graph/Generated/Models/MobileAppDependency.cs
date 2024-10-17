@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes a dependency type between two mobile apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppDependency : global::Microsoft.Graph.Beta.Models.MobileAppRelationship, IParsable
     {
         /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>

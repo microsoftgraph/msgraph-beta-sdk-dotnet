@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes the embedded SIM activation code deployment state in relation to a device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmbeddedSIMDeviceState : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The time the embedded SIM device status was created. Generated service side.</summary>

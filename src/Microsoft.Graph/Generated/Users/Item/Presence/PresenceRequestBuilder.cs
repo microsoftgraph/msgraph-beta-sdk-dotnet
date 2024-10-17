@@ -20,35 +20,30 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
     /// <summary>
     /// Provides operations to manage the presence property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PresenceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the clearPresence method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence.ClearPresenceRequestBuilder ClearPresence
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence.ClearPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clearUserPreferredPresence method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Presence.ClearUserPreferredPresence.ClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Presence.ClearUserPreferredPresence.ClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setPresence method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Presence.SetPresence.SetPresenceRequestBuilder SetPresence
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Presence.SetPresence.SetPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setStatusMessage method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Presence.SetStatusMessage.SetStatusMessageRequestBuilder SetStatusMessage
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Presence.SetStatusMessage.SetStatusMessageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Presence.SetUserPreferredPresence.SetUserPreferredPresenceRequestBuilder SetUserPreferredPresence
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Presence.SetUserPreferredPresence.SetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
@@ -75,7 +70,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +94,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Presence?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Presence.PresenceRequestBuilder.PresenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -125,7 +118,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Presence?> PatchAsync(global::Microsoft.Graph.Beta.Models.Presence body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -148,7 +140,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -168,7 +159,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Presence.PresenceRequestBuilder.PresenceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -189,7 +179,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.Presence body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -211,7 +200,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Presence.PresenceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Presence.PresenceRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Presence.PresenceRequestBuilder(rawUrl, RequestAdapter);
@@ -220,14 +208,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PresenceRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PresenceRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -255,7 +243,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PresenceRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Presence.PresenceRequestBuilder.PresenceRequestBuilderGetQueryParameters>
         {
         }
@@ -263,7 +251,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PresenceRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

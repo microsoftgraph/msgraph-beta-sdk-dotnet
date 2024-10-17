@@ -33,7 +33,6 @@ using Microsoft.Graph.Beta.Contracts;
 using Microsoft.Graph.Beta.DataClassification;
 using Microsoft.Graph.Beta.DataPolicyOperations;
 using Microsoft.Graph.Beta.DeviceAppManagement;
-using Microsoft.Graph.Beta.DeviceLocalCredentials;
 using Microsoft.Graph.Beta.DeviceManagement;
 using Microsoft.Graph.Beta.Devices;
 using Microsoft.Graph.Beta.DevicesWithDeviceId;
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.Beta
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BaseGraphServiceClient : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
@@ -297,11 +296,6 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder DeviceAppManagement
         {
             get => new global::Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
-        public global::Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceLocalCredentials.DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder DeviceManagement

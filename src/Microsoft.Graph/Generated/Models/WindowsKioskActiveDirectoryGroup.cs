@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify an Azure Directory group for the kiosk configuration
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsKioskActiveDirectoryGroup : global::Microsoft.Graph.Beta.Models.WindowsKioskUser, IParsable
     {
         /// <summary>The name of the AD group that will be locked to this kiosk configuration</summary>

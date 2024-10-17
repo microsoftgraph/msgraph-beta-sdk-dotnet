@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RecycleBin : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
@@ -26,6 +26,22 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.RecycleBinItem>>("items"); }
             set { BackingStore?.Set("items", value); }
+        }
+#endif
+        /// <summary>Settings of the recycleBin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RecycleBinSettings? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecycleBinSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RecycleBinSettings Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecycleBinSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecycleBinItem>(global::Microsoft.Graph.Beta.Models.RecycleBinItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBinSettings>(global::Microsoft.Graph.Beta.Models.RecycleBinSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.RecycleBinItem>("items", Items);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RecycleBinSettings>("settings", Settings);
         }
     }
 }

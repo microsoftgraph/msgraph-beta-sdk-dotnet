@@ -37,137 +37,115 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
     /// <summary>
     /// Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudPCItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the changeUserAccountType method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType.ChangeUserAccountTypeRequestBuilder ChangeUserAccountType
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType.ChangeUserAccountTypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createSnapshot method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder CreateSnapshot
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the endGracePeriod method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.EndGracePeriod.EndGracePeriodRequestBuilder EndGracePeriod
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.EndGracePeriod.EndGracePeriodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcConnectivityHistory method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryRequestBuilder GetCloudPcConnectivityHistory
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory.GetCloudPcConnectivityHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcLaunchInfo method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo.GetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo.GetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFrontlineCloudPcAccessState method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetFrontlineCloudPcAccessState.GetFrontlineCloudPcAccessStateRequestBuilder GetFrontlineCloudPcAccessState
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetFrontlineCloudPcAccessState.GetFrontlineCloudPcAccessStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSupportedCloudPcRemoteActions method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetSupportedCloudPcRemoteActions.GetSupportedCloudPcRemoteActionsRequestBuilder GetSupportedCloudPcRemoteActions
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.GetSupportedCloudPcRemoteActions.GetSupportedCloudPcRemoteActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the powerOff method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOff.PowerOffRequestBuilder PowerOff
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOff.PowerOffRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the powerOn method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOn.PowerOnRequestBuilder PowerOn
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOn.PowerOnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reboot method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot.RebootRequestBuilder Reboot
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot.RebootRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rename method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename.RenameRequestBuilder Rename
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename.RenameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reprovision method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision.ReprovisionRequestBuilder Reprovision
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision.ReprovisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resize method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize.ResizeRequestBuilder Resize
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Resize.ResizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCloudPCRemoteActionResults method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder RetrieveCloudPCRemoteActionResults
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveCloudPCRemoteActionResults.RetrieveCloudPCRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveReviewStatus method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder RetrieveReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveReviewStatus.RetrieveReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveSnapshots method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder RetrieveSnapshots
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation.RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation.RetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setReviewStatus method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus.SetReviewStatusRequestBuilder SetReviewStatus
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus.SetReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the start method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Start.StartRequestBuilder Start
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Start.StartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stop method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Stop.StopRequestBuilder Stop
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Stop.StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the troubleshoot method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Troubleshoot.TroubleshootRequestBuilder Troubleshoot
         {
             get => new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.Troubleshoot.TroubleshootRequestBuilder(PathParameters, RequestAdapter);
@@ -194,7 +172,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -219,7 +196,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPC?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -244,7 +220,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.CloudPC?> PatchAsync(global::Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -267,7 +242,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -287,7 +261,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -308,7 +281,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -330,7 +302,6 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CloudPCItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CloudPCItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CloudPCItemRequestBuilder(rawUrl, RequestAdapter);
@@ -339,14 +310,14 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a specific cloudPC object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -374,7 +345,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.CloudPCs.Item.CloudPCItemRequestBuilder.CloudPCItemRequestBuilderGetQueryParameters>
         {
         }
@@ -382,7 +353,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloudPCItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

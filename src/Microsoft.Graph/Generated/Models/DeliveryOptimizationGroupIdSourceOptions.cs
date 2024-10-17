@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Group id options type
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeliveryOptimizationGroupIdSourceOptions : global::Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSource, IParsable
     {
         /// <summary>Possible values for the DeliveryOptimizationGroupIdOptionsType setting.</summary>

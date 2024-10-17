@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>

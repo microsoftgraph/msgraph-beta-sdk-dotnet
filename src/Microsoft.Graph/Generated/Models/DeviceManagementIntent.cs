@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents an intent to apply settings to a device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementIntent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Collection of assignments</summary>

@@ -18,23 +18,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
     /// <summary>
     /// Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamsAppInstallationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsApp.TeamsAppRequestBuilder TeamsApp
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsApp.TeamsAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppDefinition.TeamsAppDefinitionRequestBuilder TeamsAppDefinition
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppDefinition.TeamsAppDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the upgrade method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.Upgrade.UpgradeRequestBuilder Upgrade
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.Upgrade.UpgradeRequestBuilder(PathParameters, RequestAdapter);
@@ -61,7 +58,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,7 +81,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.TeamsAppInstallation?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppInstallationItemRequestBuilder.TeamsAppInstallationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,7 +105,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.TeamsAppInstallation?> PatchAsync(global::Microsoft.Graph.Beta.Models.TeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -133,7 +127,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -153,7 +146,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppInstallationItemRequestBuilder.TeamsAppInstallationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -174,7 +166,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.TeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -196,7 +187,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppInstallationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppInstallationItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppInstallationItemRequestBuilder(rawUrl, RequestAdapter);
@@ -205,14 +195,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// A collection of all the apps in the chat. Nullable.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppInstallationItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -240,7 +230,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppInstallationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsAppInstallationItemRequestBuilder.TeamsAppInstallationItemRequestBuilderGetQueryParameters>
         {
         }
@@ -248,7 +238,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppInstallationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

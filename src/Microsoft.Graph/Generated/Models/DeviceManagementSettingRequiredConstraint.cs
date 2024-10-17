@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint that enforces a particular required setting that is not null/undefined/empty string/not configured
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementSettingRequiredConstraint : global::Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>List of value which means not configured for the setting</summary>

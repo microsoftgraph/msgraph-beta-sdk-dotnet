@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a Microsoft Entra user account.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class User : global::Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     {
         /// <summary>A freeform text entry field for users to describe themselves. Returned only on $select.</summary>

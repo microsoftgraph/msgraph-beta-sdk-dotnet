@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Experimental profile to increase the rate of device check-ins per day of iOS devices. This profile type is deprecated.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosExpeditedCheckinConfiguration : global::Microsoft.Graph.Beta.Models.AppleExpeditedCheckinConfigurationBase, IParsable
     {
         /// <summary>

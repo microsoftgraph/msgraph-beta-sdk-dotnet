@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A reference to folder containing apps and weblinks on the Managed Home Screen
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidDeviceOwnerKioskModeManagedFolderReference : global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
     {
         /// <summary>Unique identifier for the folder</summary>

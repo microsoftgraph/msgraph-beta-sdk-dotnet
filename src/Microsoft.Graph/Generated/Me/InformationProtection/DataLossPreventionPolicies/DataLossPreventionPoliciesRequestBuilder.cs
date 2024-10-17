@@ -18,17 +18,15 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
     /// <summary>
     /// Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DataLossPreventionPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluate method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.Evaluate.EvaluateRequestBuilder Evaluate
         {
             get => new global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.Evaluate.EvaluateRequestBuilder(PathParameters, RequestAdapter);
@@ -36,7 +34,6 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// <summary>Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.</summary>
         /// <param name="position">The unique identifier of dataLossPreventionPolicy</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.Item.DataLossPreventionPolicyItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.Item.DataLossPreventionPolicyItemRequestBuilder this[string position]
         {
             get
@@ -69,7 +66,6 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DataLossPreventionPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder.DataLossPreventionPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,7 +90,6 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.DataLossPreventionPolicy?> PostAsync(global::Microsoft.Graph.Beta.Models.DataLossPreventionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,7 +112,6 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder.DataLossPreventionPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -138,7 +132,6 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.DataLossPreventionPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -160,7 +153,6 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder(rawUrl, RequestAdapter);
@@ -168,7 +160,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// <summary>
         /// Get dataLossPreventionPolicies from me
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DataLossPreventionPoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -235,7 +227,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DataLossPreventionPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolicies.DataLossPreventionPoliciesRequestBuilder.DataLossPreventionPoliciesRequestBuilderGetQueryParameters>
         {
         }
@@ -243,7 +235,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.DataLossPreventionPolici
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

@@ -17,11 +17,10 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
     /// <summary>
     /// Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OverridesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +28,6 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// <summary>Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.</summary>
         /// <param name="position">The unique identifier of inferenceClassificationOverride</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.Item.InferenceClassificationOverrideItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.Item.InferenceClassificationOverrideItemRequestBuilder this[string position]
         {
             get
@@ -63,7 +61,6 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverrideCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.OverridesRequestBuilder.OverridesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +86,6 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride?> PostAsync(global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +108,6 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.OverridesRequestBuilder.OverridesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -133,7 +128,6 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.InferenceClassificationOverride body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -155,7 +149,6 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.OverridesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.OverridesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.OverridesRequestBuilder(rawUrl, RequestAdapter);
@@ -163,7 +156,7 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// <summary>
         /// Get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverridesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -230,7 +223,7 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverridesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.OverridesRequestBuilder.OverridesRequestBuilderGetQueryParameters>
         {
         }
@@ -238,7 +231,7 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverridesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

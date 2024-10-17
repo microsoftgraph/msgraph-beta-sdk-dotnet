@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an Autopilot flow event.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementAutopilotEvent : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Time spent in user ESP.</summary>
@@ -71,12 +71,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>Time spent in device enrollment.</summary>
-        public TimeSpan? DevicePreparationDuration
-        {
-            get { return BackingStore?.Get<TimeSpan?>("devicePreparationDuration"); }
-            set { BackingStore?.Set("devicePreparationDuration", value); }
-        }
         /// <summary>Device registration date.</summary>
         public DateTimeOffset? DeviceRegisteredDateTime
         {
@@ -183,34 +177,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
-        /// <summary>Policy and application status details for this device.</summary>
+        /// <summary>UserId id associated with the object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail>? PolicyStatusDetails
+        public string? UserId
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail>?>("policyStatusDetails"); }
-            set { BackingStore?.Set("policyStatusDetails", value); }
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail> PolicyStatusDetails
+        public string UserId
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail>>("policyStatusDetails"); }
-            set { BackingStore?.Set("policyStatusDetails", value); }
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>Count of applications targeted.</summary>
-        public int? TargetedAppCount
-        {
-            get { return BackingStore?.Get<int?>("targetedAppCount"); }
-            set { BackingStore?.Set("targetedAppCount", value); }
-        }
-        /// <summary>Count of policies targeted.</summary>
-        public int? TargetedPolicyCount
-        {
-            get { return BackingStore?.Get<int?>("targetedPolicyCount"); }
-            set { BackingStore?.Set("targetedPolicyCount", value); }
-        }
         /// <summary>User principal name used to enroll the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -301,7 +283,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "deploymentState", n => { DeploymentState = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentState>(); } },
                 { "deploymentTotalDuration", n => { DeploymentTotalDuration = n.GetTimeSpanValue(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
-                { "devicePreparationDuration", n => { DevicePreparationDuration = n.GetTimeSpanValue(); } },
                 { "deviceRegisteredDateTime", n => { DeviceRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceSerialNumber", n => { DeviceSerialNumber = n.GetStringValue(); } },
                 { "deviceSetupDuration", n => { DeviceSetupDuration = n.GetTimeSpanValue(); } },
@@ -313,9 +294,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
-                { "policyStatusDetails", n => { PolicyStatusDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail>(global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "targetedAppCount", n => { TargetedAppCount = n.GetIntValue(); } },
-                { "targetedPolicyCount", n => { TargetedPolicyCount = n.GetIntValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "windows10EnrollmentCompletionPageConfigurationDisplayName", n => { Windows10EnrollmentCompletionPageConfigurationDisplayName = n.GetStringValue(); } },
                 { "windows10EnrollmentCompletionPageConfigurationId", n => { Windows10EnrollmentCompletionPageConfigurationId = n.GetStringValue(); } },
@@ -338,7 +317,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentState>("deploymentState", DeploymentState);
             writer.WriteTimeSpanValue("deploymentTotalDuration", DeploymentTotalDuration);
             writer.WriteStringValue("deviceId", DeviceId);
-            writer.WriteTimeSpanValue("devicePreparationDuration", DevicePreparationDuration);
             writer.WriteDateTimeOffsetValue("deviceRegisteredDateTime", DeviceRegisteredDateTime);
             writer.WriteStringValue("deviceSerialNumber", DeviceSerialNumber);
             writer.WriteTimeSpanValue("deviceSetupDuration", DeviceSetupDuration);
@@ -350,9 +328,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteStringValue("osVersion", OsVersion);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail>("policyStatusDetails", PolicyStatusDetails);
-            writer.WriteIntValue("targetedAppCount", TargetedAppCount);
-            writer.WriteIntValue("targetedPolicyCount", TargetedPolicyCount);
+            writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteStringValue("windows10EnrollmentCompletionPageConfigurationDisplayName", Windows10EnrollmentCompletionPageConfigurationDisplayName);
             writer.WriteStringValue("windows10EnrollmentCompletionPageConfigurationId", Windows10EnrollmentCompletionPageConfigurationId);

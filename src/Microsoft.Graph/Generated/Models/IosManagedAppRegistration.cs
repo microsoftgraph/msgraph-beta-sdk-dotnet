@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents the synchronization details of an ios app, with management capabilities, for a specific user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosManagedAppRegistration : global::Microsoft.Graph.Beta.Models.ManagedAppRegistration, IParsable
     {
         /// <summary>

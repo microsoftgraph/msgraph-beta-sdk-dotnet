@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models.HealthMonitoring
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EmailNotificationConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The groupId property</summary>
+        /// <summary>The identifier of the group to send an email to. All group types with configured email addresses are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.HealthMonitoring
             set { BackingStore?.Set("groupId", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether email notifications are enabled on the alert type.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }

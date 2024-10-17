@@ -17,11 +17,10 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
     /// <summary>
     /// Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttendanceReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +28,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// <summary>Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.</summary>
         /// <param name="position">The unique identifier of meetingAttendanceReport</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.Item.MeetingAttendanceReportItemRequestBuilder"/></returns>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.Item.MeetingAttendanceReportItemRequestBuilder this[string position]
         {
             get
@@ -63,7 +61,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingAttendanceReportCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder.AttendanceReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +85,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport?> PostAsync(global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,7 +107,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder.AttendanceReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -132,7 +127,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -154,7 +148,6 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder(rawUrl, RequestAdapter);
@@ -162,7 +155,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// <summary>
         /// Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttendanceReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
@@ -229,7 +222,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttendanceReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports.AttendanceReportsRequestBuilder.AttendanceReportsRequestBuilderGetQueryParameters>
         {
         }
@@ -237,7 +230,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendanceReports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttendanceReportsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

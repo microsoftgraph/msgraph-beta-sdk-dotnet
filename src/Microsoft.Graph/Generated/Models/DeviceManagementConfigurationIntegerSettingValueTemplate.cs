@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Integer Setting Value Template
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementConfigurationIntegerSettingValueTemplate : global::Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
     {
         /// <summary>Integer Setting Value Default Template.</summary>

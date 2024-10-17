@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Beta.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Drive : global::Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("special", value); }
         }
 #endif
-        /// <summary>If present, indicates that this is a system-managed drive. Read-only.</summary>
+        /// <summary>If present, indicates that it&apos;s a system-managed drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SystemFacet? System

@@ -21,41 +21,35 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
     /// <summary>
     /// Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MailFolderItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the copy method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Copy.CopyRequestBuilder Copy
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Copy.CopyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRules.MessageRulesRequestBuilder MessageRules
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRules.MessageRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the move method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Move.MoveRequestBuilder Move
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.UserConfigurations.UserConfigurationsRequestBuilder UserConfigurations
         {
             get => new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.UserConfigurations.UserConfigurationsRequestBuilder(PathParameters, RequestAdapter);
@@ -82,7 +76,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -106,7 +99,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MailFolder?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder.MailFolderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -131,7 +123,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.MailFolder?> PatchAsync(global::Microsoft.Graph.Beta.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -154,7 +145,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -174,7 +164,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder.MailFolderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -195,7 +184,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Beta.Models.MailFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -217,7 +205,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder(rawUrl, RequestAdapter);
@@ -226,14 +213,14 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFolderItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The collection of child folders in the mailFolder.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFolderItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -271,7 +258,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFolderItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder.MailFolderItemRequestBuilderGetQueryParameters>
         {
         }
@@ -279,7 +266,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailFolderItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

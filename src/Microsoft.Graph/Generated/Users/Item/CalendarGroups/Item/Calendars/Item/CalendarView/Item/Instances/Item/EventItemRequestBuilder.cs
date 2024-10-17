@@ -27,77 +27,65 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
     /// <summary>
     /// Provides operations to manage the instances property of the microsoft.graph.event entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the accept method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Accept.AcceptRequestBuilder Accept
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Accept.AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Attachments.AttachmentsRequestBuilder Attachments
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decline method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Decline.DeclineRequestBuilder Decline
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Decline.DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismissReminder method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder ExceptionOccurrences
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Forward.ForwardRequestBuilder Forward
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.SnoozeReminder.SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.TentativelyAccept.TentativelyAcceptRequestBuilder TentativelyAccept
         {
             get => new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.TentativelyAccept.TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
@@ -125,7 +113,6 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Beta.Models.Event?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -147,7 +134,6 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -167,7 +153,6 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2024-07/PrivatePreview:copilotExportAPI")]
         public global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
@@ -175,7 +160,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderGetQueryParameters 
         {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
@@ -223,7 +208,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>
         {
         }

@@ -16,6 +16,8 @@ using Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations;
 using Microsoft.Graph.Beta.DeviceManagement.Categories;
 using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails;
 using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings;
+using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority;
+using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthorityLeafCertificate;
 using Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices;
@@ -40,7 +42,6 @@ using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingStateSu
 using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSummary;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations;
@@ -206,7 +207,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement
     /// <summary>
     /// Provides operations to manage the deviceManagement singleton.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.</summary>
@@ -288,6 +289,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         public global::Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.ChromeOSOnboardingSettingsRequestBuilder ChromeOSOnboardingSettings
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.ChromeOSOnboardingSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudCertificationAuthority property of the microsoft.graph.deviceManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.CloudCertificationAuthorityRequestBuilder CloudCertificationAuthority
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.CloudCertificationAuthorityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudCertificationAuthorityLeafCertificate property of the microsoft.graph.deviceManagement entity.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthorityLeafCertificate.CloudCertificationAuthorityLeafCertificateRequestBuilder CloudCertificationAuthorityLeafCertificate
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthorityLeafCertificate.CloudCertificationAuthorityLeafCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.CloudPCConnectivityIssuesRequestBuilder CloudPCConnectivityIssues
@@ -408,11 +419,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries.DeviceConfigurationDeviceStateSummariesRequestBuilder DeviceConfigurationDeviceStateSummaries
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries.DeviceConfigurationDeviceStateSummariesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles.DeviceConfigurationProfilesRequestBuilder DeviceConfigurationProfiles
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles.DeviceConfigurationProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations.DeviceConfigurationRestrictedAppsViolationsRequestBuilder DeviceConfigurationRestrictedAppsViolations
@@ -1311,7 +1317,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// <summary>
         /// Get deviceManagement
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -1339,7 +1345,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Beta.DeviceManagement.DeviceManagementRequestBuilder.DeviceManagementRequestBuilderGetQueryParameters>
         {
         }
@@ -1347,7 +1353,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

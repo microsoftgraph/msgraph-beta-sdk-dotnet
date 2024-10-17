@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     /// <summary>Represents the current status of the associated `managedAppLogCollectionRequest`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedAppLogUploadState
     {
         /// <summary>Default. The log upload request has been successfully created, and is pending delivery to the Mobile Application Management (MAM) application.</summary>
