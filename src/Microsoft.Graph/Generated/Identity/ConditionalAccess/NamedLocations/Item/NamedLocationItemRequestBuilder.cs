@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.NamedLocation>(requestInfo, global::Microsoft.Graph.Beta.Models.NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a countryNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-beta" />
+        /// Update the properties of an ipNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.NamedLocation"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a countryNamedLocation object.
+        /// Update the properties of an ipNamedLocation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
