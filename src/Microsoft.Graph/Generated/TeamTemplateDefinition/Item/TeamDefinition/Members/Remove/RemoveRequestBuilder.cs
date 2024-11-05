@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Member
         {
         }
         /// <summary>
-        /// Invoke action remove
+        /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Remove.RemovePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Member
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Remove.RemovePostResponse>(requestInfo, global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Remove.RemovePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action remove
+        /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Remove.RemoveResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Member
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Remove.RemoveResponse>(requestInfo, global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Remove.RemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action remove
+        /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

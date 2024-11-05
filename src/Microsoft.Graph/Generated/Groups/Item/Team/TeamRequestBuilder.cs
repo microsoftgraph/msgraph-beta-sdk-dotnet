@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.InstalledApps;
 using Microsoft.Graph.Beta.Groups.Item.Team.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.Operations;
 using Microsoft.Graph.Beta.Groups.Item.Team.Owners;
+using Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName;
 using Microsoft.Graph.Beta.Groups.Item.Team.PermissionGrants;
 using Microsoft.Graph.Beta.Groups.Item.Team.Photo;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel;
@@ -198,6 +199,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Team>(requestInfo, global::Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the owners property of the microsoft.graph.team entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder OwnersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Groups.Item.Team.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Create a new team from a group. In order to create a team, the group must have a least one owner. If the creation of the team call is delayed, you can retry the call up to three times before you have to wait for 15 minutes due to a propagation delay. If the group was created less than 15 minutes ago, the call might fail with a 404 error code due to replication delays. If the group was created less than 15 minutes ago, it&apos;s possible for a call to create a team to fail with a 404 error code, due to ongoing replication delays.The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("siteRestoreArtifacts", value); }
         }
 #endif
+        /// <summary>The siteRestoreArtifactsBulkAdditionRequests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>? SiteRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>?>("siteRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("siteRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest> SiteRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>>("siteRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("siteRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.SharePointRestoreSession"/> and sets the default values.
         /// </summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "siteRestoreArtifacts", n => { SiteRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact>(global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "siteRestoreArtifactsBulkAdditionRequests", n => { SiteRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifact>("siteRestoreArtifacts", SiteRestoreArtifacts);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SiteRestoreArtifactsBulkAdditionRequest>("siteRestoreArtifactsBulkAdditionRequests", SiteRestoreArtifactsBulkAdditionRequests);
         }
     }
 }

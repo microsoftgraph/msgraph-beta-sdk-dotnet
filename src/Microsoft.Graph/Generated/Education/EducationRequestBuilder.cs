@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Education.Classes;
 using Microsoft.Graph.Beta.Education.Me;
+using Microsoft.Graph.Beta.Education.Reports;
 using Microsoft.Graph.Beta.Education.Schools;
 using Microsoft.Graph.Beta.Education.SynchronizationProfiles;
 using Microsoft.Graph.Beta.Education.Users;
@@ -32,6 +33,11 @@ namespace Microsoft.Graph.Beta.Education
         public global::Microsoft.Graph.Beta.Education.Me.MeRequestBuilder Me
         {
             get => new global::Microsoft.Graph.Beta.Education.Me.MeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the reports property of the microsoft.graph.educationRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Education.Reports.ReportsRequestBuilder Reports
+        {
+            get => new global::Microsoft.Graph.Beta.Education.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Education.Schools.SchoolsRequestBuilder Schools

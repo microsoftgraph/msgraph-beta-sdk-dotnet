@@ -122,6 +122,7 @@ using Microsoft.Graph.Beta.TermStore;
 using Microsoft.Graph.Beta.ThreatSubmission;
 using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
+using Microsoft.Graph.Beta.UsersWithUserPrincipalName;
 using Microsoft.Graph.Beta.Workplace;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Store;
@@ -812,6 +813,16 @@ namespace Microsoft.Graph.Beta
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new global::Microsoft.Graph.Beta.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of user entities.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder UsersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
     }
 }

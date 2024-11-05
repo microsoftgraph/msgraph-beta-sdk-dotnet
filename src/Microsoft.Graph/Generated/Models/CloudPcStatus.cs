@@ -68,5 +68,9 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         ModifyingSingleSignOn,
         #pragma warning restore CS1591
+        [EnumMember(Value = "preparing")]
+        #pragma warning disable CS1591
+        Preparing,
+        #pragma warning restore CS1591
     }
 }

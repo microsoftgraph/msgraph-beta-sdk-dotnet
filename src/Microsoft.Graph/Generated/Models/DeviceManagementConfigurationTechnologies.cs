@@ -20,32 +20,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Setting can be deployed through the ConfigManager channel.</summary>
         [EnumMember(Value = "configManager")]
         ConfigManager = 8,
+        /// <summary>Setting can be deployed through the IntuneManagementExtension channel.</summary>
+        [EnumMember(Value = "intuneManagementExtension")]
+        IntuneManagementExtension = 16,
+        /// <summary>Setting can be deployed through a ThirdParty channel.</summary>
+        [EnumMember(Value = "thirdParty")]
+        ThirdParty = 32,
+        /// <summary>Setting can be deployed through Document Gateway Service.</summary>
+        [EnumMember(Value = "documentGateway")]
+        DocumentGateway = 64,
         /// <summary>Setting can be deployed through the AppleRemoteManagement channel.</summary>
         [EnumMember(Value = "appleRemoteManagement")]
-        AppleRemoteManagement = 16,
+        AppleRemoteManagement = 128,
         /// <summary>Setting can be deployed through the SENSE agent channel.</summary>
         [EnumMember(Value = "microsoftSense")]
-        MicrosoftSense = 32,
+        MicrosoftSense = 256,
         /// <summary>Setting can be deployed through the Exchange Online agent channel.</summary>
         [EnumMember(Value = "exchangeOnline")]
-        ExchangeOnline = 64,
+        ExchangeOnline = 512,
         /// <summary>Setting can be deployed through the Mobile Application Management (MAM) channel</summary>
         [EnumMember(Value = "mobileApplicationManagement")]
-        MobileApplicationManagement = 128,
+        MobileApplicationManagement = 1024,
         /// <summary>Setting can be deployed through the Linux Mdm channel.</summary>
         [EnumMember(Value = "linuxMdm")]
-        LinuxMdm = 256,
+        LinuxMdm = 2048,
         /// <summary>Setting can be deployed through device enrollment.</summary>
         [EnumMember(Value = "enrollment")]
-        Enrollment = 512,
+        Enrollment = 4096,
         /// <summary>Setting can be deployed using the Endpoint privilege management channel</summary>
         [EnumMember(Value = "endpointPrivilegeManagement")]
-        EndpointPrivilegeManagement = 1024,
+        EndpointPrivilegeManagement = 8192,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue = 2048,
+        UnknownFutureValue = 16384,
         /// <summary>Setting can be deployed using the Operating System Recovery channel</summary>
         [EnumMember(Value = "windowsOsRecovery")]
-        WindowsOsRecovery = 4096,
+        WindowsOsRecovery = 32768,
+        /// <summary>Indicates the settings that can be deployed through the Android channel.</summary>
+        [EnumMember(Value = "android")]
+        Android = 65536,
     }
 }

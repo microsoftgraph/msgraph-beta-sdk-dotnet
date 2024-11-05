@@ -14,8 +14,10 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeR
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -94,6 +96,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports.GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveBulkActionStatusReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder RetrieveBulkActionStatusReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveBulkActionStatusReport.RetrieveBulkActionStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retrieveConnectionQualityReports method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveConnectionQualityReports.RetrieveConnectionQualityReportsRequestBuilder RetrieveConnectionQualityReports
         {
@@ -103,6 +110,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport.RetrieveCrossRegionDisasterRecoveryReportRequestBuilder RetrieveCrossRegionDisasterRecoveryReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveCrossRegionDisasterRecoveryReport.RetrieveCrossRegionDisasterRecoveryReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveFrontlineReports method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports.RetrieveFrontlineReportsRequestBuilder RetrieveFrontlineReports
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.RetrieveFrontlineReports.RetrieveFrontlineReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ReportsRequestBuilder"/> and sets the default values.

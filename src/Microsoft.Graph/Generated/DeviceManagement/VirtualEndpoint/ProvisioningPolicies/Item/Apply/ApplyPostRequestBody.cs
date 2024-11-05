@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType?>("policySettings"); }
             set { BackingStore?.Set("policySettings", value); }
         }
+        /// <summary>The reservePercentage property</summary>
+        public int? ReservePercentage
+        {
+            get { return BackingStore?.Get<int?>("reservePercentage"); }
+            set { BackingStore?.Set("reservePercentage", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "policySettings", n => { PolicySettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>(); } },
+                { "reservePercentage", n => { ReservePercentage = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -65,6 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>("policySettings", PolicySettings);
+            writer.WriteIntValue("reservePercentage", ReservePercentage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

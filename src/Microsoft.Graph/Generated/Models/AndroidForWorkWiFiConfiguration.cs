@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
-        /// <summary>Wi-Fi Security Types for Android.</summary>
+        /// <summary>The possible security types for Android Wi-Fi profiles. Default value &apos;Open&apos;, indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. &apos;WpaEnterprise&apos; and &apos;Wpa2Enterprise&apos; options are available for Enterprise Wi-Fi profiles. &apos;Wep&apos; and &apos;WpaPersonal&apos; (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.</summary>
         public global::Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType? WiFiSecurityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AndroidWiFiSecurityType?>("wiFiSecurityType"); }

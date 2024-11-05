@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.EmployeeExperience.Communities.Item.Group;
 using Microsoft.Graph.Beta.EmployeeExperience.Communities.Item.Owners;
+using Microsoft.Graph.Beta.EmployeeExperience.Communities.Item.OwnersWithUserPrincipalName;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -92,6 +93,16 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities.Item
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Community>(requestInfo, global::Microsoft.Graph.Beta.Models.Community.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the owners property of the microsoft.graph.community entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.EmployeeExperience.Communities.Item.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.EmployeeExperience.Communities.Item.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder OwnersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.EmployeeExperience.Communities.Item.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Update the properties of an existing Viva Engage community.

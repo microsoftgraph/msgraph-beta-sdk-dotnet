@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EnableEndpointPrivilegeManagemen
         {
         }
         /// <summary>
-        /// Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C).
+        /// DEPRECATED - DO NOT USE. (Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C)).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EnableEndpointPrivilegeManagemen
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C).
+        /// DEPRECATED - DO NOT USE. (Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C)).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

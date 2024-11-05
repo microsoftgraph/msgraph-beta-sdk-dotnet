@@ -20,5 +20,17 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "attributeCollectionStart")]
+        #pragma warning disable CS1591
+        AttributeCollectionStart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "attributeCollectionSubmit")]
+        #pragma warning disable CS1591
+        AttributeCollectionSubmit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "emailOtpSend")]
+        #pragma warning disable CS1591
+        EmailOtpSend,
+        #pragma warning restore CS1591
     }
 }

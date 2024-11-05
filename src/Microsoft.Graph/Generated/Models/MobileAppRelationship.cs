@@ -13,6 +13,70 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppRelationship : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     {
+        /// <summary>The display name of the app that is the source of the mobile app relationship entity. For example: Orca. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceDisplayName
+        {
+            get { return BackingStore?.Get<string?>("sourceDisplayName"); }
+            set { BackingStore?.Set("sourceDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string SourceDisplayName
+        {
+            get { return BackingStore?.Get<string>("sourceDisplayName"); }
+            set { BackingStore?.Set("sourceDisplayName", value); }
+        }
+#endif
+        /// <summary>The display version of the app that is the source of the mobile app relationship entity. For example 1.0.12 or 1.2203.156 or 3. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceDisplayVersion
+        {
+            get { return BackingStore?.Get<string?>("sourceDisplayVersion"); }
+            set { BackingStore?.Set("sourceDisplayVersion", value); }
+        }
+#nullable restore
+#else
+        public string SourceDisplayVersion
+        {
+            get { return BackingStore?.Get<string>("sourceDisplayVersion"); }
+            set { BackingStore?.Set("sourceDisplayVersion", value); }
+        }
+#endif
+        /// <summary>The unique app identifier of the source of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. If null during relationship creation, then it will be populated with parent Id. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceId
+        {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#nullable restore
+#else
+        public string SourceId
+        {
+            get { return BackingStore?.Get<string>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#endif
+        /// <summary>The publisher display name of the app that is the source of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourcePublisherDisplayName
+        {
+            get { return BackingStore?.Get<string?>("sourcePublisherDisplayName"); }
+            set { BackingStore?.Set("sourcePublisherDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string SourcePublisherDisplayName
+        {
+            get { return BackingStore?.Get<string>("sourcePublisherDisplayName"); }
+            set { BackingStore?.Set("sourcePublisherDisplayName", value); }
+        }
+#endif
         /// <summary>The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +141,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetPublisher", value); }
         }
 #endif
+        /// <summary>The publisher display name of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetPublisherDisplayName
+        {
+            get { return BackingStore?.Get<string?>("targetPublisherDisplayName"); }
+            set { BackingStore?.Set("targetPublisherDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string TargetPublisherDisplayName
+        {
+            get { return BackingStore?.Get<string>("targetPublisherDisplayName"); }
+            set { BackingStore?.Set("targetPublisherDisplayName", value); }
+        }
+#endif
         /// <summary>Indicates whether the target of a relationship is the parent or the child in the relationship.</summary>
         public global::Microsoft.Graph.Beta.Models.MobileAppRelationshipType? TargetType
         {
@@ -107,10 +187,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "sourceDisplayName", n => { SourceDisplayName = n.GetStringValue(); } },
+                { "sourceDisplayVersion", n => { SourceDisplayVersion = n.GetStringValue(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "sourcePublisherDisplayName", n => { SourcePublisherDisplayName = n.GetStringValue(); } },
                 { "targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
                 { "targetDisplayVersion", n => { TargetDisplayVersion = n.GetStringValue(); } },
                 { "targetId", n => { TargetId = n.GetStringValue(); } },
                 { "targetPublisher", n => { TargetPublisher = n.GetStringValue(); } },
+                { "targetPublisherDisplayName", n => { TargetPublisherDisplayName = n.GetStringValue(); } },
                 { "targetType", n => { TargetType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.MobileAppRelationshipType>(); } },
             };
         }

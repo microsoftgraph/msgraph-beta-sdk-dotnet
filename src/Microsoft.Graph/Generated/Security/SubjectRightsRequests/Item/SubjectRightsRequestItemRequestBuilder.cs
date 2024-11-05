@@ -3,7 +3,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Approvers;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Collaborators;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalAttachment;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalReport;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes;
@@ -53,6 +55,26 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item
         public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Team.TeamRequestBuilder Team
         {
             get => new global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder ApproversWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
+        /// Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder CollaboratorsWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder"/> and sets the default values.
