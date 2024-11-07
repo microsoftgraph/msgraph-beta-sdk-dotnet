@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("edge", value); }
         }
 #endif
-        /// <summary>The entra property</summary>
+        /// <summary>A container for Microsoft Entra resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Entra? Entra

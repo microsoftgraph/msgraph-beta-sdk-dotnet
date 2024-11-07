@@ -9,6 +9,8 @@ using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.Pat
 using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.PostCloudCertificationAuthority;
 using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeCloudCertificationAuthorityCertificate;
 using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeLeafCertificate;
+using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeLeafCertificateBySerialNumber;
+using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.SearchCloudCertificationAuthorityLeafCertificateBySerialNumber;
 using Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.UploadExternallySignedCertificationAuthorityCertificate;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -72,6 +74,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeLeafCertificate.RevokeLeafCertificateRequestBuilder RevokeLeafCertificate
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeLeafCertificate.RevokeLeafCertificateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the revokeLeafCertificateBySerialNumber method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeLeafCertificateBySerialNumber.RevokeLeafCertificateBySerialNumberRequestBuilder RevokeLeafCertificateBySerialNumber
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.RevokeLeafCertificateBySerialNumber.RevokeLeafCertificateBySerialNumberRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the searchCloudCertificationAuthorityLeafCertificateBySerialNumber method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.SearchCloudCertificationAuthorityLeafCertificateBySerialNumber.SearchCloudCertificationAuthorityLeafCertificateBySerialNumberRequestBuilder SearchCloudCertificationAuthorityLeafCertificateBySerialNumber
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.SearchCloudCertificationAuthorityLeafCertificateBySerialNumber.SearchCloudCertificationAuthorityLeafCertificateBySerialNumberRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadExternallySignedCertificationAuthorityCertificate method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.CloudCertificationAuthority.Item.UploadExternallySignedCertificationAuthorityCertificate.UploadExternallySignedCertificationAuthorityCertificateRequestBuilder UploadExternallySignedCertificationAuthorityCertificate

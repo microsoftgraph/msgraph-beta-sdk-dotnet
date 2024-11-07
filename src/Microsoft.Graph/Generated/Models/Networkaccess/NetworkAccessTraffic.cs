@@ -329,6 +329,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The operationStatus property</summary>
+        public global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus? OperationStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus?>("operationStatus"); }
+            set { BackingStore?.Set("operationStatus", value); }
+        }
         /// <summary>Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -391,6 +397,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             get { return BackingStore?.Get<string>("policyRuleName"); }
             set { BackingStore?.Set("policyRuleName", value); }
+        }
+#endif
+        /// <summary>The popProcessingRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PopProcessingRegion
+        {
+            get { return BackingStore?.Get<string?>("popProcessingRegion"); }
+            set { BackingStore?.Set("popProcessingRegion", value); }
+        }
+#nullable restore
+#else
+        public string PopProcessingRegion
+        {
+            get { return BackingStore?.Get<string>("popProcessingRegion"); }
+            set { BackingStore?.Set("popProcessingRegion", value); }
         }
 #endif
         /// <summary>The privateAccessDetails property</summary>
@@ -670,10 +692,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
                 { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operationStatus", n => { OperationStatus = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus>(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "policyName", n => { PolicyName = n.GetStringValue(); } },
                 { "policyRuleId", n => { PolicyRuleId = n.GetStringValue(); } },
                 { "policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
+                { "popProcessingRegion", n => { PopProcessingRegion = n.GetStringValue(); } },
                 { "privateAccessDetails", n => { PrivateAccessDetails = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>(global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails.CreateFromDiscriminatorValue); } },
                 { "receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
                 { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
@@ -724,10 +748,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("initiatingProcessName", InitiatingProcessName);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("networkProtocol", NetworkProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.Networkaccess.NetworkTrafficOperationStatus>("operationStatus", OperationStatus);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("policyName", PolicyName);
             writer.WriteStringValue("policyRuleId", PolicyRuleId);
             writer.WriteStringValue("policyRuleName", PolicyRuleName);
+            writer.WriteStringValue("popProcessingRegion", PopProcessingRegion);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>("privateAccessDetails", PrivateAccessDetails);
             writer.WriteLongValue("receivedBytes", ReceivedBytes);
             writer.WriteStringValue("remoteNetworkId", RemoteNetworkId);

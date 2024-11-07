@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.Teams.Item.InstalledApps;
 using Microsoft.Graph.Beta.Teams.Item.Members;
 using Microsoft.Graph.Beta.Teams.Item.Operations;
 using Microsoft.Graph.Beta.Teams.Item.Owners;
+using Microsoft.Graph.Beta.Teams.Item.OwnersWithUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.PermissionGrants;
 using Microsoft.Graph.Beta.Teams.Item.Photo;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel;
@@ -199,6 +200,16 @@ namespace Microsoft.Graph.Beta.Teams.Item
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Team>(requestInfo, global::Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the owners property of the microsoft.graph.team entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.Teams.Item.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.Teams.Item.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder OwnersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.Teams.Item.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Update the properties of the specified team.

@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.InstalledA
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Operations;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Owners;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.OwnersWithUserPrincipalName;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PermissionGrants;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Photo;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel;
@@ -198,6 +199,16 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Team>(requestInfo, global::Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the owners property of the microsoft.graph.team entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder OwnersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.OwnersWithUserPrincipalName.OwnersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Update the navigation property teamDefinition in teamTemplateDefinition

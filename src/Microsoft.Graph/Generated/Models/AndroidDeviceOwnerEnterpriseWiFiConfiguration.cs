@@ -101,6 +101,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
 #endif
+        /// <summary>Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>? RootCertificatesForServerValidation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
+            set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate> RootCertificatesForServerValidation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>>("rootCertificatesForServerValidation"); }
+            set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
+        }
+#endif
         /// <summary>Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users&apos; devices when they connect to this Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +166,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "innerAuthenticationProtocolForPeap", n => { InnerAuthenticationProtocolForPeap = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap>(); } },
                 { "outerIdentityPrivacyTemporaryValue", n => { OuterIdentityPrivacyTemporaryValue = n.GetStringValue(); } },
                 { "rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>(global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -169,6 +186,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap>("innerAuthenticationProtocolForPeap", InnerAuthenticationProtocolForPeap);
             writer.WriteStringValue("outerIdentityPrivacyTemporaryValue", OuterIdentityPrivacyTemporaryValue);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>("rootCertificateForServerValidation", RootCertificateForServerValidation);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AndroidDeviceOwnerTrustedRootCertificate>("rootCertificatesForServerValidation", RootCertificatesForServerValidation);
             writer.WriteCollectionOfPrimitiveValues<string>("trustedServerCertificateNames", TrustedServerCertificateNames);
         }
     }

@@ -36,11 +36,8 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RecoverPasscod
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Reenable;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoteLock;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeCloudPc;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateBitLockerKeys;
@@ -257,11 +254,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the reprovisionCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc.ReprovisionCloudPcRequestBuilder ReprovisionCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc.ReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance
         {
@@ -271,16 +263,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder ResetPasscode
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the resizeCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeCloudPc.ResizeCloudPcRequestBuilder ResizeCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeCloudPc.ResizeCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restoreCloudPc method.</summary>
-        public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreCloudPc.RestoreCloudPcRequestBuilder RestoreCloudPc
-        {
-            get => new global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreCloudPc.RestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retire method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire.RetireRequestBuilder Retire

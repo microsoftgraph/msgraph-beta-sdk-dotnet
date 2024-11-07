@@ -109,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailback(),
                 "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkDisasterRecoveryFailover(),
                 "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkModifyDiskEncryptionType(),
+                "#microsoft.graph.cloudPcBulkMove" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkMove(),
                 "#microsoft.graph.cloudPcBulkPowerOff" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkPowerOff(),
                 "#microsoft.graph.cloudPcBulkPowerOn" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkPowerOn(),
                 "#microsoft.graph.cloudPcBulkReprovision" => new global::Microsoft.Graph.Beta.Models.CloudPcBulkReprovision(),

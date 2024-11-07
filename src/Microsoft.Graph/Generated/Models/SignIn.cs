@@ -728,6 +728,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
 #endif
+        /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId
+        {
+            get { return BackingStore?.Get<string?>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
+        }
+#nullable restore
+#else
+        public string SessionId
+        {
+            get { return BackingStore?.Get<string>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
+        }
+#endif
         /// <summary>Any conditional access session management policies that were applied during the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1002,6 +1018,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "servicePrincipalCredentialThumbprint", n => { ServicePrincipalCredentialThumbprint = n.GetStringValue(); } },
                 { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
                 { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "sessionLifetimePolicies", n => { SessionLifetimePolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SessionLifetimePolicy>(global::Microsoft.Graph.Beta.Models.SessionLifetimePolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signInEventTypes", n => { SignInEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "signInIdentifier", n => { SignInIdentifier = n.GetStringValue(); } },
@@ -1083,6 +1100,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("servicePrincipalCredentialThumbprint", ServicePrincipalCredentialThumbprint);
             writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);
             writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);
+            writer.WriteStringValue("sessionId", SessionId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.SessionLifetimePolicy>("sessionLifetimePolicies", SessionLifetimePolicies);
             writer.WriteCollectionOfPrimitiveValues<string>("signInEventTypes", SignInEventTypes);
             writer.WriteStringValue("signInIdentifier", SignInIdentifier);

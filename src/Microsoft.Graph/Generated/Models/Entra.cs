@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class Entra : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The uxSetting property</summary>
+        /// <summary>Represents settings related to access to the Microsoft Entra admin center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.UxSetting? UxSetting

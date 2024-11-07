@@ -299,6 +299,22 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("virtualizationBasedSecurityEnabled"); }
             set { BackingStore?.Set("virtualizationBasedSecurityEnabled", value); }
         }
+        /// <summary>The wslDistributions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>? WslDistributions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>?>("wslDistributions"); }
+            set { BackingStore?.Set("wslDistributions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration> WslDistributions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>>("wslDistributions"); }
+            set { BackingStore?.Set("wslDistributions", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.Windows10CompliancePolicy"/> and sets the default values.
         /// </summary>
@@ -360,6 +376,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "tpmRequired", n => { TpmRequired = n.GetBoolValue(); } },
                 { "validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OperatingSystemVersionRange>(global::Microsoft.Graph.Beta.Models.OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "virtualizationBasedSecurityEnabled", n => { VirtualizationBasedSecurityEnabled = n.GetBoolValue(); } },
+                { "wslDistributions", n => { WslDistributions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>(global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -406,6 +423,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("tpmRequired", TpmRequired);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.OperatingSystemVersionRange>("validOperatingSystemBuildRanges", ValidOperatingSystemBuildRanges);
             writer.WriteBoolValue("virtualizationBasedSecurityEnabled", VirtualizationBasedSecurityEnabled);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.WslDistributionConfiguration>("wslDistributions", WslDistributions);
         }
     }
 }

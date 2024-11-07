@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get uxSetting from admin
+        /// Get the properties and relationships of a uxSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/uxsetting-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UxSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +83,8 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.UxSetting>(requestInfo, global::Microsoft.Graph.Beta.Models.UxSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property uxSetting in admin
+        /// Update the properties of a uxSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/uxsetting-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.UxSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +130,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             return requestInfo;
         }
         /// <summary>
-        /// Get uxSetting from admin
+        /// Get the properties and relationships of a uxSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +150,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property uxSetting in admin
+        /// Update the properties of a uxSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -189,7 +191,7 @@ namespace Microsoft.Graph.Beta.Admin.Entra.UxSetting
         {
         }
         /// <summary>
-        /// Get uxSetting from admin
+        /// Get the properties and relationships of a uxSetting object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UxSettingRequestBuilderGetQueryParameters 

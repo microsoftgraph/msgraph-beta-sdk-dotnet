@@ -69,28 +69,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
         }
 #endif
-        /// <summary>URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProxyAutomaticConfigurationUrl
-        {
-            get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
-            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
-        }
-#nullable restore
-#else
-        public string ProxyAutomaticConfigurationUrl
-        {
-            get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
-            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
-        }
-#endif
-        /// <summary>Wi-Fi Proxy Settings.</summary>
-        public global::Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySettings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySettings"); }
-            set { BackingStore?.Set("proxySettings", value); }
-        }
         /// <summary>Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,8 +132,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "innerAuthenticationProtocolForEapTtls", n => { InnerAuthenticationProtocolForEapTtls = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType>(); } },
                 { "innerAuthenticationProtocolForPeap", n => { InnerAuthenticationProtocolForPeap = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap>(); } },
                 { "outerIdentityPrivacyTemporaryValue", n => { OuterIdentityPrivacyTemporaryValue = n.GetStringValue(); } },
-                { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
-                { "proxySettings", n => { ProxySettings = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AndroidWorkProfileTrustedRootCertificate>(global::Microsoft.Graph.Beta.Models.AndroidWorkProfileTrustedRootCertificate.CreateFromDiscriminatorValue); } },
                 { "trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -174,8 +150,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForEapTtlsType>("innerAuthenticationProtocolForEapTtls", InnerAuthenticationProtocolForEapTtls);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.NonEapAuthenticationMethodForPeap>("innerAuthenticationProtocolForPeap", InnerAuthenticationProtocolForPeap);
             writer.WriteStringValue("outerIdentityPrivacyTemporaryValue", OuterIdentityPrivacyTemporaryValue);
-            writer.WriteStringValue("proxyAutomaticConfigurationUrl", ProxyAutomaticConfigurationUrl);
-            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySettings", ProxySettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AndroidWorkProfileTrustedRootCertificate>("rootCertificateForServerValidation", RootCertificateForServerValidation);
             writer.WriteCollectionOfPrimitiveValues<string>("trustedServerCertificateNames", TrustedServerCertificateNames);
         }

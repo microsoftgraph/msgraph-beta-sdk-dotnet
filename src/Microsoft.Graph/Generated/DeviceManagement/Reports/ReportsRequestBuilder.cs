@@ -72,6 +72,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlert
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveWin32CatalogAppsUpdateReport;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -451,6 +452,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport
         {
             get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport.GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveDeviceAppInstallationStatusReport method.</summary>
+        public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder RetrieveDeviceAppInstallationStatusReport
+        {
+            get => new global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveSecurityTaskAppsReport method.</summary>
         public global::Microsoft.Graph.Beta.DeviceManagement.Reports.RetrieveSecurityTaskAppsReport.RetrieveSecurityTaskAppsReportRequestBuilder RetrieveSecurityTaskAppsReport

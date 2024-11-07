@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrantId", value); }
         }
 #endif
+        /// <summary>Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId
+        {
+            get { return BackingStore?.Get<string?>("registrationId"); }
+            set { BackingStore?.Set("registrationId", value); }
+        }
+#nullable restore
+#else
+        public string RegistrationId
+        {
+            get { return BackingStore?.Get<string>("registrationId"); }
+            set { BackingStore?.Set("registrationId", value); }
+        }
+#endif
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Identity>(global::Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "registrantId", n => { RegistrantId = n.GetStringValue(); } },
+                { "registrationId", n => { RegistrationId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "totalAttendanceInSeconds", n => { TotalAttendanceInSeconds = n.GetIntValue(); } },
             };
@@ -136,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
             writer.WriteStringValue("registrantId", RegistrantId);
+            writer.WriteStringValue("registrationId", RegistrationId);
             writer.WriteStringValue("role", Role);
             writer.WriteIntValue("totalAttendanceInSeconds", TotalAttendanceInSeconds);
         }

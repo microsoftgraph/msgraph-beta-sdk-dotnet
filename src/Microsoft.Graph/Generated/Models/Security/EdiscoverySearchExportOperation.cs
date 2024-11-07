@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.Security.AdditionalOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
-        /// <summary>The name of export provided by the user.</summary>
+        /// <summary>The description of the export by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The description of the export by the user.</summary>
+        /// <summary>The name of export provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

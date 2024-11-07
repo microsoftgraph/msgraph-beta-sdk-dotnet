@@ -112,6 +112,7 @@ using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Reports;
 using Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.ResourceOperations;
+using Microsoft.Graph.Beta.DeviceManagement.RetrieveUserRoleDetailWithUserid;
 using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings;
 using Microsoft.Graph.Beta.DeviceManagement.ReusableSettings;
 using Microsoft.Graph.Beta.DeviceManagement.RoleAssignments;
@@ -1243,6 +1244,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement
                 { "XXX", global::Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, global::Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveUserRoleDetail method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.RetrieveUserRoleDetailWithUserid.RetrieveUserRoleDetailWithUseridRequestBuilder"/></returns>
+        /// <param name="userid">Usage: userid=&apos;{userid}&apos;</param>
+        public global::Microsoft.Graph.Beta.DeviceManagement.RetrieveUserRoleDetailWithUserid.RetrieveUserRoleDetailWithUseridRequestBuilder RetrieveUserRoleDetailWithUserid(string userid)
+        {
+            if(string.IsNullOrEmpty(userid)) throw new ArgumentNullException(nameof(userid));
+            return new global::Microsoft.Graph.Beta.DeviceManagement.RetrieveUserRoleDetailWithUserid.RetrieveUserRoleDetailWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
         }
         /// <summary>
         /// Provides operations to call the scopedForResource method.

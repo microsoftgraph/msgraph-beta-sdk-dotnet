@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowBreakoutRooms"); }
             set { BackingStore?.Set("allowBreakoutRooms", value); }
         }
+        /// <summary>The allowedLobbyAdmitters property</summary>
+        public global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }
+            set { BackingStore?.Set("allowedLobbyAdmitters", value); }
+        }
         /// <summary>Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters? AllowedPresenters
         {
@@ -335,6 +341,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 { "allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
                 { "allowWhiteboard", n => { AllowWhiteboard = n.GetBoolValue(); } },
+                { "allowedLobbyAdmitters", n => { AllowedLobbyAdmitters = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles>(); } },
                 { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>(); } },
                 { "anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Beta.Models.OnlineMeetingRole>()?.AsList(); } },
                 { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(global::Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -365,6 +372,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteBoolValue("allowBreakoutRooms", AllowBreakoutRooms);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles>("allowedLobbyAdmitters", AllowedLobbyAdmitters);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingLiveShareOptions>("allowLiveShare", AllowLiveShare);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.MeetingChatMode>("allowMeetingChat", AllowMeetingChat);

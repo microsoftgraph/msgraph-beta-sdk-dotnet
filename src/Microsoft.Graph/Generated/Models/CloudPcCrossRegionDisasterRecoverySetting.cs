@@ -43,6 +43,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("disasterRecoveryNetworkSetting", value); }
         }
 #endif
+        /// <summary>The disasterRecoveryType property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType? DisasterRecoveryType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType?>("disasterRecoveryType"); }
+            set { BackingStore?.Set("disasterRecoveryType", value); }
+        }
         /// <summary>Indicates whether Windows 365 maintain the cross-region disaster recovery function generated restore points. If true, the Windows 365 stored restore points; false indicates that Windows 365 doesn&apos;t generate or keep the restore point from the original Cloud PC. If a disaster occurs, the new Cloud PC can only be provisioned using the initial image. This limitation can result in the loss of some user data on the original Cloud PC. The default value is false.</summary>
         public bool? MaintainCrossRegionRestorePointEnabled
         {
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "crossRegionDisasterRecoveryEnabled", n => { CrossRegionDisasterRecoveryEnabled = n.GetBoolValue(); } },
                 { "disasterRecoveryNetworkSetting", n => { DisasterRecoveryNetworkSetting = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>(global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting.CreateFromDiscriminatorValue); } },
+                { "disasterRecoveryType", n => { DisasterRecoveryType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType>(); } },
                 { "maintainCrossRegionRestorePointEnabled", n => { MaintainCrossRegionRestorePointEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -106,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossRegionDisasterRecoveryEnabled", CrossRegionDisasterRecoveryEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting>("disasterRecoveryNetworkSetting", DisasterRecoveryNetworkSetting);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType>("disasterRecoveryType", DisasterRecoveryType);
             writer.WriteBoolValue("maintainCrossRegionRestorePointEnabled", MaintainCrossRegionRestorePointEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

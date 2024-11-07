@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defaultAppManagementPolicy", value); }
         }
 #endif
-        /// <summary>The deviceRegistrationPolicy property</summary>
+        /// <summary>Represents the policy scope that controls quota restrictions, additional authentication, and authorization policies to register device identities to your organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy? DeviceRegistrationPolicy

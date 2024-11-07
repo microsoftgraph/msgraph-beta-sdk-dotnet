@@ -88,5 +88,17 @@ namespace Microsoft.Graph.Beta.Models
         #pragma warning disable CS1591
         RemoteConnectionQualityReport,
         #pragma warning restore CS1591
+        [EnumMember(Value = "frontlineLicenseHourlyUsageReport")]
+        #pragma warning disable CS1591
+        FrontlineLicenseHourlyUsageReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "frontlineRealtimeUserConnectionsReport")]
+        #pragma warning disable CS1591
+        FrontlineRealtimeUserConnectionsReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bulkActionStatusReport")]
+        #pragma warning disable CS1591
+        BulkActionStatusReport,
+        #pragma warning restore CS1591
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.GranularMailboxRestoreArtifacts;
 using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifacts;
+using Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifactsBulkAdditionRequests;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.I
         public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifacts.MailboxRestoreArtifactsRequestBuilder MailboxRestoreArtifacts
         {
             get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifacts.MailboxRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.exchangeRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifactsBulkAdditionRequests.MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder MailboxRestoreArtifactsBulkAdditionRequests
+        {
+            get => new global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.MailboxRestoreArtifactsBulkAdditionRequests.MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Solutions.BackupRestore.ExchangeRestoreSessions.Item.ExchangeRestoreSessionItemRequestBuilder"/> and sets the default values.

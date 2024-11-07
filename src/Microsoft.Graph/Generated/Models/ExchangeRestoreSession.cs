@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mailboxRestoreArtifacts", value); }
         }
 #endif
+        /// <summary>The mailboxRestoreArtifactsBulkAdditionRequests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest>? MailboxRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest>?>("mailboxRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("mailboxRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest> MailboxRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest>>("mailboxRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("mailboxRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.ExchangeRestoreSession"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "granularMailboxRestoreArtifacts", n => { GranularMailboxRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GranularMailboxRestoreArtifact>(global::Microsoft.Graph.Beta.Models.GranularMailboxRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxRestoreArtifacts", n => { MailboxRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifact>(global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mailboxRestoreArtifactsBulkAdditionRequests", n => { MailboxRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.GranularMailboxRestoreArtifact>("granularMailboxRestoreArtifacts", GranularMailboxRestoreArtifacts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifact>("mailboxRestoreArtifacts", MailboxRestoreArtifacts);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MailboxRestoreArtifactsBulkAdditionRequest>("mailboxRestoreArtifactsBulkAdditionRequests", MailboxRestoreArtifactsBulkAdditionRequests);
         }
     }
 }
