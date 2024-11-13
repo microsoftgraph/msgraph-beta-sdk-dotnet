@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowWidgetContentSync"); }
             set { BackingStore?.Set("allowWidgetContentSync", value); }
         }
-        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.</summary>
         public global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }

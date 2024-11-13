@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
-        /// <summary>The RoleDefinitionDisplayName property represents the human-readable name of a specific role definition in Microsoft Intune. This property provides a clear and descriptive name that indicates the purpose or scope of the role, helping administrators identify and assign appropriate roles to users or groups.Some example values for RoleDefinitionDisplayName might include: &quot;Helpdesk Operator,&quot; &quot;Application Manager,&quot; or &quot;Policy Administrator.&quot; This display name is primarily used in the Intune console or Graph API to present roles in a user-friendly manner, making it easier for administrators to manage role-based access control (RBAC) efficiently. This property is read-only.</summary>
+        /// <summary>The RoleDefinitionDisplayName property represents the human-readable name of a specific role definition in Microsoft Intune. This property provides a clear and descriptive name that indicates the purpose or scope of the role, helping administrators identify and assign appropriate roles to users or groups.Some example values for RoleDefinitionDisplayName might include: &apos;Helpdesk Operator,&apos; &apos;Application Manager,&apos; or &apos;Policy Administrator.&apos; This display name is primarily used in the Intune console or Graph API to present roles in a user-friendly manner, making it easier for administrators to manage role-based access control (RBAC) efficiently. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleDefinitionDisplayName

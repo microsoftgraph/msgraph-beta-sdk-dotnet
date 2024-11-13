@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MacOsLobAppAssignmentSettings : global::Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
-        /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
+        /// <summary>When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval
         {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }

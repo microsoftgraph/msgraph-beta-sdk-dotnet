@@ -13,19 +13,19 @@ namespace Microsoft.Graph.Beta.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidWorkProfileWiFiConfiguration : global::Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
-        /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
+        /// <summary>When set to true, device will connect automatically to the Wi-Fi network when in range, skipping the user prompt. When false, user will need to connect manually through Settings on the Android device. Default value is false.</summary>
         public bool? ConnectAutomatically
         {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
-        /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
+        /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices. When false, device will not automatically connect to hidden networks. Default value is false.</summary>
         public bool? ConnectWhenNetworkNameIsHidden
         {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
-        /// <summary>Network Name</summary>
+        /// <summary>The name of the Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkName

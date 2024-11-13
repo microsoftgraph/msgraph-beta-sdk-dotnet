@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.</summary>
+        /// <summary>A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Permissions for viewing applied conditional access (CA) policies in sign-ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies
