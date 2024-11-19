@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PublicKeyInfrastructureRoot : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The certificateBasedAuthConfigurations property</summary>
+        /// <summary>The collection of public key infrastructure instances for the certificate-based authentication feature for users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki>? CertificateBasedAuthConfigurations

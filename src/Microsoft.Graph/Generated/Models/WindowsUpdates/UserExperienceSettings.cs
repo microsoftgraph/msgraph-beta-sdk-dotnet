@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             get { return BackingStore?.Get<int?>("daysUntilForcedReboot"); }
             set { BackingStore?.Set("daysUntilForcedReboot", value); }
         }
-        /// <summary>The isHotpatchEnabled property</summary>
+        /// <summary>Specifies whether the update is offered as a hotpatch. It can only be set to true on automatic policies that target monthly security updates.</summary>
         public bool? IsHotpatchEnabled
         {
             get { return BackingStore?.Get<bool?>("isHotpatchEnabled"); }

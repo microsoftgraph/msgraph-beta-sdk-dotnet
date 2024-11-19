@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.OperatorType?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
-        /// <summary>The relationship type. Possible values are: and, or.</summary>
+        /// <summary>The relationship type.  Possible values are: and, or.</summary>
         public global::Microsoft.Graph.Beta.Models.DeviceManagement.RelationshipType? RelationshipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.DeviceManagement.RelationshipType?>("relationshipType"); }

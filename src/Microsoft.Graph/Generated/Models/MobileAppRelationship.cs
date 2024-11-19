@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourcePublisherDisplayName", value); }
         }
 #endif
-        /// <summary>The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
+        /// <summary>The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplayName
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDisplayName", value); }
         }
 #endif
-        /// <summary>The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
+        /// <summary>The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplayVersion
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
 #endif
-        /// <summary>App ID of the app that is the target of the mobile app relationship entity. Read-Only</summary>
+        /// <summary>The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetId
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetId", value); }
         }
 #endif
-        /// <summary>The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.</summary>
+        /// <summary>The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetPublisher
