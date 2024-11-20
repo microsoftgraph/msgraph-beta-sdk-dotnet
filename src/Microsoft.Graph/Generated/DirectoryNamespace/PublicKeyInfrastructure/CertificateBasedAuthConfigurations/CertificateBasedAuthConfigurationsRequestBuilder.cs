@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
         {
         }
         /// <summary>
-        /// Get certificateBasedAuthConfigurations from directory
+        /// Get a list of the certificateBasedAuthPki objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-list-certificatebasedauthconfigurations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPkiCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPkiCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPkiCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to certificateBasedAuthConfigurations for directory
+        /// Create a new certificateBasedAuthPki object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-post-certificatebasedauthconfigurations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateBasedAuthPki.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get certificateBasedAuthConfigurations from directory
+        /// Get a list of the certificateBasedAuthPki objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to certificateBasedAuthConfigurations for directory
+        /// Create a new certificateBasedAuthPki object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.CertificateBasedAuthConfigurations.CertificateBasedAuthConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get certificateBasedAuthConfigurations from directory
+        /// Get a list of the certificateBasedAuthPki objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CertificateBasedAuthConfigurationsRequestBuilderGetQueryParameters 

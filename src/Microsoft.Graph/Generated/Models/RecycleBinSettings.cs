@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 93 to 180. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.</summary>
+        /// <summary>Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 7 to 180 inclusively. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.</summary>
         public int? RetentionPeriodOverrideDays
         {
             get { return BackingStore?.Get<int?>("retentionPeriodOverrideDays"); }

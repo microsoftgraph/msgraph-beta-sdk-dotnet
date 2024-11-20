@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("allowBreakoutRooms"); }
             set { BackingStore?.Set("allowBreakoutRooms", value); }
         }
-        /// <summary>The allowedLobbyAdmitters property</summary>
+        /// <summary>Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }

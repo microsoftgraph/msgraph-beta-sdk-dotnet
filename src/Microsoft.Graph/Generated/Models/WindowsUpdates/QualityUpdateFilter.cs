@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
     public partial class QualityUpdateFilter : global::Microsoft.Graph.Beta.Models.WindowsUpdates.WindowsUpdateFilter, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The cadence property</summary>
+        /// <summary>Specifies the cadence for publishing quality updates of the filter. The possible values are: monthly, outOfBand, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? Cadence
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("cadence"); }
             set { BackingStore?.Set("cadence", value); }
         }
-        /// <summary>The classification property</summary>
+        /// <summary>Specifies the quality update classification of the filter. The possible values are: all, security, nonSecurity, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? Classification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("classification"); }

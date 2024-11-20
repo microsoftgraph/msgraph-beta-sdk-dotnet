@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
         {
         }
         /// <summary>
-        /// Delete navigation property certificateAuthorities for directory
+        /// Delete a certificateAuthorityDetail object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get certificateAuthorities from directory
+        /// Read the properties and relationships of a certificateAuthorityDetail object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthoritydetail-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property certificateAuthorities in directory
+        /// Update the properties of a certificateAuthorityDetail object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +108,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail>(requestInfo, global::Microsoft.Graph.Beta.Models.CertificateAuthorityDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property certificateAuthorities for directory
+        /// Delete a certificateAuthorityDetail object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return requestInfo;
         }
         /// <summary>
-        /// Get certificateAuthorities from directory
+        /// Read the properties and relationships of a certificateAuthorityDetail object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property certificateAuthorities in directory
+        /// Update the properties of a certificateAuthorityDetail object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +185,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PublicKeyInfrastructure.Certif
         {
         }
         /// <summary>
-        /// Get certificateAuthorities from directory
+        /// Read the properties and relationships of a certificateAuthorityDetail object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CertificateAuthorityDetailItemRequestBuilderGetQueryParameters 

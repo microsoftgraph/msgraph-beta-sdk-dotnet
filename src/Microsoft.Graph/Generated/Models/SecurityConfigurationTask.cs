@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("intendedSettings", value); }
         }
 #endif
-        /// <summary>The number of vulnerable devices. Valid values 0 to 65536</summary>
+        /// <summary>The number of vulnerable devices.</summary>
         public int? ManagedDeviceCount
         {
             get { return BackingStore?.Get<int?>("managedDeviceCount"); }

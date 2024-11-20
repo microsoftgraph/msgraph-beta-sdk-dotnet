@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
         {
         }
         /// <summary>
-        /// Deletes a profile object from a user&apos;s account.
+        /// Delete a profile object from a user&apos;s account.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Beta.Me.Profile
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Profile>(requestInfo, global::Microsoft.Graph.Beta.Models.Profile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a profile object from a user&apos;s account.
+        /// Delete a profile object from a user&apos;s account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
