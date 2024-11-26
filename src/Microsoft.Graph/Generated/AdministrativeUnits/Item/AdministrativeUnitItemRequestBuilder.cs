@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.AdministrativeUnits.Item.DeletedMembers;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Extensions;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.GetMemberObjects;
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item
         public global::Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
             get => new global::Microsoft.Graph.Beta.AdministrativeUnits.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deletedMembers property of the microsoft.graph.administrativeUnit entity.</summary>
+        public global::Microsoft.Graph.Beta.AdministrativeUnits.Item.DeletedMembers.DeletedMembersRequestBuilder DeletedMembers
+        {
+            get => new global::Microsoft.Graph.Beta.AdministrativeUnits.Item.DeletedMembers.DeletedMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.</summary>
         public global::Microsoft.Graph.Beta.AdministrativeUnits.Item.Extensions.ExtensionsRequestBuilder Extensions

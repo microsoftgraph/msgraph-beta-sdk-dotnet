@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomSecurityAttributeExemption : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The operator property</summary>
+        /// <summary>The possible values are: equals, unknownFutureValue. If equals, the customSecurityAttributeExemption value is compared to match the custom security attribute value for the exemption to be applied. The comparison is case sensitive.</summary>
         public global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeComparisonOperator? Operator
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeComparisonOperator?>("operator"); }

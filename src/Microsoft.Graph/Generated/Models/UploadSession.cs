@@ -91,7 +91,12 @@ namespace Microsoft.Graph.Beta.Models
         public static global::Microsoft.Graph.Beta.Models.UploadSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Beta.Models.UploadSession();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.engagementUploadSession" => new global::Microsoft.Graph.Beta.Models.EngagementUploadSession(),
+                _ => new global::Microsoft.Graph.Beta.Models.UploadSession(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

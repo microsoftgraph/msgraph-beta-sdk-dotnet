@@ -12,6 +12,38 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ContentSharingSession : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The pngOfCurrentSlide property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? PngOfCurrentSlide
+        {
+            get { return BackingStore?.Get<byte[]?>("pngOfCurrentSlide"); }
+            set { BackingStore?.Set("pngOfCurrentSlide", value); }
+        }
+#nullable restore
+#else
+        public byte[] PngOfCurrentSlide
+        {
+            get { return BackingStore?.Get<byte[]>("pngOfCurrentSlide"); }
+            set { BackingStore?.Set("pngOfCurrentSlide", value); }
+        }
+#endif
+        /// <summary>The presenterParticipantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PresenterParticipantId
+        {
+            get { return BackingStore?.Get<string?>("presenterParticipantId"); }
+            set { BackingStore?.Set("presenterParticipantId", value); }
+        }
+#nullable restore
+#else
+        public string PresenterParticipantId
+        {
+            get { return BackingStore?.Get<string>("presenterParticipantId"); }
+            set { BackingStore?.Set("presenterParticipantId", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +62,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "pngOfCurrentSlide", n => { PngOfCurrentSlide = n.GetByteArrayValue(); } },
+                { "presenterParticipantId", n => { PresenterParticipantId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -40,6 +74,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteByteArrayValue("pngOfCurrentSlide", PngOfCurrentSlide);
+            writer.WriteStringValue("presenterParticipantId", PresenterParticipantId);
         }
     }
 }

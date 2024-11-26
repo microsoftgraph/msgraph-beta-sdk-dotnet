@@ -12,6 +12,28 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcBulkCreateSnapshot : global::Microsoft.Graph.Beta.Models.CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The accessTier property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier? AccessTier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier?>("accessTier"); }
+            set { BackingStore?.Set("accessTier", value); }
+        }
+        /// <summary>The storageAccountId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageAccountId
+        {
+            get { return BackingStore?.Get<string?>("storageAccountId"); }
+            set { BackingStore?.Set("storageAccountId", value); }
+        }
+#nullable restore
+#else
+        public string StorageAccountId
+        {
+            get { return BackingStore?.Get<string>("storageAccountId"); }
+            set { BackingStore?.Set("storageAccountId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Beta.Models.CloudPcBulkCreateSnapshot"/> and sets the default values.
         /// </summary>
@@ -37,6 +59,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "accessTier", n => { AccessTier = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier>(); } },
+                { "storageAccountId", n => { StorageAccountId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +71,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier>("accessTier", AccessTier);
+            writer.WriteStringValue("storageAccountId", StorageAccountId);
         }
     }
 }

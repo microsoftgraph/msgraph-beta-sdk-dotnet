@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>True indicates that the content is hotpatchable; otherwise, false. For more information, see Deploy a hotpatch quality update using Windows Autopatch. Read-only.</summary>
+        public bool? IsHotpatchUpdate
+        {
+            get { return BackingStore?.Get<bool?>("isHotpatchUpdate"); }
+            set { BackingStore?.Set("isHotpatchUpdate", value); }
+        }
         /// <summary>The knowledge base article associated with the product revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             {
                 { "catalogEntry", n => { CatalogEntry = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isHotpatchUpdate", n => { IsHotpatchUpdate = n.GetBoolValue(); } },
                 { "knowledgeBaseArticle", n => { KnowledgeBaseArticle = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
                 { "osBuild", n => { OsBuild = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.BuildVersionDetails>(global::Microsoft.Graph.Beta.Models.WindowsUpdates.BuildVersionDetails.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetStringValue(); } },
@@ -151,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry", CatalogEntry);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("isHotpatchUpdate", IsHotpatchUpdate);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("knowledgeBaseArticle", KnowledgeBaseArticle);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.WindowsUpdates.BuildVersionDetails>("osBuild", OsBuild);
             writer.WriteStringValue("product", Product);

@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Reports.UserInsights.Daily.Authentications;
 using Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers;
 using Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication;
 using Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaCompletions;
+using Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaTelecomFraud;
 using Microsoft.Graph.Beta.Reports.UserInsights.Daily.SignUps;
 using Microsoft.Graph.Beta.Reports.UserInsights.Daily.Summary;
 using Microsoft.Graph.Beta.Reports.UserInsights.Daily.UserCount;
@@ -50,6 +51,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily
         public global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaCompletions.MfaCompletionsRequestBuilder MfaCompletions
         {
             get => new global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaCompletions.MfaCompletionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mfaTelecomFraud property of the microsoft.graph.dailyUserInsightMetricsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaTelecomFraud.MfaTelecomFraudRequestBuilder MfaTelecomFraud
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaTelecomFraud.MfaTelecomFraudRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signUps property of the microsoft.graph.dailyUserInsightMetricsRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.UserInsights.Daily.SignUps.SignUpsRequestBuilder SignUps
