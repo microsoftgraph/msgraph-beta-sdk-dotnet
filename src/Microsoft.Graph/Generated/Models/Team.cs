@@ -114,6 +114,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The firstChannelName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FirstChannelName
+        {
+            get { return BackingStore?.Get<string?>("firstChannelName"); }
+            set { BackingStore?.Set("firstChannelName", value); }
+        }
+#nullable restore
+#else
+        public string FirstChannelName
+        {
+            get { return BackingStore?.Get<string>("firstChannelName"); }
+            set { BackingStore?.Set("firstChannelName", value); }
+        }
+#endif
         /// <summary>Settings to configure the use of Giphy, memes, and stickers in the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -499,6 +515,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "discoverySettings", n => { DiscoverySettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamDiscoverySettings>(global::Microsoft.Graph.Beta.Models.TeamDiscoverySettings.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "firstChannelName", n => { FirstChannelName = n.GetStringValue(); } },
                 { "funSettings", n => { FunSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamFunSettings>(global::Microsoft.Graph.Beta.Models.TeamFunSettings.CreateFromDiscriminatorValue); } },
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.Group>(global::Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
                 { "guestSettings", n => { GuestSettings = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.TeamGuestSettings>(global::Microsoft.Graph.Beta.Models.TeamGuestSettings.CreateFromDiscriminatorValue); } },
@@ -541,6 +558,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamDiscoverySettings>("discoverySettings", DiscoverySettings);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("firstChannelName", FirstChannelName);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamFunSettings>("funSettings", FunSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.Group>("group", Group);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.TeamGuestSettings>("guestSettings", GuestSettings);

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken the secret is not required because there is no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .</summary>
+        /// <summary>The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken, the secret isn&apos;t required because there&apos;s no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("clientSecret", value); }
         }
 #endif
-        /// <summary>The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.</summary>
+        /// <summary>The domain hint can be used to skip directly to the sign-in page of the specified identity provider instead of having the user make a selection among the list of available identity providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainHint
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.OpenIdConnectResponseTypes?>("responseType"); }
             set { BackingStore?.Set("responseType", value); }
         }
-        /// <summary>Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.</summary>
+        /// <summary>Scope defines the information and permissions you&apos;re looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren&apos;t able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more information about the scope limitations, see RFC6749 Section 3.3. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope

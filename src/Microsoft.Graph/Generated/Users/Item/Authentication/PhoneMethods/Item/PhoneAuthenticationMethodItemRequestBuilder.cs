@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PhoneMethods.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the phone number associated with a phone authentication method. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system attempts to register the number for use in that system.
+        /// Update the phone number associated with a phone authentication method. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system attempts to register the number for use in that system. Self-service operations aren&apos;t supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/phoneauthenticationmethod-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PhoneAuthenticationMethod"/></returns>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PhoneMethods.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the phone number associated with a phone authentication method. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system attempts to register the number for use in that system.
+        /// Update the phone number associated with a phone authentication method. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system attempts to register the number for use in that system. Self-service operations aren&apos;t supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

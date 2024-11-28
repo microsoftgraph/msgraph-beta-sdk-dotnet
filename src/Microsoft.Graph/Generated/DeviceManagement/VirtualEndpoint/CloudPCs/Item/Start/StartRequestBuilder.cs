@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.St
         {
         }
         /// <summary>
-        /// Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+        /// Start a specific Cloud PC. Currently, only Windows 365 Frontline Cloud PCs are supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.St
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+        /// Start a specific Cloud PC. Currently, only Windows 365 Frontline Cloud PCs are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

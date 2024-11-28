@@ -78,6 +78,28 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The restoreJobType property</summary>
+        public global::Microsoft.Graph.Beta.Models.RestoreJobType? RestoreJobType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreJobType?>("restoreJobType"); }
+            set { BackingStore?.Set("restoreJobType", value); }
+        }
+        /// <summary>The restoreSessionArtifactCount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount? RestoreSessionArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount?>("restoreSessionArtifactCount"); }
+            set { BackingStore?.Set("restoreSessionArtifactCount", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount RestoreSessionArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount"); }
+            set { BackingStore?.Set("restoreSessionArtifactCount", value); }
+        }
+#endif
         /// <summary>Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.</summary>
         public global::Microsoft.Graph.Beta.Models.RestoreSessionStatus? Status
         {
@@ -115,6 +137,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>(global::Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>(global::Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "restoreJobType", n => { RestoreJobType = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreJobType>(); } },
+                { "restoreSessionArtifactCount", n => { RestoreSessionArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount>(global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus>(); } },
             };
         }
@@ -132,6 +156,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreJobType>("restoreJobType", RestoreJobType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount", RestoreSessionArtifactCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.RestoreSessionStatus>("status", Status);
         }
     }

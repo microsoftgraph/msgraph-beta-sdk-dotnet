@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mfaCompletions", value); }
         }
 #endif
+        /// <summary>The mfaRegisteredUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.MfaUserCountMetric>? MfaRegisteredUsers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MfaUserCountMetric>?>("mfaRegisteredUsers"); }
+            set { BackingStore?.Set("mfaRegisteredUsers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.MfaUserCountMetric> MfaRegisteredUsers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.MfaUserCountMetric>>("mfaRegisteredUsers"); }
+            set { BackingStore?.Set("mfaRegisteredUsers", value); }
+        }
+#endif
         /// <summary>Insights for all user requests on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersMetric>(global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersByApplicationMetric>(global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mfaCompletions", n => { MfaCompletions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaCompletionMetric>(global::Microsoft.Graph.Beta.Models.MfaCompletionMetric.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mfaRegisteredUsers", n => { MfaRegisteredUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaUserCountMetric>(global::Microsoft.Graph.Beta.Models.MfaUserCountMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserRequestsMetric>(global::Microsoft.Graph.Beta.Models.UserRequestsMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSignUpMetric>(global::Microsoft.Graph.Beta.Models.UserSignUpMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "summary", n => { Summary = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InsightSummary>(global::Microsoft.Graph.Beta.Models.InsightSummary.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -181,6 +198,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersMetric>("inactiveUsers", InactiveUsers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MonthlyInactiveUsersByApplicationMetric>("inactiveUsersByApplication", InactiveUsersByApplication);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaCompletionMetric>("mfaCompletions", MfaCompletions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MfaUserCountMetric>("mfaRegisteredUsers", MfaRegisteredUsers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserRequestsMetric>("requests", Requests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.UserSignUpMetric>("signUps", SignUps);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.InsightSummary>("summary", Summary);

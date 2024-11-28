@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CustomSecurityAttributeStringValueExemption : global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeExemption, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The value property</summary>
+        /// <summary>Value representing custom security attribute value to compare against while evaluating the exemption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

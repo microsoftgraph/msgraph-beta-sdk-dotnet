@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The excludeActors property</summary>
+        /// <summary>Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute, they&apos;re exempted from the restriction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AppManagementPolicyActorExemptions? ExcludeActors
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeActors", value); }
         }
 #endif
-        /// <summary>If true, the restriction isn&apos;t enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn&apos;t enforced for those applications.</summary>
+        /// <summary>If true, the restriction isn&apos;t enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn&apos;t enforced for those applications.</summary>
         public bool? ExcludeAppsReceivingV2Tokens
         {
             get { return BackingStore?.Get<bool?>("excludeAppsReceivingV2Tokens"); }

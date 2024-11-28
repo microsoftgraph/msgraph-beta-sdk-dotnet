@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsersByApplication;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions;
+using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaRegisteredUsers;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.SignUps;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary;
@@ -50,6 +51,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly
         public global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder MfaCompletions
         {
             get => new global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mfaRegisteredUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
+        public global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaRegisteredUsers.MfaRegisteredUsersRequestBuilder MfaRegisteredUsers
+        {
+            get => new global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaRegisteredUsers.MfaRegisteredUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the requests property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
         public global::Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests.RequestsRequestBuilder Requests

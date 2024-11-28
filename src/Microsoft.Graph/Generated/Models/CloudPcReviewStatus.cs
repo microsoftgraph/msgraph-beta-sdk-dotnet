@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Beta.Models
     public partial class CloudPcReviewStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The accessTier property</summary>
+        public global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier? AccessTier
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier?>("accessTier"); }
+            set { BackingStore?.Set("accessTier", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
         {
@@ -167,6 +173,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accessTier", n => { AccessTier = n.GetEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier>(); } },
                 { "azureStorageAccountId", n => { AzureStorageAccountId = n.GetStringValue(); } },
                 { "azureStorageAccountName", n => { AzureStorageAccountName = n.GetStringValue(); } },
                 { "azureStorageContainerName", n => { AzureStorageContainerName = n.GetStringValue(); } },
@@ -186,6 +193,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Beta.Models.CloudPcBlobAccessTier>("accessTier", AccessTier);
             writer.WriteStringValue("azureStorageAccountId", AzureStorageAccountId);
             writer.WriteStringValue("azureStorageAccountName", AzureStorageAccountName);
             writer.WriteStringValue("azureStorageContainerName", AzureStorageContainerName);

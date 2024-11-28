@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo
         {
         }
         /// <summary>
-        /// Get the cloudPCLaunchInfo for the signed-in user.
+        /// Get the cloudPCLaunchInfo for a specific cloudPC.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcLaunchInfo"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcLaunchInfo>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcLaunchInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the cloudPCLaunchInfo for the signed-in user.
+        /// Get the cloudPCLaunchInfo for a specific cloudPC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
