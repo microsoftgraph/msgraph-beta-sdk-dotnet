@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.Me.Authentication.EmailMethods;
 using Microsoft.Graph.Beta.Me.Authentication.Fido2Methods;
+using Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods;
 using Microsoft.Graph.Beta.Me.Authentication.Methods;
 using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Me.Authentication.Operations;
@@ -41,6 +42,11 @@ namespace Microsoft.Graph.Beta.Me.Authentication
         public global::Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Fido2MethodsRequestBuilder Fido2Methods
         {
             get => new global::Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Fido2MethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hardwareOathMethods property of the microsoft.graph.authentication entity.</summary>
+        public global::Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.HardwareOathMethodsRequestBuilder HardwareOathMethods
+        {
+            get => new global::Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.HardwareOathMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the methods property of the microsoft.graph.authentication entity.</summary>
         public global::Microsoft.Graph.Beta.Me.Authentication.Methods.MethodsRequestBuilder Methods

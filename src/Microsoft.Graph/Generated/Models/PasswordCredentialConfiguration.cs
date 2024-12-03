@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppCredentialRestrictionType?>("restrictionType"); }
             set { BackingStore?.Set("restrictionType", value); }
         }
-        /// <summary>String value that indicates if the restriction is evaluated. The possible values are: enabled, disabled, and unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn&apos;t evaluated or enforced.</summary>
+        /// <summary>Indicates whether the restriction is evaluated. The possible values are: enabled, disabled, unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn&apos;t evaluated or enforced.</summary>
         public global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AppManagementRestrictionState?>("state"); }

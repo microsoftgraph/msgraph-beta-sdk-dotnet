@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fido2Methods", value); }
         }
 #endif
+        /// <summary>The hardwareOathMethods property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>? HardwareOathMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>?>("hardwareOathMethods"); }
+            set { BackingStore?.Set("hardwareOathMethods", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod> HardwareOathMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>>("hardwareOathMethods"); }
+            set { BackingStore?.Set("hardwareOathMethods", value); }
+        }
+#endif
         /// <summary>Represents all authentication methods registered to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -256,6 +272,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "emailMethods", n => { EmailMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fido2Methods", n => { Fido2Methods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>(global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hardwareOathMethods", n => { HardwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "methods", n => { Methods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethod>(global::Microsoft.Graph.Beta.Models.AuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "microsoftAuthenticatorMethods", n => { MicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>(global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LongRunningOperation>(global::Microsoft.Graph.Beta.Models.LongRunningOperation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -280,6 +297,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod>("emailMethods", EmailMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod>("fido2Methods", Fido2Methods);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>("hardwareOathMethods", HardwareOathMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AuthenticationMethod>("methods", Methods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod>("microsoftAuthenticatorMethods", MicrosoftAuthenticatorMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.LongRunningOperation>("operations", Operations);

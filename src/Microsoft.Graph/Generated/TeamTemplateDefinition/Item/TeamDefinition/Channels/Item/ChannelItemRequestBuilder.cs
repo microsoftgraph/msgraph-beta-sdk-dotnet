@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.I
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.FilesFolder;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.GetAllMembers;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Members;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Messages;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.ProvisionEmail;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
         public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
             get => new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.GetAllMembers.GetAllMembersRequestBuilder GetAllMembers
+        {
+            get => new global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.GetAllMembers.GetAllMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item.Members.MembersRequestBuilder Members

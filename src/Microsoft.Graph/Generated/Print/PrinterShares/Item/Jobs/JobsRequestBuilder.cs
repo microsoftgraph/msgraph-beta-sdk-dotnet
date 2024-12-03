@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs
         {
         }
         /// <summary>
-        /// Get jobs from print
+        /// The list of jobs that are queued for printing by the printer/printerShare.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.PrintJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.PrintJob>(requestInfo, global::Microsoft.Graph.Beta.Models.PrintJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get jobs from print
+        /// The list of jobs that are queued for printing by the printer/printerShare.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs
             return new global::Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.JobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get jobs from print
+        /// The list of jobs that are queued for printing by the printer/printerShare.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JobsRequestBuilderGetQueryParameters 

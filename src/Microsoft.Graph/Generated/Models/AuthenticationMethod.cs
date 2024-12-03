@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 "#microsoft.graph.emailAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.EmailAuthenticationMethod(),
                 "#microsoft.graph.fido2AuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.Fido2AuthenticationMethod(),
+                "#microsoft.graph.hardwareOathAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.MicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.passwordAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PasswordAuthenticationMethod(),
                 "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Beta.Models.PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),

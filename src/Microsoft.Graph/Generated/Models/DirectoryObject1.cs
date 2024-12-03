@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("attributeSets", value); }
         }
 #endif
+        /// <summary>The authenticationMethodDevices property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice? AuthenticationMethodDevices
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice?>("authenticationMethodDevices"); }
+            set { BackingStore?.Set("authenticationMethodDevices", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice AuthenticationMethodDevices
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice>("authenticationMethodDevices"); }
+            set { BackingStore?.Set("authenticationMethodDevices", value); }
+        }
+#endif
         /// <summary>The certificateAuthorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -320,6 +336,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdministrativeUnit>(global::Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attributeSets", n => { AttributeSets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttributeSet>(global::Microsoft.Graph.Beta.Models.AttributeSet.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "authenticationMethodDevices", n => { AuthenticationMethodDevices = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice>(global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice.CreateFromDiscriminatorValue); } },
                 { "certificateAuthorities", n => { CertificateAuthorities = n.GetObjectValue<global::Microsoft.Graph.Beta.Models.CertificateAuthorityPath>(global::Microsoft.Graph.Beta.Models.CertificateAuthorityPath.CreateFromDiscriminatorValue); } },
                 { "customSecurityAttributeDefinitions", n => { CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>(global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>(global::Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -348,6 +365,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.AttributeSet>("attributeSets", AttributeSets);
+            writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice>("authenticationMethodDevices", AuthenticationMethodDevices);
             writer.WriteObjectValue<global::Microsoft.Graph.Beta.Models.CertificateAuthorityPath>("certificateAuthorities", CertificateAuthorities);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Beta.Models.DirectoryObject>("deletedItems", DeletedItems);

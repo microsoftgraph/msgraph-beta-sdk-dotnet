@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Archive;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.FilesFolder;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.GetAllMembers;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages;
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.ProvisionEmail;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
             get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.GetAllMembers.GetAllMembersRequestBuilder GetAllMembers
+        {
+            get => new global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.GetAllMembers.GetAllMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Members.MembersRequestBuilder Members

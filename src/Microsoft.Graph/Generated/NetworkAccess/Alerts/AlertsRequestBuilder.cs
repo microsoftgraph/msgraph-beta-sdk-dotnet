@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.NetworkAccess.Alerts.Count;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts.Item;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -103,6 +104,18 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Alerts
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getAlertSummaries method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        public global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
+        {
+            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            return new global::Microsoft.Graph.Beta.NetworkAccess.Alerts.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime.MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Create new navigation property to alerts for networkAccess
