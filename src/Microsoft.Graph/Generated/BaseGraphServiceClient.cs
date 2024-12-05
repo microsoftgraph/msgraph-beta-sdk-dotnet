@@ -18,6 +18,7 @@ using Microsoft.Graph.Beta.ApplicationsWithUniqueName;
 using Microsoft.Graph.Beta.ApprovalWorkflowProviders;
 using Microsoft.Graph.Beta.AuditLogs;
 using Microsoft.Graph.Beta.AuthenticationMethodConfigurations;
+using Microsoft.Graph.Beta.AuthenticationMethodDevices;
 using Microsoft.Graph.Beta.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.BookingBusinesses;
 using Microsoft.Graph.Beta.BookingCurrencies;
@@ -222,6 +223,11 @@ namespace Microsoft.Graph.Beta
         public global::Microsoft.Graph.Beta.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder AuthenticationMethodConfigurations
         {
             get => new global::Microsoft.Graph.Beta.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collection of authenticationMethodDevice entities.</summary>
+        public global::Microsoft.Graph.Beta.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder AuthenticationMethodDevices
+        {
+            get => new global::Microsoft.Graph.Beta.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
         public global::Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy

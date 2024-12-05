@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class PrinterBase : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The capabilities property</summary>
+        /// <summary>The capabilities of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PrinterCapabilities? Capabilities
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("capabilities", value); }
         }
 #endif
-        /// <summary>The defaults property</summary>
+        /// <summary>The default print settings of printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PrinterDefaults? Defaults
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defaults", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -60,13 +60,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isAcceptingJobs property</summary>
+        /// <summary>Specifies whether the printer/printerShare is currently accepting new print jobs.</summary>
         public bool? IsAcceptingJobs
         {
             get { return BackingStore?.Get<bool?>("isAcceptingJobs"); }
             set { BackingStore?.Set("isAcceptingJobs", value); }
         }
-        /// <summary>The jobs property</summary>
+        /// <summary>The list of jobs that are queued for printing by the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.PrintJob>? Jobs
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("jobs", value); }
         }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>The physical and/or organizational location of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.PrinterLocation? Location
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("location", value); }
         }
 #endif
-        /// <summary>The manufacturer property</summary>
+        /// <summary>The manufacturer of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>The model name of the printer/printerShare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits;
 using Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets;
+using Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices;
 using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities;
 using Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinitions;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace
         public global::Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets.AttributeSetsRequestBuilder AttributeSets
         {
             get => new global::Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets.AttributeSetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the authenticationMethodDevices property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder AuthenticationMethodDevices
+        {
+            get => new global::Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.AuthenticationMethodDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateAuthoritiesRequestBuilder CertificateAuthorities

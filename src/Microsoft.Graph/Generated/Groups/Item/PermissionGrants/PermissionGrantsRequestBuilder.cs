@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
         {
         }
         /// <summary>
-        /// List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on a group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrantCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant>(requestInfo, global::Microsoft.Graph.Beta.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on a group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants
             return new global::Microsoft.Graph.Beta.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on a group. This list specifies the Microsoft Entra apps that have access to the group, along with the corresponding kind of resource-specific access that each app has.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionGrantsRequestBuilderGetQueryParameters 
