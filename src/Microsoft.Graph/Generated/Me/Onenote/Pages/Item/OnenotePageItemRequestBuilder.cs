@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Pages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OnenotePage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Pages.Item
             return requestInfo;
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Pages.Item
         {
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnenotePageItemRequestBuilderGetQueryParameters 

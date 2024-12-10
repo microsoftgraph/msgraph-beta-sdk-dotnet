@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
         {
         }
         /// <summary>
-        /// Get hardwareOathDevices from directory
+        /// List all hardware OATH tokens in the directory.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethoddevice-list-hardwareoathdevices?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDeviceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDeviceCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to hardwareOathDevices for directory
+        /// Create a new hardwareOathTokenAuthenticationMethodDevice object. Supports bulk creation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethoddevice-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get hardwareOathDevices from directory
+        /// List all hardware OATH tokens in the directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to hardwareOathDevices for directory
+        /// Create a new hardwareOathTokenAuthenticationMethodDevice object. Supports bulk creation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return new global::Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.HardwareOathDevices.HardwareOathDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get hardwareOathDevices from directory
+        /// List all hardware OATH tokens in the directory.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HardwareOathDevicesRequestBuilderGetQueryParameters 

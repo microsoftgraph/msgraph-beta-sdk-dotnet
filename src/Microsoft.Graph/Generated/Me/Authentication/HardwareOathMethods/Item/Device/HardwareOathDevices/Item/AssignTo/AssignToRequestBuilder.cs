@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device
         {
         }
         /// <summary>
-        /// Get assignTo from me
+        /// Assign the hardware OATH token to a user.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.User>(requestInfo, global::Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get assignTo from me
+        /// Assign the hardware OATH token to a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device
             return new global::Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device.HardwareOathDevices.Item.AssignTo.AssignToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get assignTo from me
+        /// Assign the hardware OATH token to a user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignToRequestBuilderGetQueryParameters 

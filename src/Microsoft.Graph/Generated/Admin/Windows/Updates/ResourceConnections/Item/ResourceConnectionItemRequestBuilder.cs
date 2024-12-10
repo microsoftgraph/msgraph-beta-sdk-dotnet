@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
         {
         }
         /// <summary>
-        /// Delete an operationalInsightsConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-beta" />
+        /// Delete a resourceConnection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection>(requestInfo, global::Microsoft.Graph.Beta.Models.WindowsUpdates.ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an operationalInsightsConnection object.
+        /// Delete a resourceConnection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks
         {
         }
         /// <summary>
-        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+        /// The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+        /// The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks
             return new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.RemoteNetworksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+        /// The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RemoteNetworksRequestBuilderGetQueryParameters 

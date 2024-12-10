@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetrieveReviewStatus
         {
         }
         /// <summary>
-        /// Invoke function retrieveReviewStatus
+        /// Get the review status of a Cloud PC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-retrievereviewstatus?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.CloudPcReviewStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetrieveReviewStatus
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.CloudPcReviewStatus>(requestInfo, global::Microsoft.Graph.Beta.Models.CloudPcReviewStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveReviewStatus
+        /// Get the review status of a Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

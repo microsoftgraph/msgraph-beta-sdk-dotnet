@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>The list of scheduled action for this rule</summary>
+        /// <summary>The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>? ScheduledActionsForRule

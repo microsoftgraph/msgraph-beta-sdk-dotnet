@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups
         {
         }
         /// <summary>
-        /// The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.SectionGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.SectionGroup>(requestInfo, global::Microsoft.Graph.Beta.Models.SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups
             return new global::Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.SectionGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SectionGroupsRequestBuilderGetQueryParameters 

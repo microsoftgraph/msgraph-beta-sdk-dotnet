@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
         {
         }
         /// <summary>
-        /// Contains the protection units associated with a  OneDrive for Business protection policy.
+        /// Contains the protection units associated with a  OneDrive for Work or School protection policy.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveProtectionUnit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.DriveProtectionUnit>(requestInfo, global::Microsoft.Graph.Beta.Models.DriveProtectionUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Contains the protection units associated with a  OneDrive for Business protection policy.
+        /// Contains the protection units associated with a  OneDrive for Work or School protection policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtec
             return new global::Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnits.Item.DriveProtectionUnitItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Contains the protection units associated with a  OneDrive for Business protection policy.
+        /// Contains the protection units associated with a  OneDrive for Work or School protection policy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveProtectionUnitItemRequestBuilderGetQueryParameters 

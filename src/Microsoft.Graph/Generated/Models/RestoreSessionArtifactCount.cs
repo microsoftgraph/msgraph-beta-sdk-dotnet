@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The completed property</summary>
+        /// <summary>The number of artifacts whose restoration completed.</summary>
         public int? Completed
         {
             get { return BackingStore?.Get<int?>("completed"); }
             set { BackingStore?.Set("completed", value); }
         }
-        /// <summary>The failed property</summary>
+        /// <summary>The number of artifacts whose restoration failed.</summary>
         public int? Failed
         {
             get { return BackingStore?.Get<int?>("failed"); }
             set { BackingStore?.Set("failed", value); }
         }
-        /// <summary>The inProgress property</summary>
+        /// <summary>The number of artifacts whose restoration is in progress.</summary>
         public int? InProgress
         {
             get { return BackingStore?.Get<int?>("inProgress"); }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The total property</summary>
+        /// <summary>The number of artifacts present in the restore session.</summary>
         public int? Total
         {
             get { return BackingStore?.Get<int?>("total"); }

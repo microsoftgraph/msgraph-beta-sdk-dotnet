@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnAttributeCollectionExternalUsersSelfServiceSignUp : global::Microsoft.Graph.Beta.Models.OnAttributeCollectionHandler, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.</summary>
+        /// <summary>Required. The configuration for how attributes are displayed in the sign-up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AuthenticationAttributeCollectionPage? AttributeCollectionPage

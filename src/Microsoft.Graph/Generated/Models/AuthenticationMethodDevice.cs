@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class AuthenticationMethodDevice : global::Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>Optional name given to the hardware OATH device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The hardwareOathDevices property</summary>
+        /// <summary>Exposes the hardware OATH method in the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>? HardwareOathDevices

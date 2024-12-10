@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
         {
         }
         /// <summary>
-        /// Delete navigation property hardwareOathDevices for directory
+        /// Delete a Hardware OATH token. Token needs to be unassigned.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethoddevice-delete-hardwareoathdevices?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get hardwareOathDevices from directory
+        /// Read the properties and relationships of a hardwareOathTokenAuthenticationMethodDevice object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/hardwareoathtokenauthenticationmethoddevice-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property hardwareOathDevices in directory
+        /// Update the properties of a hardwareOathTokenAuthenticationMethodDevice object. The token needs to unassigned.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/hardwareoathtokenauthenticationmethoddevice-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice>(requestInfo, global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property hardwareOathDevices for directory
+        /// Delete a Hardware OATH token. Token needs to be unassigned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return requestInfo;
         }
         /// <summary>
-        /// Get hardwareOathDevices from directory
+        /// Read the properties and relationships of a hardwareOathTokenAuthenticationMethodDevice object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property hardwareOathDevices in directory
+        /// Update the properties of a hardwareOathTokenAuthenticationMethodDevice object. The token needs to unassigned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices.Ha
         {
         }
         /// <summary>
-        /// Get hardwareOathDevices from directory
+        /// Read the properties and relationships of a hardwareOathTokenAuthenticationMethodDevice object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderGetQueryParameters 

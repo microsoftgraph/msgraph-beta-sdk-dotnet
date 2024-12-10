@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("connectToVpnOnLaunch"); }
             set { BackingStore?.Set("connectToVpnOnLaunch", value); }
         }
-        /// <summary>Friendly name of the preferred custom browser to open weblink on Android.</summary>
+        /// <summary>Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserDisplayName
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
 #endif
-        /// <summary>Unique identifier of a custom browser to open weblink on Android.</summary>
+        /// <summary>Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserPackageId

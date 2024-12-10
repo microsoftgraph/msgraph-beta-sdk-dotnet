@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class HardwareOathTokenAuthenticationMethodDevice : global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The assignedTo property</summary>
+        /// <summary>User the token is assigned to. Nullable. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.Identity? AssignedTo
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>The assignTo property</summary>
+        /// <summary>Assign the hardware OATH token to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.User? AssignTo
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignTo", value); }
         }
 #endif
-        /// <summary>The hashFunction property</summary>
+        /// <summary>Hash function of the hardrware token. The possible values are: hmacsha1 or hmacsha256. Default value is: hmacsha1. Supports $filter (eq).</summary>
         public global::Microsoft.Graph.Beta.Models.HardwareOathTokenHashFunction? HashFunction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HardwareOathTokenHashFunction?>("hashFunction"); }
             set { BackingStore?.Set("hashFunction", value); }
         }
-        /// <summary>The manufacturer property</summary>
+        /// <summary>Manufacturer name of the hardware token. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>Model name of the hardware token. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>The secretKey property</summary>
+        /// <summary>Secret key of the specific hardware token, provided by the vendor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecretKey
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("secretKey", value); }
         }
 #endif
-        /// <summary>The serialNumber property</summary>
+        /// <summary>Serial number of the specific hardware token, often found on the back of the device. Supports $select and $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber
@@ -114,13 +114,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the hardware OATH token.The possible values are: available, assigned, activated, failedActivation. Supports $filter(eq).</summary>
         public global::Microsoft.Graph.Beta.Models.HardwareOathTokenStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.HardwareOathTokenStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The timeIntervalInSeconds property</summary>
+        /// <summary>Refresh interval of the 6-digit verification code, in seconds. The possible values are: 30 or 60. Supports $filter (eq).</summary>
         public int? TimeIntervalInSeconds
         {
             get { return BackingStore?.Get<int?>("timeIntervalInSeconds"); }

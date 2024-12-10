@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class MailboxRestoreArtifact : global::Microsoft.Graph.Beta.Models.RestoreArtifactBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The new restored folder identifier for the user.</summary>
+        /// <summary>The newly restored folder identifier for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestoredFolderId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restoredFolderName", value); }
         }
 #endif
-        /// <summary>The restoredItemCount property</summary>
+        /// <summary>The number of items that are being restored in the folder.</summary>
         public int? RestoredItemCount
         {
             get { return BackingStore?.Get<int?>("restoredItemCount"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OneDriveForBusinessProtectionPolicy : global::Microsoft.Graph.Beta.Models.ProtectionPolicyBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Contains the details of the Onedrive for Business protection rule.</summary>
+        /// <summary>Contains the details of the OneDrive for Work or School protection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveProtectionRule>? DriveInclusionRules
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("driveInclusionRules", value); }
         }
 #endif
-        /// <summary>Contains the protection units associated with a  OneDrive for Business protection policy.</summary>
+        /// <summary>Contains the protection units associated with a  OneDrive for Work or School protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.DriveProtectionUnit>? DriveProtectionUnits

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get authenticationMethodDevices from directory
+        /// Exposes the hardware OATH method in the directory.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices
             return requestInfo;
         }
         /// <summary>
-        /// Get authenticationMethodDevices from directory
+        /// Exposes the hardware OATH method in the directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AuthenticationMethodDevices
         {
         }
         /// <summary>
-        /// Get authenticationMethodDevices from directory
+        /// Exposes the hardware OATH method in the directory.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthenticationMethodDevicesRequestBuilderGetQueryParameters 

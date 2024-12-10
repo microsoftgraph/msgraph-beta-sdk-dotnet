@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("attributeSets", value); }
         }
 #endif
-        /// <summary>The authenticationMethodDevices property</summary>
+        /// <summary>Exposes the hardware OATH method in the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AuthenticationMethodDevice? AuthenticationMethodDevices

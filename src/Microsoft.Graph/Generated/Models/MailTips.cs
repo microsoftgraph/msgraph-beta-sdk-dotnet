@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Mail tips for automatic reply if it has been set up by the recipient.</summary>
+        /// <summary>Mailtips for an automatic reply if set up by the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.AutomaticRepliesMailTips? AutomaticReplies
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customMailTip", value); }
         }
 #endif
-        /// <summary>Whether the recipient&apos;s mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.</summary>
+        /// <summary>Whether the recipient&apos;s mailbox is restricted. For example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.</summary>
         public bool? DeliveryRestricted
         {
             get { return BackingStore?.Get<bool?>("deliveryRestricted"); }
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<int?>("externalMemberCount"); }
             set { BackingStore?.Set("externalMemberCount", value); }
         }
-        /// <summary>Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient&apos;s manager.</summary>
+        /// <summary>Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator is set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient&apos;s manager.</summary>
         public bool? IsModerated
         {
             get { return BackingStore?.Get<bool?>("isModerated"); }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("mailboxFull"); }
             set { BackingStore?.Set("mailboxFull", value); }
         }
-        /// <summary>The maximum message size that has been configured for the recipient&apos;s organization or mailbox.</summary>
+        /// <summary>The maximum message size configured for the recipient&apos;s organization or mailbox.</summary>
         public int? MaxMessageSize
         {
             get { return BackingStore?.Get<int?>("maxMessageSize"); }
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its &apos;partner&apos;. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It&apos;s also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.</summary>
+        /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its &apos;partner&apos;. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It&apos;s also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone, and content.</summary>
         public global::Microsoft.Graph.Beta.Models.RecipientScopeType? RecipientScope
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RecipientScopeType?>("recipientScope"); }

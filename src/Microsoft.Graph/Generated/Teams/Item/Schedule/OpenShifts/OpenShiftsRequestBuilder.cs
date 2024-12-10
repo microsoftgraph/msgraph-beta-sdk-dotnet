@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.OpenShifts
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.OpenShiftCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.OpenShiftCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an instance of an openshift object.
+        /// Create an instance of an openShift object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshift-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.OpenShift"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.OpenShifts
             return requestInfo;
         }
         /// <summary>
-        /// Create an instance of an openshift object.
+        /// Create an instance of an openShift object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
