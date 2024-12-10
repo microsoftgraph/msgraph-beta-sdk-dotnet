@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Long-form name of the program that the user has provided.</summary>
+        /// <summary>Long-form name of the program that the user provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fieldsOfStudy", value); }
         }
 #endif
-        /// <summary>The final grade, class, GPA or score.</summary>
+        /// <summary>The final grade, class, GPA, or score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Grade
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("grade", value); }
         }
 #endif
-        /// <summary>Additional notes the user has provided.</summary>
+        /// <summary>More notes the user provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes

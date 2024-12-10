@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fido2Methods", value); }
         }
 #endif
-        /// <summary>The hardwareOathMethods property</summary>
+        /// <summary>The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>? HardwareOathMethods

@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Profile last modified time.</summary>
+        /// <summary>The date and time when the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Profile name.</summary>
+        /// <summary>The name of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Traffic forwarding policies associated with this profile.</summary>
+        /// <summary>The traffic forwarding policies associated with this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>? Policies

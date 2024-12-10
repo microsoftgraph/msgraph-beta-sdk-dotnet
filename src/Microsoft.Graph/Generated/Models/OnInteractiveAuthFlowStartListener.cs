@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class OnInteractiveAuthFlowStartListener : global::Microsoft.Graph.Beta.Models.AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</summary>
+        /// <summary>Required. Configuration for what to invoke if the event resolves to this listener. You can use this handler to define potential handler configurations for specific events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OnInteractiveAuthFlowStartHandler? Handler

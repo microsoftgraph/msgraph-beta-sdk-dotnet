@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get device from me
+        /// Exposes the hardware OATH method in the directory.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device
             return requestInfo;
         }
         /// <summary>
-        /// Get device from me
+        /// Exposes the hardware OATH method in the directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.Item.Device
         {
         }
         /// <summary>
-        /// Get device from me
+        /// Exposes the hardware OATH method in the directory.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceRequestBuilderGetQueryParameters 

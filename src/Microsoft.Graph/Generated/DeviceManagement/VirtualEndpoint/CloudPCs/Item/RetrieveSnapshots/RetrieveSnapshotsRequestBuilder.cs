@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
         {
         }
         /// <summary>
-        /// Invoke function retrieveSnapshots
+        /// List all cloudPcSnapshot resources for a Cloud PC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsGetResponse>(requestInfo, global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveSnapshots
+        /// List all cloudPcSnapshot resources for a Cloud PC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsResponse>(requestInfo, global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveSnapshots
+        /// List all cloudPcSnapshot resources for a Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
             return new global::Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveSnapshots.RetrieveSnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function retrieveSnapshots
+        /// List all cloudPcSnapshot resources for a Cloud PC.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetrieveSnapshotsRequestBuilderGetQueryParameters 

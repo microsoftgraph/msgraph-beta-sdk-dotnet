@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.HardwareOathMethods.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get hardwareOathMethods from users
+        /// The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.HardwareOathMethods.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get hardwareOathMethods from users
+        /// The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.HardwareOathMethods.Ite
         {
         }
         /// <summary>
-        /// Get hardwareOathMethods from users
+        /// The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HardwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters 

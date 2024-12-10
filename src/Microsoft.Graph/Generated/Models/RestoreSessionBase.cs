@@ -78,13 +78,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The restoreJobType property</summary>
+        /// <summary>Indicates whether the restore session was created normally or by a bulk job.</summary>
         public global::Microsoft.Graph.Beta.Models.RestoreJobType? RestoreJobType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.RestoreJobType?>("restoreJobType"); }
             set { BackingStore?.Set("restoreJobType", value); }
         }
-        /// <summary>The restoreSessionArtifactCount property</summary>
+        /// <summary>The number of metadata artifacts that belong to this restore session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.RestoreSessionArtifactCount? RestoreSessionArtifactCount

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false.</summary>
+        /// <summary>True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false. This property is deprecated and will no longer be supported effective February 11, 2025. For scenarios where crossRegionDisasterRecoveryEnabled is true, set disasterRecoveryType to crossRegion. For scenarios where crossRegionDisasterRecoveryEnabled is false,  set disasterRecoveryType to notconfigured.</summary>
         public bool? CrossRegionDisasterRecoveryEnabled
         {
             get { return BackingStore?.Get<bool?>("crossRegionDisasterRecoveryEnabled"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("disasterRecoveryNetworkSetting", value); }
         }
 #endif
-        /// <summary>The disasterRecoveryType property</summary>
+        /// <summary>Indicates the type of disaster recovery to perform when a disaster occurs on the user&apos;s Cloud PC. The possible values are: notConfigured, crossRegion, premium, unknownFutureValue. The default value is notConfigured.</summary>
         public global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType? DisasterRecoveryType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryType?>("disasterRecoveryType"); }

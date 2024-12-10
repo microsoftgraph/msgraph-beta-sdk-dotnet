@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.</summary>
+        /// <summary>A collection of application IDs for registered Microsoft Entra apps allowed to manage the externalConnection and index content in the externalConnection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AuthorizedAppIds

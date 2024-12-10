@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class ItemAttachment : global::Microsoft.Graph.Beta.Models.Attachment, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The attached contact, message or event. Navigation property.</summary>
+        /// <summary>The attached contact, message, or event. Navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.OutlookItem? Item
