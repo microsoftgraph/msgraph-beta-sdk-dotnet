@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus
         {
         }
         /// <summary>
-        /// Invoke action setReviewStatus
+        /// Set the review status of a specific Cloud PC device using the Cloud PC ID. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-setreviewstatus?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.SetReviewStatus
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action setReviewStatus
+        /// Set the review status of a specific Cloud PC device using the Cloud PC ID. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

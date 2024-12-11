@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class NewsLinkPage : global::Microsoft.Graph.Beta.Models.BaseSitePage, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The bannerImageWebUrl property</summary>
+        /// <summary>A link to the banner image for the newsLinkPage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BannerImageWebUrl
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("bannerImageWebUrl", value); }
         }
 #endif
-        /// <summary>The newsSharepointIds property</summary>
+        /// <summary>The SharePoint IDs of the referenced news article if it&apos;s recognized as a SharePoint resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.SharepointIds? NewsSharepointIds
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("newsSharepointIds", value); }
         }
 #endif
-        /// <summary>The newsWebUrl property</summary>
+        /// <summary>The URL of the news article referenced by the newsLinkPage. It can be an external link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NewsWebUrl

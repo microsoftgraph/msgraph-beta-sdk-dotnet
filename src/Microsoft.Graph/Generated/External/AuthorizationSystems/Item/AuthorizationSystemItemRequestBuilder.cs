@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+        /// Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.AuthorizationSystem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems.Item
             return requestInfo;
         }
         /// <summary>
-        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+        /// Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems.Item
         {
         }
         /// <summary>
-        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+        /// Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthorizationSystemItemRequestBuilderGetQueryParameters 

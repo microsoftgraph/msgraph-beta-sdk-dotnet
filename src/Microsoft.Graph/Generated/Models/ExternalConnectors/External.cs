@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.</summary>
+        /// <summary>Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Beta.Models.AuthorizationSystem>? AuthorizationSystems

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
         {
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// The traffic forwarding policies associated with this profile.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink>(requestInfo, global::Microsoft.Graph.Beta.Models.Networkaccess.PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// The traffic forwarding policies associated with this profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
             return new global::Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.ForwardingProfiles.Item.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// The traffic forwarding policies associated with this profile.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PoliciesRequestBuilderGetQueryParameters 

@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods
         {
         }
         /// <summary>
-        /// Get hardwareOathMethods from me
+        /// Get a list of the hardware tokens assigned to a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-hardwareoathmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +90,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to hardwareOathMethods for me
+        /// Assign a hardware token to a user without activation. To activate, use the activation API operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-post-hardwareoathmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Beta.Models.HardwareOathAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get hardwareOathMethods from me
+        /// Get a list of the hardware tokens assigned to a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +135,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to hardwareOathMethods for me
+        /// Assign a hardware token to a user without activation. To activate, use the activation API operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -164,7 +166,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods
             return new global::Microsoft.Graph.Beta.Me.Authentication.HardwareOathMethods.HardwareOathMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get hardwareOathMethods from me
+        /// Get a list of the hardware tokens assigned to a user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HardwareOathMethodsRequestBuilderGetQueryParameters 

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+        /// A collection of restore points and destination details that can be used to restore a OneDrive for Work or School drive.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Beta.Models.DriveRestoreArtifact"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
             return requestInfo;
         }
         /// <summary>
-        /// A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+        /// A collection of restore points and destination details that can be used to restore a OneDrive for Work or School drive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Solutions.BackupRestore.OneDriveForBusinessRestor
         {
         }
         /// <summary>
-        /// A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+        /// A collection of restore points and destination details that can be used to restore a OneDrive for Work or School drive.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveRestoreArtifactItemRequestBuilderGetQueryParameters 

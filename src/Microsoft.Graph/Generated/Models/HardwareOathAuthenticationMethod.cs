@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models
     public partial class HardwareOathAuthenticationMethod : global::Microsoft.Graph.Beta.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The device property</summary>
+        /// <summary>Exposes the hardware OATH method in the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Beta.Models.HardwareOathTokenAuthenticationMethodDevice? Device
